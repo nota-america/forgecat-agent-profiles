@@ -1,0 +1,127 @@
+# Changelog
+
+## 0.3.6
+
+### Patch Changes
+
+- fae6127: Add active teamspace name to whoami command output
+- 4b63117: Reorder setup mode choices to show MCP server first
+- 18b3292: Add token refresh support, centralize auth constants, switch whoami to internal API endpoint with teamspace display, and add unit tests for CLI auth utilities and commands
+
+## 0.3.5
+
+### Patch Changes
+
+- 7e60d05: - feat(cli): track install count events when skills are installed via `ctx7 setup`
+
+## 0.3.4
+
+### Patch Changes
+
+- 62dc278: - feat(cli): enumerate popularity with a 4-star scale in skill search, install, and suggest results
+  - feat(cli): show install count range and trust score in skill hover details
+  - fix(cli): rename "docs" skill to "find-docs" in setup output and prompts
+- 04130b5: Consolidate skills under /skills with canonical sources: rename docs→find-docs, ctx7-cli→context7-cli, add context7-mcp as canonical MCP skill. MCP setup now downloads skill from GitHub instead of using hardcoded content.
+- d418405: Add CLI mode to ctx7 setup for installing the docs skill without MCP configuration
+
+## 0.3.3
+
+### Patch Changes
+
+- 31b4fb8: Align CLI library output format with MCP: use labeled fields (Title, Context7-compatible library ID, Description, Code Snippets, Source Reputation, Benchmark Score, Versions) and categorical reputation labels (High/Medium/Low/Unknown) instead of numeric trust scores
+- 9de3f06: Display warning when public library access filter is being used to filter libraries.
+- 05a4406: Remove default selection of Universal agent target during skills install prompt
+- 9aae852: Show source repository next to skill name in search and suggest results for easier disambiguation
+
+## 0.3.2
+
+### Patch Changes
+
+- df60e3e: Add `library` and `docs` commands for querying library documentation from the terminal
+
+## 0.3.1
+
+### Patch Changes
+
+- c66950a: Install documentation-lookup skill during `ctx7 setup`
+
+## 0.3.0
+
+### Minor Changes
+
+- 3d66191: Add `ctx7 setup` command for configuring Context7 MCP and rules across Claude Code, Cursor, and OpenCode
+
+## 0.2.4
+
+### Patch Changes
+
+- 4663c15: - Adopt `.agents/skills` as universal install target, supporting multiple agents with a single installation
+  - Replace `--codex`, `--opencode`, and `--amp` flags with single `--universal` flag
+  - Improve checkbox UI with aligned column headers for better readability
+
+## 0.2.3
+
+### Patch Changes
+
+- 0981656: Add `skills suggest` command that scans your project's dependencies (package.json, requirements.txt, pyproject.toml) and recommends relevant skills. Results show install counts, trust scores, and which dependency each skill matches.
+
+## 0.2.2
+
+### Patch Changes
+
+- 6328ed1: Skill search & generate command improvements:
+  - Add "Installs" and "Trust(0-10)" columns to skill search results with aligned column headers
+  - Auto-login via OAuth when the generate command requires authentication instead of showing an error
+  - Reorder question options so the recommended choice always appears first with a "✓ Recommended" badge
+  - Add "View skill" action that opens generated content in the user's default editor (`$EDITOR`)
+  - Revamp generate wizard copy: do/don't examples for skill descriptions, rename "libraries" to "sources", and clarify follow-up question and generation spinner text
+
+## 0.2.1
+
+### Patch Changes
+
+- 2f7cc42: Show exact install counts instead of rounded values, sort skills by install count in the install command, and display "installs" column header inline with the prompt
+- 85b905e: Add CLI telemetry for usage metrics collection (commands, searches, installs, generation feedback) via fire-and-forget events to /api/v2/cli/events. Respects CTX7_TELEMETRY_DISABLED env var.
+
+## 0.2.0
+
+### Minor Changes
+
+- 8ba484c: Add AI-powered skill generation with `skills generate` command, including library search, clarifying questions, real-time query progress, feedback loop, and weekly quota management.
+- aacfd31: Add OAuth 2.0 authentication with login, logout, and whoami commands.
+
+### Patch Changes
+
+- 572c3ca: Simplify `skills list` command to show all detected IDE skill directories without prompts.
+
+## 0.1.5
+
+### Improvements
+
+- Improved skill selection UX with metadata panel showing Skill, Repo, and Description
+- Clickable links in metadata (Skill → context7.com, Repo → GitHub)
+- Display install counts next to skill names (e.g., `↓100+`, `↓50+`)
+- Numbered list items for easier reference
+- Select hovered item on Enter without needing to Space-select first
+- Green highlight for hovered row
+- Fix circular scrolling - navigation now stops at list boundaries
+
+## 0.1.4
+
+- Add prompt injection detection with warning messages for blocked skills
+
+## 0.1.3
+
+- Auto-detect installed IDE configurations in project/global directories
+- Add confirmation prompt before installing to detected locations
+
+## 0.1.0
+
+- Initial stable release
+- Commands: `install`, `search`, `list`, `remove`, `info`
+- Multi-IDE support: Claude, Cursor, Codex, OpenCode, Amp, Antigravity
+- Global and project-level skill installation
+- Symlink support (Claude gets original files, others get symlinks)
+- Short aliases: `si`, `ss`
+- Single skill installation via `ctx7 skills install /owner/repo skill-name`
+- Installation tracking metrics

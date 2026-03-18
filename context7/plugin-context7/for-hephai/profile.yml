@@ -1,0 +1,39 @@
+
+name: context7
+version: "0.0.0"
+description: "Up-to-date documentation lookup via Context7 MCP. Pull version-specific documentation and code examples directly from source repositories into your LLM context. Includes MCP server (HTTP), skill, agent, and command.""
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [cursor]
+  models:
+    recommended: [claude-opus-4]
+    minimum: [claude-sonnet-4]
+
+agents:
+  - name: docs-researcher
+    path: agents/docs-researcher.md
+    description: "Lightweight agent for fetching library documentation without cluttering your main conversation context."
+    model: sonnet
+
+skills:
+  - name: context7-mcp
+    path: skills/context7-mcp/SKILL.md
+    description: >-
+      Auto-triggers Context7 documentation lookups when user asks about libraries,
+      frameworks, API references, or needs code examples.
+
+commands:
+  - name: docs
+    path: commands/docs.md
+    description: "Look up documentation for any library"
+
+
+mcp:
+  path: mcp.jsonc
+  requiredEnv:
+    - name: CONTEXT7_API_KEY
+      description: "API key for Context7 authentication (optional, for higher rate limits)"
+      optional: true
+      
