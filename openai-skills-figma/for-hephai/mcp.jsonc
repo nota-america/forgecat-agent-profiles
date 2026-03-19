@@ -1,12 +1,10 @@
 {
-  "mcpServers": {
+  "servers": {
     "figma": {
-      "type": "streamable_http",
       "url": "https://mcp.figma.com/mcp",
       "env": {
-        "FIGMA_OAUTH_TOKEN": ""
-      },
-      "requiresAuth": true
+        "FIGMA_OAUTH_TOKEN": "${FIGMA_OAUTH_TOKEN}"
+      }
     }
   }
 }
