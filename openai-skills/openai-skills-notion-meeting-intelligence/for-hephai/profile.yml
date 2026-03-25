@@ -1,0 +1,24 @@
+name: openai-skills-notion-meeting-intelligence
+version: "0.0.0"
+description: "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: []
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: notion-meeting-intelligence
+    path: skills/notion-meeting-intelligence/SKILL.md
+    description: "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees."
+
+mcp:
+  path: mcp.jsonc
+  requiredEnv: []

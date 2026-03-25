@@ -1,0 +1,82 @@
+name: awesome-codex-subagents-quality-security
+version: "0.0.0"
+description: >-
+  Review and verification agents that work especially well as read-heavy Codex subagents. Includes 16 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: accessibility-tester
+    path: agents/accessibility-tester.md
+    description: "Use when a task needs an accessibility audit of UI changes, interaction flows, or component behavior."
+    model: gpt-5.4
+  - name: ad-security-reviewer
+    path: agents/ad-security-reviewer.md
+    description: "Use when a task needs Active Directory security review across identity boundaries, delegation, GPO exposure, or directory hardening."
+    model: gpt-5.4
+  - name: architect-reviewer
+    path: agents/architect-reviewer.md
+    description: "Use when a task needs architectural review for coupling, system boundaries, long-term maintainability, or design coherence."
+    model: gpt-5.4
+  - name: browser-debugger
+    path: agents/browser-debugger.md
+    description: "Use when a task needs browser-based reproduction, UI evidence gathering, or client-side debugging through a browser MCP server."
+    model: gpt-5.4
+  - name: chaos-engineer
+    path: agents/chaos-engineer.md
+    description: "Use when a task needs resilience analysis for dependency failure, degraded modes, recovery behavior, or controlled fault-injection planning."
+    model: gpt-5.4
+  - name: code-reviewer
+    path: agents/code-reviewer.md
+    description: "Use when a task needs a broader code-health review covering maintainability, design clarity, and risky implementation choices in addition to correctness."
+    model: gpt-5.4
+  - name: compliance-auditor
+    path: agents/compliance-auditor.md
+    description: "Use when a task needs compliance-oriented review of controls, auditability, policy alignment, or evidence gaps in a regulated workflow."
+    model: gpt-5.4
+  - name: debugger
+    path: agents/debugger.md
+    description: "Use when a task needs deep bug isolation across code paths, stack traces, runtime behavior, or failing tests."
+    model: gpt-5.4
+  - name: error-detective
+    path: agents/error-detective.md
+    description: "Use when a task needs log, exception, or stack-trace analysis to identify the most probable failure source quickly."
+    model: gpt-5.3-codex-spark
+  - name: penetration-tester
+    path: agents/penetration-tester.md
+    description: "Use when a task needs adversarial review of an application path for exploitability, abuse cases, or practical attack surface analysis."
+    model: gpt-5.4
+  - name: performance-engineer
+    path: agents/performance-engineer.md
+    description: "Use when a task needs performance investigation for slow requests, hot paths, rendering regressions, or scalability bottlenecks."
+    model: gpt-5.4
+  - name: powershell-security-hardening
+    path: agents/powershell-security-hardening.md
+    description: "Use when a task needs PowerShell-focused hardening across script safety, admin automation, execution controls, or Windows security posture."
+    model: gpt-5.4
+  - name: qa-expert
+    path: agents/qa-expert.md
+    description: "Use when a task needs test strategy, acceptance coverage planning, or risk-based QA guidance for a feature or release."
+    model: gpt-5.4
+  - name: reviewer
+    path: agents/reviewer.md
+    description: "Use when a task needs PR-style review focused on correctness, security, behavior regressions, and missing tests."
+    model: gpt-5.4
+  - name: security-auditor
+    path: agents/security-auditor.md
+    description: "Use when a task needs focused security review of code, auth flows, secrets handling, input validation, or infrastructure configuration."
+    model: gpt-5.4
+  - name: test-automator
+    path: agents/test-automator.md
+    description: "Use when a task needs implementation of automated tests, test harness improvements, or targeted regression coverage."
+    model: gpt-5.3-codex-spark

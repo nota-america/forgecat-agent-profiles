@@ -1,0 +1,24 @@
+name: openai-skills-notion-knowledge-capture
+version: "0.0.0"
+description: "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: []
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: notion-knowledge-capture
+    path: skills/notion-knowledge-capture/SKILL.md
+    description: "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking."
+
+mcp:
+  path: mcp.jsonc
+  requiredEnv: []

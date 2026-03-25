@@ -1,0 +1,62 @@
+name: awesome-codex-subagents-business-product
+version: "0.0.0"
+description: >-
+  Support agents for requirements, UX, and engineering-adjacent writing tasks. Includes 11 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: business-analyst
+    path: agents/business-analyst.md
+    description: "Use when a task needs requirements clarified, scope normalized, or acceptance criteria extracted from messy inputs before engineering work starts."
+    model: gpt-5.4
+  - name: content-marketer
+    path: agents/content-marketer.md
+    description: "Use when a task needs product-adjacent content strategy or messaging that still has to stay grounded in real technical capabilities."
+    model: gpt-5.3-codex-spark
+  - name: customer-success-manager
+    path: agents/customer-success-manager.md
+    description: "Use when a task needs support-pattern synthesis, adoption risk analysis, or customer-facing operational guidance from engineering context."
+    model: gpt-5.3-codex-spark
+  - name: legal-advisor
+    path: agents/legal-advisor.md
+    description: "Use when a task needs legal-risk spotting in product or engineering behavior, especially around terms, data handling, or externally visible commitments."
+    model: gpt-5.4
+  - name: product-manager
+    path: agents/product-manager.md
+    description: "Use when a task needs product framing, prioritization, or feature-shaping based on engineering reality and user impact."
+    model: gpt-5.4
+  - name: project-manager
+    path: agents/project-manager.md
+    description: "Use when a task needs dependency mapping, milestone planning, sequencing, or delivery-risk coordination across multiple workstreams."
+    model: gpt-5.4
+  - name: sales-engineer
+    path: agents/sales-engineer.md
+    description: "Use when a task needs technically accurate solution positioning, customer-question handling, or implementation tradeoff explanation for pre-sales contexts."
+    model: gpt-5.3-codex-spark
+  - name: scrum-master
+    path: agents/scrum-master.md
+    description: "Use when a task needs process facilitation, iteration planning, or workflow friction analysis for an engineering team."
+    model: gpt-5.3-codex-spark
+  - name: technical-writer
+    path: agents/technical-writer.md
+    description: "Use when a task needs release notes, migration notes, onboarding material, or developer-facing prose derived from real code changes."
+    model: gpt-5.3-codex-spark
+  - name: ux-researcher
+    path: agents/ux-researcher.md
+    description: "Use when a task needs UI feedback synthesized into actionable product and implementation guidance."
+    model: gpt-5.4
+  - name: wordpress-master
+    path: agents/wordpress-master.md
+    description: "Use when a task needs WordPress-specific implementation or debugging across themes, plugins, content architecture, or operational site behavior."
+    model: gpt-5.4

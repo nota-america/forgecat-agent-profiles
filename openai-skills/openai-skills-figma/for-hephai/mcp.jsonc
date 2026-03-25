@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "env": {
+        "FIGMA_OAUTH_TOKEN": "${FIGMA_OAUTH_TOKEN}"
+      },
+      "headers": { "X-Figma-Region": "us-east-1" }
+    }
+  }
+}

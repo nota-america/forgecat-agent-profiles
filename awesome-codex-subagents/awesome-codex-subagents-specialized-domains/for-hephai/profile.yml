@@ -1,0 +1,66 @@
+name: awesome-codex-subagents-specialized-domains
+version: "0.0.0"
+description: >-
+  Focused domain agents that still have a clear implementation or verification boundary. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: api-documenter
+    path: agents/api-documenter.md
+    description: "Use when a task needs consumer-facing API documentation generated from the real implementation, schema, and examples."
+    model: gpt-5.3-codex-spark
+  - name: blockchain-developer
+    path: agents/blockchain-developer.md
+    description: "Use when a task needs blockchain or Web3 implementation and review across smart-contract integration, wallet flows, or transaction lifecycle handling."
+    model: gpt-5.4
+  - name: embedded-systems
+    path: agents/embedded-systems.md
+    description: "Use when a task needs embedded or hardware-adjacent work involving device constraints, firmware boundaries, timing, or low-level integration."
+    model: gpt-5.4
+  - name: fintech-engineer
+    path: agents/fintech-engineer.md
+    description: "Use when a task needs financial systems engineering across ledgers, reconciliation, transfers, settlement, or compliance-sensitive transactional flows."
+    model: gpt-5.4
+  - name: game-developer
+    path: agents/game-developer.md
+    description: "Use when a task needs game-specific implementation or debugging involving gameplay systems, rendering loops, asset flow, or player-state behavior."
+    model: gpt-5.4
+  - name: iot-engineer
+    path: agents/iot-engineer.md
+    description: "Use when a task needs IoT system work involving devices, telemetry, edge communication, or cloud-device coordination."
+    model: gpt-5.4
+  - name: m365-admin
+    path: agents/m365-admin.md
+    description: "Use when a task needs Microsoft 365 administration help across Exchange Online, Teams, SharePoint, identity, or tenant-level automation."
+    model: gpt-5.4
+  - name: mobile-app-developer
+    path: agents/mobile-app-developer.md
+    description: "Use when a task needs app-level mobile product work across screens, state, API integration, and release-sensitive mobile behavior."
+    model: gpt-5.4
+  - name: payment-integration
+    path: agents/payment-integration.md
+    description: "Use when a task needs payment-flow review or implementation for checkout, idempotency, webhooks, retries, or settlement state handling."
+    model: gpt-5.4
+  - name: quant-analyst
+    path: agents/quant-analyst.md
+    description: "Use when a task needs quantitative analysis of models, strategies, simulations, or numeric decision logic."
+    model: gpt-5.4
+  - name: risk-manager
+    path: agents/risk-manager.md
+    description: "Use when a task needs explicit risk analysis for product, operational, financial, or architectural decisions."
+    model: gpt-5.4
+  - name: seo-specialist
+    path: agents/seo-specialist.md
+    description: "Use when a task needs search-focused technical review across crawlability, metadata, rendering, information architecture, or content discoverability."
+    model: gpt-5.3-codex-spark

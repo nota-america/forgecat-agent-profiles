@@ -1,0 +1,58 @@
+name: awesome-codex-subagents-meta-orchestration
+version: "0.0.0"
+description: >-
+  Agents that help plan or coordinate multi-agent Codex workflows without inventing unsupported mechanics. Includes 10 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: agent-installer
+    path: agents/agent-installer.md
+    description: "Use when a task needs help selecting, copying, or organizing custom agent files from this repository into Codex agent directories."
+    model: gpt-5.3-codex-spark
+  - name: agent-organizer
+    path: agents/agent-organizer.md
+    description: "Use when the parent agent needs help choosing subagents and dividing a larger task into clean delegated threads."
+    model: gpt-5.4
+  - name: context-manager
+    path: agents/context-manager.md
+    description: "Use when a task needs a compact project context summary that other subagents can rely on before deeper work begins."
+    model: gpt-5.3-codex-spark
+  - name: error-coordinator
+    path: agents/error-coordinator.md
+    description: "Use when multiple errors or symptoms need to be grouped, prioritized, and assigned to the right debugging or review agents."
+    model: gpt-5.4
+  - name: it-ops-orchestrator
+    path: agents/it-ops-orchestrator.md
+    description: "Use when a task needs coordinated operational planning across infrastructure, incident response, identity, endpoint, and admin workflows."
+    model: gpt-5.4
+  - name: knowledge-synthesizer
+    path: agents/knowledge-synthesizer.md
+    description: "Use when multiple agents have returned findings and the parent agent needs a distilled, non-redundant synthesis."
+    model: gpt-5.3-codex-spark
+  - name: multi-agent-coordinator
+    path: agents/multi-agent-coordinator.md
+    description: "Use when a task needs a concrete multi-agent plan with clear role separation, dependencies, and result integration."
+    model: gpt-5.4
+  - name: performance-monitor
+    path: agents/performance-monitor.md
+    description: "Use when a task needs ongoing performance-signal interpretation across build, runtime, or operational metrics before deeper optimization starts."
+    model: gpt-5.3-codex-spark
+  - name: task-distributor
+    path: agents/task-distributor.md
+    description: "Use when a broad task needs to be broken into concrete sub-tasks with clear boundaries for multiple agents or contributors."
+    model: gpt-5.4
+  - name: workflow-orchestrator
+    path: agents/workflow-orchestrator.md
+    description: "Use when the parent agent needs an explicit Codex subagent workflow for a complex task with multiple stages."
+    model: gpt-5.4

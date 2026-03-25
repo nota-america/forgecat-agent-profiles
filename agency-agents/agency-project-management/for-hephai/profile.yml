@@ -1,0 +1,46 @@
+
+name: agency-project-management
+version: "0.0.0"
+description: >-
+  Project Management division from The Agency — 6 specialized agent personalities
+  from msitarzewski/agency-agents. Each agent has deep domain expertise,
+  unique personality, and production-ready workflows.
+
+repository: "https://github.com/msitarzewski/agency-agents"
+license: "MIT"
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [cursor, github-copilot, opencode, aider, windsurf, gemini-cli]
+
+  models:
+    recommended: [claude-4-opus]
+    minimum: [claude-4-sonnet]
+
+agents:
+  - name: "Experiment Tracker"
+    path: agents/project-management-experiment-tracker.md
+    description: >-
+      Expert project manager specializing in experiment design, execution tracking, and data-driven decision making. Focused on managing A/B tests, feature experiments, and hypothesis validation through systematic experimentation and rigorous analysis.
+  - name: "Jira Workflow Steward"
+    path: agents/project-management-jira-workflow-steward.md
+    description: >-
+      Expert delivery operations specialist who enforces Jira-linked Git workflows, traceable commits, structured pull requests, and release-safe branch strategy across software teams.
+  - name: "Project Shepherd"
+    path: agents/project-management-project-shepherd.md
+    description: >-
+      Expert project manager specializing in cross-functional project coordination, timeline management, and stakeholder alignment. Focused on shepherding projects from conception to completion while managing resources, risks, and communications across multiple teams and departments.
+  - name: "Studio Operations"
+    path: agents/project-management-studio-operations.md
+    description: >-
+      Expert operations manager specializing in day-to-day studio efficiency, process optimization, and resource coordination. Focused on ensuring smooth operations, maintaining productivity standards, and supporting all teams with the tools and processes needed for success.
+  - name: "Studio Producer"
+    path: agents/project-management-studio-producer.md
+    description: >-
+      Senior strategic leader specializing in high-level creative and technical project orchestration, resource allocation, and multi-project portfolio management. Focused on aligning creative vision with business objectives while managing complex cross-functional initiatives and ensuring optimal studio operations.
+  - name: "Senior Project Manager"
+    path: agents/project-manager-senior.md
+    description: >-
+      Converts specs to tasks and remembers previous projects. Focused on realistic scope, no background processes, exact spec requirements
