@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # gh-address-comments
 
 Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Gh Address Comments
 
@@ -26,9 +30,12 @@ npx hephai install openai-skills-gh-address-comments
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

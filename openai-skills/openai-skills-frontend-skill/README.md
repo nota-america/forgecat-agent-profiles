@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # frontend-skill
 
 Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Frontend Skill
 
@@ -26,9 +30,12 @@ npx hephai install openai-skills-frontend-skill
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

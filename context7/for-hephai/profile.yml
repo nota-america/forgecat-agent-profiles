@@ -1,16 +1,21 @@
 name: context7
-version: "0.0.0"
+version: "0.0.2"
 description: >-
   Up-to-date documentation lookup via Context7 MCP. Pull version-specific
   documentation and code examples directly from source repositories into
   your LLM context. Includes MCP server (HTTP), skill, agent, and command.
-
+# tags: [docs, documentation, library, code-example] 
+repository: "https://github.com/upstash/context7"
+license: "MIT"
 sourcePlatform: claude-code
 
 compatibility:
   platforms:
-    tested: [claude-code]
-    partial: [cursor]
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
   models:
     recommended: [claude-4-opus]
     minimum: [claude-4-sonnet]

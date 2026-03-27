@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # notion-research-documentation
 
 Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Notion Research Documentation
 
@@ -29,9 +33,12 @@ npx hephai install openai-skills-notion-research-documentation
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

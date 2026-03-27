@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # slides
 
 Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layout helpers, and render/validation utilities. Use when tasks involve building a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks, modifying slide content while preserving editable output, adding charts/diagrams/visuals, or diagnosing layout issues such as overflow, overlaps, and font substitution.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Slides
 
@@ -26,9 +30,12 @@ npx hephai install openai-skills-slides
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

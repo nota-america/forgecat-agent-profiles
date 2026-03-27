@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # linear
 
 Manage issues, projects & team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Linear
 
@@ -29,9 +33,12 @@ npx hephai install openai-skills-linear
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

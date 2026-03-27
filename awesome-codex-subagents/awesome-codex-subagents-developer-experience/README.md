@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 06. Developer Experience
 
 Agents for builds, developer tooling, documentation, MCP integrations, and refactors.
 
-## Role Tags
+## Tags
 - Developer Experience
 
 ## Installation
@@ -37,10 +41,12 @@ npx hephai install awesome-codex-subagents-developer-experience
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

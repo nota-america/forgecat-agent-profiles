@@ -1,0 +1,57 @@
+name: product-management
+version: "0.0.1"
+description: Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.
+repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management
+license: Apache-2.0
+
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+
+skills:
+  - name: write-spec
+    path: skills/write-spec/SKILL.md
+    description: "Write a feature spec or PRD from a problem statement or feature idea. Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals, defining success metrics and acceptance criteria, or breaking a big ask into a phased spec."
+
+  - name: roadmap-update
+    path: skills/roadmap-update/SKILL.md
+    description: "Update, create, or reprioritize your product roadmap. Use when adding a new initiative and deciding what moves to make room, shifting priorities after new information comes in, moving timelines due to a dependency slip, or building a Now/Next/Later view from scratch."
+
+  - name: synthesize-research
+    path: skills/synthesize-research/SKILL.md
+    description: "Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations."
+
+  - name: stakeholder-update
+    path: skills/stakeholder-update/SKILL.md
+    description: "Generate a stakeholder update tailored to audience and cadence. Use when writing a weekly or monthly status for leadership, announcing a launch, escalating a risk or blocker, or translating the same progress into exec-brief, engineering-detail, or customer-facing versions."
+
+  - name: competitive-brief
+    path: skills/competitive-brief/SKILL.md
+    description: "Create a competitive analysis brief for one or more competitors or a feature area. Use when informing product strategy or feature prioritization, building sales battle cards, prepping board or investor materials, or deciding where to differentiate vs. achieve parity."
+
+  - name: metrics-review
+    path: skills/metrics-review/SKILL.md
+    description: "Review and analyze product metrics with trend analysis and actionable insights. Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop, comparing performance against targets, or turning raw numbers into a scorecard with recommended actions."
+
+  - name: sprint-planning
+    path: skills/sprint-planning/SKILL.md
+    description: "Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan. Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO and meetings), deciding what's P0 vs. stretch, or handling carryover from the last sprint."
+
+  - name: product-brainstorming
+    path: skills/product-brainstorming/SKILL.md
+    description: "Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner. Use when exploring a new opportunity, generating solutions to a product problem, stress-testing an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction."
+
+commands:
+  - name: brainstorm
+    path: commands/brainstorm.md
+    description: "Brainstorm a product idea, problem space, or strategic question with a sharp thinking partner"
+
+mcp:
+  path: mcp.jsonc

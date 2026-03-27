@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 02. Language Specialists
 
 Language and framework specialists for ecosystem-specific implementation, debugging, and architectural guidance.
 
-## Role Tags
+## Tags
 - Language Specialist
 
 ## Installation
@@ -50,10 +54,12 @@ npx hephai install awesome-codex-subagents-language-specialists
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

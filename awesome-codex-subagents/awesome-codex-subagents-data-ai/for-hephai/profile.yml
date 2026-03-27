@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-data-ai
-version: "0.0.0"
+version: "0.0.1"
 description: >-
   Agents for data pipelines, LLM integrations, and database behavior. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 
@@ -9,8 +9,11 @@ sourcePlatform: codex
 
 compatibility:
   platforms:
-    tested: [codex]
-    partial: [claude-code]
+    tested:
+      - codex
+    partial:
+      - claude-code
+      - cursor
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-5.3-codex-spark]

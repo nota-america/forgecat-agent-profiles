@@ -1,6 +1,6 @@
 
 name: agency-engineering
-version: "0.0.0"
+version: "0.0.1"
 description: >-
   Engineering division from The Agency — 23 specialized agent personalities
   from msitarzewski/agency-agents. Each agent has deep domain expertise,
@@ -12,8 +12,11 @@ sourcePlatform: claude-code
 
 compatibility:
   platforms:
-    tested: [claude-code]
-    partial: [cursor, github-copilot, opencode, aider, windsurf, gemini-cli]
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
 
   models:
     recommended: [claude-4-opus]

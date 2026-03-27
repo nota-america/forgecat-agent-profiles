@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 05. Data & AI
 
 Agents for data pipelines, LLM integrations, and database behavior.
 
-## Role Tags
+## Tags
 - Data & AI
 
 ## Installation
@@ -36,10 +40,12 @@ npx hephai install awesome-codex-subagents-data-ai
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

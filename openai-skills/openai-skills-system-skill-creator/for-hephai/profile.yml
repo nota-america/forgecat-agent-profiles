@@ -1,5 +1,5 @@
 name: openai-skills-system-skill-creator
-version: "0.0.0"
+version: "0.0.1"
 description: "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
@@ -8,8 +8,11 @@ sourcePlatform: codex
 
 compatibility:
   platforms:
-    tested: [codex]
-    partial: []
+    tested:
+      - codex
+    partial:
+      - claude-code
+      - cursor
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

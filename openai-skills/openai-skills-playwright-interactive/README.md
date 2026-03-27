@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # playwright-interactive
 
 Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.
 
-## Role Tags
+## Tags
 - Curated Skill
 - Playwright Interactive
 
@@ -26,9 +30,12 @@ npx hephai install openai-skills-playwright-interactive
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

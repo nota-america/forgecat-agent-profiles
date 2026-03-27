@@ -1,0 +1,52 @@
+name: finance
+version: "0.0.1"
+description: Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean.
+repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/finance
+license: Apache-2.0
+
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+
+skills:
+  - name: journal-entry
+    path: skills/journal-entry/SKILL.md
+    description: "Prepare journal entries with proper debits, credits, and supporting detail. Use when booking month-end accruals (AP, payroll, prepaid), recording depreciation or amortization, posting revenue recognition or deferred revenue adjustments, or documenting an entry for audit review."
+
+  - name: reconciliation
+    path: skills/reconciliation/SKILL.md
+    description: "Reconcile accounts by comparing GL balances to subledgers, bank statements, or third-party data. Use when performing bank reconciliations, GL-to-subledger recs, intercompany reconciliations, or identifying and categorizing reconciling items."
+
+  - name: financial-statements
+    path: skills/financial-statements/SKILL.md
+    description: "Generate financial statements (income statement, balance sheet, cash flow) with period-over-period comparison and variance analysis. Use when preparing a monthly or quarterly P&L, closing the books and need to flag material variances, comparing actuals to budget, building a financial summary for leadership review, or looking up GAAP presentation requirements and period-end adjustments."
+
+  - name: variance-analysis
+    path: skills/variance-analysis/SKILL.md
+    description: "Decompose financial variances into drivers with narrative explanations and waterfall analysis. Use when analyzing budget vs. actual, period-over-period changes, revenue or expense variances, or preparing variance commentary for leadership."
+
+  - name: sox-testing
+    path: skills/sox-testing/SKILL.md
+    description: "Generate SOX sample selections, testing workpapers, and control assessments. Use when planning quarterly or annual SOX 404 testing, pulling a sample for a control (revenue, P2P, ITGC, close), building a testing workpaper template, or evaluating and classifying a control deficiency."
+
+  - name: close-management
+    path: skills/close-management/SKILL.md
+    description: "Manage the month-end close process with task sequencing, dependencies, and status tracking. Use when planning the close calendar, tracking close progress, identifying blockers, or sequencing close activities by day."
+
+  - name: journal-entry-prep
+    path: skills/journal-entry-prep/SKILL.md
+    description: "Prepare journal entries with proper debits, credits, and supporting documentation for month-end close. Use when booking accruals, prepaid amortization, fixed asset depreciation, payroll entries, revenue recognition, or any manual journal entry."
+
+  - name: audit-support
+    path: skills/audit-support/SKILL.md
+    description: "Support SOX 404 compliance with control testing methodology, sample selection, and documentation standards. Use when generating testing workpapers, selecting audit samples, classifying control deficiencies, or preparing for internal or external audits."
+
+mcp:
+  path: mcp.jsonc

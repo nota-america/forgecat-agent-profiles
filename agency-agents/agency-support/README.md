@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # Agency Support
 
 Support division from The Agency — 6 specialized agent personalities from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality, and production-ready workflows.
 
-## Role Tags
+## Tags
 - Support
 - Business Support
 
@@ -31,15 +35,12 @@ npx hephai install agency-support
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
 | Cursor | Partial |
-| GitHub Copilot | Partial |
-| OpenCode | Partial |
-| Aider | Partial |
-| Windsurf | Partial |
-| Gemini CLI | Partial |
+| Codex | Partial |
 
 ### Models
 | Model | Role |

@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 10. Research & Analysis
 
 Read-heavy research agents for searching, validating, comparing, and synthesizing information.
 
-## Role Tags
+## Tags
 - Research & Analysis
 
 ## Installation
@@ -31,10 +35,12 @@ npx hephai install awesome-codex-subagents-research-analysis
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

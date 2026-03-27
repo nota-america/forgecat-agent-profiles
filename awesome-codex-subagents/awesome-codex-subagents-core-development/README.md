@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 01. Core Development
 
 Core agents for application architecture, cross-layer implementation, UI work, and protocol-specific development.
 
-## Role Tags
+## Tags
 - Engineer Team
 
 ## Installation
@@ -36,9 +40,12 @@ npx hephai install awesome-codex-subagents-core-development
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # Figma
 
 Use the Figma MCP server to fetch design context, screenshots, variables, and assets from Figma, and translate Figma nodes into implementation-ready code guidance.
 
-## Role Tags
+## Tags
 - Design-to-Code
 
 ## Installation
@@ -24,8 +28,8 @@ npx hephai install openai-skills-figma
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.1` |
 | Original commit | `dc48aff` (2026-03-17) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -37,6 +41,8 @@ npx hephai install openai-skills-figma
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 

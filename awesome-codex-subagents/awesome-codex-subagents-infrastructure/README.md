@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 03. Infrastructure
 
 Infrastructure-focused agents for deployment, containerization, orchestration, and IaC work.
 
-## Role Tags
+## Tags
 - Infrastructure
 
 ## Installation
@@ -40,10 +44,12 @@ npx hephai install awesome-codex-subagents-infrastructure
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

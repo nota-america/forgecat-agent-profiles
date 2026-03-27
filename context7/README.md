@@ -1,55 +1,56 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # Context7
 
 Up-to-date documentation lookup via Context7 MCP. Pull version-specific documentation and code examples directly from source repositories into your LLM context.
 
-## Agents (1)
+## Tags
+- Docs Searcher
 
-- **docs-researcher** — Lightweight agent for fetching library documentation without cluttering your main conversation context `sonnet`
+## Installation
+```bash
+npx hephai install context7
+```
 
-## Skills (1)
+## Agents
+- **docs-researcher** — Lightweight agent for fetching library documentation without cluttering your main conversation context `sonnet` `research`
 
-- **context7-mcp** — This skill should be used when the user asks about libraries, frameworks, API references, or needs code examples. Activates for setup questions, code generation involving libraries, or mentions of specific frameworks like React, Vue, Next.js, Prisma, Supabase, etc.
+## Skills
+- **context7-mcp** — Auto-triggers documentation lookups when the user asks about libraries, frameworks, API references, or needs code examples `docs`
 
-## Commands (1)
+## Commands
+- **docs** — Look up documentation for any library `lookup`
 
-- **docs** — Look up documentation for any library
+## MCPs
+- **context7** — `https://mcp.context7.com/mcp` `http`
 
 ## Details
-
-| | |
+| Field | Value |
 |---|---|
-| Version | 0.0.0 |
-| License | MIT |
+| Version | `0.0.0` |
+| License | `MIT` |
+| Author | `Upstash` |
+| Original repository | `https://github.com/upstash/context7` |
+| Converted path | `plugins/claude/context7/` |
 | Original commit | `383e127` (2026-03-16) |
-
-## Source
-
-| | |
-|---|---|
-| Repository | https://github.com/upstash/context7 |
-| Plugin path | `plugins/claude/context7/` |
-| Author | Upstash |
-| Source platform | Claude Code |
+| Source platform | `claude-code` |
 
 ## Compatibility
+### Platforms
 
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
-## Models
-
+### Models
 | Model | Role |
 |---|---|
-| claude-4-opus | recommended |
-| claude-4-sonnet | minimum |
-
-## MCPs
-
-- **context7** — `https://mcp.context7.com/mcp` (HTTP)
+| `claude-4-opus` | recommended |
+| `claude-4-sonnet` | minimum |
 
 ## Dependencies
-
 - None
-

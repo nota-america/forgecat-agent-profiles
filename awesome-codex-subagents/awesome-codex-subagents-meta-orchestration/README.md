@@ -1,8 +1,12 @@
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
+Hephai is the open agent registry - package, share, and install AI Agents across platforms.
+
 # 09. Meta & Orchestration
 
 Agents that help plan or coordinate multi-agent Codex workflows without inventing unsupported mechanics.
 
-## Role Tags
+## Tags
 - Meta & Orchestration
 
 ## Installation
@@ -34,10 +38,12 @@ npx hephai install awesome-codex-subagents-meta-orchestration
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |
