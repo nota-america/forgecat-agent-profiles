@@ -1,0 +1,13 @@
+---
+description: GitLab development workflow conventions
+alwaysApply: true
+---
+
+gitlab-workflow:
+
+- Use conventional commits (feat, fix, chore, docs, refactor, test).
+- Reference GitLab issues with `#<issue-number>` in commit messages and MR descriptions.
+- Prefer small, focused merge requests with a clear purpose.
+- Use labels and milestones to organize work.
+- Keep MR descriptions updated when behavior changes.
+- When a query references "me", "my", or the current user, ask for their GitLab username before making API calls. Remember it for the rest of the conversation.
