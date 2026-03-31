@@ -1,0 +1,57 @@
+name: omni-cursor-plugin
+version: 0.0.0
+description: Explore, query, model, embed, and manage Omni Analytics through the REST API and embed SDK. Includes 8 skills for model exploration, querying, model building, content browsing, dashboard creation, embedding, AI optimization, and administration — plus 3 specialized subagents and always-on rules for API conventions.
+repository: https://github.com/exploreomni/omni-cursor-plugin
+license: Apache 2.0
+compatibility:
+  platforms:
+    tested:
+      - cursor
+    partial:
+      - claude-code
+      - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+  - name: omni-model-explorer
+    description: Discover and inspect Omni Analytics models, topics, views, fields, dimensions, measures, and relationships using the Omni REST API. Use this skill whenever someone wants to understand what data is available in Omni, explore their semantic model, find specific fields or views, check how tables join together, see what topics exist, or asks any variant of "what can I query", "what fields are available", "show me the model", "what data do we have", or "how is this data modeled". Also use when you need to understand the Omni model structure before building or modifying anything.
+    path: skills/omni-model-explorer/SKILL.md
+  - name: omni-query
+    description: Run queries against Omni Analytics' semantic layer using the REST API, interpret results, and chain queries for multi-step analysis. Use this skill whenever someone wants to query data through Omni, run a report, get metrics, pull numbers, analyze data, ask "how many", "what's the trend", "show me the data", retrieve dashboard query results, or perform any data retrieval through Omni's query engine. Also use when someone wants to programmatically extract data from an existing Omni dashboard or workbook.
+    path: skills/omni-query/SKILL.md
+  - name: omni-model-builder
+    description: Create and edit Omni Analytics semantic model definitions — views, topics, dimensions, measures, relationships, and query views — using YAML through the Omni REST API. Use this skill whenever someone wants to add a field, create a new dimension or measure, define a topic, set up joins between tables, modify the data model, build a new view, add a calculated field, create a relationship, edit YAML, work on a branch, promote model changes, or any variant of "model this data", "add this metric", "create a view for", or "set up a join between". Also use for migrating modeling patterns since Omni's YAML is conceptually similar to other semantic layer definitions.
+    path: skills/omni-model-builder/SKILL.md
+  - name: omni-content-explorer
+    description: Find, browse, and organize content in Omni Analytics — dashboards, workbooks, folders, and labels — using the REST API. Use this skill whenever someone wants to find an existing dashboard, search for content, list workbooks, browse folders, see what dashboards exist, find popular reports, download a dashboard as PDF or PNG, favorite content, manage labels on documents, or any variant of "find the dashboard about", "what reports do we have", "show me our dashboards", "where is the sales report", or "download this dashboard".
+    path: skills/omni-content-explorer/SKILL.md
+  - name: omni-content-builder
+    description: Create, update, and manage Omni Analytics documents and dashboards programmatically — document lifecycle, tiles, visualizations, filters, and layouts — using the REST API. Use this skill whenever someone wants to build a dashboard, create a workbook, add tiles or charts, configure dashboard filters, update an existing dashboard's model, set up a KPI view, create visualizations, lay out a dashboard, create a document, rename a workbook, delete a dashboard, move a document to a folder, duplicate a dashboard, or any variant of "build a dashboard for", "create a report showing", "add a chart to", "make a dashboard", "update the dashboard layout", "rename this document", "move to folder", or "delete this dashboard". Also use when modifying dashboard-level model customizations like workbook-specific joins or fields.
+    path: skills/omni-content-builder/SKILL.md
+  - name: omni-ai-optimizer
+    description: Optimize your Omni Analytics model for Blobby, Omni's AI assistant — configure ai_context, ai_fields, sample_queries, and create AI-specific topic extensions. Use this skill whenever someone wants to improve AI accuracy in Omni, make Blobby smarter, configure AI context, add example questions, tune AI responses, set up sample queries, curate fields for AI, create AI-optimized topics, troubleshoot why Blobby gives wrong answers, or any variant of "make the AI better", "Blobby isn't answering correctly", "add context for AI", "optimize for AI", or "teach the AI about our data".
+    path: skills/omni-ai-optimizer/SKILL.md
+  - name: omni-embed
+    description: Embed Omni Analytics dashboards in external applications — URL signing, custom themes, iframe events, entity workspaces, and permission-aware content — using the @omni-co/embed SDK and REST API. Use this skill whenever someone wants to embed a dashboard, sign an embed URL, customize the embedded theme, handle embed events, listen for clicks or drills in the iframe, send filters to an embedded dashboard, set up entity workspaces, look up embed users, build a permission-aware content list, white-label an embedded dashboard, or any variant of "embed this dashboard", "customize the iframe theme", "handle click events from the embed", "filter the embedded dashboard", "set up embedding", or "what dashboards can this user see".
+    path: skills/omni-embed/SKILL.md
+  - name: omni-admin
+    description: Administer an Omni Analytics instance — manage connections, users, groups, user attributes, permissions, schedules, and schema refreshes via the REST API. Use this skill whenever someone wants to manage users or groups, set up permissions on a dashboard or folder, configure user attributes, create or modify schedules, manage database connections, refresh a schema, set up access controls, provision users, or any variant of "add a user", "give access to", "set up permissions", "who has access", "configure connection", "refresh the schema", or "schedule a delivery".
+    path: skills/omni-admin/SKILL.md
+agents:
+  - name: omni-analyst
+    description: Omni Analytics data analyst — explores models, runs queries, and delivers insights. Use when the user wants to analyze data, run reports, find trends, or answer business questions using their Omni instance.
+    path: agents/omni-analyst.md
+  - name: omni-modeler
+    description: Omni Analytics data modeler — builds and refines the semantic model, writes YAML, and optimizes for Blobby AI. Use when the user wants to add fields, create views, set up joins, define topics, improve AI context, or migrate from dbt patterns.
+    path: agents/omni-modeler.md
+  - name: omni-admin
+    description: Omni Analytics instance administrator — manages users, groups, permissions, schedules, connections, and access controls. Use when the user wants to provision users, set up permissions, configure schedules, manage connections, or handle any instance administration tasks.
+    path: agents/omni-admin-agent.md
+rules:
+  - description: Omni Analytics REST API conventions — authentication, base URL, error handling, and rate limits. Apply when making any curl or HTTP request to an Omni instance.
+    path: rules/omni-api-conventions.mdc
+  - description: Omni Analytics model YAML conventions — file types, syntax patterns, field references, and common pitfalls. Apply when writing or editing Omni view, topic, or relationship YAML.
+    path: rules/omni-yaml-conventions.mdc
+  - description: Omni Analytics terminology and concept mapping — translates business intelligence terms to Omni-specific vocabulary. Apply when the user discusses data modeling, or BI concepts.
+    path: rules/omni-terminology.mdc

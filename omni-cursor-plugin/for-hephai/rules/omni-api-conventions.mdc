@@ -1,0 +1,75 @@
+---
+description: Omni Analytics REST API conventions — authentication, base URL, error handling, and rate limits. Apply when making any curl or HTTP request to an Omni instance.
+globs: []
+alwaysApply: false
+---
+
+# Omni API Conventions
+
+## Authentication
+
+Every Omni API request requires a Bearer token in the `Authorization` header:
+
+```
+Authorization: Bearer $OMNI_API_KEY
+```
+
+Two key types exist:
+
+- **Organization API Key** — created in Settings > API Keys by an org admin. Required for SCIM user management, connection management, and most admin endpoints.
+- **Personal Access Token** — created in User Profile > Manage Account > Generate Token. Scoped to the user's permissions. Sufficient for querying, model exploration, and content browsing.
+
+Always use `$OMNI_BASE_URL` and `$OMNI_API_KEY` environment variables rather than hardcoded values.
+
+## Base URL Pattern
+
+All API endpoints follow:
+
+```
+$OMNI_BASE_URL/api/{version}/{resource}
+```
+
+- Stable endpoints: `/api/v1/...`
+- Beta endpoints: `/api/unstable/...` — subject to change but functional
+- SCIM endpoints: `/api/scim/v2/...` — standard SCIM 2.0 protocol
+
+## Request Conventions
+
+- Always include `-L` in curl commands (Omni issues redirects)
+- POST/PUT/PATCH requests need `Content-Type: application/json`
+- Query parameters use camelCase (e.g., `sortField`, `modelId`)
+- Request body fields also use camelCase
+
+## Error Handling
+
+Omni returns standard HTTP status codes:
+
+| Code | Meaning | Action |
+|------|---------|--------|
+| 401 | Invalid or expired API key | Check `$OMNI_API_KEY` |
+| 403 | Insufficient permissions | Need higher role or org-level key |
+| 404 | Resource not found | Verify ID/identifier |
+| 422 | Validation error | Check request body |
+| 429 | Rate limited | Back off and retry |
+
+## Rate Limits
+
+The Omni API enforces rate limits per API key. If you receive a 429, wait before retrying. For batch operations, add a small delay between requests.
+
+## Pagination
+
+List endpoints return cursor-based pagination:
+
+```json
+{
+  "pageInfo": {
+    "hasNextPage": true,
+    "nextCursor": "...",
+    "pageSize": 20,
+    "totalRecords": 58
+  },
+  "records": [...]
+}
+```
+
+Pass `?cursor={nextCursor}` to fetch subsequent pages.

@@ -1,0 +1,49 @@
+---
+description: Omni Analytics terminology and concept mapping — translates business intelligence terms to Omni-specific vocabulary. Apply when the user discusses data modeling, or BI concepts.
+globs: []
+alwaysApply: false
+---
+
+# Omni Terminology
+
+## Core Concepts
+
+| Omni Term | What It Means |
+|-----------|---------------|
+| **Model** | Semantic layer containing all definitions |
+| **Topic** | Curated set of joinable views for analysis |
+| **View** | Dimensions and measures for a database table |
+| **Dimension** | A groupable field (category, date, ID) |
+| **Measure** | An aggregated metric (count, sum, avg) |
+| **Relationship** | A join definition between two views |
+| **Workbook** | An interactive analysis document |
+| **Dashboard** | Published, shareable view of a workbook |
+| **Blobby** | Omni's built-in AI assistant |
+| **Query View** | Virtual table defined by a saved query |
+| **Branch** | Development branch for model changes |
+| **User Attribute** | Per-user value for row-level security |
+| **Label** | Tag for organizing content |
+
+## Model Layers
+
+Omni has three model layers:
+
+1. **Schema Model** — auto-generated from the database (read-only)
+2. **Shared Model** — curated extensions (analytics engineers edit this)
+3. **Workbook Model** — per-dashboard customizations (ad-hoc)
+
+The `mode` parameter in the YAML API controls which layer you write to:
+- `extension` → Shared Model
+- `combined` → Schema + Shared Model merged
+
+## Field Naming
+
+- Fields are always `view_name.field_name` (dot notation)
+- Date timeframes use brackets: `orders.created_at[month]`
+- Available timeframes: `[date]`, `[week]`, `[month]`, `[quarter]`, `[year]`
+
+## Key URL Patterns
+
+- Base URL: `$OMNI_BASE_URL` (e.g., `https://yourorg.omniapp.co`)
+- API docs: `https://docs.omni.co/api.md`
+- Modeling docs: `https://docs.omni.co/modeling.md`

@@ -1,0 +1,120 @@
+---
+description: Omni Analytics model YAML conventions — file types, syntax patterns, field references, and common pitfalls. Apply when writing or editing Omni view, topic, or relationship YAML.
+globs: ["**/*.view", "**/*.topic", "**/*.yaml"]
+alwaysApply: false
+---
+
+# Omni Model YAML Conventions
+
+## File Types
+
+| Extension | Purpose |
+|-----------|---------|
+| `.view` | Dimensions, measures, and filters for a database table |
+| `.topic` | Joins views into a queryable unit |
+| (relationships) | Global join definitions between views |
+
+## Field Reference Syntax
+
+- Reference fields within the same view: `${field_name}`
+- Reference fields in other views: `${view_name.field_name}`
+- Date timeframes use brackets: `order_items.created_at[month]`
+- Fields in queries use dot notation: `view_name.field_name`
+
+## Dimension Patterns
+
+```yaml
+dimensions:
+  order_id:
+    primary_key: true           # Required for correct aggregations
+  status:
+    label: Order Status
+    description: "Values: complete, pending, cancelled, returned"
+  full_name:
+    sql: CONCAT(${first_name}, ' ', ${last_name})
+  is_active:
+    sql: ${status} = 'active'   # Boolean dimension
+  internal_id:
+    hidden: true                # Hidden from field picker
+  customer_name:
+    synonyms: [client, account, buyer, purchaser]  # Helps AI match user queries
+```
+
+Key parameters: `sql`, `label`, `description`, `primary_key`, `hidden`, `format`, `group_label`, `synonyms`
+
+## Measure Patterns
+
+```yaml
+measures:
+  count:
+    aggregate_type: count
+  total_revenue:
+    sql: ${sale_price}
+    aggregate_type: sum
+    format: currency_2
+  completed_orders:
+    aggregate_type: count
+    filters:
+      status:
+        is: complete
+```
+
+Aggregate types: `count`, `count_distinct`, `sum`, `average`, `min`, `max`, `median`
+
+Filter conditions: `is`, `is_not`, `greater_than`, `less_than`, `contains`, `starts_with`, `ends_with`
+
+## Topic Structure
+
+```yaml
+base_view: order_items
+label: Order Transactions
+description: Line-item order data
+
+joins:
+  users: {}
+  inventory_items:
+    products: {}              # Nested = join chain
+
+default_filters:
+  order_items.status:
+    not: [Returned, Cancelled]
+
+ai_context: |
+  Map "revenue" → total_revenue, "orders" → count.
+```
+
+## Relationship Types
+
+| Type | When to Use |
+|------|-------------|
+| `many_to_one` | Orders → Users (most common) |
+| `one_to_many` | Users → Orders |
+| `one_to_one` | Users → User Settings |
+| `many_to_many` | Tags ↔ Products (rare) |
+
+Getting `relationship_type` right prevents fanout and symmetric aggregate errors.
+
+## YAML API Write Pattern
+
+Always write via the API with a branch:
+
+```json
+{
+  "fileName": "my_view.view",
+  "yaml": "...",
+  "mode": "extension",
+  "branchId": "{branchId}",
+  "commitMessage": "Descriptive message"
+}
+```
+
+- `mode: "extension"` writes to the shared model layer (most common)
+- To delete a file, send empty `yaml` with `mode: "extension"`
+- Always validate after writing: `GET /api/v1/models/{modelId}/validate?branchId={branchId}`
+
+## Common Pitfalls
+
+- Missing `primary_key: true` causes incorrect aggregations
+- Wrong `relationship_type` causes fanout errors
+- Forgetting `join_paths_from_topic_name` in queries leads to "no join path" errors
+- YAML indentation errors — use 2 spaces, no tabs
