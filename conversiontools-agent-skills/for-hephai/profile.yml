@@ -1,0 +1,24 @@
+name: conversiontools-agent-skills
+version: 0.0.0
+description: Convert files between 140+ formats using the ConversionTools MCP server. Supports documents, data formats (incl. Parquet), images (incl. JXL), audio, video, e-books, OCR, AI extraction, text-to-speech (TTS), speech-to-text (STT), subtitles (SRT, VTT, ASS), and website screenshots.
+repository: https://github.com/conversiontools/agent-skills
+license: MIT
+visibility: public
+
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+
+skills:
+  - name: conversiontools
+    description: Convert files between 140+ formats using the ConversionTools MCP server. Use when the user needs to convert documents (Word, PDF, Excel, PowerPoint), data formats (JSON, CSV, XML, YAML, Parquet), images (PNG, JPG, WebP, AVIF, HEIC, JXL, SVG), audio (MP3, WAV, FLAC), video (MOV, MKV, AVI to MP4), e-books (EPUB, MOBI, AZW), OCR text extraction, AI-powered data extraction, AI text-to-speech (TTS), AI speech-to-text transcription (STT), subtitle conversion (SRT, VTT, ASS), or website screenshots.
+    path: skills/conversiontools/SKILL.md
+
+mcp: mcp.jsonc

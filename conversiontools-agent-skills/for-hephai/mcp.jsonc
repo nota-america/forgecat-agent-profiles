@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "conversiontools": {
+      "type": "http",
+      "url": "https://mcp.conversiontools.io/mcp"
+    }
+  }
+}
