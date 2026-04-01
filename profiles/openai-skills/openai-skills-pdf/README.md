@@ -10,7 +10,7 @@ Use when tasks involve reading, creating, or reviewing PDF files where rendering
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-pdf
+npx forgecat install @hephai-nota/openai-skills-pdf
 ```
 
 ## Skills

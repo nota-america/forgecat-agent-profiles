@@ -12,7 +12,7 @@ Testing division from The Agency — 8 specialized agent personalities from msit
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/agency-testing
+npx forgecat install @hephai-nota/agency-testing
 ```
 
 ## Agents

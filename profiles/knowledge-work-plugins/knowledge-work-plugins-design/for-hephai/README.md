@@ -18,7 +18,7 @@ Accelerate design workflows with Claude. Covers design critique, design system m
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-design
+npx forgecat install @hephai-nota/knowledge-work-plugins-design
 ```
 
 ## Skills

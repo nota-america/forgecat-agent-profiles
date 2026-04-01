@@ -12,7 +12,7 @@
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-figma-use
+npx forgecat install @hephai-nota/openai-skills-figma-use
 ```
 
 ## Skills

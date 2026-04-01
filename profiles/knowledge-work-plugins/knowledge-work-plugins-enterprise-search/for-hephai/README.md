@@ -17,7 +17,7 @@ Search across all of your company's tools in one query — email, chat, document
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-enterprise-search
+npx forgecat install @hephai-nota/knowledge-work-plugins-enterprise-search
 ```
 
 ## Skills

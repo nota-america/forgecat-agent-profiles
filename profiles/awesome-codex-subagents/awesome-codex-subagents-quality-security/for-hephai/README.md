@@ -11,7 +11,7 @@ Review and verification agents that work especially well as read-heavy Codex sub
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-quality-security
+npx forgecat install @hephai-nota/awesome-codex-subagents-quality-security
 ```
 
 ## Agents

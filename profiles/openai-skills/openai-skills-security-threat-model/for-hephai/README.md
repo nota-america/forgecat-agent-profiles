@@ -12,7 +12,7 @@ Repository-grounded threat modeling that enumerates trust boundaries, assets, at
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-security-threat-model
+npx forgecat install @hephai-nota/openai-skills-security-threat-model
 ```
 
 ## Skills

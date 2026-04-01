@@ -10,7 +10,7 @@ Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`)
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-jupyter-notebook
+npx forgecat install @hephai-nota/openai-skills-jupyter-notebook
 ```
 
 ## Skills

@@ -18,7 +18,7 @@ Streamline people operations with Claude. Covers the full employee lifecycle —
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-human-resources
+npx forgecat install @hephai-nota/knowledge-work-plugins-human-resources
 ```
 
 ## Skills

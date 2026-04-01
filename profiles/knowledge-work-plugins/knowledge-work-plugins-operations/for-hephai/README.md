@@ -18,7 +18,7 @@ Optimize business operations with Claude. Covers process documentation, process 
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-operations
+npx forgecat install @hephai-nota/knowledge-work-plugins-operations
 ```
 
 ## Skills

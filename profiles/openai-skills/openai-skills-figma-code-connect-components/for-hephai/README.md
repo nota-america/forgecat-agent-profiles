@@ -12,7 +12,7 @@ Connects Figma design components to code components using Code Connect mapping t
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-figma-code-connect-components
+npx forgecat install @hephai-nota/openai-skills-figma-code-connect-components
 ```
 
 ## Skills

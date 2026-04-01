@@ -10,7 +10,7 @@ Perform language and framework specific security best-practice reviews and sugge
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-security-best-practices
+npx forgecat install @hephai-nota/openai-skills-security-best-practices
 ```
 
 ## Skills

@@ -17,7 +17,7 @@ A customer support co-pilot that handles ticket triage, response drafting, escal
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-customer-support
+npx forgecat install @hephai-nota/knowledge-work-plugins-customer-support
 ```
 
 ## Skills

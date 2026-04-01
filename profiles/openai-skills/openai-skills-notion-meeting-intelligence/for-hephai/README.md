@@ -12,7 +12,7 @@ Prepare meeting materials with Notion context and Codex research; use when gathe
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-notion-meeting-intelligence
+npx forgecat install @hephai-nota/openai-skills-notion-meeting-intelligence
 ```
 
 ## Skills

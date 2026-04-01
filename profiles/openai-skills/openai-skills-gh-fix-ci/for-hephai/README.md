@@ -12,7 +12,7 @@ Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-gh-fix-ci
+npx forgecat install @hephai-nota/openai-skills-gh-fix-ci
 ```
 
 ## Skills

@@ -10,7 +10,7 @@ Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub rep
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-system-skill-installer
+npx forgecat install @hephai-nota/openai-skills-system-skill-installer
 ```
 
 ## Skills
