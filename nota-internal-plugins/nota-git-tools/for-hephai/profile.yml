@@ -1,0 +1,23 @@
+name: "nota-git-tools"
+version: "0.0.2"
+description: "커밋 메시지 작성 및 PR 생성 도구"
+license: "MIT"
+visibility: private
+
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: []
+  models:
+    recommended: [claude-4-sonnet]
+    minimum: [claude-3.5-sonnet]
+
+skills:
+  - name: commit-message
+    path: skills/commit-message/SKILL.md
+    description: "커밋 메시지 작성. git staged 상태인 파일을 분석하여 명확하고 일관된 커밋 메시지를 제안."
+  - name: create-pr
+    path: skills/create-pr/SKILL.md
+    description: "PR 생성. 명확한 설명, 라벨, 리뷰어를 갖춘 잘 구조화된 풀 리퀘스트 생성."

@@ -1,18 +1,16 @@
 name: openai-skills-playwright
-version: "0.0.1"
+version: "0.0.2"
 description: "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
+visibility: public
 
 sourcePlatform: codex
 
 compatibility:
   platforms:
-    tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    tested: [codex]
+    partial: []
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

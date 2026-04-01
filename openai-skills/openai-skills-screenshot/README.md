@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # screenshot
 
 Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed.
@@ -12,7 +10,7 @@ Use when the user explicitly asks for a desktop or system screenshot (full scree
 
 ## Installation
 ```bash
-npx hephai install openai-skills-screenshot
+npx hephai install @hephai-nota/openai-skills-screenshot
 ```
 
 ## Skills
@@ -22,20 +20,17 @@ npx hephai install openai-skills-screenshot
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.2` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
