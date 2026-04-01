@@ -12,7 +12,7 @@ Guide for creating effective skills. This skill should be used when users want t
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-system-skill-creator
+npx forgecat install @hephai-nota/openai-skills-system-skill-creator
 ```
 
 ## Skills

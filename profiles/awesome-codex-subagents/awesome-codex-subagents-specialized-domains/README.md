@@ -9,7 +9,7 @@ Focused domain agents that still have a clear implementation or verification bou
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-specialized-domains
+npx forgecat install @hephai-nota/awesome-codex-subagents-specialized-domains
 ```
 
 ## Agents

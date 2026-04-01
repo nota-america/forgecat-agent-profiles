@@ -12,7 +12,7 @@ Help address review/issue comments on the open GitHub PR for the current branch 
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-gh-address-comments
+npx forgecat install @hephai-nota/openai-skills-gh-address-comments
 ```
 
 ## Skills

@@ -11,7 +11,7 @@ Agents for builds, developer tooling, documentation, MCP integrations, and refac
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-developer-experience
+npx forgecat install @hephai-nota/awesome-codex-subagents-developer-experience
 ```
 
 ## Agents

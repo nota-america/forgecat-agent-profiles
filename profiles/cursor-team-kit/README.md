@@ -12,7 +12,7 @@ Internal-style workflows for CI, code review, shipping, and test reliability.
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/cursor-team-kit
+npx forgecat install @hephai-nota/cursor-team-kit
 ```
 
 ## Agents

@@ -9,7 +9,7 @@ Infrastructure-focused agents for deployment, containerization, orchestration, a
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-infrastructure
+npx forgecat install @hephai-nota/awesome-codex-subagents-infrastructure
 ```
 
 ## Agents

@@ -12,7 +12,7 @@ Deploy applications and infrastructure to Cloudflare using Workers, Pages, and r
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-cloudflare-deploy
+npx forgecat install @hephai-nota/openai-skills-cloudflare-deploy
 ```
 
 ## Skills

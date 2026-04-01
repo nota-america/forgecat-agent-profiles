@@ -10,7 +10,7 @@ Create a new blank Figma file. Use when the user wants to create a new Figma des
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-figma-create-new-file
+npx forgecat install @hephai-nota/openai-skills-figma-create-new-file
 ```
 
 ## Skills

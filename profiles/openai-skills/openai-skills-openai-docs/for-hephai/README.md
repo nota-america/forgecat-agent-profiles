@@ -12,7 +12,7 @@ Use when the user asks how to build with OpenAI products or APIs and needs up-to
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-openai-docs
+npx forgecat install @hephai-nota/openai-skills-openai-docs
 ```
 
 ## Skills

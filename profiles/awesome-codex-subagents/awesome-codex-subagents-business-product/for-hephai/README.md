@@ -11,7 +11,7 @@ Support agents for requirements, UX, and engineering-adjacent writing tasks.
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-business-product
+npx forgecat install @hephai-nota/awesome-codex-subagents-business-product
 ```
 
 ## Agents

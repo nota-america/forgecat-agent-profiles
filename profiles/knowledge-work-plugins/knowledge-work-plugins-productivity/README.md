@@ -16,7 +16,7 @@ Manage tasks, plan your day, and give Claude persistent memory of your work cont
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-productivity
+npx forgecat install @hephai-nota/knowledge-work-plugins-productivity
 ```
 
 ## Skills

@@ -10,7 +10,7 @@ Use only when the user explicitly asks to stage, commit, push, and open a GitHub
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-yeet
+npx forgecat install @hephai-nota/openai-skills-yeet
 ```
 
 ## Skills

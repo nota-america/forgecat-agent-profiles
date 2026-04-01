@@ -12,7 +12,7 @@ Marketing division from The Agency — 27 specialized agent personalities from m
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/agency-marketing
+npx forgecat install @hephai-nota/agency-marketing
 ```
 
 ## Agents

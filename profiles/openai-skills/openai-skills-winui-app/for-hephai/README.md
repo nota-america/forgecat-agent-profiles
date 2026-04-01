@@ -12,7 +12,7 @@ Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and t
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-winui-app
+npx forgecat install @hephai-nota/openai-skills-winui-app
 ```
 
 ## Skills

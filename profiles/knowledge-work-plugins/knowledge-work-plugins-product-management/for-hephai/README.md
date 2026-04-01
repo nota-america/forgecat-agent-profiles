@@ -18,7 +18,7 @@ Write feature specs, plan roadmaps, and synthesize user research faster with Cla
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-product-management
+npx forgecat install @hephai-nota/knowledge-work-plugins-product-management
 ```
 
 ## Skills

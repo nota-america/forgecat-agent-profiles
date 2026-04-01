@@ -10,7 +10,7 @@ Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when t
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-netlify-deploy
+npx forgecat install @hephai-nota/openai-skills-netlify-deploy
 ```
 
 ## Skills

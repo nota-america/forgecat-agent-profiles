@@ -12,7 +12,7 @@ Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layou
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/openai-skills-slides
+npx forgecat install @hephai-nota/openai-skills-slides
 ```
 
 ## Skills

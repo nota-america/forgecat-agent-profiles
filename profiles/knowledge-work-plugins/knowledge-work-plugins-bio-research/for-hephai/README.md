@@ -18,7 +18,7 @@ AI-powered research assistant for the life sciences. Connects Claude to 10 precl
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-bio-research
+npx forgecat install @hephai-nota/knowledge-work-plugins-bio-research
 ```
 
 ## Skills

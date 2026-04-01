@@ -16,7 +16,7 @@ Query, visualize, and interpret datasets with Claude. Write SQL across all major
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-data
+npx forgecat install @hephai-nota/knowledge-work-plugins-data
 ```
 
 ## Skills

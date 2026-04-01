@@ -16,7 +16,7 @@ Create content, plan campaigns, and analyze performance across marketing channel
 ## Installation
 
 ```
-npx hephai install @hephai-nota/knowledge-work-plugins-marketing
+npx forgecat install @hephai-nota/knowledge-work-plugins-marketing
 ```
 
 ## Skills

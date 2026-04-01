@@ -12,7 +12,7 @@ Product division from The Agency — 5 specialized agent personalities from msit
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/agency-product
+npx forgecat install @hephai-nota/agency-product
 ```
 
 ## Agents

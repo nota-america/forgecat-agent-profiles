@@ -11,7 +11,7 @@ Agents for data pipelines, LLM integrations, and database behavior.
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/awesome-codex-subagents-data-ai
+npx forgecat install @hephai-nota/awesome-codex-subagents-data-ai
 ```
 
 ## Agents

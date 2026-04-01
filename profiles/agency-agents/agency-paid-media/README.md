@@ -10,7 +10,7 @@ Paid Media division from The Agency — 7 specialized agent personalities from m
 
 ## Installation
 ```bash
-npx hephai install @hephai-nota/agency-paid-media
+npx forgecat install @hephai-nota/agency-paid-media
 ```
 
 ## Agents
