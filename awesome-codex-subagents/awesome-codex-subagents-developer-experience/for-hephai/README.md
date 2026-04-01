@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # 06. Developer Experience
 
 Agents for builds, developer tooling, documentation, MCP integrations, and refactors.
@@ -9,7 +11,7 @@ Agents for builds, developer tooling, documentation, MCP integrations, and refac
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-developer-experience
+npx hephai install @hephai-nota/awesome-codex-subagents-developer-experience
 ```
 
 ## Agents
@@ -31,20 +33,18 @@ npx hephai install awesome-codex-subagents-developer-experience
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
@@ -54,26 +54,3 @@ npx hephai install awesome-codex-subagents-developer-experience
 
 ## Dependencies
 - None
-
----
-*Original README.md from source:*
-
-# 06. Developer Experience
-
-Agents for builds, developer tooling, documentation, MCP integrations, and refactors.
-
-Included agents:
-
-- `build-engineer` - Build graph, bundling, and CI build fixes.
-- `cli-developer` - Command-line interface design and implementation.
-- `dependency-manager` - Upgrade and rationalize package and library graphs.
-- `documentation-engineer` - Technical documentation tied to real code changes.
-- `dx-optimizer` - Improve setup, local workflows, and developer feedback loops.
-- `git-workflow-manager` - Improve branching, merge, and release collaboration flow.
-- `legacy-modernizer` - Plan safe modernization of older code and frameworks.
-- `mcp-developer` - MCP server and client integration work.
-- `powershell-module-architect` - Design reusable PowerShell modules and command layout.
-- `powershell-ui-architect` - Build PowerShell-driven admin UI and operator tooling.
-- `refactoring-specialist` - Plan and execute low-risk structural refactors.
-- `slack-expert` - Build Slack platform and integration behavior.
-- `tooling-engineer` - Create internal tools and workflow automation.

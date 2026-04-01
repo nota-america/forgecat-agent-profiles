@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # chatgpt-apps
 
 Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned project scaffold. Prefer a docs-first workflow by invoking the openai-docs skill or OpenAI developer docs MCP tools before generating code.
@@ -12,7 +10,7 @@ Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that c
 
 ## Installation
 ```bash
-npx hephai install openai-skills-chatgpt-apps
+npx hephai install @hephai-nota/openai-skills-chatgpt-apps
 ```
 
 ## Skills
@@ -25,20 +23,17 @@ npx hephai install openai-skills-chatgpt-apps
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.2` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

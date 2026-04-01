@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # notion-knowledge-capture
 
 Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.
@@ -12,7 +10,7 @@ Capture conversations and decisions into structured Notion pages; use when turni
 
 ## Installation
 ```bash
-npx hephai install openai-skills-notion-knowledge-capture
+npx hephai install @hephai-nota/openai-skills-notion-knowledge-capture
 ```
 
 ## Skills
@@ -25,20 +23,17 @@ npx hephai install openai-skills-notion-knowledge-capture
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.2` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # 04. Quality & Security
 
 Review and verification agents that work especially well as read-heavy Codex subagents.
@@ -9,7 +11,7 @@ Review and verification agents that work especially well as read-heavy Codex sub
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-quality-security
+npx hephai install @hephai-nota/awesome-codex-subagents-quality-security
 ```
 
 ## Agents
@@ -34,20 +36,18 @@ npx hephai install awesome-codex-subagents-quality-security
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
@@ -57,29 +57,3 @@ npx hephai install awesome-codex-subagents-quality-security
 
 ## Dependencies
 - None
-
----
-*Original README.md from source:*
-
-# 04. Quality & Security
-
-Review and verification agents that work especially well as read-heavy Codex subagents.
-
-Included agents:
-
-- `accessibility-tester` - Audit interfaces for a11y risks and missing coverage.
-- `ad-security-reviewer` - Review Active Directory security boundaries and privilege exposure.
-- `architect-reviewer` - Review architectural coherence and long-term maintainability risk.
-- `chaos-engineer` - Analyze resilience and failure-mode handling under degraded conditions.
-- `code-reviewer` - Review maintainability and risky implementation choices.
-- `browser-debugger` - Reproduce browser issues and collect concrete evidence.
-- `compliance-auditor` - Review auditability, policy alignment, and evidence gaps.
-- `debugger` - Isolate root causes across code paths and failing behavior.
-- `error-detective` - Analyze logs, stack traces, and error clusters quickly.
-- `penetration-tester` - Review realistic exploitability and attack paths.
-- `performance-engineer` - Investigate latency, throughput, and hot-path regressions.
-- `powershell-security-hardening` - Harden PowerShell automation and admin scripts.
-- `qa-expert` - Plan risk-based test strategy and coverage.
-- `reviewer` - Review changes for correctness, security, and missing tests.
-- `security-auditor` - Evaluate code and config for concrete security weaknesses.
-- `test-automator` - Add or improve automated tests and harnesses.

@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # openai-docs
 
 Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with citations, help choosing the latest model for a use case, or explicit GPT-5.4 upgrade and prompt-upgrade guidance; prioritize OpenAI docs MCP tools, use bundled references only as helper context, and restrict any fallback browsing to official OpenAI domains.
@@ -10,7 +12,7 @@ Use when the user asks how to build with OpenAI products or APIs and needs up-to
 
 ## Installation
 ```bash
-npx hephai install openai-skills-system-openai-docs
+npx hephai install @hephai-nota/openai-skills-system-openai-docs
 ```
 
 ## Skills
@@ -23,20 +25,17 @@ npx hephai install openai-skills-system-openai-docs
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.2` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

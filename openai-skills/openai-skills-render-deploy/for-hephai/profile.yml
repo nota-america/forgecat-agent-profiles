@@ -3,16 +3,14 @@ version: "0.0.1"
 description: "Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
+visibility: public
 
 sourcePlatform: codex
 
 compatibility:
   platforms:
-    tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    tested: [codex]
+    partial: []
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # skill-installer
 
 Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).
@@ -10,7 +12,7 @@ Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub rep
 
 ## Installation
 ```bash
-npx hephai install openai-skills-system-skill-installer
+npx hephai install @hephai-nota/openai-skills-system-skill-installer
 ```
 
 ## Skills
@@ -20,20 +22,17 @@ npx hephai install openai-skills-system-skill-installer
 | Field | Value |
 |---|---|
 | Author | `OpenAI` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/openai/skills` |
+| Version | `0.0.2` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
