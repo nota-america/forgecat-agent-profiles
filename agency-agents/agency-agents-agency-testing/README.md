@@ -28,7 +28,7 @@ npx hephai install @hephai-nota/agency-testing
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.2` |
+| Version | `0.0.3` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |
@@ -38,6 +38,7 @@ npx hephai install @hephai-nota/agency-testing
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
+| Codex | Partial |
 | Cursor | Partial |
 
 ### Models

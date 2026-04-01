@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-product-management"
-version: "0.0.0"
+version: "0.0.1"
 description: Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management
 license: Apache-2.0

@@ -1,5 +1,5 @@
 name: openai-skills-pdf
-version: "0.0.2"
+version: "0.0.3"
 description: "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
@@ -10,7 +10,7 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested: [codex]
-    partial: []
+    partial: [claude-code, cursor]
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

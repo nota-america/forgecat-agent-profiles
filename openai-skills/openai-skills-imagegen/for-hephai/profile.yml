@@ -1,5 +1,5 @@
 name: openai-skills-imagegen
-version: "0.0.2"
+version: "0.0.3"
 description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
@@ -10,7 +10,7 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested: [codex]
-    partial: []
+    partial: [claude-code, cursor]
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

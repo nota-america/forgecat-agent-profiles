@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-human-resources"
-version: "0.0.0"
+version: "0.0.1"
 description: Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/human-resources
 license: Apache-2.0

@@ -37,7 +37,7 @@ npx hephai install @hephai-nota/awesome-codex-subagents-quality-security
 |---|---|
 | Author | `VoltAgent + community contributors` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
-| Version | `0.0.2` |
+| Version | `0.0.3` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
@@ -48,6 +48,7 @@ npx hephai install @hephai-nota/awesome-codex-subagents-quality-security
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

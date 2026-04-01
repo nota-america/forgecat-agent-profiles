@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-sales"
-version: "0.0.0"
+version: "0.0.1"
 description: Prospect, craft outreach, and build deal strategy faster. Prep for calls, manage your pipeline, and write personalized messaging that moves deals forward.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/sales
 license: Apache-2.0

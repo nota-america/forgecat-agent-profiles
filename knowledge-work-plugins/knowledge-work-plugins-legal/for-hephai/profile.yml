@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-legal"
-version: "0.0.0"
+version: "0.0.1"
 description: Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/legal
 license: Apache-2.0

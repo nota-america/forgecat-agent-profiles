@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-language-specialists
-version: "0.0.2"
+version: "0.0.3"
 description: >-
   Language and framework specialists for ecosystem-specific implementation, debugging, and architectural guidance. Includes 26 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 
@@ -11,7 +11,7 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested: [codex]
-    partial: [claude-code]
+    partial: [claude-code, cursor]
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-5.3-codex-spark]
