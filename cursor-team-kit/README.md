@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # Cursor Team Kit
 
 Internal-style workflows for CI, code review, shipping, and test reliability.
@@ -14,7 +12,7 @@ Internal-style workflows for CI, code review, shipping, and test reliability.
 
 ## Installation
 ```bash
-npx hephai install cursor-team-kit
+npx hephai install @hephai-nota/cursor-team-kit
 ```
 
 ## Agents
@@ -38,20 +36,17 @@ npx hephai install cursor-team-kit
 | Field | Value |
 |---|---|
 | Author | `Cursor` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/cursor/plugins` |
+| Version | `0.0.1` |
 | Original commit | `9c39b57` (2026-03-13) |
 | License | `MIT` |
 | Source platform | `cursor` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Cursor | Tested |
-| Claude Code | Partial |
-| Codex | Partial |
 
 ### Models
 | Model | Role |

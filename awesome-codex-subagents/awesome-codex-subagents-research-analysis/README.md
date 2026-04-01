@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # 10. Research & Analysis
 
 Read-heavy research agents for searching, validating, comparing, and synthesizing information.
@@ -11,7 +9,7 @@ Read-heavy research agents for searching, validating, comparing, and synthesizin
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-research-analysis
+npx hephai install @hephai-nota/awesome-codex-subagents-research-analysis
 ```
 
 ## Agents
@@ -27,20 +25,18 @@ npx hephai install awesome-codex-subagents-research-analysis
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

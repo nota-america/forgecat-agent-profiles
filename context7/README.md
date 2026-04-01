@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # Context7
 
 Up-to-date documentation lookup via Context7 MCP. Pull version-specific documentation and code examples directly from source repositories into your LLM context.
@@ -11,7 +9,7 @@ Up-to-date documentation lookup via Context7 MCP. Pull version-specific document
 
 ## Installation
 ```bash
-npx hephai install context7
+npx hephai install @hephai-nota/context7
 ```
 
 ## Agents
@@ -29,22 +27,20 @@ npx hephai install context7
 ## Details
 | Field | Value |
 |---|---|
-| Version | `0.0.0` |
-| License | `MIT` |
 | Author | `Upstash` |
 | Original repository | `https://github.com/upstash/context7` |
-| Converted path | `plugins/claude/context7/` |
+| Version | `0.0.2` |
 | Original commit | `383e127` (2026-03-16) |
+| Converted path | `plugins/claude/context7/` |
+| License | `MIT` |
 | Source platform | `claude-code` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
 | Cursor | Partial |
-| Codex | Partial |
 
 ### Models
 | Model | Role |
