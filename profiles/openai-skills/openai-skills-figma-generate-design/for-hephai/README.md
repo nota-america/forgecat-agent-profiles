@@ -1,6 +1,6 @@
 *written by Hephai*
 
-![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+![Hephai](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # figma-generate-design
 
