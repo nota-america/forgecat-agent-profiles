@@ -1,18 +1,16 @@
 name: openai-skills-security-threat-model
-version: "0.0.1"
+version: "0.0.2"
 description: "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling. Do not trigger for general architecture summaries, code review, or non-security design work."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"
+visibility: public
 
 sourcePlatform: codex
 
 compatibility:
   platforms:
-    tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    tested: [codex]
+    partial: []
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-4o]

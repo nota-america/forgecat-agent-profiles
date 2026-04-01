@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # 02. Language Specialists
 
 Language and framework specialists for ecosystem-specific implementation, debugging, and architectural guidance.
@@ -11,7 +9,7 @@ Language and framework specialists for ecosystem-specific implementation, debugg
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-language-specialists
+npx hephai install @hephai-nota/awesome-codex-subagents-language-specialists
 ```
 
 ## Agents
@@ -46,20 +44,18 @@ npx hephai install awesome-codex-subagents-language-specialists
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

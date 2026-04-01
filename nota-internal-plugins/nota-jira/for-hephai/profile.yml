@@ -1,0 +1,33 @@
+name: "nota-jira"
+version: "0.0.2"
+description: "Jira 티켓 생성 및 스토리 분해 도구"
+license: "MIT"
+visibility: private
+
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: []
+  models:
+    recommended: [claude-4-sonnet]
+    minimum: [claude-3.5-sonnet]
+
+skills:
+  - name: create-jira-ticket
+    path: skills/create-jira-ticket/SKILL.md
+    description: "Jira 티켓(스토리/작업) 생성. 티켓 만들어줘, Jira 이슈 생성 요청에 사용."
+  - name: create-tasks-from-story
+    path: skills/create-tasks-from-story/SKILL.md
+    description: "Jira 스토리 티켓을 분석하여 하위 작업(Task) 티켓 자동 생성. 스토리에서 태스크 만들어줘 요청에 사용."
+
+mcp:
+  path: mcp.jsonc
+  requiredEnv:
+    - name: JIRA_EMAIL
+      description: "Jira 계정 이메일 (자동 링크 연결용)"
+      required: true
+    - name: JIRA_API_TOKEN
+      description: "Atlassian API 토큰"
+      required: false

@@ -1,0 +1,26 @@
+name: "nota-diagrams"
+version: "0.0.2"
+description: "시퀀스 다이어그램, Excalidraw 아키텍처 다이어그램, CLI 출력 미리보기 생성 도구"
+license: "MIT"
+visibility: private
+
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [cursor, codex]
+  models:
+    recommended: [claude-4-sonnet]
+    minimum: [claude-3.5-sonnet]
+
+skills:
+  - name: generate-sequence-diagram
+    path: skills/generate-sequence-diagram/SKILL.md
+    description: "코드 변경사항을 분석하여 Mermaid 시퀀스 다이어그램 자동 생성. PR 본문이나 문서화에 활용."
+  - name: generate-excalidraw-diagram
+    path: skills/generate-excalidraw-diagram/SKILL.md
+    description: "코드베이스를 분석하여 Excalidraw 아키텍처 다이어그램(.excalidraw) 생성."
+  - name: generate-cli-output
+    path: skills/generate-cli-output/SKILL.md
+    description: "CLI 코드 변경사항을 분석하여 Rich SVG로 터미널 출력 미리보기 생성. PR에 Before/After 비교 첨부."

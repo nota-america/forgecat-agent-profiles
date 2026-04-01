@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # 05. Data & AI
 
 Agents for data pipelines, LLM integrations, and database behavior.
@@ -11,7 +9,7 @@ Agents for data pipelines, LLM integrations, and database behavior.
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-data-ai
+npx hephai install @hephai-nota/awesome-codex-subagents-data-ai
 ```
 
 ## Agents
@@ -32,20 +30,18 @@ npx hephai install awesome-codex-subagents-data-ai
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
