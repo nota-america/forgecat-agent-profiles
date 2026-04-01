@@ -1,0 +1,590 @@
+name: continuous-claude-v3
+version: 0.0.0
+description: A persistent, learning, multi-agent development environment built on Claude Code. Transforms Claude into a continuously
+  learning system with context preservation, specialized agents, and intelligent code analysis.
+repository: https://github.com/parcadei/Continuous-Claude-v3
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+components:
+  skills:
+    agent-context-isolation:
+      description: Agent Context Isolation
+      path: skills/agent-context-isolation/SKILL.md
+    agent-orchestration:
+      description: Agent Orchestration Rules
+      path: skills/agent-orchestration/SKILL.md
+    agentic-workflow:
+      description: Agentic Workflow Pattern
+      path: skills/agentic-workflow/SKILL.md
+    agentica-claude-proxy:
+      description: Guide for integrating Agentica SDK with Claude Code CLI proxy
+      path: skills/agentica-claude-proxy/SKILL.md
+    agentica-infrastructure:
+      description: Reference guide for Agentica multi-agent infrastructure APIs
+      path: skills/agentica-infrastructure/SKILL.md
+    agentica-prompts:
+      description: Write reliable prompts for Agentica/REPL agents that avoid LLM instruction ambiguity
+      path: skills/agentica-prompts/SKILL.md
+    agentica-sdk:
+      description: Build Python agents with Agentica SDK - @agentic decorator, spawn(), persistence, MCP integration
+      path: skills/agentica-sdk/SKILL.md
+    agentica-server:
+      description: Agentica server + Claude proxy setup - architecture, startup sequence, debugging
+      path: skills/agentica-server/SKILL.md
+    agentica-spawn:
+      description: Spawn Agentica multi-agent patterns
+      path: skills/agentica-spawn/SKILL.md
+    async-repl-protocol:
+      description: Async REPL Protocol
+      path: skills/async-repl-protocol/SKILL.md
+    leann-search:
+      description: Semantic search across codebase using LEANN vector index
+      path: skills/archive/leann-search/SKILL.md
+    router-first-architecture:
+      description: Router-First Architecture
+      path: skills/router-first-architecture/SKILL.md
+    search-hierarchy:
+      description: Search Tool Hierarchy
+      path: skills/search-hierarchy/SKILL.md
+    search-tools:
+      description: Search Tool Hierarchy
+      path: skills/search-tools/SKILL.md
+    ast-grep-find:
+      description: AST-based code search and refactoring via ast-grep MCP
+      path: skills/ast-grep-find/SKILL.md
+    background-agent-pings:
+      description: Background Agent Pings
+      path: skills/background-agent-pings/SKILL.md
+    braintrust-analyze:
+      description: Analyze Claude Code sessions via Braintrust
+      path: skills/braintrust-analyze/SKILL.md
+    braintrust-tracing:
+      description: Braintrust tracing for Claude Code - hook architecture, sub-agent correlation, debugging
+      path: skills/braintrust-tracing/SKILL.md
+    build:
+      description: Workflow orchestrator that chains existing skills for feature development
+      path: skills/build/SKILL.md
+    cli-reference:
+      description: Claude Code CLI commands, flags, headless mode, and automation patterns
+      path: skills/cli-reference/SKILL.md
+    commit:
+      description: Create git commits with user approval and no Claude attribution
+      path: skills/commit/SKILL.md
+    complete-skill:
+      description: A complete skill for E2E testing
+      path: skills/complete-skill/SKILL.md
+    completion-check:
+      description: 'Completion Check: Verify Infrastructure Is Wired'
+      path: skills/completion-check/SKILL.md
+    compound-learnings:
+      description: Transform session learnings into permanent capabilities (skills, rules, agents). Use when asked to "improve
+        setup", "learn from sessions", "compound learnings", or "what patterns should become skills".
+      path: skills/compound-learnings/SKILL.md
+    continuity-ledger:
+      description: Create or update continuity ledger for state preservation across clears
+      path: skills/continuity_ledger/SKILL.md
+    create-handoff:
+      description: Create handoff document for transferring work to another session
+      path: skills/create_handoff/SKILL.md
+    dead-code:
+      description: Find unused functions and dead code in the codebase
+      path: skills/dead-code/SKILL.md
+    debug:
+      description: Debug issues by investigating logs, database state, and git history
+      path: skills/debug/SKILL.md
+    debug-hooks:
+      description: Systematic hook debugging workflow. Use when hooks aren't firing, producing wrong output, or behaving unexpectedly.
+      path: skills/debug-hooks/SKILL.md
+    describe-pr:
+      description: Generate comprehensive PR descriptions following repository templates
+      path: skills/describe_pr/SKILL.md
+    discovery-interview:
+      description: Deep interview process to transform vague ideas into detailed specs. Works for technical and non-technical
+        users.
+      path: skills/discovery-interview/SKILL.md
+    environment-triage:
+      description: Environment Triage
+      path: skills/environment-triage/SKILL.md
+    explicit-identity:
+      description: Explicit Identity Across Boundaries
+      path: skills/explicit-identity/SKILL.md
+    explore:
+      description: Meta-skill for internal codebase exploration at varying depths (quick/deep/architecture)
+      path: skills/explore/SKILL.md
+    firecrawl-scrape:
+      description: Scrape web pages and extract content via Firecrawl MCP
+      path: skills/firecrawl-scrape/SKILL.md
+    fix:
+      description: Meta-skill workflow orchestrator for bug investigation and resolution. Routes to debug, implement, test,
+        and commit based on scope.
+      path: skills/fix/SKILL.md
+    git-commits:
+      description: Git Commit Rules
+      path: skills/git-commits/SKILL.md
+    github-search:
+      description: Search GitHub code, repositories, issues, and PRs via MCP
+      path: skills/github-search/SKILL.md
+    graceful-degradation:
+      description: Graceful Degradation with Helpful Messages
+      path: skills/graceful-degradation/SKILL.md
+    help:
+      description: Interactive workspace discovery - learn what tools, workflows, agents, and hooks are available
+      path: skills/help/SKILL.md
+    hook-developer:
+      description: Complete Claude Code hooks reference - input/output schemas, registration, testing patterns
+      path: skills/hook-developer/SKILL.md
+    hooks:
+      description: Hook Development Rules
+      path: skills/hooks/SKILL.md
+    idempotent-redundancy:
+      description: Idempotent Redundancy
+      path: skills/idempotent-redundancy/SKILL.md
+    implement_plan:
+      description: Implement technical plans from thoughts/shared/plans with verification
+      path: skills/implement_plan/SKILL.md
+    implement_plan_micro:
+      description: Implement technical plans from thoughts/shared/plans with verification
+      path: skills/implement_plan_micro/SKILL.md
+    implement_task:
+      description: Implementation agent that executes a single task and creates handoff on completion
+      path: skills/implement_task/SKILL.md
+    index-at-creation:
+      description: Index at Creation Time
+      path: skills/index-at-creation/SKILL.md
+    llm-tuning-patterns:
+      description: LLM Tuning Patterns
+      path: skills/llm-tuning-patterns/SKILL.md
+    loogle-search:
+      description: Search Mathlib for lemmas by type signature pattern
+      path: skills/loogle-search/SKILL.md
+    fields:
+      description: Problem-solving strategies for fields in abstract algebra
+      path: skills/math/abstract-algebra/fields/SKILL.md
+    groups:
+      description: Problem-solving strategies for groups in abstract algebra
+      path: skills/math/abstract-algebra/groups/SKILL.md
+    rings:
+      description: Problem-solving strategies for rings in abstract algebra
+      path: skills/math/abstract-algebra/rings/SKILL.md
+    categories-functors:
+      description: Problem-solving strategies for categories functors in category theory
+      path: skills/math/category-theory/categories-functors/SKILL.md
+    limits-colimits:
+      description: Problem-solving strategies for limits colimits in category theory
+      path: skills/math/category-theory/limits-colimits/SKILL.md
+    natural-transformations:
+      description: Problem-solving strategies for natural transformations in category theory
+      path: skills/math/category-theory/natural-transformations/SKILL.md
+    analytic-functions:
+      description: Problem-solving strategies for analytic functions in complex analysis
+      path: skills/math/complex-analysis/analytic-functions/SKILL.md
+    contour-integrals:
+      description: Problem-solving strategies for contour integrals in complex analysis
+      path: skills/math/complex-analysis/contour-integrals/SKILL.md
+    residues:
+      description: Problem-solving strategies for residues in complex analysis
+      path: skills/math/complex-analysis/residues/SKILL.md
+    banach-spaces:
+      description: Problem-solving strategies for banach spaces in functional analysis
+      path: skills/math/functional-analysis/banach-spaces/SKILL.md
+    hilbert-spaces:
+      description: Problem-solving strategies for hilbert spaces in functional analysis
+      path: skills/math/functional-analysis/hilbert-spaces/SKILL.md
+    operator-theory:
+      description: Problem-solving strategies for operator theory in functional analysis
+      path: skills/math/functional-analysis/operator-theory/SKILL.md
+    graph-algorithms:
+      description: Problem-solving strategies for graph algorithms in graph number theory
+      path: skills/math/graph-number-theory/graph-algorithms/SKILL.md
+    modular-arithmetic:
+      description: Problem-solving strategies for modular arithmetic in graph number theory
+      path: skills/math/graph-number-theory/modular-arithmetic/SKILL.md
+    prime-numbers:
+      description: Problem-solving strategies for prime numbers in graph number theory
+      path: skills/math/graph-number-theory/prime-numbers/SKILL.md
+    channel-capacity:
+      description: Problem-solving strategies for channel capacity in information theory
+      path: skills/math/information-theory/channel-capacity/SKILL.md
+    entropy:
+      description: Problem-solving strategies for entropy in information theory
+      path: skills/math/information-theory/entropy/SKILL.md
+    source-coding:
+      description: Problem-solving strategies for source coding in information theory
+      path: skills/math/information-theory/source-coding/SKILL.md
+    eigenvalues:
+      description: Problem-solving strategies for eigenvalues in linear algebra
+      path: skills/math/linear-algebra/eigenvalues/SKILL.md
+    matrices:
+      description: Problem-solving strategies for matrices in linear algebra
+      path: skills/math/linear-algebra/matrices/SKILL.md
+    vector-spaces:
+      description: Problem-solving strategies for vector spaces in linear algebra
+      path: skills/math/linear-algebra/vector-spaces/SKILL.md
+    math-intuition-builder:
+      description: Develops mathematical understanding through examples, visualization, and analogy
+      path: skills/math/math-intuition-builder/SKILL.md
+    math-model-selector:
+      description: Routes problems to appropriate mathematical frameworks using expert heuristics
+      path: skills/math/math-model-selector/SKILL.md
+    math-progress-monitor:
+      description: Metacognitive check-ins during problem solving - detects when to pivot or persist
+      path: skills/math/math-progress-monitor/SKILL.md
+    predicate-logic:
+      description: Problem-solving strategies for predicate logic in mathematical logic
+      path: skills/math/mathematical-logic/predicate-logic/SKILL.md
+    proof-theory:
+      description: Problem-solving strategies for proof theory in mathematical logic
+      path: skills/math/mathematical-logic/proof-theory/SKILL.md
+    propositional-logic:
+      description: Problem-solving strategies for propositional logic in mathematical logic
+      path: skills/math/mathematical-logic/propositional-logic/SKILL.md
+    integration-theory:
+      description: Problem-solving strategies for integration theory in measure theory
+      path: skills/math/measure-theory/integration-theory/SKILL.md
+    lebesgue-measure:
+      description: Problem-solving strategies for lebesgue measure in measure theory
+      path: skills/math/measure-theory/lebesgue-measure/SKILL.md
+    sigma-algebras:
+      description: Problem-solving strategies for sigma algebras in measure theory
+      path: skills/math/measure-theory/sigma-algebras/SKILL.md
+    interpolation:
+      description: Problem-solving strategies for interpolation in numerical methods
+      path: skills/math/numerical-methods/interpolation/SKILL.md
+    numerical-integration:
+      description: Problem-solving strategies for numerical integration in numerical methods
+      path: skills/math/numerical-methods/numerical-integration/SKILL.md
+    root-finding:
+      description: Problem-solving strategies for root finding in numerical methods
+      path: skills/math/numerical-methods/root-finding/SKILL.md
+    boundary-value-problems:
+      description: Problem-solving strategies for boundary value problems in odes pdes
+      path: skills/math/odes-pdes/boundary-value-problems/SKILL.md
+    first-order-odes:
+      description: Problem-solving strategies for first order odes in odes pdes
+      path: skills/math/odes-pdes/first-order-odes/SKILL.md
+    second-order-odes:
+      description: Problem-solving strategies for second order odes in odes pdes
+      path: skills/math/odes-pdes/second-order-odes/SKILL.md
+    constrained-optimization:
+      description: Problem-solving strategies for constrained optimization in optimization
+      path: skills/math/optimization/constrained-optimization/SKILL.md
+    convex-optimization:
+      description: Problem-solving strategies for convex optimization in optimization
+      path: skills/math/optimization/convex-optimization/SKILL.md
+    gradient-methods:
+      description: Problem-solving strategies for gradient methods in optimization
+      path: skills/math/optimization/gradient-methods/SKILL.md
+    continuity:
+      description: Problem-solving strategies for continuity in real analysis
+      path: skills/math/real-analysis/continuity/SKILL.md
+    convergence:
+      description: Problem-solving strategies for convergence in real analysis
+      path: skills/math/real-analysis/convergence/SKILL.md
+    limits:
+      description: Problem-solving strategies for limits in real analysis
+      path: skills/math/real-analysis/limits/SKILL.md
+    rudin-real-complex-analysis:
+      description: Problem-solving with Rudin's Real and Complex Analysis textbook
+      path: skills/math/rudin-real-complex-analysis/SKILL.md
+    compactness:
+      description: Problem-solving strategies for compactness in topology
+      path: skills/math/topology/compactness/SKILL.md
+    connectedness:
+      description: Problem-solving strategies for connectedness in topology
+      path: skills/math/topology/connectedness/SKILL.md
+    open-sets:
+      description: Problem-solving strategies for open sets in topology
+      path: skills/math/topology/open-sets/SKILL.md
+    math-help:
+      description: Guide to the math cognitive stack - what tools exist and when to use each
+      path: skills/math-help/SKILL.md
+    math-router:
+      description: Deterministic router for math cognitive stack - maps user intent to exact CLI commands
+      path: skills/math-router/SKILL.md
+    math:
+      description: Unified math capabilities - computation, solving, and explanation. I route to the right tool.
+      path: skills/math-unified/SKILL.md
+    mcp-chaining:
+      description: Research-to-implement pipeline chaining 5 MCP tools with graceful degradation
+      path: skills/mcp-chaining/SKILL.md
+    mcp-scripts:
+      description: MCP Script Rules
+      path: skills/mcp-scripts/SKILL.md
+    migrate:
+      description: Migration workflow - research → analyze → plan → implement → review
+      path: skills/migrate/SKILL.md
+    modular-code:
+      description: Modular Code Organization
+      path: skills/modular-code/SKILL.md
+    morph-apply:
+      description: Fast file editing via Morph Apply API (10,500 tokens/sec, 98% accuracy)
+      path: skills/morph-apply/SKILL.md
+    morph-search:
+      description: Fast codebase search via WarpGrep (20x faster than grep)
+      path: skills/morph-search/SKILL.md
+    mot:
+      description: System health check (MOT) for skills, agents, hooks, and memory
+      path: skills/mot/SKILL.md
+    nia-docs:
+      description: Search library documentation and code examples via Nia
+      path: skills/nia-docs/SKILL.md
+    no-polling-agents:
+      description: No Polling for Background Agents
+      path: skills/no-polling-agents/SKILL.md
+    no-task-output:
+      description: Never Use TaskOutput
+      path: skills/no-task-output/SKILL.md
+    observe-before-editing:
+      description: Observe Before Editing
+      path: skills/observe-before-editing/SKILL.md
+    onboard:
+      description: Analyze brownfield codebase and create initial continuity ledger
+      path: skills/onboard/SKILL.md
+    opc-architecture:
+      description: OPC Architecture Understanding
+      path: skills/opc-architecture/SKILL.md
+    parallel-agent-contracts:
+      description: Parallel Agent Type Contracts
+      path: skills/parallel-agent-contracts/SKILL.md
+    parallel-agents:
+      description: Parallel Agent Orchestration
+      path: skills/parallel-agents/SKILL.md
+    perplexity-search:
+      description: AI-powered web search, research, and reasoning via Perplexity
+      path: skills/perplexity-search/SKILL.md
+    pint-compute:
+      description: Unit-aware computation with Pint - convert units, dimensional analysis, unit arithmetic
+      path: skills/pint-compute/SKILL.md
+    planning-agent:
+      description: Planning agent that creates implementation plans and handoffs from conversation context
+      path: skills/plan-agent/SKILL.md
+    premortem:
+      description: Identify failure modes before they occur using structured risk analysis
+      path: skills/premortem/SKILL.md
+    prove:
+      description: Formal theorem proving with research, testing, and verification phases
+      path: skills/prove/SKILL.md
+    qlty-check:
+      description: Code quality checks, formatting, and metrics via qlty CLI
+      path: skills/qlty-check/SKILL.md
+    qlty-during-development:
+      description: QLTY During Development
+      path: skills/qlty-during-development/SKILL.md
+    recall:
+      description: Query the memory system for relevant learnings from past sessions
+      path: skills/recall/SKILL.md
+    recall-reasoning:
+      description: Search past reasoning for relevant decisions and approaches
+      path: skills/recall-reasoning/SKILL.md
+    refactor:
+      description: Code refactoring workflow - analyze → plan → implement → review → validate
+      path: skills/refactor/SKILL.md
+    reference-sdk:
+      description: Check reference SDK implementations using btca ask
+      path: skills/reference-sdk/SKILL.md
+    release:
+      description: Release preparation workflow - security audit → E2E tests → review → changelog → docs
+      path: skills/release/SKILL.md
+    remember:
+      description: Store a learning, pattern, or decision in the memory system for future recall
+      path: skills/remember/SKILL.md
+    repo-research-analyst:
+      description: Analyze repository structure, patterns, conventions, and documentation for understanding a new codebase
+      path: skills/repo-research-analyst/SKILL.md
+    repoprompt:
+      description: Use RepoPrompt CLI for token-efficient codebase exploration
+      path: skills/repoprompt/SKILL.md
+    research:
+      description: Document codebase as-is with thoughts directory for historical context
+      path: skills/research/SKILL.md
+    research-agent:
+      description: Research agent for external documentation, best practices, and library APIs via MCP tools
+      path: skills/research-agent/SKILL.md
+    research-external:
+      description: External research workflow for docs, web, APIs - NOT codebase exploration
+      path: skills/research-external/SKILL.md
+    resume-handoff:
+      description: Resume work from handoff document with context analysis and validation
+      path: skills/resume_handoff/SKILL.md
+    review:
+      description: Comprehensive code review workflow - parallel specialized reviews → synthesis
+      path: skills/review/SKILL.md
+    search-router:
+      description: Choose the right search tool for each query type
+      path: skills/search-router/SKILL.md
+    security:
+      description: Security audit workflow - vulnerability scan → verification
+      path: skills/security/SKILL.md
+    shapely-compute:
+      description: Computational geometry with Shapely - create geometries, boolean operations, measurements, predicates
+      path: skills/shapely-compute/SKILL.md
+    skill-developer:
+      description: Meta-skill for creating and managing Claude Code skills
+      path: skills/skill-developer/SKILL.md
+    skill-development:
+      description: Skill Development Rules
+      path: skills/skill-development/SKILL.md
+    skill-upgrader:
+      description: Upgrade any skill to v5 Hybrid format using decision theory + modal logic
+      path: skills/skill-upgrader/SKILL.md
+    slash-commands:
+      description: Create and use Claude Code slash commands - quick prompts, bash execution, file references
+      path: skills/slash-commands/SKILL.md
+    sub-agents:
+      description: Create and configure Claude Code sub-agents with custom prompts, tools, and models
+      path: skills/sub-agents/SKILL.md
+    system-overview:
+      description: Show users how Continuous Claude works - the opinionated setup with hooks, memory, and coordination
+      path: skills/system_overview/SKILL.md
+    tdd:
+      description: Test-driven development workflow with philosophy guide - plan → write tests → implement → validate
+      path: skills/tdd/SKILL.md
+    tdd-migrate:
+      description: TDD workflow for migrations - orchestrate agents, zero main context growth
+      path: skills/tdd-migrate/SKILL.md
+    tdd-migration-pipeline:
+      description: Orchestrator-only workflow for migrating/rewriting codebases with full TDD and agent delegation
+      path: skills/tdd-migration-pipeline/SKILL.md
+    test:
+      description: Comprehensive testing workflow - unit tests ∥ integration tests → E2E tests
+      path: skills/test/SKILL.md
+    tldr-code:
+      description: Token-efficient code analysis via 5-layer stack (AST, Call Graph, CFG, DFG, PDG). 95% token savings.
+      path: skills/tldr-code/SKILL.md
+    tldr-deep:
+      description: Full 5-layer analysis of a specific function. Use when debugging or deeply understanding code.
+      path: skills/tldr-deep/SKILL.md
+    tldr-overview:
+      description: Get a token-efficient overview of any project using the TLDR stack
+      path: skills/tldr-overview/SKILL.md
+    tldr-router:
+      description: Maps questions to the optimal tldr command. Use this to pick the right layer
+      path: skills/tldr-router/SKILL.md
+    tldr-stats:
+      description: Show full session token usage, costs, TLDR savings, and hook activity
+      path: skills/tldr-stats/SKILL.md
+    tour:
+      description: Friendly onboarding when users ask about capabilities
+      path: skills/tour/SKILL.md
+    validate-agent:
+      description: Validation agent that validates plan tech choices against current best practices
+      path: skills/validate-agent/SKILL.md
+    wiring:
+      description: Wiring Verification
+      path: skills/wiring/SKILL.md
+    workflow-router:
+      description: Goal-based workflow orchestration - routes tasks to specialist agents based on user goals
+      path: skills/workflow-router/SKILL.md
+  agents:
+    aegis:
+      description: Security vulnerability analysis and testing
+      path: agents/aegis.md
+    agentica-agent:
+      description: Build Python agents using Agentica SDK - spawn agents, implement agentic functions, multi-agent orchestration
+      path: agents/agentica-agent.md
+    arbiter:
+      description: Unit and integration test execution and validation
+      path: agents/arbiter.md
+    architect:
+      description: Feature planning, design documentation, AND integration planning
+      path: agents/architect.md
+    atlas:
+      description: End-to-end and acceptance test execution
+      path: agents/atlas.md
+    braintrust-analyst:
+      description: Analyze Claude Code sessions using Braintrust logs
+      path: agents/braintrust-analyst.md
+    chronicler:
+      description: Session analysis, precedent lookup, and learning extraction
+      path: agents/chronicler.md
+    context-query-agent:
+      description: Query the artifact index for precedent and guidance
+      path: agents/context-query-agent.md
+    critic:
+      description: Feature and implementation code review
+      path: agents/critic.md
+    debug-agent:
+      description: Investigate issues using codebase exploration, logs, and code search
+      path: agents/debug-agent.md
+    herald:
+      description: Release prep, version bumps, changelog generation
+      path: agents/herald.md
+    judge:
+      description: Refactoring and code transformation review
+      path: agents/judge.md
+    kraken:
+      description: Implementation and refactoring agent using TDD workflow
+      path: agents/kraken.md
+    liaison:
+      description: Integration and API review
+      path: agents/liaison.md
+    maestro:
+      description: Multi-agent coordination for complex patterns
+      path: agents/maestro.md
+    memory-extractor:
+      description: Extract perception changes from session thinking blocks and store as learnings
+      path: agents/memory-extractor.md
+    onboard:
+      description: Analyze brownfield codebase and create initial continuity ledger
+      path: agents/onboard.md
+    oracle:
+      description: External research - web, docs, APIs with optional LLM
+      path: agents/oracle.md
+    pathfinder:
+      description: External repository research and analysis
+      path: agents/pathfinder.md
+    phoenix:
+      description: Refactoring planning AND migration planning
+      path: agents/phoenix.md
+    plan-agent:
+      description: Create implementation plans using research, best practices, and codebase analysis
+      path: agents/plan-agent.md
+    plan-reviewer:
+      description: Reviews feature plans (from architect) and change plans (from phoenix)
+      path: agents/plan-reviewer.md
+    profiler:
+      description: Performance profiling, race conditions, memory issues
+      path: agents/profiler.md
+    research-codebase:
+      description: Document the codebase comprehensively
+      path: agents/research-codebase.md
+    review-agent:
+      description: Review implementation by comparing plan (intent) vs Braintrust session (reality) vs git diff (changes)
+      path: agents/review-agent.md
+    scout:
+      description: Codebase exploration and pattern finding
+      path: agents/scout.md
+    scribe:
+      description: Documentation, handoffs, session summaries, and ledger management
+      path: agents/scribe.md
+    session-analyst:
+      description: Analyze Claude Code sessions using Braintrust logs
+      path: agents/session-analyst.md
+    sleuth:
+      description: General bug investigation and root cause analysis
+      path: agents/sleuth.md
+    spark:
+      description: Lightweight fixes and quick tweaks
+      path: agents/spark.md
+    surveyor:
+      description: Migration and upgrade review
+      path: agents/surveyor.md
+    validate-agent:
+      description: Validate plan tech choices against current best practices and past precedent
+      path: agents/validate-agent.md
+  mcp:
+    path: mcp.jsonc
+  scripts:
+    path: scripts/
+  rules:
+    path: rules/
