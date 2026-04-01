@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # Agency Paid Media
 
 Paid Media division from The Agency — 7 specialized agent personalities from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality, and production-ready workflows.
@@ -10,7 +12,7 @@ Paid Media division from The Agency — 7 specialized agent personalities from m
 
 ## Installation
 ```bash
-npx hephai install agency-paid-media
+npx hephai install @hephai-nota/agency-paid-media
 ```
 
 ## Agents
@@ -26,20 +28,19 @@ npx hephai install agency-paid-media
 | Field | Value |
 |---|---|
 | Author | `msitarzewski` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
+| Version | `0.0.3` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
 | Codex | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |
