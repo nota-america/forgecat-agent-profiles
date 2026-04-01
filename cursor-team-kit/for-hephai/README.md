@@ -39,7 +39,7 @@ npx hephai install @hephai-nota/cursor-team-kit
 |---|---|
 | Author | `Cursor` |
 | Original repository | `https://github.com/cursor/plugins` |
-| Version | `0.0.1` |
+| Version | `0.0.2` |
 | Original commit | `9c39b57` (2026-03-13) |
 | License | `MIT` |
 | Source platform | `cursor` |
@@ -49,6 +49,8 @@ npx hephai install @hephai-nota/cursor-team-kit
 | Platform | Status |
 |---|---|
 | Cursor | Tested |
+| Claude Code | Partial |
+| Codex | Partial |
 
 ### Models
 | Model | Role |

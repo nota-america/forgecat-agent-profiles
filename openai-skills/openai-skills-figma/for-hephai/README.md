@@ -29,7 +29,7 @@ npx hephai install @hephai-nota/openai-skills-figma
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | `dc48aff` (2026-03-17) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -41,6 +41,8 @@ npx hephai install @hephai-nota/openai-skills-figma
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 

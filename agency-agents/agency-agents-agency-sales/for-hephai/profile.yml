@@ -1,6 +1,6 @@
 
 name: "agency-sales"
-version: "0.0.2"
+version: "0.0.3"
 description: >-
   Sales division from The Agency — 8 specialized agent personalities
   from msitarzewski/agency-agents. Each agent has deep domain expertise,
@@ -14,7 +14,7 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested: [claude-code]
-    partial: [cursor]
+    partial: [codex, cursor]
 
   models:
     recommended: [claude-4-opus]

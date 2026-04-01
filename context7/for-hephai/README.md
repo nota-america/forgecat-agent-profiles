@@ -31,7 +31,7 @@ npx hephai install @hephai-nota/context7
 |---|---|
 | Author | `Upstash` |
 | Original repository | `https://github.com/upstash/context7` |
-| Version | `0.0.2` |
+| Version | `0.0.3` |
 | Original commit | `383e127` (2026-03-16) |
 | Converted path | `plugins/claude/context7/` |
 | License | `MIT` |
@@ -42,6 +42,7 @@ npx hephai install @hephai-nota/context7
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
+| Codex | Partial |
 | Cursor | Partial |
 
 ### Models

@@ -51,7 +51,7 @@ npx hephai install @hephai-nota/knowledge-work-plugins-bio-research
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -63,8 +63,8 @@ npx hephai install @hephai-nota/knowledge-work-plugins-bio-research
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
 | Codex | Partial |
+| Cursor | Partial |
 
 ## Dependencies
 

@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-operations"
-version: "0.0.0"
+version: "0.0.1"
 description: Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/operations
 license: Apache-2.0

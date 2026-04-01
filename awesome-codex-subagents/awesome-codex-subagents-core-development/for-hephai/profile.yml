@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-core-development
-version: "0.0.4"
+version: "0.0.5"
 description: >-
   Core agents for application architecture, cross-layer implementation, UI work, and protocol-specific development. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 
@@ -11,6 +11,7 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested: [codex]
+    partial: [claude-code, cursor]
   models:
     recommended: [gpt-5.4]
     minimum: [gpt-5.3-codex-spark]

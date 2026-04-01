@@ -26,7 +26,7 @@ npx hephai install @hephai-nota/openai-skills-linear
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.2` |
+| Version | `0.0.3` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -36,6 +36,8 @@ npx hephai install @hephai-nota/openai-skills-linear
 | Platform | Status |
 |---|---|
 | Codex | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |
