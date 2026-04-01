@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # 05. Data & AI
 
 Agents for data pipelines, LLM integrations, and database behavior.
@@ -9,7 +11,7 @@ Agents for data pipelines, LLM integrations, and database behavior.
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-data-ai
+npx hephai install @hephai-nota/awesome-codex-subagents-data-ai
 ```
 
 ## Agents
@@ -30,20 +32,18 @@ npx hephai install awesome-codex-subagents-data-ai
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
@@ -53,25 +53,3 @@ npx hephai install awesome-codex-subagents-data-ai
 
 ## Dependencies
 - None
-
----
-*Original README.md from source:*
-
-# 05. Data & AI
-
-Agents for data pipelines, LLM integrations, and database behavior.
-
-Included agents:
-
-- `ai-engineer` - Build or debug model-backed product flows.
-- `data-analyst` - Interpret metrics, trends, and analytics outputs for decisions.
-- `data-engineer` - Own scoped ETL, ingestion, or warehouse changes.
-- `data-scientist` - Analyze experiments, statistics, and model-related data questions.
-- `database-optimizer` - Diagnose slow queries and schema-level performance risks.
-- `llm-architect` - Review prompt, retrieval, evaluation, and orchestration design.
-- `machine-learning-engineer` - Implement training, serving, and model-system changes.
-- `ml-engineer` - Build practical ML-backed application behavior.
-- `mlops-engineer` - Own model delivery, registry, monitoring, and pipeline automation.
-- `nlp-engineer` - Build text-heavy retrieval, labeling, and NLP workflows.
-- `postgres-pro` - Handle PostgreSQL-specific schema and planner behavior.
-- `prompt-engineer` - Improve prompts, output contracts, and prompt evaluations.

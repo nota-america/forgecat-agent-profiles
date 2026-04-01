@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # 09. Meta & Orchestration
 
 Agents that help plan or coordinate multi-agent Codex workflows without inventing unsupported mechanics.
@@ -9,7 +11,7 @@ Agents that help plan or coordinate multi-agent Codex workflows without inventin
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-meta-orchestration
+npx hephai install @hephai-nota/awesome-codex-subagents-meta-orchestration
 ```
 
 ## Agents
@@ -28,20 +30,18 @@ npx hephai install awesome-codex-subagents-meta-orchestration
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
@@ -51,23 +51,3 @@ npx hephai install awesome-codex-subagents-meta-orchestration
 
 ## Dependencies
 - None
-
----
-*Original README.md from source:*
-
-# 09. Meta & Orchestration
-
-Agents that help plan or coordinate multi-agent Codex workflows without inventing unsupported mechanics.
-
-Included agents:
-
-- `agent-installer` - Help pick and install agents from this repository.
-- `agent-organizer` - Pick the right subagents and divide the work cleanly.
-- `context-manager` - Produce a compact project context packet for other agents.
-- `error-coordinator` - Group and prioritize multiple error threads.
-- `it-ops-orchestrator` - Coordinate cross-domain IT and operations workflows.
-- `knowledge-synthesizer` - Merge findings from multiple agents into a usable summary.
-- `multi-agent-coordinator` - Design explicit multi-agent task plans.
-- `performance-monitor` - Turn performance signals into actionable summaries.
-- `task-distributor` - Break broad work into concrete delegated tasks.
-- `workflow-orchestrator` - Design explicit delegation flows for larger tasks.

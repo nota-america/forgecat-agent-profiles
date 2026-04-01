@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # 07. Specialized Domains
 
 Focused domain agents that still have a clear implementation or verification boundary.
@@ -9,7 +11,7 @@ Focused domain agents that still have a clear implementation or verification bou
 
 ## Installation
 ```bash
-npx hephai install awesome-codex-subagents-specialized-domains
+npx hephai install @hephai-nota/awesome-codex-subagents-specialized-domains
 ```
 
 ## Agents
@@ -30,20 +32,18 @@ npx hephai install awesome-codex-subagents-specialized-domains
 | Field | Value |
 |---|---|
 | Author | `VoltAgent + community contributors` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
+| Version | `0.0.2` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Codex | Tested |
 | Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |
@@ -53,25 +53,3 @@ npx hephai install awesome-codex-subagents-specialized-domains
 
 ## Dependencies
 - None
-
----
-*Original README.md from source:*
-
-# 07. Specialized Domains
-
-Focused domain agents that still have a clear implementation or verification boundary.
-
-Included agents:
-
-- `api-documenter` - Turn existing API behavior into clear consumer-facing docs.
-- `blockchain-developer` - Build or review blockchain, Web3, and transaction lifecycle flows.
-- `embedded-systems` - Work on firmware-adjacent and hardware-constrained systems.
-- `fintech-engineer` - Handle ledgers, reconciliation, settlement, and financial state integrity.
-- `game-developer` - Build or debug gameplay systems, loops, and state-heavy game code.
-- `iot-engineer` - Work on device, telemetry, and edge-cloud coordination.
-- `m365-admin` - Review and guide Microsoft 365 tenant administration.
-- `mobile-app-developer` - Own app-level mobile product flows and release-sensitive behavior.
-- `payment-integration` - Review or implement payment flows, idempotency, and webhook handling.
-- `quant-analyst` - Analyze models, strategies, and quantitative decision logic.
-- `risk-manager` - Evaluate risk, impact, and mitigations for major changes.
-- `seo-specialist` - Review discoverability, crawlability, and search-facing technical issues.
