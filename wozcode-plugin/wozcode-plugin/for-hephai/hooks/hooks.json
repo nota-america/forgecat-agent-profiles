@@ -1,0 +1,65 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/session-start-hook.js"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/tool-redirect-hook.js"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__plugin_woz_code__Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/tool-redirect-hook.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__plugin_woz_code__Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/edit-batching-nudge.js"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/session-telemetry-hook.js"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/session-telemetry-hook.js"
+          }
+        ]
+      }
+    ]
+  }
+}

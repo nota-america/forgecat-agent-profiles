@@ -1,0 +1,89 @@
+name: wozcode-plugin
+version: 0.0.0
+description: WozCode enhanced coding tools — smart search, batch editing, SQL introspection, and cost-optimized subagent delegation
+repository: https://github.com/WithWoz/wozcode-plugin
+license: Proprietary
+visibility: public
+
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+
+agents:
+  - name: code
+    description: WozCode enhanced coding agent with smart search, batch editing, SQL introspection, and cost-optimized subagent delegation. Use as the default main thread agent.
+    path: agents/code.md
+  - name: explore
+    description: Fast agent for file searches, reading code, schema lookups, and codebase questions. Does NOT edit files.
+    path: agents/explore.md
+  - name: plan
+    description: Software architect agent for designing implementation plans. Use for planning strategy, identifying critical files, and considering trade-offs.
+    path: agents/plan.md
+
+skills:
+  - name: woz-savings
+    description: Show WozCode savings report - calls saved, time saved, tokens saved, and lifetime totals.
+    path: skills/savings/SKILL.md
+  - name: woz-login
+    description: Authenticate with the Woz service. Use when the user needs to log in or when authentication is required.
+    path: skills/woz-login/SKILL.md
+  - name: woz-logout
+    description: Clear stored Woz credentials and log out.
+    path: skills/woz-logout/SKILL.md
+  - name: woz-recall
+    description: Search past Claude Code sessions for commands, knowledge, solutions, and context. TRIGGER when user says "remember when", "we did this before", "we've done this", "last time we", "in a previous session", "how did we", "what was that command", "I remember doing", "find that thing from before", "we figured out", "there was a way to", or any reference to past work/sessions/conversations. Also trigger on explicit /recall.
+    path: skills/woz-recall/SKILL.md
+  - name: woz-status
+    description: Show current Woz authentication status.
+    path: skills/woz-status/SKILL.md
+
+hooks:
+  - event: SessionStart
+    description: Initialize WozCode session tracking and metrics
+    handlers:
+      - type: command
+        command: scripts/session-start-hook.js
+  - event: PreToolUse
+    matcher: Bash
+    description: Redirect standard file tools to WozCode optimized alternatives
+    handlers:
+      - type: command
+        command: scripts/tool-redirect-hook.js
+  - event: PreToolUse
+    matcher: mcp__plugin_woz_code__Bash
+    description: Redirect WozCode Bash tool calls
+    handlers:
+      - type: command
+        command: scripts/tool-redirect-hook.js
+  - event: PostToolUse
+    matcher: mcp__plugin_woz_code__Edit
+    description: Encourage batch editing when multiple individual edits are detected
+    handlers:
+      - type: command
+        command: scripts/edit-batching-nudge.js
+  - event: PostToolUse
+    description: Track tool usage telemetry for savings calculations
+    handlers:
+      - type: command
+        command: scripts/session-telemetry-hook.js
+  - event: Stop
+    description: Finalize session telemetry and save metrics
+    handlers:
+      - type: command
+        command: scripts/session-telemetry-hook.js
+
+mcp:
+  path: mcp.jsonc
+
+runtime:
+  - path: scripts
+  - path: servers
+  - path: package.json
+  - path: settings.json

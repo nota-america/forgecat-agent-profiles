@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "code": {
+      "command": "node",
+      "args": ["servers/code-server.js"],
+      "env": {
+        "WOZCODE_POSTHOG_ENABLED": "true",
+        "WOZCODE_POSTHOG_PROJECT_TOKEN": "phc_F3mo2emdspgzD4QmFMQxHQfab1TyXgCAU7eYBakKq9k",
+        "WOZCODE_POSTHOG_PROJECT_REGION": "us"
+      }
+    }
+  }
+}
