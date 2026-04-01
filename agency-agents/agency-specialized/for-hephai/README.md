@@ -1,5 +1,7 @@
 *written by Hephai*
 
+![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
+
 # Agency Specialized
 
 Specialized division from The Agency — 27 specialized agent personalities from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality, and production-ready workflows.
@@ -10,7 +12,7 @@ Specialized division from The Agency — 27 specialized agent personalities from
 
 ## Installation
 ```bash
-npx hephai install agency-specialized
+npx hephai install @hephai-nota/agency-specialized
 ```
 
 ## Agents
@@ -46,20 +48,19 @@ npx hephai install agency-specialized
 | Field | Value |
 |---|---|
 | Author | `msitarzewski` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
+| Version | `0.0.3` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
 | Codex | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |

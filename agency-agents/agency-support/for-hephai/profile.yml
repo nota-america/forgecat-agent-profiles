@@ -1,6 +1,6 @@
 
-name: agency-support
-version: "0.0.1"
+name: "agency-support"
+version: "0.0.3"
 description: >-
   Support division from The Agency — 6 specialized agent personalities
   from msitarzewski/agency-agents. Each agent has deep domain expertise,
@@ -8,15 +8,13 @@ description: >-
 
 repository: "https://github.com/msitarzewski/agency-agents"
 license: "MIT"
+visibility: public
 sourcePlatform: claude-code
 
 compatibility:
   platforms:
-    tested:
-      - claude-code
-    partial:
-      - cursor
-      - codex
+    tested: [claude-code]
+    partial: [codex, cursor]
 
   models:
     recommended: [claude-4-opus]

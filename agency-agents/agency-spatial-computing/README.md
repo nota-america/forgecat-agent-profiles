@@ -1,7 +1,5 @@
 ![Hephai](https://raw.githubusercontent.com/nota-america/agent-hub/main/assets/hephai_banner.png)
 
-Hephai is the open agent registry - package, share, and install AI Agents across platforms.
-
 # Agency Spatial Computing
 
 Spatial Computing division from The Agency — 6 specialized agent personalities from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality, and production-ready workflows.
@@ -12,7 +10,7 @@ Spatial Computing division from The Agency — 6 specialized agent personalities
 
 ## Installation
 ```bash
-npx hephai install agency-spatial-computing
+npx hephai install @hephai-nota/agency-spatial-computing
 ```
 
 ## Agents
@@ -27,20 +25,19 @@ npx hephai install agency-spatial-computing
 | Field | Value |
 |---|---|
 | Author | `msitarzewski` |
-| Version | `0.0.0` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
+| Version | `0.0.3` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
 ## Compatibility
 ### Platforms
-
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
 | Codex | Partial |
+| Cursor | Partial |
 
 ### Models
 | Model | Role |
