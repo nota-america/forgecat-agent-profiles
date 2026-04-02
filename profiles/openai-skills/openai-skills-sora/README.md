@@ -10,7 +10,7 @@ Use when the user asks to generate, edit, extend, poll, list, download, or delet
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-sora
+npx forgecat install @hephai-nota/openai-skills-sora
 ```
 
 ## Skills

@@ -10,7 +10,7 @@ Use when the user asks for text-to-speech narration or voiceover, accessibility 
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-speech
+npx forgecat install @hephai-nota/openai-skills-speech
 ```
 
 ## Skills

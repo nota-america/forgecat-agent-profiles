@@ -12,7 +12,7 @@ Use this skill alongside figma-use when the task involves translating an applica
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-figma-generate-design
+npx forgecat install @hephai-nota/openai-skills-figma-generate-design
 ```
 
 ## Skills

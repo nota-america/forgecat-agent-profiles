@@ -10,7 +10,7 @@ Transcribe audio files to text with optional diarization and known-speaker hints
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-transcribe
+npx forgecat install @hephai-nota/openai-skills-transcribe
 ```
 
 ## Skills

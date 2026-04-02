@@ -12,7 +12,7 @@ Generates custom design system rules for the user's codebase. Use when user says
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-figma-create-design-system-rules
+npx forgecat install @hephai-nota/openai-skills-figma-create-design-system-rules
 ```
 
 ## Skills

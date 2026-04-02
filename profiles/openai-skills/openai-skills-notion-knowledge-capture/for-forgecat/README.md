@@ -12,7 +12,7 @@ Capture conversations and decisions into structured Notion pages; use when turni
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-notion-knowledge-capture
+npx forgecat install @hephai-nota/openai-skills-notion-knowledge-capture
 ```
 
 ## Skills

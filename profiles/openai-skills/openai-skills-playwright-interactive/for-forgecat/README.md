@@ -12,7 +12,7 @@ Persistent browser and Electron interaction through `js_repl` for fast iterative
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-playwright-interactive
+npx forgecat install @hephai-nota/openai-skills-playwright-interactive
 ```
 
 ## Skills

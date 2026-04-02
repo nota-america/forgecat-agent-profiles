@@ -12,7 +12,7 @@ Research across Notion and synthesize into structured documentation; use when ga
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-notion-research-documentation
+npx forgecat install @hephai-nota/openai-skills-notion-research-documentation
 ```
 
 ## Skills

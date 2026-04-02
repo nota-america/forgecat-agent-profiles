@@ -10,7 +10,7 @@ Analyze git repositories to build a security ownership topology (people-to-file)
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-security-ownership-map
+npx forgecat install @hephai-nota/openai-skills-security-ownership-map
 ```
 
 ## Skills

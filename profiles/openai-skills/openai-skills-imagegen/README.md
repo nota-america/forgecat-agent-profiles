@@ -10,7 +10,7 @@ Generate or edit raster images when the task benefits from AI-created bitmap vis
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-imagegen
+npx forgecat install @hephai-nota/openai-skills-imagegen
 ```
 
 ## Skills

@@ -12,7 +12,7 @@ Use when the task asks for a visually strong landing page, website, app, prototy
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-frontend-skill
+npx forgecat install @hephai-nota/openai-skills-frontend-skill
 ```
 
 ## Skills

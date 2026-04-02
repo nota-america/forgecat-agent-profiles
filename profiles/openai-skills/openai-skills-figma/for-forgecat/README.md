@@ -12,7 +12,7 @@ Use the Figma MCP server to fetch design context, screenshots, variables, and as
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/openai-skills-figma
+npx forgecat install @hephai-nota/openai-skills-figma
 ```
 
 ## Skills
