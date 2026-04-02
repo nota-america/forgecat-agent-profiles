@@ -12,7 +12,7 @@ Project Management division from The Agency — 6 specialized agent personalitie
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-project-management
+npx forgecat install @forgecat/agency-project-management
 ```
 
 ## Agents

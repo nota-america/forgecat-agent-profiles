@@ -12,7 +12,7 @@ Design division from The Agency — 8 specialized agent personalities from msita
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-design
+npx forgecat install @forgecat/agency-design
 ```
 
 ## Agents

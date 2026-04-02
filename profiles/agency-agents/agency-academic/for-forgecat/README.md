@@ -12,7 +12,7 @@ Academic division from The Agency — 5 specialized academic agent personalities
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-academic
+npx forgecat install @forgecat/agency-academic
 ```
 
 ## Agents

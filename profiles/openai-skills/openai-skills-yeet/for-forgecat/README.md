@@ -12,7 +12,7 @@ Use only when the user explicitly asks to stage, commit, push, and open a GitHub
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-yeet
+npx forgecat install @forgecat/openai-skills-yeet
 ```
 
 ## Skills

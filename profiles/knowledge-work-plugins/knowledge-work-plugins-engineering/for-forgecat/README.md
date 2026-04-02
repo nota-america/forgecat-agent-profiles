@@ -18,7 +18,7 @@ Streamline engineering workflows with Claude. Covers standups, code review, arch
 ## Installation
 
 ```
-npx forgecat install @hephai-nota/knowledge-work-plugins-engineering
+npx forgecat install @forgecat/knowledge-work-plugins-engineering
 ```
 
 ## Skills

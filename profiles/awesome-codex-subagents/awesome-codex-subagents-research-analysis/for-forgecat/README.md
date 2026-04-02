@@ -11,7 +11,7 @@ Read-heavy research agents for searching, validating, comparing, and synthesizin
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/awesome-codex-subagents-research-analysis
+npx forgecat install @forgecat/awesome-codex-subagents-research-analysis
 ```
 
 ## Agents
