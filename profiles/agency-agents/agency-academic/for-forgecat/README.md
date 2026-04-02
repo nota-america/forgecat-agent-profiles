@@ -27,7 +27,7 @@ npx forgecat install @hephai-nota/agency-academic
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.0` |
+| Version | `0.0.2` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |
