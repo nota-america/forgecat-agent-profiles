@@ -10,7 +10,7 @@ Deploy applications and websites to Vercel. Use when the user requests deploymen
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-vercel-deploy
+npx forgecat install @forgecat/openai-skills-vercel-deploy
 ```
 
 ## Skills

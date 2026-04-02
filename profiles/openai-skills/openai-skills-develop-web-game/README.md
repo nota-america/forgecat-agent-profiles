@@ -10,7 +10,7 @@ Use when Codex is building or iterating on a web game (HTML/JS) and needs a reli
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-develop-web-game
+npx forgecat install @forgecat/openai-skills-develop-web-game
 ```
 
 ## Skills

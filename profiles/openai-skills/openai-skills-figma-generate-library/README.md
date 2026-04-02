@@ -10,7 +10,7 @@ Build or update a professional-grade design system in Figma from a codebase. Use
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-figma-generate-library
+npx forgecat install @forgecat/openai-skills-figma-generate-library
 ```
 
 ## Skills

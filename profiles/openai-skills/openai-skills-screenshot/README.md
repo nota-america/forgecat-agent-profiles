@@ -10,7 +10,7 @@ Use when the user explicitly asks for a desktop or system screenshot (full scree
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-screenshot
+npx forgecat install @forgecat/openai-skills-screenshot
 ```
 
 ## Skills

@@ -11,7 +11,7 @@ Up-to-date documentation lookup via Context7 MCP. Pull version-specific document
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/context7
+npx forgecat install @forgecat/context7
 ```
 
 ## Agents

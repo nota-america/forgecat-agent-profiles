@@ -10,7 +10,7 @@ Use when the task involves reading, creating, or editing `.docx` documents, espe
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-doc
+npx forgecat install @forgecat/openai-skills-doc
 ```
 
 ## Skills

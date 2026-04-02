@@ -12,7 +12,7 @@ Manage issues, projects & team workflows in Linear. Use when the user wants to r
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-linear
+npx forgecat install @forgecat/openai-skills-linear
 ```
 
 ## Skills

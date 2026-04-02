@@ -12,7 +12,7 @@ Deploy applications to Render by analyzing codebases, generating render.yaml Blu
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-render-deploy
+npx forgecat install @forgecat/openai-skills-render-deploy
 ```
 
 ## Skills

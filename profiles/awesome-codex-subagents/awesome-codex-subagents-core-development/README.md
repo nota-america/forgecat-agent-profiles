@@ -9,7 +9,7 @@ Core agents for application architecture, cross-layer implementation, UI work, a
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/awesome-codex-subagents-core-development
+npx forgecat install @forgecat/awesome-codex-subagents-core-development
 ```
 
 ## Agents
