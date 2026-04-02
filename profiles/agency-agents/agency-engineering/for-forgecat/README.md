@@ -12,7 +12,7 @@ Engineering division from The Agency — 23 specialized agent personalities from
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-engineering
+npx forgecat install @forgecat/agency-engineering
 ```
 
 ## Agents

@@ -10,7 +10,7 @@ Support division from The Agency — 6 specialized agent personalities from msit
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-support
+npx forgecat install @forgecat/agency-support
 ```
 
 ## Agents

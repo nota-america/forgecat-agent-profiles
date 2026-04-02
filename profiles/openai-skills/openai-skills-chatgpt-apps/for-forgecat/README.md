@@ -12,7 +12,7 @@ Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that c
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-chatgpt-apps
+npx forgecat install @forgecat/openai-skills-chatgpt-apps
 ```
 
 ## Skills

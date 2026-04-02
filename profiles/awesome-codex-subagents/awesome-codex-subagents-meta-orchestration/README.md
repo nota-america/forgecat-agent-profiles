@@ -9,7 +9,7 @@ Agents that help plan or coordinate multi-agent Codex workflows without inventin
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/awesome-codex-subagents-meta-orchestration
+npx forgecat install @forgecat/awesome-codex-subagents-meta-orchestration
 ```
 
 ## Agents

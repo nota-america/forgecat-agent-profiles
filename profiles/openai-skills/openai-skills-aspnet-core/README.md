@@ -10,7 +10,7 @@ Build, review, refactor, or architect ASP.NET Core web applications using curren
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-aspnet-core
+npx forgecat install @forgecat/openai-skills-aspnet-core
 ```
 
 ## Skills
