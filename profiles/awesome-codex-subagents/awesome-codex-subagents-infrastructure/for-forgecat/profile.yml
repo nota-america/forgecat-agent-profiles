@@ -1,0 +1,83 @@
+name: awesome-codex-subagents-infrastructure
+version: "0.0.3"
+description: >-
+  Infrastructure-focused agents for deployment, containerization, orchestration, and IaC work. Includes 16 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+visibility: public
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: azure-infra-engineer
+    path: agents/azure-infra-engineer.md
+    description: "Use when a task needs Azure-specific infrastructure review or implementation across resources, networking, identity, or automation."
+    model: gpt-5.4
+  - name: cloud-architect
+    path: agents/cloud-architect.md
+    description: "Use when a task needs cloud architecture review across compute, storage, networking, reliability, or multi-service design."
+    model: gpt-5.4
+  - name: database-administrator
+    path: agents/database-administrator.md
+    description: "Use when a task needs operational database administration review for availability, backups, recovery, permissions, or runtime health."
+    model: gpt-5.4
+  - name: deployment-engineer
+    path: agents/deployment-engineer.md
+    description: "Use when a task needs deployment workflow changes, release strategy updates, or rollout and rollback safety analysis."
+    model: gpt-5.4
+  - name: devops-engineer
+    path: agents/devops-engineer.md
+    description: "Use when a task needs CI, deployment pipeline, release automation, or environment configuration work."
+    model: gpt-5.4
+  - name: devops-incident-responder
+    path: agents/devops-incident-responder.md
+    description: "Use when a task needs rapid operational triage across CI, deployments, infrastructure automation, and service delivery failures."
+    model: gpt-5.4
+  - name: docker-expert
+    path: agents/docker-expert.md
+    description: "Use when a task needs Dockerfile review, image optimization, multi-stage build fixes, or container runtime debugging."
+    model: gpt-5.3-codex-spark
+  - name: incident-responder
+    path: agents/incident-responder.md
+    description: "Use when a task needs broad production incident triage, containment planning, or evidence-driven root cause analysis."
+    model: gpt-5.4
+  - name: kubernetes-specialist
+    path: agents/kubernetes-specialist.md
+    description: "Use when a task needs Kubernetes manifest review, rollout safety analysis, or cluster workload debugging."
+    model: gpt-5.4
+  - name: network-engineer
+    path: agents/network-engineer.md
+    description: "Use when a task needs network-path analysis, service connectivity debugging, load-balancer review, or infrastructure network design input."
+    model: gpt-5.4
+  - name: platform-engineer
+    path: agents/platform-engineer.md
+    description: "Use when a task needs internal platform, golden-path, or self-service infrastructure design for developers."
+    model: gpt-5.4
+  - name: security-engineer
+    path: agents/security-engineer.md
+    description: "Use when a task needs infrastructure and platform security engineering across IAM, secrets, network controls, or hardening work."
+    model: gpt-5.4
+  - name: sre-engineer
+    path: agents/sre-engineer.md
+    description: "Use when a task needs reliability engineering work involving SLOs, alerting, error budgets, operational safety, or service resilience."
+    model: gpt-5.4
+  - name: terraform-engineer
+    path: agents/terraform-engineer.md
+    description: "Use when a task needs Terraform module design, plan review, state-aware change analysis, or IaC refactoring."
+    model: gpt-5.4
+  - name: terragrunt-expert
+    path: agents/terragrunt-expert.md
+    description: "Use when a task needs Terragrunt-specific help for module orchestration, environment layering, dependency wiring, or DRY infrastructure structure."
+    model: gpt-5.3-codex-spark
+  - name: windows-infra-admin
+    path: agents/windows-infra-admin.md
+    description: "Use when a task needs Windows infrastructure administration across Active Directory, DNS, DHCP, GPO, or Windows automation."
+    model: gpt-5.4

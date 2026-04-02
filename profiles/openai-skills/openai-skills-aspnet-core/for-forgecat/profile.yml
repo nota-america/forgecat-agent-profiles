@@ -1,0 +1,21 @@
+name: openai-skills-aspnet-core
+version: "0.0.3"
+description: "Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: aspnet-core
+    path: skills/aspnet-core/SKILL.md
+    description: "Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades."

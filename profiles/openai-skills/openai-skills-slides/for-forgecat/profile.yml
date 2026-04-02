@@ -1,0 +1,21 @@
+name: openai-skills-slides
+version: "0.0.3"
+description: "Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layout helpers, and render/validation utilities. Use when tasks involve building a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks, modifying slide content while preserving editable output, adding charts/diagrams/visuals, or diagnosing layout issues such as overflow, overlaps, and font substitution."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: slides
+    path: skills/slides/SKILL.md
+    description: "Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layout helpers, and render/validation utilities. Use when tasks involve building a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks, modifying slide content while preserving editable output, adding charts/diagrams/visuals, or diagnosing layout issues such as overflow, overlaps, and font substitution."

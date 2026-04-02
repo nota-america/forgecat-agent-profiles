@@ -1,0 +1,21 @@
+name: openai-skills-winui-app
+version: "0.0.3"
+description: "Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing, theming, accessibility, responsiveness, performance, deployment, or related Windows app design and development work."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: winui-app
+    path: skills/winui-app/SKILL.md
+    description: "Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing, theming, accessibility, responsiveness, performance, deployment, or related Windows app design and development work."

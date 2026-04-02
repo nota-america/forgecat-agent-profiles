@@ -1,0 +1,21 @@
+name: openai-skills-vercel-deploy
+version: "0.0.3"
+description: "Deploy applications and websites to Vercel. Use when the user requests deployment actions like 'deploy my app', 'deploy and give me the link', 'push this live', or 'create a preview deployment'."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: vercel-deploy
+    path: skills/vercel-deploy/SKILL.md
+    description: "Deploy applications and websites to Vercel. Use when the user requests deployment actions like 'deploy my app', 'deploy and give me the link', 'push this live', or 'create a preview deployment'."

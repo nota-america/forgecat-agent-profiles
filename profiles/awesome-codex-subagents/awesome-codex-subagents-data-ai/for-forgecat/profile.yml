@@ -1,0 +1,67 @@
+name: awesome-codex-subagents-data-ai
+version: "0.0.3"
+description: >-
+  Agents for data pipelines, LLM integrations, and database behavior. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+visibility: public
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: ai-engineer
+    path: agents/ai-engineer.md
+    description: "Use when a task needs implementation or debugging of model-backed application features, agent flows, or evaluation hooks."
+    model: gpt-5.4
+  - name: data-analyst
+    path: agents/data-analyst.md
+    description: "Use when a task needs data interpretation, metric breakdown, trend explanation, or decision support from existing analytics outputs."
+    model: gpt-5.3-codex-spark
+  - name: data-engineer
+    path: agents/data-engineer.md
+    description: "Use when a task needs ETL, ingestion, transformation, warehouse, or data-pipeline implementation and debugging."
+    model: gpt-5.4
+  - name: data-scientist
+    path: agents/data-scientist.md
+    description: "Use when a task needs statistical reasoning, experiment interpretation, feature analysis, or model-oriented data exploration."
+    model: gpt-5.4
+  - name: database-optimizer
+    path: agents/database-optimizer.md
+    description: "Use when a task needs database performance analysis for query plans, schema design, indexing, or data access patterns."
+    model: gpt-5.4
+  - name: llm-architect
+    path: agents/llm-architect.md
+    description: "Use when a task needs architecture review for prompts, tool use, retrieval, evaluation, or multi-step LLM workflows."
+    model: gpt-5.4
+  - name: machine-learning-engineer
+    path: agents/machine-learning-engineer.md
+    description: "Use when a task needs ML system implementation work across training pipelines, feature flow, model serving, or inference integration."
+    model: gpt-5.4
+  - name: ml-engineer
+    path: agents/ml-engineer.md
+    description: "Use when a task needs practical machine learning implementation across feature engineering, inference wiring, and model-backed application logic."
+    model: gpt-5.4
+  - name: mlops-engineer
+    path: agents/mlops-engineer.md
+    description: "Use when a task needs model deployment, registry, pipeline, monitoring, or environment orchestration for machine learning systems."
+    model: gpt-5.4
+  - name: nlp-engineer
+    path: agents/nlp-engineer.md
+    description: "Use when a task needs NLP-specific implementation or analysis involving text processing, embeddings, ranking, or language-model-adjacent pipelines."
+    model: gpt-5.4
+  - name: postgres-pro
+    path: agents/postgres-pro.md
+    description: "Use when a task needs PostgreSQL-specific expertise for schema design, performance behavior, locking, or operational database features."
+    model: gpt-5.4
+  - name: prompt-engineer
+    path: agents/prompt-engineer.md
+    description: "Use when a task needs prompt revision, instruction design, eval-oriented prompt comparison, or prompt-output contract tightening."
+    model: gpt-5.4

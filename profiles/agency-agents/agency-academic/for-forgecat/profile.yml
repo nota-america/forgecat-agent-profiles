@@ -1,0 +1,41 @@
+name: "agency-academic"
+version: "0.0.0"
+description: >-
+  Academic division from The Agency — 5 specialized academic
+  agent personalities from msitarzewski/agency-agents.
+
+repository: "https://github.com/msitarzewski/agency-agents"
+license: "MIT"
+visibility: public
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [codex, cursor]
+
+  models:
+    recommended: [claude-4-opus]
+    minimum: [claude-4-sonnet]
+
+agents:
+  - name: "Anthropologist"
+    path: agents/academic-anthropologist.md
+    description: >-
+      Expert in cultural systems, rituals, kinship, belief systems, and ethnographic method — builds culturally coherent societies that feel lived-in rather than invented
+  - name: "Geographer"
+    path: agents/academic-geographer.md
+    description: >-
+      Expert in physical and human geography, climate systems, cartography, and spatial analysis — builds geographically coherent worlds where terrain, climate, resources, and settlement patterns make scientific sense
+  - name: "Historian"
+    path: agents/academic-historian.md
+    description: >-
+      Expert in historical analysis, periodization, material culture, and historiography — validates historical coherence and enriches settings with authentic period detail grounded in primary and secondary sources
+  - name: "Narratologist"
+    path: agents/academic-narratologist.md
+    description: >-
+      Expert in narrative theory, story structure, character arcs, and literary analysis — grounds advice in established frameworks from Propp to Campbell to modern narratology
+  - name: "Psychologist"
+    path: agents/academic-psychologist.md
+    description: >-
+      Expert in human behavior, personality theory, motivation, and cognitive patterns — builds psychologically credible characters and interactions grounded in clinical and research frameworks

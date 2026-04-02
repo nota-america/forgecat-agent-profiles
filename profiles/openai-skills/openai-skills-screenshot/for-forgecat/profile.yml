@@ -1,0 +1,21 @@
+name: openai-skills-screenshot
+version: "0.0.3"
+description: "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: screenshot
+    path: skills/screenshot/SKILL.md
+    description: "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed."

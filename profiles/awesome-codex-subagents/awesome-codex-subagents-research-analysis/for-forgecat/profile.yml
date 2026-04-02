@@ -1,0 +1,47 @@
+name: awesome-codex-subagents-research-analysis
+version: "0.0.3"
+description: >-
+  Read-heavy research agents for searching, validating, comparing, and synthesizing information. Includes 7 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+visibility: public
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: competitive-analyst
+    path: agents/competitive-analyst.md
+    description: "Use when a task needs a grounded comparison of tools, products, libraries, or implementation options."
+    model: gpt-5.3-codex-spark
+  - name: data-researcher
+    path: agents/data-researcher.md
+    description: "Use when a task needs source gathering and synthesis around datasets, metrics, data pipelines, or evidence-backed quantitative questions."
+    model: gpt-5.3-codex-spark
+  - name: docs-researcher
+    path: agents/docs-researcher.md
+    description: "Use when a task needs documentation-backed verification of APIs, version-specific behavior, or framework options."
+    model: gpt-5.3-codex-spark
+  - name: market-researcher
+    path: agents/market-researcher.md
+    description: "Use when a task needs market landscape, positioning, or demand-side research tied to a technical product or category."
+    model: gpt-5.3-codex-spark
+  - name: research-analyst
+    path: agents/research-analyst.md
+    description: "Use when a task needs a structured investigation of a technical topic, implementation approach, or design question."
+    model: gpt-5.4
+  - name: search-specialist
+    path: agents/search-specialist.md
+    description: "Use when a task needs fast, high-signal searching of the codebase or external sources before deeper analysis begins."
+    model: gpt-5.3-codex-spark
+  - name: trend-analyst
+    path: agents/trend-analyst.md
+    description: "Use when a task needs trend synthesis across technology shifts, adoption patterns, or emerging implementation directions."
+    model: gpt-5.3-codex-spark

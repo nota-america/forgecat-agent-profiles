@@ -1,0 +1,123 @@
+name: awesome-codex-subagents-language-specialists
+version: "0.0.3"
+description: >-
+  Language and framework specialists for ecosystem-specific implementation, debugging, and architectural guidance. Includes 26 Codex-native subagents from VoltAgent/awesome-codex-subagents.
+
+repository: "https://github.com/VoltAgent/awesome-codex-subagents"
+license: "MIT"
+visibility: public
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-5.3-codex-spark]
+
+agents:
+  - name: angular-architect
+    path: agents/angular-architect.md
+    description: "Use when a task needs Angular-specific help for component architecture, dependency injection, routing, signals, or enterprise application structure."
+    model: gpt-5.4
+  - name: cpp-pro
+    path: agents/cpp-pro.md
+    description: "Use when a task needs C++ work involving performance-sensitive code, memory ownership, concurrency, or systems-level integration."
+    model: gpt-5.4
+  - name: csharp-developer
+    path: agents/csharp-developer.md
+    description: "Use when a task needs C# or .NET application work involving services, APIs, async flows, or application architecture."
+    model: gpt-5.4
+  - name: django-developer
+    path: agents/django-developer.md
+    description: "Use when a task needs Django-specific work across models, views, forms, ORM behavior, or admin and middleware flows."
+    model: gpt-5.4
+  - name: dotnet-core-expert
+    path: agents/dotnet-core-expert.md
+    description: "Use when a task needs modern .NET and ASP.NET Core expertise for APIs, hosting, middleware, or cross-platform application behavior."
+    model: gpt-5.4
+  - name: dotnet-framework-4.8-expert
+    path: agents/dotnet-framework-4.8-expert.md
+    description: "Use when a task needs .NET Framework 4.8 expertise for legacy enterprise applications, compatibility constraints, or Windows-bound integrations."
+    model: gpt-5.4
+  - name: elixir-expert
+    path: agents/elixir-expert.md
+    description: "Use when a task needs Elixir and OTP expertise for processes, supervision, fault tolerance, or Phoenix application behavior."
+    model: gpt-5.4
+  - name: flutter-expert
+    path: agents/flutter-expert.md
+    description: "Use when a task needs Flutter expertise for widget behavior, state management, rendering issues, or mobile cross-platform implementation."
+    model: gpt-5.4
+  - name: golang-pro
+    path: agents/golang-pro.md
+    description: "Use when a task needs Go expertise for concurrency, service implementation, interfaces, tooling, or performance-sensitive backend paths."
+    model: gpt-5.4
+  - name: java-architect
+    path: agents/java-architect.md
+    description: "Use when a task needs Java application or service architecture help across framework boundaries, JVM behavior, or large codebase structure."
+    model: gpt-5.4
+  - name: javascript-pro
+    path: agents/javascript-pro.md
+    description: "Use when a task needs JavaScript-focused work for runtime behavior, browser or Node execution, or application-level code that is not TypeScript-led."
+    model: gpt-5.4
+  - name: kotlin-specialist
+    path: agents/kotlin-specialist.md
+    description: "Use when a task needs Kotlin expertise for JVM applications, Android code, coroutines, or modern strongly typed service logic."
+    model: gpt-5.4
+  - name: laravel-specialist
+    path: agents/laravel-specialist.md
+    description: "Use when a task needs Laravel-specific work across routing, Eloquent, queues, validation, or application structure."
+    model: gpt-5.4
+  - name: nextjs-developer
+    path: agents/nextjs-developer.md
+    description: "Use when a task needs Next.js-specific work across routing, rendering modes, server actions, data fetching, or deployment-sensitive frontend behavior."
+    model: gpt-5.4
+  - name: php-pro
+    path: agents/php-pro.md
+    description: "Use when a task needs PHP expertise for application logic, framework integration, runtime debugging, or server-side code evolution."
+    model: gpt-5.4
+  - name: powershell-5.1-expert
+    path: agents/powershell-5.1-expert.md
+    description: "Use when a task needs Windows PowerShell 5.1 expertise for legacy automation, full .NET Framework interop, or Windows administration scripts."
+    model: gpt-5.4
+  - name: powershell-7-expert
+    path: agents/powershell-7-expert.md
+    description: "Use when a task needs modern PowerShell 7 expertise for cross-platform automation, scripting, or .NET-based operational tooling."
+    model: gpt-5.4
+  - name: python-pro
+    path: agents/python-pro.md
+    description: "Use when a task needs a Python-focused subagent for runtime behavior, packaging, typing, testing, or framework-adjacent implementation."
+    model: gpt-5.4
+  - name: rails-expert
+    path: agents/rails-expert.md
+    description: "Use when a task needs Ruby on Rails expertise for models, controllers, jobs, callbacks, or convention-driven application changes."
+    model: gpt-5.4
+  - name: react-specialist
+    path: agents/react-specialist.md
+    description: "Use when a task needs a React-focused agent for component behavior, state flow, rendering bugs, or modern React patterns."
+    model: gpt-5.4
+  - name: rust-engineer
+    path: agents/rust-engineer.md
+    description: "Use when a task needs Rust expertise for ownership-heavy systems code, async runtime behavior, or performance-sensitive implementation."
+    model: gpt-5.4
+  - name: spring-boot-engineer
+    path: agents/spring-boot-engineer.md
+    description: "Use when a task needs Spring Boot expertise for service behavior, configuration, data access, or enterprise API implementation."
+    model: gpt-5.4
+  - name: sql-pro
+    path: agents/sql-pro.md
+    description: "Use when a task needs SQL query design, query review, schema-aware debugging, or database migration analysis."
+    model: gpt-5.4
+  - name: swift-expert
+    path: agents/swift-expert.md
+    description: "Use when a task needs Swift expertise for iOS or macOS code, async flows, Apple platform APIs, or strongly typed application logic."
+    model: gpt-5.4
+  - name: typescript-pro
+    path: agents/typescript-pro.md
+    description: "Use when a task needs strong TypeScript help for types, interfaces, refactors, or compiler-driven fixes."
+    model: gpt-5.4
+  - name: vue-expert
+    path: agents/vue-expert.md
+    description: "Use when a task needs Vue expertise for component behavior, Composition API patterns, routing, or state and rendering issues."
+    model: gpt-5.4

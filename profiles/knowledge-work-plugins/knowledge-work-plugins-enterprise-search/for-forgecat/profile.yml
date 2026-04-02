@@ -1,0 +1,41 @@
+name: "knowledge-work-plugins-enterprise-search"
+version: "0.0.1"
+description: Search across all of your company's tools in one place. Find anything across email, chat, documents, and wikis without switching between apps.
+repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/enterprise-search
+license: Apache-2.0
+visibility: public
+
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+
+skills:
+  - name: search
+    path: skills/search/SKILL.md
+    description: "Search across all connected sources in one query. Trigger with \"find that doc about...\", \"what did we decide on...\", \"where was the conversation about...\", or when looking for a decision, document, or discussion that could live in chat, email, cloud storage, or a project tracker."
+
+  - name: digest
+    path: skills/digest/SKILL.md
+    description: "Generate a daily or weekly digest of activity across all connected sources. Use when catching up after time away, starting the day and wanting a summary of mentions and action items, or reviewing a week's decisions and document updates grouped by project."
+
+  - name: search-strategy
+    path: skills/search-strategy/SKILL.md
+    description: "Query decomposition and multi-source search orchestration. Breaks natural language questions into targeted searches per source, translates queries into source-specific syntax, ranks results by relevance, and handles ambiguity and fallback strategies."
+
+  - name: knowledge-synthesis
+    path: skills/knowledge-synthesis/SKILL.md
+    description: "Combines search results from multiple sources into coherent, deduplicated answers with source attribution. Handles confidence scoring based on freshness and authority, and summarizes large result sets effectively."
+
+  - name: source-management
+    path: skills/source-management/SKILL.md
+    description: "Manages connected MCP sources for enterprise search. Detects available sources, guides users to connect new ones, handles source priority ordering, and manages rate limiting awareness."
+
+mcp:
+  path: mcp.jsonc

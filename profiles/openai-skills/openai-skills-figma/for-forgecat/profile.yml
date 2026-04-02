@@ -1,0 +1,36 @@
+name: "openai-skills-figma"
+version: "0.0.1"
+description: >-
+  Use the Figma MCP server to fetch design context, screenshots, variables,
+  and assets from Figma, and to translate Figma nodes into production code.
+  Trigger when a task involves Figma URLs, node IDs, design-to-code
+  implementation, or Figma MCP setup and troubleshooting.
+
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: figma
+    path: skills/figma/SKILL.md
+    description: >-
+      Use the Figma MCP server to fetch design context, screenshots, variables,
+      and assets from Figma, and to translate Figma nodes into production code.
+      Trigger when a task involves Figma URLs, node IDs, design-to-code
+      implementation, or Figma MCP setup and troubleshooting.
+
+mcp:
+    path: mcp.jsonc
+    requiredEnv:
+      - name: FIGMA_OAUTH_TOKEN
+        description: "Figma OAuth token for API authentication"
+        optional: false

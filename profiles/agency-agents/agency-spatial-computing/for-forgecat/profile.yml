@@ -1,0 +1,47 @@
+
+name: "agency-spatial-computing"
+version: "0.0.3"
+description: >-
+  Spatial Computing division from The Agency — 6 specialized agent personalities
+  from msitarzewski/agency-agents. Each agent has deep domain expertise,
+  unique personality, and production-ready workflows.
+
+repository: "https://github.com/msitarzewski/agency-agents"
+license: "MIT"
+visibility: public
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [codex, cursor]
+
+  models:
+    recommended: [claude-4-opus]
+    minimum: [claude-4-sonnet]
+
+agents:
+  - name: "macOS Spatial/Metal Engineer"
+    path: agents/macos-spatial-metal-engineer.md
+    description: >-
+      Native Swift and Metal specialist building high-performance 3D rendering systems and spatial computing experiences for macOS and Vision Pro
+  - name: "Terminal Integration Specialist"
+    path: agents/terminal-integration-specialist.md
+    description: >-
+      Terminal emulation, text rendering optimization, and SwiftTerm integration for modern Swift applications
+  - name: "visionOS Spatial Engineer"
+    path: agents/visionos-spatial-engineer.md
+    description: >-
+      Native visionOS spatial computing, SwiftUI volumetric interfaces, and Liquid Glass design implementation
+  - name: "XR Cockpit Interaction Specialist"
+    path: agents/xr-cockpit-interaction-specialist.md
+    description: >-
+      Specialist in designing and developing immersive cockpit-based control systems for XR environments
+  - name: "XR Immersive Developer"
+    path: agents/xr-immersive-developer.md
+    description: >-
+      Expert WebXR and immersive technology developer with specialization in browser-based AR/VR/XR applications
+  - name: "XR Interface Architect"
+    path: agents/xr-interface-architect.md
+    description: >-
+      Spatial interaction designer and interface strategist for immersive AR/VR/XR environments

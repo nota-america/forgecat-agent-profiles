@@ -1,0 +1,25 @@
+name: openai-skills-notion-research-documentation
+version: "0.0.3"
+description: "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations."
+repository: "https://github.com/openai/skills"
+license: "Apache-2.0"
+visibility: public
+
+sourcePlatform: codex
+
+compatibility:
+  platforms:
+    tested: [codex]
+    partial: [claude-code, cursor]
+  models:
+    recommended: [gpt-5.4]
+    minimum: [gpt-4o]
+
+skills:
+  - name: notion-research-documentation
+    path: skills/notion-research-documentation/SKILL.md
+    description: "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations."
+
+mcp:
+  path: mcp.jsonc
+  requiredEnv: []

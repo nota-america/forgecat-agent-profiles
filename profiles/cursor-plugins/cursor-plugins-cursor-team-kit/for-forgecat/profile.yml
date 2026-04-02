@@ -1,0 +1,68 @@
+name: cursor-plugins-cursor-team-kit
+version: "0.0.2"
+description: >-
+  Internal workflows used by Cursor developers for CI, code review, and shipping. Covers the full dev loop: CI monitoring and fixing, PR creation, merge conflicts, smoke tests, compiler checks, code cleanup, and work summaries.
+repository: "https://github.com/cursor/plugins"
+license: "MIT"
+visibility: public
+sourcePlatform: cursor
+
+compatibility:
+  platforms:
+    tested: [cursor]
+    partial: [claude-code, codex]
+  models:
+    recommended: []
+    minimum: []
+
+agents:
+  - name: ci-watcher
+    path: agents/ci-watcher.md
+    description: "Watch GitHub CI for the current branch and report pass/fail with relevant failure logs. Use when waiting for CI results or CI has failed. Use proactively to monitor branch CI."
+    model: fast
+
+skills:
+  - name: check-compiler-errors
+    path: skills/check-compiler-errors/SKILL.md
+    description: "Run compile and type-check commands and report failures"
+  - name: deslop
+    path: skills/deslop/SKILL.md
+    description: "Remove AI-generated code slop and clean up code style"
+  - name: fix-ci
+    path: skills/fix-ci/SKILL.md
+    description: "Find failing CI jobs, inspect logs, and apply focused fixes"
+  - name: fix-merge-conflicts
+    path: skills/fix-merge-conflicts/SKILL.md
+    description: "Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution"
+  - name: get-pr-comments
+    path: skills/get-pr-comments/SKILL.md
+    description: "Fetch and summarize review comments from the active pull request"
+  - name: loop-on-ci
+    path: skills/loop-on-ci/SKILL.md
+    description: "Watch CI runs and iterate on failures until all checks pass"
+  - name: new-branch-and-pr
+    path: skills/new-branch-and-pr/SKILL.md
+    description: "Create a fresh branch, complete work, and open a pull request"
+  - name: pr-review-canvas
+    path: skills/pr-review-canvas/SKILL.md
+    description: "Generate an interactive PR review walkthrough as an HTML page. Fetches PR data via gh API, categorizes files into core vs mechanical changes, adds reviewer annotations, and renders diffs with moved-code detection. Use when the user pastes a GitHub PR URL and asks for a review, walkthrough, or summary, or says 'review this PR'."
+  - name: review-and-ship
+    path: skills/review-and-ship/SKILL.md
+    description: "Run a structured review, close key issues, and ship changes via PR"
+  - name: run-smoke-tests
+    path: skills/run-smoke-tests/SKILL.md
+    description: "Run Playwright smoke tests, debug failures, and verify fixes"
+  - name: weekly-review
+    path: skills/weekly-review/SKILL.md
+    description: "Produce a weekly synthesis of authored commits with highlights by bugfix, tech debt, and net-new work"
+  - name: what-did-i-get-done
+    path: skills/what-did-i-get-done/SKILL.md
+    description: "Summarize authored commits over a user-specified time period into a concise update"
+
+rules:
+  - path: rules/no-inline-imports.mdc
+    description: "Keep imports at top of file and avoid inline imports"
+    alwaysApply: true
+  - path: rules/typescript-exhaustive-switch.mdc
+    description: "Use exhaustive switch handling for TypeScript unions and enums"
+    alwaysApply: true

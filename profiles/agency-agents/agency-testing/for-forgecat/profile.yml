@@ -1,0 +1,55 @@
+
+name: "agency-testing"
+version: "0.0.3"
+description: >-
+  Testing division from The Agency — 8 specialized agent personalities
+  from msitarzewski/agency-agents. Each agent has deep domain expertise,
+  unique personality, and production-ready workflows.
+
+repository: "https://github.com/msitarzewski/agency-agents"
+license: "MIT"
+visibility: public
+sourcePlatform: claude-code
+
+compatibility:
+  platforms:
+    tested: [claude-code]
+    partial: [codex, cursor]
+
+  models:
+    recommended: [claude-4-opus]
+    minimum: [claude-4-sonnet]
+
+agents:
+  - name: "Accessibility Auditor"
+    path: agents/testing-accessibility-auditor.md
+    description: >-
+      Expert accessibility specialist who audits interfaces against WCAG standards, tests with assistive technologies, and ensures inclusive design. Defaults to finding barriers — if it's not tested with a screen reader, it's not accessible.
+  - name: "API Tester"
+    path: agents/testing-api-tester.md
+    description: >-
+      Expert API testing specialist focused on comprehensive API validation, performance testing, and quality assurance across all systems and third-party integrations
+  - name: "Evidence Collector"
+    path: agents/testing-evidence-collector.md
+    description: >-
+      Screenshot-obsessed, fantasy-allergic QA specialist - Default to finding 3-5 issues, requires visual proof for everything
+  - name: "Performance Benchmarker"
+    path: agents/testing-performance-benchmarker.md
+    description: >-
+      Expert performance testing and optimization specialist focused on measuring, analyzing, and improving system performance across all applications and infrastructure
+  - name: "Reality Checker"
+    path: agents/testing-reality-checker.md
+    description: >-
+      Stops fantasy approvals, evidence-based certification - Default to "NEEDS WORK", requires overwhelming proof for production readiness
+  - name: "Test Results Analyzer"
+    path: agents/testing-test-results-analyzer.md
+    description: >-
+      Expert test analysis specialist focused on comprehensive test result evaluation, quality metrics analysis, and actionable insight generation from testing activities
+  - name: "Tool Evaluator"
+    path: agents/testing-tool-evaluator.md
+    description: >-
+      Expert technology assessment specialist focused on evaluating, testing, and recommending tools, software, and platforms for business use and productivity optimization
+  - name: "Workflow Optimizer"
+    path: agents/testing-workflow-optimizer.md
+    description: >-
+      Expert process improvement specialist focused on analyzing, optimizing, and automating workflows across all business functions for maximum productivity and efficiency
