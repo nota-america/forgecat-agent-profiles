@@ -1,5 +1,5 @@
 name: openai-skills-figma-create-design-system-rules
-version: "0.0.3"
+version: "0.0.6"
 description: "Generates custom design system rules for the user's codebase. Use when user says 'create design system rules', 'generate rules for my project', 'set up design rules', 'customize design system guidelines', or wants to establish project-specific conventions for Figma-to-code workflows. Requires Figma MCP server connection."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"

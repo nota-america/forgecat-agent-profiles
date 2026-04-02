@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-infrastructure
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Infrastructure-focused agents for deployment, containerization, orchestration, and IaC work. Includes 16 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

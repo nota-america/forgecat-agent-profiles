@@ -27,7 +27,7 @@ npx forgecat install @forgecat/agency-paid-media
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.3` |
+| Version | `0.0.6` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |

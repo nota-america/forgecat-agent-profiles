@@ -1,5 +1,5 @@
 name: openai-skills-gh-address-comments
-version: "0.0.3"
+version: "0.0.6"
 description: "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"

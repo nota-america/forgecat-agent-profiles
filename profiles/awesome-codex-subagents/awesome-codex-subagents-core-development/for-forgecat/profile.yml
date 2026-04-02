@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-core-development
-version: "0.0.5"
+version: "0.0.8"
 description: >-
   Core agents for application architecture, cross-layer implementation, UI work, and protocol-specific development. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

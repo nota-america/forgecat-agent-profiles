@@ -31,7 +31,7 @@ npx forgecat install @forgecat/awesome-codex-subagents-core-development
 |---|---|
 | Author | `VoltAgent + community contributors` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
-| Version | `0.0.5` |
+| Version | `0.0.8` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |

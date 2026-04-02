@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-quality-security
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Review and verification agents that work especially well as read-heavy Codex subagents. Includes 16 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

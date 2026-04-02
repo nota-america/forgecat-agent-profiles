@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-developer-experience
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Agents for builds, developer tooling, documentation, MCP integrations, and refactors. Includes 13 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

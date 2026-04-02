@@ -1,5 +1,5 @@
 name: openai-skills-doc
-version: "0.0.3"
+version: "0.0.6"
 description: "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"

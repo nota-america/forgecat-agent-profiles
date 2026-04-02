@@ -1,5 +1,5 @@
 name: openai-skills-spreadsheet
-version: "0.0.3"
+version: "0.0.6"
 description: "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"

@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-research-analysis
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Read-heavy research agents for searching, validating, comparing, and synthesizing information. Includes 7 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 
