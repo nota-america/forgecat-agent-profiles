@@ -10,7 +10,7 @@ Game Development division from The Agency — 20 specialized agent personalities
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-game-development
+npx forgecat install @forgecat/agency-game-development
 ```
 
 ## Agents

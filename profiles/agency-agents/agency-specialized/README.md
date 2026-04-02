@@ -10,7 +10,7 @@ Specialized division from The Agency — 27 specialized agent personalities from
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-specialized
+npx forgecat install @forgecat/agency-specialized
 ```
 
 ## Agents

@@ -10,7 +10,7 @@ Use when the user asks to inspect Sentry issues or events, summarize recent prod
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/openai-skills-sentry
+npx forgecat install @forgecat/openai-skills-sentry
 ```
 
 ## Skills

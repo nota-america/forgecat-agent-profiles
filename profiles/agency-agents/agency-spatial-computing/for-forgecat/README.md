@@ -12,7 +12,7 @@ Spatial Computing division from The Agency — 6 specialized agent personalities
 
 ## Installation
 ```bash
-npx forgecat install @hephai-nota/agency-spatial-computing
+npx forgecat install @forgecat/agency-spatial-computing
 ```
 
 ## Agents
