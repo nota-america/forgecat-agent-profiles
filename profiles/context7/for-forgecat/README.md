@@ -31,7 +31,7 @@ npx forgecat install @forgecat/context7
 |---|---|
 | Author | `Upstash` |
 | Original repository | `https://github.com/upstash/context7` |
-| Version | `0.0.3` |
+| Version | `0.0.6` |
 | Original commit | `383e127` (2026-03-16) |
 | Converted path | `plugins/claude/context7/` |
 | License | `MIT` |

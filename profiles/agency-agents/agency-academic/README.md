@@ -25,7 +25,7 @@ npx forgecat install @forgecat/agency-academic
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.2` |
+| Version | `0.0.5` |
 | Original commit | `source-preserved-in-ori` |
 | License | `MIT` |
 | Source platform | `claude-code` |

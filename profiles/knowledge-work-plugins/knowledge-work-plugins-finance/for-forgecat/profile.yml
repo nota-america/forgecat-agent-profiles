@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-finance"
-version: "0.0.1"
+version: "0.0.4"
 description: Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/finance
 license: Apache-2.0

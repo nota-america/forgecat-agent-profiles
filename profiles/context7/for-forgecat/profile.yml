@@ -1,5 +1,5 @@
 name: context7
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Up-to-date documentation lookup via Context7 MCP. Pull version-specific
   documentation and code examples directly from source repositories into

@@ -1,5 +1,5 @@
 name: openai-skills-notion-research-documentation
-version: "0.0.3"
+version: "0.0.6"
 description: "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations."
 repository: "https://github.com/openai/skills"
 license: "Apache-2.0"

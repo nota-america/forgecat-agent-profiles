@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-specialized-domains
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Focused domain agents that still have a clear implementation or verification boundary. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

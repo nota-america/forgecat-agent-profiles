@@ -1,5 +1,5 @@
 name: "openai-skills-figma"
-version: "0.0.1"
+version: "0.0.4"
 description: >-
   Use the Figma MCP server to fetch design context, screenshots, variables,
   and assets from Figma, and to translate Figma nodes into production code.

@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-design"
-version: "0.0.1"
+version: "0.0.4"
 description: Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/design
 license: Apache-2.0

@@ -56,7 +56,7 @@ npx forgecat install @forgecat/knowledge-work-plugins-marketing
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing |
-| Version | `0.0.1` |
+| Version | `0.0.4` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |

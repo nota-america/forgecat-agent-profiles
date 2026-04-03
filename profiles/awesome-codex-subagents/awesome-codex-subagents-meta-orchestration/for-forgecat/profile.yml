@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-meta-orchestration
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Agents that help plan or coordinate multi-agent Codex workflows without inventing unsupported mechanics. Includes 10 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 

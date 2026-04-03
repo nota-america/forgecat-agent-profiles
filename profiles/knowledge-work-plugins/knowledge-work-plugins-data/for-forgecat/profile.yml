@@ -1,5 +1,5 @@
 name: "knowledge-work-plugins-data"
-version: "0.0.1"
+version: "0.0.4"
 description: Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/data
 license: Apache-2.0

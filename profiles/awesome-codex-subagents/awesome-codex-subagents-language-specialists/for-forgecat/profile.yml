@@ -1,5 +1,5 @@
 name: awesome-codex-subagents-language-specialists
-version: "0.0.3"
+version: "0.0.6"
 description: >-
   Language and framework specialists for ecosystem-specific implementation, debugging, and architectural guidance. Includes 26 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 
