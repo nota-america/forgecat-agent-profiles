@@ -47,8 +47,8 @@ npx forgecat install @forgecat/agency-specialized
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.6` |
-| Original commit | `source-preserved-in-ori` |
+| Version | `0.0.7` |
+| Original commit | `9c31d86` (2026-03-23) |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
