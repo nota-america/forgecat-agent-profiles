@@ -7,9 +7,9 @@ visibility: public
 compatibility:
   platforms:
     tested:
-      - claude-code
       - cursor
     partial:
+      - claude-code
       - codex
   models:
     recommended: []

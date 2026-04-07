@@ -33,7 +33,7 @@ npx forgecat install @forgecat-nota/compound-engineering
 | Version | `0.0.0` |
 | Original commit | `a6183ed` |
 | License | `MIT` |
-| Source platform | Claude Code, Cursor |
+| Source platform | Cursor |
 
 ## Compatibility
 
@@ -41,7 +41,7 @@ npx forgecat install @forgecat-nota/compound-engineering
 
 | Platform | Status |
 |---|---|
-| Claude Code | Tested |
+| Claude Code | Partial |
 | Cursor | Tested |
 | Codex | Partial |
 
