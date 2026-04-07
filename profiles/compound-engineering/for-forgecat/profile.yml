@@ -1,0 +1,310 @@
+name: compound-engineering
+version: 0.0.0
+description: AI-powered development tools for code review, research, design, and workflow automation.
+repository: https://github.com/EveryInc/compound-engineering-plugin
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+      - cursor
+    partial:
+      - claude-code
+      - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+  - name: design-implementation-reviewer
+    path: agents/design/design-implementation-reviewer.md
+    description: Visually compares live UI implementation against Figma designs and provides detailed feedback on discrepancies. Use after writing or modifying HTML/CSS/React components to verify design fidelity.
+  - name: design-iterator
+    path: agents/design/design-iterator.md
+    description: Iteratively refines UI design through N screenshot-analyze-improve cycles. Use PROACTIVELY when design changes aren't coming together after 1-2 attempts, or when user requests iterative refinement.
+  - name: figma-design-sync
+    path: agents/design/figma-design-sync.md
+    description: Detects and fixes visual differences between a web implementation and its Figma design. Use iteratively when syncing implementation to match Figma specs.
+  - name: ankane-readme-writer
+    path: agents/docs/ankane-readme-writer.md
+    description: Creates or updates README files following Ankane-style template for Ruby gems. Use when writing gem documentation with imperative voice, concise prose, and standard section ordering.
+  - name: adversarial-document-reviewer
+    path: agents/document-review/adversarial-document-reviewer.md
+    description: Conditional document-review persona, selected when the document has >5 requirements or implementation units, makes significant architectural decisions, covers high-stakes domains, or proposes new abstractions. Challenges premises, surfaces unstated assumptions, and stress-tests decisions rather than evaluating document quality.
+  - name: coherence-reviewer
+    path: agents/document-review/coherence-reviewer.md
+    description: Reviews planning documents for internal consistency -- contradictions between sections, terminology drift, structural issues, and ambiguity where readers would diverge. Spawned by the document-review skill.
+  - name: design-lens-reviewer
+    path: agents/document-review/design-lens-reviewer.md
+    description: Reviews planning documents for missing design decisions -- information architecture, interaction states, user flows, and AI slop risk. Uses dimensional rating to identify gaps. Spawned by the document-review skill.
+  - name: feasibility-reviewer
+    path: agents/document-review/feasibility-reviewer.md
+    description: Evaluates whether proposed technical approaches in planning documents will survive contact with reality -- architecture conflicts, dependency gaps, migration risks, and implementability. Spawned by the document-review skill.
+  - name: product-lens-reviewer
+    path: agents/document-review/product-lens-reviewer.md
+    description: "Reviews planning documents as a senior product leader -- challenges premise claims, assesses strategic consequences (trajectory, identity, adoption, opportunity cost), and surfaces goal-work misalignment. Domain-agnostic: users may be end users, developers, operators, or any audience. Spawned by the document-review skill."
+  - name: scope-guardian-reviewer
+    path: agents/document-review/scope-guardian-reviewer.md
+    description: Reviews planning documents for scope alignment and unjustified complexity -- challenges unnecessary abstractions, premature frameworks, and scope that exceeds stated goals. Spawned by the document-review skill.
+  - name: security-lens-reviewer
+    path: agents/document-review/security-lens-reviewer.md
+    description: Evaluates planning documents for security gaps at the plan level -- auth/authz assumptions, data exposure risks, API surface vulnerabilities, and missing threat model elements. Spawned by the document-review skill.
+  - name: best-practices-researcher
+    path: agents/research/best-practices-researcher.md
+    description: Researches and synthesizes external best practices, documentation, and examples for any technology or framework. Use when you need industry standards, community conventions, or implementation guidance.
+  - name: framework-docs-researcher
+    path: agents/research/framework-docs-researcher.md
+    description: Gathers comprehensive documentation and best practices for frameworks, libraries, or dependencies. Use when you need official docs, version-specific constraints, or implementation patterns.
+  - name: git-history-analyzer
+    path: agents/research/git-history-analyzer.md
+    description: Performs archaeological analysis of git history to trace code evolution, identify contributors, and understand why code patterns exist. Use when you need historical context for code changes.
+  - name: issue-intelligence-analyst
+    path: agents/research/issue-intelligence-analyst.md
+    description: Fetches and analyzes GitHub issues to surface recurring themes, pain patterns, and severity trends. Use when understanding a project's issue landscape, analyzing bug patterns for ideation, or summarizing what users are reporting.
+  - name: learnings-researcher
+    path: agents/research/learnings-researcher.md
+    description: Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes.
+  - name: repo-research-analyst
+    path: agents/research/repo-research-analyst.md
+    description: Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions.
+  - name: slack-researcher
+    path: agents/research/slack-researcher.md
+    description: Searches Slack for organizational context relevant to the current task -- decisions, constraints, and discussions that may not be documented elsewhere. Use when the user explicitly asks to search Slack for context during ideation, planning, or brainstorming. Always surfaces the workspace identity so the user can verify the correct Slack instance was searched.
+  - name: adversarial-reviewer
+    path: agents/review/adversarial-reviewer.md
+    description: Conditional code-review persona, selected when the diff is large (>=50 changed lines) or touches high-risk domains like auth, payments, data mutations, or external APIs. Actively constructs failure scenarios to break the implementation rather than checking against known patterns.
+  - name: agent-native-reviewer
+    path: agents/review/agent-native-reviewer.md
+    description: Reviews code to ensure agent-native parity -- any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts.
+  - name: api-contract-reviewer
+    path: agents/review/api-contract-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches API routes, request/response types, serialization, versioning, or exported type signatures. Reviews code for breaking contract changes.
+  - name: architecture-strategist
+    path: agents/review/architecture-strategist.md
+    description: Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors.
+  - name: cli-agent-readiness-reviewer
+    path: agents/review/cli-agent-readiness-reviewer.md
+    description: Reviews CLI source code, plans, or specs for AI agent readiness using a severity-based rubric focused on whether a CLI is merely usable by agents or genuinely optimized for them.
+  - name: cli-readiness-reviewer
+    path: agents/review/cli-readiness-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches CLI command definitions, argument parsing, or command handler implementations. Reviews CLI code for agent readiness -- how well the CLI serves autonomous agents, not just human users.
+  - name: code-simplicity-reviewer
+    path: agents/review/code-simplicity-reviewer.md
+    description: Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities.
+  - name: correctness-reviewer
+    path: agents/review/correctness-reviewer.md
+    description: Always-on code-review persona. Reviews code for logic errors, edge cases, state management bugs, error propagation failures, and intent-vs-implementation mismatches.
+  - name: data-integrity-guardian
+    path: agents/review/data-integrity-guardian.md
+    description: Reviews database migrations, data models, and persistent data code for safety. Use when checking migration safety, data constraints, transaction boundaries, or privacy compliance.
+  - name: data-migration-expert
+    path: agents/review/data-migration-expert.md
+    description: Validates data migrations, backfills, and production data transformations against reality. Use when PRs involve ID mappings, column renames, enum conversions, or schema changes.
+  - name: data-migrations-reviewer
+    path: agents/review/data-migrations-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches migration files, schema changes, data transformations, or backfill scripts. Reviews code for data integrity and migration safety.
+  - name: deployment-verification-agent
+    path: agents/review/deployment-verification-agent.md
+    description: Produces Go/No-Go deployment checklists with SQL verification queries, rollback procedures, and monitoring plans. Use when PRs touch production data, migrations, or risky data changes.
+  - name: dhh-rails-reviewer
+    path: agents/review/dhh-rails-reviewer.md
+    description: Conditional code-review persona, selected when Rails diffs introduce architectural choices, abstractions, or frontend patterns that may fight the framework. Reviews code from an opinionated DHH perspective.
+  - name: julik-frontend-races-reviewer
+    path: agents/review/julik-frontend-races-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches async UI code, Stimulus/Turbo lifecycles, or DOM-timing-sensitive frontend behavior. Reviews code for race conditions and janky UI failure modes.
+  - name: kieran-python-reviewer
+    path: agents/review/kieran-python-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches Python code. Reviews changes with Kieran's strict bar for Pythonic clarity, type hints, and maintainability.
+  - name: kieran-rails-reviewer
+    path: agents/review/kieran-rails-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches Rails application code. Reviews Rails changes with Kieran's strict bar for clarity, conventions, and maintainability.
+  - name: kieran-typescript-reviewer
+    path: agents/review/kieran-typescript-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches TypeScript code. Reviews changes with Kieran's strict bar for type safety, clarity, and maintainability.
+  - name: maintainability-reviewer
+    path: agents/review/maintainability-reviewer.md
+    description: Always-on code-review persona. Reviews code for premature abstraction, unnecessary indirection, dead code, coupling between unrelated modules, and naming that obscures intent.
+  - name: pattern-recognition-specialist
+    path: agents/review/pattern-recognition-specialist.md
+    description: Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns.
+  - name: performance-oracle
+    path: agents/review/performance-oracle.md
+    description: Analyzes code for performance bottlenecks, algorithmic complexity, database queries, memory usage, and scalability. Use after implementing features or when performance concerns arise.
+  - name: performance-reviewer
+    path: agents/review/performance-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches database queries, loop-heavy data transforms, caching layers, or I/O-intensive paths. Reviews code for runtime performance and scalability issues.
+  - name: previous-comments-reviewer
+    path: agents/review/previous-comments-reviewer.md
+    description: Conditional code-review persona, selected when reviewing a PR that has existing review comments or review threads. Checks whether prior feedback has been addressed in the current diff.
+  - name: project-standards-reviewer
+    path: agents/review/project-standards-reviewer.md
+    description: Always-on code-review persona. Audits changes against the project's own CLAUDE.md and AGENTS.md standards -- frontmatter rules, reference inclusion, naming conventions, cross-platform portability, and tool selection policies.
+  - name: reliability-reviewer
+    path: agents/review/reliability-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches error handling, retries, circuit breakers, timeouts, health checks, background jobs, or async handlers. Reviews code for production reliability and failure modes.
+  - name: schema-drift-detector
+    path: agents/review/schema-drift-detector.md
+    description: Detects unrelated schema.rb changes in PRs by cross-referencing against included migrations. Use when reviewing PRs with database schema changes.
+  - name: security-reviewer
+    path: agents/review/security-reviewer.md
+    description: Conditional code-review persona, selected when the diff touches auth middleware, public endpoints, user input handling, or permission checks. Reviews code for exploitable vulnerabilities.
+  - name: security-sentinel
+    path: agents/review/security-sentinel.md
+    description: Performs security audits for vulnerabilities, input validation, auth/authz, hardcoded secrets, and OWASP compliance. Use when reviewing code for security issues or before deployment.
+  - name: testing-reviewer
+    path: agents/review/testing-reviewer.md
+    description: Always-on code-review persona. Reviews code for test coverage gaps, weak assertions, brittle implementation-coupled tests, and missing edge case coverage.
+  - name: bug-reproduction-validator
+    path: agents/workflow/bug-reproduction-validator.md
+    description: Systematically reproduces and validates bug reports to confirm whether reported behavior is an actual bug. Use when you receive a bug report or issue that needs verification.
+  - name: lint
+    path: agents/workflow/lint.md
+    description: Use this agent when you need to run linting and code quality checks on Ruby and ERB files. Run before pushing to origin.
+  - name: pr-comment-resolver
+    path: agents/workflow/pr-comment-resolver.md
+    description: Evaluates and resolves one or more related PR review threads -- assesses validity, implements fixes, and returns structured summaries with reply text. Spawned by the resolve-pr-feedback skill.
+  - name: spec-flow-analyzer
+    path: agents/workflow/spec-flow-analyzer.md
+    description: Analyzes specifications and feature descriptions for user flow completeness and gap identification. Use when a spec, plan, or feature description needs flow analysis, edge case discovery, or requirements validation.
+skills:
+  - name: agent-browser
+    path: skills/agent-browser
+    description: Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to "open a website", "fill out a form", "click a button", "take a screenshot", "scrape data from a page", "test this web app", "login to a site", "automate browser actions", or any task requiring programmatic web interaction.
+    scripts:
+      - path: skills/agent-browser/templates/authenticated-session.sh
+      - path: skills/agent-browser/templates/capture-workflow.sh
+      - path: skills/agent-browser/templates/form-automation.sh
+  - name: agent-native-architecture
+    path: skills/agent-native-architecture
+    description: Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.
+  - name: agent-native-audit
+    path: skills/agent-native-audit
+    description: Run comprehensive agent-native architecture review with scored principles
+  - name: andrew-kane-gem-writer
+    path: skills/andrew-kane-gem-writer
+    description: This skill should be used when writing Ruby gems following Andrew Kane's proven patterns and philosophy. It applies when creating new Ruby gems, refactoring existing gems, designing gem APIs, or when clean, minimal, production-ready Ruby library code is needed. Triggers on requests like "create a gem", "write a Ruby library", "design a gem API", or mentions of Andrew Kane's style.
+  - name: ce:brainstorm
+    path: skills/ce-brainstorm
+    description: Explore requirements and approaches through collaborative dialogue before writing a right-sized requirements document and planning implementation. Use for feature ideas, problem framing, when the user says 'let's brainstorm', or when they want to think through options before deciding what to build. Also use when a user describes a vague or ambitious feature request, asks 'what should we build', 'help me think through X', presents a problem with multiple valid solutions, or seems unsure about scope or direction — even if they don't explicitly ask to brainstorm.
+  - name: ce:compound
+    path: skills/ce-compound
+    description: Document a recently solved problem to compound your team's knowledge
+  - name: ce:compound-refresh
+    path: skills/ce-compound-refresh
+    description: Refresh stale or drifting learnings and pattern docs in docs/solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing docs/solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation.
+  - name: ce:ideate
+    path: skills/ce-ideate
+    description: Generate and critically evaluate grounded improvement ideas for the current project. Use when asking what to improve, requesting idea generation, exploring surprising improvements, or wanting the AI to proactively suggest strong project directions before brainstorming one in depth. Triggers on phrases like 'what should I improve', 'give me ideas', 'ideate on this project', 'surprise me with improvements', 'what would you change', or any request for AI-generated project improvement suggestions rather than refining the user's own idea.
+  - name: ce:plan
+    path: skills/ce-plan
+    description: Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan. For exploratory or ambiguous requests where the user is unsure what to do, prefer ce:brainstorm first.
+  - name: ce:review
+    path: skills/ce-review
+    description: Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.
+    scripts:
+      - path: skills/ce-review/references/resolve-base.sh
+  - name: ce:work
+    path: skills/ce-work
+    description: Execute work efficiently while maintaining quality and finishing features
+  - name: ce:work-beta
+    path: skills/ce-work-beta
+    description: "[BETA] Execute work with external delegate support. Same as ce:work but includes experimental Codex delegation mode for token-conserving code implementation."
+  - name: changelog
+    path: skills/changelog
+    description: Create engaging changelogs for recent merges to main branch
+  - name: claude-permissions-optimizer
+    path: skills/claude-permissions-optimizer
+    description: Optimize Claude Code permissions by finding safe Bash commands from session history and auto-applying them to settings.json. Can run from any coding agent but targets Claude Code specifically. Use when experiencing permission fatigue, too many permission prompts, wanting to optimize permissions, or needing to set up allowlists. Triggers on "optimize permissions", "reduce permission prompts", "allowlist commands", "too many permission prompts", "permission fatigue", "permission setup", or complaints about clicking approve too often.
+  - name: deploy-docs
+    path: skills/deploy-docs
+    description: Validate and prepare documentation for GitHub Pages deployment
+  - name: dhh-rails-style
+    path: skills/dhh-rails-style
+    description: This skill should be used when writing Ruby and Rails code in DHH's distinctive 37signals style. It applies when writing Ruby code, Rails applications, creating models, controllers, or any Ruby file. Triggers on Ruby/Rails code generation, refactoring requests, code review, or when the user mentions DHH, 37signals, Basecamp, HEY, or Campfire style. Embodies REST purity, fat models, thin controllers, Current attributes, Hotwire patterns, and the "clarity over cleverness" philosophy.
+  - name: document-review
+    path: skills/document-review
+    description: Review requirements or plan documents using parallel persona agents that surface role-specific issues. Use when a requirements document or plan document exists and the user wants to improve it.
+  - name: dspy-ruby
+    path: skills/dspy-ruby
+    description: Build type-safe LLM applications with DSPy.rb — Ruby's programmatic prompt framework with signatures, modules, agents, and optimization. Use when implementing predictable AI features, creating LLM signatures and modules, configuring language model providers, building agent systems with tools, optimizing prompts, or testing LLM-powered functionality in Ruby applications.
+  - name: every-style-editor
+    path: skills/every-style-editor
+    description: This skill should be used when reviewing or editing copy to ensure adherence to Every's style guide. It provides a systematic line-by-line review process for grammar, punctuation, mechanics, and style guide compliance.
+  - name: feature-video
+    path: skills/feature-video
+    description: Record a video walkthrough of a feature and add it to the PR description. Use when a PR needs a visual demo for reviewers, when the user asks to demo a feature, create a PR video, record a walkthrough, show what changed visually, or add a video to a pull request.
+  - name: frontend-design
+    path: skills/frontend-design
+    description: Build web interfaces with genuine design quality, not AI slop. Use for any frontend work - landing pages, web apps, dashboards, admin panels, components, interactive experiences. Activates for both greenfield builds and modifications to existing applications. Detects existing design systems and respects them. Covers composition, typography, color, motion, and copy. Verifies results via screenshots before declaring done.
+  - name: gemini-imagegen
+    path: skills/gemini-imagegen
+    description: This skill should be used when generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, creating stickers, product mockups, or any image generation/manipulation task. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images.
+    scripts:
+      - path: skills/gemini-imagegen/scripts/compose_images.py
+      - path: skills/gemini-imagegen/scripts/edit_image.py
+      - path: skills/gemini-imagegen/scripts/gemini_images.py
+      - path: skills/gemini-imagegen/scripts/generate_image.py
+      - path: skills/gemini-imagegen/scripts/multi_turn_chat.py
+  - name: git-clean-gone-branches
+    path: skills/git-clean-gone-branches
+    description: Clean up local branches whose remote tracking branch is gone. Use when the user says "clean up branches", "delete gone branches", "prune local branches", "clean gone", or wants to remove stale local branches that no longer exist on the remote. Also handles removing associated worktrees for branches that have them.
+  - name: git-commit
+    path: skills/git-commit
+    description: Create a git commit with a clear, value-communicating message. Use when the user says "commit", "commit this", "save my changes", "create a commit", or wants to commit staged or unstaged work. Produces well-structured commit messages that follow repo conventions when they exist, and defaults to conventional commit format otherwise.
+  - name: git-commit-push-pr
+    path: skills/git-commit-push-pr
+    description: Commit, push, and open a PR with an adaptive, value-first description. Use when the user says "commit and PR", "push and open a PR", "ship this", "create a PR", "open a pull request", "commit push PR", or wants to go from working changes to an open pull request in one step. Also use when the user says "update the PR description", "refresh the PR description", "freshen the PR", or wants to rewrite an existing PR description. Produces PR descriptions that scale in depth with the complexity of the change, avoiding cookie-cutter templates.
+  - name: git-worktree
+    path: skills/git-worktree
+    description: This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles.
+    scripts:
+      - path: skills/git-worktree/scripts/worktree-manager.sh
+  - name: lfg
+    path: skills/lfg
+    description: Full autonomous engineering workflow
+  - name: onboarding
+    path: skills/onboarding
+    description: Generate or regenerate ONBOARDING.md to help new contributors understand a codebase. Use when the user asks to 'create onboarding docs', 'generate ONBOARDING.md', 'document this project for new developers', 'write onboarding documentation', 'vonboard', 'vonboarding', 'prepare this repo for a new contributor', 'refresh the onboarding doc', or 'update ONBOARDING.md'. Also use when someone needs to onboard a new team member and wants a written artifact, or when a codebase lacks onboarding documentation and the user wants to generate one.
+  - name: orchestrating-swarms
+    path: skills/orchestrating-swarms
+    description: This skill should be used when orchestrating multi-agent swarms using Claude Code's TeammateTool and Task system. It applies when coordinating multiple agents, running parallel code reviews, creating pipeline workflows with dependencies, building self-organizing task queues, or any task benefiting from divide-and-conquer patterns.
+  - name: proof
+    path: skills/proof
+    description: Create, edit, comment on, and share markdown documents via Proof's web API and local bridge. Use when asked to "proof", "share a doc", "create a proof doc", "comment on a document", "suggest edits", "review in proof", or when given a proofeditor.ai URL.
+  - name: rclone
+    path: skills/rclone
+    description: Upload, sync, and manage files across cloud storage providers using rclone. Use when uploading files (images, videos, documents) to S3, Cloudflare R2, Backblaze B2, Google Drive, Dropbox, or any S3-compatible storage. Triggers on "upload to S3", "sync to cloud", "rclone", "backup files", "upload video/image to bucket", or requests to transfer files to remote storage.
+    scripts:
+      - path: skills/rclone/scripts/check_setup.sh
+  - name: report-bug-ce
+    path: skills/report-bug-ce
+    description: Report a bug in the compound-engineering plugin
+  - name: reproduce-bug
+    path: skills/reproduce-bug
+    description: Systematically reproduce and investigate a bug from a GitHub issue. Use when the user provides a GitHub issue number or URL for a bug they want reproduced or investigated.
+  - name: resolve-pr-feedback
+    path: skills/resolve-pr-feedback
+    description: Resolve PR review feedback by evaluating validity and fixing issues in parallel. Use when addressing PR review comments, resolving review threads, or fixing code review feedback.
+  - name: setup
+    path: skills/setup
+    description: Configure project-level settings for compound-engineering workflows. Currently a placeholder — review agent selection is handled automatically by ce:review.
+  - name: slfg
+    path: skills/slfg
+    description: Full autonomous engineering workflow using swarm mode for parallel execution
+  - name: test-browser
+    path: skills/test-browser
+    description: Run browser tests on pages affected by current PR or branch
+  - name: test-xcode
+    path: skills/test-xcode
+    description: Build and test iOS apps on simulator using XcodeBuildMCP. Use after making iOS code changes, before creating a PR, or when verifying app behavior and checking for crashes on simulator.
+  - name: todo-create
+    path: skills/todo-create
+    description: Use when creating durable work items, managing todo lifecycle, or tracking findings across sessions in the file-based todo system
+  - name: todo-resolve
+    path: skills/todo-resolve
+    description: Use when batch-resolving approved todos, especially after code review or triage sessions
+  - name: todo-triage
+    path: skills/todo-triage
+    description: Use when reviewing pending todos for approval, prioritizing code review findings, or interactively categorizing work items
+rules:
+  - path: AGENTS.md
+    description: Project operating instructions for agent workflows.

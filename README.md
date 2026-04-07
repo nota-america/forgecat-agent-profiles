@@ -19,6 +19,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [agency-agents](./profiles/agency-agents) | 13 | Team role agents for agencies — academic, design, engineering, marketing, sales, and more |
 | [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
+| [compound-engineering](./profiles/compound-engineering) | 1 | AI-powered development profile with deep workflows for review, research, and design |
 | [cursor-plugins](./profiles/cursor-plugins) | 1 | Plugins for Cursor — CI, code review, shipping, test reliability |
 | [knowledge-work-plugins](./profiles/knowledge-work-plugins) | 14 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
 | [openai-skills](./profiles/openai-skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
