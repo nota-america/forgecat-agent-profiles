@@ -169,6 +169,10 @@ skills:
   - name: agent-browser
     path: skills/agent-browser
     description: Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to "open a website", "fill out a form", "click a button", "take a screenshot", "scrape data from a page", "test this web app", "login to a site", "automate browser actions", or any task requiring programmatic web interaction.
+    scripts:
+      - path: skills/agent-browser/templates/authenticated-session.sh
+      - path: skills/agent-browser/templates/capture-workflow.sh
+      - path: skills/agent-browser/templates/form-automation.sh
   - name: agent-native-architecture
     path: skills/agent-native-architecture
     description: Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.
@@ -196,6 +200,8 @@ skills:
   - name: ce:review
     path: skills/ce-review
     description: Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.
+    scripts:
+      - path: skills/ce-review/references/resolve-base.sh
   - name: ce:work
     path: skills/ce-work
     description: Execute work efficiently while maintaining quality and finishing features
@@ -232,6 +238,12 @@ skills:
   - name: gemini-imagegen
     path: skills/gemini-imagegen
     description: This skill should be used when generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, creating stickers, product mockups, or any image generation/manipulation task. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images.
+    scripts:
+      - path: skills/gemini-imagegen/scripts/compose_images.py
+      - path: skills/gemini-imagegen/scripts/edit_image.py
+      - path: skills/gemini-imagegen/scripts/gemini_images.py
+      - path: skills/gemini-imagegen/scripts/generate_image.py
+      - path: skills/gemini-imagegen/scripts/multi_turn_chat.py
   - name: git-clean-gone-branches
     path: skills/git-clean-gone-branches
     description: Clean up local branches whose remote tracking branch is gone. Use when the user says "clean up branches", "delete gone branches", "prune local branches", "clean gone", or wants to remove stale local branches that no longer exist on the remote. Also handles removing associated worktrees for branches that have them.
@@ -244,6 +256,8 @@ skills:
   - name: git-worktree
     path: skills/git-worktree
     description: This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles.
+    scripts:
+      - path: skills/git-worktree/scripts/worktree-manager.sh
   - name: lfg
     path: skills/lfg
     description: Full autonomous engineering workflow
@@ -259,6 +273,8 @@ skills:
   - name: rclone
     path: skills/rclone
     description: Upload, sync, and manage files across cloud storage providers using rclone. Use when uploading files (images, videos, documents) to S3, Cloudflare R2, Backblaze B2, Google Drive, Dropbox, or any S3-compatible storage. Triggers on "upload to S3", "sync to cloud", "rclone", "backup files", "upload video/image to bucket", or requests to transfer files to remote storage.
+    scripts:
+      - path: skills/rclone/scripts/check_setup.sh
   - name: report-bug-ce
     path: skills/report-bug-ce
     description: Report a bug in the compound-engineering plugin
