@@ -292,5 +292,3 @@ skills:
 rules:
   - path: AGENTS.md
     description: Project operating instructions for agent workflows.
-  - path: CLAUDE.md
-    description: Claude-specific operating instructions.
