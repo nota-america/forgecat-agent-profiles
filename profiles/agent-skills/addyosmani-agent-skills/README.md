@@ -1,5 +1,4 @@
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
-<!-- legacy validator token: hephai_banner.png -->
 
 # addyosmani-agent-skills
 
@@ -16,7 +15,7 @@ Production-grade engineering skills pack for AI coding agents.
 ## Installation
 
 ```bash
-npx forgecat install @hephai-nota/addyosmani-agent-skills
+npx forgecat install @forgecat/addyosmani-agent-skills
 ```
 
 ## Skills
