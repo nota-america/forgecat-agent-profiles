@@ -35,23 +35,6 @@ npx forgecat install @hephai-nota/addyosmani-agent-skills
 - **idea-refine** — Refines ideas iteratively. Refine ideas through structured divergent and convergent thinking. Use "idea-refine" or "ideate" to trigger.
 - **...and 8 more skills**
 
-## Agents
-
-- **code-reviewer** — Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.
-- **security-auditor** — Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.
-- **test-engineer** — QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.
-
-## Commands
-
-- **/build** — Implement the next task incrementally — build, test, verify, commit
-- **/code-simplify** — Simplify code for clarity and maintainability — reduce complexity without changing behavior
-- **/plan** — Break work into small verifiable tasks with acceptance criteria and dependency ordering
-- **/review** — Conduct a five-axis code review — correctness, readability, architecture, security, performance
-- **/ship** — Run the pre-launch checklist and prepare for production deployment
-- **/spec** — Start spec-driven development — write a structured specification before writing code
-- **/test** — Run TDD workflow — write failing tests, implement, verify. For bugs, use the Prove-It pattern.
-
-
 ## Details
 
 | Field | Value |

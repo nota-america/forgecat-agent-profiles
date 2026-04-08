@@ -37,23 +37,6 @@ npx forgecat install @hephai-nota/addyosmani-agent-skills
 - **idea-refine** — Refines ideas iteratively. Refine ideas through structured divergent and convergent thinking. Use "idea-refine" or "ideate" to trigger.
 - **...and 8 more skills**
 
-## Agents
-
-- **code-reviewer** — Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.
-- **security-auditor** — Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.
-- **test-engineer** — QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.
-
-## Commands
-
-- **/build** — Implement the next task incrementally — build, test, verify, commit
-- **/code-simplify** — Simplify code for clarity and maintainability — reduce complexity without changing behavior
-- **/plan** — Break work into small verifiable tasks with acceptance criteria and dependency ordering
-- **/review** — Conduct a five-axis code review — correctness, readability, architecture, security, performance
-- **/ship** — Run the pre-launch checklist and prepare for production deployment
-- **/spec** — Start spec-driven development — write a structured specification before writing code
-- **/test** — Run TDD workflow — write failing tests, implement, verify. For bugs, use the Prove-It pattern.
-
-
 ## Details
 
 | Field | Value |
@@ -170,8 +153,6 @@ Add skill contents to your Windsurf rules configuration. See [docs/windsurf-setu
 <details>
 <summary><b>GitHub Copilot</b></summary>
 
-Use agent definitions from `agents/` as Copilot personas and skill content in `.github/copilot-instructions.md`. See [docs/copilot-setup.md](docs/copilot-setup.md).
-
 </details>
 
 <details>
@@ -235,18 +216,6 @@ The commands above are the entry points. Under the hood, they activate these 19 
 | [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Code-as-liability mindset, compulsory vs advisory deprecation, migration patterns, zombie code removal | Removing old systems, migrating users, or sunsetting features |
 | [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architecture Decision Records, API docs, inline documentation standards - document the *why* | Making architectural decisions, changing APIs, or shipping features |
 | [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Pre-launch checklists, feature flag lifecycle, staged rollouts, rollback procedures, monitoring setup | Preparing to deploy to production |
-
----
-
-## Agent Personas
-
-Pre-configured specialist personas for targeted reviews:
-
-| Agent | Role | Perspective |
-|-------|------|-------------|
-| [code-reviewer](agents/code-reviewer.md) | Senior Staff Engineer | Five-axis code review with "would a staff engineer approve this?" standard |
-| [test-engineer](agents/test-engineer.md) | QA Specialist | Test strategy, coverage analysis, and the Prove-It pattern |
-| [security-auditor](agents/security-auditor.md) | Security Engineer | Vulnerability detection, threat modeling, OWASP assessment |
 
 ---
 
@@ -319,10 +288,7 @@ agent-skills/
 │   ├── documentation-and-adrs/        #   Ship
 │   ├── shipping-and-launch/           #   Ship
 │   └── using-agent-skills/            #   Meta: how to use this pack
-├── agents/                            # 3 specialist personas
 ├── references/                        # 4 supplementary checklists
-├── hooks/                             # Session lifecycle hooks
-├── .claude/commands/                  # 7 slash commands
 └── docs/                              # Setup guides per tool
 ```
 
