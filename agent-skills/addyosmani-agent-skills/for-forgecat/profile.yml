@@ -1,0 +1,139 @@
+name: addyosmani-agent-skills
+version: 0.0.0
+description: Production-grade engineering skills for AI coding agents covering the
+  full software development lifecycle from spec to ship.
+repository: https://github.com/addyosmani/agent-skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: api-and-interface-design
+  path: skills/api-and-interface-design/SKILL.md
+  description: Guides stable API and interface design. Use when designing APIs, module
+    boundaries, or any public interface. Use when creating REST or GraphQL endpoints,
+    defining type contracts between modules, or establishing boundaries between frontend
+    and backend.
+- name: browser-testing-with-devtools
+  path: skills/browser-testing-with-devtools/SKILL.md
+  description: Tests in real browsers. Use when building or debugging anything that
+    runs in a browser. Use when you need to inspect the DOM, capture console errors,
+    analyze network requests, profile performance, or verify visual output with real
+    runtime data via Chrome DevTools MCP.
+- name: ci-cd-and-automation
+  path: skills/ci-cd-and-automation/SKILL.md
+  description: Automates CI/CD pipeline setup. Use when setting up or modifying build
+    and deployment pipelines. Use when you need to automate quality gates, configure
+    test runners in CI, or establish deployment strategies.
+- name: code-review-and-quality
+  path: skills/code-review-and-quality/SKILL.md
+  description: Conducts multi-axis code review. Use before merging any change. Use
+    when reviewing code written by yourself, another agent, or a human. Use when you
+    need to assess code quality across multiple dimensions before it enters the main
+    branch.
+- name: code-simplification
+  path: skills/code-simplification/SKILL.md
+  description: Simplifies code for clarity. Use when refactoring code for clarity
+    without changing behavior. Use when code works but is harder to read, maintain,
+    or extend than it should be. Use when reviewing code that has accumulated unnecessary
+    complexity.
+- name: context-engineering
+  path: skills/context-engineering/SKILL.md
+  description: Optimizes agent context setup. Use when starting a new session, when
+    agent output quality degrades, when switching between tasks, or when you need
+    to configure rules files and context for a project.
+- name: debugging-and-error-recovery
+  path: skills/debugging-and-error-recovery/SKILL.md
+  description: Guides systematic root-cause debugging. Use when tests fail, builds
+    break, behavior doesn't match expectations, or you encounter any unexpected error.
+    Use when you need a systematic approach to finding and fixing the root cause rather
+    than guessing.
+- name: deprecation-and-migration
+  path: skills/deprecation-and-migration/SKILL.md
+  description: Manages deprecation and migration. Use when removing old systems, APIs,
+    or features. Use when migrating users from one implementation to another. Use
+    when deciding whether to maintain or sunset existing code.
+- name: documentation-and-adrs
+  path: skills/documentation-and-adrs/SKILL.md
+  description: Records decisions and documentation. Use when making architectural
+    decisions, changing public APIs, shipping features, or when you need to record
+    context that future engineers and agents will need to understand the codebase.
+- name: frontend-ui-engineering
+  path: skills/frontend-ui-engineering/SKILL.md
+  description: Builds production-quality UIs. Use when building or modifying user-facing
+    interfaces. Use when creating components, implementing layouts, managing state,
+    or when the output needs to look and feel production-quality rather than AI-generated.
+- name: git-workflow-and-versioning
+  path: skills/git-workflow-and-versioning/SKILL.md
+  description: Structures git workflow practices. Use when making any code change.
+    Use when committing, branching, resolving conflicts, or when you need to organize
+    work across multiple parallel streams.
+- name: idea-refine
+  path: skills/idea-refine/SKILL.md
+  description: Refines ideas iteratively. Refine ideas through structured divergent
+    and convergent thinking. Use "idea-refine" or "ideate" to trigger.
+- name: incremental-implementation
+  path: skills/incremental-implementation/SKILL.md
+  description: Delivers changes incrementally. Use when implementing any feature or
+    change that touches more than one file. Use when you're about to write a large
+    amount of code at once, or when a task feels too big to land in one step.
+- name: performance-optimization
+  path: skills/performance-optimization/SKILL.md
+  description: Optimizes application performance. Use when performance requirements
+    exist, when you suspect performance regressions, or when Core Web Vitals or load
+    times need improvement. Use when profiling reveals bottlenecks that need fixing.
+- name: planning-and-task-breakdown
+  path: skills/planning-and-task-breakdown/SKILL.md
+  description: Breaks work into ordered tasks. Use when you have a spec or clear requirements
+    and need to break work into implementable tasks. Use when a task feels too large
+    to start, when you need to estimate scope, or when parallel work is possible.
+- name: security-and-hardening
+  path: skills/security-and-hardening/SKILL.md
+  description: Hardens code against vulnerabilities. Use when handling user input,
+    authentication, data storage, or external integrations. Use when building any
+    feature that accepts untrusted data, manages user sessions, or interacts with
+    third-party services.
+- name: shipping-and-launch
+  path: skills/shipping-and-launch/SKILL.md
+  description: Prepares production launches. Use when preparing to deploy to production.
+    Use when you need a pre-launch checklist, when setting up monitoring, when planning
+    a staged rollout, or when you need a rollback strategy.
+- name: spec-driven-development
+  path: skills/spec-driven-development/SKILL.md
+  description: Creates specs before coding. Use when starting a new project, feature,
+    or significant change and no specification exists yet. Use when requirements are
+    unclear, ambiguous, or only exist as a vague idea.
+- name: test-driven-development
+  path: skills/test-driven-development/SKILL.md
+  description: Drives development with tests. Use when implementing any logic, fixing
+    any bug, or changing any behavior. Use when you need to prove that code works,
+    when a bug report arrives, or when you're about to modify existing functionality.
+- name: using-agent-skills
+  path: skills/using-agent-skills/SKILL.md
+  description: Discovers and invokes agent skills. Use when starting a session or
+    when you need to discover which skill applies to the current task. This is the
+    meta-skill that governs how all other skills are discovered and invoked.
+agents:
+- name: code-reviewer
+  path: agents/code-reviewer.md
+  description: Senior code reviewer that evaluates changes across five dimensions
+    — correctness, readability, architecture, security, and performance. Use for thorough
+    code review before merge.
+- name: security-auditor
+  path: agents/security-auditor.md
+  description: Security engineer focused on vulnerability detection, threat modeling,
+    and secure coding practices. Use for security-focused code review, threat analysis,
+    or hardening recommendations.
+- name: test-engineer
+  path: agents/test-engineer.md
+  description: QA engineer specialized in test strategy, test writing, and coverage
+    analysis. Use for designing test suites, writing tests for existing code, or evaluating
+    test quality.
