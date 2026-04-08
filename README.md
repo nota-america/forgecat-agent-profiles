@@ -17,7 +17,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | Collection | Profiles | Description |
 |---|---|---|
 | [agency-agents](./profiles/agency-agents) | 13 | Team role agents for agencies — academic, design, engineering, marketing, sales, and more |
-| [agent-skills](./profiles/agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
+| [addyosmani-agent-skills](./profiles/addyosmani-agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
 | [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [compound-engineering](./profiles/compound-engineering) | 1 | AI-powered development profile with deep workflows for review, research, and design |
