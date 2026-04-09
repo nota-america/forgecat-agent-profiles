@@ -72,7 +72,7 @@ npx forgecat install @hephai-nota/gstack
 |---|---|
 | Author | Garry Tan |
 | Original repository | https://github.com/garrytan/gstack |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | `a7593d7` |
 | License | MIT |
 | Source platform | Claude Code |
