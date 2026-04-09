@@ -22,6 +22,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [compound-engineering](./profiles/compound-engineering) | 1 | AI-powered development profile with deep workflows for review, research, and design |
 | [cursor-plugins](./profiles/cursor-plugins) | 1 | Plugins for Cursor — CI, code review, shipping, test reliability |
+| [gstack](./gstack/gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
 | [knowledge-work-plugins](./profiles/knowledge-work-plugins) | 14 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
 | [openai-skills](./profiles/openai-skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
 | [tldraw](./profiles/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
