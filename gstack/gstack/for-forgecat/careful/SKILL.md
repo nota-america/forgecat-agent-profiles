@@ -36,7 +36,7 @@ echo '{"skill":"careful","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(base
 
 | Pattern | Example | Risk |
 |---------|---------|------|
-| `rm -rf` / `rm -r` / `rm --recursive` | `rm -rf /var/data` | Recursive delete |
+| `rm -rf` / `rm -r` / `rm --recursive` | (see check-careful.sh) | Recursive delete |
 | `DROP TABLE` / `DROP DATABASE` | `DROP TABLE users;` | Data loss |
 | `TRUNCATE` | `TRUNCATE orders;` | Data loss |
 | `git push --force` / `-f` | `git push -f origin main` | History rewrite |

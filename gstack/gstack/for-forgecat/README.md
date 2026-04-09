@@ -396,36 +396,7 @@ This handles skills, symlinks, global state (`~/.gstack/`), project-local state,
 
 ### Option 2: Manual removal (no local repo)
 
-If you don't have the repo cloned (e.g. you installed via a Claude Code paste and later deleted the clone):
-
-```bash
-# 1. Stop browse daemons
-pkill -f "gstack.*browse" 2>/dev/null || true
-
-# 2. Remove per-skill symlinks pointing into gstack/
-find ~/.claude/skills -maxdepth 1 -type l 2>/dev/null | while read -r link; do
-  case "$(readlink "$link" 2>/dev/null)" in gstack/*|*/gstack/*) rm -f "$link" ;; esac
-done
-
-# 3. Remove gstack
-rm -rf ~/.claude/skills/gstack
-
-# 4. Remove global state
-rm -rf ~/.gstack
-
-# 5. Remove integrations (skip any you never installed)
-rm -rf ~/.codex/skills/gstack* 2>/dev/null
-rm -rf ~/.factory/skills/gstack* 2>/dev/null
-rm -rf ~/.kiro/skills/gstack* 2>/dev/null
-rm -rf ~/.openclaw/skills/gstack* 2>/dev/null
-
-# 6. Remove temp files
-rm -f /tmp/gstack-* 2>/dev/null
-
-# 7. Per-project cleanup (run from each project root)
-rm -rf .gstack .gstack-worktrees .claude/skills/gstack 2>/dev/null
-rm -rf .agents/skills/gstack* .factory/skills/gstack* 2>/dev/null
-```
+See the [original gstack README](https://github.com/garrytan/gstack#uninstall) for manual uninstall steps.
 
 ### Clean up CLAUDE.md
 

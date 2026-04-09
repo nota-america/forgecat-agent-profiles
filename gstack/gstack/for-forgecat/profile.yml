@@ -178,25 +178,3 @@ skills:
   - name: gstack-openclaw-retro
     path: openclaw/skills/gstack-openclaw-retro/SKILL.md
     description: "Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective."
-hooks:
-  - event: PreToolUse
-    matcher: Bash
-    description: "Safety guardrails for destructive commands (careful skill)"
-    handlers:
-      - type: command
-        command: careful/bin/check-careful.sh
-        async: false
-  - event: PreToolUse
-    matcher: Edit
-    description: "Freeze boundary check for file edits (freeze skill)"
-    handlers:
-      - type: command
-        command: freeze/bin/check-freeze.sh
-        async: false
-  - event: PreToolUse
-    matcher: Write
-    description: "Freeze boundary check for file writes (freeze skill)"
-    handlers:
-      - type: command
-        command: freeze/bin/check-freeze.sh
-        async: false
