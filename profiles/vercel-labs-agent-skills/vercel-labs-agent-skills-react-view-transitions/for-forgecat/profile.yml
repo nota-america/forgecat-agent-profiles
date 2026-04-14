@@ -24,7 +24,7 @@ compatibility:
     minimum: []
 skills:
 - name: vercel-react-view-transitions
-  path: skills/react-view-transitions/SKILL.md
+  path: SKILL.md
   description: Guide for implementing smooth, native-feeling animations using React's
     View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS
     view transition pseudo-elements). Use this skill whenever the user wants to add
@@ -36,5 +36,5 @@ skills:
     animation libraries.
 rules:
 - name: react-view-transitions-agents
-  path: skills/react-view-transitions/AGENTS.md
+  path: AGENTS.md
   description: Expanded instruction guide for react-view-transitions.

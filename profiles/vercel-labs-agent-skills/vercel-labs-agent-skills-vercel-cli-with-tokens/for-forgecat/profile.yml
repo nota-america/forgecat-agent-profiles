@@ -18,7 +18,7 @@ compatibility:
     minimum: []
 skills:
 - name: vercel-cli-with-tokens
-  path: skills/vercel-cli-with-tokens/SKILL.md
+  path: SKILL.md
   description: Deploy and manage projects on Vercel using token-based authentication.
     Use when working with Vercel CLI using access tokens rather than interactive login
     — e.g. "deploy to vercel", "set up vercel", "add environment variables to vercel".
