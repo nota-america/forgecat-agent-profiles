@@ -18,7 +18,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 |---|---|---|
 | [agency-agents](./profiles/agency-agents) | 13 | Team role agents for agencies — academic, design, engineering, marketing, sales, and more |
 | [addyosmani-agent-skills](./profiles/addyosmani-agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
-| [agent-skills](./profiles/agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
+| [vercel-labs-agent-skills](./profiles/vercel-labs-agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [aidlc-workflows](./profiles/aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
 | [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
