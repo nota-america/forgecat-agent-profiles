@@ -1,0 +1,26 @@
+name: vercel-labs-agent-skills-react-native-skills
+version: 0.0.0
+description: React Native and Expo best practices for building performant mobile apps.
+  Use when building React Native components, optimizing list performance, implementing
+  animations, or working with native modules. Triggers on tasks involving React Native,
+  Expo, mobile performance, or native platform APIs.
+repository: https://github.com/vercel-labs/agent-skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: vercel-react-native-skills
+  path: skills/react-native-skills/SKILL.md
+  description: React Native and Expo best practices for building performant mobile
+    apps. Use when building React Native components, optimizing list performance,
+    implementing animations, or working with native modules. Triggers on tasks involving
+    React Native, Expo, mobile performance, or native platform APIs.
