@@ -26,7 +26,7 @@ npx forgecat install @forgecat/vercel-labs-agent-skills-react-view-transitions
 |---|---|
 | Author | vercel |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | `47863b2` |
 | License | MIT |
 | Source platform | Claude Code skills (Agent Skills format) |

@@ -1,5 +1,5 @@
 name: vercel-labs-agent-skills-composition-patterns
-version: 0.0.0
+version: "0.0.1"
 description: React composition patterns that scale. Use when refactoring components
   with boolean prop proliferation, building flexible component libraries, or designing
   reusable APIs. Triggers on tasks involving compound components, render props, context
@@ -19,8 +19,42 @@ compatibility:
     minimum: []
 skills:
 - name: vercel-composition-patterns
-  path: skills/composition-patterns/SKILL.md
+  path: SKILL.md
   description: React composition patterns that scale. Use when refactoring components
     with boolean prop proliferation, building flexible component libraries, or designing
     reusable APIs. Triggers on tasks involving compound components, render props,
     context providers, or component architecture. Includes React 19 API changes.
+rules:
+- name: composition-patterns-agents
+  path: AGENTS.md
+  description: Expanded instruction guide for composition-patterns.
+- name: _sections
+  path: rules/_sections.md
+  description: Rule file rules/_sections.md
+- name: _template
+  path: rules/_template.md
+  description: Rule file rules/_template.md
+- name: architecture-avoid-boolean-props
+  path: rules/architecture-avoid-boolean-props.md
+  description: Rule file rules/architecture-avoid-boolean-props.md
+- name: architecture-compound-components
+  path: rules/architecture-compound-components.md
+  description: Rule file rules/architecture-compound-components.md
+- name: patterns-children-over-render-props
+  path: rules/patterns-children-over-render-props.md
+  description: Rule file rules/patterns-children-over-render-props.md
+- name: patterns-explicit-variants
+  path: rules/patterns-explicit-variants.md
+  description: Rule file rules/patterns-explicit-variants.md
+- name: react19-no-forwardref
+  path: rules/react19-no-forwardref.md
+  description: Rule file rules/react19-no-forwardref.md
+- name: state-context-interface
+  path: rules/state-context-interface.md
+  description: Rule file rules/state-context-interface.md
+- name: state-decouple-implementation
+  path: rules/state-decouple-implementation.md
+  description: Rule file rules/state-decouple-implementation.md
+- name: state-lift-state
+  path: rules/state-lift-state.md
+  description: Rule file rules/state-lift-state.md

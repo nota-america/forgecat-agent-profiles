@@ -1,5 +1,5 @@
 name: vercel-labs-agent-skills-deploy-to-vercel
-version: 0.0.0
+version: "0.0.1"
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like "deploy my app", "deploy and give me the link", "push this
   live", or "create a preview deployment".
@@ -18,7 +18,7 @@ compatibility:
     minimum: []
 skills:
 - name: deploy-to-vercel
-  path: skills/deploy-to-vercel/SKILL.md
+  path: SKILL.md
   description: Deploy applications and websites to Vercel. Use when the user requests
     deployment actions like "deploy my app", "deploy and give me the link", "push
     this live", or "create a preview deployment".
