@@ -34,3 +34,7 @@ skills:
     the user mentions view transitions, `startViewTransition`, `ViewTransition`, transition
     types, or asks about animating between UI states in React without third-party
     animation libraries.
+rules:
+- name: react-view-transitions-agents
+  path: skills/react-view-transitions/AGENTS.md
+  description: Expanded instruction guide for react-view-transitions.
