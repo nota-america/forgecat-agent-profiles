@@ -1,7 +1,7 @@
 name: anthropics-claude-plugins-official-example-plugin
 version: 0.0.0
-description: A comprehensive example plugin demonstrating all Claude Code extension
-  options including commands, agents, skills, hooks, and MCP servers
+description: A comprehensive example plugin demonstrating Claude Code extension options
+  including commands, agents, skills, and MCP servers
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin
 license: Apache-2.0
 visibility: public

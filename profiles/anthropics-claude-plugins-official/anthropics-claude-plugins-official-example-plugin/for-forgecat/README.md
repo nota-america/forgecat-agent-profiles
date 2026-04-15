@@ -4,7 +4,7 @@
 
 # example-plugin
 
-A comprehensive example plugin demonstrating all Claude Code extension options including commands, agents, skills, hooks, and MCP servers
+A comprehensive example plugin demonstrating Claude Code extension options including commands, agents, skills, and MCP servers
 
 ## Tags
 
