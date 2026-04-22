@@ -10,7 +10,7 @@ Analyze codebases and recommend tailored Claude Code automations such as hooks, 
 
 - anthropic
 - claude-official
-- plugin
+- setup-automation
 
 ## Installation
 

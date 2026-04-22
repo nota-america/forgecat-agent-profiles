@@ -8,7 +8,7 @@ Automated code review for pull requests using multiple specialized agents with c
 
 - anthropic
 - claude-official
-- plugin
+- code-review
 
 ## Installation
 

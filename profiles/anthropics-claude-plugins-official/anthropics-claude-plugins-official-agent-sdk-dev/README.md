@@ -8,7 +8,7 @@ Claude Agent SDK Development Plugin
 
 - anthropic
 - claude-official
-- plugin
+- agent-sdk
 
 ## Installation
 

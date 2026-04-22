@@ -9,8 +9,8 @@ Solve competition math (IMO, Putnam, USAMO) with adversarial verification that c
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- math-proofs
 
 ## Installation
 

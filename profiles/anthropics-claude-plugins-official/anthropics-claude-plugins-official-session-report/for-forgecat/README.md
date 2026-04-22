@@ -9,8 +9,8 @@ Generate an explorable HTML report of Claude Code session usage (tokens, cache, 
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- usage-analytics
 
 ## Installation
 

@@ -8,7 +8,7 @@ Comprehensive feature development workflow with specialized agents for codebase 
 
 - anthropic
 - claude-official
-- plugin
+- feature-development
 
 ## Installation
 

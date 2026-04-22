@@ -9,8 +9,8 @@ Skills for designing and building MCP servers that work seamlessly with Claude â
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- mcp-development
 
 ## Installation
 

@@ -8,7 +8,7 @@ Frontend design skill for UI/UX implementation
 
 - anthropic
 - claude-official
-- plugin
+- frontend-ui
 
 ## Installation
 

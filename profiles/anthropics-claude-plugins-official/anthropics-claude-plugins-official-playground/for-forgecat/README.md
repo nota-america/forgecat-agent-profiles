@@ -9,8 +9,8 @@ Creates interactive HTML playgrounds — self-contained single-file explorers wi
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- html-playground
 
 ## Installation
 

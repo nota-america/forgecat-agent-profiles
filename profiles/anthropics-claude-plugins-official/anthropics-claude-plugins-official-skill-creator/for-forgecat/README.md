@@ -10,7 +10,7 @@ Create new skills, improve existing skills, and measure skill performance. Use w
 
 - anthropic
 - claude-official
-- plugin
+- skill-authoring
 
 ## Installation
 

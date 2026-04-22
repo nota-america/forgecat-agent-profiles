@@ -10,7 +10,7 @@ Plugin development toolkit with skills for creating agents, commands, hooks, MCP
 
 - anthropic
 - claude-official
-- plugin
+- plugin-development
 
 ## Installation
 

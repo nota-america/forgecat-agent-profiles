@@ -8,7 +8,7 @@ Comprehensive PR review agents specializing in comments, tests, error handling, 
 
 - anthropic
 - claude-official
-- plugin
+- pr-review
 
 ## Installation
 

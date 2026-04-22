@@ -7,8 +7,8 @@ Agent that simplifies and refines code for clarity, consistency, and maintainabi
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- code-simplification
 
 ## Installation
 

@@ -7,8 +7,8 @@ Tools to maintain and improve CLAUDE.md files - audit quality, capture session l
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- claude-md
 
 ## Installation
 

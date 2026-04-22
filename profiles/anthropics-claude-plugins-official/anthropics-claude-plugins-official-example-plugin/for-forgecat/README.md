@@ -9,8 +9,8 @@ A comprehensive example plugin demonstrating all Claude Code extension options i
 ## Tags
 
 - anthropic
-- claude-code
-- official-plugin
+- claude-official
+- plugin-template
 
 ## Installation
 

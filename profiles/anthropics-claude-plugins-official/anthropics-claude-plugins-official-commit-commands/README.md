@@ -8,7 +8,7 @@ Streamline your git workflow with simple commands for committing, pushing, and c
 
 - anthropic
 - claude-official
-- plugin
+- git-workflow
 
 ## Installation
 
