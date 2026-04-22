@@ -1,4 +1,4 @@
-name: anthropics-claude-official-plugin-dev
+name: anthropics-claude-plugins-official-plugin-dev
 version: 0.0.0
 description: Plugin development toolkit with skills for creating agents, commands,
   hooks, MCP integrations, and comprehensive plugin structure guidance

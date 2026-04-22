@@ -15,7 +15,7 @@ Frontend design skill for UI/UX implementation
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-official-frontend-design
+npx forgecat install @forgecat/anthropics-claude-plugins-official-frontend-design
 ```
 
 ## Skills

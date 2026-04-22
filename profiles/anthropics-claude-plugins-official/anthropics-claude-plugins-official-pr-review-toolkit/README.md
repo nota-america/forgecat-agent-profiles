@@ -13,7 +13,7 @@ Comprehensive PR review agents specializing in comments, tests, error handling, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-official-pr-review-toolkit
+npx forgecat install @forgecat/anthropics-claude-plugins-official-pr-review-toolkit
 ```
 
 ## Agents

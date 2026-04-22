@@ -1,4 +1,4 @@
-name: anthropics-claude-official-agent-sdk-dev
+name: anthropics-claude-plugins-official-agent-sdk-dev
 version: 0.0.0
 description: Claude Agent SDK Development Plugin
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev

@@ -13,7 +13,7 @@ Streamline your git workflow with simple commands for committing, pushing, and c
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-official-commit-commands
+npx forgecat install @forgecat/anthropics-claude-plugins-official-commit-commands
 ```
 
 ## Commands

@@ -1,4 +1,4 @@
-name: anthropics-claude-official-feature-dev
+name: anthropics-claude-plugins-official-feature-dev
 version: 0.0.0
 description: Comprehensive feature development workflow with specialized agents for
   codebase exploration, architecture design, and quality review

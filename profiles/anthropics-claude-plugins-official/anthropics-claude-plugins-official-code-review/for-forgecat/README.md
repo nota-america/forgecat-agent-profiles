@@ -15,7 +15,7 @@ Automated code review for pull requests using multiple specialized agents with c
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-official-code-review
+npx forgecat install @forgecat/anthropics-claude-plugins-official-code-review
 ```
 
 ## Commands

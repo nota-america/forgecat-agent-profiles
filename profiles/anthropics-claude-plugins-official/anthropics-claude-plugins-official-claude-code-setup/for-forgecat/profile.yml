@@ -1,4 +1,4 @@
-name: anthropics-claude-official-claude-code-setup
+name: anthropics-claude-plugins-official-claude-code-setup
 version: 0.0.0
 description: Analyze codebases and recommend tailored Claude Code automations such
   as hooks, skills, MCP servers, and subagents.

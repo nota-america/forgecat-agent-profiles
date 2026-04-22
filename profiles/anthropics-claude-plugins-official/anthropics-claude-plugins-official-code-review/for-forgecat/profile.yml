@@ -1,4 +1,4 @@
-name: anthropics-claude-official-code-review
+name: anthropics-claude-plugins-official-code-review
 version: 0.0.0
 description: Automated code review for pull requests using multiple specialized agents
   with confidence-based scoring
