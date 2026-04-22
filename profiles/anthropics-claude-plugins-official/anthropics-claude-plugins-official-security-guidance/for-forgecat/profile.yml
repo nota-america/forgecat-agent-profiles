@@ -1,0 +1,27 @@
+name: anthropics-claude-official-security-guidance
+version: 0.0.0
+description: Security reminder hook that warns about potential security issues when
+  editing files, including command injection, XSS, and unsafe code patterns
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+hooks:
+- name: pretooluse-1
+  path: hooks/security_reminder_hook.py
+  description: Security reminder hook that warns about potential security issues when
+    editing files
+  event: PreToolUse
+  matcher: Edit|Write|MultiEdit
+  handlers:
+  - type: command
+    command: python3 hooks/security_reminder_hook.py

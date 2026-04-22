@@ -1,0 +1,26 @@
+name: anthropics-claude-official-explanatory-output-style
+version: 0.0.0
+description: Adds educational insights about implementation choices and codebase patterns
+  (mimics the deprecated Explanatory output style)
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/explanatory-output-style
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+hooks:
+- name: sessionstart-1
+  path: hooks-handlers/session-start.sh
+  description: Explanatory mode hook that adds educational insights instructions
+  event: SessionStart
+  matcher: '*'
+  handlers:
+  - type: command
+    command: bash hooks-handlers/session-start.sh

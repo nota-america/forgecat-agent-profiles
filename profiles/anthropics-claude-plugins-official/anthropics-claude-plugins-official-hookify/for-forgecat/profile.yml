@@ -1,0 +1,78 @@
+name: anthropics-claude-official-hookify
+version: 0.0.0
+description: Easily create hooks to prevent unwanted behaviors by analyzing conversation
+  patterns
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/hookify
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: writing-hookify-rules
+  path: skills/writing-rules/SKILL.md
+  description: This skill should be used when the user asks to "create a hookify rule",
+    "write a hook rule", "configure hookify", "add a hookify rule", or needs guidance
+    on hookify rule syntax and patterns.
+agents:
+- name: conversation-analyzer
+  path: agents/conversation-analyzer.md
+  description: Agent conversation-analyzer from hookify.
+commands:
+- name: configure
+  path: commands/configure.md
+  description: Enable or disable hookify rules interactively
+- name: help
+  path: commands/help.md
+  description: Get help with the hookify plugin
+- name: hookify
+  path: commands/hookify.md
+  description: Create hooks to prevent unwanted behaviors from conversation analysis
+    or explicit instructions
+- name: list
+  path: commands/list.md
+  description: List all configured hookify rules
+hooks:
+- name: pretooluse-1
+  path: hooks/pretooluse.py
+  description: Hookify plugin - User-configurable hooks from .local.md files
+  event: PreToolUse
+  matcher: '*'
+  handlers:
+  - type: command
+    command: python3 hooks/pretooluse.py
+    timeout: 10
+- name: posttooluse-1
+  path: hooks/posttooluse.py
+  description: Hookify plugin - User-configurable hooks from .local.md files
+  event: PostToolUse
+  matcher: '*'
+  handlers:
+  - type: command
+    command: python3 hooks/posttooluse.py
+    timeout: 10
+- name: stop-1
+  path: hooks/stop.py
+  description: Hookify plugin - User-configurable hooks from .local.md files
+  event: Stop
+  matcher: '*'
+  handlers:
+  - type: command
+    command: python3 hooks/stop.py
+    timeout: 10
+- name: userpromptsubmit-1
+  path: hooks/userpromptsubmit.py
+  description: Hookify plugin - User-configurable hooks from .local.md files
+  event: UserPromptSubmit
+  matcher: '*'
+  handlers:
+  - type: command
+    command: python3 hooks/userpromptsubmit.py
+    timeout: 10

@@ -1,0 +1,37 @@
+name: anthropics-claude-official-ralph-loop
+version: 0.0.0
+description: Continuous self-referential AI loops for interactive iterative development,
+  implementing the Ralph Wiggum technique. Run Claude in a while-true loop with the
+  same prompt until task completion.
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-loop
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+commands:
+- name: cancel-ralph
+  path: commands/cancel-ralph.md
+  description: Cancel active Ralph Loop
+- name: help
+  path: commands/help.md
+  description: Explain Ralph Loop plugin and available commands
+- name: ralph-loop
+  path: commands/ralph-loop.md
+  description: Start Ralph Loop in current session
+hooks:
+- name: stop-1
+  path: hooks/stop-hook.sh
+  description: Ralph Loop plugin stop hook for self-referential loops
+  event: Stop
+  matcher: '*'
+  handlers:
+  - type: command
+    command: bash hooks/stop-hook.sh

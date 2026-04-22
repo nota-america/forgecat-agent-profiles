@@ -1,0 +1,15 @@
+{
+  "description": "Explanatory mode hook that adds educational insights instructions",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"hooks-handlers/session-start.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
