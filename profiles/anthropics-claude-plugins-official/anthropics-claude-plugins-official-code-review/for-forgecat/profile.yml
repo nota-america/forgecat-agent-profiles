@@ -1,0 +1,21 @@
+name: anthropics-claude-plugins-official-code-review
+version: 0.0.0
+description: Automated code review for pull requests using multiple specialized agents
+  with confidence-based scoring
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+commands:
+- name: code-review
+  path: commands/code-review.md
+  description: Code review a pull request

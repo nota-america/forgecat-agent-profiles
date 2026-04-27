@@ -1,0 +1,38 @@
+name: anthropics-claude-plugins-official-feature-dev
+version: 0.0.0
+description: Comprehensive feature development workflow with specialized agents for
+  codebase exploration, architecture design, and quality review
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: code-architect
+  path: agents/code-architect.md
+  description: Designs feature architectures by analyzing existing codebase patterns
+    and conventions, then providing comprehensive implementation blueprints with specific
+    files to create/modify, component designs, data flows, and build sequences
+- name: code-explorer
+  path: agents/code-explorer.md
+  description: Deeply analyzes existing codebase features by tracing execution paths,
+    mapping architecture layers, understanding patterns and abstractions, and documenting
+    dependencies to inform new development
+- name: code-reviewer
+  path: agents/code-reviewer.md
+  description: Reviews code for bugs, logic errors, security vulnerabilities, code
+    quality issues, and adherence to project conventions, using confidence-based filtering
+    to report only high-priority issues that truly matter
+commands:
+- name: feature-dev
+  path: commands/feature-dev.md
+  description: Guided feature development with codebase understanding and architecture
+    focus
