@@ -1,0 +1,28 @@
+name: anthropics-skills-internal-comms
+version: 0.0.0
+description: A set of resources to help me write all kinds of internal communications,
+  using the formats that my company likes to use. Claude should use this skill whenever
+  asked to write some sort of internal communications (status reports, leadership
+  updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
+  etc.).
+repository: https://github.com/anthropics/skills
+license: Complete terms in LICENSE.txt
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: internal-comms
+  path: skills/internal-comms/SKILL.md
+  description: A set of resources to help me write all kinds of internal communications,
+    using the formats that my company likes to use. Claude should use this skill whenever
+    asked to write some sort of internal communications (status reports, leadership
+    updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
+    etc.).
