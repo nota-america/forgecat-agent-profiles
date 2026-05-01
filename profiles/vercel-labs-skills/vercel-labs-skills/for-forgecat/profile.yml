@@ -1,0 +1,24 @@
+name: vercel-labs-skills
+version: 0.0.0
+description: Skill collection from Vercel Labs, including the find-skills discovery
+  assistant for installable agent capabilities.
+repository: https://github.com/vercel-labs/skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: find-skills
+  path: skills/find-skills/SKILL.md
+  description: Helps users discover and install agent skills when they ask questions
+    like "how do I do X", "find a skill for X", "is there a skill that can...", or
+    express interest in extending capabilities. This skill should be used when the
+    user is looking for functionality that might exist as an installable skill.
