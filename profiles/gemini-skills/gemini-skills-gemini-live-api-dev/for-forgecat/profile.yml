@@ -1,4 +1,4 @@
-name: google-gemini-gemini-skills-gemini-live-api-dev
+name: gemini-skills-gemini-live-api-dev
 version: 0.0.0
 description: Use this skill when building real-time, bidirectional streaming applications
   with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice

@@ -1,4 +1,4 @@
-name: google-gemini-gemini-skills-gemini-api-dev
+name: gemini-skills-gemini-api-dev
 version: 0.0.0
 description: Use this skill when building applications with Gemini API hosted models,
   including Gemini and Gemma 4, working with multimodal content (text, images, audio,

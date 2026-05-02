@@ -1,3 +1,5 @@
+*written by Forgecat*
+
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Google Gemini Skills — Gemini Interactions Api
@@ -13,7 +15,7 @@ Use this skill when writing code that calls the Gemini API for text generation, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/google-gemini-gemini-skills-gemini-interactions-api
+npx forgecat install @forgecat/gemini-skills-gemini-interactions-api
 ```
 
 ## Skills

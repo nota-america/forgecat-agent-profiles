@@ -1,4 +1,4 @@
-name: google-gemini-gemini-skills-gemini-interactions-api
+name: gemini-skills-gemini-interactions-api
 version: 0.0.0
 description: Use this skill when writing code that calls the Gemini API for text generation,
   multi-turn chat, multimodal understanding, image generation, streaming responses,

@@ -15,7 +15,7 @@ Use this skill when building real-time, bidirectional streaming applications wit
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/google-gemini-gemini-skills-gemini-live-api-dev
+npx forgecat install @forgecat/gemini-skills-gemini-live-api-dev
 ```
 
 ## Skills

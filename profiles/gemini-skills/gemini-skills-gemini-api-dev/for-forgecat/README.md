@@ -15,7 +15,7 @@ Use this skill when building applications with Gemini API hosted models, includi
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/google-gemini-gemini-skills-gemini-api-dev
+npx forgecat install @forgecat/gemini-skills-gemini-api-dev
 ```
 
 ## Skills
