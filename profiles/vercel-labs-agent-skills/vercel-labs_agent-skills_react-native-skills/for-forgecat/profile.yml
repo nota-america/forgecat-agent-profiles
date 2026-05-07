@@ -1,0 +1,144 @@
+name: vercel-labs_agent-skills_react-native-skills
+version: 0.0.1
+description: React Native and Expo best practices for building performant mobile apps.
+  Use when building React Native components, optimizing list performance, implementing
+  animations, or working with native modules. Triggers on tasks involving React Native,
+  Expo, mobile performance, or native platform APIs.
+repository: https://github.com/vercel-labs/agent-skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: vercel-react-native-skills
+  path: SKILL.md
+  description: React Native and Expo best practices for building performant mobile
+    apps. Use when building React Native components, optimizing list performance,
+    implementing animations, or working with native modules. Triggers on tasks involving
+    React Native, Expo, mobile performance, or native platform APIs.
+rules:
+- name: react-native-skills-agents
+  path: AGENTS.md
+  description: Expanded instruction guide for react-native-skills.
+- name: _sections
+  path: rules/_sections.md
+  description: Rule file rules/_sections.md
+- name: _template
+  path: rules/_template.md
+  description: Rule file rules/_template.md
+- name: animation-derived-value
+  path: rules/animation-derived-value.md
+  description: Rule file rules/animation-derived-value.md
+- name: animation-gesture-detector-press
+  path: rules/animation-gesture-detector-press.md
+  description: Rule file rules/animation-gesture-detector-press.md
+- name: animation-gpu-properties
+  path: rules/animation-gpu-properties.md
+  description: Rule file rules/animation-gpu-properties.md
+- name: design-system-compound-components
+  path: rules/design-system-compound-components.md
+  description: Rule file rules/design-system-compound-components.md
+- name: fonts-config-plugin
+  path: rules/fonts-config-plugin.md
+  description: Rule file rules/fonts-config-plugin.md
+- name: imports-design-system-folder
+  path: rules/imports-design-system-folder.md
+  description: Rule file rules/imports-design-system-folder.md
+- name: js-hoist-intl
+  path: rules/js-hoist-intl.md
+  description: Rule file rules/js-hoist-intl.md
+- name: list-performance-callbacks
+  path: rules/list-performance-callbacks.md
+  description: Rule file rules/list-performance-callbacks.md
+- name: list-performance-function-references
+  path: rules/list-performance-function-references.md
+  description: Rule file rules/list-performance-function-references.md
+- name: list-performance-images
+  path: rules/list-performance-images.md
+  description: Rule file rules/list-performance-images.md
+- name: list-performance-inline-objects
+  path: rules/list-performance-inline-objects.md
+  description: Rule file rules/list-performance-inline-objects.md
+- name: list-performance-item-expensive
+  path: rules/list-performance-item-expensive.md
+  description: Rule file rules/list-performance-item-expensive.md
+- name: list-performance-item-memo
+  path: rules/list-performance-item-memo.md
+  description: Rule file rules/list-performance-item-memo.md
+- name: list-performance-item-types
+  path: rules/list-performance-item-types.md
+  description: Rule file rules/list-performance-item-types.md
+- name: list-performance-virtualize
+  path: rules/list-performance-virtualize.md
+  description: Rule file rules/list-performance-virtualize.md
+- name: monorepo-native-deps-in-app
+  path: rules/monorepo-native-deps-in-app.md
+  description: Rule file rules/monorepo-native-deps-in-app.md
+- name: monorepo-single-dependency-versions
+  path: rules/monorepo-single-dependency-versions.md
+  description: Rule file rules/monorepo-single-dependency-versions.md
+- name: navigation-native-navigators
+  path: rules/navigation-native-navigators.md
+  description: Rule file rules/navigation-native-navigators.md
+- name: react-compiler-destructure-functions
+  path: rules/react-compiler-destructure-functions.md
+  description: Rule file rules/react-compiler-destructure-functions.md
+- name: react-compiler-reanimated-shared-values
+  path: rules/react-compiler-reanimated-shared-values.md
+  description: Rule file rules/react-compiler-reanimated-shared-values.md
+- name: react-state-dispatcher
+  path: rules/react-state-dispatcher.md
+  description: Rule file rules/react-state-dispatcher.md
+- name: react-state-fallback
+  path: rules/react-state-fallback.md
+  description: Rule file rules/react-state-fallback.md
+- name: react-state-minimize
+  path: rules/react-state-minimize.md
+  description: Rule file rules/react-state-minimize.md
+- name: rendering-no-falsy-and
+  path: rules/rendering-no-falsy-and.md
+  description: Rule file rules/rendering-no-falsy-and.md
+- name: rendering-text-in-text-component
+  path: rules/rendering-text-in-text-component.md
+  description: Rule file rules/rendering-text-in-text-component.md
+- name: scroll-position-no-state
+  path: rules/scroll-position-no-state.md
+  description: Rule file rules/scroll-position-no-state.md
+- name: state-ground-truth
+  path: rules/state-ground-truth.md
+  description: Rule file rules/state-ground-truth.md
+- name: ui-expo-image
+  path: rules/ui-expo-image.md
+  description: Rule file rules/ui-expo-image.md
+- name: ui-image-gallery
+  path: rules/ui-image-gallery.md
+  description: Rule file rules/ui-image-gallery.md
+- name: ui-measure-views
+  path: rules/ui-measure-views.md
+  description: Rule file rules/ui-measure-views.md
+- name: ui-menus
+  path: rules/ui-menus.md
+  description: Rule file rules/ui-menus.md
+- name: ui-native-modals
+  path: rules/ui-native-modals.md
+  description: Rule file rules/ui-native-modals.md
+- name: ui-pressable
+  path: rules/ui-pressable.md
+  description: Rule file rules/ui-pressable.md
+- name: ui-safe-area-scroll
+  path: rules/ui-safe-area-scroll.md
+  description: Rule file rules/ui-safe-area-scroll.md
+- name: ui-scrollview-content-inset
+  path: rules/ui-scrollview-content-inset.md
+  description: Rule file rules/ui-scrollview-content-inset.md
+- name: ui-styling
+  path: rules/ui-styling.md
+  description: Rule file rules/ui-styling.md

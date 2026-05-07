@@ -1,0 +1,34 @@
+name: microsoft_github-copilot-for-azure_azure-skills-azure-validate
+version: 0.0.0
+description: 'Pre-deployment validation for Azure readiness. Run deep checks on configuration,
+  infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions,
+  and prerequisites before deploying. WHEN: validate my app, check deployment readiness,
+  run preflight checks, verify configuration, check if ready to deploy, validate azure.yaml,
+  validate Bicep, test before deploying, troubleshoot deployment errors, validate
+  Azure Functions, validate function app, validate serverless deployment, verify RBAC
+  roles, check role assignments, review managed identity permissions, what-if analysis,
+  validate Container Apps deployment.'
+repository: https://github.com/microsoft/github-copilot-for-azure
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: azure-validate
+  path: skills/azure-validate/SKILL.md
+  description: 'Pre-deployment validation for Azure readiness. Run deep checks on
+    configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed
+    identity permissions, and prerequisites before deploying. WHEN: validate my app,
+    check deployment readiness, run preflight checks, verify configuration, check
+    if ready to deploy, validate azure.yaml, validate Bicep, test before deploying,
+    troubleshoot deployment errors, validate Azure Functions, validate function app,
+    validate serverless deployment, verify RBAC roles, check role assignments, review
+    managed identity permissions, what-if analysis, validate Container Apps deployment.'

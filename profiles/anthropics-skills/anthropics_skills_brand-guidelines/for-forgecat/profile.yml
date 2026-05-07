@@ -1,0 +1,26 @@
+name: anthropics_skills_brand-guidelines
+version: 0.0.0
+description: Applies Anthropic's official brand colors and typography to any sort
+  of artifact that may benefit from having Anthropic's look-and-feel. Use it when
+  brand colors or style guidelines, visual formatting, or company design standards
+  apply.
+repository: https://github.com/anthropics/skills
+license: Complete terms in LICENSE.txt
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: brand-guidelines
+  path: skills/brand-guidelines/SKILL.md
+  description: Applies Anthropic's official brand colors and typography to any sort
+    of artifact that may benefit from having Anthropic's look-and-feel. Use it when
+    brand colors or style guidelines, visual formatting, or company design standards
+    apply.
