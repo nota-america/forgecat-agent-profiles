@@ -15,7 +15,7 @@ Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with sear
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-ai
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-ai
 ```
 
 ## Skills

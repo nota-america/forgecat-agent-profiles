@@ -18,7 +18,7 @@ Prospect, craft outreach, and build deal strategy faster with Claude. Covers acc
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-sales
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_sales
 ```
 
 ## Skills

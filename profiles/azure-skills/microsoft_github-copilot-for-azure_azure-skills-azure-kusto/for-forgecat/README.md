@@ -15,7 +15,7 @@ Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log anal
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-kusto
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-kusto
 ```
 
 ## Skills

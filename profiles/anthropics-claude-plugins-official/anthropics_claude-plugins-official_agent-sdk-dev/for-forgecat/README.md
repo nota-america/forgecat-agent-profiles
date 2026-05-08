@@ -15,7 +15,7 @@ Claude Agent SDK Development Plugin
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-agent-sdk-dev
+npx forgecat install @forgecat/anthropics_claude-plugins-official_agent-sdk-dev
 ```
 
 ## Agents

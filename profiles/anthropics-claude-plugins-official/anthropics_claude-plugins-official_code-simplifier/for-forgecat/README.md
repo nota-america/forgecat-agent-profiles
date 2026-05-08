@@ -15,7 +15,7 @@ Agent that simplifies and refines code for clarity, consistency, and maintainabi
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-code-simplifier
+npx forgecat install @forgecat/anthropics_claude-plugins-official_code-simplifier
 ```
 
 ## Agents

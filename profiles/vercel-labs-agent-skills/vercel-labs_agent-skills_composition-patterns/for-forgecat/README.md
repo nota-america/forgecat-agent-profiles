@@ -15,7 +15,7 @@ React composition patterns that scale. Use when refactoring components with bool
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-composition-patterns
+npx forgecat install @forgecat/vercel-labs_agent-skills_composition-patterns
 ```
 
 ## Skills

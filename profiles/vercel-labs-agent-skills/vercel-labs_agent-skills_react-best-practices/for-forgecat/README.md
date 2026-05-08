@@ -15,7 +15,7 @@ React and Next.js performance optimization guidelines from Vercel Engineering. T
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-react-best-practices
+npx forgecat install @forgecat/vercel-labs_agent-skills_react-best-practices
 ```
 
 ## Skills

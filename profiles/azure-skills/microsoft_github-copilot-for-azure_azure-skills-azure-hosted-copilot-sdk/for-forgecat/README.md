@@ -15,7 +15,7 @@ Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-hosted-copilot-sdk
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-hosted-copilot-sdk
 ```
 
 ## Skills

@@ -15,7 +15,7 @@ Analyze Azure resource groups and generate detailed Mermaid architecture diagram
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-resource-visualizer
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-resource-visualizer
 ```
 
 ## Skills

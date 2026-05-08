@@ -18,7 +18,7 @@ Streamline engineering workflows with Claude. Covers standups, code review, arch
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-engineering
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_engineering
 ```
 
 ## Skills

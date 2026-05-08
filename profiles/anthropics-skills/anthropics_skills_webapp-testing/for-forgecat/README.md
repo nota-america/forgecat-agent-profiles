@@ -15,7 +15,7 @@ Toolkit for interacting with and testing local web applications using Playwright
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-webapp-testing
+npx forgecat install @forgecat/anthropics_skills_webapp-testing
 ```
 
 ## Skills

@@ -12,7 +12,7 @@ Prepare meeting materials with Notion context and Codex research; use when gathe
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-notion-meeting-intelligence
+npx forgecat install @forgecat/openai_skills_notion-meeting-intelligence
 ```
 
 ## Skills

@@ -18,7 +18,7 @@ Optimize business operations with Claude. Covers process documentation, process 
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-operations
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_operations
 ```
 
 ## Skills

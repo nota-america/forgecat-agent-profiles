@@ -15,7 +15,7 @@ Deploy and manage projects on Vercel using token-based authentication. Use when 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-vercel-cli-with-tokens
+npx forgecat install @forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens
 ```
 
 ## Skills

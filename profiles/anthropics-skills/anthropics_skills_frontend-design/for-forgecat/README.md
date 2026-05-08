@@ -15,7 +15,7 @@ Create distinctive, production-grade frontend interfaces with high design qualit
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-frontend-design
+npx forgecat install @forgecat/anthropics_skills_frontend-design
 ```
 
 ## Skills

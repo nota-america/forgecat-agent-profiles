@@ -15,7 +15,7 @@ Deploy applications and websites to Vercel. Use when the user requests deploymen
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-deploy-to-vercel
+npx forgecat install @forgecat/vercel-labs_agent-skills_deploy-to-vercel
 ```
 
 ## Skills

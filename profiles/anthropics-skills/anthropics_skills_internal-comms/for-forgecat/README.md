@@ -15,7 +15,7 @@ A set of resources to help me write all kinds of internal communications, using 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-internal-comms
+npx forgecat install @forgecat/anthropics_skills_internal-comms
 ```
 
 ## Skills

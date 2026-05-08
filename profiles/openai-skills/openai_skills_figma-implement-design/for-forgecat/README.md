@@ -12,7 +12,7 @@ Translates Figma designs into production-ready application code with 1:1 visual 
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-figma-implement-design
+npx forgecat install @forgecat/openai_skills_figma-implement-design
 ```
 
 ## Skills

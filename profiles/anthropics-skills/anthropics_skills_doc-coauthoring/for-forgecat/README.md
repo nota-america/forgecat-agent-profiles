@@ -15,7 +15,7 @@ Guide users through a structured workflow for co-authoring documentation. Use wh
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-doc-coauthoring
+npx forgecat install @forgecat/anthropics_skills_doc-coauthoring
 ```
 
 ## Skills

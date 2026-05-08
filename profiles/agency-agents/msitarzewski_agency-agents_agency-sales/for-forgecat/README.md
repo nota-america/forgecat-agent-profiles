@@ -12,7 +12,7 @@ Sales division from The Agency — 8 specialized agent personalities from msitar
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/agency-sales
+npx forgecat install @forgecat/msitarzewski_agency-agents_agency-sales
 ```
 
 ## Agents

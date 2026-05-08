@@ -15,7 +15,7 @@ Knowledge and utilities for creating animated GIFs optimized for Slack. Provides
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-slack-gif-creator
+npx forgecat install @forgecat/anthropics_skills_slack-gif-creator
 ```
 
 ## Skills

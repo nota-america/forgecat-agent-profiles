@@ -12,7 +12,7 @@ Paid Media division from The Agency — 7 specialized agent personalities from m
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/agency-paid-media
+npx forgecat install @forgecat/msitarzewski_agency-agents_agency-paid-media
 ```
 
 ## Agents

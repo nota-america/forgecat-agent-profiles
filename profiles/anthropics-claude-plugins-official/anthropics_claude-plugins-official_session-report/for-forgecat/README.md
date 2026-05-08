@@ -15,7 +15,7 @@ Generate an explorable HTML report of Claude Code session usage (tokens, cache, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-session-report
+npx forgecat install @forgecat/anthropics_claude-plugins-official_session-report
 ```
 
 ## Skills

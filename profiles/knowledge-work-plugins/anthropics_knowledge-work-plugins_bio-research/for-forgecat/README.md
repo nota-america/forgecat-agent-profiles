@@ -18,7 +18,7 @@ AI-powered research assistant for the life sciences. Connects Claude to 10 precl
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-bio-research
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 ```
 
 ## Skills

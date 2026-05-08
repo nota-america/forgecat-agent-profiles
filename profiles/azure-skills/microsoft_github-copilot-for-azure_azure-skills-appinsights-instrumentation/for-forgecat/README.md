@@ -15,7 +15,7 @@ Guidance for instrumenting webapps with Azure Application Insights. Provides tel
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-appinsights-instrumentation
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-appinsights-instrumentation
 ```
 
 ## Skills

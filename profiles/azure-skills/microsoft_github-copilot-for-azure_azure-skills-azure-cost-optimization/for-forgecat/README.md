@@ -15,7 +15,7 @@ Unified Azure cost management: query historical costs, forecast future spending,
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-cost-optimization
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-cost-optimization
 ```
 
 ## Skills

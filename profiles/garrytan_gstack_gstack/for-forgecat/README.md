@@ -20,7 +20,7 @@ AI engineering workflow stack — 35+ specialized skills that turn Claude Code i
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/gstack
+npx forgecat install @forgecat/garrytan_gstack_gstack
 ```
 
 ## Skills

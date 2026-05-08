@@ -15,7 +15,7 @@ Use this skill whenever the user wants to do anything with PDF files. This inclu
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-pdf
+npx forgecat install @forgecat/anthropics_skills_pdf
 ```
 
 ## Skills

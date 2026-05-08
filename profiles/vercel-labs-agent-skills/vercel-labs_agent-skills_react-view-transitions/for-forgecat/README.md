@@ -15,7 +15,7 @@ Guide for implementing smooth, native-feeling animations using React's View Tran
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-react-view-transitions
+npx forgecat install @forgecat/vercel-labs_agent-skills_react-view-transitions
 ```
 
 ## Skills

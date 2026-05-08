@@ -15,7 +15,7 @@ Toolkit for styling artifacts with a theme. These artifacts can be slides, docs,
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-theme-factory
+npx forgecat install @forgecat/anthropics_skills_theme-factory
 ```
 
 ## Skills

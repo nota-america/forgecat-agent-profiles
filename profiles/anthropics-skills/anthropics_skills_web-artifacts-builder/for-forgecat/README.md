@@ -15,7 +15,7 @@ Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-web-artifacts-builder
+npx forgecat install @forgecat/anthropics_skills_web-artifacts-builder
 ```
 
 ## Skills

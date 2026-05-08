@@ -16,7 +16,7 @@ Converted rule bundle for teams using AI-DLC core workflow with detailed stage r
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/aidlc-workflows
+npx forgecat install @forgecat/awslabs_aidlc-workflows_aidlc-workflows
 ```
 
 ## Skills

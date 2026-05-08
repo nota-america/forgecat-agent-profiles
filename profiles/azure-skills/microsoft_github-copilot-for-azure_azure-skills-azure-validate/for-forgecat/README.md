@@ -15,7 +15,7 @@ Pre-deployment validation for Azure readiness. Run deep checks on configuration,
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-validate
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-validate
 ```
 
 ## Skills

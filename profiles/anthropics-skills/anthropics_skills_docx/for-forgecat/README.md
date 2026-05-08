@@ -15,7 +15,7 @@ Use this skill whenever the user wants to create, read, edit, or manipulate Word
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-docx
+npx forgecat install @forgecat/anthropics_skills_docx
 ```
 
 ## Skills

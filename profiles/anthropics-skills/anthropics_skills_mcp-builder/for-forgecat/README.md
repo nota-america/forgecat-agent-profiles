@@ -15,7 +15,7 @@ Guide for creating high-quality MCP (Model Context Protocol) servers that enable
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-mcp-builder
+npx forgecat install @forgecat/anthropics_skills_mcp-builder
 ```
 
 ## Skills

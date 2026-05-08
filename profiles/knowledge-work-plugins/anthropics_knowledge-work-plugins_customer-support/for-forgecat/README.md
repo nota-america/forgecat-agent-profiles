@@ -17,7 +17,7 @@ A customer support co-pilot that handles ticket triage, response drafting, escal
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-customer-support
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_customer-support
 ```
 
 ## Skills

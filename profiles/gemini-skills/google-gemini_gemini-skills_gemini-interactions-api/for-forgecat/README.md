@@ -15,7 +15,7 @@ Use this skill when writing code that calls the Gemini API for text generation, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/gemini-skills-gemini-interactions-api
+npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-interactions-api
 ```
 
 ## Skills

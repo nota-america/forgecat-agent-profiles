@@ -15,7 +15,7 @@ Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-storage
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-storage
 ```
 
 ## Skills

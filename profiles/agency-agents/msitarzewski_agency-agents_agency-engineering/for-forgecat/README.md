@@ -12,7 +12,7 @@ Engineering division from The Agency — 23 specialized agent personalities from
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/agency-engineering
+npx forgecat install @forgecat/msitarzewski_agency-agents_agency-engineering
 ```
 
 ## Agents

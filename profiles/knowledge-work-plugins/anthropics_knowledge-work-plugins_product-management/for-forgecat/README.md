@@ -18,7 +18,7 @@ Write feature specs, plan roadmaps, and synthesize user research faster with Cla
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-product-management
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_product-management
 ```
 
 ## Skills

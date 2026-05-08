@@ -12,7 +12,7 @@ Repository-grounded threat modeling that enumerates trust boundaries, assets, at
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-security-threat-model
+npx forgecat install @forgecat/openai_skills_security-threat-model
 ```
 
 ## Skills

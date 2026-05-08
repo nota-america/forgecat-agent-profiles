@@ -15,7 +15,7 @@ Debug Azure production issues on Azure using AppLens, Azure Monitor, resource he
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-diagnostics
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-diagnostics
 ```
 
 ## Skills

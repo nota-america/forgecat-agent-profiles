@@ -15,7 +15,7 @@ Comprehensive feature development workflow with specialized agents for codebase 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-feature-dev
+npx forgecat install @forgecat/anthropics_claude-plugins-official_feature-dev
 ```
 
 ## Agents

@@ -15,7 +15,7 @@ Execute Azure deployments for ALREADY-PREPARED applications that have existing .
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-deploy
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-deploy
 ```
 
 ## Skills

@@ -15,7 +15,7 @@ Create new skills, modify and improve existing skills, and measure skill perform
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-skill-creator
+npx forgecat install @forgecat/anthropics_skills_skill-creator
 ```
 
 ## Skills

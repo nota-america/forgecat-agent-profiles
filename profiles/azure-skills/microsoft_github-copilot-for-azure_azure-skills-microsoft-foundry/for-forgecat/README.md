@@ -15,7 +15,7 @@ Deploy, evaluate, and manage Foundry agents end-to-end: Docker build, ACR push, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-microsoft-foundry
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-microsoft-foundry
 ```
 
 ## Skills

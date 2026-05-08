@@ -11,7 +11,7 @@ Agents for data pipelines, LLM integrations, and database behavior.
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/awesome-codex-subagents-data-ai
+npx forgecat install @forgecat/voltagent_awesome-codex-subagents_data-ai
 ```
 
 ## Agents

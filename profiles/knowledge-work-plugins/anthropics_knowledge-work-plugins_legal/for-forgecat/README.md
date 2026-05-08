@@ -18,7 +18,7 @@ Speed up contract review, NDA triage, and compliance workflows for in-house lega
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-legal
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_legal
 ```
 
 ## Skills

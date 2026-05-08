@@ -15,7 +15,7 @@ Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL i
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-entra-app-registration
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-entra-app-registration
 ```
 
 ## Skills

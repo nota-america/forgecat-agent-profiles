@@ -15,7 +15,7 @@ Create beautiful visual art in .png and .pdf documents using design philosophy. 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-canvas-design
+npx forgecat install @forgecat/anthropics_skills_canvas-design
 ```
 
 ## Skills

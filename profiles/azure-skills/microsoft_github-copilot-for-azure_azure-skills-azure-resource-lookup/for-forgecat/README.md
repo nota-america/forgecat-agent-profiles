@@ -15,7 +15,7 @@ List, find, and show Azure resources across subscriptions or resource groups. Ha
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-resource-lookup
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-resource-lookup
 ```
 
 ## Skills

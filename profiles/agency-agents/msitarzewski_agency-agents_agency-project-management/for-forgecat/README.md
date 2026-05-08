@@ -12,7 +12,7 @@ Project Management division from The Agency — 6 specialized agent personalitie
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/agency-project-management
+npx forgecat install @forgecat/msitarzewski_agency-agents_agency-project-management
 ```
 
 ## Agents

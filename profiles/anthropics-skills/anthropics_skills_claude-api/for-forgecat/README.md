@@ -15,7 +15,7 @@ Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built with this
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-claude-api
+npx forgecat install @forgecat/anthropics_skills_claude-api
 ```
 
 ## Skills

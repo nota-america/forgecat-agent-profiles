@@ -15,7 +15,7 @@ Review UI code for Web Interface Guidelines compliance. Use when asked to "revie
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-web-design-guidelines
+npx forgecat install @forgecat/vercel-labs_agent-skills_web-design-guidelines
 ```
 
 ## Skills

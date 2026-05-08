@@ -12,7 +12,7 @@ Use when the task requires automating a real browser from the terminal (navigati
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-playwright
+npx forgecat install @forgecat/openai_skills_playwright
 ```
 
 ## Skills

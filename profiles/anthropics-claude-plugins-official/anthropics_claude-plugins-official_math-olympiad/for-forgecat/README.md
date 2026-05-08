@@ -15,7 +15,7 @@ Solve competition math (IMO, Putnam, USAMO) with adversarial verification that c
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-math-olympiad
+npx forgecat install @forgecat/anthropics_claude-plugins-official_math-olympiad
 ```
 
 ## Skills

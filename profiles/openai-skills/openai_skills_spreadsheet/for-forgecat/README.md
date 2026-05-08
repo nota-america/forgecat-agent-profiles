@@ -12,7 +12,7 @@ Use when tasks involve creating, editing, analyzing, or formatting spreadsheets 
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-spreadsheet
+npx forgecat install @forgecat/openai_skills_spreadsheet
 ```
 
 ## Skills

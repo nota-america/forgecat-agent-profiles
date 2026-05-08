@@ -12,7 +12,7 @@
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-figma-use
+npx forgecat install @forgecat/openai_skills_figma-use
 ```
 
 ## Skills

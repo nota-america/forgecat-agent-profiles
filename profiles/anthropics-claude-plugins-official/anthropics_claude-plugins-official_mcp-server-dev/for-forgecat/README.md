@@ -15,7 +15,7 @@ Skills for designing and building MCP servers that work seamlessly with Claude â
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-mcp-server-dev
+npx forgecat install @forgecat/anthropics_claude-plugins-official_mcp-server-dev
 ```
 
 ## Skills

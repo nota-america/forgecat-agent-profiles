@@ -15,7 +15,7 @@ Tools to maintain and improve CLAUDE.md files - audit quality, capture session l
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-claude-md-management
+npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-md-management
 ```
 
 ## Skills

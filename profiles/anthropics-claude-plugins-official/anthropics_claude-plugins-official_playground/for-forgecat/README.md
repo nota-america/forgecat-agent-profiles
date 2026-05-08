@@ -15,7 +15,7 @@ Creates interactive HTML playgrounds — self-contained single-file explorers wi
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-playground
+npx forgecat install @forgecat/anthropics_claude-plugins-official_playground
 ```
 
 ## Skills

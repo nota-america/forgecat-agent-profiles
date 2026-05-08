@@ -12,7 +12,7 @@ Turn Notion specs into implementation plans, tasks, and progress tracking; use w
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/openai-skills-notion-spec-to-implementation
+npx forgecat install @forgecat/openai_skills_notion-spec-to-implementation
 ```
 
 ## Skills

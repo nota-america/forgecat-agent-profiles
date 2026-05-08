@@ -15,7 +15,7 @@ Run Azure compliance and security audits with azqr plus Key Vault expiration che
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-compliance
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-compliance
 ```
 
 ## Skills

@@ -15,7 +15,7 @@ Applies Anthropic's official brand colors and typography to any sort of artifact
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-brand-guidelines
+npx forgecat install @forgecat/anthropics_skills_brand-guidelines
 ```
 
 ## Skills

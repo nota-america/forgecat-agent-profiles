@@ -15,7 +15,7 @@ Creating algorithmic art using p5.js with seeded randomness and interactive para
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-algorithmic-art
+npx forgecat install @forgecat/anthropics_skills_algorithmic-art
 ```
 
 ## Skills

@@ -11,7 +11,7 @@ Infrastructure-focused agents for deployment, containerization, orchestration, a
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/awesome-codex-subagents-infrastructure
+npx forgecat install @forgecat/voltagent_awesome-codex-subagents_infrastructure
 ```
 
 ## Agents

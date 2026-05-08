@@ -15,7 +15,7 @@ Configure Azure API Management as an AI Gateway for AI models, MCP tools, and ag
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-aigateway
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-aigateway
 ```
 
 ## Skills

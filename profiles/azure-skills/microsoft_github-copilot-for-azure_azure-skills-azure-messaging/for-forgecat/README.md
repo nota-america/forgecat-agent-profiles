@@ -15,7 +15,7 @@ Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Ser
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-messaging
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-messaging
 ```
 
 ## Skills

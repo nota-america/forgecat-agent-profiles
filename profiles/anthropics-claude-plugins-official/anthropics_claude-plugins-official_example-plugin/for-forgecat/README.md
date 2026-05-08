@@ -15,7 +15,7 @@ A comprehensive example plugin demonstrating all Claude Code extension options i
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-example-plugin
+npx forgecat install @forgecat/anthropics_claude-plugins-official_example-plugin
 ```
 
 ## Skills

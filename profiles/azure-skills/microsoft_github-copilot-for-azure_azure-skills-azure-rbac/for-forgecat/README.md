@@ -15,7 +15,7 @@ Helps users find the right Azure RBAC role for an identity with least privilege 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/azure-skills-azure-rbac
+npx forgecat install @forgecat/microsoft_github-copilot-for-azure_azure-skills-azure-rbac
 ```
 
 ## Skills

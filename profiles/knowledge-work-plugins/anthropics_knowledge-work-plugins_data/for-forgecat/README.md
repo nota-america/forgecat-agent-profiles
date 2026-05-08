@@ -18,7 +18,7 @@ Query, visualize, and interpret datasets with Claude. Write SQL across all major
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-data
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_data
 ```
 
 ## Skills

@@ -15,7 +15,7 @@ Use this skill any time a spreadsheet file is the primary input or output. This 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-xlsx
+npx forgecat install @forgecat/anthropics_skills_xlsx
 ```
 
 ## Skills

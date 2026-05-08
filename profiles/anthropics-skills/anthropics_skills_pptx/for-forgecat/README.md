@@ -15,7 +15,7 @@ Use this skill any time a .pptx file is involved in any way — as input, output
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-skills-pptx
+npx forgecat install @forgecat/anthropics_skills_pptx
 ```
 
 ## Skills

@@ -15,7 +15,7 @@ Analyze codebases and recommend tailored Claude Code automations such as hooks, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-claude-code-setup
+npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-code-setup
 ```
 
 ## Skills

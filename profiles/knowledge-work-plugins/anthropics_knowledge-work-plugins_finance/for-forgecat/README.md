@@ -18,7 +18,7 @@ Streamline finance and accounting workflows with Claude. Covers journal entries,
 ## Installation
 
 ```
-npx forgecat install @forgecat/knowledge-work-plugins-finance
+npx forgecat install @forgecat/anthropics_knowledge-work-plugins_finance
 ```
 
 ## Skills

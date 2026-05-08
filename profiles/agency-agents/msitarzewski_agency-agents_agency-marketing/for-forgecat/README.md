@@ -12,7 +12,7 @@ Marketing division from The Agency — 27 specialized agent personalities from m
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/agency-marketing
+npx forgecat install @forgecat/msitarzewski_agency-agents_agency-marketing
 ```
 
 ## Agents

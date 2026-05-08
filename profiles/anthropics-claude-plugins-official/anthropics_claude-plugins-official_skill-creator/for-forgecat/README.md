@@ -15,7 +15,7 @@ Create new skills, improve existing skills, and measure skill performance. Use w
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-skill-creator
+npx forgecat install @forgecat/anthropics_claude-plugins-official_skill-creator
 ```
 
 ## Skills

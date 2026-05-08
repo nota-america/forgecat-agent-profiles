@@ -15,7 +15,7 @@ Plugin development toolkit with skills for creating agents, commands, hooks, MCP
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/anthropics-claude-plugins-official-plugin-dev
+npx forgecat install @forgecat/anthropics_claude-plugins-official_plugin-dev
 ```
 
 ## Skills

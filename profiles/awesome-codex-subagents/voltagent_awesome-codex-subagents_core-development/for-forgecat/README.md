@@ -11,7 +11,7 @@ Core agents for application architecture, cross-layer implementation, UI work, a
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/awesome-codex-subagents-core-development
+npx forgecat install @forgecat/voltagent_awesome-codex-subagents_core-development
 ```
 
 ## Agents

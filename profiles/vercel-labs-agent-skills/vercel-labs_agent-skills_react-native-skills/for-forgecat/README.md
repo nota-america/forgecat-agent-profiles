@@ -15,7 +15,7 @@ React Native and Expo best practices for building performant mobile apps. Use wh
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/vercel-labs-agent-skills-react-native-skills
+npx forgecat install @forgecat/vercel-labs_agent-skills_react-native-skills
 ```
 
 ## Skills
