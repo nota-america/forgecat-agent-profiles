@@ -9,7 +9,7 @@ Up-to-date documentation lookup via Context7 MCP. Pull version-specific document
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/upstash_context7_context7
+npx forgecat install @forgecat/upstash_context7
 ```
 
 ## Agents

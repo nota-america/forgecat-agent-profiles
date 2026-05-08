@@ -17,7 +17,7 @@ Production-grade engineering skills pack for AI coding agents.
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/addyosmani_agent-skills_agent-skills
+npx forgecat install @forgecat/addyosmani_agent-skills
 ```
 
 ## Skills

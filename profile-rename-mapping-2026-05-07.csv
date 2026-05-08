@@ -1,5 +1,5 @@
 profile_path,repository,old_name,new_name,status,derivation,collision
-addyosmani-agent-skills,https://github.com/addyosmani/agent-skills,addyosmani-agent-skills,addyosmani_agent-skills_agent-skills,rename-needed,owner-repo-only,no
+addyosmani-agent-skills,https://github.com/addyosmani/agent-skills,addyosmani-agent-skills,addyosmani_agent-skills,rename-needed,owner-repo-only,no
 agency-agents/agency-academic,https://github.com/msitarzewski/agency-agents,agency-academic,msitarzewski_agency-agents_agency-academic,rename-needed,fallback-old-name-as-profile-segment,no
 agency-agents/agency-design,https://github.com/msitarzewski/agency-agents,agency-design,msitarzewski_agency-agents_agency-design,rename-needed,fallback-old-name-as-profile-segment,no
 agency-agents/agency-engineering,https://github.com/msitarzewski/agency-agents,agency-engineering,msitarzewski_agency-agents_agency-engineering,rename-needed,fallback-old-name-as-profile-segment,no
@@ -13,7 +13,7 @@ agency-agents/agency-spatial-computing,https://github.com/msitarzewski/agency-ag
 agency-agents/agency-specialized,https://github.com/msitarzewski/agency-agents,agency-specialized,msitarzewski_agency-agents_agency-specialized,rename-needed,fallback-old-name-as-profile-segment,no
 agency-agents/agency-support,https://github.com/msitarzewski/agency-agents,agency-support,msitarzewski_agency-agents_agency-support,rename-needed,fallback-old-name-as-profile-segment,no
 agency-agents/agency-testing,https://github.com/msitarzewski/agency-agents,agency-testing,msitarzewski_agency-agents_agency-testing,rename-needed,fallback-old-name-as-profile-segment,no
-aidlc-workflows/aidlc-workflows,https://github.com/awslabs/aidlc-workflows,aidlc-workflows,awslabs_aidlc-workflows_aidlc-workflows,rename-needed,repo-name-only,no
+aidlc-workflows/aidlc-workflows,https://github.com/awslabs/aidlc-workflows,aidlc-workflows,awslabs_aidlc-workflows,rename-needed,repo-name-only,no
 anthropics-claude-plugins-official/anthropics-claude-plugins-official-agent-sdk-dev,https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev,anthropics-claude-plugins-official-agent-sdk-dev,anthropics_claude-plugins-official_agent-sdk-dev,rename-needed,strip-owner-repo-hyphen-prefix,no
 anthropics-claude-plugins-official/anthropics-claude-plugins-official-claude-code-setup,https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup,anthropics-claude-plugins-official-claude-code-setup,anthropics_claude-plugins-official_claude-code-setup,rename-needed,strip-owner-repo-hyphen-prefix,no
 anthropics-claude-plugins-official/anthropics-claude-plugins-official-claude-md-management,https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management,anthropics-claude-plugins-official-claude-md-management,anthropics_claude-plugins-official_claude-md-management,rename-needed,strip-owner-repo-hyphen-prefix,no
@@ -77,9 +77,9 @@ azure-skills/azure-skills-azure-validate,https://github.com/microsoft/github-cop
 azure-skills/azure-skills-entra-app-registration,https://github.com/microsoft/github-copilot-for-azure,azure-skills-entra-app-registration,microsoft_github-copilot-for-azure_azure-skills-entra-app-registration,rename-needed,fallback-old-name-as-profile-segment,no
 azure-skills/azure-skills-microsoft-foundry,https://github.com/microsoft/github-copilot-for-azure,azure-skills-microsoft-foundry,microsoft_github-copilot-for-azure_azure-skills-microsoft-foundry,rename-needed,fallback-old-name-as-profile-segment,no
 compound-engineering,https://github.com/EveryInc/compound-engineering-plugin,compound-engineering,everyinc_compound-engineering-plugin_compound-engineering,rename-needed,fallback-old-name-as-profile-segment,no
-context7,https://github.com/upstash/context7,context7,upstash_context7_context7,rename-needed,repo-name-only,no
+context7,https://github.com/upstash/context7,context7,upstash_context7,rename-needed,repo-name-only,no
 cursor-plugins/cursor-plugins-cursor-team-kit,https://github.com/cursor/plugins,cursor-plugins-cursor-team-kit,cursor_plugins_cursor-team-kit,rename-needed,strip-owner-repo-hyphen-prefix,no
-garrytan-gstack,https://github.com/garrytan/gstack,gstack,garrytan_gstack_gstack,rename-needed,repo-name-only,no
+garrytan-gstack,https://github.com/garrytan/gstack,gstack,garrytan_gstack,rename-needed,repo-name-only,no
 gemini-skills/gemini-skills-gemini-api-dev,https://github.com/google-gemini/gemini-skills,gemini-skills-gemini-api-dev,google-gemini_gemini-skills_gemini-api-dev,rename-needed,strip-repo-hyphen-prefix,no
 gemini-skills/gemini-skills-gemini-interactions-api,https://github.com/google-gemini/gemini-skills,gemini-skills-gemini-interactions-api,google-gemini_gemini-skills_gemini-interactions-api,rename-needed,strip-repo-hyphen-prefix,no
 gemini-skills/gemini-skills-gemini-live-api-dev,https://github.com/google-gemini/gemini-skills,gemini-skills-gemini-live-api-dev,google-gemini_gemini-skills_gemini-live-api-dev,rename-needed,strip-repo-hyphen-prefix,no
@@ -142,7 +142,7 @@ openai-skills/openai-skills-transcribe,https://github.com/openai/skills,openai-s
 openai-skills/openai-skills-vercel-deploy,https://github.com/openai/skills,openai-skills-vercel-deploy,openai_skills_vercel-deploy,rename-needed,strip-owner-repo-hyphen-prefix,no
 openai-skills/openai-skills-winui-app,https://github.com/openai/skills,openai-skills-winui-app,openai_skills_winui-app,rename-needed,strip-owner-repo-hyphen-prefix,no
 openai-skills/openai-skills-yeet,https://github.com/openai/skills,openai-skills-yeet,openai_skills_yeet,rename-needed,strip-owner-repo-hyphen-prefix,no
-tldraw,https://github.com/tldraw/tldraw,tldraw,tldraw_tldraw_tldraw,rename-needed,repo-name-only,no
+tldraw,https://github.com/tldraw/tldraw,tldraw,tldraw_tldraw,rename-needed,repo-name-only,no
 vercel-labs-agent-skills/vercel-labs-agent-skills-composition-patterns,https://github.com/vercel-labs/agent-skills,vercel-labs-agent-skills-composition-patterns,vercel-labs_agent-skills_composition-patterns,rename-needed,strip-owner-repo-hyphen-prefix,no
 vercel-labs-agent-skills/vercel-labs-agent-skills-deploy-to-vercel,https://github.com/vercel-labs/agent-skills,vercel-labs-agent-skills-deploy-to-vercel,vercel-labs_agent-skills_deploy-to-vercel,rename-needed,strip-owner-repo-hyphen-prefix,no
 vercel-labs-agent-skills/vercel-labs-agent-skills-react-best-practices,https://github.com/vercel-labs/agent-skills,vercel-labs-agent-skills-react-best-practices,vercel-labs_agent-skills_react-best-practices,rename-needed,strip-owner-repo-hyphen-prefix,no

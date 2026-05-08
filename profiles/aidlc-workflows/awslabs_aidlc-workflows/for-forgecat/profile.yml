@@ -1,4 +1,4 @@
-name: awslabs_aidlc-workflows_aidlc-workflows
+name: awslabs_aidlc-workflows
 version: 0.0.3
 description: AI-DLC adaptive workflow rules profile for project-level agent guidance
   and stage-by-stage software delivery.
