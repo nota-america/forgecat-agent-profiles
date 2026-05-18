@@ -16,7 +16,7 @@ AI-powered development tools for code review, research, design, and workflow aut
 ## Installation
 
 ```bash
-npx forgecat install @forgecat-nota/compound-engineering
+npx forgecat install @forgecat/everyinc_compound-engineering-plugin_compound-engineering
 ```
 
 ## Skills / Agents / Commands

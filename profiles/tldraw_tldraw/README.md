@@ -14,7 +14,7 @@ Draw and visually collaborate with your agents using the official tldraw Cursor 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat-nota/tldraw
+npx forgecat install @forgecat/tldraw_tldraw
 ```
 
 ## Skills
