@@ -21,7 +21,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [anthropics-claude-plugins-official](./profiles/anthropics-claude-plugins-official) | 16 | Hook-free official Anthropic Claude plugin conversions (skills, agents, commands, MCP) |
 | [anthropics-skills](./profiles/anthropics-skills) | 17 | Anthropic skills collection converted from `anthropics/skills` subpaths (docx, pdf, pptx, xlsx, mcp-builder, and more) |
 | [azure-skills](./profiles/azure-skills) | 19 | Microsoft Azure skill set converted from `microsoft/azure-skills` skill subpaths (deployment, diagnostics, RBAC, cost, and resource workflows) |
-| [vercel-labs-agent-skills](./profiles/vercel-labs-agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
+| [vercel-labs_agent-skills](./profiles/vercel-labs_agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [aidlc-workflows](./profiles/aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
 | [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
