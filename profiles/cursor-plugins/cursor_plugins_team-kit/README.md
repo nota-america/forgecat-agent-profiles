@@ -12,7 +12,7 @@ Internal-style workflows for CI, code review, shipping, and test reliability.
 
 ## Installation
 ```bash
-npx forgecat install @forgecat/cursor_plugins_cursor-team-kit
+npx forgecat install @forgecat/cursor_plugins_team-kit
 ```
 
 ## Agents

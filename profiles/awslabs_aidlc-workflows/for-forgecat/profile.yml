@@ -1,0 +1,108 @@
+name: awslabs_aidlc-workflows
+version: 0.0.3
+description: AI-DLC adaptive workflow rules profile for project-level agent guidance
+  and stage-by-stage software delivery.
+repository: https://github.com/awslabs/aidlc-workflows
+license: MIT-0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - cursor
+    partial:
+    - codex
+  models:
+    recommended: []
+    minimum: []
+rules:
+- name: ascii-diagram-standards
+  path: rules/aws-aidlc-rule-details/common/ascii-diagram-standards.md
+  description: Rule file rules/aws-aidlc-rule-details/common/ascii-diagram-standards.md
+- name: content-validation
+  path: rules/aws-aidlc-rule-details/common/content-validation.md
+  description: Rule file rules/aws-aidlc-rule-details/common/content-validation.md
+- name: depth-levels
+  path: rules/aws-aidlc-rule-details/common/depth-levels.md
+  description: Rule file rules/aws-aidlc-rule-details/common/depth-levels.md
+- name: error-handling
+  path: rules/aws-aidlc-rule-details/common/error-handling.md
+  description: Rule file rules/aws-aidlc-rule-details/common/error-handling.md
+- name: overconfidence-prevention
+  path: rules/aws-aidlc-rule-details/common/overconfidence-prevention.md
+  description: Rule file rules/aws-aidlc-rule-details/common/overconfidence-prevention.md
+- name: process-overview
+  path: rules/aws-aidlc-rule-details/common/process-overview.md
+  description: Rule file rules/aws-aidlc-rule-details/common/process-overview.md
+- name: question-format-guide
+  path: rules/aws-aidlc-rule-details/common/question-format-guide.md
+  description: Rule file rules/aws-aidlc-rule-details/common/question-format-guide.md
+- name: session-continuity
+  path: rules/aws-aidlc-rule-details/common/session-continuity.md
+  description: Rule file rules/aws-aidlc-rule-details/common/session-continuity.md
+- name: terminology
+  path: rules/aws-aidlc-rule-details/common/terminology.md
+  description: Rule file rules/aws-aidlc-rule-details/common/terminology.md
+- name: welcome-message
+  path: rules/aws-aidlc-rule-details/common/welcome-message.md
+  description: Rule file rules/aws-aidlc-rule-details/common/welcome-message.md
+- name: workflow-changes
+  path: rules/aws-aidlc-rule-details/common/workflow-changes.md
+  description: Rule file rules/aws-aidlc-rule-details/common/workflow-changes.md
+- name: build-and-test
+  path: rules/aws-aidlc-rule-details/construction/build-and-test.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/build-and-test.md
+- name: code-generation
+  path: rules/aws-aidlc-rule-details/construction/code-generation.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/code-generation.md
+- name: functional-design
+  path: rules/aws-aidlc-rule-details/construction/functional-design.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/functional-design.md
+- name: infrastructure-design
+  path: rules/aws-aidlc-rule-details/construction/infrastructure-design.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/infrastructure-design.md
+- name: nfr-design
+  path: rules/aws-aidlc-rule-details/construction/nfr-design.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/nfr-design.md
+- name: nfr-requirements
+  path: rules/aws-aidlc-rule-details/construction/nfr-requirements.md
+  description: Rule file rules/aws-aidlc-rule-details/construction/nfr-requirements.md
+- name: security-baseline
+  path: rules/aws-aidlc-rule-details/extensions/security/baseline/security-baseline.md
+  description: Rule file rules/aws-aidlc-rule-details/extensions/security/baseline/security-baseline.md
+- name: security-baseline.opt-in
+  path: rules/aws-aidlc-rule-details/extensions/security/baseline/security-baseline.opt-in.md
+  description: Rule file rules/aws-aidlc-rule-details/extensions/security/baseline/security-baseline.opt-in.md
+- name: property-based-testing
+  path: rules/aws-aidlc-rule-details/extensions/testing/property-based/property-based-testing.md
+  description: Rule file rules/aws-aidlc-rule-details/extensions/testing/property-based/property-based-testing.md
+- name: property-based-testing.opt-in
+  path: rules/aws-aidlc-rule-details/extensions/testing/property-based/property-based-testing.opt-in.md
+  description: Rule file rules/aws-aidlc-rule-details/extensions/testing/property-based/property-based-testing.opt-in.md
+- name: application-design
+  path: rules/aws-aidlc-rule-details/inception/application-design.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/application-design.md
+- name: requirements-analysis
+  path: rules/aws-aidlc-rule-details/inception/requirements-analysis.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/requirements-analysis.md
+- name: reverse-engineering
+  path: rules/aws-aidlc-rule-details/inception/reverse-engineering.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/reverse-engineering.md
+- name: units-generation
+  path: rules/aws-aidlc-rule-details/inception/units-generation.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/units-generation.md
+- name: user-stories
+  path: rules/aws-aidlc-rule-details/inception/user-stories.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/user-stories.md
+- name: workflow-planning
+  path: rules/aws-aidlc-rule-details/inception/workflow-planning.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/workflow-planning.md
+- name: workspace-detection
+  path: rules/aws-aidlc-rule-details/inception/workspace-detection.md
+  description: Rule file rules/aws-aidlc-rule-details/inception/workspace-detection.md
+- name: operations
+  path: rules/aws-aidlc-rule-details/operations/operations.md
+  description: Rule file rules/aws-aidlc-rule-details/operations/operations.md
+- name: core-workflow
+  path: rules/aws-aidlc-rules/core-workflow.md
+  description: Rule file rules/aws-aidlc-rules/core-workflow.md

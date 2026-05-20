@@ -1,4 +1,4 @@
-name: cursor_plugins_cursor-team-kit
+name: cursor_plugins_team-kit
 version: 0.0.5
 description: 'Internal workflows used by Cursor developers for CI, code review, and
   shipping. Covers the full dev loop: CI monitoring and fixing, PR creation, merge
