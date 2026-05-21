@@ -1,0 +1,34 @@
+name: anthropics_claude-plugins-official_example-plugin
+version: 0.0.0
+description: A comprehensive example plugin demonstrating all Claude Code extension
+  options including commands, agents, skills, hooks, and MCP servers
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: example-command
+  path: skills/example-command/SKILL.md
+  description: An example user-invoked skill that demonstrates frontmatter options
+    and the skills/<name>/SKILL.md layout
+- name: example-skill
+  path: skills/example-skill/SKILL.md
+  description: This skill should be used when the user asks to "demonstrate skills",
+    "show skill format", "create a skill template", or discusses skill development
+    patterns. Provides a reference template for creating Claude Code plugin skills.
+commands:
+- name: example-command
+  path: commands/example-command.md
+  description: An example slash command that demonstrates command frontmatter options
+    (legacy format)
+mcp:
+  path: mcp.jsonc

@@ -20,16 +20,16 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [addyosmani-agent-skills](./profiles/addyosmani-agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
 | [anthropics-claude-plugins-official](./profiles/anthropics-claude-plugins-official) | 16 | Hook-free official Anthropic Claude plugin conversions (skills, agents, commands, MCP) |
 | [anthropics-skills](./profiles/anthropics-skills) | 17 | Anthropic skills collection converted from `anthropics/skills` subpaths (docx, pdf, pptx, xlsx, mcp-builder, and more) |
-| [azure-skills](./profiles/azure-skills) | 19 | Microsoft Azure skill set converted from `microsoft/github-copilot-for-azure` skill subpaths (deployment, diagnostics, RBAC, cost, and resource workflows) |
-| [vercel-labs-agent-skills](./profiles/vercel-labs-agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
+| [azure-skills](./profiles/azure-skills) | 19 | Microsoft Azure skill set converted from `microsoft/azure-skills` skill subpaths (deployment, diagnostics, RBAC, cost, and resource workflows) |
+| [vercel-labs_agent-skills](./profiles/vercel-labs_agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [aidlc-workflows](./profiles/aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
 | [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [gemini-skills](./profiles/gemini-skills) | 3 | Google Gemini skills set converted into installable Forgecat profiles (API dev, interactions API, live API) |
 | [compound-engineering](./profiles/compound-engineering) | 1 | AI-powered development profile with deep workflows for review, research, and design |
-| [cursor-plugins](./profiles/cursor-plugins) | 1 | Plugins for Cursor — CI, code review, shipping, test reliability |
+| [cursor_plugins](./profiles/cursor_plugins) | 1 | Plugins for Cursor — CI, code review, shipping, test reliability |
 | [gstack](./profiles/garrytan-gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
-| [knowledge-work-plugins](./profiles/knowledge-work-plugins) | 14 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
+| [anthropics_knowledge-work-plugins](./profiles/anthropics_knowledge-work-plugins) | 14 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
 | [openai-skills](./profiles/openai-skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
 | [tldraw](./profiles/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
 

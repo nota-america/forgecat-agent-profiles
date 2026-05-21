@@ -1,0 +1,29 @@
+name: anthropics_claude-plugins-official_claude-md-management
+version: 0.0.0
+description: Tools to maintain and improve CLAUDE.md files - audit quality, capture
+  session learnings, and keep project memory current.
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: claude-md-improver
+  path: skills/claude-md-improver/SKILL.md
+  description: Audit and improve CLAUDE.md files in repositories. Use when user asks
+    to check, audit, update, improve, or fix CLAUDE.md files. Scans for all CLAUDE.md
+    files, evaluates quality against templates, outputs quality report, then makes
+    targeted updates. Also use when the user mentions "CLAUDE.md maintenance" or "project
+    memory optimization".
+commands:
+- name: revise-claude-md
+  path: commands/revise-claude-md.md
+  description: Update CLAUDE.md with learnings from this session

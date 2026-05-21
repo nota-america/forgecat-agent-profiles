@@ -1,0 +1,28 @@
+name: microsoft-azure_skills-azure-resource-visualizer
+version: 0.0.0
+description: 'Analyze Azure resource groups and generate detailed Mermaid architecture
+  diagrams showing the relationships between individual resources. WHEN: create architecture
+  diagram, visualize Azure resources, show resource relationships, generate Mermaid
+  diagram, analyze resource group, diagram my resources, architecture visualization,
+  resource topology, map Azure infrastructure.'
+repository: https://github.com/microsoft/azure-skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: azure-resource-visualizer
+  path: skills/azure-resource-visualizer/SKILL.md
+  description: 'Analyze Azure resource groups and generate detailed Mermaid architecture
+    diagrams showing the relationships between individual resources. WHEN: create
+    architecture diagram, visualize Azure resources, show resource relationships,
+    generate Mermaid diagram, analyze resource group, diagram my resources, architecture
+    visualization, resource topology, map Azure infrastructure.'

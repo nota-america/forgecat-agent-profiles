@@ -1,0 +1,29 @@
+name: anthropics_claude-plugins-official_commit-commands
+version: 0.0.0
+description: Streamline your git workflow with simple commands for committing, pushing,
+  and creating pull requests
+repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/commit-commands
+license: Apache-2.0
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+commands:
+- name: clean_gone
+  path: commands/clean_gone.md
+  description: Cleans up all git branches marked as [gone] (branches that have been
+    deleted on the remote but still exist locally), including removing associated
+    worktrees.
+- name: commit-push-pr
+  path: commands/commit-push-pr.md
+  description: Commit, push, and open a PR
+- name: commit
+  path: commands/commit.md
+  description: Create a git commit

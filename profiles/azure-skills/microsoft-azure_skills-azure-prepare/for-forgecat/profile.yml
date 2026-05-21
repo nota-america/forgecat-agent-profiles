@@ -1,0 +1,42 @@
+name: microsoft-azure_skills-azure-prepare
+version: 0.0.0
+description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml,
+  Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration
+  (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create
+  serverless HTTP API", "create frontend", "create back end", "build a service", "modernize
+  application", "update application", "add authentication", "add caching", "host on
+  Azure", "create and deploy", "deploy to Azure", "deploy to Azure using Terraform",
+  "deploy to Azure App Service", "deploy to Azure App Service using Terraform", "deploy
+  to Azure Container Apps", "deploy to Azure Container Apps using Terraform", "generate
+  Terraform", "generate Bicep", "function app", "timer trigger", "service bus trigger",
+  "event-driven function", "containerized Node.js app", "social media app", "static
+  portfolio website", "todo list with frontend and API", "prepare my Azure application
+  to use Key Vault", "managed identity".'
+repository: https://github.com/microsoft/azure-skills
+license: MIT
+visibility: public
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: azure-prepare
+  path: skills/azure-prepare/SKILL.md
+  description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml,
+    Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration
+    (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API",
+    "create serverless HTTP API", "create frontend", "create back end", "build a service",
+    "modernize application", "update application", "add authentication", "add caching",
+    "host on Azure", "create and deploy", "deploy to Azure", "deploy to Azure using
+    Terraform", "deploy to Azure App Service", "deploy to Azure App Service using
+    Terraform", "deploy to Azure Container Apps", "deploy to Azure Container Apps
+    using Terraform", "generate Terraform", "generate Bicep", "function app", "timer
+    trigger", "service bus trigger", "event-driven function", "containerized Node.js
+    app", "social media app", "static portfolio website", "todo list with frontend
+    and API", "prepare my Azure application to use Key Vault", "managed identity".'
