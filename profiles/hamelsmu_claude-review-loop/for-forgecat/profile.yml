@@ -1,0 +1,40 @@
+name: hamelsmu_claude-review-loop
+version: 0.0.0
+description: Automated code review loop for Claude Code where Claude implements, Codex reviews independently, and Claude addresses feedback.
+repository: https://github.com/hamelsmu/claude-review-loop
+license: MIT
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+keywords:
+  - code-review
+  - codex
+  - claude-code
+  - hooks
+commands:
+  - name: review-loop
+    path: commands/review-loop.md
+    description: "Start a review loop: implement task, get independent Codex review, address feedback"
+  - name: cancel-review
+    path: commands/cancel-review.md
+    description: Cancel an active review loop
+rules:
+  - path: rules/AGENTS.md
+    description: Review-loop operating guidelines for Claude Code agents.
+hooks:
+  - id: review-loop-stop
+    trigger: stop
+    command: ./hooks/stop-hook.sh
+    timeout: 30
+    description: Review loop stop hook that prepares Codex review after task completion and verifies the review phase before exit.
+    platforms:
+      - claude-code
