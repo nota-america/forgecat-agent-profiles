@@ -10,10 +10,10 @@ sourcePlatform: cursor
 compatibility:
   platforms:
     tested:
+    - codex
     - cursor
     partial:
     - claude-code
-    - codex
   models:
     recommended: []
     minimum: []

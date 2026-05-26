@@ -48,7 +48,7 @@ npx forgecat install @forgecat/cursor_plugins_team-kit
 |---|---|
 | Cursor | Tested |
 | Claude Code | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
 ### Models
 | Model | Role |

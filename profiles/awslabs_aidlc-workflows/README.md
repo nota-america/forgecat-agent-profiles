@@ -49,7 +49,7 @@ npx forgecat install @forgecat/awslabs_aidlc-workflows
 |---|---|
 | Claude Code | Tested |
 | Cursor | Tested |
-| Codex | Partial |
+| Codex | Tested |
 
 ## Dependencies
 

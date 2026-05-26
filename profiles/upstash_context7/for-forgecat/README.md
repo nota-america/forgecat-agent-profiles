@@ -42,7 +42,7 @@ npx forgecat install @forgecat/upstash_context7
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
+| Codex | Tested |
 | Cursor | Partial |
 
 ### Models

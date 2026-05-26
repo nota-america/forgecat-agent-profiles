@@ -39,7 +39,7 @@ npx forgecat install @forgecat/anthropics_skills_mcp-builder
 |---|---|
 | Claude Code | Tested |
 | Cursor | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
 ## Dependencies
 
