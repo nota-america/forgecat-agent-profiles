@@ -39,13 +39,18 @@ Measure before optimizing. Performance work without measurement is guessing — 
 
 ### Step 1: Measure
 
+Two complementary approaches — use both:
+
+- **Synthetic (Lighthouse, DevTools Performance tab):** Controlled conditions, reproducible. Best for CI regression detection and isolating specific issues.
+- **RUM (web-vitals library, CrUX):** Real user data in real conditions. Required to validate that a fix actually improved user experience.
+
 **Frontend:**
 ```bash
-# Lighthouse in Chrome DevTools (or CI)
+# Synthetic: Lighthouse in Chrome DevTools (or CI)
 # Chrome DevTools → Performance tab → Record
 # Chrome DevTools MCP → Performance trace
 
-# Web Vitals library in code
+# RUM: Web Vitals library in code
 import { onLCP, onINP, onCLS } from 'web-vitals';
 
 onLCP(console.log);
@@ -73,7 +78,10 @@ Use the symptom to decide what to measure first:
 What is slow?
 ├── First page load
 │   ├── Large bundle? --> Measure bundle size, check code splitting
-│   ├── Slow server response? --> Measure TTFB, check API/database
+│   ├── Slow server response? --> Measure TTFB in DevTools Network waterfall
+│   │   ├── DNS long? --> Add dns-prefetch / preconnect for known origins
+│   │   ├── TCP/TLS long? --> Enable HTTP/2, check edge deployment, keep-alive
+│   │   └── Waiting (server) long? --> Profile backend, check queries and caching
 │   └── Render-blocking resources? --> Check network waterfall for CSS/JS blocking
 ├── Interaction feels sluggish
 │   ├── UI freezes on click? --> Profile main thread, look for long tasks (>50ms)
@@ -144,18 +152,65 @@ const tasks = await db.tasks.findMany({
 #### Missing Image Optimization (Frontend)
 
 ```html
-<!-- BAD: No dimensions, no lazy loading, no responsive sizes -->
+<!-- BAD: No dimensions, no format optimization -->
 <img src="/hero.jpg" />
 
-<!-- GOOD: Responsive, lazy-loaded, properly sized -->
+<!-- GOOD: Hero / LCP image — art direction + resolution switching, high priority -->
+<!--
+  Two techniques combined:
+  - Art direction (media): different crop/composition per breakpoint
+  - Resolution switching (srcset + sizes): right file size per screen density
+-->
+<picture>
+  <!-- Mobile: portrait crop (8:10) -->
+  <source
+    media="(max-width: 767px)"
+    srcset="/hero-mobile-400.avif 400w, /hero-mobile-800.avif 800w"
+    sizes="100vw"
+    width="800"
+    height="1000"
+    type="image/avif"
+  />
+  <source
+    media="(max-width: 767px)"
+    srcset="/hero-mobile-400.webp 400w, /hero-mobile-800.webp 800w"
+    sizes="100vw"
+    width="800"
+    height="1000"
+    type="image/webp"
+  />
+  <!-- Desktop: landscape crop (2:1) -->
+  <source
+    srcset="/hero-800.avif 800w, /hero-1200.avif 1200w, /hero-1600.avif 1600w"
+    sizes="(max-width: 1200px) 100vw, 1200px"
+    width="1200"
+    height="600"
+    type="image/avif"
+  />
+  <source
+    srcset="/hero-800.webp 800w, /hero-1200.webp 1200w, /hero-1600.webp 1600w"
+    sizes="(max-width: 1200px) 100vw, 1200px"
+    width="1200"
+    height="600"
+    type="image/webp"
+  />
+  <img
+    src="/hero-desktop.jpg"
+    width="1200"
+    height="600"
+    fetchpriority="high"
+    alt="Hero image description"
+  />
+</picture>
+
+<!-- GOOD: Below-the-fold image — lazy loaded + async decoding -->
 <img
-  src="/hero.jpg"
-  srcset="/hero-400.webp 400w, /hero-800.webp 800w, /hero-1200.webp 1200w"
-  sizes="(max-width: 768px) 100vw, 50vw"
-  width="1200"
-  height="600"
+  src="/content.webp"
+  width="800"
+  height="400"
   loading="lazy"
-  alt="Hero image description"
+  decoding="async"
+  alt="Content image description"
 />
 ```
 
@@ -188,14 +243,23 @@ function TaskStats({ tasks }: Props) {
 #### Large Bundle Size
 
 ```typescript
-// BAD: Importing entire library
-import { format } from 'date-fns';
-
-// GOOD: Tree-shakable import (if the library supports it)
-import { format } from 'date-fns/format';
+// Modern bundlers (Vite, webpack 5+) handle named imports with tree-shaking automatically,
+// provided the dependency ships ESM and is marked `sideEffects: false` in package.json.
+// Profile before changing import styles — the real gains come from splitting and lazy loading.
 
 // GOOD: Dynamic import for heavy, rarely-used features
 const ChartLibrary = lazy(() => import('./ChartLibrary'));
+
+// GOOD: Route-level code splitting wrapped in Suspense
+const SettingsPage = lazy(() => import('./pages/Settings'));
+
+function App() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <SettingsPage />
+    </Suspense>
+  );
+}
 ```
 
 #### Missing Caching (Backend)

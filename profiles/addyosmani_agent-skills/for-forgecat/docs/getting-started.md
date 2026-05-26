@@ -125,6 +125,14 @@ The `references/` directory contains supplementary checklists:
 
 Load a reference when you need detailed patterns beyond what the skill covers.
 
+## Spec and task artifacts
+
+The `/spec` and `/plan` commands create working artifacts (`SPEC.md`, `tasks/plan.md`, `tasks/todo.md`). Treat them as **living documents** while the work is in progress:
+
+- Keep them in version control during development so the human and the agent have a shared source of truth.
+- Update them when scope or decisions change.
+- If your repo doesn’t want these files long‑term, delete them before merge or add the folder to `.gitignore` — the workflow doesn’t require them to be permanent.
+
 ## Tips
 
 1. **Start with spec-driven-development** for any non-trivial work
