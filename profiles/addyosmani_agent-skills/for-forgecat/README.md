@@ -42,13 +42,18 @@ npx forgecat install @forgecat/addyosmani_agent-skills
 - **security-auditor** — Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.
 - **test-engineer** — QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.
 
+## Hooks
+
+- **agent-skills-session-start** — Injects the `using-agent-skills` meta-skill into each new Claude Code session.
+- **simplify-ignore** — Protects `simplify-ignore` blocks while Claude Code reads, edits, writes, and stops.
+
 ## Details
 
 | Field | Value |
 |---|---|
 | Author | Addy Osmani |
 | Original repository | https://github.com/addyosmani/agent-skills |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | `8d79b5f` |
 | License | MIT |
 | Source platform | Claude Code |

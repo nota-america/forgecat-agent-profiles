@@ -1,5 +1,5 @@
 name: addyosmani_agent-skills
-version: 0.0.0
+version: 0.0.1
 description: Production-grade engineering skills for AI coding agents covering the
   full software development lifecycle from spec to ship.
 repository: https://github.com/addyosmani/agent-skills
@@ -15,6 +15,37 @@ compatibility:
   models:
     recommended: []
     minimum: []
+hooks:
+- id: agent-skills-session-start
+  trigger: session_start
+  command: ./hooks/session-start.sh
+  description: Inject the using-agent-skills meta-skill into each new Claude Code
+    session.
+  platforms:
+  - claude-code
+- id: simplify-ignore-before-read
+  trigger: pre_tool_use
+  tool_match: Read
+  command: ./hooks/simplify-ignore.sh
+  description: Replace simplify-ignore blocks with placeholders before Claude Code
+    reads a file.
+  platforms:
+  - claude-code
+- id: simplify-ignore-after-edit
+  trigger: post_tool_use
+  tool_match: Edit|Write
+  command: ./hooks/simplify-ignore.sh
+  description: Restore simplify-ignore placeholders after Claude Code edits or writes
+    a file.
+  platforms:
+  - claude-code
+- id: simplify-ignore-stop-restore
+  trigger: stop
+  command: ./hooks/simplify-ignore.sh
+  description: Restore simplify-ignore protected file contents when the Claude Code
+    response stops.
+  platforms:
+  - claude-code
 skills:
 - name: api-and-interface-design
   path: skills/api-and-interface-design/SKILL.md
