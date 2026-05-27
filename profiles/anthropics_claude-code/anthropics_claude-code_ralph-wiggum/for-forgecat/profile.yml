@@ -1,0 +1,43 @@
+name: anthropics_claude-code_ralph-wiggum
+version: 0.0.0
+description: Implementation of the Ralph Wiggum technique - continuous self-referential
+  AI loops for interactive iterative development. Run Claude in a while-true loop
+  with the same prompt until task completion.
+repository: https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum
+license: Complete terms in LICENSE.md
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+commands:
+- name: cancel-ralph
+  path: commands/cancel-ralph.md
+  description: Cancel active Ralph Wiggum loop
+- name: help
+  path: commands/help.md
+  description: Explain Ralph Wiggum technique and available commands
+- name: ralph-loop
+  path: commands/ralph-loop.md
+  description: Start Ralph Wiggum loop in current session
+skills:
+- name: ralph-wiggum
+  path: skills/ralph-wiggum
+  description: Support files for Ralph Wiggum loop commands and setup.
+  scripts:
+  - path: skills/ralph-wiggum/scripts/setup-ralph-loop.sh
+    description: Initializes the Ralph loop state file used by the Stop hook.
+    runtime: bash
+hooks:
+- id: ralph-wiggum-stop-loop
+  platform: claude-code
+  trigger: Stop
+  command: ./hooks/stop-hook.sh
+  description: Ralph Wiggum plugin stop hook for self-referential loops
