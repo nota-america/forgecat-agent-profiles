@@ -12,7 +12,7 @@
 #     OR mcpServers.gbrain.url is set (remote-http MCP active)
 #   - ~/.gbrain/config.json is absent (no local engine yet)
 #   - User has not previously opted out via:
-#       ~/.claude/skills/garrytan-gstack/bin/gstack-config set local_code_index_offered true
+#       $GSTACK_ROOT/bin/gstack-config set local_code_index_offered true
 #
 # When silent: anything else (Path 1/2/3 users, anyone already on PGLite,
 # anyone who opted out, anyone without remote-http MCP).
@@ -31,7 +31,7 @@ fi
 GSTACK_HOME="${GSTACK_HOME:-$HOME/.gstack}"
 MIGRATIONS_DIR="$GSTACK_HOME/.migrations"
 DONE_TOUCH="$MIGRATIONS_DIR/v1.37.0.0.done"
-CONFIG_BIN="$HOME/.claude/skills/garrytan-gstack/bin/gstack-config"
+CONFIG_BIN="$GSTACK_ROOT/bin/gstack-config"
 CLAUDE_JSON="$HOME/.claude.json"
 GBRAIN_CONFIG="$HOME/.gbrain/config.json"
 

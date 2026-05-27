@@ -393,8 +393,8 @@ function rotateIfNeeded(): void {
  * binary layouts can break that).
  *
  * Order:
- *  1. ~/.claude/skills/garrytan-gstack/bin/gstack-telemetry-log  (global install)
- *  2. .claude/skills/garrytan-gstack/bin/gstack-telemetry-log    (symlinked dev)
+ *  1. $GSTACK_ROOT/bin/gstack-telemetry-log  (global install)
+ *  2. $GSTACK_ROOT/bin/gstack-telemetry-log    (symlinked dev)
  *  3. bin/gstack-telemetry-log                          (in-repo dev)
  */
 function findTelemetryBinary(): string | null {

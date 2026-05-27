@@ -51,7 +51,7 @@ Rules:
 backslashes serialize cleanly — never use hand-rolled \`echo\` / \`printf\`.
 
 \`\`\`bash
-eval "$(~/.claude/skills/garrytan-gstack/bin/gstack-slug 2>/dev/null)"
+eval "$($GSTACK_ROOT/bin/gstack-slug 2>/dev/null)"
 TASKS_DIR="\${HOME}/.gstack/projects/\${SLUG:-unknown}"
 mkdir -p "$TASKS_DIR"
 TASKS_FILE="$TASKS_DIR/tasks-${phase}-$(date +%Y%m%d-%H%M%S).jsonl"
@@ -97,7 +97,7 @@ Before rendering the Final Approval Gate output block below, aggregate the
 per-phase task lists each review skill wrote.
 
 \`\`\`bash
-eval "$(~/.claude/skills/garrytan-gstack/bin/gstack-slug 2>/dev/null)"
+eval "$($GSTACK_ROOT/bin/gstack-slug 2>/dev/null)"
 TASKS_DIR="\${HOME}/.gstack/projects/\${SLUG:-unknown}"
 BRANCH=$(git branch --show-current 2>/dev/null || echo unknown)
 # Commit window: last 5 commits on this branch. Drops stale standalone reviews.

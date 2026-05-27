@@ -3,7 +3,7 @@
 #
 # Works in two modes:
 #   1. Inside .app bundle: Contents/MacOS/gstack-browser → Resources are at ../Resources/
-#   2. Dev mode (run directly): uses global gstack install at ~/.claude/skills/garrytan-gstack/
+#   2. Dev mode (run directly): uses global gstack install at $GSTACK_ROOT/
 #
 # Usage:
 #   open "GStack Browser.app"          # .app bundle mode
@@ -19,7 +19,7 @@ if [ -d "$SCRIPT_DIR/../Resources" ]; then
   DIR="$(cd "$SCRIPT_DIR/../Resources" && pwd)"
 else
   # Dev mode — use global gstack install
-  DIR="$HOME/.claude/skills/garrytan-gstack"
+  DIR="$GSTACK_ROOT"
 fi
 
 # Point Playwright at bundled Chromium (only in .app mode)
@@ -42,14 +42,14 @@ fi
 # Server script: bundled source first, then global install
 if [ -f "$DIR/src/server.ts" ]; then
   export BROWSE_SERVER_SCRIPT="$DIR/src/server.ts"
-elif [ -f "$HOME/.claude/skills/garrytan-gstack/browse/src/server.ts" ]; then
-  export BROWSE_SERVER_SCRIPT="$HOME/.claude/skills/garrytan-gstack/browse/src/server.ts"
+elif [ -f "$GSTACK_ROOT/browse/src/server.ts" ]; then
+  export BROWSE_SERVER_SCRIPT="$GSTACK_ROOT/browse/src/server.ts"
 fi
 
 # Browse binary: bundled .app first, then global install
 # Note: -x on a directory is true, so check -f (regular file) too
 BROWSE_BIN=""
-for candidate in "$DIR/browse" "$DIR/browse/dist/browse" "$HOME/.claude/skills/garrytan-gstack/browse/dist/browse"; do
+for candidate in "$DIR/browse" "$DIR/browse/dist/browse" "$GSTACK_ROOT/browse/dist/browse"; do
   if [ -f "$candidate" ] && [ -x "$candidate" ]; then
     BROWSE_BIN="$candidate"
     break

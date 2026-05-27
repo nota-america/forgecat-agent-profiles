@@ -20,7 +20,7 @@ same intent runs in ~200ms instead of ~30 seconds of agent re-exploration.
 bun install && bun run build
 
 # Set $B once and forget about it
-B=./browse/dist/browse           # or ~/.claude/skills/garrytan-gstack/browse/dist/browse
+B=./browse/dist/browse           # or $GSTACK_ROOT/browse/dist/browse
 
 # Drive a page
 $B goto https://news.ycombinator.com
@@ -666,7 +666,7 @@ bin/gstack-extension    # opens chrome://extensions, copies path to clipboard
 ```
 
 Or do it manually: `chrome://extensions` → toggle Developer mode → Load
-unpacked → navigate to `~/.claude/skills/garrytan-gstack/extension` → pin the
+unpacked → navigate to `$GSTACK_ROOT/extension` → pin the
 extension → enter the port from `$B status`.
 
 ---
@@ -1312,10 +1312,10 @@ lands at `~/.gstack/browser-skills/<name>/` after the test passes.
 
 ### Deploying to the active skill
 
-The active skill lives at `~/.claude/skills/garrytan-gstack/`. After making changes:
+The active skill lives at `$GSTACK_ROOT/`. After making changes:
 
 ```bash
-cd ~/.claude/skills/garrytan-gstack
+cd $GSTACK_ROOT
 git fetch origin && git reset --hard origin/main
 bun run build
 ```
@@ -1323,7 +1323,7 @@ bun run build
 Or copy the binary directly:
 
 ```bash
-cp browse/dist/browse ~/.claude/skills/garrytan-gstack/browse/dist/browse
+cp browse/dist/browse $GSTACK_ROOT/browse/dist/browse
 ```
 
 ---

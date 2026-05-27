@@ -6,7 +6,7 @@ designer, QA lead, release engineer, debugger, and more.
 
 ## Available skills
 
-Skills live in `.agents/skills/` (or `~/.claude/skills/garrytan-gstack/` on Claude Code).
+Skills live in `.agents/skills/` (or `$GSTACK_ROOT/` on Claude Code).
 Invoke them by name (e.g., `/office-hours`).
 
 ### Plan-mode reviews

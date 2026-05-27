@@ -161,11 +161,11 @@ if (gate && !gate(ctx)) return '';
 return args.length > 0 ? resolver(ctx, args) : resolver(ctx);
 ```
 
-**A.2 Jargon-list dedup** — currently `scripts/resolvers/preamble/generate-writing-style.ts` inlines the full 1.8KB jargon glossary into 37 skills. Replace inline with a reference: "For the canonical jargon list, Read `~/.claude/skills/garrytan-gstack/scripts/jargon-list.json` on first use." Saves ~66KB total corpus.
+**A.2 Jargon-list dedup** — currently `scripts/resolvers/preamble/generate-writing-style.ts` inlines the full 1.8KB jargon glossary into 37 skills. Replace inline with a reference: "For the canonical jargon list, Read `$GSTACK_ROOT/scripts/jargon-list.json` on first use." Saves ~66KB total corpus.
 
 **A.3 Terse-mode actually compresses** — read `~/.gstack/config.yaml` once in `gen-skill-docs.ts`, pass `explainLevel` into `TemplateContext`, and have `generate-writing-style.ts` / `generate-completeness.ts` / `generate-confusion-protocol.ts` / `generate-context-health.ts` return `''` when terse. Today the bytes ship regardless of config — the flag only changes runtime model behavior. Add `--explain-level=terse` build flag for benchmarking.
 
-**A.4 Catalog trim** (moved up per Codex #6) — shorten skill descriptions in the always-loaded system prompt to one line per skill. Voice triggers move from catalog descriptions into in-skill content. Proactive-suggest paragraphs move to a separate `~/.claude/skills/garrytan-gstack/scripts/proactive-suggestions.json` loaded only when the agent needs routing guidance. Per-skill description format:
+**A.4 Catalog trim** (moved up per Codex #6) — shorten skill descriptions in the always-loaded system prompt to one line per skill. Voice triggers move from catalog descriptions into in-skill content. Proactive-suggest paragraphs move to a separate `$GSTACK_ROOT/scripts/proactive-suggestions.json` loaded only when the agent needs routing guidance. Per-skill description format:
 
 ```
 - <skill-name>: <one-line outcome description, ≤80 chars> (gstack)
@@ -693,7 +693,7 @@ full migration story, or just keep working.
 
 Voice rules honored: lead with the win ("67% lighter"); concrete numbers; reassurance that workflows are unchanged ("everything still works the same way"); escape hatch (`--explain-v2`). No em dashes. Aimed at a 5-second read.
 
-Implementation: update `~/.claude/skills/garrytan-gstack/gstack-upgrade/SKILL.md.tmpl` Inline upgrade flow with v2-aware message; existing `JUST_UPGRADED <from> <to>` detection in skill preamble fires it.
+Implementation: update `$GSTACK_ROOT/gstack-upgrade/SKILL.md.tmpl` Inline upgrade flow with v2-aware message; existing `JUST_UPGRADED <from> <to>` detection in skill preamble fires it.
 
 ### CHANGELOG numbers table (Persona A's magical moment + Persona B's evaluation evidence)
 

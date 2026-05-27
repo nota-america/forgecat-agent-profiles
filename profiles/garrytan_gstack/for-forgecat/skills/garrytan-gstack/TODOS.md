@@ -1540,11 +1540,11 @@ Shipped in v0.8.3. Step 8.5 added to `/ship` — after creating the PR, `/ship` 
 
 ### Codex→Claude reverse buddy check skill
 
-**What:** A Codex-native skill (`.agents/skills/garrytan-gstack-claude/SKILL.md`) that runs `claude -p` to get an independent second opinion from Claude — the reverse of what `/codex` does today from Claude Code.
+**What:** A Codex-native skill (`$GSTACK_ROOT-claude/SKILL.md`) that runs `claude -p` to get an independent second opinion from Claude — the reverse of what `/codex` does today from Claude Code.
 
 **Why:** Codex users deserve the same cross-model challenge that Claude users get via `/codex`. Currently the flow is one-way (Claude→Codex). Codex users have no way to get a Claude second opinion.
 
-**Context:** The `/codex` skill template (`codex/SKILL.md.tmpl`) shows the pattern — it wraps `codex exec` with JSONL parsing, timeout handling, and structured output. The reverse skill would wrap `claude -p` with similar infrastructure. Would be generated into `.agents/skills/garrytan-gstack-claude/` by `gen-skill-docs --host codex`.
+**Context:** The `/codex` skill template (`codex/SKILL.md.tmpl`) shows the pattern — it wraps `codex exec` with JSONL parsing, timeout handling, and structured output. The reverse skill would wrap `claude -p` with similar infrastructure. Would be generated into `$GSTACK_ROOT-claude/` by `gen-skill-docs --host codex`.
 
 **Effort:** M (human: ~2 weeks / CC: ~30 min)
 **Priority:** P1
