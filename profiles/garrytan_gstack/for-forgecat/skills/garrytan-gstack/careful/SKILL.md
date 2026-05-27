@@ -1,12 +1,11 @@
 ---
 name: careful
 version: 0.1.0
-description: |
-  Safety guardrails for destructive commands. Warns before rm -rf, DROP TABLE,
-  force-push, git reset --hard, kubectl delete, and similar destructive operations.
-  User can override each warning. Use when touching prod, debugging live systems,
-  or working in a shared environment. Use when asked to "be careful", "safety mode",
-  "prod mode", or "careful mode". (gstack)
+description: "Safety guardrails for destructive commands. (gstack)"
+triggers:
+  - be careful
+  - warn before destructive
+  - safety mode
 allowed-tools:
   - Bash
   - Read
@@ -20,6 +19,15 @@ hooks:
 ---
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
 <!-- Regenerate: bun run gen:skill-docs -->
+
+
+## When to invoke this skill
+
+Warns before recursive remove commands, DROP TABLE,
+force-push, git reset --hard, kubectl delete, and similar destructive operations.
+User can override each warning. Use when touching prod, debugging live systems,
+or working in a shared environment. Use when asked to "be careful", "safety mode",
+"prod mode", or "careful mode".
 
 # /careful — Destructive Command Guardrails
 
@@ -36,7 +44,7 @@ echo '{"skill":"careful","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(base
 
 | Pattern | Example | Risk |
 |---------|---------|------|
-| `rm -rf` / `rm -r` / `rm --recursive` | (see check-careful.sh) | Recursive delete |
+| recursive `rm` commands | `rm` against /var/data with recursive flags | Recursive delete |
 | `DROP TABLE` / `DROP DATABASE` | `DROP TABLE users;` | Data loss |
 | `TRUNCATE` | `TRUNCATE orders;` | Data loss |
 | `git push --force` / `-f` | `git push -f origin main` | History rewrite |
@@ -48,7 +56,7 @@ echo '{"skill":"careful","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(base
 ## Safe exceptions
 
 These patterns are allowed without warning:
-- `rm -rf node_modules` / `.next` / `dist` / `__pycache__` / `.cache` / `build` / `.turbo` / `coverage`
+- recursive remove of `node_modules` / `.next` / `dist` / `__pycache__` / `.cache` / `build` / `.turbo` / `coverage`
 
 ## How it works
 

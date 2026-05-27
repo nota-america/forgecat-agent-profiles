@@ -1,11 +1,11 @@
 ---
 name: gstack-upgrade
 version: 1.1.0
-description: |
-  Upgrade gstack to the latest version. Detects global vs vendored install,
-  runs the upgrade, and shows what's new. Use when asked to "upgrade gstack",
-  "update gstack", or "get latest version".
-  Voice triggers (speech-to-text aliases): "upgrade the tools", "update the tools", "gee stack upgrade", "g stack upgrade".
+description: "Upgrade gstack to the latest version."
+triggers:
+  - upgrade gstack
+  - update gstack version
+  - get latest gstack
 allowed-tools:
   - Bash
   - Read
@@ -14,6 +14,15 @@ allowed-tools:
 ---
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
 <!-- Regenerate: bun run gen:skill-docs -->
+
+
+## When to invoke this skill
+
+Detects global vs vendored install,
+runs the upgrade, and shows what's new. Use when asked to "upgrade gstack",
+"update gstack", or "get latest version".
+
+Voice triggers (speech-to-text aliases): "upgrade the tools", "update the tools", "gee stack upgrade", "g stack upgrade".
 
 # /gstack-upgrade
 
@@ -49,7 +58,7 @@ Tell user: "Auto-upgrade enabled. Future updates will install automatically." Th
 
 **If "Not now":** Write snooze state with escalating backoff (first snooze = 24h, second = 48h, third+ = 1 week), then continue with the current skill. Do not mention the upgrade again.
 ```bash
-_SNOOZE_FILE=~/.gstack/update-snoozed
+_SNOOZE_FILE="$HOME/.gstack/update-snoozed"
 _REMOTE_VER="{new}"
 _CUR_LEVEL=0
 if [ -f "$_SNOOZE_FILE" ]; then
@@ -86,9 +95,9 @@ elif [ -d "$HOME/.gstack/repos/gstack/.git" ]; then
 elif [ -d ".claude/skills/garrytan-gstack/.git" ]; then
   INSTALL_TYPE="local-git"
   INSTALL_DIR=".claude/skills/garrytan-gstack"
-elif [ -d ".agents/skills/gstack/.git" ]; then
+elif [ -d ".agents/skills/garrytan-gstack/.git" ]; then
   INSTALL_TYPE="local-git"
-  INSTALL_DIR=".agents/skills/gstack"
+  INSTALL_DIR=".agents/skills/garrytan-gstack"
 elif [ -d ".claude/skills/garrytan-gstack" ]; then
   INSTALL_TYPE="vendored"
   INSTALL_DIR=".claude/skills/garrytan-gstack"
