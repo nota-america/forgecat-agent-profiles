@@ -187,6 +187,4 @@ error message gstack-brain may print, with problem / cause / fix for each.
 
 For the architectural decisions behind this feature (allowlist vs
 denylist, daemon vs preamble-boundary sync, JSONL merge driver, privacy
-stop-gate), see the
-[approved plan](../system-instruction-you-are-working-jaunty-kahn.md) in
-the gstack plans directory.
+stop-gate), see the approved plan in the original gstack plans directory.
