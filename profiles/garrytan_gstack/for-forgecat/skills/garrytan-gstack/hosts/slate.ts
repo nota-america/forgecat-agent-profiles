@@ -23,8 +23,8 @@ const slate: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '~/.claude/skills/garrytan-gstack', to: '~/.slate/skills/garrytan-gstack' },
-    { from: '.claude/skills/garrytan-gstack', to: '.slate/skills/garrytan-gstack' },
+    { from: '$GSTACK_ROOT', to: '~/.slate/skills/garrytan-gstack' },
+    { from: '$GSTACK_ROOT', to: '.slate/skills/garrytan-gstack' },
     { from: '.claude/skills', to: '.slate/skills' },
   ],
 

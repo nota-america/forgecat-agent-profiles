@@ -1276,11 +1276,11 @@ Phoenix and any future Bun-based consumer can now `import { start, resolveConfig
 ## [1.33.2.0] - 2026-05-11
 
 ## **`./setup` no longer pollutes the global install when run from a Conductor worktree.**
-## **Six-line bash guard catches the BSD `ln -snf` footgun that was leaking per-worktree symlinks into `~/.claude/skills/garrytan-gstack/`.**
+## **Six-line bash guard catches the BSD `ln -snf` footgun that was leaking per-worktree symlinks into `$GSTACK_ROOT/`.**
 
-When you ran `./setup` from a Conductor worktree of the gstack repo itself (e.g. `~/conductor/workspaces/gstack/dublin-v1`), it would silently corrupt your global install. The "register this checkout as the active gstack" branch did `ln -snf "$SOURCE_GSTACK_DIR" "$HOME/.claude/skills/garrytan-gstack"`. On macOS and BSD, when the destination is an existing real directory (your global git clone), `ln -snf` does NOT replace it. It creates a child symlink INSIDE: `~/.claude/skills/garrytan-gstack/dublin-v1 → ~/conductor/workspaces/gstack/dublin-v1`. Claude Code reads every directory in `~/.claude/skills/` that contains a `SKILL.md`, so each leaked worktree showed up as its own top-level skill: `/dublin-v1`, `/wellington`, `/santiago-v1`, etc. The skill picker filled with noise.
+When you ran `./setup` from a Conductor worktree of the gstack repo itself (e.g. `~/conductor/workspaces/gstack/dublin-v1`), it would silently corrupt your global install. The "register this checkout as the active gstack" branch did `ln -snf "$SOURCE_GSTACK_DIR" "$GSTACK_ROOT"`. On macOS and BSD, when the destination is an existing real directory (your global git clone), `ln -snf` does NOT replace it. It creates a child symlink INSIDE: `$GSTACK_ROOT/dublin-v1 → ~/conductor/workspaces/gstack/dublin-v1`. Claude Code reads every directory in `~/.claude/skills/` that contains a `SKILL.md`, so each leaked worktree showed up as its own top-level skill: `/dublin-v1`, `/wellington`, `/santiago-v1`, etc. The skill picker filled with noise.
 
-The fix in `setup` checks whether `~/.claude/skills/garrytan-gstack` is already a real (non-symlink) directory whose resolved `pwd -P` differs from `$SOURCE_GSTACK_DIR`. If so, refuse the `ln -snf`, print a four-line remediation hint, and exit the Claude registration branch cleanly. Binaries (`browse`, `design`, `make-pdf`, `find-browse`) still build locally for dev. The four other code paths through the same branch (fresh install, retarget existing symlink, self-rerun pointing to the same dir, `--local`) are unchanged.
+The fix in `setup` checks whether `$GSTACK_ROOT` is already a real (non-symlink) directory whose resolved `pwd -P` differs from `$SOURCE_GSTACK_DIR`. If so, refuse the `ln -snf`, print a four-line remediation hint, and exit the Claude registration branch cleanly. Binaries (`browse`, `design`, `make-pdf`, `find-browse`) still build locally for dev. The four other code paths through the same branch (fresh install, retarget existing symlink, self-rerun pointing to the same dir, `--local`) are unchanged.
 
 ### The numbers that matter
 
@@ -1288,7 +1288,7 @@ Source: `bun test test/setup-conductor-worktree.test.ts` — 8 tests covering ev
 
 | Scenario | Before | After |
 |---|---|---|
-| `./setup` from worktree A with global install present | Leaks `~/.claude/skills/garrytan-gstack/A → workspaces/gstack/A` | Skipped with remediation hint |
+| `./setup` from worktree A with global install present | Leaks `$GSTACK_ROOT/A → workspaces/gstack/A` | Skipped with remediation hint |
 | `./setup` from N sibling worktrees over a week | N child symlinks accumulate inside global install | 0 leaks |
 | Claude Code skill picker shows extra entries | Yes: `dublin-v1`, `wellington`, `santiago-v1`, etc. | No |
 | Fresh install (no existing global) | Worked | Worked (unchanged path) |
@@ -1299,7 +1299,7 @@ The behavioral test in `test/setup-conductor-worktree.test.ts` actually invokes 
 
 ### What this means for builders
 
-If you've been seeing extra top-level skills (`/dublin-v1`, `/wellington`, etc.) in Claude Code, that's the leak. Run `/gstack-upgrade` to pick up this fix, then manually remove the existing child symlinks: `cd ~/.claude/skills/garrytan-gstack && find . -maxdepth 1 -type l -delete`. The guard prevents new leaks from `./setup` runs in any Conductor worktree of the gstack repo. If you actually want to register a worktree as the active gstack (rare, usually only when dogfooding a big in-progress change), remove the global install first: `rm -rf ~/.claude/skills/garrytan-gstack && cd <your-worktree> && ./setup`.
+If you've been seeing extra top-level skills (`/dublin-v1`, `/wellington`, etc.) in Claude Code, that's the leak. Run `/gstack-upgrade` to pick up this fix, then manually remove the existing child symlinks: `cd $GSTACK_ROOT && find . -maxdepth 1 -type l -delete`. The guard prevents new leaks from `./setup` runs in any Conductor worktree of the gstack repo. If you actually want to register a worktree as the active gstack (rare, usually only when dogfooding a big in-progress change), remove the global install first: `rm -rf $GSTACK_ROOT && cd <your-worktree> && ./setup`.
 
 ### Itemized changes
 
@@ -1313,7 +1313,7 @@ If you've been seeing extra top-level skills (`/dublin-v1`, `/wellington`, etc.)
 
 #### For contributors
 
-- The guard intentionally does NOT clean up pre-existing pollution inside `~/.claude/skills/garrytan-gstack/`. Users must remove leaked symlinks manually (see "What this means for builders" above). Retroactive cleanup would require a separate migration script, filed for a future release if the manual remediation friction becomes noticeable.
+- The guard intentionally does NOT clean up pre-existing pollution inside `$GSTACK_ROOT/`. Users must remove leaked symlinks manually (see "What this means for builders" above). Retroactive cleanup would require a separate migration script, filed for a future release if the manual remediation friction becomes noticeable.
 
 ## [1.33.1.0] - 2026-05-11
 
@@ -2589,7 +2589,7 @@ Branch totals come from `git diff --shortstat origin/main..HEAD` after every lan
 
 #### Added
 
-- `bin/gstack-paths`: bash helper that resolves `GSTACK_STATE_ROOT`, `PLAN_ROOT`, `TMP_ROOT` with explicit fallback chains. Sourced via `eval "$(~/.claude/skills/garrytan-gstack/bin/gstack-paths)"`. Honors `GSTACK_HOME` → `CLAUDE_PLUGIN_DATA` → `$HOME/.gstack` → `.gstack`; `GSTACK_PLAN_DIR` → `CLAUDE_PLANS_DIR` → `$HOME/.claude/plans` → `.claude/plans`; `TMPDIR` → `TMP` → `.gstack/tmp`. Best-effort `mkdir -p` on tmp root; never fails the eval. Pattern matches existing `bin/gstack-slug` and `bin/gstack-codex-probe`.
+- `bin/gstack-paths`: bash helper that resolves `GSTACK_STATE_ROOT`, `PLAN_ROOT`, `TMP_ROOT` with explicit fallback chains. Sourced via `eval "$($GSTACK_ROOT/bin/gstack-paths)"`. Honors `GSTACK_HOME` → `CLAUDE_PLUGIN_DATA` → `$HOME/.gstack` → `.gstack`; `GSTACK_PLAN_DIR` → `CLAUDE_PLANS_DIR` → `$HOME/.claude/plans` → `.claude/plans`; `TMPDIR` → `TMP` → `.gstack/tmp`. Best-effort `mkdir -p` on tmp root; never fails the eval. Pattern matches existing `bin/gstack-slug` and `bin/gstack-codex-probe`.
 - `browse/src/claude-bin.ts`: thin (~70 LOC) wrapper around `Bun.which()` for cross-platform `claude` binary resolution. Honors `GSTACK_CLAUDE_BIN` / `CLAUDE_BIN` env override (absolute path or PATH-resolvable), and `GSTACK_CLAUDE_BIN_ARGS` / `CLAUDE_BIN_ARGS` arg-prefix (JSON array or scalar). Override values go through `Bun.which()` so `GSTACK_CLAUDE_BIN=wsl` resolves correctly — fixing the bug codex flagged in the fork's 95-LOC reimplementation.
 - `scripts/test-free-shards.ts`: enumerates the free test suite, supports stable-hash sharding (FNV-1a), and provides a `--windows-only` filter that scans each test's content for POSIX-bound patterns (`/bin/sh`, `sh -c`, raw `/tmp/`, `chmod`, `xargs`, `which claude`). Adapted from McGluut's fork (190 LOC sharding logic) with the Windows curation filter added by upstream.
 - `.github/workflows/windows-free-tests.yml`: separate non-container job that runs `bun run test:windows` on `windows-latest`, plus targeted `browse/test/claude-bin.test.ts` and `test/gstack-paths.test.ts` runs. NOT a matrix entry on the existing Linux-container `evals.yml` (correctly flagged by codex as not a drop-in).
@@ -2984,7 +2984,7 @@ The harness itself is a reusable primitive. `runPlanSkillObservation()` watches 
 
 #### Fixed
 
-- `scripts/skill-check.ts`: new `isRepoRootSymlink()` helper so dev installs that mount the repo root at `host/skills/garrytan-gstack` (e.g., codex's `.agents/skills/garrytan-gstack`) get skipped instead of double-counted.
+- `scripts/skill-check.ts`: new `isRepoRootSymlink()` helper so dev installs that mount the repo root at `host/skills/garrytan-gstack` (e.g., codex's `$GSTACK_ROOT`) get skipped instead of double-counted.
 - `test/skill-validation.test.ts`: known-large-fixture exemption keeps `browse/test/fixtures/security-bench-haiku-responses.json` (27 MB BrowseSafe-Bench replay fixture, intentional) out of the size warning.
 
 #### Removed
@@ -4462,7 +4462,7 @@ Community security wave: 8 PRs from 4 contributors, every fix credited as co-aut
 
 ### Fixed
 
-- **`gstack-team-init` now detects and removes vendored gstack copies.** When you run `gstack-team-init` inside a repo that has gstack vendored at `.claude/skills/garrytan-gstack/`, it automatically removes the vendored copy, untracks it from git, and adds it to `.gitignore`. No more stale vendored copies shadowing the global install.
+- **`gstack-team-init` now detects and removes vendored gstack copies.** When you run `gstack-team-init` inside a repo that has gstack vendored at `$GSTACK_ROOT/`, it automatically removes the vendored copy, untracks it from git, and adds it to `.gitignore`. No more stale vendored copies shadowing the global install.
 - **`/gstack-upgrade` respects team mode.** Step 4.5 now checks the `team_mode` config. In team mode, vendored copies are removed instead of synced, since the global install is the single source of truth.
 - **`team_mode` config key.** `./setup --team` and `./setup --no-team` now set a dedicated `team_mode` config key so the upgrade skill can reliably distinguish team mode from just having auto-upgrade enabled.
 
@@ -5554,7 +5554,7 @@ Thanks to @osc, @Explorer1092, @Qike-Li, @francoisaubert1, @itstimwhite, @yinanl
 
 ### Fixed
 
-- **Routing tests now work in CI.** Skills are installed at top-level `.claude/skills/` instead of nested under `.claude/skills/garrytan-gstack/`. project-level skill discovery doesn't recurse into subdirectories.
+- **Routing tests now work in CI.** Skills are installed at top-level `.claude/skills/` instead of nested under `$GSTACK_ROOT/`. project-level skill discovery doesn't recurse into subdirectories.
 
 ### For contributors
 
@@ -5668,13 +5668,13 @@ Thanks to @osc, @Explorer1092, @Qike-Li, @francoisaubert1, @itstimwhite, @yinanl
 ### Fixed
 
 - **Codex no longer shows "exceeds maximum length of 1024 characters" on startup.** Skill descriptions compressed from ~1,200 words to ~280 words. well under the limit. Every skill now has a test enforcing the cap.
-- **No more duplicate skill discovery.** Codex used to find both source SKILL.md files and generated Codex skills, showing every skill twice. Setup now creates a minimal runtime root at `~/.codex/skills/garrytan-gstack` with only the assets Codex needs. no source files exposed.
-- **Old direct installs auto-migrate.** If you previously cloned gstack into `~/.codex/skills/garrytan-gstack`, setup detects this and moves it to `~/.gstack/repos/gstack` so skills aren't discovered from the source checkout.
-- **Sidecar directory no longer linked as a skill.** The `.agents/skills/garrytan-gstack` runtime asset directory was incorrectly symlinked alongside real skills. now skipped.
+- **No more duplicate skill discovery.** Codex used to find both source SKILL.md files and generated Codex skills, showing every skill twice. Setup now creates a minimal runtime root at `$GSTACK_ROOT` with only the assets Codex needs. no source files exposed.
+- **Old direct installs auto-migrate.** If you previously cloned gstack into `$GSTACK_ROOT`, setup detects this and moves it to `~/.gstack/repos/gstack` so skills aren't discovered from the source checkout.
+- **Sidecar directory no longer linked as a skill.** The `$GSTACK_ROOT` runtime asset directory was incorrectly symlinked alongside real skills. now skipped.
 
 ### Added
 
-- **Repo-local Codex installs.** Clone gstack into `.agents/skills/garrytan-gstack` inside any repo and run `./setup --host codex`. skills install next to the checkout, no global `~/.codex/` needed. Generated preambles auto-detect whether to use repo-local or global paths at runtime.
+- **Repo-local Codex installs.** Clone gstack into `$GSTACK_ROOT` inside any repo and run `./setup --host codex`. skills install next to the checkout, no global `~/.codex/` needed. Generated preambles auto-detect whether to use repo-local or global paths at runtime.
 - **Kiro CLI support.** `./setup --host kiro` installs skills for the Kiro agent platform, rewriting paths and symlinking runtime assets. Auto-detected by `--host auto` if `kiro-cli` is installed.
 - **`.agents/` is now gitignored.** Generated Codex skill files are no longer committed. they're created at setup time from templates. Removes 14,000+ lines of generated output from the repo.
 
@@ -6384,7 +6384,7 @@ Read the philosophy: https://garryslist.org/posts/boil-the-ocean
 ### Fixed
 - Cookie import picker now returns JSON instead of HTML. `jsonResponse()` referenced `url` out of scope, crashing every API call
 - `help` command routed correctly (was unreachable due to META_COMMANDS dispatch ordering)
-- Stale servers from global install no longer shadow local changes. removed legacy `~/.claude/skills/garrytan-gstack` fallback from `resolveServerScript()`
+- Stale servers from global install no longer shadow local changes. removed legacy `$GSTACK_ROOT` fallback from `resolveServerScript()`
 - Crash log path references updated from `/tmp/` to `.gstack/`
 
 ### Added
@@ -6419,7 +6419,7 @@ Read the philosophy: https://garryslist.org/posts/boil-the-ocean
 ### Removed
 - `CONDUCTOR_PORT` magic offset (`browse_port = CONDUCTOR_PORT - 45600`)
 - Port scan range 9400-9409
-- Legacy fallback to `~/.claude/skills/garrytan-gstack/browse/src/server.ts`
+- Legacy fallback to `$GSTACK_ROOT/browse/src/server.ts`
 - `DEVELOPING_GSTACK.md` (renamed to CONTRIBUTING.md)
 
 ## 0.3.1. 2026-03-12

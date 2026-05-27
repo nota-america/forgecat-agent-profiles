@@ -1104,7 +1104,7 @@ Remove the `/freeze` boundary, allowing edits everywhere again. The hooks stay r
 
 ## `/gstack-upgrade`
 
-Keep gstack current with one command. It detects your install type (global at `~/.claude/skills/garrytan-gstack` vs vendored in your project at `.claude/skills/garrytan-gstack`), runs the upgrade, syncs both copies if you have dual installs, and shows you what changed.
+Keep gstack current with one command. It detects your install type (global at `$GSTACK_ROOT` vs vendored in your project at `$GSTACK_ROOT`), runs the upgrade, syncs both copies if you have dual installs, and shows you what changed.
 
 ```
 You:   /gstack-upgrade

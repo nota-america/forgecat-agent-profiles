@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Set up gstack for local development — test skills from within this repo.
 #
-# Creates .claude/skills/garrytan-gstack → (symlink to repo root) so Claude Code
+# Creates $GSTACK_ROOT → (symlink to repo root) so Claude Code
 # discovers skills from your working tree. Changes take effect immediately.
 #
 # Also copies .env from the main worktree if this is a Conductor workspace
@@ -31,14 +31,14 @@ fi
 # 3. Create .claude/skills/ inside the repo
 mkdir -p "$REPO_ROOT/.claude/skills"
 
-# 4. Symlink .claude/skills/garrytan-gstack → repo root
+# 4. Symlink $GSTACK_ROOT → repo root
 # This makes setup think it's inside a real .claude/skills/ directory
-GSTACK_LINK="$REPO_ROOT/.claude/skills/garrytan-gstack"
+GSTACK_LINK="$REPO_ROOT$GSTACK_ROOT"
 if [ -L "$GSTACK_LINK" ]; then
   echo "Updating existing symlink..."
   rm "$GSTACK_LINK"
 elif [ -d "$GSTACK_LINK" ]; then
-  echo "Error: .claude/skills/garrytan-gstack is a real directory, not a symlink." >&2
+  echo "Error: $GSTACK_ROOT is a real directory, not a symlink." >&2
   echo "Remove it manually if you want to use dev mode." >&2
   exit 1
 fi
@@ -61,7 +61,7 @@ fi
 
 echo ""
 echo "Dev mode active. Skills resolve from this working tree."
-echo "  .claude/skills/garrytan-gstack → $REPO_ROOT"
+echo "  $GSTACK_ROOT → $REPO_ROOT"
 echo "  .agents/skills/garrytan-gstack → $REPO_ROOT"
 echo "Edit any SKILL.md and test immediately — no copy/deploy needed."
 echo ""

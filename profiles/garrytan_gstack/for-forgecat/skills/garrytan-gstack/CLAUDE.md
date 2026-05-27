@@ -351,17 +351,17 @@ always BLOCKs (deterministic).
 
 ## Dev symlink awareness
 
-When developing gstack, `.claude/skills/garrytan-gstack` may be a symlink back to this
+When developing gstack, `$GSTACK_ROOT` may be a symlink back to this
 working directory (gitignored). This means skill changes are **live immediately**,
 great for rapid iteration, risky during big refactors where half-written skills
 could break other Claude Code sessions using gstack concurrently.
 
-**Check once per session:** Run `ls -la .claude/skills/garrytan-gstack` to see if it's a
+**Check once per session:** Run `ls -la $GSTACK_ROOT` to see if it's a
 symlink or a real copy. If it's a symlink to your working directory, be aware that:
 - Template changes + `bun run gen:skill-docs` immediately affect all gstack invocations
 - Breaking changes to SKILL.md.tmpl files can break concurrent gstack sessions
-- During large refactors, remove the symlink (`rm .claude/skills/garrytan-gstack`) so the
-  global install at `~/.claude/skills/garrytan-gstack/` is used instead
+- During large refactors, remove the symlink (`rm $GSTACK_ROOT`) so the
+  global install at `$GSTACK_ROOT/` is used instead
 
 **Prefix setting:** Setup creates real directories (not symlinks) at the top level
 with a SKILL.md symlink inside (e.g., `qa/SKILL.md -> gstack/qa/SKILL.md`). This
@@ -816,15 +816,15 @@ Repeat for each skill: `gstack-openclaw-ceo-review`, `gstack-openclaw-investigat
 
 ## Deploying to the active skill
 
-The active skill lives at `~/.claude/skills/garrytan-gstack/`. After making changes:
+The active skill lives at `$GSTACK_ROOT/`. After making changes:
 
 1. Push your branch
-2. Fetch and reset in the skill directory: `cd ~/.claude/skills/garrytan-gstack && git fetch origin && git reset --hard origin/main`
-3. Rebuild: `cd ~/.claude/skills/garrytan-gstack && bun run build`
+2. Fetch and reset in the skill directory: `cd $GSTACK_ROOT && git fetch origin && git reset --hard origin/main`
+3. Rebuild: `cd $GSTACK_ROOT && bun run build`
 
 Or copy the binaries directly:
-- `cp browse/dist/browse ~/.claude/skills/garrytan-gstack/browse/dist/browse`
-- `cp design/dist/design ~/.claude/skills/garrytan-gstack/design/dist/design`
+- `cp browse/dist/browse $GSTACK_ROOT/browse/dist/browse`
+- `cp design/dist/design $GSTACK_ROOT/design/dist/design`
 
 ## Skill routing
 
