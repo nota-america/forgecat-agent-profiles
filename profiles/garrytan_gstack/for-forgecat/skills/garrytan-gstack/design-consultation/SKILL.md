@@ -159,9 +159,9 @@ If output shows `UPGRADE_AVAILABLE <old> <new>`: read `$GSTACK_ROOT/gstack-upgra
 
 If output shows `JUST_UPGRADED <from> <to>`: print "Running gstack v{to} (just updated!)". If `SPAWNED_SESSION` is true, skip feature discovery.
 
-Feature discovery, max one prompt per session:
-- Missing `$GSTACK_ROOT/.feature-prompted-continuous-checkpoint`: AskUserQuestion for Continuous checkpoint auto-commits. If accepted, run `$GSTACK_ROOT/bin/gstack-config set checkpoint_mode continuous`. Always touch marker.
-- Missing `$GSTACK_ROOT/.feature-prompted-model-overlay`: inform "Model overlays are active. MODEL_OVERLAY shows the patch." Always touch marker.
+Feature discovery, max one prompt per project:
+- Missing project marker `.gstack/.feature-prompted-continuous-checkpoint`: AskUserQuestion for Continuous checkpoint auto-commits. If accepted, run `$GSTACK_ROOT/bin/gstack-config set checkpoint_mode continuous`. Always create `.gstack/` if needed and touch this marker.
+- Missing project marker `.gstack/.feature-prompted-model-overlay`: inform "Model overlays are active. MODEL_OVERLAY shows the patch." Always create `.gstack/` if needed and touch this marker.
 
 After upgrade prompts, continue workflow.
 

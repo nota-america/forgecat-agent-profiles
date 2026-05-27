@@ -1,5 +1,5 @@
 name: garrytan_gstack
-version: 0.0.6
+version: 0.0.7
 description: "Garry's Stack: a self-contained AI engineering workflow profile with browser QA, planning, review, security, design, deployment, iOS, documentation, and OpenClaw companion skills."
 repository: https://github.com/garrytan/gstack
 license: MIT
