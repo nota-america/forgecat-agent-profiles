@@ -8,7 +8,7 @@
 #
 # Ownership guard: the script only removes the install IF it owns it —
 # i.e., the directory or its SKILL.md is a symlink resolving inside
-# ~/.claude/skills/garrytan-gstack/. A user's own /checkpoint skill (regular file,
+# $GSTACK_ROOT/. A user's own /checkpoint skill (regular file,
 # or symlink pointing elsewhere) is preserved.
 #
 # Three supported install shapes to handle:
@@ -103,7 +103,7 @@ elif [ -d "$OLD_TOPLEVEL" ]; then
 fi
 # Missing → no-op (idempotency).
 
-# --- Shape 2: ~/.claude/skills/garrytan-gstack/checkpoint/
+# --- Shape 2: $GSTACK_ROOT/checkpoint/
 # Ownership guard applies here too: only remove if this path resolves inside the
 # gstack skills root. If a user replaced the directory with a symlink pointing
 # elsewhere (e.g., at their own fork), respect it.
@@ -111,7 +111,7 @@ if [ -L "$OLD_NAMESPACED" ]; then
   target_real=$(resolve_real "$OLD_NAMESPACED")
   if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
     rm -- "$OLD_NAMESPACED"
-    echo "  [v1.1.3.0] Removed stale ~/.claude/skills/garrytan-gstack/checkpoint symlink."
+    echo "  [v1.1.3.0] Removed stale $GSTACK_ROOT/checkpoint symlink."
     removed_any=1
   else
     echo "  [v1.1.3.0] Leaving $OLD_NAMESPACED alone — symlink target is outside gstack."
@@ -123,7 +123,7 @@ elif [ -d "$OLD_NAMESPACED" ]; then
   target_real=$(resolve_real "$OLD_NAMESPACED")
   if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
     rm -rf -- "$OLD_NAMESPACED"
-    echo "  [v1.1.3.0] Removed stale ~/.claude/skills/garrytan-gstack/checkpoint/ (replaced by context-save + context-restore)."
+    echo "  [v1.1.3.0] Removed stale $GSTACK_ROOT/checkpoint/ (replaced by context-save + context-restore)."
     removed_any=1
   else
     echo "  [v1.1.3.0] Leaving $OLD_NAMESPACED alone — resolves outside gstack."

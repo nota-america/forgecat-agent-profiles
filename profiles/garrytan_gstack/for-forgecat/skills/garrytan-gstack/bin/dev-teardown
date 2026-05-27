@@ -53,4 +53,4 @@ if [ ${#removed[@]} -gt 0 ]; then
 else
   echo "No symlinks found."
 fi
-echo "Dev mode deactivated. Global gstack (~/.claude/skills/garrytan-gstack) is now active."
+echo "Dev mode deactivated. Global gstack ($GSTACK_ROOT) is now active."

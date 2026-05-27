@@ -4,7 +4,7 @@ Thanks for wanting to make gstack better. Whether you're fixing a typo in a skil
 
 ## Quick start
 
-gstack skills are Markdown files that Claude Code discovers from a `skills/` directory. Normally they live at `~/.claude/skills/garrytan-gstack/` (your global install). But when you're developing gstack itself, you want Claude Code to use the skills *in your working tree* — so edits take effect instantly without copying or deploying anything.
+gstack skills are Markdown files that Claude Code discovers from a `skills/` directory. Normally they live at `$GSTACK_ROOT/` (your global install). But when you're developing gstack itself, you want Claude Code to use the skills *in your working tree* — so edits take effect instantly without copying or deploying anything.
 
 That's what dev mode does. It symlinks your repo into the local `.claude/skills/` directory so Claude Code reads skills straight from your checkout.
 
@@ -39,8 +39,8 @@ No setup needed. Learnings are logged automatically. View them with `/learn`.
 4. **Symlink your fork into the project where you hit the bug:**
    ```bash
    # In your core project (the one where gstack annoyed you)
-   ln -sfn /path/to/your/gstack-fork .claude/skills/garrytan-gstack
-   cd .claude/skills/garrytan-gstack && bun install && bun run build && ./setup
+   ln -sfn /path/to/your/gstack-fork $GSTACK_ROOT
+   cd $GSTACK_ROOT && bun install && bun run build && ./setup
    ```
    Setup creates per-skill directories with SKILL.md symlinks inside (`qa/SKILL.md -> gstack/qa/SKILL.md`)
    and asks your prefix preference. Pass `--no-prefix` to skip the prompt and use short names.
@@ -278,9 +278,9 @@ Each host config (`hosts/*.ts`) controls:
 
 | Aspect | Example (Claude vs Codex) |
 |--------|---------------------------|
-| Output directory | `{skill}/SKILL.md` vs `.agents/skills/garrytan-gstack-{skill}/SKILL.md` |
+| Output directory | `{skill}/SKILL.md` vs `$GSTACK_ROOT-{skill}/SKILL.md` |
 | Frontmatter | Full (name, description, hooks, version) vs minimal (name + description) |
-| Paths | `~/.claude/skills/garrytan-gstack` vs `$GSTACK_ROOT` |
+| Paths | `$GSTACK_ROOT` vs `$GSTACK_ROOT` |
 | Tool names | "use the Bash tool" vs same (Factory rewrites to "run this command") |
 | Hook skills | `hooks:` frontmatter vs inline safety advisory prose |
 | Suppressed sections | None vs Codex self-invocation sections stripped |
@@ -340,7 +340,7 @@ When Conductor creates a new workspace, `bin/dev-setup` runs automatically. It d
 - **SKILL.md files are generated.** Edit the `.tmpl` template, not the `.md`. Run `bun run gen:skill-docs` to regenerate.
 - **TODOS.md is the unified backlog.** Organized by skill/component with P0-P4 priorities. `/ship` auto-detects completed items. All planning/review/retro skills read it for context.
 - **Browse source changes need a rebuild.** If you touch `browse/src/*.ts`, run `bun run build`.
-- **Dev mode shadows your global install.** Project-local skills take priority over `~/.claude/skills/garrytan-gstack`. `bin/dev-teardown` restores the global one.
+- **Dev mode shadows your global install.** Project-local skills take priority over `$GSTACK_ROOT`. `bin/dev-teardown` restores the global one.
 - **Conductor workspaces are independent.** Each workspace is its own git worktree. `bin/dev-setup` runs automatically via `conductor.json`.
 - **`.env` propagates across worktrees.** Set it once in the main repo, all Conductor workspaces get it.
 - **`.claude/skills/` is gitignored.** The symlinks never get committed.
@@ -356,7 +356,7 @@ do real work.
 
 ```bash
 # In your core project (not the gstack repo)
-ln -sfn /path/to/your/gstack-checkout .claude/skills/garrytan-gstack
+ln -sfn /path/to/your/gstack-checkout $GSTACK_ROOT
 ```
 
 ### Step 2: Run setup to create per-skill symlinks
@@ -366,7 +366,7 @@ individual top-level directories (`qa/SKILL.md`, `ship/SKILL.md`, etc.), not thr
 the `gstack/` directory itself. Run `./setup` to create them:
 
 ```bash
-cd .claude/skills/garrytan-gstack && bun install && bun run build && ./setup
+cd $GSTACK_ROOT && bun install && bun run build && ./setup
 ```
 
 Setup will ask whether you want short names (`/qa`) or namespaced (`/gstack-qa`).
@@ -380,10 +380,10 @@ call picks it up immediately. No restart needed.
 
 ### Going back to the stable global install
 
-Remove the project-local symlink. Claude Code falls back to `~/.claude/skills/garrytan-gstack/`:
+Remove the project-local symlink. Claude Code falls back to `$GSTACK_ROOT/`:
 
 ```bash
-rm .claude/skills/garrytan-gstack
+rm $GSTACK_ROOT
 ```
 
 The per-skill directories (`qa/`, `ship/`, etc.) contain SKILL.md symlinks that point
@@ -394,8 +394,8 @@ to `gstack/...`, so they'll resolve to the global install automatically.
 If you installed gstack with one prefix setting and want to switch:
 
 ```bash
-cd .claude/skills/garrytan-gstack && ./setup --no-prefix   # switch to /qa, /ship
-cd .claude/skills/garrytan-gstack && ./setup --prefix       # switch to /gstack-qa, /gstack-ship
+cd $GSTACK_ROOT && ./setup --no-prefix   # switch to /qa, /ship
+cd $GSTACK_ROOT && ./setup --prefix       # switch to /gstack-qa, /gstack-ship
 ```
 
 Setup cleans up the old symlinks automatically. No manual cleanup needed.
@@ -405,7 +405,7 @@ Setup cleans up the old symlinks automatically. No manual cleanup needed.
 If you don't want per-project symlinks, you can switch the global install:
 
 ```bash
-cd ~/.claude/skills/garrytan-gstack
+cd $GSTACK_ROOT
 git fetch origin
 git checkout origin/<branch>
 bun install && bun run build && ./setup

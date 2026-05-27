@@ -23,8 +23,8 @@ const kiro: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '~/.claude/skills/garrytan-gstack', to: '~/.kiro/skills/garrytan-gstack' },
-    { from: '.claude/skills/garrytan-gstack', to: '.kiro/skills/garrytan-gstack' },
+    { from: '$GSTACK_ROOT', to: '~/.kiro/skills/garrytan-gstack' },
+    { from: '$GSTACK_ROOT', to: '.kiro/skills/garrytan-gstack' },
     { from: '.claude/skills', to: '.kiro/skills' },
     { from: '~/.codex/skills/garrytan-gstack', to: '~/.kiro/skills/garrytan-gstack' },
     { from: '.codex/skills', to: '.kiro/skills' },

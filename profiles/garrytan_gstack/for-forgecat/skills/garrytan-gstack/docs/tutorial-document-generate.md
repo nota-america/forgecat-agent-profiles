@@ -4,7 +4,7 @@ You'll run `/document-generate` against a project you already have, watch it wri
 
 ## What you'll need
 
-- gstack installed (`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/garrytan-gstack && cd ~/.claude/skills/garrytan-gstack && ./setup`)
+- gstack installed (`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $GSTACK_ROOT && cd $GSTACK_ROOT && ./setup`)
 - Claude Code running in any project that has at least one piece of public surface (a CLI command, an exported function, a config option, a skill, an API endpoint)
 - About 90 seconds
 

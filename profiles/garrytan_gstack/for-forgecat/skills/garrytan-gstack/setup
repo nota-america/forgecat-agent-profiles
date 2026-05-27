@@ -483,7 +483,7 @@ link_claude_skill_dirs() {
   fi
 }
 
-# Claude Code skips the repo-shaped ~/.claude/skills/garrytan-gstack directory when
+# Claude Code skips the repo-shaped $GSTACK_ROOT directory when
 # building the user-facing slash-command list. Keep the repo path for runtime
 # assets, and add a separate thin wrapper whose frontmatter name remains
 # `gstack` so `/gstack` can autocomplete.
@@ -914,11 +914,11 @@ if [ "$INSTALL_CLAUDE" -eq 1 ]; then
     log "  browse: $BROWSE_BIN"
   else
     # Not inside a skills/ directory — would symlink the source into
-    # ~/.claude/skills/garrytan-gstack/ and register from there.
+    # $GSTACK_ROOT/ and register from there.
     CLAUDE_SKILLS_DIR="$HOME/.claude/skills"
     CLAUDE_GSTACK_LINK="$CLAUDE_SKILLS_DIR/gstack"
 
-    # Conductor worktree guard: if ~/.claude/skills/garrytan-gstack is already a real
+    # Conductor worktree guard: if $GSTACK_ROOT is already a real
     # (non-symlink) directory pointing to a *different* install, refuse to plant
     # a symlink there. On macOS/BSD, `ln -snf SRC DST` won't replace a real DST;
     # it creates DST/$(basename SRC) → SRC inside it. The result is per-worktree
@@ -1030,8 +1030,8 @@ if [ "$INSTALL_KIRO" -eq 1 ]; then
   done
 
   # Rewrite root SKILL.md paths for Kiro
-  sed -e "s|~/.claude/skills/garrytan-gstack|~/.kiro/skills/garrytan-gstack|g" \
-      -e "s|\.claude/skills/garrytan-gstack|.kiro/skills/garrytan-gstack|g" \
+  sed -e "s|$GSTACK_ROOT|~/.kiro/skills/garrytan-gstack|g" \
+      -e "s|\$GSTACK_ROOT|.kiro/skills/garrytan-gstack|g" \
       -e "s|\.claude/skills|.kiro/skills|g" \
       "$SOURCE_GSTACK_DIR/SKILL.md" > "$KIRO_GSTACK/SKILL.md"
 
@@ -1047,7 +1047,7 @@ if [ "$INSTALL_KIRO" -eq 1 ]; then
       # Rewrite the default GSTACK_ROOT value and any remaining literal paths.
       sed -e 's|\$HOME/.codex/skills/garrytan-gstack|$HOME/.kiro/skills/garrytan-gstack|g' \
           -e "s|~/.codex/skills/garrytan-gstack|~/.kiro/skills/garrytan-gstack|g" \
-          -e "s|~/.claude/skills/garrytan-gstack|~/.kiro/skills/garrytan-gstack|g" \
+          -e "s|$GSTACK_ROOT|~/.kiro/skills/garrytan-gstack|g" \
           "$skill_dir/SKILL.md" > "$target_dir/SKILL.md"
     done
     echo "gstack ready (kiro)."
