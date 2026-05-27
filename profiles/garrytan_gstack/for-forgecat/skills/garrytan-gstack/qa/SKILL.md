@@ -1106,7 +1106,7 @@ Run full mode, then load `baseline.json` from a previous run. Diff: which issues
 
 1. Find browse binary (see Setup above)
 2. Create output directories
-3. Copy report template from `.claude/skills/garrytan-gstack/qa/templates/qa-report-template.md` to output dir
+3. Copy report template from `$GSTACK_ROOT/qa/templates/qa-report-template.md` to output dir
 4. Start timer for duration tracking
 
 ### Phase 2: Authenticate (if needed)
@@ -1162,7 +1162,7 @@ $B snapshot -i -a -o "$REPORT_DIR/screenshots/page-name.png"
 $B console --errors
 ```
 
-Then follow the **per-page exploration checklist** (see `.claude/skills/garrytan-gstack/qa/references/issue-taxonomy.md`):
+Then follow the **per-page exploration checklist** (see `$GSTACK_ROOT/qa/references/issue-taxonomy.md`):
 
 1. **Visual scan** — Look at the annotated screenshot for layout issues
 2. **Interactive elements** — Click buttons, links, controls. Do they work?
@@ -1209,7 +1209,7 @@ $B snapshot -D
 $B snapshot -i -a -o "$REPORT_DIR/screenshots/issue-002.png"
 ```
 
-**Write each issue to the report immediately** using the template format from `.claude/skills/garrytan-gstack/qa/templates/qa-report-template.md`.
+**Write each issue to the report immediately** using the template format from `$GSTACK_ROOT/qa/templates/qa-report-template.md`.
 
 ### Phase 6: Wrap Up
 

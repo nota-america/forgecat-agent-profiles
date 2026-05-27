@@ -957,7 +957,7 @@ Calculate and present these metrics in a summary table:
 and weighted commits reflect intent-to-ship. Logical SLOC added reflects real
 new functionality. Raw LOC is demoted to context because AI inflates it; ten
 lines of a good fix is not less shipping than ten thousand lines of scaffold.
-See .claude/skills/garrytan-gstack/docs/designs/PLAN_TUNING_V1.md §Workstream C.
+See $GSTACK_ROOT/docs/designs/PLAN_TUNING_V1.md §Workstream C.
 
 Then show a **per-author leaderboard** immediately below:
 

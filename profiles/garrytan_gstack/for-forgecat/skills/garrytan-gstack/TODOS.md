@@ -553,7 +553,7 @@ scope of that PR; deliberately deferred to keep PTY-import small.
 ## Plan Tune (v2 deferrals from v0.19.0.0 rollback)
 
 All six items are gated on v1 dogfood results and the acceptance criteria in
-`.claude/skills/garrytan-gstack/docs/designs/PLAN_TUNING_V0.md`. They were explicitly deferred after Codex's
+`$GSTACK_ROOT/docs/designs/PLAN_TUNING_V0.md`. They were explicitly deferred after Codex's
 outside-voice review drove a scope rollback from the CEO EXPANSION plan. v1
 ships the observational substrate only; v2 adds behavior adaptation.
 
@@ -576,7 +576,7 @@ style instead of defaulting to middle-of-the-road.
 **Cons:** Risk of psychographic drift if profile is noisy. Requires calibrated
 profile (v1 acceptance criteria: 90+ days stable across 3+ skills).
 
-**Context:** See `.claude/skills/garrytan-gstack/docs/designs/PLAN_TUNING_V0.md` §Deferred to v2. v1 ships the
+**Context:** See `$GSTACK_ROOT/docs/designs/PLAN_TUNING_V0.md` §Deferred to v2. v1 ships the
 signal map + inferred computation; it's displayed in /plan-tune but no skill
 reads it yet.
 
@@ -1606,7 +1606,7 @@ Shipped in v0.6.5. TemplateContext in gen-skill-docs.ts bakes skill name into pr
 
 **Why:** gstack skills produce valuable artifacts stored at `~/.gstack/projects/$SLUG/`. When Claude's auto-compaction fires, it preserves a generic summary but doesn't know these artifacts exist. The plans and reviews that shaped the current work silently vanish from context, even though they're still on disk. This is the thing nobody else in the Claude Code ecosystem is solving, because nobody else has gstack's artifact architecture.
 
-**Context:** Inspired by Anthropic's `claude-progress.txt` pattern for long-running agents. Also informed by claude-mem's "progressive disclosure" approach. See `.claude/skills/garrytan-gstack/docs/designs/SESSION_INTELLIGENCE.md` for the broader vision. CEO plan: `~/.gstack/projects/garrytan-gstack/ceo-plans/2026-03-31-session-intelligence-layer.md`.
+**Context:** Inspired by Anthropic's `claude-progress.txt` pattern for long-running agents. Also informed by claude-mem's "progressive disclosure" approach. See `$GSTACK_ROOT/docs/designs/SESSION_INTELLIGENCE.md` for the broader vision. CEO plan: `~/.gstack/projects/garrytan-gstack/ceo-plans/2026-03-31-session-intelligence-layer.md`.
 
 **Effort:** S (human: ~30 min / CC: ~5 min)
 **Priority:** P1
@@ -1647,7 +1647,7 @@ Shipped in v0.6.5. TemplateContext in gen-skill-docs.ts bakes skill name into pr
 
 ### Session Intelligence Layer design doc
 
-**What:** Write `.claude/skills/garrytan-gstack/docs/designs/SESSION_INTELLIGENCE.md` describing the architectural vision: gstack as the persistent brain that survives Claude's ephemeral context. Every skill writes to `~/.gstack/projects/$SLUG/`, preamble re-reads, `/retro` rolls up.
+**What:** Write `$GSTACK_ROOT/docs/designs/SESSION_INTELLIGENCE.md` describing the architectural vision: gstack as the persistent brain that survives Claude's ephemeral context. Every skill writes to `~/.gstack/projects/$SLUG/`, preamble re-reads, `/retro` rolls up.
 
 **Why:** Connects context recovery, health, checkpoint, and timeline features into a coherent architecture. Nobody else in the ecosystem is building this.
 
