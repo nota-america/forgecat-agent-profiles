@@ -13,6 +13,10 @@ Use when the task requires automating a real browser from the terminal (navigati
 npx forgecat install @forgecat/openai_skills_playwright
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **playwright** — Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script. `Playwright`
 

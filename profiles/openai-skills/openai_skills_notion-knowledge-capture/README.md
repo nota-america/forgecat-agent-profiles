@@ -13,6 +13,10 @@ Capture conversations and decisions into structured Notion pages; use when turni
 npx forgecat install @forgecat/openai_skills_notion-knowledge-capture
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **notion-knowledge-capture** — Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking. `Notion Knowledge Capture`
 

@@ -13,6 +13,10 @@ Deploy applications to Render by analyzing codebases, generating render.yaml Blu
 npx forgecat install @forgecat/openai_skills_render-deploy
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **render-deploy** — Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform. `Render Deploy`
 

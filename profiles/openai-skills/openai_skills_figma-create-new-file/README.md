@@ -13,6 +13,10 @@ Create a new blank Figma file. Use when the user wants to create a new Figma des
 npx forgecat install @forgecat/openai_skills_figma-create-new-file
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **figma-create-new-file** — Create a new blank Figma file. Use when the user wants to create a new Figma design or FigJam file, or when you need a new file before calling use_figma. Handles plan resolution via whoami if needed. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard) `Figma Create New File`
 

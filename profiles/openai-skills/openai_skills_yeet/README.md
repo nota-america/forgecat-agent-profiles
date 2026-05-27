@@ -13,6 +13,10 @@ Use only when the user explicitly asks to stage, commit, push, and open a GitHub
 npx forgecat install @forgecat/openai_skills_yeet
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **yeet** — Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`). `Yeet`
 

@@ -13,6 +13,10 @@ Prepare meeting materials with Notion context and Codex research; use when gathe
 npx forgecat install @forgecat/openai_skills_notion-meeting-intelligence
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **notion-meeting-intelligence** — Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees. `Notion Meeting Intelligence`
 

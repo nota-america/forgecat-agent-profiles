@@ -13,6 +13,10 @@ Turn Notion specs into implementation plans, tasks, and progress tracking; use w
 npx forgecat install @forgecat/openai_skills_notion-spec-to-implementation
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **notion-spec-to-implementation** — Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them. `Notion Spec To Implementation`
 

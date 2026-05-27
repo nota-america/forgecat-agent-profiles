@@ -13,6 +13,10 @@ Persistent browser and Electron interaction through `js_repl` for fast iterative
 npx forgecat install @forgecat/openai_skills_playwright-interactive
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **playwright-interactive** — Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. `Playwright Interactive`
 

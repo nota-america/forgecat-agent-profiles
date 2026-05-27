@@ -17,6 +17,11 @@ Converted rule bundle for teams using AI-DLC core workflow with detailed stage r
 npx forgecat install @forgecat/awslabs_aidlc-workflows
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (Forgecat install-converted files for direct inspection/use; runtime recognition still follows Forgecat platform compatibility notes).
+- `for-cursor/` contains cursor format artifacts generated via `forgecat install @forgecat/awslabs_aidlc-workflows --platform cursor`.
+
 ## Skills
 
 - None (rule-only profile)

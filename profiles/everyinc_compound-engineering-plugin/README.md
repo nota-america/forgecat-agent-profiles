@@ -45,3 +45,6 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 | Cursor | Tested |
 | Codex | Partial |
 
+## Platform Artifacts
+
+- `for-cursor/` contains cursor format artifacts (platform-native or tested platform files mirrored for direct inspection/use).

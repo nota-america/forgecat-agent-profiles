@@ -13,6 +13,10 @@ Perform language and framework specific security best-practice reviews and sugge
 npx forgecat install @forgecat/openai_skills_security-best-practices
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **security-best-practices** — Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks. `Security Best Practices`
 

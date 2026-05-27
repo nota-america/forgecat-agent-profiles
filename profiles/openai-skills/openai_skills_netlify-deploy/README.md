@@ -13,6 +13,10 @@ Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when t
 npx forgecat install @forgecat/openai_skills_netlify-deploy
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **netlify-deploy** — Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. `Netlify Deploy`
 

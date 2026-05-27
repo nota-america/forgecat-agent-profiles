@@ -13,6 +13,10 @@ Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub rep
 npx forgecat install @forgecat/openai_skills_system-skill-installer
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **skill-installer** — Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos). `Skill Installer`
 

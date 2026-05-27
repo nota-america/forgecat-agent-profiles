@@ -13,6 +13,10 @@ Use when tasks involve reading, creating, or reviewing PDF files where rendering
 npx forgecat install @forgecat/openai_skills_pdf
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **pdf** — Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction. `Pdf`
 

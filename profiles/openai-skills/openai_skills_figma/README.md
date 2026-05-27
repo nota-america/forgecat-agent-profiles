@@ -13,6 +13,10 @@ Use the Figma MCP server to fetch design context, screenshots, variables, and as
 npx forgecat install @forgecat/openai_skills_figma
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 
 - **figma** — Use the Figma MCP server to inspect Figma designs, fetch screenshots and variables, and support design-to-code workflows `design-to-code`

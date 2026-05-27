@@ -13,6 +13,10 @@ Use when the task asks for a visually strong landing page, website, app, prototy
 npx forgecat install @forgecat/openai_skills_frontend-skill
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **frontend-skill** — Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter. `Frontend Skill`
 

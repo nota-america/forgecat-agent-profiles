@@ -13,6 +13,10 @@ Research across Notion and synthesize into structured documentation; use when ga
 npx forgecat install @forgecat/openai_skills_notion-research-documentation
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **notion-research-documentation** — Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations. `Notion Research Documentation`
 

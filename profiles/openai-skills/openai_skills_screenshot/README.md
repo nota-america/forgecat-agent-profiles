@@ -13,6 +13,10 @@ Use when the user explicitly asks for a desktop or system screenshot (full scree
 npx forgecat install @forgecat/openai_skills_screenshot
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **screenshot** — Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed. `Screenshot`
 

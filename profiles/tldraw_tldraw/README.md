@@ -17,6 +17,10 @@ Draw and visually collaborate with your agents using the official tldraw Cursor 
 npx forgecat install @forgecat/tldraw_tldraw
 ```
 
+## Platform Artifacts
+
+- `for-cursor/` contains cursor format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 
 - **tldraw** — Connects to the hosted tldraw MCP server for collaborative drawing workflows. `mcp`

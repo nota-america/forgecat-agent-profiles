@@ -66,3 +66,7 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_language-specia
 
 ## Dependencies
 - None
+
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).

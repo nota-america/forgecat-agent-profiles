@@ -13,6 +13,10 @@ Guide for creating effective skills. This skill should be used when users want t
 npx forgecat install @forgecat/openai_skills_system-skill-creator
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **skill-creator** — Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations. `Skill Creator`
 

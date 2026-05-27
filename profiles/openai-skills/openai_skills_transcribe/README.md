@@ -13,6 +13,10 @@ Transcribe audio files to text with optional diarization and known-speaker hints
 npx forgecat install @forgecat/openai_skills_transcribe
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **transcribe** — Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings. `Transcribe`
 

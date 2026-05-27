@@ -13,6 +13,10 @@ Use when Codex is building or iterating on a web game (HTML/JS) and needs a reli
 npx forgecat install @forgecat/openai_skills_develop-web-game
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **develop-web-game** — Use when Codex is building or iterating on a web game (HTML/JS) and needs a reliable development + testing loop: implement small changes, run a Playwright-based test script with short input bursts and intentional pauses, inspect screenshots/text, and review console errors with render_game_to_text. `Develop Web Game`
 

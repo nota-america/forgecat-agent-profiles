@@ -15,6 +15,11 @@ npx forgecat install @forgecat/upstash_context7
 ## Agents
 - **docs-researcher** — Lightweight agent for fetching library documentation without cluttering your main conversation context `sonnet` `research`
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (Forgecat install-converted files for direct inspection/use; runtime recognition still follows Forgecat platform compatibility notes).
+- `for-cursor/` contains cursor format artifacts (Forgecat install-converted files for direct inspection/use; runtime recognition still follows Forgecat platform compatibility notes).
+
 ## Skills
 - **context7-mcp** — Auto-triggers documentation lookups when the user asks about libraries, frameworks, API references, or needs code examples `docs`
 

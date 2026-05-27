@@ -13,6 +13,10 @@ Manage issues, projects & team workflows in Linear. Use when the user wants to r
 npx forgecat install @forgecat/openai_skills_linear
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (platform-native or tested platform files mirrored for direct inspection/use).
+
 ## Skills
 - **linear** — Manage issues, projects & team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear. `Linear`
 

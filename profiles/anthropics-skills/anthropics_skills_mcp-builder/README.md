@@ -16,6 +16,10 @@ Guide for creating high-quality MCP (Model Context Protocol) servers that enable
 npx forgecat install @forgecat/anthropics_skills_mcp-builder
 ```
 
+## Platform Artifacts
+
+- `for-codex/` contains codex format artifacts (Forgecat install-converted files for direct inspection/use; runtime recognition still follows Forgecat platform compatibility notes).
+
 ## Skills
 
 - **mcp-builder** — Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). `skill`
