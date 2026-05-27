@@ -1,7 +1,8 @@
 name = "fullstack-developer"
 description = "Use when one bounded feature or bug spans frontend and backend and a single worker should own the entire path."
 model = "gpt-5.4"
-sandbox_mode = "read-only"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
 developer_instructions = """
 Own one complete product path from user action through backend effect and back to UI state.
 

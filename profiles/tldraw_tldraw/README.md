@@ -17,6 +17,9 @@ Draw and visually collaborate with your agents using the official tldraw Cursor 
 npx forgecat install @forgecat/tldraw_tldraw
 ```
 
+## Platform Artifacts
+- `for-cursor/` is copied from the upstream Cursor-native source: `https://github.com/tldraw/tldraw` commit `8e0d015dc0b0370783ff2359acae95e210b14ff9` path `.cursor/rules/claude-md.mdc` and `apps/mcp-app/plugins/tldraw-mcp/mcp.json`.
+
 ## Skills
 
 - **tldraw** — Connects to the hosted tldraw MCP server for collaborative drawing workflows. `mcp`

@@ -13,6 +13,9 @@ Build or update a professional-grade design system in Figma from a codebase. Use
 npx forgecat install @forgecat/openai_skills_figma-generate-library
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/figma-generate-library/`.
+
 ## Skills
 - **figma-generate-library** — Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together. `Figma Generate Library`
 

@@ -13,6 +13,9 @@ Generates custom design system rules for the user's codebase. Use when user says
 npx forgecat install @forgecat/openai_skills_figma-create-design-system-rules
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/figma-create-design-system-rules/`.
+
 ## Skills
 - **figma-create-design-system-rules** — Generates custom design system rules for the user's codebase. Use when user says "create design system rules", "generate rules for my project", "set up design rules", "customize design system guidelines", or wants to establish project-specific conventions for Figma-to-code workflows. Requires Figma MCP server connection. `Figma Create Design System Rules`
 

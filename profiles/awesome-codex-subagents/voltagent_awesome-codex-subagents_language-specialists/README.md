@@ -12,6 +12,9 @@ Language and framework specialists for ecosystem-specific implementation, debugg
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_language-specialists
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/02-language-specialists/*.toml`.
+
 ## Agents
 - **angular-architect** — Use when a task needs Angular-specific help for component architecture, dependency injection, routing, signals, or enterprise application structure. `gpt-5.4` `Language Specialist`
 - **cpp-pro** — Use when a task needs C++ work involving performance-sensitive code, memory ownership, concurrency, or systems-level integration. `gpt-5.4` `Language Specialist`

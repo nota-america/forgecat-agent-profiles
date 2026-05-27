@@ -13,6 +13,9 @@ Turn Notion specs into implementation plans, tasks, and progress tracking; use w
 npx forgecat install @forgecat/openai_skills_notion-spec-to-implementation
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/notion-spec-to-implementation/`.
+
 ## Skills
 - **notion-spec-to-implementation** — Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them. `Notion Spec To Implementation`
 

@@ -13,6 +13,9 @@ Deploy applications and infrastructure to Cloudflare using Workers, Pages, and r
 npx forgecat install @forgecat/openai_skills_cloudflare-deploy
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/cloudflare-deploy/`.
+
 ## Skills
 - **cloudflare-deploy** — Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare. `Cloudflare Deploy`
 

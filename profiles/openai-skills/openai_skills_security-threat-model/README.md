@@ -13,6 +13,9 @@ Repository-grounded threat modeling that enumerates trust boundaries, assets, at
 npx forgecat install @forgecat/openai_skills_security-threat-model
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/security-threat-model/`.
+
 ## Skills
 - **security-threat-model** — Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling. Do not trigger for general architecture summaries, code review, or non-security design work. `Security Threat Model`
 

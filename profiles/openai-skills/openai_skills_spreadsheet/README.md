@@ -13,6 +13,9 @@ Use when tasks involve creating, editing, analyzing, or formatting spreadsheets 
 npx forgecat install @forgecat/openai_skills_spreadsheet
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/spreadsheet/`.
+
 ## Skills
 - **spreadsheet** — Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review. `Spreadsheet`
 

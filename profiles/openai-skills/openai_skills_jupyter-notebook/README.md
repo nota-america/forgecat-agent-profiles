@@ -13,6 +13,9 @@ Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`)
 npx forgecat install @forgecat/openai_skills_jupyter-notebook
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/jupyter-notebook/`.
+
 ## Skills
 - **jupyter-notebook** — Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook. `Jupyter Notebook`
 

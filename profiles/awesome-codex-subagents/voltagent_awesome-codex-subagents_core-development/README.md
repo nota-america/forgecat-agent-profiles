@@ -12,6 +12,9 @@ Core agents for application architecture, cross-layer implementation, UI work, a
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_core-development
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/01-core-development/*.toml`.
+
 ## Agents
 - **api-designer** — Use when a task needs API contract design, evolution planning, or compatibility review before implementation starts. `gpt-5.4` `Core Development`
 - **backend-developer** — Use when a task needs scoped backend implementation or backend bug fixes after the owning path is known. `gpt-5.4` `Core Development`

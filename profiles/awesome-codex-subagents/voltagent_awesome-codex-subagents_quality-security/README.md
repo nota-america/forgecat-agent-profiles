@@ -12,6 +12,9 @@ Review and verification agents that work especially well as read-heavy Codex sub
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_quality-security
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/04-quality-security/*.toml`.
+
 ## Agents
 - **accessibility-tester** — Use when a task needs an accessibility audit of UI changes, interaction flows, or component behavior. `gpt-5.4` `Quality & Security`
 - **ad-security-reviewer** — Use when a task needs Active Directory security review across identity boundaries, delegation, GPO exposure, or directory hardening. `gpt-5.4` `Quality & Security`

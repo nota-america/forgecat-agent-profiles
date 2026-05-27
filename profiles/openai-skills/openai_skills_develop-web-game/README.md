@@ -13,6 +13,9 @@ Use when Codex is building or iterating on a web game (HTML/JS) and needs a reli
 npx forgecat install @forgecat/openai_skills_develop-web-game
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/develop-web-game/`.
+
 ## Skills
 - **develop-web-game** — Use when Codex is building or iterating on a web game (HTML/JS) and needs a reliable development + testing loop: implement small changes, run a Playwright-based test script with short input bursts and intentional pauses, inspect screenshots/text, and review console errors with render_game_to_text. `Develop Web Game`
 

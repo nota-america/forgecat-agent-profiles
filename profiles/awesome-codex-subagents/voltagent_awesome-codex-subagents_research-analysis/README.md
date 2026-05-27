@@ -12,6 +12,9 @@ Read-heavy research agents for searching, validating, comparing, and synthesizin
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_research-analysis
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/10-research-analysis/*.toml`.
+
 ## Agents
 - **competitive-analyst** — Use when a task needs a grounded comparison of tools, products, libraries, or implementation options. `gpt-5.3-codex-spark` `Research & Analysis`
 - **data-researcher** — Use when a task needs source gathering and synthesis around datasets, metrics, data pipelines, or evidence-backed quantitative questions. `gpt-5.3-codex-spark` `Research & Analysis`

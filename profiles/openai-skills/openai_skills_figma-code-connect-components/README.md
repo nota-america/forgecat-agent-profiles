@@ -13,6 +13,9 @@ Connects Figma design components to code components using Code Connect mapping t
 npx forgecat install @forgecat/openai_skills_figma-code-connect-components
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/figma-code-connect-components/`.
+
 ## Skills
 - **figma-code-connect-components** — Connects Figma design components to code components using Code Connect mapping tools. Use when user says "code connect", "connect this component to code", "map this component", "link component to code", "create code connect mapping", or wants to establish mappings between Figma designs and code implementations. For canvas writes via `use_figma`, use `figma-use`. `Figma Code Connect Components`
 

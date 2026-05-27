@@ -12,6 +12,9 @@ Agents for data pipelines, LLM integrations, and database behavior.
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_data-ai
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/05-data-ai/*.toml`.
+
 ## Agents
 - **ai-engineer** — Use when a task needs implementation or debugging of model-backed application features, agent flows, or evaluation hooks. `gpt-5.4` `Data & AI`
 - **data-analyst** — Use when a task needs data interpretation, metric breakdown, trend explanation, or decision support from existing analytics outputs. `gpt-5.3-codex-spark` `Data & AI`

@@ -13,6 +13,9 @@ Deploy applications and websites to Vercel. Use when the user requests deploymen
 npx forgecat install @forgecat/openai_skills_vercel-deploy
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/vercel-deploy/`.
+
 ## Skills
 - **vercel-deploy** — Deploy applications and websites to Vercel. Use when the user requests deployment actions like "deploy my app", "deploy and give me the link", "push this live", or "create a preview deployment". `Vercel Deploy`
 

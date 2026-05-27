@@ -13,6 +13,9 @@ Perform language and framework specific security best-practice reviews and sugge
 npx forgecat install @forgecat/openai_skills_security-best-practices
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/security-best-practices/`.
+
 ## Skills
 - **security-best-practices** — Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks. `Security Best Practices`
 

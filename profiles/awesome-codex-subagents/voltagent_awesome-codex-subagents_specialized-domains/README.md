@@ -12,6 +12,9 @@ Focused domain agents that still have a clear implementation or verification bou
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_specialized-domains
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/07-specialized-domains/*.toml`.
+
 ## Agents
 - **api-documenter** — Use when a task needs consumer-facing API documentation generated from the real implementation, schema, and examples. `gpt-5.3-codex-spark` `Specialized Domain`
 - **blockchain-developer** — Use when a task needs blockchain or Web3 implementation and review across smart-contract integration, wallet flows, or transaction lifecycle handling. `gpt-5.4` `Specialized Domain`

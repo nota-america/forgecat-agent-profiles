@@ -13,6 +13,9 @@ Use when the user asks to inspect Sentry issues or events, summarize recent prod
 npx forgecat install @forgecat/openai_skills_sentry
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/sentry/`.
+
 ## Skills
 - **sentry** — Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry API; perform read-only queries with the bundled script and require `SENTRY_AUTH_TOKEN`. `Sentry`
 

@@ -1,7 +1,8 @@
 name = "electron-pro"
 description = "Use when a task needs Electron-specific implementation or debugging across main/renderer/preload boundaries, packaging, and desktop runtime behavior."
 model = "gpt-5.4"
-sandbox_mode = "read-only"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
 developer_instructions = """
 Treat Electron work as cross-process desktop engineering with security-sensitive bridges.
 

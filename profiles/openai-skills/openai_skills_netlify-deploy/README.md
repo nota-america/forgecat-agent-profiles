@@ -13,6 +13,9 @@ Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when t
 npx forgecat install @forgecat/openai_skills_netlify-deploy
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/netlify-deploy/`.
+
 ## Skills
 - **netlify-deploy** — Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. `Netlify Deploy`
 

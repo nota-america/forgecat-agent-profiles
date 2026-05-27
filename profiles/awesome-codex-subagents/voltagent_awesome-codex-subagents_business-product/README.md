@@ -12,6 +12,9 @@ Support agents for requirements, UX, and engineering-adjacent writing tasks.
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_business-product
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/08-business-product/*.toml`.
+
 ## Agents
 - **business-analyst** — Use when a task needs requirements clarified, scope normalized, or acceptance criteria extracted from messy inputs before engineering work starts. `gpt-5.4` `Business & Product`
 - **content-marketer** — Use when a task needs product-adjacent content strategy or messaging that still has to stay grounded in real technical capabilities. `gpt-5.3-codex-spark` `Business & Product`

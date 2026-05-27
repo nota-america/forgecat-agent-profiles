@@ -12,6 +12,9 @@ Infrastructure-focused agents for deployment, containerization, orchestration, a
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_infrastructure
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/03-infrastructure/*.toml`.
+
 ## Agents
 - **azure-infra-engineer** — Use when a task needs Azure-specific infrastructure review or implementation across resources, networking, identity, or automation. `gpt-5.4` `Infrastructure`
 - **cloud-architect** — Use when a task needs cloud architecture review across compute, storage, networking, reliability, or multi-service design. `gpt-5.4` `Infrastructure`

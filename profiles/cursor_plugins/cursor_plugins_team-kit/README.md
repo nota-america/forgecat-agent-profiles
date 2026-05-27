@@ -18,6 +18,9 @@ npx forgecat install @forgecat/cursor_plugins_team-kit
 ## Agents
 - **ci-watcher** — Watch GitHub CI for the current branch and report pass/fail with relevant failure logs. Use when waiting for CI results or CI has failed. Use proactively to monitor branch CI. `fast` `CI Monitor`
 
+## Platform Artifacts
+- `for-cursor/` is copied from the upstream Cursor-native source: `https://github.com/cursor/plugins` commit `9c39b574a4c2f4374b568effd115b6dc6fbe3bf4` path `cursor-team-kit/agents`, `cursor-team-kit/skills`, and `cursor-team-kit/rules`.
+
 ## Skills
 - **check-compiler-errors** — Run compile and type-check commands and report failures `Compiler`
 - **deslop** — Remove AI-generated code slop and clean up code style `Code Cleanup`

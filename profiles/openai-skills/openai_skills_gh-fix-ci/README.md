@@ -13,6 +13,9 @@ Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub
 npx forgecat install @forgecat/openai_skills_gh-fix-ci
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/gh-fix-ci/`.
+
 ## Skills
 - **gh-fix-ci** — Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL. `Gh Fix Ci`
 

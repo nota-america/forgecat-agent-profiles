@@ -12,6 +12,9 @@ Agents that help plan or coordinate multi-agent Codex workflows without inventin
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_meta-orchestration
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/09-meta-orchestration/*.toml`.
+
 ## Agents
 - **agent-installer** — Use when a task needs help selecting, copying, or organizing custom agent files from this repository into Codex agent directories. `gpt-5.3-codex-spark` `Meta & Orchestration`
 - **agent-organizer** — Use when the parent agent needs help choosing subagents and dividing a larger task into clean delegated threads. `gpt-5.4` `Meta & Orchestration`

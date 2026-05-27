@@ -12,6 +12,9 @@ Agents for builds, developer tooling, documentation, MCP integrations, and refac
 npx forgecat install @forgecat/voltagent_awesome-codex-subagents_developer-experience
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/VoltAgent/awesome-codex-subagents` commit `5b7a405546e2400af88f32d9038cfd92eece3978` path `categories/06-developer-experience/*.toml`.
+
 ## Agents
 - **build-engineer** — Use when a task needs build-graph debugging, bundling fixes, compiler pipeline work, or CI build stabilization. `gpt-5.3-codex-spark` `Developer Experience`
 - **cli-developer** — Use when a task needs a command-line interface feature, UX review, argument parsing change, or shell-facing workflow improvement. `gpt-5.4` `Developer Experience`

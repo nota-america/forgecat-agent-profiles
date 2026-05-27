@@ -13,6 +13,9 @@ Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that c
 npx forgecat install @forgecat/openai_skills_chatgpt-apps
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/chatgpt-apps/`.
+
 ## Skills
 - **chatgpt-apps** — Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned project scaffold. Prefer a docs-first workflow by invoking the openai-docs skill or OpenAI developer docs MCP tools before generating code. `Chatgpt Apps`
 

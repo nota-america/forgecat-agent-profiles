@@ -13,6 +13,9 @@ Help address review/issue comments on the open GitHub PR for the current branch 
 npx forgecat install @forgecat/openai_skills_gh-address-comments
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/gh-address-comments/`.
+
 ## Skills
 - **gh-address-comments** — Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in. `Gh Address Comments`
 

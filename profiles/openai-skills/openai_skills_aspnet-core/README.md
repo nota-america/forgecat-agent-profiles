@@ -13,6 +13,9 @@ Build, review, refactor, or architect ASP.NET Core web applications using curren
 npx forgecat install @forgecat/openai_skills_aspnet-core
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/aspnet-core/`.
+
 ## Skills
 - **aspnet-core** — Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades. `Aspnet Core`
 

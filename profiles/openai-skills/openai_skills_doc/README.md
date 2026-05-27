@@ -13,6 +13,9 @@ Use when the task involves reading, creating, or editing `.docx` documents, espe
 npx forgecat install @forgecat/openai_skills_doc
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/doc/`.
+
 ## Skills
 - **doc** — Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks. `Doc`
 

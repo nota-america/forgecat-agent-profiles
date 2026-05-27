@@ -13,6 +13,9 @@ Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layou
 npx forgecat install @forgecat/openai_skills_slides
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/slides/`.
+
 ## Skills
 - **slides** — Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled layout helpers, and render/validation utilities. Use when tasks involve building a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks, modifying slide content while preserving editable output, adding charts/diagrams/visuals, or diagnosing layout issues such as overflow, overlaps, and font substitution. `Slides`
 

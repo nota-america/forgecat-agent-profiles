@@ -13,6 +13,9 @@ Use when the user asks for text-to-speech narration or voiceover, accessibility 
 npx forgecat install @forgecat/openai_skills_speech
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/speech/`.
+
 ## Skills
 - **speech** — Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech.py`) with built-in voices and require `OPENAI_API_KEY` for live calls. Custom voice creation is out of scope. `Speech`
 

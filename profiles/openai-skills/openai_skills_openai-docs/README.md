@@ -13,6 +13,9 @@ Use when the user asks how to build with OpenAI products or APIs and needs up-to
 npx forgecat install @forgecat/openai_skills_openai-docs
 ```
 
+## Platform Artifacts
+- `for-codex/` is copied from the upstream Codex-native source: `https://github.com/openai/skills` commit `0e7823cca07bc2cbf34718a383f9ae92525be6a5` path `skills/.curated/openai-docs/`.
+
 ## Skills
 - **openai-docs** — Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with citations, help choosing the latest model for a use case, or explicit GPT-5.4 upgrade and prompt-upgrade guidance; prioritize OpenAI docs MCP tools, use bundled references only as helper context, and restrict any fallback browsing to official OpenAI domains. `Openai Docs`
 
