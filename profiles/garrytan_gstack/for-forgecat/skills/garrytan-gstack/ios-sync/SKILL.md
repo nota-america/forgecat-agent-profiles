@@ -702,7 +702,7 @@ After `/ios-qa` is installed in an app, the user may:
 This skill regenerates the relevant artifacts in place.
 
 **Templates live in upstream gstack.** This skill resolves them from
-`~/.claude/skills/garrytan-gstack/ios-qa/templates/` (or the worktree's
+`$GSTACK_ROOT/ios-qa/templates/` (or the worktree's
 `ios-qa/templates/` when developing gstack itself). The fork's HTTP-fetch
 pattern is gone.
 

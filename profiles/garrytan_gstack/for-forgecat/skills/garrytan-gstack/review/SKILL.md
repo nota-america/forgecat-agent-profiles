@@ -983,7 +983,7 @@ Plan items: N DONE, M PARTIAL, K NOT DONE
 
 ## Step 2: Read the checklist
 
-Read `.claude/skills/garrytan-gstack/review/checklist.md`.
+Read `$GSTACK_ROOT/review/checklist.md`.
 
 **If the file cannot be read, STOP and report the error.** Do not proceed without the checklist.
 
@@ -991,7 +991,7 @@ Read `.claude/skills/garrytan-gstack/review/checklist.md`.
 
 ## Step 2.5: Check for Greptile review comments
 
-Read `.claude/skills/garrytan-gstack/review/greptile-triage.md` and follow the fetch, filter, classify, and **escalation detection** steps.
+Read `$GSTACK_ROOT/review/greptile-triage.md` and follow the fetch, filter, classify, and **escalation detection** steps.
 
 **If no PR exists, `gh` fails, API returns an error, or there are zero Greptile comments:** Skip this step silently. Greptile integration is additive — the review works without it.
 
@@ -1213,17 +1213,17 @@ echo "TEST_FW: ${TEST_FW:-unknown}"
 Based on the scope signals above, select which specialists to dispatch.
 
 **Always-on (dispatch on every review with 50+ changed lines):**
-1. **Testing** — read `~/.claude/skills/garrytan-gstack/review/specialists/testing.md`
-2. **Maintainability** — read `~/.claude/skills/garrytan-gstack/review/specialists/maintainability.md`
+1. **Testing** — read `$GSTACK_ROOT/review/specialists/testing.md`
+2. **Maintainability** — read `$GSTACK_ROOT/review/specialists/maintainability.md`
 
 **If DIFF_LINES < 50:** Skip all specialists. Print: "Small diff ($DIFF_LINES lines) — specialists skipped." Continue to Step 5.
 
 **Conditional (dispatch if the matching scope signal is true):**
-3. **Security** — if SCOPE_AUTH=true, OR if SCOPE_BACKEND=true AND DIFF_LINES > 100. Read `~/.claude/skills/garrytan-gstack/review/specialists/security.md`
-4. **Performance** — if SCOPE_BACKEND=true OR SCOPE_FRONTEND=true. Read `~/.claude/skills/garrytan-gstack/review/specialists/performance.md`
-5. **Data Migration** — if SCOPE_MIGRATIONS=true. Read `~/.claude/skills/garrytan-gstack/review/specialists/data-migration.md`
-6. **API Contract** — if SCOPE_API=true. Read `~/.claude/skills/garrytan-gstack/review/specialists/api-contract.md`
-7. **Design** — if SCOPE_FRONTEND=true. Use the existing design review checklist at `~/.claude/skills/garrytan-gstack/review/design-checklist.md`
+3. **Security** — if SCOPE_AUTH=true, OR if SCOPE_BACKEND=true AND DIFF_LINES > 100. Read `$GSTACK_ROOT/review/specialists/security.md`
+4. **Performance** — if SCOPE_BACKEND=true OR SCOPE_FRONTEND=true. Read `$GSTACK_ROOT/review/specialists/performance.md`
+5. **Data Migration** — if SCOPE_MIGRATIONS=true. Read `$GSTACK_ROOT/review/specialists/data-migration.md`
+6. **API Contract** — if SCOPE_API=true. Read `$GSTACK_ROOT/review/specialists/api-contract.md`
+7. **Design** — if SCOPE_FRONTEND=true. Use the existing design review checklist at `$GSTACK_ROOT/review/design-checklist.md`
 
 ### Adaptive gating
 
@@ -1360,7 +1360,7 @@ Remember these stats — you will need them for the review-log entry in Step 5.8
 If activated, dispatch one more subagent via the Agent tool (foreground, not background).
 
 The Red Team subagent receives:
-1. The red-team checklist from `~/.claude/skills/garrytan-gstack/review/specialists/red-team.md`
+1. The red-team checklist from `$GSTACK_ROOT/review/specialists/red-team.md`
 2. The merged specialist findings from Step 4.6 (so it knows what was already caught)
 3. The git diff command
 
