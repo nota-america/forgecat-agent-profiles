@@ -107,11 +107,11 @@ I'm [Garry Tan](https://x.com/garrytan), President & CEO of [Y Combinator](https
 
 **2026 — 1,237 contributions and counting:**
 
-![GitHub contributions 2026 — 1,237 contributions, massive acceleration in Jan-Mar](docs/images/github-2026.png)
+![GitHub contributions 2026 — 1,237 contributions, massive acceleration in Jan-Mar](skills/garrytan-gstack/docs/images/github-2026.png)
 
 **2013 — when I built Bookface at YC (772 contributions):**
 
-![GitHub contributions 2013 — 772 contributions building Bookface at YC](docs/images/github-2013.png)
+![GitHub contributions 2013 — 772 contributions building Bookface at YC](skills/garrytan-gstack/docs/images/github-2013.png)
 
 Same person. Different era. The difference is the tooling.
 
@@ -184,7 +184,7 @@ when Claude Code has gstack installed. Paste this to your OpenClaw agent:
 | "Build me a notifications feature" | Spawns Claude Code with /autoplan → implement → /ship |
 | "Help me plan the v2 API redesign" | Spawns Claude Code with /office-hours → /autoplan, saves plan |
 
-See [docs/OPENCLAW.md](docs/OPENCLAW.md) for advanced dispatch routing and
+See [docs/OPENCLAW.md](skills/garrytan-gstack/docs/OPENCLAW.md) for advanced dispatch routing and
 the gstack-lite/gstack-full prompt templates.
 
 ### Native OpenClaw Skills (via ClawHub)
@@ -226,7 +226,7 @@ Or target a specific agent with `./setup --host <name>`:
 | Slate | `--host slate` | `~/.slate/skills/gstack-*/` |
 | Kiro | `--host kiro` | `~/.kiro/skills/gstack-*/` |
 
-**Want to add support for another agent?** See [docs/ADDING_A_HOST.md](docs/ADDING_A_HOST.md).
+**Want to add support for another agent?** See [docs/ADDING_A_HOST.md](skills/garrytan-gstack/docs/ADDING_A_HOST.md).
 It's one TypeScript config file, zero code changes.
 
 ## See it work
@@ -331,7 +331,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 | `/setup-deploy` | **Deploy Configurator** — one-time setup for `/land-and-deploy`. Detects your platform, production URL, and deploy commands. |
 | `/gstack-upgrade` | **Self-Updater** — upgrade gstack to latest. Detects global vs vendored install, syncs both, shows what changed. |
 
-**[Deep dives with examples and philosophy for every skill →](docs/skills.md)**
+**[Deep dives with examples and philosophy for every skill →](skills/garrytan-gstack/docs/skills.md)**
 
 ## Parallel sprints
 
@@ -419,7 +419,7 @@ I open sourced how I build software. You can fork it and make it your own.
 
 | Doc | What it covers |
 |-----|---------------|
-| [Skill Deep Dives](docs/skills.md) | Philosophy, examples, and workflow for every skill (includes Greptile integration) |
+| [Skill Deep Dives](skills/garrytan-gstack/docs/skills.md) | Philosophy, examples, and workflow for every skill (includes Greptile integration) |
 | [Builder Ethos](ETHOS.md) | Builder philosophy: Boil the Lake, Search Before Building, three layers of knowledge |
 | [Architecture](ARCHITECTURE.md) | Design decisions and system internals |
 | [Browser Reference](BROWSER.md) | Full command reference for `/browse` |

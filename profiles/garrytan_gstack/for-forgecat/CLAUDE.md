@@ -111,7 +111,7 @@ gstack/
 │   └── dist/        # Compiled binary
 ├── extension/       # Chrome extension (side panel + activity feed + CSS inspector)
 ├── lib/             # Shared libraries (worktree.ts)
-├── docs/designs/    # Design documents
+├── skills/garrytan-gstack/docs/designs/    # Design documents
 ├── setup-deploy/    # /setup-deploy skill (one-time deploy config)
 ├── .github/         # CI workflows + Docker image
 │   ├── workflows/   # evals.yml (E2E on Ubicloud), skill-docs.yml, actionlint.yml
@@ -180,7 +180,7 @@ project uses.
 
 **Sidebar architecture:** Before modifying `sidepanel.js`, `background.js`,
 `content.js`, `sidebar-agent.ts`, or sidebar-related server endpoints, read
-`docs/designs/SIDEBAR_MESSAGE_FLOW.md`. It documents the full initialization
+`skills/garrytan-gstack/docs/designs/SIDEBAR_MESSAGE_FLOW.md`. It documents the full initialization
 timeline, message flow, auth token chain, tab concurrency model, and known
 failure modes. The sidebar spans 5 files across 2 codebases (extension + server)
 with non-obvious ordering dependencies. The doc exists to prevent the kind of

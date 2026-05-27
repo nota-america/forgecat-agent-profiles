@@ -67,8 +67,8 @@ const myhost: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '~/.claude/skills/garrytan-gstack', to: '~/.myhost/skills/gstack' },
-    { from: '.claude/skills/garrytan-gstack', to: '.myhost/skills/gstack' },
+    { from: '~/.claude/skills/gstack', to: '~/.myhost/skills/gstack' },
+    { from: '.claude/skills/gstack', to: '.myhost/skills/gstack' },
     { from: '.claude/skills', to: '.myhost/skills' },
   ],
 
