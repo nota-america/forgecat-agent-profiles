@@ -91,7 +91,7 @@ npx forgecat install @forgecat/garrytan_gstack
 |---|---|
 | Author | `Garry Tan` |
 | Original repository | `https://github.com/garrytan/gstack` |
-| Version | `0.0.6` |
+| Version | `0.0.7` |
 | Original commit | `22f8c7f` (2026-05-26) |
 | License | `MIT` |
 | Source platform | `claude-code` |
