@@ -1218,7 +1218,7 @@ The iOS app's `StateServer` binds loopback only (`::1` + `127.0.0.1`). The Mac d
 
 A Mac plus an iPhone you already own plus the Tailscale free tier replaces what most teams pay BrowserStack/Sauce Labs for. Any HTTP-capable agent on your tailnet can drive the iOS app once you've minted them a session token. Tailscale ACLs scope which identities can reach the Mac at which capability tier.
 
-See `ios-qa/docs/tailscale-acl-example.md` for the runnable setup.
+See `.claude/skills/garrytan-gstack/ios-qa/docs/tailscale-acl-example.md` for the runnable setup.
 
 ### Capability tiers
 

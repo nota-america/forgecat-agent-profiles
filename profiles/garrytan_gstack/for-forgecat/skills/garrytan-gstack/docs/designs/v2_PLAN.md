@@ -445,7 +445,7 @@ Synthesized from this review's findings. Each task derives from a specific phase
 - [ ] **T16 (P2, human: ~1 day / CC: ~1 hour)** — Bulk-add 9 deferred TODOS to TODOS.md (gstack lite, gstack budget, etc.)
   - Surfaced by: TODOS.md updates section
   - Files: `TODOS.md`
-  - Verify: TODOS format matches `.claude/skills/review/TODOS-format.md`
+  - Verify: TODOS format matches `.claude/skills/garrytan-gstack/review/TODOS-format.md`
 
 ## Failure Modes Registry
 
@@ -531,7 +531,7 @@ ASCII diagrams in CLAUDE.md / ARCHITECTURE.md that this plan affects:
 
 | Diagram | File | Still accurate post-v2? |
 |---|---|---|
-| Sidebar message flow | `docs/designs/SIDEBAR_MESSAGE_FLOW.md` | YES (unrelated subsystem) |
+| Sidebar message flow | `.claude/skills/garrytan-gstack/docs/designs/SIDEBAR_MESSAGE_FLOW.md` | YES (unrelated subsystem) |
 | Dual-listener tunnel architecture | `ARCHITECTURE.md` | YES (unrelated) |
 | Unicode sanitization at server egress | `ARCHITECTURE.md` | YES (unrelated) |
 | (none for skill build pipeline) | — | New diagrams above are NEW, not updates |

@@ -831,7 +831,7 @@ the daemon to be able to read `/var/run/tailscale.sock`. Fails closed if the
 socket is missing, permission-denied, or returns an unparseable WhoIs
 response. Remote agents hit `POST /auth/mint` over tailnet, daemon
 canonicalizes identity via WhoIs, checks the allowlist file, mints a
-session token. See `ios-qa/docs/tailscale-acl-example.md`.
+session token. See `.claude/skills/garrytan-gstack/ios-qa/docs/tailscale-acl-example.md`.
 
 **Capability tiers (tailnet mode).** Minted tokens default to `interact`
 (taps, swipes, types). Higher tiers require explicit owner mint:

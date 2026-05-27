@@ -215,7 +215,7 @@ Power users can type shortcuts (`narrative`, `vibe`, `reset`, `stats`, `enable`,
 
 Explicitly unchanged — no `{{PROFILE_ADAPTATION}}` placeholders, no behavior change based on profile:
 
-- `ship/SKILL.md.tmpl`, `review/SKILL.md.tmpl`, `office-hours/SKILL.md.tmpl`, `plan-ceo-review/SKILL.md.tmpl`, `plan-eng-review/SKILL.md.tmpl`
+- `ship/SKILL.md.tmpl`, `.claude/skills/garrytan-gstack/review/SKILL.md.tmpl`, `office-hours/SKILL.md.tmpl`, `plan-ceo-review/SKILL.md.tmpl`, `plan-eng-review/SKILL.md.tmpl`
 
 These skills gain preamble injection for logging / preference checking / tune feedback only. No profile-driven defaults. v2 work.
 

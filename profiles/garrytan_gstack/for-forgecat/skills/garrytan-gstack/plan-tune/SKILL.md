@@ -692,7 +692,7 @@ memorize them.
 preferences, question logging, dual-track profile (declared + inferred),
 plain-English inspection. No skills adapt behavior based on the profile yet.
 
-Canonical reference: `docs/designs/PLAN_TUNING_V0.md`.
+Canonical reference: `.claude/skills/garrytan-gstack/docs/designs/PLAN_TUNING_V0.md`.
 
 ---
 
