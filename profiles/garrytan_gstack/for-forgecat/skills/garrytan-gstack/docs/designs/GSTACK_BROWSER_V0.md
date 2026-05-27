@@ -326,7 +326,7 @@ From DESIGN.md:
 | No idle timeout (headed) | **SHIPPED** | Browser stays alive as long as window is open |
 | Cookie import button | **SHIPPED** | One-click in sidebar footer, opens `/cookie-picker` |
 | Sidebar arrow hint | **SHIPPED** | Points to sidebar, hides only when sidebar actually opens |
-| Architecture doc | **SHIPPED** | `SIDEBAR_MESSAGE_FLOW.md` |
+| Architecture doc | **SHIPPED** | `docs/designs/SIDEBAR_MESSAGE_FLOW.md` |
 | Command palette | Planned | Phase 1b |
 | Quick screenshot | Planned | Phase 1b |
 | Status bar | Planned | Phase 1b |

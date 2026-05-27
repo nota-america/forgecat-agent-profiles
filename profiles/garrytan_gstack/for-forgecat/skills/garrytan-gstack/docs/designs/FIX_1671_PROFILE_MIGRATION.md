@@ -33,7 +33,7 @@ Make the writer use the same file the reader does.
 
 3. **`office-hours/SKILL.md.tmpl`** — swap writers at lines 490 and 893:
    - From: `echo '{...}' >> "$GSTACK_STATE_ROOT/builder-profile.jsonl"`
-   - To: `~/.claude/skills/gstack/bin/gstack-developer-profile --log-session '{...}' 2>/dev/null || true`
+   - To: `~/.claude/skills/garrytan-gstack/bin/gstack-developer-profile --log-session '{...}' 2>/dev/null || true`
    - Run `bun run gen:skill-docs` to regenerate `office-hours/SKILL.md`.
 
 ### What's NOT in the fix (intentionally)

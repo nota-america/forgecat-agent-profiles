@@ -23,7 +23,7 @@ No compatibility matrices. The prompt is the bridge.
        │       │                                │
        │       └── Claude Code                  ├── Generates gstack-full
        │           └── gstack installed at      │   (complete pipeline)
-       │               ~/.claude/skills/gstack  │
+       │               ~/.claude/skills/garrytan-gstack  │
        │                                        └── docs/OPENCLAW.md (this file)
        └── Dispatch routing (AGENTS.md)
 ```

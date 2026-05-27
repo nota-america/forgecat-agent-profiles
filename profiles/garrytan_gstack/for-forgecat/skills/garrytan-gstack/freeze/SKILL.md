@@ -1,12 +1,11 @@
 ---
 name: freeze
 version: 0.1.0
-description: |
-  Restrict file edits to a specific directory for the session. Blocks Edit and
-  Write outside the allowed path. Use when debugging to prevent accidentally
-  "fixing" unrelated code, or when you want to scope changes to one module.
-  Use when asked to "freeze", "restrict edits", "only edit this folder",
-  or "lock down edits". (gstack)
+description: "Restrict file edits to a specific directory for the session. (gstack)"
+triggers:
+  - freeze edits to directory
+  - lock editing scope
+  - restrict file changes
 allowed-tools:
   - Bash
   - Read
@@ -26,6 +25,15 @@ hooks:
 ---
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
 <!-- Regenerate: bun run gen:skill-docs -->
+
+
+## When to invoke this skill
+
+Blocks Edit and
+Write outside the allowed path. Use when debugging to prevent accidentally
+"fixing" unrelated code, or when you want to scope changes to one module.
+Use when asked to "freeze", "restrict edits", "only edit this folder",
+or "lock down edits".
 
 # /freeze — Restrict Edits to a Directory
 
@@ -55,7 +63,8 @@ echo "$FREEZE_DIR"
 2. Ensure trailing slash and save to the freeze state file:
 ```bash
 FREEZE_DIR="${FREEZE_DIR%/}/"
-STATE_DIR="${CLAUDE_PLUGIN_DATA:-$HOME/.gstack}"
+eval "$(~/.claude/skills/garrytan-gstack/bin/gstack-paths)"
+STATE_DIR="$GSTACK_STATE_ROOT"
 mkdir -p "$STATE_DIR"
 echo "$FREEZE_DIR" > "$STATE_DIR/freeze-dir.txt"
 echo "Freeze boundary set: $FREEZE_DIR"

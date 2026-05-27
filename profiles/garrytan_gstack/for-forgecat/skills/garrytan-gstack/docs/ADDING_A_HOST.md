@@ -50,8 +50,8 @@ const myhost: HostConfig = {
   cliCommand: 'myhost',        // binary name for `command -v` detection
   cliAliases: [],              // alternative binary names
 
-  globalRoot: '.myhost/skills/gstack',
-  localSkillRoot: '.myhost/skills/gstack',
+  globalRoot: '.myhost/skills/garrytan-gstack',
+  localSkillRoot: '.myhost/skills/garrytan-gstack',
   hostSubdir: '.myhost',
   usesEnvVars: true,           // false only for Claude (uses literal ~ paths)
 
@@ -67,8 +67,8 @@ const myhost: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '~/.claude/skills/gstack', to: '~/.myhost/skills/gstack' },
-    { from: '.claude/skills/gstack', to: '.myhost/skills/gstack' },
+    { from: '~/.claude/skills/garrytan-gstack', to: '~/.myhost/skills/garrytan-gstack' },
+    { from: '.claude/skills/garrytan-gstack', to: '.myhost/skills/garrytan-gstack' },
     { from: '.claude/skills', to: '.myhost/skills' },
   ],
 
@@ -115,7 +115,7 @@ Add `.myhost/` to `.gitignore` (generated skill docs are gitignored).
 bun run gen:skill-docs --host myhost
 
 # Verify output exists and has no .claude/skills leakage
-ls .myhost/skills/gstack-*/SKILL.md
+ls .myhost/skills/garrytan-gstack-*/SKILL.md
 grep -r ".claude/skills" .myhost/skills/ | head -5
 # (should be empty)
 
