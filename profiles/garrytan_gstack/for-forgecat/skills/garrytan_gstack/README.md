@@ -1,120 +1,3 @@
-*written by Forgecat*
-
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
-
-# gstack
-
-AI engineering workflow stack for planning, review, QA, security, browser automation, design, deployment, iOS workflows, documentation, and OpenClaw companion skills.
-
-## Tags
-
-- engineering-workflow
-- browser-qa
-- code-review
-- security
-- design
-- deployment
-- ios
-- openclaw
-- claude-code
-
-## Installation
-
-```bash
-npx forgecat install @forgecat/garrytan_gstack
-```
-
-## Skills / Agents / Commands
-
-- **gstack** — Fast headless browser for QA testing and site dogfooding. (gstack) `skill`
-- **autoplan** — Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack) `skill`
-- **benchmark-models** — Cross-model benchmark for gstack skills. (gstack) `skill`
-- **benchmark** — Performance regression detection using the browse daemon. (gstack) `skill`
-- **browse** — Fast headless browser for QA testing and site dogfooding. (gstack) `skill`
-- **hackernews-frontpage** — Scrape the Hacker News front page (titles, points, comment counts). `skill`
-- **canary** — Post-deploy canary monitoring. (gstack) `skill`
-- **careful** — Safety guardrails for destructive commands. (gstack) `skill`
-- **codex** — OpenAI Codex CLI wrapper — three modes. (gstack) `skill`
-- **connect-chrome** — Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. `skill`
-- **context-restore** — Restore working context saved earlier by /context-save. (gstack) `skill`
-- **context-save** — Save working context. (gstack) `skill`
-- **cso** — Chief Security Officer mode. (gstack) `skill`
-- **design-consultation** — Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview... (gstack) `skill`
-- **design-html** — Design finalization: generates production-quality Pretext-native HTML/CSS. (gstack) `skill`
-- **design-review** — Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. (gstack) `skill`
-- **design-shotgun** — Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. (gstack) `skill`
-- **devex-review** — Live developer experience audit. (gstack) `skill`
-- **document-generate** — Generate missing documentation from scratch for a feature, module, or entire project. (gstack) `skill`
-- **document-release** — Post-ship documentation update. (gstack) `skill`
-- **freeze** — Restrict file edits to a specific directory for the session. (gstack) `skill`
-- **gstack-upgrade** — Upgrade gstack to the latest version. `skill`
-- **guard** — Full safety mode: destructive command warnings + directory-scoped edits. (gstack) `skill`
-- **health** — Code quality dashboard. (gstack) `skill`
-- **investigate** — Systematic debugging with root cause investigation. (gstack) `skill`
-- **ios-clean** — Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack) `skill`
-- **ios-design-review** — Visual design audit for iOS apps on real hardware. (gstack) `skill`
-- **ios-fix** — Autonomous iOS bug fixer. (gstack) `skill`
-- **ios-qa** — Live-device iOS QA for SwiftUI apps. (gstack) `skill`
-- **ios-sync** — Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack) `skill`
-- **land-and-deploy** — Land and deploy workflow. (gstack) `skill`
-- **landing-report** — Read-only queue dashboard for workspace-aware ship. (gstack) `skill`
-- **learn** — Manage project learnings. `skill`
-- **make-pdf** — Turn any markdown file into a publication-quality PDF. (gstack) `skill`
-- **office-hours** — YC Office Hours — two modes. (gstack) `skill`
-- **open-gstack-browser** — Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. `skill`
-- **gstack-openclaw-ceo-review** — Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan. `skill`
-- **gstack-openclaw-investigate** — Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working. `skill`
-- **gstack-openclaw-office-hours** — Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written. `skill`
-- **gstack-openclaw-retro** — Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective. `skill`
-- **pair-agent** — Pair a remote AI agent with your browser. (gstack) `skill`
-- **plan-ceo-review** — CEO/founder-mode plan review. (gstack) `skill`
-- **plan-design-review** — Designer's eye plan review — interactive, like CEO and Eng review. (gstack) `skill`
-- **plan-devex-review** — Interactive developer experience plan review. (gstack) `skill`
-- **plan-eng-review** — Eng manager-mode plan review. (gstack) `skill`
-- **plan-tune** — Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack) `skill`
-- **qa-only** — Report-only QA testing. (gstack) `skill`
-- **qa** — Systematically QA test a web application and fix bugs found. (gstack) `skill`
-- **retro** — Weekly engineering retrospective. (gstack) `skill`
-- **review** — Pre-landing PR review. (gstack) `skill`
-- **scrape** — Pull data from a web page. (gstack) `skill`
-- **setup-browser-cookies** — Import cookies from your real Chromium browser into the headless browse session. (gstack) `skill`
-- **setup-deploy** — Configure deployment settings for /land-and-deploy. `skill`
-- **setup-gbrain** — Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack) `skill`
-- **ship** — Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack) `skill`
-- **skillify** — Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack) `skill`
-- **sync-gbrain** — Keep gbrain current with this repo's code and refresh agent search guidance in CLAUDE.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack) `skill`
-- **unfreeze** — Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) `skill`
-
-## Details
-
-| Field | Value |
-|---|---|
-| Author | `Garry Tan` |
-| Original repository | `https://github.com/garrytan/gstack` |
-| Version | `0.0.6` |
-| Original commit | `22f8c7f` (2026-05-26) |
-| License | `MIT` |
-| Source platform | `claude-code` |
-
-## Compatibility
-
-### Platforms
-
-| Platform | Status |
-|---|---|
-| Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
-
-## Dependencies
-
-- Git
-- Bun v1.0+
-- Node.js for Windows and Node-backed workflows
-
----
-*written by original source*
-
 # gstack
 
 > "I don't think I've typed like a line of code probably since December, basically, which is an extremely large change." — [Andrej Karpathy](https://fortune.com/2026/03/21/andrej-karpathy-openai-cofounder-ai-agents-coding-state-of-psychosis-openclaw/), No Priors podcast, March 2026
@@ -125,15 +8,15 @@ I'm [Garry Tan](https://x.com/garrytan), President & CEO of [Y Combinator](https
 
 **gstack is my answer.** I've been building products for twenty years, and right now I'm shipping more products than I ever have. In the last 60 days: 3 production services, 40+ shipped features, part-time, while running YC full-time. On logical code change — not raw LOC, which AI inflates — my 2026 run rate is **~810× my 2013 pace** (11,417 vs 14 logical lines/day). Year-to-date (through April 18), 2026 has already produced **240× the entire 2013 year**. Measured across 40 public + private `garrytan/*` repos including Bookface, after excluding one demo repo. AI wrote most of it. The point isn't who typed it, it's what shipped.
 
-> The LOC critics aren't wrong that raw line counts inflate with AI. They are wrong that normalized-for-inflation, I'm less productive. I'm more productive, by a lot. Full methodology, caveats, and reproduction script: **[On the LOC Controversy](skills/garrytan_gstack/docs/ON_THE_LOC_CONTROVERSY.md)**.
+> The LOC critics aren't wrong that raw line counts inflate with AI. They are wrong that normalized-for-inflation, I'm less productive. I'm more productive, by a lot. Full methodology, caveats, and reproduction script: **[On the LOC Controversy](docs/ON_THE_LOC_CONTROVERSY.md)**.
 
 **2026 — 1,237 contributions and counting:**
 
-![GitHub contributions 2026 — 1,237 contributions, massive acceleration in Jan-Mar](skills/garrytan_gstack/docs/images/github-2026.png)
+![GitHub contributions 2026 — 1,237 contributions, massive acceleration in Jan-Mar](docs/images/github-2026.png)
 
 **2013 — when I built Bookface at YC (772 contributions):**
 
-![GitHub contributions 2013 — 772 contributions building Bookface at YC](skills/garrytan_gstack/docs/images/github-2013.png)
+![GitHub contributions 2013 — 772 contributions building Bookface at YC](docs/images/github-2013.png)
 
 Same person. Different era. The difference is the tooling.
 
@@ -195,7 +78,7 @@ when Claude Code has gstack installed. Paste this to your OpenClaw agent:
 | "Build me a notifications feature" | Spawns Claude Code with /autoplan → implement → /ship |
 | "Help me plan the v2 API redesign" | Spawns Claude Code with /office-hours → /autoplan, saves plan |
 
-See [docs/OPENCLAW.md](skills/garrytan_gstack/docs/OPENCLAW.md) for advanced dispatch routing and
+See [docs/OPENCLAW.md](docs/OPENCLAW.md) for advanced dispatch routing and
 the gstack-lite/gstack-full prompt templates.
 
 ### Native OpenClaw Skills (via ClawHub)
@@ -239,7 +122,7 @@ Or target a specific agent with `./setup --host <name>`:
 | Hermes | `--host hermes` | `~/.hermes/skills/garrytan_gstack-*/` |
 | GBrain (mod) | `--host gbrain` | `~/.gbrain/skills/garrytan_gstack-*/` |
 
-**Want to add support for another agent?** See [docs/ADDING_A_HOST.md](skills/garrytan_gstack/docs/ADDING_A_HOST.md).
+**Want to add support for another agent?** See [docs/ADDING_A_HOST.md](docs/ADDING_A_HOST.md).
 It's one TypeScript config file, zero code changes.
 
 ## See it work
@@ -316,7 +199,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 | `/canary` | **SRE** | Post-deploy monitoring loop. Watches for console errors, performance regressions, and page failures. |
 | `/benchmark` | **Performance Engineer** | Baseline page load times, Core Web Vitals, and resource sizes. Compare before/after on every PR. |
 | `/document-release` | **Technical Writer** | Update all project docs to match what you just shipped. Catches stale READMEs automatically. Builds a Diataxis coverage map (reference / how-to / tutorial / explanation) so gaps are visible in the PR body. |
-| `/document-generate` | **Documentation Author** | Generate missing docs from scratch using the Diataxis framework. Researches the codebase first, then writes reference / how-to / tutorial / explanation docs that actually match the code. Invokable standalone or chained from `/document-release` when the coverage map finds gaps. Learn more: [tutorial](skills/garrytan_gstack/docs/tutorial-document-generate.md) • [how-to](skills/garrytan_gstack/docs/howto-document-a-shipped-feature.md) • [why Diataxis](skills/garrytan_gstack/docs/explanation-diataxis-in-gstack.md). |
+| `/document-generate` | **Documentation Author** | Generate missing docs from scratch using the Diataxis framework. Researches the codebase first, then writes reference / how-to / tutorial / explanation docs that actually match the code. Invokable standalone or chained from `/document-release` when the coverage map finds gaps. Learn more: [tutorial](docs/tutorial-document-generate.md) • [how-to](docs/howto-document-a-shipped-feature.md) • [why Diataxis](docs/explanation-diataxis-in-gstack.md). |
 | `/retro` | **Eng Manager** | Team-aware weekly retro. Per-person breakdowns, shipping streaks, test health trends, growth opportunities. `/retro global` runs across all your projects and AI tools (Claude Code, Codex, Gemini). |
 | `/browse` | **QA Engineer** | Give the agent eyes. Real Chromium browser, real clicks, real screenshots. ~100ms per command. `/open-gstack-browser` launches GStack Browser with sidebar, anti-bot stealth, and auto model routing. |
 | `/setup-browser-cookies` | **Session Manager** | Import cookies from your real browser (Chrome, Arc, Brave, Edge) into the headless session. Test authenticated pages. |
@@ -337,17 +220,17 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 | Skill | What it does |
 |-------|-------------|
 | `/codex` | **Second Opinion** — independent code review from OpenAI Codex CLI. Three modes: review (pass/fail gate), adversarial challenge, and open consultation. Cross-model analysis when both `/review` and `/codex` have run. |
-| `/careful` | **Safety Guardrails** — warns before destructive commands (recursive remove, DROP TABLE, force-push). Say "be careful" to activate. Override any warning. |
+| `/careful` | **Safety Guardrails** — warns before destructive commands (rm -rf, DROP TABLE, force-push). Say "be careful" to activate. Override any warning. |
 | `/freeze` | **Edit Lock** — restrict file edits to one directory. Prevents accidental changes outside scope while debugging. |
 | `/guard` | **Full Safety** — `/careful` + `/freeze` in one command. Maximum safety for prod work. |
 | `/unfreeze` | **Unlock** — remove the `/freeze` boundary. |
 | `/open-gstack-browser` | **GStack Browser** — launch GStack Browser with sidebar, anti-bot stealth, auto model routing (Sonnet for actions, Opus for analysis), one-click cookie import, and Claude Code integration. Clean up pages, take smart screenshots, edit CSS, and pass info back to your terminal. |
 | `/setup-deploy` | **Deploy Configurator** — one-time setup for `/land-and-deploy`. Detects your platform, production URL, and deploy commands. |
-| `/setup-gbrain` | **GBrain Onboarding** — from zero to running gbrain in under 5 minutes. PGLite local, Supabase existing URL, or auto-provision a new Supabase project via Management API. MCP registration for Claude Code + per-repo trust triad (read-write/read-only/deny). [Full guide](skills/garrytan_gstack/USING_GBRAIN_WITH_GSTACK.md). |
+| `/setup-gbrain` | **GBrain Onboarding** — from zero to running gbrain in under 5 minutes. PGLite local, Supabase existing URL, or auto-provision a new Supabase project via Management API. MCP registration for Claude Code + per-repo trust triad (read-write/read-only/deny). [Full guide](USING_GBRAIN_WITH_GSTACK.md). |
 | `/sync-gbrain` | **Keep Brain Current** — re-index this repo's code into gbrain via `gbrain sources add` + `gbrain sync --strategy code`, refresh the `## GBrain Search Guidance` block in CLAUDE.md, and auto-remove guidance when the capability check fails. `--incremental` (default), `--full`, `--dry-run`. Idempotent; safe to re-run. |
 | `/gstack-upgrade` | **Self-Updater** — upgrade gstack to latest. Detects global vs vendored install, syncs both, shows what changed. |
 | `/ios-qa` | **iOS Live-Device QA (v1.43.0.0+)** — drive a real iPhone over USB CoreDevice via an embedded `StateServer` in the app. Read Swift source, codegen typed `@Observable` accessors, run the agent loop. Optional `--tailnet` flag exposes the device to OpenClaw or any HTTP-capable agent on your Tailscale tailnet so remote agents can run iOS QA without ever touching the hardware. Capability-tier allowlist (observe/interact/mutate/restore), per-device session lock, audit log. |
-| `/ios-fix`, `/ios-design-review`, `/ios-clean`, `/ios-sync` | iOS bug-fix loop, designer's-eye HIG audit, debug-bridge cleanup, and accessor resync. See `skills/garrytan_gstack/docs/skills.md`. End-to-end walkthrough: [docs/howto-ios-testing-with-gstack.md](skills/garrytan_gstack/docs/howto-ios-testing-with-gstack.md). |
+| `/ios-fix`, `/ios-design-review`, `/ios-clean`, `/ios-sync` | iOS bug-fix loop, designer's-eye HIG audit, debug-bridge cleanup, and accessor resync. See `docs/skills.md`. End-to-end walkthrough: [docs/howto-ios-testing-with-gstack.md](docs/howto-ios-testing-with-gstack.md). |
 
 ### New binaries (v0.19)
 
@@ -357,7 +240,7 @@ Beyond the slash-command skills, gstack ships standalone CLIs for workflows that
 |---------|-------------|
 | `gstack-model-benchmark` | **Cross-model benchmark** — run the same prompt through Claude, GPT (via Codex CLI), and Gemini; compare latency, tokens, cost, and (optionally) LLM-judge quality score. Auth detected per provider, unavailable providers skip cleanly. Output as table, JSON, or markdown. `--dry-run` validates flags + auth without spending API calls. |
 | `gstack-taste-update` | **Design taste learning** — writes approvals and rejections from `/design-shotgun` into a persistent per-project taste profile. Decays 5%/week. Feeds back into future variant generation so the system learns what you actually pick. |
-| `gstack-ios-qa-daemon` | **iOS QA daemon** — Mac-side broker between an agent and a connected iPhone over USB CoreDevice. Loopback by default; `--tailnet` opens a Tailscale-facing listener with identity-gated capability tiers. Single-instance via flock on `~/.gstack/ios-qa-daemon.pid`. See [docs/howto-ios-testing-with-gstack.md](skills/garrytan_gstack/docs/howto-ios-testing-with-gstack.md). |
+| `gstack-ios-qa-daemon` | **iOS QA daemon** — Mac-side broker between an agent and a connected iPhone over USB CoreDevice. Loopback by default; `--tailnet` opens a Tailscale-facing listener with identity-gated capability tiers. Single-instance via flock on `~/.gstack/ios-qa-daemon.pid`. See [docs/howto-ios-testing-with-gstack.md](docs/howto-ios-testing-with-gstack.md). |
 | `gstack-ios-qa-mint` | **iOS allowlist manager** — owner-grant CLI for the tailnet allowlist. `grant`/`revoke`/`list` against `~/.gstack/ios-qa-allowlist.json` (mode 0600). Remote agents never auto-allowlist; this is the explicit-intent path. |
 
 ### Continuous checkpoint mode (opt-in, local by default)
@@ -368,12 +251,12 @@ Set `gstack-config set checkpoint_mode continuous` and skills auto-commit your w
 
 Two new browser primitives compound the gstack agent over time:
 
-- **`$B domain-skill save`** — agent saves a per-site note (e.g., "LinkedIn's Apply button lives in an iframe") that fires automatically next time it visits that hostname. Quarantined → active after 3 successful uses → optional cross-project promotion via `$B domain-skill promote-to-global`. Storage lives alongside `/learn`'s per-project learnings file. Full reference: **[docs/domain-skills.md](skills/garrytan_gstack/docs/domain-skills.md)**.
+- **`$B domain-skill save`** — agent saves a per-site note (e.g., "LinkedIn's Apply button lives in an iframe") that fires automatically next time it visits that hostname. Quarantined → active after 3 successful uses → optional cross-project promotion via `$B domain-skill promote-to-global`. Storage lives alongside `/learn`'s per-project learnings file. Full reference: **[docs/domain-skills.md](docs/domain-skills.md)**.
 - **`$B cdp <Domain.method>`** — raw Chrome DevTools Protocol escape hatch for the rare case curated commands miss. Deny-default: methods must be explicitly added to `browse/src/cdp-allowlist.ts` with a one-line justification. Two-tier mutex serializes browser-scoped CDP calls against per-tab work. Output for data-exfil methods is wrapped in the UNTRUSTED envelope.
 
 > Want raw CDP with no rails, no allowlist, no daemon — just thin transport from agent to Chrome? [browser-use/browser-harness-js](https://github.com/browser-use/browser-harness-js) is a different philosophy (agent-authored helpers vs gstack's curated commands) and a good fit if you don't want gstack's security stack. The two can coexist: gstack's `$B cdp` and harness can both attach to the same Chrome via Playwright's `newCDPSession`.
 
-**[Deep dives with examples and philosophy for every skill →](skills/garrytan_gstack/docs/skills.md)**
+**[Deep dives with examples and philosophy for every skill →](docs/skills.md)**
 
 ### Karpathy's four failure modes? Already covered.
 
@@ -403,7 +286,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 **Personal automation.** The sidebar agent isn't just for dev workflows. Example: "Browse my kid's school parent portal and add all the other parents' names, phone numbers, and photos to my Google Contacts." Two ways to get authenticated: (1) log in once in the headed browser, your session persists, or (2) click the "cookies" button in the sidebar footer to import cookies from your real Chrome. Once authenticated, Claude navigates the directory, extracts the data, and creates the contacts.
 
-**Prompt injection defense.** Hostile web pages try to hijack your sidebar agent. gstack ships a layered defense: a 22MB ML classifier bundled with the browser scans every page and tool output locally, a Claude Haiku transcript check votes on the full conversation shape, a random canary token in the system prompt catches session exfil attempts across text, tool args, URLs, and file writes, and a verdict combiner requires two classifiers to agree before blocking (prevents single-model false positives on Stack Overflow-style instruction pages). A shield icon in the sidebar header shows status (green/amber/red). Opt in to a 721MB DeBERTa-v3 ensemble via `GSTACK_SECURITY_ENSEMBLE=deberta` for 2-of-3 agreement. Emergency kill switch: `GSTACK_SECURITY_OFF=1`. See [ARCHITECTURE.md](skills/garrytan_gstack/ARCHITECTURE.md#prompt-injection-defense-sidebar-agent) for the full stack.
+**Prompt injection defense.** Hostile web pages try to hijack your sidebar agent. gstack ships a layered defense: a 22MB ML classifier bundled with the browser scans every page and tool output locally, a Claude Haiku transcript check votes on the full conversation shape, a random canary token in the system prompt catches session exfil attempts across text, tool args, URLs, and file writes, and a verdict combiner requires two classifiers to agree before blocking (prevents single-model false positives on Stack Overflow-style instruction pages). A shield icon in the sidebar header shows status (green/amber/red). Opt in to a 721MB DeBERTa-v3 ensemble via `GSTACK_SECURITY_ENSEMBLE=deberta` for 2-of-3 agreement. Emergency kill switch: `GSTACK_SECURITY_OFF=1`. See [ARCHITECTURE.md](ARCHITECTURE.md#prompt-injection-defense-sidebar-agent) for the full stack.
 
 **Browser handoff when the AI gets stuck.** Hit a CAPTCHA, auth wall, or MFA prompt? `$B handoff` opens a visible Chrome at the exact same page with all your cookies and tabs intact. Solve the problem, tell Claude you're done, `$B resume` picks up right where it left off. The agent even suggests it automatically after 3 consecutive failures.
 
@@ -411,7 +294,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 **Multi-AI second opinion.** `/codex` gets an independent review from OpenAI's Codex CLI — a completely different AI looking at the same diff. Three modes: code review with a pass/fail gate, adversarial challenge that actively tries to break your code, and open consultation with session continuity. When both `/review` (Claude) and `/codex` (OpenAI) have reviewed the same branch, you get a cross-model analysis showing which findings overlap and which are unique to each.
 
-**Safety guardrails on demand.** Say "be careful" and `/careful` warns before any destructive command — recursive remove, DROP TABLE, force-push, git reset --hard. `/freeze` locks edits to one directory while debugging so Claude can't accidentally "fix" unrelated code. `/guard` activates both. `/investigate` auto-freezes to the module being investigated.
+**Safety guardrails on demand.** Say "be careful" and `/careful` warns before any destructive command — rm -rf, DROP TABLE, force-push, git reset --hard. `/freeze` locks edits to one directory while debugging so Claude can't accidentally "fix" unrelated code. `/guard` activates both. `/investigate` auto-freezes to the module being investigated.
 
 **Proactive skill suggestions.** gstack notices what stage you're in — brainstorming, reviewing, debugging, testing — and suggests the right skill. Don't like it? Say "stop suggesting" and it remembers across sessions.
 
@@ -463,27 +346,24 @@ while IFS= read -r dir; do
   esac
 done
 
-# 3. Remove gstack after confirming the path:
-# $GSTACK_ROOT
+# 3. Remove gstack
+rm -rf $GSTACK_ROOT
 
-# 4. Remove global state after confirming the path:
-# ~/.gstack
+# 4. Remove global state
+rm -rf ~/.gstack
 
-# 5. Remove integrations after confirming each path
-# $GSTACK_ROOT*
-# $GSTACK_ROOT*
-# $GSTACK_ROOT*
-# $GSTACK_ROOT*
+# 5. Remove integrations (skip any you never installed)
+rm -rf $GSTACK_ROOT* 2>/dev/null
+rm -rf $GSTACK_ROOT* 2>/dev/null
+rm -rf $GSTACK_ROOT* 2>/dev/null
+rm -rf $GSTACK_ROOT* 2>/dev/null
 
 # 6. Remove temp files
 rm -f /tmp/gstack-* 2>/dev/null
 
-# 7. Per-project cleanup (run from each project root after confirming paths)
-# .gstack
-# .gstack-worktrees
-# $GSTACK_ROOT
-# $GSTACK_ROOT*
-# .factory/skills/garrytan_gstack*
+# 7. Per-project cleanup (run from each project root)
+rm -rf .gstack .gstack-worktrees $GSTACK_ROOT 2>/dev/null
+rm -rf $GSTACK_ROOT* .factory/skills/garrytan_gstack* 2>/dev/null
 ```
 
 ### Clean up CLAUDE.md
@@ -537,24 +417,24 @@ The skill asks once per repo. The decision is sticky across worktrees and branch
 gstack-brain-init
 ```
 
-**Running gstack in Conductor?** Conductor explicitly strips `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` from every workspace's process env, so paid evals and gbrain embeddings won't work out of the box. Set `GSTACK_ANTHROPIC_API_KEY` and `GSTACK_OPENAI_API_KEY` in Conductor's workspace env config instead — gstack's TS entry points promote them to canonical names at runtime. Full details and the contributor checklist for adding the import to new entry points: [Conductor + GSTACK_* env vars](skills/garrytan_gstack/USING_GBRAIN_WITH_GSTACK.md#conductor--gstack_-env-vars).
+**Running gstack in Conductor?** Conductor explicitly strips `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` from every workspace's process env, so paid evals and gbrain embeddings won't work out of the box. Set `GSTACK_ANTHROPIC_API_KEY` and `GSTACK_OPENAI_API_KEY` in Conductor's workspace env config instead — gstack's TS entry points promote them to canonical names at runtime. Full details and the contributor checklist for adding the import to new entry points: [Conductor + GSTACK_* env vars](USING_GBRAIN_WITH_GSTACK.md#conductor--gstack_-env-vars).
 
-**Full monty — every scenario, every flag, every bin helper, every troubleshooting step:** [USING_GBRAIN_WITH_GSTACK.md](skills/garrytan_gstack/USING_GBRAIN_WITH_GSTACK.md)
+**Full monty — every scenario, every flag, every bin helper, every troubleshooting step:** [USING_GBRAIN_WITH_GSTACK.md](USING_GBRAIN_WITH_GSTACK.md)
 
-Other references: [docs/gbrain-sync.md](skills/garrytan_gstack/docs/gbrain-sync.md) (sync-specific guide) • [docs/gbrain-sync-errors.md](skills/garrytan_gstack/docs/gbrain-sync-errors.md) (error index)
+Other references: [docs/gbrain-sync.md](docs/gbrain-sync.md) (sync-specific guide) • [docs/gbrain-sync-errors.md](docs/gbrain-sync-errors.md) (error index)
 
 ## Docs
 
 | Doc | What it covers |
 |-----|---------------|
-| [Skill Deep Dives](skills/garrytan_gstack/docs/skills.md) | Philosophy, examples, and workflow for every skill (includes Greptile integration) |
-| [Builder Ethos](skills/garrytan_gstack/ETHOS.md) | Builder philosophy: Boil the Lake, Search Before Building, three layers of knowledge |
-| [Using GBrain with GStack](skills/garrytan_gstack/USING_GBRAIN_WITH_GSTACK.md) | Every path, flag, bin helper, and troubleshooting step for `/setup-gbrain` |
-| [GBrain Sync](skills/garrytan_gstack/docs/gbrain-sync.md) | Cross-machine memory setup, privacy modes, troubleshooting |
-| [Architecture](skills/garrytan_gstack/ARCHITECTURE.md) | Design decisions and system internals |
-| [Browser Reference](skills/garrytan_gstack/BROWSER.md) | Full command reference for `/browse` |
-| [Contributing](skills/garrytan_gstack/CONTRIBUTING.md) | Dev setup, testing, contributor mode, and dev mode |
-| [Changelog](skills/garrytan_gstack/CHANGELOG.md) | What's new in every version |
+| [Skill Deep Dives](docs/skills.md) | Philosophy, examples, and workflow for every skill (includes Greptile integration) |
+| [Builder Ethos](ETHOS.md) | Builder philosophy: Boil the Lake, Search Before Building, three layers of knowledge |
+| [Using GBrain with GStack](USING_GBRAIN_WITH_GSTACK.md) | Every path, flag, bin helper, and troubleshooting step for `/setup-gbrain` |
+| [GBrain Sync](docs/gbrain-sync.md) | Cross-machine memory setup, privacy modes, troubleshooting |
+| [Architecture](ARCHITECTURE.md) | Design decisions and system internals |
+| [Browser Reference](BROWSER.md) | Full command reference for `/browse` |
+| [Contributing](CONTRIBUTING.md) | Dev setup, testing, contributor mode, and dev mode |
+| [Changelog](CHANGELOG.md) | What's new in every version |
 
 ## Privacy & Telemetry
 

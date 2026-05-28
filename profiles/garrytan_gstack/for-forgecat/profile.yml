@@ -1,5 +1,5 @@
-name: garrytan-gstack
-version: 0.0.3
+name: garrytan_gstack
+version: 0.0.7
 description: "Garry's Stack: a self-contained AI engineering workflow profile with browser QA, planning, review, security, design, deployment, iOS, documentation, and OpenClaw companion skills."
 repository: https://github.com/garrytan/gstack
 license: MIT
@@ -16,176 +16,176 @@ compatibility:
     minimum: []
 skills:
   - name: gstack
-    path: skills/garrytan-gstack/SKILL.md
+    path: skills/garrytan_gstack/SKILL.md
     description: Fast headless browser for QA testing and site dogfooding. (gstack)
   - name: autoplan
-    path: skills/garrytan-gstack/autoplan/SKILL.md
+    path: skills/garrytan_gstack/autoplan/SKILL.md
     description: Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack)
   - name: benchmark-models
-    path: skills/garrytan-gstack/benchmark-models/SKILL.md
+    path: skills/garrytan_gstack/benchmark-models/SKILL.md
     description: Cross-model benchmark for gstack skills. (gstack)
   - name: benchmark
-    path: skills/garrytan-gstack/benchmark/SKILL.md
+    path: skills/garrytan_gstack/benchmark/SKILL.md
     description: Performance regression detection using the browse daemon. (gstack)
   - name: browse
-    path: skills/garrytan-gstack/browse/SKILL.md
+    path: skills/garrytan_gstack/browse/SKILL.md
     description: Fast headless browser for QA testing and site dogfooding. (gstack)
   - name: hackernews-frontpage
-    path: skills/garrytan-gstack/browser-skills/hackernews-frontpage/SKILL.md
+    path: skills/garrytan_gstack/browser-skills/hackernews-frontpage/SKILL.md
     description: Scrape the Hacker News front page (titles, points, comment counts).
   - name: canary
-    path: skills/garrytan-gstack/canary/SKILL.md
+    path: skills/garrytan_gstack/canary/SKILL.md
     description: Post-deploy canary monitoring. (gstack)
   - name: careful
-    path: skills/garrytan-gstack/careful/SKILL.md
+    path: skills/garrytan_gstack/careful/SKILL.md
     description: Safety guardrails for destructive commands. (gstack)
   - name: codex
-    path: skills/garrytan-gstack/codex/SKILL.md
+    path: skills/garrytan_gstack/codex/SKILL.md
     description: OpenAI Codex CLI wrapper — three modes. (gstack)
   - name: connect-chrome
-    path: skills/garrytan-gstack/connect-chrome/SKILL.md
+    path: skills/garrytan_gstack/connect-chrome/SKILL.md
     description: Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.
   - name: context-restore
-    path: skills/garrytan-gstack/context-restore/SKILL.md
+    path: skills/garrytan_gstack/context-restore/SKILL.md
     description: Restore working context saved earlier by /context-save. (gstack)
   - name: context-save
-    path: skills/garrytan-gstack/context-save/SKILL.md
+    path: skills/garrytan_gstack/context-save/SKILL.md
     description: Save working context. (gstack)
   - name: cso
-    path: skills/garrytan-gstack/cso/SKILL.md
+    path: skills/garrytan_gstack/cso/SKILL.md
     description: Chief Security Officer mode. (gstack)
   - name: design-consultation
-    path: skills/garrytan-gstack/design-consultation/SKILL.md
+    path: skills/garrytan_gstack/design-consultation/SKILL.md
     description: "Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview... (gstack)"
   - name: design-html
-    path: skills/garrytan-gstack/design-html/SKILL.md
+    path: skills/garrytan_gstack/design-html/SKILL.md
     description: "Design finalization: generates production-quality Pretext-native HTML/CSS. (gstack)"
   - name: design-review
-    path: skills/garrytan-gstack/design-review/SKILL.md
+    path: skills/garrytan_gstack/design-review/SKILL.md
     description: "Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. (gstack)"
   - name: design-shotgun
-    path: skills/garrytan-gstack/design-shotgun/SKILL.md
+    path: skills/garrytan_gstack/design-shotgun/SKILL.md
     description: "Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. (gstack)"
   - name: devex-review
-    path: skills/garrytan-gstack/devex-review/SKILL.md
+    path: skills/garrytan_gstack/devex-review/SKILL.md
     description: Live developer experience audit. (gstack)
   - name: document-generate
-    path: skills/garrytan-gstack/document-generate/SKILL.md
+    path: skills/garrytan_gstack/document-generate/SKILL.md
     description: Generate missing documentation from scratch for a feature, module, or entire project. (gstack)
   - name: document-release
-    path: skills/garrytan-gstack/document-release/SKILL.md
+    path: skills/garrytan_gstack/document-release/SKILL.md
     description: Post-ship documentation update. (gstack)
   - name: freeze
-    path: skills/garrytan-gstack/freeze/SKILL.md
+    path: skills/garrytan_gstack/freeze/SKILL.md
     description: Restrict file edits to a specific directory for the session. (gstack)
   - name: gstack-upgrade
-    path: skills/garrytan-gstack/gstack-upgrade/SKILL.md
+    path: skills/garrytan_gstack/gstack-upgrade/SKILL.md
     description: Upgrade gstack to the latest version.
   - name: guard
-    path: skills/garrytan-gstack/guard/SKILL.md
+    path: skills/garrytan_gstack/guard/SKILL.md
     description: "Full safety mode: destructive command warnings + directory-scoped edits. (gstack)"
   - name: health
-    path: skills/garrytan-gstack/health/SKILL.md
+    path: skills/garrytan_gstack/health/SKILL.md
     description: Code quality dashboard. (gstack)
   - name: investigate
-    path: skills/garrytan-gstack/investigate/SKILL.md
+    path: skills/garrytan_gstack/investigate/SKILL.md
     description: Systematic debugging with root cause investigation. (gstack)
   - name: ios-clean
-    path: skills/garrytan-gstack/ios-clean/SKILL.md
+    path: skills/garrytan_gstack/ios-clean/SKILL.md
     description: "Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack)"
   - name: ios-design-review
-    path: skills/garrytan-gstack/ios-design-review/SKILL.md
+    path: skills/garrytan_gstack/ios-design-review/SKILL.md
     description: Visual design audit for iOS apps on real hardware. (gstack)
   - name: ios-fix
-    path: skills/garrytan-gstack/ios-fix/SKILL.md
+    path: skills/garrytan_gstack/ios-fix/SKILL.md
     description: Autonomous iOS bug fixer. (gstack)
   - name: ios-qa
-    path: skills/garrytan-gstack/ios-qa/SKILL.md
+    path: skills/garrytan_gstack/ios-qa/SKILL.md
     description: Live-device iOS QA for SwiftUI apps. (gstack)
   - name: ios-sync
-    path: skills/garrytan-gstack/ios-sync/SKILL.md
+    path: skills/garrytan_gstack/ios-sync/SKILL.md
     description: Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack)
   - name: land-and-deploy
-    path: skills/garrytan-gstack/land-and-deploy/SKILL.md
+    path: skills/garrytan_gstack/land-and-deploy/SKILL.md
     description: Land and deploy workflow. (gstack)
   - name: landing-report
-    path: skills/garrytan-gstack/landing-report/SKILL.md
+    path: skills/garrytan_gstack/landing-report/SKILL.md
     description: Read-only queue dashboard for workspace-aware ship. (gstack)
   - name: learn
-    path: skills/garrytan-gstack/learn/SKILL.md
+    path: skills/garrytan_gstack/learn/SKILL.md
     description: Manage project learnings.
   - name: make-pdf
-    path: skills/garrytan-gstack/make-pdf/SKILL.md
+    path: skills/garrytan_gstack/make-pdf/SKILL.md
     description: Turn any markdown file into a publication-quality PDF. (gstack)
   - name: office-hours
-    path: skills/garrytan-gstack/office-hours/SKILL.md
+    path: skills/garrytan_gstack/office-hours/SKILL.md
     description: YC Office Hours — two modes. (gstack)
   - name: open-gstack-browser
-    path: skills/garrytan-gstack/open-gstack-browser/SKILL.md
+    path: skills/garrytan_gstack/open-gstack-browser/SKILL.md
     description: Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.
   - name: gstack-openclaw-ceo-review
-    path: skills/garrytan-gstack/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md
+    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md
     description: Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan.
   - name: gstack-openclaw-investigate
-    path: skills/garrytan-gstack/openclaw/skills/gstack-openclaw-investigate/SKILL.md
+    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-investigate/SKILL.md
     description: Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working.
   - name: gstack-openclaw-office-hours
-    path: skills/garrytan-gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md
+    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md
     description: Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written.
   - name: gstack-openclaw-retro
-    path: skills/garrytan-gstack/openclaw/skills/gstack-openclaw-retro/SKILL.md
+    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-retro/SKILL.md
     description: Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective.
   - name: pair-agent
-    path: skills/garrytan-gstack/pair-agent/SKILL.md
+    path: skills/garrytan_gstack/pair-agent/SKILL.md
     description: Pair a remote AI agent with your browser. (gstack)
   - name: plan-ceo-review
-    path: skills/garrytan-gstack/plan-ceo-review/SKILL.md
+    path: skills/garrytan_gstack/plan-ceo-review/SKILL.md
     description: CEO/founder-mode plan review. (gstack)
   - name: plan-design-review
-    path: skills/garrytan-gstack/plan-design-review/SKILL.md
+    path: skills/garrytan_gstack/plan-design-review/SKILL.md
     description: Designer's eye plan review — interactive, like CEO and Eng review. (gstack)
   - name: plan-devex-review
-    path: skills/garrytan-gstack/plan-devex-review/SKILL.md
+    path: skills/garrytan_gstack/plan-devex-review/SKILL.md
     description: Interactive developer experience plan review. (gstack)
   - name: plan-eng-review
-    path: skills/garrytan-gstack/plan-eng-review/SKILL.md
+    path: skills/garrytan_gstack/plan-eng-review/SKILL.md
     description: Eng manager-mode plan review. (gstack)
   - name: plan-tune
-    path: skills/garrytan-gstack/plan-tune/SKILL.md
+    path: skills/garrytan_gstack/plan-tune/SKILL.md
     description: "Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack)"
   - name: qa-only
-    path: skills/garrytan-gstack/qa-only/SKILL.md
+    path: skills/garrytan_gstack/qa-only/SKILL.md
     description: Report-only QA testing. (gstack)
   - name: qa
-    path: skills/garrytan-gstack/qa/SKILL.md
+    path: skills/garrytan_gstack/qa/SKILL.md
     description: Systematically QA test a web application and fix bugs found. (gstack)
   - name: retro
-    path: skills/garrytan-gstack/retro/SKILL.md
+    path: skills/garrytan_gstack/retro/SKILL.md
     description: Weekly engineering retrospective. (gstack)
   - name: review
-    path: skills/garrytan-gstack/review/SKILL.md
+    path: skills/garrytan_gstack/review/SKILL.md
     description: Pre-landing PR review. (gstack)
   - name: scrape
-    path: skills/garrytan-gstack/scrape/SKILL.md
+    path: skills/garrytan_gstack/scrape/SKILL.md
     description: Pull data from a web page. (gstack)
   - name: setup-browser-cookies
-    path: skills/garrytan-gstack/setup-browser-cookies/SKILL.md
+    path: skills/garrytan_gstack/setup-browser-cookies/SKILL.md
     description: Import cookies from your real Chromium browser into the headless browse session. (gstack)
   - name: setup-deploy
-    path: skills/garrytan-gstack/setup-deploy/SKILL.md
+    path: skills/garrytan_gstack/setup-deploy/SKILL.md
     description: Configure deployment settings for /land-and-deploy.
   - name: setup-gbrain
-    path: skills/garrytan-gstack/setup-gbrain/SKILL.md
+    path: skills/garrytan_gstack/setup-gbrain/SKILL.md
     description: "Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack)"
   - name: ship
-    path: skills/garrytan-gstack/ship/SKILL.md
+    path: skills/garrytan_gstack/ship/SKILL.md
     description: "Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack)"
   - name: skillify
-    path: skills/garrytan-gstack/skillify/SKILL.md
+    path: skills/garrytan_gstack/skillify/SKILL.md
     description: Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack)
   - name: sync-gbrain
-    path: skills/garrytan-gstack/sync-gbrain/SKILL.md
+    path: skills/garrytan_gstack/sync-gbrain/SKILL.md
     description: Keep gbrain current with this repo's code and refresh agent search guidance in CLAUDE.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack)
   - name: unfreeze
-    path: skills/garrytan-gstack/unfreeze/SKILL.md
+    path: skills/garrytan_gstack/unfreeze/SKILL.md
     description: Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack)
