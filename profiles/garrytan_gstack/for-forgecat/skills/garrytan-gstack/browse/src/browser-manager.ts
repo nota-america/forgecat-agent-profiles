@@ -234,24 +234,25 @@ export class BrowserManager {
 
   /**
    * Find the gstack Chrome extension directory.
-   * Checks: repo root /extension, global install, dev install.
+   * Checks: explicit env override, install root, repo/dev-relative layout.
    */
   private findExtensionPath(): string | null {
     const fs = require('fs');
     const path = require('path');
+    const gstackDir = process.env.GSTACK_DIR || path.resolve(__dirname, '..', '..');
     const candidates = [
       // Explicit override via env var (used by GStack Browser.app bundle)
       process.env.BROWSE_EXTENSIONS_DIR || '',
+      // forgecat/global install root
+      path.join(gstackDir, 'extension'),
       // Relative to this source file (dev mode: browse/src/ -> ../../extension)
       path.resolve(__dirname, '..', '..', 'extension'),
-      // Global gstack install
-      path.join(process.env.HOME || '', '.claude', 'skills', 'gstack', 'extension'),
-      // Git repo root (detected via BROWSE_STATE_FILE location)
+      // Repo root (detected via BROWSE_STATE_FILE location)
       (() => {
         const stateFile = process.env.BROWSE_STATE_FILE || '';
         if (stateFile) {
           const repoRoot = path.resolve(path.dirname(stateFile), '..');
-          return path.join(repoRoot, '.claude', 'skills', 'gstack', 'extension');
+          return path.join(repoRoot, 'skills', 'garrytan-gstack', 'extension');
         }
         return '';
       })(),
@@ -461,9 +462,10 @@ export class BrowserManager {
           fs.writeFileSync(chromePlist, patched);
         }
         // Replace Chromium's Dock icon with ours (Chromium's process owns the Dock icon)
+        const gstackDir = process.env.GSTACK_DIR || path.resolve(__dirname, '..', '..');
         const iconCandidates = [
           path.join(__dirname, '..', '..', 'scripts', 'app', 'icon.icns'),       // repo dev mode
-          path.join(process.env.HOME || '', '.claude', 'skills', 'gstack', 'scripts', 'app', 'icon.icns'), // global install
+          path.join(gstackDir, 'scripts', 'app', 'icon.icns'),                  // forgecat/global install
         ];
         const iconSrc = iconCandidates.find(p => fs.existsSync(p));
         if (iconSrc) {

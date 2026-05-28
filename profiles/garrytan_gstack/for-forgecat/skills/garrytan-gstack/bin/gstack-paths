@@ -5,7 +5,7 @@
 #
 # Resolves three roots with explicit fallback chains so skills work the same
 # whether installed as a Claude Code plugin (CLAUDE_PLUGIN_DATA / CLAUDE_PLANS_DIR
-# set), a global $GSTACK_ROOT/ install, or a local checkout under
+# set), a global $GSTACK_DIR/ install, or a local checkout under
 # CI / container env where HOME may be unset.
 #
 # Chains:

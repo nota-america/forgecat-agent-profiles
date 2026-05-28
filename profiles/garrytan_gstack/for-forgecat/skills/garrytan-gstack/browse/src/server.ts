@@ -1706,7 +1706,7 @@ export function buildFetchHandler(cfg: ServerConfig): ServerHandle {
           // SKILL_ROOT values containing '..' for the same defense-in-depth
           // reason as the GSTACK_SLUG regex above.  Not exploitable today
           // (env set at install time), but the gate is one check.
-          const rawSkillRoot = process.env.GSTACK_SKILL_ROOT || `${homeDir}$GSTACK_ROOT`;
+          const rawSkillRoot = process.env.GSTACK_SKILL_ROOT || `${homeDir}$GSTACK_DIR`;
           if (rawSkillRoot.includes('..')) return null;
           const builtinWelcome = `${rawSkillRoot}/browse/src/welcome.html`;
           if (fs.existsSync(builtinWelcome)) return builtinWelcome;

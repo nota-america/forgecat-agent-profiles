@@ -23,7 +23,7 @@ export function generateReviewDashboard(_ctx: TemplateContext): string {
 After completing the review, read the review log and config to display the dashboard.
 
 \`\`\`bash
-$GSTACK_ROOT/bin/gstack-review-read
+$GSTACK_DIR/bin/gstack-review-read
 \`\`\`
 
 Parse the output. Find the most recent entry for each skill (plan-ceo-review, plan-eng-review, review, plan-design-review, design-review-lite, adversarial-review, codex-review, codex-plan-review). Ignore entries with timestamps older than 7 days. For the Eng Review row, show whichever is more recent between \`review\` (diff-scoped pre-landing review) and \`plan-eng-review\` (plan-stage architecture review). Append "(DIFF)" or "(PLAN)" to the status to distinguish. For the Adversarial row, show whichever is more recent between \`adversarial-review\` (new auto-scaled) and \`codex-review\` (legacy). For Design Review, show whichever is more recent between \`plan-design-review\` (full visual audit) and \`design-review-lite\` (code-level check). Append "(FULL)" or "(LITE)" to the status to distinguish. For the Outside Voice row, show the most recent \`codex-plan-review\` entry — this captures outside voices from both /plan-ceo-review and /plan-eng-review.
@@ -291,7 +291,7 @@ ${invokeBlock}
 After /${first} completes, re-run the design doc check:
 \`\`\`bash
 setopt +o nomatch 2>/dev/null || true  # zsh compat
-SLUG=$($GSTACK_ROOT/browse/bin/remote-slug 2>/dev/null || basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")
+SLUG=$($GSTACK_DIR/browse/bin/remote-slug 2>/dev/null || basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null | tr '/' '-' || echo 'no-branch')
 DESIGN=$(ls -t ~/.gstack/projects/$SLUG/*-$BRANCH-design-*.md 2>/dev/null | head -1)
 [ -z "$DESIGN" ] && DESIGN=$(ls -t ~/.gstack/projects/$SLUG/*-design-*.md 2>/dev/null | head -1)
@@ -473,7 +473,7 @@ DIFF_DEL=$(git diff "$DIFF_BASE" --stat | tail -1 | grep -oE '[0-9]+ deletion' |
 DIFF_TOTAL=$((DIFF_INS + DIFF_DEL))
 command -v codex >/dev/null 2>&1 && echo "CODEX_AVAILABLE" || echo "CODEX_NOT_AVAILABLE"
 # Legacy opt-out — only gates Codex passes, Claude always runs
-OLD_CFG=$($GSTACK_ROOT/bin/gstack-config get codex_reviews 2>/dev/null || true)
+OLD_CFG=$($GSTACK_DIR/bin/gstack-config get codex_reviews 2>/dev/null || true)
 echo "DIFF_SIZE: $DIFF_TOTAL"
 echo "OLD_CFG: \${OLD_CFG:-not_set}"
 \`\`\`
@@ -561,7 +561,7 @@ If \`DIFF_TOTAL < 200\`: skip this section silently. The Claude + Codex adversar
 
 After all passes complete, persist:
 \`\`\`bash
-$GSTACK_ROOT/bin/gstack-review-log '{"skill":"adversarial-review","timestamp":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","status":"STATUS","source":"SOURCE","tier":"always","gate":"GATE","commit":"'"$(git rev-parse --short HEAD)"'"}'
+$GSTACK_DIR/bin/gstack-review-log '{"skill":"adversarial-review","timestamp":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","status":"STATUS","source":"SOURCE","tier":"always","gate":"GATE","commit":"'"$(git rev-parse --short HEAD)"'"}'
 \`\`\`
 Substitute: STATUS = "clean" if no findings across ALL passes, "issues_found" if any pass found issues. SOURCE = "both" if Codex ran, "claude" if only Claude subagent ran. GATE = the Codex structured review gate result ("pass"/"fail"), "skipped" if diff < 200, or "informational" if Codex was unavailable. If all passes failed, do NOT persist.
 
@@ -717,7 +717,7 @@ If no tension points exist, note: "No cross-model tension — both reviewers agr
 
 **Persist the result:**
 \`\`\`bash
-$GSTACK_ROOT/bin/gstack-review-log '{"skill":"codex-plan-review","timestamp":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","status":"STATUS","source":"SOURCE","commit":"'"$(git rev-parse --short HEAD)"'"}'
+$GSTACK_DIR/bin/gstack-review-log '{"skill":"codex-plan-review","timestamp":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","status":"STATUS","source":"SOURCE","commit":"'"$(git rev-parse --short HEAD)"'"}'
 \`\`\`
 
 Substitute: STATUS = "clean" if no findings, "issues_found" if findings exist.
@@ -959,7 +959,7 @@ IMPACT: {HIGH|MEDIUM|LOW} — {what breaks or degrades if this stays undelivered
 **Only for discrepancies sourced from plan files** (not commit messages or TODOS.md), log a learning so future sessions know this pattern occurred:
 
 \`\`\`bash
-$GSTACK_ROOT/bin/gstack-learnings-log '{
+$GSTACK_DIR/bin/gstack-learnings-log '{
   "type": "pitfall",
   "key": "plan-delivery-gap-KEBAB_SUMMARY",
   "insight": "Planned X but delivered Y because Z",
@@ -1087,7 +1087,7 @@ export function generateCrossReviewDedup(ctx: TemplateContext): string {
 Before classifying findings, check if any were previously skipped by the user in a prior review on this branch.
 
 \`\`\`bash
-$GSTACK_ROOT/bin/gstack-review-read
+$GSTACK_DIR/bin/gstack-review-read
 \`\`\`
 
 Parse the output: only lines BEFORE \`---CONFIG---\` are JSONL entries (the output also contains \`---CONFIG---\` and \`---HEAD---\` footer sections that are not JSONL — ignore those).

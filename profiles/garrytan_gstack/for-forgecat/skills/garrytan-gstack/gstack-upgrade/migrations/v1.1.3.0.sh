@@ -8,7 +8,7 @@
 #
 # Ownership guard: the script only removes the install IF it owns it —
 # i.e., the directory or its SKILL.md is a symlink resolving inside
-# $GSTACK_ROOT/. A user's own /checkpoint skill (regular file,
+# $GSTACK_DIR/. A user's own /checkpoint skill (regular file,
 # or symlink pointing elsewhere) is preserved.
 #
 # Three supported install shapes to handle:
@@ -32,7 +32,7 @@ fi
 SKILLS_DIR="${HOME}/.claude/skills"
 OLD_TOPLEVEL="${SKILLS_DIR}/checkpoint"
 OLD_NAMESPACED="${SKILLS_DIR}/gstack/checkpoint"
-GSTACK_ROOT_REAL=""
+GSTACK_DIR_REAL=""
 
 # Helper: canonical-path a target (symlink-safe). Prints the resolved path, or
 # empty on failure (broken symlink, ENOENT, ELOOP). Both realpath AND the python3
@@ -53,7 +53,7 @@ resolve_real() {
 # Resolve the canonical path of the gstack skills root. If gstack isn't
 # installed here, there's nothing to migrate.
 if [ -d "${SKILLS_DIR}/gstack" ]; then
-  GSTACK_ROOT_REAL=$(resolve_real "${SKILLS_DIR}/gstack")
+  GSTACK_DIR_REAL=$(resolve_real "${SKILLS_DIR}/gstack")
 fi
 
 # Helper: does $1 (canonical path) live inside $2 (canonical path)?
@@ -73,7 +73,7 @@ removed_any=0
 if [ -L "$OLD_TOPLEVEL" ]; then
   # Directory symlink (or file symlink). Canonicalize and check ownership.
   target_real=$(resolve_real "$OLD_TOPLEVEL")
-  if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
+  if [ -n "$GSTACK_DIR_REAL" ] && path_inside "$target_real" "$GSTACK_DIR_REAL"; then
     rm -- "$OLD_TOPLEVEL"
     echo "  [v1.1.3.0] Removed stale /checkpoint symlink (was shadowing Claude Code's /rewind alias)."
     removed_any=1
@@ -88,7 +88,7 @@ elif [ -d "$OLD_TOPLEVEL" ]; then
   symlink_count=$(find "$OLD_TOPLEVEL" -maxdepth 1 -type l 2>/dev/null | wc -l | tr -d ' ')
   if [ "$file_count" = "0" ] && [ "$symlink_count" = "1" ] && [ -L "$OLD_TOPLEVEL/SKILL.md" ]; then
     target_real=$(resolve_real "$OLD_TOPLEVEL/SKILL.md")
-    if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
+    if [ -n "$GSTACK_DIR_REAL" ] && path_inside "$target_real" "$GSTACK_DIR_REAL"; then
       # Strip macOS sidecars first (not user content), then remove the dir.
       find "$OLD_TOPLEVEL" -maxdepth 1 \( -name '.DS_Store' -o -name '._*' \) -type f -delete 2>/dev/null || true
       rm -r -- "$OLD_TOPLEVEL"
@@ -103,15 +103,15 @@ elif [ -d "$OLD_TOPLEVEL" ]; then
 fi
 # Missing → no-op (idempotency).
 
-# --- Shape 2: $GSTACK_ROOT/checkpoint/
+# --- Shape 2: $GSTACK_DIR/checkpoint/
 # Ownership guard applies here too: only remove if this path resolves inside the
 # gstack skills root. If a user replaced the directory with a symlink pointing
 # elsewhere (e.g., at their own fork), respect it.
 if [ -L "$OLD_NAMESPACED" ]; then
   target_real=$(resolve_real "$OLD_NAMESPACED")
-  if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
+  if [ -n "$GSTACK_DIR_REAL" ] && path_inside "$target_real" "$GSTACK_DIR_REAL"; then
     rm -- "$OLD_NAMESPACED"
-    echo "  [v1.1.3.0] Removed stale $GSTACK_ROOT/checkpoint symlink."
+    echo "  [v1.1.3.0] Removed stale $GSTACK_DIR/checkpoint symlink."
     removed_any=1
   else
     echo "  [v1.1.3.0] Leaving $OLD_NAMESPACED alone — symlink target is outside gstack."
@@ -121,9 +121,9 @@ elif [ -d "$OLD_NAMESPACED" ]; then
   # it resolves to a path inside the gstack root (it should, unless someone
   # hand-edited the tree).
   target_real=$(resolve_real "$OLD_NAMESPACED")
-  if [ -n "$GSTACK_ROOT_REAL" ] && path_inside "$target_real" "$GSTACK_ROOT_REAL"; then
+  if [ -n "$GSTACK_DIR_REAL" ] && path_inside "$target_real" "$GSTACK_DIR_REAL"; then
     rm -rf -- "$OLD_NAMESPACED"
-    echo "  [v1.1.3.0] Removed stale $GSTACK_ROOT/checkpoint/ (replaced by context-save + context-restore)."
+    echo "  [v1.1.3.0] Removed stale $GSTACK_DIR/checkpoint/ (replaced by context-save + context-restore)."
     removed_any=1
   else
     echo "  [v1.1.3.0] Leaving $OLD_NAMESPACED alone — resolves outside gstack."

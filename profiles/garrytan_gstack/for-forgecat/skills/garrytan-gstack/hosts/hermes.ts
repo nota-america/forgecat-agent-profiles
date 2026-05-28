@@ -24,8 +24,8 @@ const hermes: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '$GSTACK_ROOT', to: '~/.hermes/skills/garrytan-gstack' },
-    { from: '$GSTACK_ROOT', to: '.hermes/skills/garrytan-gstack' },
+    { from: '$GSTACK_DIR', to: '~/.hermes/skills/garrytan-gstack' },
+    { from: '$GSTACK_DIR', to: '.hermes/skills/garrytan-gstack' },
     { from: '.claude/skills', to: '.hermes/skills' },
     { from: 'CLAUDE.md', to: 'AGENTS.md' },
   ],

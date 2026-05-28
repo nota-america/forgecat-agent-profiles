@@ -29,8 +29,8 @@ const gbrain: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '$GSTACK_ROOT', to: '~/.gbrain/skills/garrytan-gstack' },
-    { from: '$GSTACK_ROOT', to: '.gbrain/skills/garrytan-gstack' },
+    { from: '$GSTACK_DIR', to: '~/.gbrain/skills/garrytan-gstack' },
+    { from: '$GSTACK_DIR', to: '.gbrain/skills/garrytan-gstack' },
     { from: '.claude/skills', to: '.gbrain/skills' },
     { from: 'CLAUDE.md', to: 'AGENTS.md' },
   ],

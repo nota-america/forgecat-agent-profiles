@@ -393,16 +393,16 @@ function rotateIfNeeded(): void {
  * binary layouts can break that).
  *
  * Order:
- *  1. $GSTACK_ROOT/bin/gstack-telemetry-log  (global install)
- *  2. $GSTACK_ROOT/bin/gstack-telemetry-log    (symlinked dev)
- *  3. bin/gstack-telemetry-log                          (in-repo dev)
+ *  1. $GSTACK_DIR/bin/gstack-telemetry-log       (forgecat/global install)
+ *  2. <gstack checkout>/bin/gstack-telemetry-log (dev/install-relative)
+ *  3. bin/gstack-telemetry-log                   (in-repo dev)
  */
 function findTelemetryBinary(): string | null {
   const candidates = [
-    path.join(os.homedir(), '.claude', 'skills', 'gstack', 'bin', 'gstack-telemetry-log'),
-    path.resolve(process.cwd(), '.claude', 'skills', 'gstack', 'bin', 'gstack-telemetry-log'),
+    process.env.GSTACK_DIR ? path.join(process.env.GSTACK_DIR, 'bin', 'gstack-telemetry-log') : '',
+    path.resolve(__dirname, '..', '..', 'bin', 'gstack-telemetry-log'),
     path.resolve(process.cwd(), 'bin', 'gstack-telemetry-log'),
-  ];
+  ].filter(Boolean);
   for (const c of candidates) {
     try {
       fs.accessSync(c, fs.constants.X_OK);

@@ -26,7 +26,7 @@ fi
 
 # If the user has already explicitly set explain_level (either way), count that
 # as an answer — they've made their choice, don't ask again.
-EXPLAIN_LEVEL_SET="$("${HOME}$GSTACK_ROOT/bin/gstack-config" get explain_level 2>/dev/null || true)"
+EXPLAIN_LEVEL_SET="$("${HOME}$GSTACK_DIR/bin/gstack-config" get explain_level 2>/dev/null || true)"
 if [ -n "$EXPLAIN_LEVEL_SET" ]; then
   touch "$PROMPTED_FLAG"
   exit 0

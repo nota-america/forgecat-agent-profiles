@@ -205,7 +205,7 @@ Default output from every tier-≥2 skill follows the Writing Style section in
 outcome terms ("what breaks for your users if...") not implementation terms,
 short sentences, decisions close with user impact. Power users who want the
 tighter V0 prose set `gstack-config set explain_level terse` (binary switch,
-no middle mode). See `$GSTACK_ROOT/docs/designs/PLAN_TUNING_V1.md` for the full design
+no middle mode). See `$GSTACK_DIR/docs/designs/PLAN_TUNING_V1.md` for the full design
 rationale. The review pacing overhaul that originally tried to ride alongside
 writing-style was extracted to V1.1 — see `docs/designs/PACING_UPDATES_V0.md`.
 
@@ -218,7 +218,7 @@ project uses.
 
 **Sidebar architecture:** Before modifying `sidepanel.js`, `background.js`,
 `content.js`, `terminal-agent.ts`, or sidebar-related server endpoints,
-read `$GSTACK_ROOT/docs/designs/SIDEBAR_MESSAGE_FLOW.md`. The sidebar has one primary
+read `$GSTACK_DIR/docs/designs/SIDEBAR_MESSAGE_FLOW.md`. The sidebar has one primary
 surface — the **Terminal** pane (interactive `claude` PTY) — with
 Activity / Refs / Inspector as debug overlays behind the footer's
 `debug` toggle. The chat queue path was ripped once the PTY proved out;
@@ -351,17 +351,17 @@ always BLOCKs (deterministic).
 
 ## Dev symlink awareness
 
-When developing gstack, `$GSTACK_ROOT` may be a symlink back to this
+When developing gstack, `$GSTACK_DIR` may be a symlink back to this
 working directory (gitignored). This means skill changes are **live immediately**,
 great for rapid iteration, risky during big refactors where half-written skills
 could break other Claude Code sessions using gstack concurrently.
 
-**Check once per session:** Run `ls -la $GSTACK_ROOT` to see if it's a
+**Check once per session:** Run `ls -la $GSTACK_DIR` to see if it's a
 symlink or a real copy. If it's a symlink to your working directory, be aware that:
 - Template changes + `bun run gen:skill-docs` immediately affect all gstack invocations
 - Breaking changes to SKILL.md.tmpl files can break concurrent gstack sessions
-- During large refactors, remove the symlink (`rm $GSTACK_ROOT`) so the
-  global install at `$GSTACK_ROOT/` is used instead
+- During large refactors, remove the symlink (`rm $GSTACK_DIR`) so the
+  global install at `$GSTACK_DIR/` is used instead
 
 **Prefix setting:** Setup creates real directories (not symlinks) at the top level
 with a SKILL.md symlink inside (e.g., `qa/SKILL.md -> gstack/qa/SKILL.md`). This
@@ -816,15 +816,15 @@ Repeat for each skill: `gstack-openclaw-ceo-review`, `gstack-openclaw-investigat
 
 ## Deploying to the active skill
 
-The active skill lives at `$GSTACK_ROOT/`. After making changes:
+The active skill lives at `$GSTACK_DIR/`. After making changes:
 
 1. Push your branch
-2. Fetch and reset in the skill directory: `cd $GSTACK_ROOT && git fetch origin && git reset --hard origin/main`
-3. Rebuild: `cd $GSTACK_ROOT && bun run build`
+2. Fetch and reset in the skill directory: `cd $GSTACK_DIR && git fetch origin && git reset --hard origin/main`
+3. Rebuild: `cd $GSTACK_DIR && bun run build`
 
 Or copy the binaries directly:
-- `cp browse/dist/browse $GSTACK_ROOT/browse/dist/browse`
-- `cp design/dist/design $GSTACK_ROOT/design/dist/design`
+- `cp browse/dist/browse $GSTACK_DIR/browse/dist/browse`
+- `cp design/dist/design $GSTACK_DIR/design/dist/design`
 
 ## Skill routing
 

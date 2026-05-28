@@ -32,7 +32,7 @@ The iOS `StateServer` is loopback-only **always**, even in remote mode. Identity
 
 ## Step 1: Add the DebugBridge templates to your iOS app
 
-The templates live at `$GSTACK_ROOT/ios-qa/templates/` after `./setup`. The fastest install is to invoke the `/ios-qa` skill in Claude Code from your app's root — it reads your Swift source, codegens typed `@Observable` state accessors, and lays down the templates with your bundle ID. Or do it by hand:
+The templates live at `$GSTACK_DIR/ios-qa/templates/` after `./setup`. The fastest install is to invoke the `/ios-qa` skill in Claude Code from your app's root — it reads your Swift source, codegens typed `@Observable` state accessors, and lays down the templates with your bundle ID. Or do it by hand:
 
 1. Copy these into a `DebugBridge/` SPM package inside your app workspace:
    - `Sources/DebugBridgeCore/StateServer.swift` (from `StateServer.swift.template`)

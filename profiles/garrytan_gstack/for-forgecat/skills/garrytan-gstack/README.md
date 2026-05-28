@@ -48,14 +48,14 @@ Fork it. Improve it. Make it yours. And if you want to hate on free open source 
 
 Open Claude Code and paste this. Claude does the rest.
 
-> Install gstack: run **`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $GSTACK_ROOT && cd $GSTACK_ROOT && ./setup`** then add a "gstack" section to CLAUDE.md that says to use the /browse skill from gstack for all web browsing, never use mcp\_\_claude-in-chrome\_\_\* tools, and lists the available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review, /design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse, /connect-chrome, /qa, /qa-only, /design-review, /setup-browser-cookies, /setup-deploy, /setup-gbrain, /retro, /investigate, /document-release, /document-generate, /codex, /cso, /autoplan, /plan-devex-review, /devex-review, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade, /learn. Then ask the user if they also want to add gstack to the current project so teammates get it.
+> Install gstack: run **`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $GSTACK_DIR && cd $GSTACK_DIR && ./setup`** then add a "gstack" section to CLAUDE.md that says to use the /browse skill from gstack for all web browsing, never use mcp\_\_claude-in-chrome\_\_\* tools, and lists the available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review, /design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse, /connect-chrome, /qa, /qa-only, /design-review, /setup-browser-cookies, /setup-deploy, /setup-gbrain, /retro, /investigate, /document-release, /document-generate, /codex, /cso, /autoplan, /plan-devex-review, /devex-review, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade, /learn. Then ask the user if they also want to add gstack to the current project so teammates get it.
 
 ### Step 2: Team mode — auto-update for shared repos (recommended)
 
 From inside your repo, paste this. Switches you to team mode, bootstraps the repo so teammates get gstack automatically, and commits the change:
 
 ```bash
-(cd $GSTACK_ROOT && ./setup --team) && $GSTACK_ROOT/bin/gstack-team-init required && git add .claude/ CLAUDE.md && git commit -m "require gstack for AI-assisted work"
+(cd $GSTACK_DIR && ./setup --team) && $GSTACK_DIR/bin/gstack-team-init required && git add .claude/ CLAUDE.md && git commit -m "require gstack for AI-assisted work"
 ```
 
 No vendored files in your repo, no version drift, no manual upgrades. Every Claude Code session starts with a fast auto-update check (throttled to once/hour, network-failure-safe, completely silent).
@@ -67,7 +67,7 @@ Swap `required` for `optional` if you'd rather nudge teammates than block them.
 OpenClaw spawns Claude Code sessions via ACP, so every gstack skill just works
 when Claude Code has gstack installed. Paste this to your OpenClaw agent:
 
-> Install gstack: run `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $GSTACK_ROOT && cd $GSTACK_ROOT && ./setup` to install gstack for Claude Code. Then add a "Coding Tasks" section to AGENTS.md that says: when spawning Claude Code sessions for coding work, tell the session to use gstack skills. Include these examples — security audit: "Load gstack. Run /cso", code review: "Load gstack. Run /review", QA test a URL: "Load gstack. Run /qa https://...", build a feature end-to-end: "Load gstack. Run /autoplan, implement the plan, then run /ship", plan before building: "Load gstack. Run /office-hours then /autoplan. Save the plan, don't implement."
+> Install gstack: run `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $GSTACK_DIR && cd $GSTACK_DIR && ./setup` to install gstack for Claude Code. Then add a "Coding Tasks" section to AGENTS.md that says: when spawning Claude Code sessions for coding work, tell the session to use gstack skills. Include these examples — security audit: "Load gstack. Run /cso", code review: "Load gstack. Run /review", QA test a URL: "Load gstack. Run /qa https://...", build a feature end-to-end: "Load gstack. Run /autoplan, implement the plan, then run /ship", plan before building: "Load gstack. Run /office-hours then /autoplan. Save the plan, don't implement."
 
 **After setup, just talk to your OpenClaw agent naturally:**
 
@@ -113,12 +113,12 @@ Or target a specific agent with `./setup --host <name>`:
 
 | Agent | Flag | Skills install to |
 |-------|------|-------------------|
-| OpenAI Codex CLI | `--host codex` | `$GSTACK_ROOT-*/` |
+| OpenAI Codex CLI | `--host codex` | `$GSTACK_DIR-*/` |
 | OpenCode | `--host opencode` | `~/.config/opencode/skills/garrytan-gstack-*/` |
-| Cursor | `--host cursor` | `$GSTACK_ROOT-*/` |
-| Factory Droid | `--host factory` | `$GSTACK_ROOT-*/` |
+| Cursor | `--host cursor` | `$GSTACK_DIR-*/` |
+| Factory Droid | `--host factory` | `$GSTACK_DIR-*/` |
 | Slate | `--host slate` | `~/.slate/skills/garrytan-gstack-*/` |
-| Kiro | `--host kiro` | `$GSTACK_ROOT-*/` |
+| Kiro | `--host kiro` | `$GSTACK_DIR-*/` |
 | Hermes | `--host hermes` | `~/.hermes/skills/garrytan-gstack-*/` |
 | GBrain (mod) | `--host gbrain` | `~/.gbrain/skills/garrytan-gstack-*/` |
 
@@ -319,7 +319,7 @@ right skill activates. You don't need to remember slash command names or acronym
 If gstack is installed on your machine:
 
 ```bash
-$GSTACK_ROOT/bin/gstack-uninstall
+$GSTACK_DIR/bin/gstack-uninstall
 ```
 
 This handles skills, symlinks, global state (`~/.gstack/`), project-local state, browse daemons, and temp files. Use `--keep-state` to preserve config and analytics. Use `--force` to skip confirmation.
@@ -347,23 +347,23 @@ while IFS= read -r dir; do
 done
 
 # 3. Remove gstack
-rm -rf $GSTACK_ROOT
+rm -rf $GSTACK_DIR
 
 # 4. Remove global state
 rm -rf ~/.gstack
 
 # 5. Remove integrations (skip any you never installed)
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
+rm -rf $GSTACK_DIR* 2>/dev/null
+rm -rf $GSTACK_DIR* 2>/dev/null
+rm -rf $GSTACK_DIR* 2>/dev/null
+rm -rf $GSTACK_DIR* 2>/dev/null
 
 # 6. Remove temp files
 rm -f /tmp/gstack-* 2>/dev/null
 
 # 7. Per-project cleanup (run from each project root)
-rm -rf .gstack .gstack-worktrees $GSTACK_ROOT 2>/dev/null
-rm -rf $GSTACK_ROOT* .factory/skills/garrytan-gstack* 2>/dev/null
+rm -rf .gstack .gstack-worktrees $GSTACK_DIR 2>/dev/null
+rm -rf $GSTACK_DIR* .factory/skills/garrytan-gstack* 2>/dev/null
 ```
 
 ### Clean up CLAUDE.md
@@ -452,21 +452,21 @@ Data is stored in [Supabase](https://supabase.com) (open source Firebase alterna
 
 ## Troubleshooting
 
-**Skill not showing up?** `cd $GSTACK_ROOT && ./setup`
+**Skill not showing up?** `cd $GSTACK_DIR && ./setup`
 
-**`/browse` fails?** `cd $GSTACK_ROOT && bun install && bun run build`
+**`/browse` fails?** `cd $GSTACK_DIR && bun install && bun run build`
 
 **Stale install?** Run `/gstack-upgrade` — or set `auto_upgrade: true` in `~/.gstack/config.yaml`
 
-**Want shorter commands?** `cd $GSTACK_ROOT && ./setup --no-prefix` — switches from `/gstack-qa` to `/qa`. Your choice is remembered for future upgrades.
+**Want shorter commands?** `cd $GSTACK_DIR && ./setup --no-prefix` — switches from `/gstack-qa` to `/qa`. Your choice is remembered for future upgrades.
 
-**Want namespaced commands?** `cd $GSTACK_ROOT && ./setup --prefix` — switches from `/qa` to `/gstack-qa`. Useful if you run other skill packs alongside gstack.
+**Want namespaced commands?** `cd $GSTACK_DIR && ./setup --prefix` — switches from `/qa` to `/gstack-qa`. Useful if you run other skill packs alongside gstack.
 
-**Codex says "Skipped loading skill(s) due to invalid SKILL.md"?** Your Codex skill descriptions are stale. Fix: `cd $GSTACK_ROOT && git pull && ./setup --host codex` — or for repo-local installs: `cd "$(readlink -f $GSTACK_ROOT)" && git pull && ./setup --host codex`
+**Codex says "Skipped loading skill(s) due to invalid SKILL.md"?** Your Codex skill descriptions are stale. Fix: `cd $GSTACK_DIR && git pull && ./setup --host codex` — or for repo-local installs: `cd "$(readlink -f $GSTACK_DIR)" && git pull && ./setup --host codex`
 
 **Windows users:** gstack works on Windows 11 via Git Bash or WSL. Node.js is required in addition to Bun — Bun has a known bug with Playwright's pipe transport on Windows ([bun#4253](https://github.com/oven-sh/bun/issues/4253)). The browse server automatically falls back to Node.js. Make sure both `bun` and `node` are on your PATH.
 
-On Windows without Developer Mode (MSYS2 / Git Bash), `setup` falls back to file copies instead of symlinks because `ln -snf` produces frozen copies that don't refresh on `git pull`. **Re-run `cd $GSTACK_ROOT && ./setup` after every `git pull`** so your skill files match the repo. `setup` prints a one-line note reminding you. Unix and WSL keep symlinks and don't need the re-run.
+On Windows without Developer Mode (MSYS2 / Git Bash), `setup` falls back to file copies instead of symlinks because `ln -snf` produces frozen copies that don't refresh on `git pull`. **Re-run `cd $GSTACK_DIR && ./setup` after every `git pull`** so your skill files match the repo. `setup` prints a one-line note reminding you. Unix and WSL keep symlinks and don't need the re-run.
 
 **Claude says it can't see the skills?** Make sure your project's `CLAUDE.md` has a gstack section. Add this:
 

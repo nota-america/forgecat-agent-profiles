@@ -16,8 +16,8 @@ GSTACK_CONFIG="${SCRIPT_DIR}/gstack-config"
 # Detect install dir
 INSTALL_DIR="${GSTACK_INSTALL_DIR:-}"
 if [ -z "$INSTALL_DIR" ]; then
-  if [ -d "$GSTACK_ROOT" ]; then
-    INSTALL_DIR="$GSTACK_ROOT"
+  if [ -d "$GSTACK_DIR" ]; then
+    INSTALL_DIR="$GSTACK_DIR"
   elif [ -d "${SCRIPT_DIR}/.." ] && [ -f "${SCRIPT_DIR}/../setup" ]; then
     INSTALL_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
   fi
@@ -25,7 +25,7 @@ fi
 
 if [ -z "$INSTALL_DIR" ] || [ ! -d "$INSTALL_DIR" ]; then
   echo "Error: gstack install directory not found." >&2
-  echo "Run: cd $GSTACK_ROOT && ./setup" >&2
+  echo "Run: cd $GSTACK_DIR && ./setup" >&2
   exit 1
 fi
 

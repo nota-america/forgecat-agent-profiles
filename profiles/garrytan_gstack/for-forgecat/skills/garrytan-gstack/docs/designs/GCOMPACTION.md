@@ -1,8 +1,8 @@
 # GCOMPACTION.md — Design & Architecture (TABLED)
 
-**Target path on approval:** `$GSTACK_ROOT/docs/designs/GCOMPACTION.md`
+**Target path on approval:** `$GSTACK_DIR/docs/designs/GCOMPACTION.md`
 
-This is the preserved design artifact for `gstack compact`. Everything above the first `---` divider below gets extracted verbatim to `$GSTACK_ROOT/docs/designs/GCOMPACTION.md` on plan approval. Everything after that divider is archived research (office hours + competitive deep-dive + eng-review notes + codex review + research findings) that informed the design.
+This is the preserved design artifact for `gstack compact`. Everything above the first `---` divider below gets extracted verbatim to `$GSTACK_DIR/docs/designs/GCOMPACTION.md` on plan approval. Everything after that divider is archived research (office hours + competitive deep-dive + eng-review notes + codex review + research findings) that informed the design.
 
 ---
 
@@ -805,7 +805,7 @@ gstack ships under MIT. To keep the license clean for downstream users, this pro
 - **Fixture sourcing.** Golden-file fixtures come from running real tools against real projects — they are our own captures, not imported from RTK or tokenjuice. This keeps the test corpus free of license-tangled content.
 - **Forbidden sources.** Before adding any new reference project, run `gh api repos/OWNER/REPO --jq '.license'` and verify the license key is one of: `mit`, `apache-2.0`, `bsd-2-clause`, `bsd-3-clause`, `isc`, `cc0-1.0`, `unlicense`. If the project has no license field, treat it as "all rights reserved" and do not draw from it. Reject `agpl-3.0`, `gpl-*`, `sspl-*`, and any custom or source-available license.
 
-CI enforcement: a `scripts/check-references.ts` script parses `$GSTACK_ROOT/docs/designs/GCOMPACTION.md` for GitHub URLs and re-runs the license check, failing if any referenced project's license moves off the allowlist.
+CI enforcement: a `scripts/check-references.ts` script parses `$GSTACK_DIR/docs/designs/GCOMPACTION.md` for GitHub URLs and re-runs the license check, failing if any referenced project's license moves off the allowlist.
 
 ## References
 
@@ -828,4 +828,4 @@ CI enforcement: a `scripts/check-references.ts` script parses `$GSTACK_ROOT/docs
 - [MadPlay: RTK 80% token reduction experiment](https://madplay.github.io/en/post/rtk-reduce-ai-coding-agent-token-usage)
 - [Esteban Estrada: RTK 70% Claude Code reduction](https://codestz.dev/experiments/rtk-rust-token-killer)
 
-**End of GCOMPACTION.md canonical section.** On plan approval, everything above is copied verbatim to `$GSTACK_ROOT/docs/designs/GCOMPACTION.md` as a **tabled design artifact**. No code is written; no hook is installed; no CHANGELOG entry is added. The doc exists so a future sprint can unblock quickly when Anthropic ships the built-in-tool output-replace API.
+**End of GCOMPACTION.md canonical section.** On plan approval, everything above is copied verbatim to `$GSTACK_DIR/docs/designs/GCOMPACTION.md` as a **tabled design artifact**. No code is written; no hook is installed; no CHANGELOG entry is added. The doc exists so a future sprint can unblock quickly when Anthropic ships the built-in-tool output-replace API.

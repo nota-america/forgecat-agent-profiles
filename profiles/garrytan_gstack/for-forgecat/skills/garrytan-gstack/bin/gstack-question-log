@@ -87,7 +87,7 @@ for (const pat of INJECTION_PATTERNS) {
 }
 
 // Registry lookup for category + door_type enrichment.
-// Registry file is at \$GSTACK_ROOT/scripts/question-registry.ts, but we don't import
+// Registry file is at \$GSTACK_DIR/scripts/question-registry.ts, but we don't import
 // TypeScript at runtime here — we pass through what was provided and fill in defaults.
 // The caller (the preamble resolver) is expected to pass category+door_type from
 // the registry when it knows them; for ad-hoc ids both can be omitted.

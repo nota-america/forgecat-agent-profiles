@@ -161,7 +161,7 @@ What shipped:
 - Timeline binaries: `bin/gstack-timeline-log` and `bin/gstack-timeline-read`.
 - Routing rules: /checkpoint and /health added to preamble skill routing.
 
-Design doc: `$GSTACK_ROOT/docs/designs/SESSION_INTELLIGENCE.md`
+Design doc: `$GSTACK_DIR/docs/designs/SESSION_INTELLIGENCE.md`
 
 ### Release 4: "Adaptive Ceremony" — NOT YET SHIPPED
 
