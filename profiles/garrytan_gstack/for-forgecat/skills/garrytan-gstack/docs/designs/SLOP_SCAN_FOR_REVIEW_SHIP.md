@@ -77,8 +77,8 @@ Follow CLAUDE.md "Slop-scan" section. Summary:
 
 | Task | Human | CC+gstack |
 |------|-------|-----------|
-| Add to $GSTACK_ROOT/review/SKILL.md.tmpl | 2 hours | 10 min |
+| Add to $GSTACK_DIR/review/SKILL.md.tmpl | 2 hours | 10 min |
 | Add to ship/SKILL.md.tmpl | 2 hours | 10 min |
-| Add to $GSTACK_ROOT/review/checklist.md | 1 hour | 5 min |
+| Add to $GSTACK_DIR/review/checklist.md | 1 hour | 5 min |
 | Test with actual PRs | 2 hours | 15 min |
 | Regenerate SKILL.md files | — | 1 min |

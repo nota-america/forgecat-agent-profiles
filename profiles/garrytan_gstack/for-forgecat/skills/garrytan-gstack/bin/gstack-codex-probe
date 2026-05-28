@@ -94,7 +94,7 @@ _gstack_codex_log_hang() {
   # Best-effort: errors swallowed.
   local _mode="${1:-unknown}"
   local _prompt_size="${2:-0}"
-  local _log_bin="$GSTACK_ROOT/bin/gstack-learnings-log"
+  local _log_bin="$GSTACK_DIR/bin/gstack-learnings-log"
   [ -x "$_log_bin" ] || return 0
   local _key="codex-hang-$(date +%s 2>/dev/null || echo unknown)"
   "$_log_bin" "$(printf '{"skill":"codex","type":"operational","key":"%s","insight":"Codex timed out after 600s during [%s] invocation. Prompt size: %s. Consider splitting prompt or checking network.","confidence":8,"source":"observed","files":["codex/SKILL.md.tmpl","autoplan/SKILL.md.tmpl"]}' "$_key" "$_mode" "$_prompt_size")" \

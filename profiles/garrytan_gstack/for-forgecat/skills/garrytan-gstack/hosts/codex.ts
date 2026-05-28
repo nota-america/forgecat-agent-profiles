@@ -25,8 +25,8 @@ const codex: HostConfig = {
   },
 
   pathRewrites: [
-    { from: '$GSTACK_ROOT', to: '$GSTACK_ROOT' },
-    { from: '$GSTACK_ROOT', to: '.agents/skills/garrytan-gstack' },
+    { from: '$GSTACK_DIR', to: '$GSTACK_DIR' },
+    { from: '$GSTACK_DIR', to: '.agents/skills/garrytan-gstack' },
     { from: '.claude/skills/review', to: '.agents/skills/garrytan-gstack/review' },
     { from: '.claude/skills', to: '.agents/skills' },
   ],

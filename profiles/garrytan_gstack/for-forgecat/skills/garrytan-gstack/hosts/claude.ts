@@ -6,8 +6,8 @@ const claude: HostConfig = {
   cliCommand: 'claude',
   cliAliases: [],
 
-  globalRoot: '$GSTACK_ROOT',
-  localSkillRoot: '$GSTACK_ROOT',
+  globalRoot: '$GSTACK_DIR',
+  localSkillRoot: '$GSTACK_DIR',
   hostSubdir: '.claude',
   usesEnvVars: false,
 

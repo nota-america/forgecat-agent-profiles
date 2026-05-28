@@ -69,7 +69,7 @@ Use AskUserQuestion:
 - Continue with the workflow.
 
 **If "Add as P0 TODO":**
-- If \`TODOS.md\` exists, add the entry following the format in \`$GSTACK_ROOT/review/TODOS-format.md\`.
+- If \`TODOS.md\` exists, add the entry following the format in \`$GSTACK_DIR/review/TODOS-format.md\`.
 - If \`TODOS.md\` does not exist, create it with the standard header and add the entry.
 - Entry should include: title, the error output, which branch it was noticed on, and priority P0.
 - Continue with the workflow — treat the pre-existing failure as non-blocking.

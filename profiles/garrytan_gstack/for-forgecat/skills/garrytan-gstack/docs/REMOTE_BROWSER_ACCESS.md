@@ -185,9 +185,9 @@ Each agent owns the tabs it creates. Rules:
 If both agents are on the same machine, skip the copy-paste:
 
 ```bash
-$B pair-agent --local openclaw    # writes to $GSTACK_ROOT/browse-remote.json
-$B pair-agent --local codex       # writes to $GSTACK_ROOT/browse-remote.json
-$B pair-agent --local cursor      # writes to $GSTACK_ROOT/browse-remote.json
+$B pair-agent --local openclaw    # writes to $GSTACK_DIR/browse-remote.json
+$B pair-agent --local codex       # writes to $GSTACK_DIR/browse-remote.json
+$B pair-agent --local cursor      # writes to $GSTACK_DIR/browse-remote.json
 ```
 
 No tunnel needed. Uses localhost directly.

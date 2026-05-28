@@ -13,13 +13,13 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 EXT_DIR=""
 if [ -f "$REPO_ROOT/extension/manifest.json" ]; then
   EXT_DIR="$REPO_ROOT/extension"
-elif [ -f "$GSTACK_ROOT/extension/manifest.json" ]; then
-  EXT_DIR="$GSTACK_ROOT/extension"
+elif [ -f "$GSTACK_DIR/extension/manifest.json" ]; then
+  EXT_DIR="$GSTACK_DIR/extension"
 fi
 
 if [ -z "$EXT_DIR" ]; then
   echo "Error: extension/ directory not found."
-  echo "Expected at: $REPO_ROOT/extension/ or $GSTACK_ROOT/extension/"
+  echo "Expected at: $REPO_ROOT/extension/ or $GSTACK_DIR/extension/"
   exit 1
 fi
 

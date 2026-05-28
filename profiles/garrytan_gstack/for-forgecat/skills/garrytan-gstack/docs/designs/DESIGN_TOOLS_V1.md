@@ -268,7 +268,7 @@ Variant generation uses staggered parallel: start each API call 1 second apart v
 **New HostPaths entry:** `types.ts`
 ```typescript
 // claude host:
-designDir: '$GSTACK_ROOT/design/dist'
+designDir: '$GSTACK_DIR/design/dist'
 // codex host:
 designDir: '$GSTACK_DESIGN'
 ```
@@ -278,8 +278,8 @@ Note: Codex runtime setup (`setup` script) must also export `GSTACK_DESIGN` env 
 ```bash
 _ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
 D=""
-[ -n "$_ROOT" ] && [ -x "$GSTACK_ROOT/design/dist/design" ] && D="$GSTACK_ROOT/design/dist/design"
-[ -z "$D" ] && D=$GSTACK_ROOT/design/dist/design
+[ -n "$_ROOT" ] && [ -x "$GSTACK_DIR/design/dist/design" ] && D="$GSTACK_DIR/design/dist/design"
+[ -z "$D" ] && D=$GSTACK_DIR/design/dist/design
 if [ -x "$D" ]; then
   echo "DESIGN_READY: $D"
 else
@@ -490,7 +490,7 @@ const check = await openai.chat.completions.create({
 The design binary is compiled and distributed alongside the browse binary:
 - `bun build --compile design/src/cli.ts --outfile design/dist/design`
 - Built during `./setup` and `bun run build`
-- Symlinked via existing `$GSTACK_ROOT/` install path
+- Symlinked via existing `$GSTACK_DIR/` install path
 
 ## Next Steps (Implementation Order)
 

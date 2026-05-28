@@ -11,7 +11,7 @@
  *   1. $GSTACK_BROWSE_BIN env override (preferred, matches v1.24 GSTACK_*_BIN pattern)
  *   2. $BROWSE_BIN env override (back-compat alias)
  *   3. sibling dir: dirname(argv[0])/../browse/dist/browse[.exe]
- *   4. $GSTACK_ROOT/browse/dist/browse[.exe]
+ *   4. $GSTACK_DIR/browse/dist/browse[.exe]
  *   5. PATH lookup via Bun.which('browse') — handles Windows PATHEXT natively
  *   6. error with setup hint
  *
@@ -121,7 +121,7 @@ export function resolveBrowseBin(env: NodeJS.ProcessEnv = process.env): string {
 
   // 4: global install.
   const home = os.homedir();
-  const globalPath = path.join(home, "$GSTACK_ROOT/browse/dist/browse");
+  const globalPath = path.join(home, "$GSTACK_DIR/browse/dist/browse");
   const globalFound = findExecutable(globalPath);
   if (globalFound) return globalFound;
 
@@ -146,7 +146,7 @@ export function resolveBrowseBin(env: NodeJS.ProcessEnv = process.env): string {
       "  - PATH: `browse`",
       "",
       "To fix: run gstack setup from the gstack repo:",
-      "  cd $GSTACK_ROOT && ./setup",
+      "  cd $GSTACK_DIR && ./setup",
       "",
       "Or set GSTACK_BROWSE_BIN explicitly:",
       process.platform === "win32"

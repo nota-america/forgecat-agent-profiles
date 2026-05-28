@@ -102,7 +102,7 @@ docs/
   designs/PACING_UPDATES_V0.md      # NEW: V1.1 plan (extracted)
   throughput-2013-vs-2026.json      # NEW: computed, committed
 
-$GSTACK_ROOT/bin/
+$GSTACK_DIR/bin/
   gstack-config                     # MODIFIED: explain_level header + validation
 
 gstack-upgrade/migrations/
