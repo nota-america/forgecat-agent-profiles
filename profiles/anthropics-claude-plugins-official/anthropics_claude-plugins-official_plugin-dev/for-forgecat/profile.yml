@@ -35,19 +35,19 @@ skills:
   path: skills/hook-development/SKILL.md
   description: This skill should be used when the user asks to "create a hook", "add
     a PreToolUse/PostToolUse/Stop hook", "validate tool use", "implement prompt-based
-    hooks", "use ", "set up event-driven automation", "block dangerous commands",
-    or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart,
-    SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive
-    guidance for creating and implementing Claude Code plugin hooks with focus on
-    advanced prompt-based hooks API.
+    hooks", "use ${CLAUDE_PLUGIN_ROOT}", "set up event-driven automation", "block
+    dangerous commands", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop,
+    SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides
+    comprehensive guidance for creating and implementing Claude Code plugin hooks
+    with focus on advanced prompt-based hooks API.
 - name: mcp-integration
   path: skills/mcp-integration/SKILL.md
   description: This skill should be used when the user asks to "add MCP server", "integrate
     MCP", "configure MCP in plugin", "use .mcp.json", "set up Model Context Protocol",
-    "connect external service", mentions " with MCP", or discusses MCP server types
-    (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance for integrating
-    Model Context Protocol servers into Claude Code plugins for external tool and
-    service integration.
+    "connect external service", mentions "${CLAUDE_PLUGIN_ROOT} with MCP", or discusses
+    MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance
+    for integrating Model Context Protocol servers into Claude Code plugins for external
+    tool and service integration.
 - name: plugin-settings
   path: skills/plugin-settings/SKILL.md
   description: This skill should be used when the user asks about "plugin settings",
@@ -60,10 +60,10 @@ skills:
   path: skills/plugin-structure/SKILL.md
   description: This skill should be used when the user asks to "create a plugin",
     "scaffold a plugin", "understand plugin structure", "organize plugin components",
-    "set up plugin.json", "use ", "add commands/agents/skills/hooks", "configure auto-discovery",
-    or needs guidance on plugin directory layout, manifest configuration, component
-    organization, file naming conventions, or Claude Code plugin architecture best
-    practices.
+    "set up plugin.json", "use ${CLAUDE_PLUGIN_ROOT}", "add commands/agents/skills/hooks",
+    "configure auto-discovery", or needs guidance on plugin directory layout, manifest
+    configuration, component organization, file naming conventions, or Claude Code
+    plugin architecture best practices.
 - name: skill-development
   path: skills/skill-development/SKILL.md
   description: This skill should be used when the user wants to "create a skill",

@@ -1,6 +1,6 @@
 ---
 name: plugin-structure
-description: This skill should be used when the user asks to "create a plugin", "scaffold a plugin", "understand plugin structure", "organize plugin components", "set up plugin.json", "use ", "add commands/agents/skills/hooks", "configure auto-discovery", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.
+description: This skill should be used when the user asks to "create a plugin", "scaffold a plugin", "understand plugin structure", "organize plugin components", "set up plugin.json", "use ${CLAUDE_PLUGIN_ROOT}", "add commands/agents/skills/hooks", "configure auto-discovery", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.
 version: 0.1.0
 ---
 
@@ -14,7 +14,7 @@ Claude Code plugins follow a standardized directory structure with automatic com
 - Conventional directory layout for automatic discovery
 - Manifest-driven configuration in `.claude-plugin/plugin.json`
 - Component-based organization (commands, agents, skills, hooks)
-- Portable path references using ``
+- Portable path references using `${CLAUDE_PLUGIN_ROOT}`
 - Explicit vs. auto-discovered component loading
 
 ## Directory Structure
@@ -219,7 +219,7 @@ hooks/
     "matcher": "Write|Edit",
     "hooks": [{
       "type": "command",
-      "command": "bash hooks/scripts/validate.sh",
+      "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate.sh",
       "timeout": 30
     }]
   }]
@@ -242,7 +242,7 @@ hooks/
   "mcpServers": {
     "server-name": {
       "command": "node",
-      "args": ["servers/server.js"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/server.js"],
       "env": {
         "API_KEY": "${API_KEY}"
       }
@@ -255,13 +255,13 @@ hooks/
 
 ## Portable Path References
 
-### 
+### ${CLAUDE_PLUGIN_ROOT}
 
-Use `` environment variable for all intra-plugin path references:
+Use `${CLAUDE_PLUGIN_ROOT}` environment variable for all intra-plugin path references:
 
 ```json
 {
-  "command": "bash scripts/run.sh"
+  "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/run.sh"
 }
 ```
 
@@ -285,19 +285,19 @@ Use `` environment variable for all intra-plugin path references:
 
 **In manifest JSON fields** (hooks, MCP servers):
 ```json
-"command": "scripts/tool.sh"
+"command": "${CLAUDE_PLUGIN_ROOT}/scripts/tool.sh"
 ```
 
 **In component files** (commands, agents, skills):
 ```markdown
-Reference scripts at: scripts/helper.py
+Reference scripts at: ${CLAUDE_PLUGIN_ROOT}/scripts/helper.py
 ```
 
 **In executed scripts**:
 ```bash
 #!/bin/bash
-#  available as environment variable
-source "lib/common.sh"
+# ${CLAUDE_PLUGIN_ROOT} available as environment variable
+source "${CLAUDE_PLUGIN_ROOT}/lib/common.sh"
 ```
 
 ## File Naming Conventions
@@ -389,7 +389,7 @@ Claude Code automatically discovers and loads components:
 
 ### Portability
 
-1. **Always use **: Never hardcode paths
+1. **Always use ${CLAUDE_PLUGIN_ROOT}**: Never hardcode paths
 2. **Test on multiple systems**: Verify on macOS, Linux, Windows
 3. **Document dependencies**: List required tools and versions
 4. **Avoid system-specific features**: Use portable bash/Python constructs
@@ -454,7 +454,7 @@ my-plugin/
 - Confirm plugin is enabled in Claude Code settings
 
 **Path resolution errors**:
-- Replace all hardcoded paths with ``
+- Replace all hardcoded paths with `${CLAUDE_PLUGIN_ROOT}`
 - Verify paths are relative and start with `./` in manifest
 - Check that referenced files exist at specified paths
 - Test with `echo $CLAUDE_PLUGIN_ROOT` in hook scripts

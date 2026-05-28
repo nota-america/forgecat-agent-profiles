@@ -111,7 +111,7 @@ You are an expert plugin validator specializing in comprehensive validation of C
      - Valid event names (PreToolUse, PostToolUse, Stop, etc.)
      - Each hook has `matcher` and `hooks` array
      - Hook type is `command` or `prompt`
-     - Commands reference existing scripts with 
+     - Commands reference existing scripts with ${CLAUDE_PLUGIN_ROOT}
 
 8. **Validate MCP Configuration** (if `.mcp.json` or `mcpServers` in manifest):
    - Check JSON syntax
@@ -119,7 +119,7 @@ You are an expert plugin validator specializing in comprehensive validation of C
      - stdio: has `command` field
      - sse/http/ws: has `url` field
      - Type-specific fields present
-   - Check  usage for portability
+   - Check ${CLAUDE_PLUGIN_ROOT} usage for portability
 
 9. **Check File Organization**:
    - README.md exists and is comprehensive

@@ -24,8 +24,8 @@ Execute local MCP servers as child processes with communication via stdin/stdout
 ```json
 {
   "my-server": {
-    "command": "servers/custom-server",
-    "args": ["--config", "config.json"],
+    "command": "${CLAUDE_PLUGIN_ROOT}/servers/custom-server",
+    "args": ["--config", "${CLAUDE_PLUGIN_ROOT}/config.json"],
     "env": {
       "API_KEY": "${MY_API_KEY}",
       "LOG_LEVEL": "debug",
@@ -58,7 +58,7 @@ Execute local MCP servers as child processes with communication via stdin/stdout
 ```json
 {
   "custom": {
-    "command": "servers/my-server.js",
+    "command": "${CLAUDE_PLUGIN_ROOT}/servers/my-server.js",
     "args": ["--verbose"]
   }
 }
@@ -79,7 +79,7 @@ Execute local MCP servers as child processes with communication via stdin/stdout
 
 ### Best Practices
 
-1. **Use absolute paths or **
+1. **Use absolute paths or ${CLAUDE_PLUGIN_ROOT}**
 2. **Set PYTHONUNBUFFERED for Python servers**
 3. **Pass configuration via args or env, not stdin**
 4. **Handle server crashes gracefully**

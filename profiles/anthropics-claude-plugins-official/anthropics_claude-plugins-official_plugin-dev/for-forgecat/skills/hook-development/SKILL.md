@@ -1,6 +1,6 @@
 ---
 name: hook-development
-description: This skill should be used when the user asks to "create a hook", "add a PreToolUse/PostToolUse/Stop hook", "validate tool use", "implement prompt-based hooks", "use ", "set up event-driven automation", "block dangerous commands", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.
+description: This skill should be used when the user asks to "create a hook", "add a PreToolUse/PostToolUse/Stop hook", "validate tool use", "implement prompt-based hooks", "use ${CLAUDE_PLUGIN_ROOT}", "set up event-driven automation", "block dangerous commands", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.
 version: 0.1.0
 ---
 
@@ -46,7 +46,7 @@ Execute bash commands for deterministic checks:
 ```json
 {
   "type": "command",
-  "command": "bash scripts/validate.sh",
+  "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/validate.sh",
   "timeout": 60
 }
 ```
@@ -90,7 +90,7 @@ Execute bash commands for deterministic checks:
         "hooks": [
           {
             "type": "command",
-            "command": "hooks/validate.sh"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/validate.sh"
           }
         ]
       }
@@ -248,7 +248,7 @@ Execute when Claude Code session begins. Use to load context and set environment
       "hooks": [
         {
           "type": "command",
-          "command": "bash scripts/load-context.sh"
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/load-context.sh"
         }
       ]
     }
@@ -328,12 +328,12 @@ Available in all command hooks:
 - `$CLAUDE_ENV_FILE` - SessionStart only: persist env vars here
 - `$CLAUDE_CODE_REMOTE` - Set if running in remote context
 
-**Always use  in hook commands for portability:**
+**Always use ${CLAUDE_PLUGIN_ROOT} in hook commands for portability:**
 
 ```json
 {
   "type": "command",
-  "command": "bash scripts/validate.sh"
+  "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/validate.sh"
 }
 ```
 
@@ -371,7 +371,7 @@ In plugins, define hooks in `hooks/hooks.json`:
       "hooks": [
         {
           "type": "command",
-          "command": "bash scripts/load-context.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/load-context.sh",
           "timeout": 10
         }
       ]
@@ -613,7 +613,7 @@ Test command hooks directly:
 
 ```bash
 echo '{"tool_name": "Write", "tool_input": {"file_path": "/test"}}' | \
-  bash scripts/validate.sh
+  bash ${CLAUDE_PLUGIN_ROOT}/scripts/validate.sh
 
 echo "Exit code: $?"
 ```
@@ -647,7 +647,7 @@ echo "$output" | jq .
 
 **DO:**
 - ✅ Use prompt-based hooks for complex logic
-- ✅ Use  for portability
+- ✅ Use ${CLAUDE_PLUGIN_ROOT} for portability
 - ✅ Validate all inputs in command hooks
 - ✅ Quote all bash variables
 - ✅ Set appropriate timeouts
@@ -703,7 +703,7 @@ To implement hooks in a plugin:
 2. Decide between prompt-based (flexible) or command (deterministic) hooks
 3. Write hook configuration in `hooks/hooks.json`
 4. For command hooks, create hook scripts
-5. Use  for all file references
+5. Use ${CLAUDE_PLUGIN_ROOT} for all file references
 6. Validate configuration with `scripts/validate-hook-schema.sh hooks/hooks.json`
 7. Test hooks with `scripts/test-hook.sh` before deployment
 8. Test in Claude Code with `claude --debug`

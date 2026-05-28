@@ -9,7 +9,7 @@ This skill provides detailed knowledge about:
 - `plugin.json` manifest configuration
 - Component organization (commands, agents, skills, hooks)
 - Auto-discovery mechanisms
-- Portable path references with ``
+- Portable path references with `${CLAUDE_PLUGIN_ROOT}`
 - File naming conventions
 
 ## Skill Structure
@@ -20,7 +20,7 @@ Core skill content covering:
 - Directory structure overview
 - Plugin manifest (plugin.json) fields
 - Component organization patterns
--  usage
+- ${CLAUDE_PLUGIN_ROOT} usage
 - File naming conventions
 - Auto-discovery mechanism
 - Best practices
@@ -77,7 +77,7 @@ Claude Code activates this skill when users:
 - Need to "understand plugin structure"
 - Want to "organize plugin components"
 - Need to "set up plugin.json"
-- Ask about "" usage
+- Ask about "${CLAUDE_PLUGIN_ROOT}" usage
 - Want to "add commands/agents/skills/hooks"
 - Need "configure auto-discovery" help
 - Ask about plugin architecture or best practices
