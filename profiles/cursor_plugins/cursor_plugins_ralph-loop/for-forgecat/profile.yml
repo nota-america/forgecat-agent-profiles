@@ -1,0 +1,43 @@
+name: cursor_plugins_ralph-loop
+version: 0.0.1
+description: Run iterative self-referential development loops where the same prompt
+  is repeated until completion criteria are met.
+repository: https://github.com/cursor/plugins
+license: MIT
+visibility: public
+sourcePlatform: cursor
+compatibility:
+  platforms:
+    tested:
+    - cursor
+    partial:
+    - claude-code
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: ralph-loop
+  path: skills/ralph-loop/SKILL.md
+  description: Start a Ralph Loop for iterative self-referential development.
+- name: cancel-ralph
+  path: skills/cancel-ralph/SKILL.md
+  description: Stop an active Ralph Loop by removing the state file.
+- name: ralph-loop-help
+  path: skills/ralph-loop-help/SKILL.md
+  description: Explain the Ralph Loop technique and usage.
+hooks:
+- id: ralph-loop-capture-response
+  platform: cursor
+  trigger: afterAgentResponse
+  command: ./hooks/capture-response.sh
+  timeout: 30
+  description: Detects a configured completion promise in the assistant response
+    and marks the active Ralph Loop as done.
+- id: ralph-loop-stop
+  platform: cursor
+  trigger: stop
+  command: ./hooks/stop-hook.sh
+  timeout: 30
+  description: Feeds the original Ralph Loop prompt back into Cursor until the
+    completion promise or iteration limit is reached.
