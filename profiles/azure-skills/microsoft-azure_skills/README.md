@@ -26,7 +26,7 @@ npx forgecat install @forgecat/microsoft-azure_skills
 |---|---|
 | Author | `Microsoft` |
 | Original repository | `https://github.com/microsoft/azure-skills` |
-| Version | `1.1.57` |
+| Version | `0.0.0` |
 | Original commit | `7cb89c2` (2026-05-28) |
 | License | `MIT` |
 | Source platform | `multi-host` |
