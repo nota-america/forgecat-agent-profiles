@@ -1,67 +1,25 @@
 #!/usr/bin/env bash
-# SessionStart hook for the Superpowers profile.
+# SessionStart hook for superpowers plugin
 
 set -euo pipefail
 
+# Determine plugin root directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROFILE_DIR="$(dirname "$SCRIPT_DIR")"
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-${PWD}}"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-detect_platform() {
-  if [ -n "${FORGECAT_HOOK_PLATFORM:-}" ]; then
-    printf '%s\n' "$FORGECAT_HOOK_PLATFORM"
-    return 0
-  fi
-  if [ -n "${FORGECAT_PLATFORM:-}" ]; then
-    printf '%s\n' "$FORGECAT_PLATFORM"
-    return 0
-  fi
+# Check if legacy skills directory exists and build warning
+warning_message=""
+legacy_skills_dir="${HOME}/.config/superpowers/skills"
+if [ -d "$legacy_skills_dir" ]; then
+  warning_message="\n\n<important-reminder>IN YOUR FIRST REPLY AFTER SEEING THIS MESSAGE YOU MUST TELL THE USER: WARNING: Superpowers now uses Claude Code's skills system. Custom skills in ~/.config/superpowers/skills will not be read. Move custom skills to ~/.claude/skills instead. To make this message go away, remove ~/.config/superpowers/skills</important-reminder>"
+fi
 
-  # Forgecat 0.2.2 passes the platform to _fc_wrap.sh but does not export it to
-  # the user script. Keep one hook file by reading the parent wrapper argv when
-  # the hook is launched through Forgecat.
-  parent_args="$(ps -p "${PPID:-0}" -o args= 2>/dev/null || true)"
-  case "$parent_args" in
-    *"_fc_wrap.sh claude-code "*)
-      printf 'claude-code\n'
-      return 0
-      ;;
-    *"_fc_wrap.sh cursor "*)
-      printf 'cursor\n'
-      return 0
-      ;;
-    *"_fc_wrap.sh codex "*)
-      printf 'codex\n'
-      return 0
-      ;;
-  esac
+# Read using-superpowers content
+using_superpowers_content=$(cat "${PLUGIN_ROOT}/skills/using-superpowers/SKILL.md" 2>&1 || echo "Error reading using-superpowers skill")
 
-  if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
-    printf 'cursor\n'
-  elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
-    printf 'claude-code\n'
-  elif [ -n "${CODEX_HOME:-}" ]; then
-    printf 'codex\n'
-  else
-    printf 'unknown\n'
-  fi
-}
-
-find_using_superpowers() {
-  for candidate in \
-    "$PROFILE_DIR/skills/using-superpowers/SKILL.md" \
-    "$PROJECT_DIR/.claude/skills/using-superpowers/SKILL.md" \
-    "$PROJECT_DIR/.agents/skills/using-superpowers/SKILL.md" \
-    "$PROJECT_DIR/.cursor/skills/using-superpowers/SKILL.md"
-  do
-    if [ -f "$candidate" ]; then
-      printf '%s\n' "$candidate"
-      return 0
-    fi
-  done
-  return 1
-}
-
+# Escape string for JSON embedding using bash parameter substitution.
+# Each ${s//old/new} is a single C-level pass - orders of magnitude
+# faster than the character-by-character loop this replaces.
 escape_for_json() {
   local s="$1"
   s="${s//\\/\\\\}"
@@ -72,33 +30,27 @@ escape_for_json() {
   printf '%s' "$s"
 }
 
-warning_message=""
-legacy_skills_dir="${HOME}/.config/superpowers/skills"
-if [ -d "$legacy_skills_dir" ]; then
-  warning_message="\n\n<important-reminder>IN YOUR FIRST REPLY AFTER SEEING THIS MESSAGE YOU MUST TELL THE USER: WARNING: Superpowers now uses agent skill directories. Custom skills in ~/.config/superpowers/skills will not be read. Move custom skills to ~/.claude/skills or ~/.agents/skills. To make this message go away, remove ~/.config/superpowers/skills</important-reminder>"
-fi
-
-if using_superpowers_path="$(find_using_superpowers)"; then
-  using_superpowers_content="$(cat "$using_superpowers_path" 2>&1)"
-else
-  using_superpowers_content="Error reading using-superpowers skill from installed Forgecat profile."
-fi
-
 using_superpowers_escaped="$(escape_for_json "$using_superpowers_content")"
 warning_escaped="$(escape_for_json "$warning_message")"
-session_context="<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the Skill tool:**\n\n${using_superpowers_escaped}\n\n${warning_escaped}\n</EXTREMELY_IMPORTANT>"
+session_context="<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n${using_superpowers_escaped}\n\n${warning_escaped}\n</EXTREMELY_IMPORTANT>"
 
-case "$(detect_platform)" in
-  cursor)
-    printf '{\n  "additional_context": "%s"\n}\n' "$session_context"
-    ;;
-  codex)
-    printf '{\n  "additionalContext": "%s"\n}\n' "$session_context"
-    ;;
-  claude-code)
-    printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$session_context"
-    ;;
-  *)
-    printf '{\n  "additionalContext": "%s"\n}\n' "$session_context"
-    ;;
-esac
+# Output context injection as JSON.
+# Cursor hooks expect additional_context (snake_case).
+# Claude Code and Codex SessionStart hooks expect
+# hookSpecificOutput.additionalContext (nested).
+# Copilot CLI (v1.0.11+) expects additionalContext (top-level, SDK standard).
+#
+# Uses printf instead of heredoc to work around bash 5.3+ heredoc hang.
+# See: https://github.com/obra/superpowers/issues/571
+if [ -n "${CURSOR_PLUGIN_ROOT:-}" ] || [ "${FORGECAT_HOOK_PLATFORM:-}" = "cursor" ] || [ "${FORGECAT_PLATFORM:-}" = "cursor" ]; then
+  # Cursor sets CURSOR_PLUGIN_ROOT (may also set CLAUDE_PLUGIN_ROOT).
+  printf '{\n  "additional_context": "%s"\n}\n' "$session_context"
+elif [ -n "${COPILOT_CLI:-}" ]; then
+  # Copilot CLI uses the SDK standard format from the upstream hook.
+  printf '{\n  "additionalContext": "%s"\n}\n' "$session_context"
+else
+  # Claude Code and Codex both accept the nested SessionStart output shape.
+  printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$session_context"
+fi
+
+exit 0
