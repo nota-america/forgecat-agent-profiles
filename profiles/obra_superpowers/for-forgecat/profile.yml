@@ -68,21 +68,11 @@ skills:
   scripts:
   - path: skills/writing-skills/render-graphs.js
 hooks:
-- id: superpowers-session-start-claude
+- id: superpowers-session-start
   trigger: session_start
-  command: ./hooks/session-start-claude.sh
-  description: Injects the Superpowers using-superpowers bootstrap context at Claude Code session start.
+  command: ./hooks/session-start.sh
+  description: Injects the Superpowers using-superpowers bootstrap context at session start.
   platforms:
   - claude-code
-- id: superpowers-session-start-cursor
-  trigger: session_start
-  command: ./hooks/session-start-cursor.sh
-  description: Injects the Superpowers using-superpowers bootstrap context at Cursor session start.
-  platforms:
   - cursor
-- id: superpowers-session-start-codex
-  trigger: session_start
-  command: ./hooks/session-start-codex.sh
-  description: Injects the Superpowers using-superpowers bootstrap context at Codex session start.
-  platforms:
   - codex
