@@ -9,9 +9,12 @@ Every skill lives in its own directory under `skills/`:
 ```
 skills/
   skill-name/
-    SKILL.md          # Required: The skill definition
+    SKILL.md           # Required: The skill definition
+    scripts/           # Optional: Runnable helpers used by the skill workflow
     supporting-file.md # Optional: Reference material loaded on demand
 ```
+
+`SKILL.md` is the only required file. Add `scripts/` only when the skill actually ships runnable helpers, and omit the directory entirely for markdown-only skills.
 
 ## SKILL.md Format
 
@@ -20,17 +23,19 @@ skills/
 ```yaml
 ---
 name: skill-name-with-hyphens
-description: Brief statement of what the skill does. Use when [specific trigger conditions].
+description: Guides agents through [task/workflow]. Use when [specific trigger conditions].
 ---
 ```
 
 **Rules:**
 - `name`: Lowercase, hyphen-separated. Must match the directory name.
-- `description`: Starts with what the skill does (third person), followed by trigger conditions. Include both *what* and *when*. Maximum 1024 characters.
+- `description`: Start with what the skill does in third person, then include one or more clear "Use when" trigger conditions. Include both *what* and *when*. Maximum 1024 characters.
 
 **Why this matters:** Agents discover skills by reading descriptions. The description is injected into the system prompt, so it must tell the agent both what the skill provides and when to activate it. Do not summarize the workflow — if the description contains process steps, the agent may follow the summary instead of reading the full skill.
 
-### Standard Sections
+### Standard Sections (Recommended Pattern)
+
+The frontmatter contract above is required. The section layout below is a recommended pattern, not a rigid template: equivalent headings are acceptable when they serve the same purpose clearly.
 
 ```markdown
 # Skill Title
@@ -100,6 +105,8 @@ Create supporting files only when:
 
 Keep patterns and principles inline when under 50 lines.
 
+If a skill does not need runnable helpers, do not create an empty `scripts/` directory just to mirror other skills. Empty directories add noise without changing how the skill works.
+
 ## Writing Principles
 
 1. **Process over knowledge.** Skills are workflows, not reference docs. Steps, not facts.
@@ -126,3 +133,17 @@ If the build breaks, use the `debugging-and-error-recovery` skill.
 ```
 
 Don't duplicate content between skills — reference and link instead.
+
+## Required vs Recommended
+
+Required:
+
+- A `skills/<skill-name>/SKILL.md` file
+- Valid YAML frontmatter with `name` and `description`
+- A description that includes both what the skill does and when to use it
+
+Recommended:
+
+- The standard section flow shown above
+- Equivalent headings such as `How It Works`, `Core Process`, or `Workflow` when they read more naturally for the skill
+- Supporting files only when they keep the main `SKILL.md` focused
