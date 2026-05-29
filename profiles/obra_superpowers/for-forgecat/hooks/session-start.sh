@@ -6,6 +6,7 @@ set -euo pipefail
 # Determine plugin root directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+PROJECT_DIR="${CLAUDE_PROJECT_DIR:-${PWD}}"
 
 # Check if legacy skills directory exists and build warning
 warning_message=""
@@ -14,8 +15,29 @@ if [ -d "$legacy_skills_dir" ]; then
   warning_message="\n\n<important-reminder>IN YOUR FIRST REPLY AFTER SEEING THIS MESSAGE YOU MUST TELL THE USER: WARNING: Superpowers now uses Claude Code's skills system. Custom skills in ~/.config/superpowers/skills will not be read. Move custom skills to ~/.claude/skills instead. To make this message go away, remove ~/.config/superpowers/skills</important-reminder>"
 fi
 
-# Read using-superpowers content
-using_superpowers_content=$(cat "${PLUGIN_ROOT}/skills/using-superpowers/SKILL.md" 2>&1 || echo "Error reading using-superpowers skill")
+find_using_superpowers() {
+  for candidate in \
+    "${PLUGIN_ROOT}/skills/using-superpowers/SKILL.md" \
+    "${PROJECT_DIR}/.agents/skills/using-superpowers/SKILL.md" \
+    "${PROJECT_DIR}/.claude/skills/using-superpowers/SKILL.md" \
+    "${PROJECT_DIR}/.cursor/skills/using-superpowers/SKILL.md"
+  do
+    if [ -f "$candidate" ]; then
+      printf '%s\n' "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Read using-superpowers content. forgecat installs this hook under
+# .forgecat/profiles/... but installs skills into each target platform's skill
+# directory, so keep the upstream plugin-root path and add installed fallbacks.
+if using_superpowers_path="$(find_using_superpowers)"; then
+  using_superpowers_content=$(cat "$using_superpowers_path" 2>&1 || echo "Error reading using-superpowers skill")
+else
+  using_superpowers_content="Error reading using-superpowers skill"
+fi
 
 # Escape string for JSON embedding using bash parameter substitution.
 # Each ${s//old/new} is a single C-level pass - orders of magnitude
