@@ -37,9 +37,7 @@ npx forgecat install @forgecat/obra_superpowers
 
 ## Hooks
 
-- **superpowers-session-start-claude** - Injects the Superpowers `using-superpowers` bootstrap context at Claude Code session start.
-- **superpowers-session-start-cursor** - Injects the Superpowers `using-superpowers` bootstrap context at Cursor session start.
-- **superpowers-session-start-codex** - Injects the Superpowers `using-superpowers` bootstrap context at Codex session start.
+- **superpowers-session-start** - Injects the Superpowers `using-superpowers` bootstrap context at session start for Claude Code, Cursor, and Codex.
 
 ## Details
 
