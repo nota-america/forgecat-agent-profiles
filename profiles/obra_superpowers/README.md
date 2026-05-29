@@ -39,12 +39,6 @@ npx forgecat install @forgecat/obra_superpowers
 
 - **superpowers-session-start** - Injects the Superpowers `using-superpowers` bootstrap context at session start for Claude Code, Cursor, and Codex.
 
-## Source Documentation
-
-- Upstream documentation is bundled under `docs/`.
-- The upstream README is preserved at `docs/source-README.md`.
-- Upstream contributor and release docs are preserved as `CLAUDE.md`, `GEMINI.md`, `RELEASE-NOTES.md`, and `CODE_OF_CONDUCT.md`.
-
 ## Details
 
 | Field | Value |
