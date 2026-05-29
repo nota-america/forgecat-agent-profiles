@@ -12,6 +12,8 @@ npx forgecat install @forgecat/obra_superpowers
 
 ---
 
+*written by original source*
+
 # Superpowers
 
 Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
