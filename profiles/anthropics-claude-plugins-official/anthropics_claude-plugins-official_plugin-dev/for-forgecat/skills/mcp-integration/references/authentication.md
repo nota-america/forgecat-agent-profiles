@@ -235,7 +235,7 @@ For tokens that change or expire, use a helper script:
   "api": {
     "type": "sse",
     "url": "https://api.example.com",
-    "headersHelper": "scripts/get-headers.sh"
+    "headersHelper": "${CLAUDE_PLUGIN_ROOT}/scripts/get-headers.sh"
   }
 }
 ```
@@ -468,7 +468,7 @@ Some enterprise services require client certificates.
 ```json
 {
   "secure-api": {
-    "command": "servers/mtls-wrapper",
+    "command": "${CLAUDE_PLUGIN_ROOT}/servers/mtls-wrapper",
     "args": ["--cert", "${CLIENT_CERT}", "--key", "${CLIENT_KEY}"],
     "env": {
       "API_URL": "https://secure.example.com"
@@ -493,7 +493,7 @@ echo "{\"Authorization\": \"Bearer $JWT\"}"
 
 ```json
 {
-  "headersHelper": "scripts/generate-jwt.sh"
+  "headersHelper": "${CLAUDE_PLUGIN_ROOT}/scripts/generate-jwt.sh"
 }
 ```
 

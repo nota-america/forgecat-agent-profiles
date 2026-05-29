@@ -280,7 +280,7 @@ Hook configuration location or inline definition.
         "hooks": [
           {
             "type": "command",
-            "command": "bash scripts/validate.sh",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/validate.sh",
             "timeout": 30
           }
         ]
@@ -315,7 +315,7 @@ MCP server configuration location or inline definition.
   "mcpServers": {
     "github": {
       "command": "node",
-      "args": ["servers/github-mcp.js"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/github-mcp.js"],
       "env": {
         "GITHUB_TOKEN": "${GITHUB_TOKEN}"
       }

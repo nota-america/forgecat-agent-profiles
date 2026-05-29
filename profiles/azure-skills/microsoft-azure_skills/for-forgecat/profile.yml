@@ -1,0 +1,158 @@
+name: microsoft-azure_skills
+version: 1.1.57
+description: Microsoft Azure MCP and Skills integration for cloud resource management, deployments, diagnostics, AI, identity, storage, messaging, Kubernetes, and Microsoft Foundry workflows.
+repository: https://github.com/microsoft/azure-skills
+license: MIT
+visibility: public
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: airunway-aks-setup
+  path: skills/airunway-aks-setup
+  description: "Set up AI Runway on AKS \u2014 from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first deployment. WHEN: \"setup AI Runway\", \"onboard AKS cluster\", \"install AI Runway\", \"airunway setup\", \"deploy model to AKS\", \"GPU inference on AKS\", \"KAITO setup on AKS\", \"run LLM on AKS\", \"vLLM on AKS\", \"set up model serving on AKS\", \"AI Runway controller\"."
+- name: appinsights-instrumentation
+  path: skills/appinsights-instrumentation
+  description: 'Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application Insights guidance, instrumentation examples, APM best practices.'
+- name: azure-ai
+  path: skills/azure-ai
+  description: 'Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with search, vector/hybrid search, speech-to-text, text-to-speech, transcription, OCR. WHEN: AI Search, query search, vector search, hybrid search, semantic search, speech-to-text, text-to-speech, transcribe, OCR, convert text to speech.'
+- name: azure-aigateway
+  path: skills/azure-aigateway
+  description: 'Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. WHEN: semantic caching, token limit, content safety, load balancing, AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend, add AI Foundry model, test AI gateway, LLM policies, configure AI backend, token metrics, AI cost control, convert API to MCP, import OpenAPI to gateway.'
+- name: azure-cloud-migrate
+  path: skills/azure-cloud-migrate
+  description: "Assess and migrate cross-cloud workloads to Azure with reports and code conversion. Supports Lambda\u2192Functions, Beanstalk/Heroku/App Engine\u2192App Service, Fargate/Kubernetes/Cloud Run/Spring Boot\u2192Container Apps. WHEN: migrate Lambda to Functions, AWS to Azure, migrate Beanstalk, migrate Heroku, migrate App Engine, Cloud Run migration, Fargate to ACA, ECS/Kubernetes/GKE/EKS to Container Apps, Spring Boot to Container Apps, cross-cloud migration."
+- name: azure-compliance
+  path: skills/azure-compliance
+  description: 'Run Azure compliance and security audits with azqr plus Key Vault expiration checks. Covers best-practice assessment, resource review, policy/compliance validation, and security posture checks. WHEN: compliance scan, security audit, BEFORE running azqr (compliance cli tool), Azure best practices, Key Vault expiration check, expired certificates, expiring secrets, orphaned resources, compliance assessment.'
+- name: azure-compute
+  path: skills/azure-compute
+  description: 'Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, connectivity troubleshooting, capacity reservations, and Essential Machine Management. WHEN: Azure VM, VMSS, scale set, recommend, compare, server, website, burstable, lightweight, VM family, workload, GPU, learning, simulation, dev/test, backend, autoscale, load balancer, Flexible orchestration, Uniform orchestration, cost estimate, connect, refused, Linux, black screen, reset password, reach VM, port 3389, NSG, troubleshoot, capacity reservation, CRG, reserve VMs, guarantee capacity, pre-provision capacity, CRG association, CRG disassociation, essential machine management, EMM, machine enrollment.'
+- name: azure-cost
+  path: skills/azure-cost
+  description: 'Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending", "show my bill", "monthly cost summary", "cost trends", "top cost drivers", "actual cost", "amortized cost", "forecast spending", "projected costs", "estimate bill", "future costs", "budget forecast", "end of month costs", "how much will I spend", "optimize costs", "reduce spending", "find cost savings", "orphaned resources", "rightsize VMs", "cost analysis", "reduce waste", "unused resources", "optimize Redis costs", "cost by tag", "cost by resource group", "AKS cost analysis add-on", "namespace cost", "cost spike", "anomaly", "budget alert", "AKS cost visibility". DO NOT USE FOR: deploying resources, provisioning infrastructure, diagnostics, security audits, or estimating costs for new resources not yet deployed.'
+- name: azure-deploy
+  path: skills/azure-deploy
+  description: "Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when the user asks to CREATE a new application \u2014 use azure-prepare instead. This skill runs azd up, azd deploy, terraform apply, and az deployment commands with built-in error recovery. Requires .azure/deployment-plan.md from azure-prepare and validated status from azure-validate. WHEN: \"run azd up\", \"run azd deploy\", \"execute deployment\", \"push to production\", \"push to cloud\", \"go live\", \"ship it\", \"bicep deploy\", \"terraform apply\", \"publish to Azure\", \"launch on Azure\". DO NOT USE WHEN: \"create and deploy\", \"build and deploy\", \"create a new app\", \"set up infrastructure\", \"create and deploy to Azure using Terraform\" \u2014 use azure-prepare for these."
+  scripts:
+  - path: skills/azure-deploy/references/recipes/azd/scripts/apply-migrations.sh
+  - path: skills/azure-deploy/references/recipes/azd/scripts/grant-and-migrate.sh
+- name: azure-diagnostics
+  path: skills/azure-diagnostics
+  description: 'Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot app service, app service high CPU, app service deployment failure, troubleshoot container apps, troubleshoot functions, troubleshoot AKS, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource health, root cause of errors, troubleshoot event hubs, troubleshoot service bus, messaging SDK error, AMQP connection failure, message lock lost, service bus dead letter.'
+- name: azure-enterprise-infra-planner
+  path: skills/azure-enterprise-infra-planner
+  description: 'Architect and provision enterprise Azure infrastructure from workload descriptions. For cloud architects and platform engineers planning networking, identity, security, compliance, and multi-resource topologies with WAF alignment. Generates Bicep or Terraform directly (no azd). WHEN: ''plan Azure infrastructure'', ''architect Azure landing zone'', ''design hub-spoke network'', ''plan multi-region DR topology'', ''set up VNets firewalls and private endpoints'', ''subscription-scope Bicep deployment'', ''Azure Backup for VM workloads''. PREFER azure-prepare FOR app-centric workflows.'
+- name: azure-hosted-copilot-sdk
+  path: skills/azure-hosted-copilot-sdk
+  description: 'Build, deploy, and modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient in package.json. PREFER OVER azure-prepare when copilot-sdk markers detected. WHEN: copilot SDK, @github/copilot-sdk, copilot-powered app, build copilot app, prepare copilot app, add feature to copilot app, modify copilot app, BYOM, bring your own model, CopilotClient, createSession, sendAndWait, azd init copilot. DO NOT USE FOR: deploying already-prepared copilot-sdk apps (use azure-deploy), general web apps without copilot SDK (use azure-prepare), Copilot Extensions, Foundry agents (use microsoft-foundry).'
+- name: azure-kubernetes
+  path: skills/azure-kubernetes
+  description: 'Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking options (private API server, Azure CNI Overlay, egress configuration), security, and operations (autoscaling, upgrade strategy, cost analysis). WHEN: create AKS environment, provision AKS environment, enable AKS observability, design AKS networking, choose AKS SKU, secure AKS, optimize AKS, rightsize AKS pod, AKS spot nodes, AKS cluster-autoscaler.'
+- name: azure-kubernetes-automatic-readiness
+  path: skills/azure-kubernetes/azure-kubernetes-automatic-readiness
+  description: 'Assess Kubernetes workloads and cluster configuration for AKS Automatic compatibility. Identifies incompatibilities, generates fixes, and guides migration from AKS Standard to AKS Automatic. WHEN: migrate to AKS Automatic, check AKS Automatic readiness, validate manifests for Automatic, assess cluster for Automatic compatibility, fix deployment for Automatic compatibility, identify AKS Automatic migration blockers, is my cluster ready for AKS Automatic.'
+- name: azure-kusto
+  path: skills/azure-kusto
+  description: 'Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto database queries, Azure Data Explorer, ADX clusters, log analytics, time series data, IoT telemetry, anomaly detection.'
+- name: azure-messaging
+  path: skills/azure-messaging
+  description: 'Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus. Covers connection failures, authentication errors, message processing issues, and SDK configuration problems. WHEN: event hub SDK error, service bus SDK issue, messaging connection failure, AMQP error, event processor host issue, message lock lost, message lock expired, lock renewal, lock renewal batch, send timeout, receiver disconnected, SDK troubleshooting, azure messaging SDK, event hub consumer, service bus queue issue, topic subscription error, enable logging event hub, service bus logging, eventhub python, servicebus java, eventhub javascript, servicebus dotnet, event hub checkpoint, event hub not receiving messages, service bus dead letter, batch processing lock, session lock expired, idle timeout, connection inactive, link detach, slow reconnect, session error, duplicate events, offset reset, receive batch.'
+- name: azure-prepare
+  path: skills/azure-prepare
+  description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use azure-cloud-migrate). DO NOT USE FOR: copilot-sdk apps (use azure-hosted-copilot-sdk). WHEN: "create app", "build web app", "create API", "create serverless HTTP API", "create frontend", "create back end", "build a service", "modernize application", "update application", "add authentication", "add caching", "host on Azure", "create and deploy", "deploy to Azure", "deploy to Azure using Terraform", "deploy to Azure App Service", "deploy to Azure App Service using Terraform", "deploy to Azure Container Apps", "deploy to Azure Container Apps using Terraform", "generate Terraform", "generate Bicep", "function app", "timer trigger", "service bus trigger", "event-driven function", "containerized Node.js app", "social media app", "static portfolio website", "todo list with frontend and API", "prepare my Azure application to
+    use Key Vault", "managed identity".'
+  scripts:
+  - path: skills/azure-prepare/references/services/sql-database/scripts/grant-sql-access.sh
+- name: azure-quotas
+  path: skills/azure-quotas
+  description: 'Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection. WHEN: "check quotas", "service limits", "current usage", "request quota increase", "quota exceeded", "validate capacity", "regional availability", "provisioning limits", "vCPU limit", "how many vCPUs available in my subscription".'
+  scripts:
+  - path: skills/azure-quotas/scripts/check-quota.sh
+- name: azure-rbac
+  path: skills/azure-rbac
+  description: 'Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it. Also provides guidance on permissions required to grant roles. WHEN: bicep for role assignment, what role should I assign, least privilege role, RBAC role for, role to read blobs, role for managed identity, custom role definition, assign role to identity, what role do I need to grant access, permissions to assign roles.'
+- name: azure-reliability
+  path: skills/azure-reliability
+  description: 'Assess and improve the reliability posture of PaaS Applications (Azure Functions and Azure App Service). Scans deployed resources for zone redundancy, ZRS storage, health probes, and multi-region failover. Presents a feature-pivoted checklist, then drives staged remediation (CLI or IaC patches) end-to-end with user confirmation. WHEN: "assess reliability", "check reliability", "zone redundant", "multi-region failover", "high availability", "disaster recovery", "single points of failure", "reliability posture", "resiliency".'
+- name: azure-resource-lookup
+  path: skills/azure-resource-lookup
+  description: 'List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like "list the websites in my subscription", "list my web apps", "show my app services", "list virtual machines", "list my VMs", "show storage accounts", "find container apps", and "what resources do I have". USE FOR: list websites, list web apps, list app services, show websites in subscription, resource inventory, find resources by tag, tag analysis, orphaned resource discovery (not for cost analysis), unattached disks, count resources by type, cross-subscription lookup, and Azure Resource Graph queries. DO NOT USE FOR: deploying/changing resources (use azure-deploy), cost optimization (use azure-cost), or non-Azure clouds.'
+- name: azure-resource-visualizer
+  path: skills/azure-resource-visualizer
+  description: 'Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. WHEN: create architecture diagram, visualize Azure resources, show resource relationships, generate Mermaid diagram, analyze resource group, diagram my resources, architecture visualization, resource topology, map Azure infrastructure.'
+- name: azure-storage
+  path: skills/azure-storage
+  description: 'Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake. Answers questions about storage access tiers (hot, cool, cold, archive), when to use each tier, and tier comparison. Provides object storage, SMB file shares, async messaging, NoSQL key-value, and big data analytics. Includes lifecycle management. USE FOR: blob storage, file shares, queue storage, table storage, data lake, upload files, download blobs, storage accounts, access tiers, storage tiers, hot cool cold archive, storage tier comparison, when to use storage tiers, lifecycle management, Azure Storage concepts. DO NOT USE FOR: SQL databases, Cosmos DB (use azure-prepare), messaging with Event Hubs or Service Bus (use azure-messaging).'
+- name: azure-upgrade
+  path: skills/azure-upgrade
+  description: 'Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code. WHEN: upgrade Consumption to Flex Consumption, upgrade Azure Functions plan, change hosting plan, function app SKU, migrate App Service to Container Apps, modernize legacy Azure Java SDKs (com.microsoft.azure to com.azure), migrate Azure Cache for Redis (ACR/ACRE) to Azure Managed Redis (AMR).'
+  scripts:
+  - path: skills/azure-upgrade/references/languages/java/scripts/upgrade_bom.py
+- name: azure-validate
+  path: skills/azure-validate
+  description: 'Pre-deployment validation for Azure readiness. Run deep checks on configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions, and prerequisites before deploying. WHEN: validate my app, check deployment readiness, run preflight checks, verify configuration, check if ready to deploy, validate azure.yaml, validate Bicep, test before deploying, troubleshoot deployment errors, validate Azure Functions, validate function app, validate serverless deployment, verify RBAC roles, check role assignments, review managed identity permissions, what-if analysis, validate Container Apps deployment.'
+- name: entra-agent-id
+  path: skills/entra-agent-id
+  description: 'Provision Microsoft Entra Agent Identity Blueprints, BlueprintPrincipals, and per-instance Agent Identities via Microsoft Graph, and configure OAuth 2.0 token exchange (fmi_path, OBO, cross-tenant) including the Microsoft Entra SDK for AgentID sidecar. USE FOR: Agent Identity Blueprint, BlueprintPrincipal, agent OAuth, fmi_path token exchange, agent OBO, Workload Identity Federation for agents, polyglot agent auth, Microsoft.Identity.Web.AgentIdentities. DO NOT USE FOR: standard Entra app registration (use entra-app-registration), Azure RBAC (use azure-rbac), Microsoft Foundry agent authoring (use microsoft-foundry).'
+- name: entra-app-registration
+  path: skills/entra-app-registration
+  description: 'Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure OAuth, set up authentication, add API permissions, generate service principal, MSAL example, console app auth, Entra ID setup, Azure AD authentication. DO NOT USE FOR: Azure RBAC or role assignments (use azure-rbac), Key Vault secrets (use azure-keyvault-expiration-audit), general Azure resource security guidance.'
+- name: microsoft-foundry
+  path: skills/microsoft-foundry
+  description: 'Deploy, evaluate, fine-tune, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, continuous eval, prompt optimizer, Agent Optimizer scaffold, agent.yaml, dataset curation from traces, model fine-tuning (SFT/DPO/RFT). USE FOR: deploy agent, hosted agent, create agent, add tool to agent, invoke agent, evaluate agent, continuous eval, continuous monitoring, optimize prompt, improve prompt, optimize agent instructions, deploy model, Foundry project, RBAC, role assignment, permissions, quota, capacity, region, troubleshoot agent, deployment failure, AI Services, create Foundry resource, provision, knowledge index, agent monitoring, customize deployment, onboard, availability, fine-tune, SFT, DPO, RFT, training-data, grader, distillation, fine-tuned model, large file upload. DO NOT USE FOR: Azure Functions, App Service, general Azure deploy (use azure-deploy), general Azure prep (use azure-prepare).'
+- name: finetuning
+  path: skills/microsoft-foundry/finetuning
+  description: 'Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. USE FOR: fine-tune, SFT, DPO, RFT, training data, grader, distillation, fine-tuned model, training job, large file upload, calibrate grader, deploy fine-tuned model, evaluate fine-tuned model. DO NOT USE FOR: general model deployment without fine-tuning (use deploy-model), agent creation (use agents), prompt optimization without training (use prompt-optimizer).'
+  scripts:
+  - path: skills/microsoft-foundry/finetuning/scripts/calibrate_grader.py
+  - path: skills/microsoft-foundry/finetuning/scripts/check_training.py
+  - path: skills/microsoft-foundry/finetuning/scripts/cleanup.py
+  - path: skills/microsoft-foundry/finetuning/scripts/common.py
+  - path: skills/microsoft-foundry/finetuning/scripts/convert_dataset.py
+  - path: skills/microsoft-foundry/finetuning/scripts/deploy_model.py
+  - path: skills/microsoft-foundry/finetuning/scripts/evaluate_model.py
+  - path: skills/microsoft-foundry/finetuning/scripts/generate_distillation_data.py
+  - path: skills/microsoft-foundry/finetuning/scripts/monitor_training.py
+  - path: skills/microsoft-foundry/finetuning/scripts/score_dataset.py
+  - path: skills/microsoft-foundry/finetuning/scripts/submit_training.py
+  - path: skills/microsoft-foundry/finetuning/scripts/validate/__init__.py
+  - path: skills/microsoft-foundry/finetuning/scripts/validate/data_stats.py
+  - path: skills/microsoft-foundry/finetuning/scripts/validate/validate_dpo.py
+  - path: skills/microsoft-foundry/finetuning/scripts/validate/validate_rft.py
+  - path: skills/microsoft-foundry/finetuning/scripts/validate/validate_sft.py
+- name: deploy-model
+  path: skills/microsoft-foundry/models/deploy-model
+  description: 'Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity discovery across regions and projects. USE FOR: deploy model, deploy gpt, create deployment, model deployment, deploy openai model, set up model, provision model, find capacity, check model availability, where can I deploy, best region for model, capacity analysis. DO NOT USE FOR: listing existing deployments (use foundry_models_deployments_list MCP tool), deleting deployments, agent creation (use agent/create), project creation (use project/create).'
+  scripts:
+  - path: skills/microsoft-foundry/models/deploy-model/scripts/generate_deployment_url.sh
+- name: capacity
+  path: skills/microsoft-foundry/models/deploy-model/capacity
+  description: 'Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements. USE FOR: find capacity, check quota, where can I deploy, capacity discovery, best region for capacity, multi-project capacity search, quota analysis, model availability, region comparison, check TPM availability. DO NOT USE FOR: actual deployment (hand off to preset or customize after discovery), quota increase requests (direct user to Azure Portal), listing existing deployments.'
+  scripts:
+  - path: skills/microsoft-foundry/models/deploy-model/capacity/scripts/discover_and_rank.sh
+  - path: skills/microsoft-foundry/models/deploy-model/capacity/scripts/query_capacity.sh
+- name: customize
+  path: skills/microsoft-foundry/models/deploy-model/customize
+  description: 'Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI policy (content filter), and advanced options (dynamic quota, priority processing, spillover). USE FOR: custom deployment, customize model deployment, choose version, select SKU, set capacity, configure content filter, RAI policy, deployment options, detailed deployment, advanced deployment, PTU deployment, provisioned throughput. DO NOT USE FOR: quick deployment to optimal region (use preset).'
+- name: preset
+  path: skills/microsoft-foundry/models/deploy-model/preset
+  description: 'Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR: quick deployment, optimal region, best region, automatic region selection, fast setup, multi-region capacity check, high availability deployment, deploy to best location. DO NOT USE FOR: custom SKU selection (use customize), specific version selection (use customize), custom capacity configuration (use customize), PTU deployments (use customize).'
+mcp:
+  path: mcp.jsonc
+  requiredEnv: []
+hooks:
+- id: azure-telemetry-post-tool-use
+  trigger: post_tool_use
+  command: ./hooks/scripts/track-telemetry.sh
+  timeout: 30
+  description: Tracks Azure skill, MCP tool, and bundled reference-file usage after tool calls while respecting AZURE_MCP_COLLECT_TELEMETRY=false.

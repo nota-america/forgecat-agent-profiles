@@ -149,7 +149,7 @@ enterprise-devops/
   "mcpServers": {
     "kubernetes": {
       "command": "node",
-      "args": ["servers/kubernetes-mcp/index.js"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/kubernetes-mcp/index.js"],
       "env": {
         "KUBECONFIG": "${KUBECONFIG}",
         "K8S_NAMESPACE": "${K8S_NAMESPACE:-default}"
@@ -157,7 +157,7 @@ enterprise-devops/
     },
     "terraform": {
       "command": "python",
-      "args": ["servers/terraform-mcp/main.py"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/terraform-mcp/main.py"],
       "env": {
         "TF_STATE_BUCKET": "${TF_STATE_BUCKET}",
         "AWS_REGION": "${AWS_REGION}"
@@ -165,7 +165,7 @@ enterprise-devops/
     },
     "github-actions": {
       "command": "node",
-      "args": ["servers/github-actions-mcp/server.js"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/github-actions-mcp/server.js"],
       "env": {
         "GITHUB_TOKEN": "${GITHUB_TOKEN}",
         "GITHUB_ORG": "${GITHUB_ORG}"
@@ -290,7 +290,7 @@ Uses multiple MCP servers:
 
 Integrates with monitoring tools via lib:
 \`\`\`javascript
-const { DatadogClient } = require('lib/integrations/datadog')
+const { DatadogClient } = require('${CLAUDE_PLUGIN_ROOT}/lib/integrations/datadog')
 const metrics = await DatadogClient.getMetrics(service, timeRange)
 \`\`\`
 
@@ -298,7 +298,7 @@ const metrics = await DatadogClient.getMetrics(service, timeRange)
 
 Sends updates via Slack and PagerDuty:
 \`\`\`javascript
-const { SlackClient } = require('lib/integrations/slack')
+const { SlackClient } = require('${CLAUDE_PLUGIN_ROOT}/lib/integrations/slack')
 await SlackClient.notify({
   channel: '#deployments',
   message: 'Deployment started',
@@ -622,7 +622,7 @@ For copy-paste examples:
 
 For manifest validation:
 \`\`\`bash
-bash skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
+bash ${CLAUDE_PLUGIN_ROOT}/skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
 \`\`\`
 ```
 
@@ -636,7 +636,7 @@ bash skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
       "hooks": [
         {
           "type": "command",
-          "command": "bash hooks/scripts/security/scan-secrets.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/security/scan-secrets.sh",
           "timeout": 30
         }
       ]
@@ -658,7 +658,7 @@ bash skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
       "hooks": [
         {
           "type": "command",
-          "command": "bash hooks/scripts/workflow/update-status.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/workflow/update-status.sh",
           "timeout": 15
         }
       ]
@@ -670,12 +670,12 @@ bash skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
       "hooks": [
         {
           "type": "command",
-          "command": "bash hooks/scripts/quality/check-config.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/quality/check-config.sh",
           "timeout": 45
         },
         {
           "type": "command",
-          "command": "bash hooks/scripts/workflow/notify-team.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/workflow/notify-team.sh",
           "timeout": 30
         }
       ]
@@ -687,7 +687,7 @@ bash skills/kubernetes-ops/scripts/validate-manifest.sh deployment.yaml
       "hooks": [
         {
           "type": "command",
-          "command": "bash hooks/scripts/security/validate-permissions.sh",
+          "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/security/validate-permissions.sh",
           "timeout": 20
         }
       ]

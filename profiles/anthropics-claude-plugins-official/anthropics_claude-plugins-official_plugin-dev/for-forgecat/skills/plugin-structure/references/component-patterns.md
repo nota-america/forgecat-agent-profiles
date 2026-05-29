@@ -469,7 +469,7 @@ plugin/
 **Usage in components**:
 ```bash
 #!/bin/bash
-source "lib/test-utils.sh"
+source "${CLAUDE_PLUGIN_ROOT}/lib/test-utils.sh"
 run_tests
 ```
 

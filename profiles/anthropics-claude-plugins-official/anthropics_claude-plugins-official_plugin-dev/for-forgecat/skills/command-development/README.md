@@ -12,7 +12,7 @@ This skill provides knowledge about:
 - Bash execution with !` syntax
 - Command organization and namespacing
 - Best practices for command development
-- Plugin-specific features (, plugin patterns)
+- Plugin-specific features (${CLAUDE_PLUGIN_ROOT}, plugin patterns)
 - Integration with plugin components (agents, skills, hooks)
 - Validation patterns and error handling
 
@@ -34,7 +34,7 @@ Core skill content covering:
 - Troubleshooting
 
 **Plugin-Specific:**
--  environment variable
+- ${CLAUDE_PLUGIN_ROOT} environment variable
 - Plugin command discovery and organization
 - Plugin command patterns (configuration, template, multi-script)
 - Integration with plugin components (agents, skills, hooks)
@@ -52,7 +52,7 @@ Detailed documentation:
 
 - **plugin-features-reference.md**: Plugin-specific command features
   - Plugin command discovery and organization
-  -  environment variable usage
+  - ${CLAUDE_PLUGIN_ROOT} environment variable usage
   - Plugin command patterns (configuration, template, multi-script)
   - Integration with plugin agents, skills, and hooks
   - Validation patterns and error handling
@@ -243,7 +243,7 @@ Recent commits: !`git log --oneline -5`
 ## Status
 
 **Completed enhancements:**
-- ✓ Plugin command patterns (, discovery, organization)
+- ✓ Plugin command patterns (${CLAUDE_PLUGIN_ROOT}, discovery, organization)
 - ✓ Integration patterns (agents, skills, hooks coordination)
 - ✓ Validation patterns (input, file, resource validation, error handling)
 

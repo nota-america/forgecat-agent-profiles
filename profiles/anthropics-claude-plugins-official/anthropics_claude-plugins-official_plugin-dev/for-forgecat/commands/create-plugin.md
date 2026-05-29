@@ -228,7 +228,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 2. For each hook:
    - Create hooks/hooks.json with hook configuration
    - Prefer prompt-based hooks for complex logic
-   - Use  for portability
+   - Use ${CLAUDE_PLUGIN_ROOT} for portability
    - Create hook scripts if needed (in examples/ not scripts/)
    - Test with validate-hook-schema.sh and test-hook.sh utilities
 
@@ -237,7 +237,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 1. Load mcp-integration skill using Skill tool
 2. Create .mcp.json configuration with:
    - Server type (stdio for local, SSE for hosted)
-   - Command and args (with )
+   - Command and args (with ${CLAUDE_PLUGIN_ROOT})
    - extensionToLanguage mapping if LSP
    - Environment variables as needed
 3. Document required env vars in README
@@ -285,7 +285,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 5. **Test hook configuration** (if plugin has hooks):
    - Run validate-hook-schema.sh on hooks/hooks.json
    - Test hook scripts with test-hook.sh
-   - Verify  usage
+   - Verify ${CLAUDE_PLUGIN_ROOT} usage
 
 6. **Present findings**:
    - Summary of validation results
@@ -386,7 +386,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
   - Imperative form in skill bodies
   - Skill instructions written FOR Claude (not TO user)
   - Strong trigger phrases
-  -  for portability
+  - ${CLAUDE_PLUGIN_ROOT} for portability
   - Progressive disclosure
   - Security-first (HTTPS, no hardcoded credentials)
 
