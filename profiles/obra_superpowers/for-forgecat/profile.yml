@@ -1,0 +1,78 @@
+name: obra_superpowers
+version: 0.0.0
+description: Superpowers software development methodology for coding agents, including planning, TDD, debugging, subagent execution, review, and session-start skill bootstrap hooks.
+repository: https://github.com/obra/superpowers
+license: MIT
+visibility: public
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: brainstorming
+  path: skills/brainstorming
+  description: Use before creative or product work to explore intent, requirements, and design before implementation.
+  scripts:
+  - path: skills/brainstorming/scripts/helper.js
+  - path: skills/brainstorming/scripts/start-server.sh
+  - path: skills/brainstorming/scripts/stop-server.sh
+- name: dispatching-parallel-agents
+  path: skills/dispatching-parallel-agents
+  description: Use when two or more independent tasks can be delegated without shared state or sequential dependencies.
+- name: executing-plans
+  path: skills/executing-plans
+  description: Use when executing a written implementation plan in a separate session with review checkpoints.
+- name: finishing-a-development-branch
+  path: skills/finishing-a-development-branch
+  description: Use after implementation and passing tests to decide how to integrate, PR, merge, or clean up development work.
+- name: receiving-code-review
+  path: skills/receiving-code-review
+  description: Use when receiving review feedback to verify suggestions technically before implementing them.
+- name: requesting-code-review
+  path: skills/requesting-code-review
+  description: Use when completing tasks, major features, or pre-merge work to request focused code review.
+- name: subagent-driven-development
+  path: skills/subagent-driven-development
+  description: Use when executing implementation plans with independent tasks in the current session through fresh subagents and staged review.
+- name: systematic-debugging
+  path: skills/systematic-debugging
+  description: Use when encountering bugs, failures, or unexpected behavior to find root cause before proposing fixes.
+  scripts:
+  - path: skills/systematic-debugging/condition-based-waiting-example.ts
+  - path: skills/systematic-debugging/find-polluter.sh
+- name: test-driven-development
+  path: skills/test-driven-development
+  description: Use when implementing any feature or bugfix to write a failing test before implementation.
+- name: using-git-worktrees
+  path: skills/using-git-worktrees
+  description: Use when starting feature work that needs isolation from the current workspace or before executing implementation plans.
+- name: using-superpowers
+  path: skills/using-superpowers
+  description: Establishes how to find and use Superpowers skills at the start of coding conversations.
+- name: verification-before-completion
+  path: skills/verification-before-completion
+  description: Use before claiming work is complete, fixed, or passing to require verification evidence first.
+- name: writing-plans
+  path: skills/writing-plans
+  description: Use when requirements are ready and a multi-step implementation plan should be written before code changes.
+- name: writing-skills
+  path: skills/writing-skills
+  description: Use when creating, editing, or verifying agent skills before deployment.
+  scripts:
+  - path: skills/writing-skills/render-graphs.js
+hooks:
+- id: superpowers-session-start
+  trigger: session_start
+  command: ./hooks/session-start.sh
+  description: Injects the Superpowers using-superpowers bootstrap context at session start.
+  platforms:
+  - claude-code
+  - cursor
+  - codex
