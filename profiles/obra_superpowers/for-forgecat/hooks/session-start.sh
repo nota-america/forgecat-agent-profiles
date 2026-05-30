@@ -6,54 +6,46 @@ set -euo pipefail
 # Determine plugin root directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-${PWD}}"
 
 # Check if legacy skills directory exists and build warning
 warning_message=""
 legacy_skills_dir="${HOME}/.config/superpowers/skills"
 if [ -d "$legacy_skills_dir" ]; then
-  warning_message="\n\n<important-reminder>IN YOUR FIRST REPLY AFTER SEEING THIS MESSAGE YOU MUST TELL THE USER: WARNING: Superpowers now uses Claude Code's skills system. Custom skills in ~/.config/superpowers/skills will not be read. Move custom skills to ~/.claude/skills instead. To make this message go away, remove ~/.config/superpowers/skills</important-reminder>"
+    warning_message="\n\n<important-reminder>IN YOUR FIRST REPLY AFTER SEEING THIS MESSAGE YOU MUST TELL THE USER:⚠️ **WARNING:** Superpowers now uses Claude Code's skills system. Custom skills in ~/.config/superpowers/skills will not be read. Move custom skills to ~/.claude/skills instead. To make this message go away, remove ~/.config/superpowers/skills</important-reminder>"
 fi
 
-find_using_superpowers() {
-  for candidate in \
-    "${PLUGIN_ROOT}/skills/using-superpowers/SKILL.md" \
-    "${PROJECT_DIR}/.agents/skills/using-superpowers/SKILL.md" \
-    "${PROJECT_DIR}/.claude/skills/using-superpowers/SKILL.md" \
-    "${PROJECT_DIR}/.cursor/skills/using-superpowers/SKILL.md"
-  do
-    if [ -f "$candidate" ]; then
-      printf '%s\n' "$candidate"
-      return 0
-    fi
-  done
-  return 1
-}
-
-# Read using-superpowers content. forgecat installs this hook under
-# .forgecat/profiles/... but installs skills into each target platform's skill
-# directory, so keep the upstream plugin-root path and add installed fallbacks.
-if using_superpowers_path="$(find_using_superpowers)"; then
-  using_superpowers_content=$(cat "$using_superpowers_path" 2>&1 || echo "Error reading using-superpowers skill")
-else
-  using_superpowers_content="Error reading using-superpowers skill"
+# Read using-superpowers content
+using_superpowers_skill="${PLUGIN_ROOT}/skills/using-superpowers/SKILL.md"
+if [ ! -f "$using_superpowers_skill" ]; then
+    PROJECT_DIR="${CLAUDE_PROJECT_DIR:-${PWD}}"
+    for candidate in \
+        "${PROJECT_DIR}/.agents/skills/using-superpowers/SKILL.md" \
+        "${PROJECT_DIR}/.claude/skills/using-superpowers/SKILL.md" \
+        "${PROJECT_DIR}/.cursor/skills/using-superpowers/SKILL.md"
+    do
+        if [ -f "$candidate" ]; then
+            using_superpowers_skill="$candidate"
+            break
+        fi
+    done
 fi
+using_superpowers_content=$(cat "$using_superpowers_skill" 2>&1 || echo "Error reading using-superpowers skill")
 
 # Escape string for JSON embedding using bash parameter substitution.
 # Each ${s//old/new} is a single C-level pass - orders of magnitude
 # faster than the character-by-character loop this replaces.
 escape_for_json() {
-  local s="$1"
-  s="${s//\\/\\\\}"
-  s="${s//\"/\\\"}"
-  s="${s//$'\n'/\\n}"
-  s="${s//$'\r'/\\r}"
-  s="${s//$'\t'/\\t}"
-  printf '%s' "$s"
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
 }
 
-using_superpowers_escaped="$(escape_for_json "$using_superpowers_content")"
-warning_escaped="$(escape_for_json "$warning_message")"
+using_superpowers_escaped=$(escape_for_json "$using_superpowers_content")
+warning_escaped=$(escape_for_json "$warning_message")
 session_context="<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n${using_superpowers_escaped}\n\n${warning_escaped}\n</EXTREMELY_IMPORTANT>"
 
 # Output context injection as JSON.
@@ -64,8 +56,8 @@ session_context="<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the 
 #
 # Uses printf instead of heredoc to work around bash 5.3+ heredoc hang.
 # See: https://github.com/obra/superpowers/issues/571
-if [ -n "${CURSOR_PLUGIN_ROOT:-}" ] || [ "${FORGECAT_HOOK_PLATFORM:-}" = "cursor" ] || [ "${FORGECAT_PLATFORM:-}" = "cursor" ]; then
-  # Cursor sets CURSOR_PLUGIN_ROOT (may also set CLAUDE_PLUGIN_ROOT).
+if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
+  # Cursor sets CURSOR_PLUGIN_ROOT (may also set CLAUDE_PLUGIN_ROOT)
   printf '{\n  "additional_context": "%s"\n}\n' "$session_context"
 elif [ -n "${COPILOT_CLI:-}" ]; then
   # Copilot CLI uses the SDK standard format from the upstream hook.
