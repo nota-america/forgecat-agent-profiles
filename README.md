@@ -15,23 +15,27 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 ## Collections
 
 | Collection | Profiles | Description |
-|---|---|---|
+|---|---:|---|
+| [addyosmani_agent-skills](./profiles/addyosmani_agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
 | [agency-agents](./profiles/agency-agents) | 13 | Team role agents for agencies — academic, design, engineering, marketing, sales, and more |
-| [addyosmani-agent-skills](./profiles/addyosmani-agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
-| [anthropics-claude-plugins-official](./profiles/anthropics-claude-plugins-official) | 16 | Hook-free official Anthropic Claude plugin conversions (skills, agents, commands, MCP) |
-| [anthropics-skills](./profiles/anthropics-skills) | 17 | Anthropic skills collection converted from `anthropics/skills` subpaths (docx, pdf, pptx, xlsx, mcp-builder, and more) |
-| [azure-skills](./profiles/azure-skills) | 20 | Microsoft Azure skills converted from `microsoft/azure-skills`, including the full Azure plugin profile plus split legacy skill profiles |
-| [vercel-labs_agent-skills](./profiles/vercel-labs_agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
-| [aidlc-workflows](./profiles/aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
-| [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
-| [context7](./profiles/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
-| [gemini-skills](./profiles/gemini-skills) | 3 | Google Gemini skills set converted into installable Forgecat profiles (API dev, interactions API, live API) |
-| [compound-engineering](./profiles/compound-engineering) | 1 | AI-powered development profile with deep workflows for review, research, and design |
-| [cursor_plugins](./profiles/cursor_plugins) | 3 | Plugins for Cursor — continual learning, team workflows, and iterative agent loops |
-| [gstack](./profiles/garrytan-gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
-| [anthropics_knowledge-work-plugins](./profiles/anthropics_knowledge-work-plugins) | 14 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
-| [openai-skills](./profiles/openai-skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
-| [tldraw](./profiles/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
+| [anthropics-claude-plugins-official](./profiles/anthropics-claude-plugins-official) | 16 | Official Anthropic Claude plugin conversions — skills, agents, commands, and MCP profiles |
+| [anthropics-skills](./profiles/anthropics-skills) | 17 | Anthropic skills collection converted from `anthropics/skills` subpaths |
+| [anthropics_claude-code](./profiles/anthropics_claude-code) | 1 | Anthropic Claude Code plugin profile conversions, including Ralph Wiggum loop automation |
+| [anthropics_knowledge-work-plugins](./profiles/anthropics_knowledge-work-plugins) | 14 | Knowledge work plugins — bio research, legal, finance, HR, marketing, operations, and more |
+| [awesome-codex-subagents](./profiles/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research, and business workflows |
+| [awslabs_aidlc-workflows](./profiles/awslabs_aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
+| [azure-skills](./profiles/azure-skills) | 20 | Microsoft Azure skills converted from `microsoft/azure-skills`, including Azure workflow and resource profiles |
+| [cursor_plugins](./profiles/cursor_plugins) | 2 | Plugins for Cursor — team workflows and iterative agent loops |
+| [everyinc_compound-engineering-plugin](./profiles/everyinc_compound-engineering-plugin) | 1 | AI-powered development profile with deep workflows for review, research, design, and automation |
+| [garrytan_gstack](./profiles/garrytan_gstack) | 1 | Garry's Stack — AI engineering workflow skills for planning, QA, review, and deployment |
+| [gemini-skills](./profiles/gemini-skills) | 3 | Google Gemini skills set converted into installable forgecat profiles |
+| [obra_superpowers](./profiles/obra_superpowers) | 1 | Superpowers software development methodology with skills and session-start bootstrap hooks |
+| [openai-skills](./profiles/openai-skills) | 45 | Skills for OpenAI platforms — .NET, Figma, Playwright, deployment, media, and more |
+| [tldraw_tldraw](./profiles/tldraw_tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
+| [upstash_context7](./profiles/upstash_context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
+| [vercel-labs_agent-skills](./profiles/vercel-labs_agent-skills) | 7 | Vercel agent skill collection split into installable profiles |
+
+**Total profiles: 155 across 18 collections.**
 
 ---
 
