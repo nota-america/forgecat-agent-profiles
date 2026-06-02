@@ -45,10 +45,10 @@ npx forgecat install @forgecat/obra_superpowers
 |---|---|
 | Author | Jesse Vincent |
 | Original repository | https://github.com/obra/superpowers |
-| Version | `0.0.4` |
+| Version | `0.0.5` |
 | Original commit | `f2cbfbe` |
 | License | MIT |
-| Source platform | Multi-host |
+| Source platform | Claude Code |
 
 ## Compatibility
 

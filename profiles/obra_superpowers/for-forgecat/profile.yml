@@ -1,10 +1,10 @@
 name: obra_superpowers
-version: 0.0.4
+version: 0.0.5
 description: Superpowers software development methodology for coding agents, including planning, TDD, debugging, subagent execution, review, and session-start skill bootstrap hooks.
 repository: https://github.com/obra/superpowers
 license: MIT
 visibility: public
-sourcePlatform: multi-host
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
