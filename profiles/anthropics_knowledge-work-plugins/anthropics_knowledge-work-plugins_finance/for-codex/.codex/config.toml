@@ -1,0 +1,27 @@
+[mcp_servers.snowflake]
+type = "http"
+url = ""
+
+[mcp_servers.databricks]
+type = "http"
+url = ""
+
+[mcp_servers.bigquery]
+type = "http"
+url = "https://bigquery.googleapis.com/mcp"
+
+[mcp_servers.slack]
+type = "http"
+url = "https://mcp.slack.com/mcp"
+
+[mcp_servers.ms365]
+type = "http"
+url = "https://microsoft365.mcp.claude.com/mcp"
+
+[mcp_servers.google-calendar]
+type = "http"
+url = "https://gcal.mcp.claude.com/mcp"
+
+[mcp_servers.gmail]
+type = "http"
+url = "https://gmail.mcp.claude.com/mcp"

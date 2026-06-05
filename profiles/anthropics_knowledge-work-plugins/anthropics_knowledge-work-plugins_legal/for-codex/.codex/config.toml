@@ -1,0 +1,31 @@
+[mcp_servers.slack]
+type = "http"
+url = "https://mcp.slack.com/mcp"
+
+[mcp_servers.box]
+type = "http"
+url = "https://mcp.box.com"
+
+[mcp_servers.egnyte]
+type = "http"
+url = "https://mcp-server.egnyte.com/mcp"
+
+[mcp_servers.atlassian]
+type = "http"
+url = "https://mcp.atlassian.com/v1/mcp"
+
+[mcp_servers.ms365]
+type = "http"
+url = "https://microsoft365.mcp.claude.com/mcp"
+
+[mcp_servers.docusign]
+type = "http"
+url = "https://mcp.docusign.com/mcp"
+
+[mcp_servers.google-calendar]
+type = "http"
+url = "https://gcal.mcp.claude.com/mcp"
+
+[mcp_servers.gmail]
+type = "http"
+url = "https://gmail.mcp.claude.com/mcp"
