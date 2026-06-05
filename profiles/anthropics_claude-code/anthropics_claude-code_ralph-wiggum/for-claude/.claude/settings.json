@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "_forgecat": "@forgecat/anthropics_claude-code_ralph-wiggum#ralph-wiggum-stop-loop",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/anthropics_claude-code_ralph-wiggum/hooks/_fc_wrap.sh claude-code stop-hook.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
