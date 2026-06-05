@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "_forgecat": "@forgecat/addyosmani_agent-skills#agent-skills-session-start",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/addyosmani_agent-skills/hooks/_fc_wrap.sh codex session-start.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

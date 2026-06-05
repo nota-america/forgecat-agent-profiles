@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "_forgecat": "@forgecat/microsoft-azure_skills#azure-telemetry-post-tool-use",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/scripts/_fc_wrap.sh codex track-telemetry.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
