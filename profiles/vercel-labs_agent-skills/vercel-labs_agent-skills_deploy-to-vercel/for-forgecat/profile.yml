@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_deploy-to-vercel
-version: 0.0.2
+version: 0.0.3
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like "deploy my app", "deploy and give me the link", "push this
   live", or "create a preview deployment".
@@ -8,9 +8,9 @@ license: MIT
 visibility: public
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
+    partial:
     - cursor
     - codex
   models:
@@ -18,7 +18,14 @@ compatibility:
     minimum: []
 skills:
 - name: deploy-to-vercel
-  path: SKILL.md
+  path: skills/deploy-to-vercel/SKILL.md
   description: Deploy applications and websites to Vercel. Use when the user requests
     deployment actions like "deploy my app", "deploy and give me the link", "push
     this live", or "create a preview deployment".
+  scripts:
+  - path: skills/deploy-to-vercel/resources/deploy.sh
+    description: Claude Code deployment helper.
+    runtime: bash
+  - path: skills/deploy-to-vercel/resources/deploy-codex.sh
+    description: Codex deployment helper.
+    runtime: bash

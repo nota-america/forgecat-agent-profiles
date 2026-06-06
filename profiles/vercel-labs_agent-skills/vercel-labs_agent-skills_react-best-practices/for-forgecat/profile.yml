@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_react-best-practices
-version: 0.0.2
+version: 0.0.3
 description: React and Next.js performance optimization guidelines from Vercel Engineering.
   This skill should be used when writing, reviewing, or refactoring React/Next.js
   code to ensure optimal performance patterns. Triggers on tasks involving React components,
@@ -19,7 +19,7 @@ compatibility:
     minimum: []
 skills:
 - name: vercel-react-best-practices
-  path: SKILL.md
+  path: skills/react-best-practices/SKILL.md
   description: React and Next.js performance optimization guidelines from Vercel Engineering.
     This skill should be used when writing, reviewing, or refactoring React/Next.js
     code to ensure optimal performance patterns. Triggers on tasks involving React
@@ -27,221 +27,221 @@ skills:
     improvements.
 rules:
 - name: react-best-practices-agents
-  path: AGENTS.md
+  path: skills/react-best-practices/AGENTS.md
   description: Expanded instruction guide for react-best-practices.
 - name: _sections
-  path: rules/_sections.md
+  path: skills/react-best-practices/rules/_sections.md
   description: Rule file rules/_sections.md
 - name: _template
-  path: rules/_template.md
+  path: skills/react-best-practices/rules/_template.md
   description: Rule file rules/_template.md
 - name: advanced-effect-event-deps
-  path: rules/advanced-effect-event-deps.md
+  path: skills/react-best-practices/rules/advanced-effect-event-deps.md
   description: Rule file rules/advanced-effect-event-deps.md
 - name: advanced-event-handler-refs
-  path: rules/advanced-event-handler-refs.md
+  path: skills/react-best-practices/rules/advanced-event-handler-refs.md
   description: Rule file rules/advanced-event-handler-refs.md
 - name: advanced-init-once
-  path: rules/advanced-init-once.md
+  path: skills/react-best-practices/rules/advanced-init-once.md
   description: Rule file rules/advanced-init-once.md
 - name: advanced-use-latest
-  path: rules/advanced-use-latest.md
+  path: skills/react-best-practices/rules/advanced-use-latest.md
   description: Rule file rules/advanced-use-latest.md
 - name: async-api-routes
-  path: rules/async-api-routes.md
+  path: skills/react-best-practices/rules/async-api-routes.md
   description: Rule file rules/async-api-routes.md
 - name: async-cheap-condition-before-await
-  path: rules/async-cheap-condition-before-await.md
+  path: skills/react-best-practices/rules/async-cheap-condition-before-await.md
   description: Rule file rules/async-cheap-condition-before-await.md
 - name: async-defer-await
-  path: rules/async-defer-await.md
+  path: skills/react-best-practices/rules/async-defer-await.md
   description: Rule file rules/async-defer-await.md
 - name: async-dependencies
-  path: rules/async-dependencies.md
+  path: skills/react-best-practices/rules/async-dependencies.md
   description: Rule file rules/async-dependencies.md
 - name: async-parallel
-  path: rules/async-parallel.md
+  path: skills/react-best-practices/rules/async-parallel.md
   description: Rule file rules/async-parallel.md
 - name: async-suspense-boundaries
-  path: rules/async-suspense-boundaries.md
+  path: skills/react-best-practices/rules/async-suspense-boundaries.md
   description: Rule file rules/async-suspense-boundaries.md
 - name: bundle-analyzable-paths
-  path: rules/bundle-analyzable-paths.md
+  path: skills/react-best-practices/rules/bundle-analyzable-paths.md
   description: Rule file rules/bundle-analyzable-paths.md
 - name: bundle-barrel-imports
-  path: rules/bundle-barrel-imports.md
+  path: skills/react-best-practices/rules/bundle-barrel-imports.md
   description: Rule file rules/bundle-barrel-imports.md
 - name: bundle-conditional
-  path: rules/bundle-conditional.md
+  path: skills/react-best-practices/rules/bundle-conditional.md
   description: Rule file rules/bundle-conditional.md
 - name: bundle-defer-third-party
-  path: rules/bundle-defer-third-party.md
+  path: skills/react-best-practices/rules/bundle-defer-third-party.md
   description: Rule file rules/bundle-defer-third-party.md
 - name: bundle-dynamic-imports
-  path: rules/bundle-dynamic-imports.md
+  path: skills/react-best-practices/rules/bundle-dynamic-imports.md
   description: Rule file rules/bundle-dynamic-imports.md
 - name: bundle-preload
-  path: rules/bundle-preload.md
+  path: skills/react-best-practices/rules/bundle-preload.md
   description: Rule file rules/bundle-preload.md
 - name: client-event-listeners
-  path: rules/client-event-listeners.md
+  path: skills/react-best-practices/rules/client-event-listeners.md
   description: Rule file rules/client-event-listeners.md
 - name: client-localstorage-schema
-  path: rules/client-localstorage-schema.md
+  path: skills/react-best-practices/rules/client-localstorage-schema.md
   description: Rule file rules/client-localstorage-schema.md
 - name: client-passive-event-listeners
-  path: rules/client-passive-event-listeners.md
+  path: skills/react-best-practices/rules/client-passive-event-listeners.md
   description: Rule file rules/client-passive-event-listeners.md
 - name: client-swr-dedup
-  path: rules/client-swr-dedup.md
+  path: skills/react-best-practices/rules/client-swr-dedup.md
   description: Rule file rules/client-swr-dedup.md
 - name: js-batch-dom-css
-  path: rules/js-batch-dom-css.md
+  path: skills/react-best-practices/rules/js-batch-dom-css.md
   description: Rule file rules/js-batch-dom-css.md
 - name: js-cache-function-results
-  path: rules/js-cache-function-results.md
+  path: skills/react-best-practices/rules/js-cache-function-results.md
   description: Rule file rules/js-cache-function-results.md
 - name: js-cache-property-access
-  path: rules/js-cache-property-access.md
+  path: skills/react-best-practices/rules/js-cache-property-access.md
   description: Rule file rules/js-cache-property-access.md
 - name: js-cache-storage
-  path: rules/js-cache-storage.md
+  path: skills/react-best-practices/rules/js-cache-storage.md
   description: Rule file rules/js-cache-storage.md
 - name: js-combine-iterations
-  path: rules/js-combine-iterations.md
+  path: skills/react-best-practices/rules/js-combine-iterations.md
   description: Rule file rules/js-combine-iterations.md
 - name: js-early-exit
-  path: rules/js-early-exit.md
+  path: skills/react-best-practices/rules/js-early-exit.md
   description: Rule file rules/js-early-exit.md
 - name: js-flatmap-filter
-  path: rules/js-flatmap-filter.md
+  path: skills/react-best-practices/rules/js-flatmap-filter.md
   description: Rule file rules/js-flatmap-filter.md
 - name: js-hoist-regexp
-  path: rules/js-hoist-regexp.md
+  path: skills/react-best-practices/rules/js-hoist-regexp.md
   description: Rule file rules/js-hoist-regexp.md
 - name: js-index-maps
-  path: rules/js-index-maps.md
+  path: skills/react-best-practices/rules/js-index-maps.md
   description: Rule file rules/js-index-maps.md
 - name: js-length-check-first
-  path: rules/js-length-check-first.md
+  path: skills/react-best-practices/rules/js-length-check-first.md
   description: Rule file rules/js-length-check-first.md
 - name: js-min-max-loop
-  path: rules/js-min-max-loop.md
+  path: skills/react-best-practices/rules/js-min-max-loop.md
   description: Rule file rules/js-min-max-loop.md
 - name: js-request-idle-callback
-  path: rules/js-request-idle-callback.md
+  path: skills/react-best-practices/rules/js-request-idle-callback.md
   description: Rule file rules/js-request-idle-callback.md
 - name: js-set-map-lookups
-  path: rules/js-set-map-lookups.md
+  path: skills/react-best-practices/rules/js-set-map-lookups.md
   description: Rule file rules/js-set-map-lookups.md
 - name: js-tosorted-immutable
-  path: rules/js-tosorted-immutable.md
+  path: skills/react-best-practices/rules/js-tosorted-immutable.md
   description: Rule file rules/js-tosorted-immutable.md
 - name: rendering-activity
-  path: rules/rendering-activity.md
+  path: skills/react-best-practices/rules/rendering-activity.md
   description: Rule file rules/rendering-activity.md
 - name: rendering-animate-svg-wrapper
-  path: rules/rendering-animate-svg-wrapper.md
+  path: skills/react-best-practices/rules/rendering-animate-svg-wrapper.md
   description: Rule file rules/rendering-animate-svg-wrapper.md
 - name: rendering-conditional-render
-  path: rules/rendering-conditional-render.md
+  path: skills/react-best-practices/rules/rendering-conditional-render.md
   description: Rule file rules/rendering-conditional-render.md
 - name: rendering-content-visibility
-  path: rules/rendering-content-visibility.md
+  path: skills/react-best-practices/rules/rendering-content-visibility.md
   description: Rule file rules/rendering-content-visibility.md
 - name: rendering-hoist-jsx
-  path: rules/rendering-hoist-jsx.md
+  path: skills/react-best-practices/rules/rendering-hoist-jsx.md
   description: Rule file rules/rendering-hoist-jsx.md
 - name: rendering-hydration-no-flicker
-  path: rules/rendering-hydration-no-flicker.md
+  path: skills/react-best-practices/rules/rendering-hydration-no-flicker.md
   description: Rule file rules/rendering-hydration-no-flicker.md
 - name: rendering-hydration-suppress-warning
-  path: rules/rendering-hydration-suppress-warning.md
+  path: skills/react-best-practices/rules/rendering-hydration-suppress-warning.md
   description: Rule file rules/rendering-hydration-suppress-warning.md
 - name: rendering-resource-hints
-  path: rules/rendering-resource-hints.md
+  path: skills/react-best-practices/rules/rendering-resource-hints.md
   description: Rule file rules/rendering-resource-hints.md
 - name: rendering-script-defer-async
-  path: rules/rendering-script-defer-async.md
+  path: skills/react-best-practices/rules/rendering-script-defer-async.md
   description: Rule file rules/rendering-script-defer-async.md
 - name: rendering-svg-precision
-  path: rules/rendering-svg-precision.md
+  path: skills/react-best-practices/rules/rendering-svg-precision.md
   description: Rule file rules/rendering-svg-precision.md
 - name: rendering-usetransition-loading
-  path: rules/rendering-usetransition-loading.md
+  path: skills/react-best-practices/rules/rendering-usetransition-loading.md
   description: Rule file rules/rendering-usetransition-loading.md
 - name: rerender-defer-reads
-  path: rules/rerender-defer-reads.md
+  path: skills/react-best-practices/rules/rerender-defer-reads.md
   description: Rule file rules/rerender-defer-reads.md
 - name: rerender-dependencies
-  path: rules/rerender-dependencies.md
+  path: skills/react-best-practices/rules/rerender-dependencies.md
   description: Rule file rules/rerender-dependencies.md
 - name: rerender-derived-state-no-effect
-  path: rules/rerender-derived-state-no-effect.md
+  path: skills/react-best-practices/rules/rerender-derived-state-no-effect.md
   description: Rule file rules/rerender-derived-state-no-effect.md
 - name: rerender-derived-state
-  path: rules/rerender-derived-state.md
+  path: skills/react-best-practices/rules/rerender-derived-state.md
   description: Rule file rules/rerender-derived-state.md
 - name: rerender-functional-setstate
-  path: rules/rerender-functional-setstate.md
+  path: skills/react-best-practices/rules/rerender-functional-setstate.md
   description: Rule file rules/rerender-functional-setstate.md
 - name: rerender-lazy-state-init
-  path: rules/rerender-lazy-state-init.md
+  path: skills/react-best-practices/rules/rerender-lazy-state-init.md
   description: Rule file rules/rerender-lazy-state-init.md
 - name: rerender-memo-with-default-value
-  path: rules/rerender-memo-with-default-value.md
+  path: skills/react-best-practices/rules/rerender-memo-with-default-value.md
   description: Rule file rules/rerender-memo-with-default-value.md
 - name: rerender-memo
-  path: rules/rerender-memo.md
+  path: skills/react-best-practices/rules/rerender-memo.md
   description: Rule file rules/rerender-memo.md
 - name: rerender-move-effect-to-event
-  path: rules/rerender-move-effect-to-event.md
+  path: skills/react-best-practices/rules/rerender-move-effect-to-event.md
   description: Rule file rules/rerender-move-effect-to-event.md
 - name: rerender-no-inline-components
-  path: rules/rerender-no-inline-components.md
+  path: skills/react-best-practices/rules/rerender-no-inline-components.md
   description: Rule file rules/rerender-no-inline-components.md
 - name: rerender-simple-expression-in-memo
-  path: rules/rerender-simple-expression-in-memo.md
+  path: skills/react-best-practices/rules/rerender-simple-expression-in-memo.md
   description: Rule file rules/rerender-simple-expression-in-memo.md
 - name: rerender-split-combined-hooks
-  path: rules/rerender-split-combined-hooks.md
+  path: skills/react-best-practices/rules/rerender-split-combined-hooks.md
   description: Rule file rules/rerender-split-combined-hooks.md
 - name: rerender-transitions
-  path: rules/rerender-transitions.md
+  path: skills/react-best-practices/rules/rerender-transitions.md
   description: Rule file rules/rerender-transitions.md
 - name: rerender-use-deferred-value
-  path: rules/rerender-use-deferred-value.md
+  path: skills/react-best-practices/rules/rerender-use-deferred-value.md
   description: Rule file rules/rerender-use-deferred-value.md
 - name: rerender-use-ref-transient-values
-  path: rules/rerender-use-ref-transient-values.md
+  path: skills/react-best-practices/rules/rerender-use-ref-transient-values.md
   description: Rule file rules/rerender-use-ref-transient-values.md
 - name: server-after-nonblocking
-  path: rules/server-after-nonblocking.md
+  path: skills/react-best-practices/rules/server-after-nonblocking.md
   description: Rule file rules/server-after-nonblocking.md
 - name: server-auth-actions
-  path: rules/server-auth-actions.md
+  path: skills/react-best-practices/rules/server-auth-actions.md
   description: Rule file rules/server-auth-actions.md
 - name: server-cache-lru
-  path: rules/server-cache-lru.md
+  path: skills/react-best-practices/rules/server-cache-lru.md
   description: Rule file rules/server-cache-lru.md
 - name: server-cache-react
-  path: rules/server-cache-react.md
+  path: skills/react-best-practices/rules/server-cache-react.md
   description: Rule file rules/server-cache-react.md
 - name: server-dedup-props
-  path: rules/server-dedup-props.md
+  path: skills/react-best-practices/rules/server-dedup-props.md
   description: Rule file rules/server-dedup-props.md
 - name: server-hoist-static-io
-  path: rules/server-hoist-static-io.md
+  path: skills/react-best-practices/rules/server-hoist-static-io.md
   description: Rule file rules/server-hoist-static-io.md
 - name: server-no-shared-module-state
-  path: rules/server-no-shared-module-state.md
+  path: skills/react-best-practices/rules/server-no-shared-module-state.md
   description: Rule file rules/server-no-shared-module-state.md
 - name: server-parallel-fetching
-  path: rules/server-parallel-fetching.md
+  path: skills/react-best-practices/rules/server-parallel-fetching.md
   description: Rule file rules/server-parallel-fetching.md
 - name: server-parallel-nested-fetching
-  path: rules/server-parallel-nested-fetching.md
+  path: skills/react-best-practices/rules/server-parallel-nested-fetching.md
   description: Rule file rules/server-parallel-nested-fetching.md
 - name: server-serialization
-  path: rules/server-serialization.md
+  path: skills/react-best-practices/rules/server-serialization.md
   description: Rule file rules/server-serialization.md

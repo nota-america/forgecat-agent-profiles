@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_composition-patterns
-version: 0.0.2
+version: 0.0.3
 description: React composition patterns that scale. Use when refactoring components
   with boolean prop proliferation, building flexible component libraries, or designing
   reusable APIs. Triggers on tasks involving compound components, render props, context
@@ -19,42 +19,42 @@ compatibility:
     minimum: []
 skills:
 - name: vercel-composition-patterns
-  path: SKILL.md
+  path: skills/composition-patterns/SKILL.md
   description: React composition patterns that scale. Use when refactoring components
     with boolean prop proliferation, building flexible component libraries, or designing
     reusable APIs. Triggers on tasks involving compound components, render props,
     context providers, or component architecture. Includes React 19 API changes.
 rules:
 - name: composition-patterns-agents
-  path: AGENTS.md
+  path: skills/composition-patterns/AGENTS.md
   description: Expanded instruction guide for composition-patterns.
 - name: _sections
-  path: rules/_sections.md
+  path: skills/composition-patterns/rules/_sections.md
   description: Rule file rules/_sections.md
 - name: _template
-  path: rules/_template.md
+  path: skills/composition-patterns/rules/_template.md
   description: Rule file rules/_template.md
 - name: architecture-avoid-boolean-props
-  path: rules/architecture-avoid-boolean-props.md
+  path: skills/composition-patterns/rules/architecture-avoid-boolean-props.md
   description: Rule file rules/architecture-avoid-boolean-props.md
 - name: architecture-compound-components
-  path: rules/architecture-compound-components.md
+  path: skills/composition-patterns/rules/architecture-compound-components.md
   description: Rule file rules/architecture-compound-components.md
 - name: patterns-children-over-render-props
-  path: rules/patterns-children-over-render-props.md
+  path: skills/composition-patterns/rules/patterns-children-over-render-props.md
   description: Rule file rules/patterns-children-over-render-props.md
 - name: patterns-explicit-variants
-  path: rules/patterns-explicit-variants.md
+  path: skills/composition-patterns/rules/patterns-explicit-variants.md
   description: Rule file rules/patterns-explicit-variants.md
 - name: react19-no-forwardref
-  path: rules/react19-no-forwardref.md
+  path: skills/composition-patterns/rules/react19-no-forwardref.md
   description: Rule file rules/react19-no-forwardref.md
 - name: state-context-interface
-  path: rules/state-context-interface.md
+  path: skills/composition-patterns/rules/state-context-interface.md
   description: Rule file rules/state-context-interface.md
 - name: state-decouple-implementation
-  path: rules/state-decouple-implementation.md
+  path: skills/composition-patterns/rules/state-decouple-implementation.md
   description: Rule file rules/state-decouple-implementation.md
 - name: state-lift-state
-  path: rules/state-lift-state.md
+  path: skills/composition-patterns/rules/state-lift-state.md
   description: Rule file rules/state-lift-state.md
