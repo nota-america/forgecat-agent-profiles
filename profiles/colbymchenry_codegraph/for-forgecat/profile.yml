@@ -1,6 +1,6 @@
 name: "@forgecat/colbymchenry_codegraph"
-version: 0.0.2
-description: Local-first semantic code intelligence through the CodeGraph MCP server. Indexes codebases with tree-sitter and exposes symbols, relationships, traces, impact analysis, and focused source context to AI coding agents.
+version: 0.0.3
+description: Local-first semantic code intelligence through the CodeGraph MCP server, plus upstream CodeGraph development and evaluation skills from the source repository.
 repository: https://github.com/colbymchenry/codegraph
 license: MIT
 visibility: public
@@ -20,3 +20,10 @@ platforms:
     mode: override
 mcp:
   path: mcp.jsonc
+skills:
+  - name: add-lang
+    description: Add tree-sitter language support to codegraph end-to-end — wire the grammar + extractor, write tests, then benchmark extraction quality and retrieval value on 3 popular real-world repos. Use when the user runs /add-lang <language> or asks to add/support a new language (e.g. Lua, Elixir, Zig, OCaml) in codegraph.
+    path: skills/add-lang/SKILL.md
+  - name: agent-eval
+    description: Benchmark CodeGraph retrieval quality on a real codebase by comparing agent behavior with vs without CodeGraph. Use when the user runs /agent-eval or asks to test, benchmark, audit, or validate a codegraph version (the local dev build or a published npm version) against a language's repo.
+    path: skills/agent-eval/SKILL.md
