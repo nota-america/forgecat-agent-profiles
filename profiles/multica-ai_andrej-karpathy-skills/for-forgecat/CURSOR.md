@@ -1,5 +1,7 @@
 # Using this repo with Cursor
 
+Forgecat note: in this converted profile, the Cursor rule content is provided as [`rules/karpathy-guidelines.mdc`](rules/karpathy-guidelines.mdc) so Forgecat can convert and install it for each supported platform. References below to `.cursor/rules/karpathy-guidelines.mdc` describe the original upstream repository layout.
+
 This project includes a **Cursor project rule** so the Karpathy-inspired behavioral guidelines apply automatically when you work here.
 
 ## In this repository
