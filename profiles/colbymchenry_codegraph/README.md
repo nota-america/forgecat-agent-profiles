@@ -34,7 +34,7 @@ npx forgecat install @forgecat/colbymchenry_codegraph
 |---|---|
 | Author | colbymchenry |
 | Original repository | https://github.com/colbymchenry/codegraph |
-| Version | `0.0.0` |
+| Version | `0.0.2` |
 | Original commit | `bfa84d32b82b908b9a07f579cad91642063b68e7` |
 | License | MIT |
 | Source platform | Multi-host MCP installer |
@@ -47,8 +47,10 @@ npx forgecat install @forgecat/colbymchenry_codegraph
 |---|---|
 | Claude Code | Tested |
 | Cursor | Tested |
-| Codex | Tested |
+| Codex | Partial |
 
 ## Usage
 
 CodeGraph stores per-project indexes in `.codegraph/`. After installing this profile, initialize a project with `codegraph init -i` or `npx @colbymchenry/codegraph@0.9.9 init -i` before expecting MCP tools to answer from an index.
+
+Codex note: forgecat installs a project-local `.codex/config.toml` entry, but current `codex exec` did not auto-load that file during runtime verification. Move that MCP entry into the active Codex config or point Codex at the installed `.codex` config if you need Codex support.

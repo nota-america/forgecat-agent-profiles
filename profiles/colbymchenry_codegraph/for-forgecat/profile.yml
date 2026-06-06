@@ -1,5 +1,5 @@
 name: "@forgecat/colbymchenry_codegraph"
-version: 0.0.0
+version: 0.0.2
 description: Local-first semantic code intelligence through the CodeGraph MCP server. Indexes codebases with tree-sitter and exposes symbols, relationships, traces, impact analysis, and focused source context to AI coding agents.
 repository: https://github.com/colbymchenry/codegraph
 license: MIT
@@ -9,9 +9,9 @@ compatibility:
   platforms:
     tested:
       - claude-code
-      - codex
       - cursor
-    partial: []
+    partial:
+      - codex
   models:
     recommended: []
     minimum: []
