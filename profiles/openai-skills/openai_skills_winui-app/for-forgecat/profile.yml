@@ -14,9 +14,9 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+    - claude-code
     - codex
     partial:
-    - claude-code
     - cursor
   models:
     recommended:

@@ -7,9 +7,9 @@ license: Apache-2.0
 visibility: public
 compatibility:
   platforms:
-    tested:
-    - claude-code
+    tested: []
     partial:
+    - claude-code
     - cursor
     - codex
   models:

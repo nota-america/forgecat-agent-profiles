@@ -8,10 +8,10 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
+      - cursor
+    partial:
       - claude-code
       - codex
-      - cursor
-    partial: []
   models:
     recommended: []
     minimum: []
