@@ -1,0 +1,29 @@
+name: "@forgecat/andrej-karpathy-skills"
+version: 0.0.0
+description: Behavioral guidelines to reduce common LLM coding mistakes by making agents surface assumptions, prefer simple implementations, keep edits focused, and define verifiable success criteria.
+repository: https://github.com/multica-ai/andrej-karpathy-skills
+license: MIT
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+  - name: karpathy-guidelines
+    path: skills/karpathy-guidelines/SKILL.md
+    description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
+rules:
+  - name: karpathy-guidelines-instructions
+    path: AGENTS.md
+    description: Behavioral guidelines to reduce common LLM coding mistakes.
+  - name: karpathy-guidelines
+    path: rules/karpathy-guidelines.mdc
+    description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
+    alwaysApply: true
