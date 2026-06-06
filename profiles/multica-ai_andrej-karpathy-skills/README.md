@@ -31,7 +31,7 @@ npx forgecat install @forgecat/andrej-karpathy-skills
 |---|---|
 | Author | multica-ai / forrestchang |
 | Original repository | https://github.com/multica-ai/andrej-karpathy-skills |
-| Version | `0.0.0` |
+| Version | `0.0.1` |
 | Original commit | `2c60614` |
 | License | MIT, per upstream plugin metadata and skill frontmatter |
 | Source platform | Claude Code plugin |
