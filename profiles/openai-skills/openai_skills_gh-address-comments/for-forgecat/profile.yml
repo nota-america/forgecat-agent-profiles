@@ -1,5 +1,5 @@
 name: openai_skills_gh-address-comments
-version: 0.0.6
+version: 0.0.8
 description: Help address review/issue comments on the open GitHub PR for the current
   branch using gh CLI; verify gh auth first and prompt the user to authenticate if
   not logged in.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

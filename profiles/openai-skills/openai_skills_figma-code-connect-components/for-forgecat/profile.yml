@@ -1,5 +1,5 @@
 name: openai_skills_figma-code-connect-components
-version: 0.0.6
+version: 0.0.8
 description: Connects Figma design components to code components using Code Connect
   mapping tools. Use when user says 'code connect', 'connect this component to code',
   'map this component', 'link component to code', 'create code connect mapping', or
@@ -12,10 +12,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

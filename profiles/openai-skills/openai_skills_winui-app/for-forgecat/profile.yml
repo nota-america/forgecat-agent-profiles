@@ -1,5 +1,5 @@
 name: openai_skills_winui-app
-version: 0.0.6
+version: 0.0.8
 description: Bootstrap, develop, and design modern WinUI 3 desktop applications with
   C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns,
   Windows App SDK samples, and CommunityToolkit components. Use when creating a brand
@@ -14,10 +14,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

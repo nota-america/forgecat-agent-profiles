@@ -1,5 +1,5 @@
 name: anthropics_knowledge-work-plugins_marketing
-version: 0.0.4
+version: 0.0.6
 description: Create content, plan campaigns, and analyze performance across marketing
   channels. Maintain brand voice consistency, track competitors, and report on what's
   working.
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

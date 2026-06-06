@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_example-plugin
-version: 0.0.0
+version: 0.0.2
 description: A comprehensive example plugin demonstrating all Claude Code extension
   options including commands, agents, skills, hooks, and MCP servers
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
 name: everyinc_compound-engineering-plugin
-version: 0.0.0
+version: 0.0.2
 description: AI-powered development tools for code review, research, design, and workflow
   automation.
 repository: https://github.com/EveryInc/compound-engineering-plugin
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - cursor
+      - cursor
     partial:
-    - claude-code
-    - codex
+      - claude-code
+      - codex
   models:
     recommended: []
     minimum: []

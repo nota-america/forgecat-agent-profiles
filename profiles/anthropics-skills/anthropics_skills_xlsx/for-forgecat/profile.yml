@@ -1,5 +1,5 @@
 name: anthropics_skills_xlsx
-version: 0.0.0
+version: 0.0.2
 description: 'Use this skill any time a spreadsheet file is the primary input or output.
   This means any task where the user wants to: open, read, edit, or fix an existing
   .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting,
@@ -18,10 +18,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

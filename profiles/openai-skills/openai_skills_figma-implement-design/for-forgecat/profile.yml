@@ -1,5 +1,5 @@
 name: openai_skills_figma-implement-design
-version: 0.0.6
+version: 0.0.8
 description: Translates Figma designs into production-ready application code with
   1:1 visual fidelity. Use when implementing UI code from Figma files, when user mentions
   'implement design', 'generate code', 'implement component', provides Figma URLs,
@@ -12,10 +12,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

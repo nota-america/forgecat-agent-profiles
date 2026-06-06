@@ -1,5 +1,5 @@
 name: openai_skills_sentry
-version: 0.0.6
+version: 0.0.8
 description: Use when the user asks to inspect Sentry issues or events, summarize
   recent production errors, or pull basic Sentry health data via the Sentry API; perform
   read-only queries with the bundled script and require `SENTRY_AUTH_TOKEN`.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

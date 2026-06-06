@@ -1,5 +1,5 @@
 name: tldraw_tldraw
-version: 0.0.0
+version: 0.0.2
 description: Draw and visually collaborate with your agents inside Cursor.
 repository: https://github.com/tldraw/tldraw
 license: '-'
@@ -7,10 +7,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - cursor
+      - cursor
     partial:
-    - claude-code
-    - codex
+      - claude-code
+      - codex
   models:
     recommended: []
     minimum: []

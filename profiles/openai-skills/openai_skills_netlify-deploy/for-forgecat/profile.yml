@@ -1,5 +1,5 @@
 name: openai_skills_netlify-deploy
-version: 0.0.6
+version: 0.0.8
 description: Deploy web projects to Netlify using the Netlify CLI (`npx netlify`).
   Use when the user asks to deploy, host, publish, or link a site/repo on Netlify,
   including preview and production deploys.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

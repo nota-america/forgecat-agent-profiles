@@ -1,5 +1,5 @@
 name: openai_skills_gh-fix-ci
-version: 0.0.6
+version: 0.0.8
 description: Use when a user asks to debug or fix failing GitHub PR checks that run
   in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context,
   draft a fix plan, and implement only after explicit approval. Treat external providers
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

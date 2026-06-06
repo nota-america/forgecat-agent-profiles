@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-ai
-version: 0.0.0
+version: 0.0.2
 description: 'Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps
   with search, vector/hybrid search, speech-to-text, text-to-speech, transcription,
   OCR. WHEN: AI Search, query search, vector search, hybrid search, semantic search,
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

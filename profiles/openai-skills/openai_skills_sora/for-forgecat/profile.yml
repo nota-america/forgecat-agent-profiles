@@ -1,5 +1,5 @@
 name: openai_skills_sora
-version: 0.0.6
+version: 0.0.8
 description: 'Use when the user asks to generate, edit, extend, poll, list, download,
   or delete Sora videos, create reusable non-human Sora character references, or run
   local multi-video queues via the bundled CLI (`scripts/sora.py`); includes requests
@@ -13,10 +13,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

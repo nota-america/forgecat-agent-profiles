@@ -1,5 +1,5 @@
 name: openai_skills_figma-generate-library
-version: 0.0.6
+version: 0.0.8
 description: Build or update a professional-grade design system in Figma from a codebase.
   Use when the user wants to create variables/tokens, build component libraries, set
   up theming (light/dark modes), document foundations, or reconcile gaps between code
@@ -13,10 +13,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

@@ -1,5 +1,5 @@
 name: openai_skills_imagegen
-version: 0.0.6
+version: 0.0.8
 description: Generate or edit raster images when the task benefits from AI-created
   bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background
   cutouts. Use when Codex should create a brand-new image, transform an existing image,
@@ -14,10 +14,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

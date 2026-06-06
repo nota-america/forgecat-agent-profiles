@@ -1,5 +1,5 @@
 name: voltagent_awesome-codex-subagents_business-product
-version: 0.0.6
+version: 0.0.8
 description: Support agents for requirements, UX, and engineering-adjacent writing
   tasks. Includes 11 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 repository: https://github.com/VoltAgent/awesome-codex-subagents
@@ -9,10 +9,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterAgentResponse": [
+      {
+        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#ralph-loop-capture-response",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor capture-response.sh",
+        "timeout": 30
+      }
+    ],
+    "stop": [
+      {
+        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#ralph-loop-stop",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor stop-hook.sh",
+        "timeout": 30
+      }
+    ]
+  }
+}

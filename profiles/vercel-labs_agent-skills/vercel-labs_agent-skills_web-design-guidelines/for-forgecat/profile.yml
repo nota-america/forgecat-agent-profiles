@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_web-design-guidelines
-version: 0.0.1
+version: 0.0.5
 description: Review UI code for Web Interface Guidelines compliance. Use when asked
   to "review my UI", "check accessibility", "audit design", "review UX", or "check
   my site against best practices".
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

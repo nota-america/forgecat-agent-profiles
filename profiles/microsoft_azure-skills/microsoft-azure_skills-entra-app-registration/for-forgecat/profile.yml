@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-entra-app-registration
-version: 0.0.0
+version: 0.0.2
 description: 'Guides Microsoft Entra ID app registration, OAuth 2.0 authentication,
   and MSAL integration. USE FOR: create app registration, register Azure AD app, configure
   OAuth, set up authentication, add API permissions, generate service principal, MSAL
@@ -12,10 +12,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

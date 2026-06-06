@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-microsoft-foundry
-version: 0.0.0
+version: 0.0.2
 description: 'Deploy, evaluate, and manage Foundry agents end-to-end: Docker build,
   ACR push, hosted/prompt agent create, container start, batch eval, continuous eval,
   prompt optimizer workflows, agent.yaml, dataset curation from traces. USE FOR: deploy
@@ -19,10 +19,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

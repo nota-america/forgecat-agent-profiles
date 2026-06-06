@@ -1,5 +1,5 @@
 name: openai_skills_security-ownership-map
-version: 0.0.6
+version: 0.0.8
 description: 'Analyze git repositories to build a security ownership topology (people-to-file),
   compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases
   and visualization. Trigger only when the user explicitly wants a security-oriented
@@ -14,10 +14,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

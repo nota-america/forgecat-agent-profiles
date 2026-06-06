@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_claude-code-setup
-version: 0.0.0
+version: 0.0.2
 description: Analyze codebases and recommend tailored Claude Code automations such
   as hooks, skills, MCP servers, and subagents.
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

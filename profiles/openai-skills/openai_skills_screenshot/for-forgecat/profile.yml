@@ -1,5 +1,5 @@
 name: openai_skills_screenshot
-version: 0.0.6
+version: 0.0.8
 description: Use when the user explicitly asks for a desktop or system screenshot
   (full screen, specific app or window, or a pixel region), or when tool-specific
   capture capabilities are unavailable and an OS-level capture is needed.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

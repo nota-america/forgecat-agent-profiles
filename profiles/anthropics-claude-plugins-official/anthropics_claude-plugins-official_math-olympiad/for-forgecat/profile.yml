@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_math-olympiad
-version: 0.0.0
+version: 0.0.2
 description: Solve competition math (IMO, Putnam, USAMO) with adversarial verification
   that catches what self-verification misses. Fresh-context verifiers attack proofs
   with specific failure patterns. Calibrated abstention over bluffing.
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

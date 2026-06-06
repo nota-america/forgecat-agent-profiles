@@ -1,5 +1,5 @@
 name: openai_skills_figma-create-design-system-rules
-version: 0.0.6
+version: 0.0.8
 description: Generates custom design system rules for the user's codebase. Use when
   user says 'create design system rules', 'generate rules for my project', 'set up
   design rules', 'customize design system guidelines', or wants to establish project-specific
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

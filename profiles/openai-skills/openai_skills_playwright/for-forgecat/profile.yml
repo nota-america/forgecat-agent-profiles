@@ -1,5 +1,5 @@
 name: openai_skills_playwright
-version: 0.0.6
+version: 0.0.8
 description: Use when the task requires automating a real browser from the terminal
   (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging)
   via `playwright-cli` or the bundled wrapper script.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

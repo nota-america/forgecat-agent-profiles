@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_vercel-cli-with-tokens
-version: 0.0.1
+version: 0.0.5
 description: Deploy and manage projects on Vercel using token-based authentication.
   Use when working with Vercel CLI using access tokens rather than interactive login
   — e.g. "deploy to vercel", "set up vercel", "add environment variables to vercel".
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

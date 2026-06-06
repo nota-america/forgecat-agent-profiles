@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-observability
-version: 0.0.0
+version: 0.0.2
 description: 'Debug Azure production issues on Azure using AppLens, Azure Monitor,
   resource health, and safe triage. WHEN: debug production issues, troubleshoot app
   service, app service high CPU, app service deployment failure, troubleshoot container
@@ -15,10 +15,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

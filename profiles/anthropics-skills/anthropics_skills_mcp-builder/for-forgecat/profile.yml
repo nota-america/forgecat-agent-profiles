@@ -1,5 +1,5 @@
 name: anthropics_skills_mcp-builder
-version: 0.0.0
+version: 0.0.2
 description: Guide for creating high-quality MCP (Model Context Protocol) servers
   that enable LLMs to interact with external services through well-designed tools.
   Use when building MCP servers to integrate external APIs or services, whether in
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

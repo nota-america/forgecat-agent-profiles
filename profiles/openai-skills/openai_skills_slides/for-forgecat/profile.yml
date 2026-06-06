@@ -1,5 +1,5 @@
 name: openai_skills_slides
-version: 0.0.6
+version: 0.0.8
 description: Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled
   layout helpers, and render/validation utilities. Use when tasks involve building
   a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks,
@@ -12,10 +12,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_plugin-dev
-version: 0.0.1
+version: 0.0.3
 description: Plugin development toolkit with skills for creating agents, commands,
   hooks, MCP integrations, and comprehensive plugin structure guidance
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/plugin-dev
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

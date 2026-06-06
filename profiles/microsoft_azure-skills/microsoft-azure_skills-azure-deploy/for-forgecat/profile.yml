@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-deploy
-version: 0.0.0
+version: 0.0.2
 description: 'Execute Azure deployments for ALREADY-PREPARED applications that have
   existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill
   when the user asks to CREATE a new application — use azure-prepare instead. This
@@ -16,10 +16,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

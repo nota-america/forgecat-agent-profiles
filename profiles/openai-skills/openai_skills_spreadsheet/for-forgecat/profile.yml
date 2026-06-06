@@ -1,5 +1,5 @@
 name: openai_skills_spreadsheet
-version: 0.0.6
+version: 0.0.8
 description: Use when tasks involve creating, editing, analyzing, or formatting spreadsheets
   (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and
   visual review.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

@@ -1,5 +1,5 @@
 name: awslabs_aidlc-workflows
-version: 0.0.3
+version: 0.0.5
 description: AI-DLC adaptive workflow rules profile for project-level agent guidance
   and stage-by-stage software delivery.
 repository: https://github.com/awslabs/aidlc-workflows
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
-    - cursor
+      - claude-code
+      - cursor
     partial:
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

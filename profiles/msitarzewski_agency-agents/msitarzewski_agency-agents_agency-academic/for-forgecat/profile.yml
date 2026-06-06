@@ -1,5 +1,5 @@
 name: msitarzewski_agency-agents_agency-academic
-version: 0.0.6
+version: 0.0.8
 description: Academic division from The Agency — 5 specialized academic agent personalities
   from msitarzewski/agency-agents.
 repository: https://github.com/msitarzewski/agency-agents
@@ -9,10 +9,10 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - codex
-    - cursor
+      - codex
   models:
     recommended:
     - claude-4-opus

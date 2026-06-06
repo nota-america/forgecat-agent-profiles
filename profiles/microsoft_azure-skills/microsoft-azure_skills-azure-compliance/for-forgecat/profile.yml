@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-compliance
-version: 0.0.0
+version: 0.0.2
 description: 'Run Azure compliance and security audits with azqr plus Key Vault expiration
   checks. Covers best-practice assessment, resource review, policy/compliance validation,
   and security posture checks. WHEN: compliance scan, security audit, BEFORE running
@@ -11,10 +11,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

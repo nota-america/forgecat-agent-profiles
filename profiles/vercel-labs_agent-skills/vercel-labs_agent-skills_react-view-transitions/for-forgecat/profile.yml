@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_react-view-transitions
-version: 0.0.1
+version: 0.0.6
 description: Guide for implementing smooth, native-feeling animations using React's
   View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS
   view transition pseudo-elements). Use this skill whenever the user wants to add
@@ -15,10 +15,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

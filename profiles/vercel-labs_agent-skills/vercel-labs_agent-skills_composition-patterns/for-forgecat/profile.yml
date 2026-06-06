@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_composition-patterns
-version: 0.0.1
+version: 0.0.5
 description: React composition patterns that scale. Use when refactoring components
   with boolean prop proliferation, building flexible component libraries, or designing
   reusable APIs. Triggers on tasks involving compound components, render props, context
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-validate
-version: 0.0.0
+version: 0.0.2
 description: 'Pre-deployment validation for Azure readiness. Run deep checks on configuration,
   infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions,
   and prerequisites before deploying. WHEN: validate my app, check deployment readiness,
@@ -14,10 +14,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-aigateway
-version: 0.0.0
+version: 0.0.2
 description: 'Configure Azure API Management as an AI Gateway for AI models, MCP tools,
   and agents. WHEN: semantic caching, token limit, content safety, load balancing,
   AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend,
@@ -11,10 +11,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

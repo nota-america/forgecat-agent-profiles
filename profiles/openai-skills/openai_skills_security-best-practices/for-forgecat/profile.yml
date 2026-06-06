@@ -1,5 +1,5 @@
 name: openai_skills_security-best-practices
-version: 0.0.6
+version: 0.0.8
 description: Perform language and framework specific security best-practice reviews
   and suggest improvements. Trigger only when the user explicitly requests security
   best practices guidance, a security review/report, or secure-by-default coding help.
@@ -12,10 +12,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - codex
+      - cursor
     partial:
-    - claude-code
-    - cursor
+      - claude-code
   models:
     recommended:
     - gpt-5.4

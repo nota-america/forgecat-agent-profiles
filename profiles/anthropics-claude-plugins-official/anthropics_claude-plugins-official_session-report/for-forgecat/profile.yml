@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_session-report
-version: 0.0.0
+version: 0.0.2
 description: Generate an explorable HTML report of Claude Code session usage (tokens,
   cache, subagents, skills, expensive prompts) from ~/.claude/projects transcripts.
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/session-report
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_mcp-server-dev
-version: 0.0.0
+version: 0.0.2
 description: Skills for designing and building MCP servers that work seamlessly with
   Claude — guides you through deployment models (remote HTTP, MCPB, local), tool design
   patterns, auth, and interactive MCP apps.
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []
