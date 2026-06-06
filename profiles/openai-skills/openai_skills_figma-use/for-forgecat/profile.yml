@@ -1,5 +1,5 @@
 name: openai_skills_figma-use
-version: 0.0.6
+version: 0.0.7
 description: '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every
   `use_figma` tool call. NEVER call `use_figma` directly without loading this skill
   first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user

@@ -1,5 +1,5 @@
 name: openai_skills_playwright-interactive
-version: 0.0.6
+version: 0.0.7
 description: Persistent browser and Electron interaction through `js_repl` for fast
   iterative UI debugging.
 repository: https://github.com/openai/skills

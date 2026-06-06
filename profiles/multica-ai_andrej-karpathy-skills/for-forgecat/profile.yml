@@ -1,5 +1,5 @@
 name: "@forgecat/andrej-karpathy-skills"
-version: 0.0.5
+version: 0.0.6
 description: Behavioral guidelines to reduce common LLM coding mistakes by making agents surface assumptions, prefer simple implementations, keep edits focused, and define verifiable success criteria.
 repository: https://github.com/multica-ai/andrej-karpathy-skills
 license: MIT

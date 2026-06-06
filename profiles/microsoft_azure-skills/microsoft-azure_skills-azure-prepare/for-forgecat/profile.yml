@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-prepare
-version: 0.0.0
+version: 0.0.1
 description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml,
   Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration
   (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create

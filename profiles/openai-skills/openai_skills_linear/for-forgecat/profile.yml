@@ -1,5 +1,5 @@
 name: openai_skills_linear
-version: 0.0.6
+version: 0.0.7
 description: Manage issues, projects & team workflows in Linear. Use when the user
   wants to read, create or updates tickets in Linear.
 repository: https://github.com/openai/skills

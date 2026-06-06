@@ -1,5 +1,5 @@
 name: openai_skills_chatgpt-apps
-version: 0.0.6
+version: 0.0.7
 description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications
   that combine an MCP server and widget UI. Use when Codex needs to design tools,
   register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply

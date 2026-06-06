@@ -1,5 +1,5 @@
 name: voltagent_awesome-codex-subagents_core-development
-version: 0.0.8
+version: 0.0.9
 description: Core agents for application architecture, cross-layer implementation,
   UI work, and protocol-specific development. Includes 12 Codex-native subagents from
   VoltAgent/awesome-codex-subagents.

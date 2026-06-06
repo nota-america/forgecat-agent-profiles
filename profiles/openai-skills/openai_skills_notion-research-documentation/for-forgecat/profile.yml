@@ -1,5 +1,5 @@
 name: openai_skills_notion-research-documentation
-version: 0.0.6
+version: 0.0.7
 description: Research across Notion and synthesize into structured documentation;
   use when gathering info from multiple Notion sources to produce briefs, comparisons,
   or reports with citations.

@@ -1,5 +1,5 @@
 name: anthropics_knowledge-work-plugins_customer-support
-version: 0.0.4
+version: 0.0.5
 description: Triage tickets, draft responses, escalate issues, and build your knowledge
   base. Research customer context and turn resolved issues into self-service content.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/customer-support

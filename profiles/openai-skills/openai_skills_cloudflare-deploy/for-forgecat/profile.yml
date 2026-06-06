@@ -1,5 +1,5 @@
 name: openai_skills_cloudflare-deploy
-version: 0.0.6
+version: 0.0.7
 description: Deploy applications and infrastructure to Cloudflare using Workers, Pages,
   and related platform services. Use when the user asks to deploy, host, publish,
   or set up a project on Cloudflare.

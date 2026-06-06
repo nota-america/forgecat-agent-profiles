@@ -1,5 +1,5 @@
 name: microsoft-azure_skills
-version: 0.0.0
+version: 0.0.1
 description: Microsoft Azure MCP and Skills integration for cloud resource management, deployments, diagnostics, AI, identity, storage, messaging, Kubernetes, and Microsoft Foundry workflows.
 repository: https://github.com/microsoft/azure-skills
 license: MIT

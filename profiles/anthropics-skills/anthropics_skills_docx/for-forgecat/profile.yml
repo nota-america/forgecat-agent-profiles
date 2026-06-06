@@ -1,5 +1,5 @@
 name: anthropics_skills_docx
-version: 0.0.0
+version: 0.0.1
 description: 'Use this skill whenever the user wants to create, read, edit, or manipulate
   Word documents (.docx files). Triggers include: any mention of ''Word doc'', ''word
   document'', ''.docx'', or requests to produce professional documents with formatting

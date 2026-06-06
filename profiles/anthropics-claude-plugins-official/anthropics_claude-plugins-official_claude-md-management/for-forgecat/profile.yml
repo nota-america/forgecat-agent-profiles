@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_claude-md-management
-version: 0.0.0
+version: 0.0.1
 description: Tools to maintain and improve CLAUDE.md files - audit quality, capture
   session learnings, and keep project memory current.
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management

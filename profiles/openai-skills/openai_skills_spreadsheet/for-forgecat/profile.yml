@@ -1,5 +1,5 @@
 name: openai_skills_spreadsheet
-version: 0.0.6
+version: 0.0.7
 description: Use when tasks involve creating, editing, analyzing, or formatting spreadsheets
   (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and
   visual review.

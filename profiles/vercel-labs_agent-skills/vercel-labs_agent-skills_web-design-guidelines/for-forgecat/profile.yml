@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_web-design-guidelines
-version: 0.0.1
+version: 0.0.2
 description: Review UI code for Web Interface Guidelines compliance. Use when asked
   to "review my UI", "check accessibility", "audit design", "review UX", or "check
   my site against best practices".

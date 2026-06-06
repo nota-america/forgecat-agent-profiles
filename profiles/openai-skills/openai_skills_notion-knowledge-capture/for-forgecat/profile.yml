@@ -1,5 +1,5 @@
 name: openai_skills_notion-knowledge-capture
-version: 0.0.6
+version: 0.0.7
 description: Capture conversations and decisions into structured Notion pages; use
   when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper
   linking.
