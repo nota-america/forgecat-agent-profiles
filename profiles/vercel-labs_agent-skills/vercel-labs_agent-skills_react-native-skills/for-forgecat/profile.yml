@@ -1,5 +1,5 @@
 name: vercel-labs_agent-skills_react-native-skills
-version: 0.0.3
+version: 0.0.4
 description: React Native and Expo best practices for building performant mobile apps.
   Use when building React Native components, optimizing list performance, implementing
   animations, or working with native modules. Triggers on tasks involving React Native,
@@ -26,119 +26,119 @@ skills:
     React Native, Expo, mobile performance, or native platform APIs.
 rules:
 - name: react-native-skills-agents
-  path: skills/react-native-skills/AGENTS.md
+  path: AGENTS.md
   description: Expanded instruction guide for react-native-skills.
 - name: _sections
-  path: skills/react-native-skills/rules/_sections.md
+  path: rules/_sections.md
   description: Rule file rules/_sections.md
 - name: _template
-  path: skills/react-native-skills/rules/_template.md
+  path: rules/_template.md
   description: Rule file rules/_template.md
 - name: animation-derived-value
-  path: skills/react-native-skills/rules/animation-derived-value.md
+  path: rules/animation-derived-value.md
   description: Rule file rules/animation-derived-value.md
 - name: animation-gesture-detector-press
-  path: skills/react-native-skills/rules/animation-gesture-detector-press.md
+  path: rules/animation-gesture-detector-press.md
   description: Rule file rules/animation-gesture-detector-press.md
 - name: animation-gpu-properties
-  path: skills/react-native-skills/rules/animation-gpu-properties.md
+  path: rules/animation-gpu-properties.md
   description: Rule file rules/animation-gpu-properties.md
 - name: design-system-compound-components
-  path: skills/react-native-skills/rules/design-system-compound-components.md
+  path: rules/design-system-compound-components.md
   description: Rule file rules/design-system-compound-components.md
 - name: fonts-config-plugin
-  path: skills/react-native-skills/rules/fonts-config-plugin.md
+  path: rules/fonts-config-plugin.md
   description: Rule file rules/fonts-config-plugin.md
 - name: imports-design-system-folder
-  path: skills/react-native-skills/rules/imports-design-system-folder.md
+  path: rules/imports-design-system-folder.md
   description: Rule file rules/imports-design-system-folder.md
 - name: js-hoist-intl
-  path: skills/react-native-skills/rules/js-hoist-intl.md
+  path: rules/js-hoist-intl.md
   description: Rule file rules/js-hoist-intl.md
 - name: list-performance-callbacks
-  path: skills/react-native-skills/rules/list-performance-callbacks.md
+  path: rules/list-performance-callbacks.md
   description: Rule file rules/list-performance-callbacks.md
 - name: list-performance-function-references
-  path: skills/react-native-skills/rules/list-performance-function-references.md
+  path: rules/list-performance-function-references.md
   description: Rule file rules/list-performance-function-references.md
 - name: list-performance-images
-  path: skills/react-native-skills/rules/list-performance-images.md
+  path: rules/list-performance-images.md
   description: Rule file rules/list-performance-images.md
 - name: list-performance-inline-objects
-  path: skills/react-native-skills/rules/list-performance-inline-objects.md
+  path: rules/list-performance-inline-objects.md
   description: Rule file rules/list-performance-inline-objects.md
 - name: list-performance-item-expensive
-  path: skills/react-native-skills/rules/list-performance-item-expensive.md
+  path: rules/list-performance-item-expensive.md
   description: Rule file rules/list-performance-item-expensive.md
 - name: list-performance-item-memo
-  path: skills/react-native-skills/rules/list-performance-item-memo.md
+  path: rules/list-performance-item-memo.md
   description: Rule file rules/list-performance-item-memo.md
 - name: list-performance-item-types
-  path: skills/react-native-skills/rules/list-performance-item-types.md
+  path: rules/list-performance-item-types.md
   description: Rule file rules/list-performance-item-types.md
 - name: list-performance-virtualize
-  path: skills/react-native-skills/rules/list-performance-virtualize.md
+  path: rules/list-performance-virtualize.md
   description: Rule file rules/list-performance-virtualize.md
 - name: monorepo-native-deps-in-app
-  path: skills/react-native-skills/rules/monorepo-native-deps-in-app.md
+  path: rules/monorepo-native-deps-in-app.md
   description: Rule file rules/monorepo-native-deps-in-app.md
 - name: monorepo-single-dependency-versions
-  path: skills/react-native-skills/rules/monorepo-single-dependency-versions.md
+  path: rules/monorepo-single-dependency-versions.md
   description: Rule file rules/monorepo-single-dependency-versions.md
 - name: navigation-native-navigators
-  path: skills/react-native-skills/rules/navigation-native-navigators.md
+  path: rules/navigation-native-navigators.md
   description: Rule file rules/navigation-native-navigators.md
 - name: react-compiler-destructure-functions
-  path: skills/react-native-skills/rules/react-compiler-destructure-functions.md
+  path: rules/react-compiler-destructure-functions.md
   description: Rule file rules/react-compiler-destructure-functions.md
 - name: react-compiler-reanimated-shared-values
-  path: skills/react-native-skills/rules/react-compiler-reanimated-shared-values.md
+  path: rules/react-compiler-reanimated-shared-values.md
   description: Rule file rules/react-compiler-reanimated-shared-values.md
 - name: react-state-dispatcher
-  path: skills/react-native-skills/rules/react-state-dispatcher.md
+  path: rules/react-state-dispatcher.md
   description: Rule file rules/react-state-dispatcher.md
 - name: react-state-fallback
-  path: skills/react-native-skills/rules/react-state-fallback.md
+  path: rules/react-state-fallback.md
   description: Rule file rules/react-state-fallback.md
 - name: react-state-minimize
-  path: skills/react-native-skills/rules/react-state-minimize.md
+  path: rules/react-state-minimize.md
   description: Rule file rules/react-state-minimize.md
 - name: rendering-no-falsy-and
-  path: skills/react-native-skills/rules/rendering-no-falsy-and.md
+  path: rules/rendering-no-falsy-and.md
   description: Rule file rules/rendering-no-falsy-and.md
 - name: rendering-text-in-text-component
-  path: skills/react-native-skills/rules/rendering-text-in-text-component.md
+  path: rules/rendering-text-in-text-component.md
   description: Rule file rules/rendering-text-in-text-component.md
 - name: scroll-position-no-state
-  path: skills/react-native-skills/rules/scroll-position-no-state.md
+  path: rules/scroll-position-no-state.md
   description: Rule file rules/scroll-position-no-state.md
 - name: state-ground-truth
-  path: skills/react-native-skills/rules/state-ground-truth.md
+  path: rules/state-ground-truth.md
   description: Rule file rules/state-ground-truth.md
 - name: ui-expo-image
-  path: skills/react-native-skills/rules/ui-expo-image.md
+  path: rules/ui-expo-image.md
   description: Rule file rules/ui-expo-image.md
 - name: ui-image-gallery
-  path: skills/react-native-skills/rules/ui-image-gallery.md
+  path: rules/ui-image-gallery.md
   description: Rule file rules/ui-image-gallery.md
 - name: ui-measure-views
-  path: skills/react-native-skills/rules/ui-measure-views.md
+  path: rules/ui-measure-views.md
   description: Rule file rules/ui-measure-views.md
 - name: ui-menus
-  path: skills/react-native-skills/rules/ui-menus.md
+  path: rules/ui-menus.md
   description: Rule file rules/ui-menus.md
 - name: ui-native-modals
-  path: skills/react-native-skills/rules/ui-native-modals.md
+  path: rules/ui-native-modals.md
   description: Rule file rules/ui-native-modals.md
 - name: ui-pressable
-  path: skills/react-native-skills/rules/ui-pressable.md
+  path: rules/ui-pressable.md
   description: Rule file rules/ui-pressable.md
 - name: ui-safe-area-scroll
-  path: skills/react-native-skills/rules/ui-safe-area-scroll.md
+  path: rules/ui-safe-area-scroll.md
   description: Rule file rules/ui-safe-area-scroll.md
 - name: ui-scrollview-content-inset
-  path: skills/react-native-skills/rules/ui-scrollview-content-inset.md
+  path: rules/ui-scrollview-content-inset.md
   description: Rule file rules/ui-scrollview-content-inset.md
 - name: ui-styling
-  path: skills/react-native-skills/rules/ui-styling.md
+  path: rules/ui-styling.md
   description: Rule file rules/ui-styling.md
