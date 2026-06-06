@@ -9,11 +9,11 @@ visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested:
-    - claude-code
+    tested: []
     partial:
-    - codex
+    - claude-code
     - cursor
+    - codex
   models:
     recommended:
     - claude-4-opus

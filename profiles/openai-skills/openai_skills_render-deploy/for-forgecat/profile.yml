@@ -9,11 +9,11 @@ visibility: public
 sourcePlatform: codex
 compatibility:
   platforms:
-    tested:
-    - codex
+    tested: []
     partial:
     - claude-code
     - cursor
+    - codex
   models:
     recommended:
     - gpt-5.4

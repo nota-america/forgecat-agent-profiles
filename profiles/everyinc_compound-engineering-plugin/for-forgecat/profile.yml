@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - cursor
-    partial:
     - claude-code
+    - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []

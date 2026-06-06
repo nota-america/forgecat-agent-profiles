@@ -20,9 +20,9 @@ compatibility:
   platforms:
     tested:
     - claude-code
+    - codex
     partial:
     - cursor
-    - codex
   models:
     recommended: []
     minimum: []
