@@ -1,5 +1,5 @@
-name: anthropics_knowledge-work-plugins_bio-research
-version: 0.0.4
+name: "@forgecat/anthropics_knowledge-work-plugins_bio-research"
+version: 0.0.5
 description: Connect to preclinical research tools and databases (literature search,
   genomics analysis, target prioritization) to accelerate early-stage life sciences
   R&D.
@@ -30,6 +30,10 @@ skills:
     visualizations. Use when users request QC analysis, filtering low-quality cells,
     assessing data quality, or following scverse/scanpy best practices for single-cell
     analysis.
+  scripts:
+  - path: skills/single-cell-rna-qc/scripts/qc_analysis.py
+  - path: skills/single-cell-rna-qc/scripts/qc_core.py
+  - path: skills/single-cell-rna-qc/scripts/qc_plotting.py
 - name: scvi-tools
   path: skills/scvi-tools/SKILL.md
   description: Deep learning for single-cell analysis using scvi-tools. This skill
@@ -41,6 +45,15 @@ skills:
     Triggers include mentions of scVI, scANVI, totalVI, PeakVI, MultiVI, DestVI, veloVI,
     sysVI, scArches, variational autoencoder, VAE, batch correction, data integration,
     multi-modal, CITE-seq, multiome, reference mapping, latent space.
+  scripts:
+  - path: skills/scvi-tools/scripts/cluster_embed.py
+  - path: skills/scvi-tools/scripts/differential_expression.py
+  - path: skills/scvi-tools/scripts/integrate_datasets.py
+  - path: skills/scvi-tools/scripts/model_utils.py
+  - path: skills/scvi-tools/scripts/prepare_data.py
+  - path: skills/scvi-tools/scripts/train_model.py
+  - path: skills/scvi-tools/scripts/transfer_labels.py
+  - path: skills/scvi-tools/scripts/validate_adata.py
 - name: nextflow-development
   path: skills/nextflow-development/SKILL.md
   description: Run nf-core bioinformatics pipelines (rnaseq, sarek, atacseq) on sequencing
@@ -48,6 +61,17 @@ skills:
     or public datasets from GEO/SRA. Triggers on nf-core, Nextflow, FASTQ analysis,
     variant calling, gene expression, differential expression, GEO reanalysis, GSE/GSM/SRR
     accessions, or samplesheet creation.
+  scripts:
+  - path: skills/nextflow-development/scripts/check_environment.py
+  - path: skills/nextflow-development/scripts/detect_data_type.py
+  - path: skills/nextflow-development/scripts/generate_samplesheet.py
+  - path: skills/nextflow-development/scripts/manage_genomes.py
+  - path: skills/nextflow-development/scripts/sra_geo_fetch.py
+  - path: skills/nextflow-development/scripts/utils/__init__.py
+  - path: skills/nextflow-development/scripts/utils/file_discovery.py
+  - path: skills/nextflow-development/scripts/utils/ncbi_utils.py
+  - path: skills/nextflow-development/scripts/utils/sample_inference.py
+  - path: skills/nextflow-development/scripts/utils/validators.py
 - name: instrument-data-to-allotrope
   path: skills/instrument-data-to-allotrope/SKILL.md
   description: Convert laboratory instrument output files (PDF, CSV, Excel, TXT) to
@@ -58,6 +82,11 @@ skills:
     engineers. Common triggers include converting instrument files, standardizing
     lab data, preparing data for upload to LIMS/ELN systems, or generating parser
     code for production pipelines.
+  scripts:
+  - path: skills/instrument-data-to-allotrope/scripts/convert_to_asm.py
+  - path: skills/instrument-data-to-allotrope/scripts/export_parser.py
+  - path: skills/instrument-data-to-allotrope/scripts/flatten_asm.py
+  - path: skills/instrument-data-to-allotrope/scripts/validate_asm.py
 - name: scientific-problem-selection
   path: skills/scientific-problem-selection/SKILL.md
   description: This skill should be used when scientists need help with research problem
