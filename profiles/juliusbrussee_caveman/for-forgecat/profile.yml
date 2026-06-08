@@ -1,5 +1,4 @@
 name: "@forgecat/juliusbrussee_caveman"
-version: 0.0.0
 description: Ultra-compressed communication mode for coding agents, including caveman response style, terse commit/review helpers, memory-file compression, Cavecrew subagents, and Claude/Codex session-start activation hooks.
 repository: https://github.com/JuliusBrussee/caveman
 license: MIT
@@ -9,8 +8,8 @@ compatibility:
   platforms:
     tested:
     - claude-code
-    - codex
     partial:
+    - codex
     - cursor
   models:
     recommended:
@@ -27,11 +26,13 @@ skills:
   description: >
     Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
   scripts:
-  - path: hooks/caveman-config.js
-  - path: hooks/caveman-stats.js
-  - path: hooks/caveman-statusline.sh
-  - path: bin/lib/openclaw.js
-  - path: src/tools/caveman-init.js
+  - path: skills/caveman/hooks/caveman-activate.js
+  - path: skills/caveman/hooks/caveman-mode-tracker.js
+  - path: skills/caveman/hooks/caveman-config.js
+  - path: skills/caveman/hooks/caveman-stats.js
+  - path: skills/caveman/hooks/caveman-statusline.sh
+  - path: skills/caveman/bin/lib/openclaw.js
+  - path: skills/caveman/src/tools/caveman-init.js
 - name: caveman-commit
   path: skills/caveman-commit/SKILL.md
   description: >
@@ -94,7 +95,7 @@ commands:
   description: Drop the always-on caveman activation rule into the current repo for every IDE agent
 rules:
 - name: caveman-activate
-  path: src/rules/caveman-activate.md
+  path: rules/caveman-activate.md
   description: Always-on caveman activation rule used by caveman-init and Forgecat rule installation.
 hooks:
 - id: caveman-claude-session-start

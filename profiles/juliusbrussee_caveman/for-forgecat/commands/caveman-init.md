@@ -2,4 +2,10 @@
 description: "Drop the always-on caveman activation rule into the current repo for every IDE agent"
 ---
 
-Run `node ./.forgecat/profiles/@forgecat/juliusbrussee_caveman/src/tools/caveman-init.js {{args}}` in the current repo and report the result. Use --dry-run first if the user did not pass --force, so we never silently overwrite an existing rule file.
+Find the installed caveman init helper in the current repo and run it with `node`:
+
+- `./.claude/skills/caveman/src/tools/caveman-init.js`
+- `./.cursor/skills/caveman/src/tools/caveman-init.js`
+- `./.agents/skills/caveman/src/tools/caveman-init.js`
+
+Use the first path that exists. Pass through `{{args}}`. Use `--dry-run` first if the user did not pass `--force`, so we never silently overwrite an existing rule file.

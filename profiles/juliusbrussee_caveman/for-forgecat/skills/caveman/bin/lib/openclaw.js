@@ -112,7 +112,8 @@ function loadBootstrapSnippet(repoRoot) {
 
 function loadSkillBody(repoRoot) {
   if (!repoRoot) return null;
-  return readIfExists(path.join(repoRoot, 'skills', 'caveman', 'SKILL.md'));
+  return readIfExists(path.join(repoRoot, 'skills', 'caveman', 'SKILL.md')) ||
+    readIfExists(path.join(repoRoot, 'SKILL.md'));
 }
 
 // ── SOUL.md marker-block append/strip ─────────────────────────────────────
