@@ -1,5 +1,5 @@
-name: openai_skills_figma-create-design-system-rules
-version: 0.0.8
+name: "@forgecat/openai_skills_figma-create-design-system-rules"
+version: 0.0.9
 description: Generates custom design system rules for the user's codebase. Use when
   user says 'create design system rules', 'generate rules for my project', 'set up
   design rules', 'customize design system guidelines', or wants to establish project-specific
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -28,6 +28,8 @@ skills:
     up design rules', 'customize design system guidelines', or wants to establish
     project-specific conventions for Figma-to-code workflows. Requires Figma MCP server
     connection.
+  scripts:
+  - path: skills/figma-create-design-system-rules/scripts/check_agents_md.sh
 mcp:
   path: mcp.jsonc
   requiredEnv: []

@@ -1,5 +1,5 @@
-name: openai_skills_sora
-version: 0.0.8
+name: "@forgecat/openai_skills_sora"
+version: 0.0.9
 description: 'Use when the user asks to generate, edit, extend, poll, list, download,
   or delete Sora videos, create reusable non-human Sora character references, or run
   local multi-video queues via the bundled CLI (`scripts/sora.py`); includes requests
@@ -13,10 +13,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -31,3 +31,5 @@ skills:
     requests like: (i) generate AI video, (ii) edit this Sora clip, (iii) extend this
     video, (iv) create a character reference, (v) download video/thumbnail/spritesheet,
     and (vi) Sora batch planning; requires `OPENAI_API_KEY` and Sora API access.'
+  scripts:
+  - path: skills/sora/scripts/sora.py

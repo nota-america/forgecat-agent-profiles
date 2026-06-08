@@ -1,5 +1,5 @@
-name: openai_skills_transcribe
-version: 0.0.8
+name: "@forgecat/openai_skills_transcribe"
+version: 0.0.9
 description: Transcribe audio files to text with optional diarization and known-speaker
   hints. Use when a user asks to transcribe speech from audio/video, extract text
   from recordings, or label speakers in interviews or meetings.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,5 @@ skills:
   description: Transcribe audio files to text with optional diarization and known-speaker
     hints. Use when a user asks to transcribe speech from audio/video, extract text
     from recordings, or label speakers in interviews or meetings.
+  scripts:
+  - path: skills/transcribe/scripts/transcribe_diarize.py

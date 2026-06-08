@@ -1,5 +1,5 @@
-name: openai_skills_notion-research-documentation
-version: 0.0.8
+name: "@forgecat/openai_skills_notion-research-documentation"
+version: 0.0.9
 description: Research across Notion and synthesize into structured documentation;
   use when gathering info from multiple Notion sources to produce briefs, comparisons,
   or reports with citations.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4

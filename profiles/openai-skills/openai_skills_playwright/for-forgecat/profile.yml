@@ -1,5 +1,5 @@
-name: openai_skills_playwright
-version: 0.0.8
+name: "@forgecat/openai_skills_playwright"
+version: 0.0.9
 description: Use when the task requires automating a real browser from the terminal
   (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging)
   via `playwright-cli` or the bundled wrapper script.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,5 @@ skills:
   description: Use when the task requires automating a real browser from the terminal
     (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging)
     via `playwright-cli` or the bundled wrapper script.
+  scripts:
+  - path: skills/playwright/scripts/playwright_cli.sh

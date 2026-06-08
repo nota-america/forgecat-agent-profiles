@@ -1,5 +1,5 @@
-name: openai_skills_security-threat-model
-version: 0.0.8
+name: "@forgecat/openai_skills_security-threat-model"
+version: 0.0.9
 description: Repository-grounded threat modeling that enumerates trust boundaries,
   assets, attacker capabilities, abuse paths, and mitigations, and writes a concise
   Markdown threat model. Trigger only when the user explicitly asks to threat model
@@ -13,10 +13,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4

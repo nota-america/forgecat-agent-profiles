@@ -1,5 +1,5 @@
-name: openai_skills_figma-generate-library
-version: 0.0.8
+name: "@forgecat/openai_skills_figma-generate-library"
+version: 0.0.9
 description: Build or update a professional-grade design system in Figma from a codebase.
   Use when the user wants to create variables/tokens, build component libraries, set
   up theming (light/dark modes), document foundations, or reconcile gaps between code
@@ -13,10 +13,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -31,6 +31,16 @@ skills:
     gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER
     — it complements the `figma-use` skill which teaches HOW to call the Plugin API.
     Both skills should be loaded together.
+  scripts:
+  - path: skills/figma-generate-library/scripts/bindVariablesToComponent.js
+  - path: skills/figma-generate-library/scripts/cleanupOrphans.js
+  - path: skills/figma-generate-library/scripts/createComponentWithVariants.js
+  - path: skills/figma-generate-library/scripts/createDocumentationPage.js
+  - path: skills/figma-generate-library/scripts/createSemanticTokens.js
+  - path: skills/figma-generate-library/scripts/createVariableCollection.js
+  - path: skills/figma-generate-library/scripts/inspectFileStructure.js
+  - path: skills/figma-generate-library/scripts/rehydrateState.js
+  - path: skills/figma-generate-library/scripts/validateCreation.js
 mcp:
   path: mcp.jsonc
   requiredEnv: []

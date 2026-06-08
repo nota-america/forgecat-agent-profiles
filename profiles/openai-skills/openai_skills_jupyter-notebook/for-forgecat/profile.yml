@@ -1,5 +1,5 @@
-name: openai_skills_jupyter-notebook
-version: 0.0.8
+name: "@forgecat/openai_skills_jupyter-notebook"
+version: 0.0.9
 description: Use when the user asks to create, scaffold, or edit Jupyter notebooks
   (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates
   and run the helper script `new_notebook.py` to generate a clean starting notebook.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,5 @@ skills:
   description: Use when the user asks to create, scaffold, or edit Jupyter notebooks
     (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates
     and run the helper script `new_notebook.py` to generate a clean starting notebook.
+  scripts:
+  - path: skills/jupyter-notebook/scripts/new_notebook.py

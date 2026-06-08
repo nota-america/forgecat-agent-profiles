@@ -1,5 +1,5 @@
-name: openai_skills_playwright-interactive
-version: 0.0.8
+name: "@forgecat/openai_skills_playwright-interactive"
+version: 0.0.9
 description: Persistent browser and Electron interaction through `js_repl` for fast
   iterative UI debugging.
 repository: https://github.com/openai/skills
@@ -9,10 +9,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4

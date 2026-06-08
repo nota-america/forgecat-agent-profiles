@@ -1,5 +1,5 @@
-name: openai_skills_frontend-skill
-version: 0.0.8
+name: "@forgecat/openai_skills_frontend-skill"
+version: 0.0.9
 description: Use when the task asks for a visually strong landing page, website, app,
   prototype, demo, or game UI. This skill enforces restrained composition, image-led
   hierarchy, cohesive content structure, and tasteful motion while avoiding generic
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
+      - claude-code
       - codex
       - cursor
-    partial:
-      - claude-code
+    partial: []
   models:
     recommended:
     - gpt-5.4
