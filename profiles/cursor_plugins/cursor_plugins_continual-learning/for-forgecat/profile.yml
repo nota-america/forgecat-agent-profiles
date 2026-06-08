@@ -1,0 +1,36 @@
+name: "@forgecat/cursor_plugins_continual-learning"
+version: 0.0.4
+description: Incrementally learns durable user preferences and workspace facts from
+  transcript changes and keeps AGENTS.md up to date with plain bullet points.
+repository: https://github.com/cursor/plugins
+license: MIT
+visibility: public
+sourcePlatform: cursor
+compatibility:
+  platforms:
+    tested:
+    - cursor
+    - claude-code
+    partial:
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: agents-memory-updater
+  path: agents/agents-memory-updater.md
+  description: Mine high-signal transcript deltas, update AGENTS.md, and keep the
+    incremental transcript index in sync.
+  model: inherit
+skills:
+- name: continual-learning
+  path: skills/continual-learning/SKILL.md
+  description: Orchestrate continual learning by delegating transcript mining and
+    AGENTS.md updates to agents-memory-updater.
+hooks:
+- id: continual-learning-stop
+  trigger: stop
+  command: ./hooks/continual-learning-stop.ts
+  timeout: 30
+  description: Checks stop events for transcript changes and asks the agent to run
+    the continual-learning skill when cadence thresholds are met.
