@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "_forgecat": "@forgecat/cursor_plugins_continual-learning#continual-learning-stop",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/cursor_plugins_continual-learning/hooks/_fc_wrap.sh codex continual-learning-stop.ts",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-name: anthropics_skills_pptx
-version: 0.0.2
+name: "@forgecat/anthropics_skills_pptx"
+version: 0.0.3
 description: 'Use this skill any time a .pptx file is involved in any way — as input,
   output, or both. This includes: creating slide decks, pitch decks, or presentations;
   reading, parsing, or extracting text from any .pptx file (even if the extracted
@@ -17,7 +17,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -34,3 +33,20 @@ skills:
     mentions "deck," "slides," "presentation," or references a .pptx filename, regardless
     of what they plan to do with the content afterward. If a .pptx file needs to be
     opened, created, or touched, use this skill.'
+  scripts:
+  - path: skills/pptx/scripts/__init__.py
+  - path: skills/pptx/scripts/add_slide.py
+  - path: skills/pptx/scripts/clean.py
+  - path: skills/pptx/scripts/thumbnail.py
+  - path: skills/pptx/scripts/office/pack.py
+  - path: skills/pptx/scripts/office/soffice.py
+  - path: skills/pptx/scripts/office/unpack.py
+  - path: skills/pptx/scripts/office/validate.py
+  - path: skills/pptx/scripts/office/helpers/__init__.py
+  - path: skills/pptx/scripts/office/helpers/merge_runs.py
+  - path: skills/pptx/scripts/office/helpers/simplify_redlines.py
+  - path: skills/pptx/scripts/office/validators/__init__.py
+  - path: skills/pptx/scripts/office/validators/base.py
+  - path: skills/pptx/scripts/office/validators/docx.py
+  - path: skills/pptx/scripts/office/validators/pptx.py
+  - path: skills/pptx/scripts/office/validators/redlining.py

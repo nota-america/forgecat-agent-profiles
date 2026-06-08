@@ -1,5 +1,5 @@
-name: anthropics_skills_slack-gif-creator
-version: 0.0.2
+name: "@forgecat/anthropics_skills_slack-gif-creator"
+version: 0.0.3
 description: Knowledge and utilities for creating animated GIFs optimized for Slack.
   Provides constraints, validation tools, and animation concepts. Use when users request
   animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -22,3 +21,8 @@ skills:
   description: Knowledge and utilities for creating animated GIFs optimized for Slack.
     Provides constraints, validation tools, and animation concepts. Use when users
     request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
+  scripts:
+  - path: skills/slack-gif-creator/core/easing.py
+  - path: skills/slack-gif-creator/core/frame_composer.py
+  - path: skills/slack-gif-creator/core/gif_builder.py
+  - path: skills/slack-gif-creator/core/validators.py

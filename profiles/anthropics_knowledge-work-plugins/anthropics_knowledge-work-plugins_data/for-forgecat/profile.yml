@@ -1,5 +1,5 @@
-name: anthropics_knowledge-work-plugins_data
-version: 0.0.6
+name: "@forgecat/anthropics_knowledge-work-plugins_data"
+version: 0.0.7
 description: Write SQL, explore datasets, and generate insights faster. Build visualizations
   and dashboards, and turn raw data into clear stories for stakeholders.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/data
@@ -10,7 +10,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -73,5 +72,7 @@ skills:
   path: skills/data-context-extractor/SKILL.md
   description: Generate or improve a company-specific data analysis skill by extracting
     tribal knowledge from analysts.
+  scripts:
+  - path: skills/data-context-extractor/scripts/package_data_skill.py
 mcp:
   path: mcp.jsonc

@@ -1,5 +1,5 @@
-name: anthropics_claude-plugins-official_math-olympiad
-version: 0.0.2
+name: "@forgecat/anthropics_claude-plugins-official_math-olympiad"
+version: 0.0.3
 description: Solve competition math (IMO, Putnam, USAMO) with adversarial verification
   that catches what self-verification misses. Fresh-context verifiers attack proofs
   with specific failure patterns. Calibrated abstention over bluffing.
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -28,3 +27,6 @@ skills:
     the proof using specific failure patterns, not generic 'check logic'. Outputs
     calibrated confidence — will say 'no confident solution' rather than bluff. If
     LaTeX is available, produces a clean PDF after verification passes.
+  scripts:
+  - path: skills/math-olympiad/scripts/check_latex.sh
+  - path: skills/math-olympiad/scripts/compile_pdf.sh

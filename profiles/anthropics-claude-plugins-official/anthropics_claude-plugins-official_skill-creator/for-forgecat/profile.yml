@@ -1,5 +1,5 @@
-name: anthropics_claude-plugins-official_skill-creator
-version: 0.0.2
+name: "@forgecat/anthropics_claude-plugins-official_skill-creator"
+version: 0.0.3
 description: Create new skills, improve existing skills, and measure skill performance.
   Use when users want to create a skill from scratch, update or optimize an existing
   skill, run evals to test a skill, or benchmark skill performance with variance analysis.
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -24,3 +23,14 @@ skills:
     or optimize an existing skill, run evals to test a skill, benchmark skill performance
     with variance analysis, or optimize a skill's description for better triggering
     accuracy.
+  scripts:
+  - path: skills/skill-creator/eval-viewer/generate_review.py
+  - path: skills/skill-creator/scripts/__init__.py
+  - path: skills/skill-creator/scripts/aggregate_benchmark.py
+  - path: skills/skill-creator/scripts/generate_report.py
+  - path: skills/skill-creator/scripts/improve_description.py
+  - path: skills/skill-creator/scripts/package_skill.py
+  - path: skills/skill-creator/scripts/quick_validate.py
+  - path: skills/skill-creator/scripts/run_eval.py
+  - path: skills/skill-creator/scripts/run_loop.py
+  - path: skills/skill-creator/scripts/utils.py

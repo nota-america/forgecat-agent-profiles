@@ -1,5 +1,5 @@
 name: "@forgecat/everyinc_compound-engineering-plugin"
-version: 0.0.3
+version: 0.0.4
 description: AI-powered development tools for code review, research, design, and workflow
   automation.
 repository: https://github.com/EveryInc/compound-engineering-plugin
@@ -10,7 +10,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []

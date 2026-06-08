@@ -1,5 +1,5 @@
-name: anthropics_knowledge-work-plugins_enterprise-search
-version: 0.0.6
+name: "@forgecat/anthropics_knowledge-work-plugins_enterprise-search"
+version: 0.0.7
 description: Search across all of your company's tools in one place. Find anything
   across email, chat, documents, and wikis without switching between apps.
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/enterprise-search
@@ -10,7 +10,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []

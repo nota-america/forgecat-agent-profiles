@@ -1,5 +1,5 @@
-name: anthropics_knowledge-work-plugins_design
-version: 0.0.6
+name: "@forgecat/anthropics_knowledge-work-plugins_design"
+version: 0.0.7
 description: Accelerate design workflows — critique, design system management, UX
   writing, accessibility audits, research synthesis, and dev handoff. From exploration
   to pixel-perfect specs.
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []

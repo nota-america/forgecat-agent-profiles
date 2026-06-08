@@ -1,5 +1,5 @@
-name: anthropics_skills_algorithmic-art
-version: 0.0.2
+name: "@forgecat/anthropics_skills_algorithmic-art"
+version: 0.0.3
 description: Creating algorithmic art using p5.js with seeded randomness and interactive
   parameter exploration. Use this when users request creating art using code, generative
   art, algorithmic art, flow fields, or particle systems. Create original algorithmic
@@ -12,7 +12,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -24,3 +23,5 @@ skills:
     parameter exploration. Use this when users request creating art using code, generative
     art, algorithmic art, flow fields, or particle systems. Create original algorithmic
     art rather than copying existing artists' work to avoid copyright violations.
+  scripts:
+  - path: skills/algorithmic-art/templates/generator_template.js

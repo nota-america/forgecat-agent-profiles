@@ -1,5 +1,5 @@
 name: "@forgecat/vercel-labs_agent-skills_deploy-to-vercel"
-version: 0.0.6
+version: 0.0.7
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like "deploy my app", "deploy and give me the link", "push this
   live", or "create a preview deployment".
@@ -10,18 +10,18 @@ compatibility:
   platforms:
     tested:
       - claude-code
-    partial:
       - codex
+    partial:
       - cursor
   models:
     recommended: []
     minimum: []
 skills:
 - name: deploy-to-vercel
-  path: SKILL.md
+  path: skills/deploy-to-vercel/SKILL.md
   description: Deploy applications and websites to Vercel. Use when the user requests
     deployment actions like "deploy my app", "deploy and give me the link", "push
     this live", or "create a preview deployment".
   scripts:
-    - path: resources/deploy-codex.sh
-    - path: resources/deploy.sh
+    - path: skills/deploy-to-vercel/resources/deploy-codex.sh
+    - path: skills/deploy-to-vercel/resources/deploy.sh

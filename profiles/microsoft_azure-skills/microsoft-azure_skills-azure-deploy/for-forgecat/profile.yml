@@ -1,5 +1,5 @@
-name: microsoft-azure_skills-azure-deploy
-version: 0.0.2
+name: "@forgecat/microsoft-azure_skills-azure-deploy"
+version: 0.0.3
 description: 'Execute Azure deployments for ALREADY-PREPARED applications that have
   existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill
   when the user asks to CREATE a new application — use azure-prepare instead. This
@@ -18,7 +18,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -37,3 +36,6 @@ skills:
     DO NOT USE WHEN: "create and deploy", "build and deploy", "create a new app",
     "set up infrastructure", "create and deploy to Azure using Terraform" — use azure-prepare
     for these.'
+  scripts:
+  - path: skills/azure-deploy/references/recipes/azd/scripts/apply-migrations.sh
+  - path: skills/azure-deploy/references/recipes/azd/scripts/grant-and-migrate.sh

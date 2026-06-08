@@ -1,5 +1,5 @@
-name: microsoft-azure_skills-azure-prepare
-version: 0.0.2
+name: "@forgecat/microsoft-azure_skills-azure-prepare"
+version: 0.0.3
 description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml,
   Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration
   (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create
@@ -20,7 +20,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -40,3 +39,5 @@ skills:
     trigger", "service bus trigger", "event-driven function", "containerized Node.js
     app", "social media app", "static portfolio website", "todo list with frontend
     and API", "prepare my Azure application to use Key Vault", "managed identity".'
+  scripts:
+  - path: skills/azure-prepare/references/services/sql-database/scripts/grant-sql-access.sh

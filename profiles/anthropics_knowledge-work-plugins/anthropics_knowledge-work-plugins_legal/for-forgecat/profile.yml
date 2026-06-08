@@ -1,5 +1,5 @@
-name: anthropics_knowledge-work-plugins_legal
-version: 0.0.6
+name: "@forgecat/anthropics_knowledge-work-plugins_legal"
+version: 0.0.7
 description: Speed up contract review, NDA triage, and compliance workflows for in-house
   legal teams. Draft legal briefs, organize precedent research, and manage institutional
   knowledge.
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
