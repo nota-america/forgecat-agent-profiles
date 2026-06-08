@@ -1,5 +1,5 @@
 name: anthropics_skills_brand-guidelines
-version: 0.0.0
+version: 0.0.2
 description: Applies Anthropic's official brand colors and typography to any sort
   of artifact that may benefit from having Anthropic's look-and-feel. Use it when
   brand colors or style guidelines, visual formatting, or company design standards
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
-name: cursor_plugins_ralph-loop
-version: 0.0.1
+name: "@forgecat/cursor_plugins_ralph-loop"
+version: 0.0.4
 description: Run iterative self-referential development loops where the same prompt
   is repeated until completion criteria are met.
 repository: https://github.com/cursor/plugins
@@ -9,10 +9,10 @@ sourcePlatform: cursor
 compatibility:
   platforms:
     tested:
-    - cursor
+      - claude-code
+      - cursor
     partial:
-    - claude-code
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
 name: anthropics_claude-code_ralph-wiggum
-version: 0.0.0
+version: 0.0.2
 description: Implementation of the Ralph Wiggum technique - continuous self-referential
   AI loops for interactive iterative development. Run Claude in a while-true loop
   with the same prompt until task completion.
@@ -10,10 +10,10 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

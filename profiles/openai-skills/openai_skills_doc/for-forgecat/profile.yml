@@ -1,5 +1,5 @@
-name: openai_skills_doc
-version: 0.0.6
+name: "@forgecat/openai_skills_doc"
+version: 0.0.9
 description: Use when the task involves reading, creating, or editing `.docx` documents,
   especially when formatting or layout fidelity matters; prefer `python-docx` plus
   the bundled `scripts/render_docx.py` for visual checks.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,5 @@ skills:
   description: Use when the task involves reading, creating, or editing `.docx` documents,
     especially when formatting or layout fidelity matters; prefer `python-docx` plus
     the bundled `scripts/render_docx.py` for visual checks.
+  scripts:
+  - path: skills/doc/scripts/render_docx.py

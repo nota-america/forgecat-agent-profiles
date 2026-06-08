@@ -1,5 +1,5 @@
-name: openai_skills_slides
-version: 0.0.6
+name: "@forgecat/openai_skills_slides"
+version: 0.0.9
 description: Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled
   layout helpers, and render/validation utilities. Use when tasks involve building
   a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks,
@@ -12,10 +12,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -29,3 +29,18 @@ skills:
     building a new PowerPoint deck, recreating slides from screenshots/PDFs/reference
     decks, modifying slide content while preserving editable output, adding charts/diagrams/visuals,
     or diagnosing layout issues such as overflow, overlaps, and font substitution.
+  scripts:
+  - path: skills/slides/assets/pptxgenjs_helpers/code.js
+  - path: skills/slides/assets/pptxgenjs_helpers/image.js
+  - path: skills/slides/assets/pptxgenjs_helpers/index.js
+  - path: skills/slides/assets/pptxgenjs_helpers/latex.js
+  - path: skills/slides/assets/pptxgenjs_helpers/layout.js
+  - path: skills/slides/assets/pptxgenjs_helpers/layout_builders.js
+  - path: skills/slides/assets/pptxgenjs_helpers/svg.js
+  - path: skills/slides/assets/pptxgenjs_helpers/text.js
+  - path: skills/slides/assets/pptxgenjs_helpers/util.js
+  - path: skills/slides/scripts/create_montage.py
+  - path: skills/slides/scripts/detect_font.py
+  - path: skills/slides/scripts/ensure_raster_image.py
+  - path: skills/slides/scripts/render_slides.py
+  - path: skills/slides/scripts/slides_test.py

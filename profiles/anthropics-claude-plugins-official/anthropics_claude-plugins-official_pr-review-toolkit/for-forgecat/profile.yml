@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_pr-review-toolkit
-version: 0.0.2
+version: 0.0.3
 description: Comprehensive PR review agents specializing in comments, tests, error
   handling, type design, code quality, and code simplification
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pr-review-toolkit
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

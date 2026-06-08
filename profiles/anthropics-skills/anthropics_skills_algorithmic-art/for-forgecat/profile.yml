@@ -1,5 +1,5 @@
 name: anthropics_skills_algorithmic-art
-version: 0.0.0
+version: 0.0.2
 description: Creating algorithmic art using p5.js with seeded randomness and interactive
   parameter exploration. Use this when users request creating art using code, generative
   art, algorithmic art, flow fields, or particle systems. Create original algorithmic
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

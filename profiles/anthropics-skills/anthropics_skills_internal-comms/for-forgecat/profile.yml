@@ -1,5 +1,5 @@
 name: anthropics_skills_internal-comms
-version: 0.0.0
+version: 0.0.2
 description: A set of resources to help me write all kinds of internal communications,
   using the formats that my company likes to use. Claude should use this skill whenever
   asked to write some sort of internal communications (status reports, leadership
@@ -11,10 +11,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

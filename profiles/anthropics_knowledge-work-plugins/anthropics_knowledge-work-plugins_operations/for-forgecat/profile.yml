@@ -1,5 +1,5 @@
 name: anthropics_knowledge-work-plugins_operations
-version: 0.0.4
+version: 0.0.6
 description: Optimize business operations — vendor management, process documentation,
   change management, capacity planning, and compliance tracking. Keep your organization
   running efficiently.
@@ -9,10 +9,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

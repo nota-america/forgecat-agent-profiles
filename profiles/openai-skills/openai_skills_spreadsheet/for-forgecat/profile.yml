@@ -1,5 +1,5 @@
-name: openai_skills_spreadsheet
-version: 0.0.6
+name: "@forgecat/openai_skills_spreadsheet"
+version: 0.0.9
 description: Use when tasks involve creating, editing, analyzing, or formatting spreadsheets
   (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and
   visual review.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,8 @@ skills:
   description: Use when tasks involve creating, editing, analyzing, or formatting
     spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation,
     and visual review.
+  scripts:
+  - path: skills/spreadsheet/references/examples/openpyxl/create_basic_spreadsheet.py
+  - path: skills/spreadsheet/references/examples/openpyxl/create_spreadsheet_with_styling.py
+  - path: skills/spreadsheet/references/examples/openpyxl/read_existing_spreadsheet.py
+  - path: skills/spreadsheet/references/examples/openpyxl/styling_spreadsheet.py

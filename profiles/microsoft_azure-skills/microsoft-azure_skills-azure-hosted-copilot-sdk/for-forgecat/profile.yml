@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-hosted-copilot-sdk
-version: 0.0.0
+version: 0.0.2
 description: 'Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when
   codebase contains @github/copilot-sdk or CopilotClient — use this skill instead
   of azure-prepare. PREFER OVER azure-prepare when codebase contains copilot-sdk markers.
@@ -13,10 +13,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

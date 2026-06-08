@@ -72,7 +72,7 @@ All critical checks must pass. If any fail, provide fix instructions:
 
 | Problem | Fix |
 |---------|-----|
-| Not installed | `curl -s https://get.nextflow.io | bash && mv nextflow ~/bin/` |
+| Not installed | `curl -fsSL https://get.nextflow.io -o get-nextflow.sh && less get-nextflow.sh && bash get-nextflow.sh && mv nextflow ~/bin/` |
 | Version < 23.04 | `nextflow self-update` |
 
 ### Java issues

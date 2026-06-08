@@ -1,0 +1,48 @@
+import type { HostConfig } from '../scripts/host-config';
+
+const slate: HostConfig = {
+  name: 'slate',
+  displayName: 'Slate',
+  cliCommand: 'slate',
+  cliAliases: [],
+
+  globalRoot: '.slate/skills/garrytan_gstack',
+  localSkillRoot: '.slate/skills/garrytan_gstack',
+  hostSubdir: '.slate',
+  usesEnvVars: true,
+
+  frontmatter: {
+    mode: 'allowlist',
+    keepFields: ['name', 'description'],
+    descriptionLimit: null,
+  },
+
+  generation: {
+    generateMetadata: false,
+    skipSkills: ['codex'],
+  },
+
+  pathRewrites: [
+    { from: '$GSTACK_ROOT', to: '~/.slate/skills/garrytan_gstack' },
+    { from: '$GSTACK_ROOT', to: '.slate/skills/garrytan_gstack' },
+    { from: '.claude/skills', to: '.slate/skills' },
+  ],
+
+  suppressedResolvers: ['GBRAIN_CONTEXT_LOAD', 'GBRAIN_SAVE_RESULTS'],
+
+  runtimeRoot: {
+    globalSymlinks: ['bin', 'browse/dist', 'browse/bin', 'gstack-upgrade', 'ETHOS.md'],
+    globalFiles: {
+      'review': ['checklist.md', 'TODOS-format.md'],
+    },
+  },
+
+  install: {
+    prefixable: false,
+    linkingStrategy: 'symlink-generated',
+  },
+
+  learningsMode: 'basic',
+};
+
+export default slate;

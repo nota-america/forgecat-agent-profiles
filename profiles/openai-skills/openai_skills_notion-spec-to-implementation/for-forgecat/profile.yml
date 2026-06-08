@@ -1,5 +1,5 @@
-name: openai_skills_notion-spec-to-implementation
-version: 0.0.6
+name: "@forgecat/openai_skills_notion-spec-to-implementation"
+version: 0.0.9
 description: Turn Notion specs into implementation plans, tasks, and progress tracking;
   use when implementing PRDs/feature specs and creating Notion plans + tasks from
   them.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4

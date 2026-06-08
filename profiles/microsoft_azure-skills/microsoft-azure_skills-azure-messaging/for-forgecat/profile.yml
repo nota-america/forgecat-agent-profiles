@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-messaging
-version: 0.0.0
+version: 0.0.2
 description: 'Troubleshoot and resolve issues with Azure Messaging SDKs for Event
   Hubs and Service Bus. Covers connection failures, authentication errors, message
   processing issues, and SDK configuration problems. WHEN: event hub SDK error, service
@@ -18,10 +18,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

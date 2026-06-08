@@ -1,5 +1,5 @@
-name: openai_skills_vercel-deploy
-version: 0.0.6
+name: "@forgecat/openai_skills_vercel-deploy"
+version: 0.0.9
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like 'deploy my app', 'deploy and give me the link', 'push this
   live', or 'create a preview deployment'.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,5 @@ skills:
   description: Deploy applications and websites to Vercel. Use when the user requests
     deployment actions like 'deploy my app', 'deploy and give me the link', 'push
     this live', or 'create a preview deployment'.
+  scripts:
+  - path: skills/vercel-deploy/scripts/deploy.sh

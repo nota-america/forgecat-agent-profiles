@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_code-simplifier
-version: 0.0.0
+version: 0.0.2
 description: Agent that simplifies and refines code for clarity, consistency, and
   maintainability while preserving functionality
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

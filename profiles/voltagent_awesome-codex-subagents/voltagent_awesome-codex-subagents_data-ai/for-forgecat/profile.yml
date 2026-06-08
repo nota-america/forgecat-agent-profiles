@@ -1,5 +1,5 @@
-name: voltagent_awesome-codex-subagents_data-ai
-version: 0.0.6
+name: "@forgecat/voltagent_awesome-codex-subagents_data-ai"
+version: 0.0.9
 description: Agents for data pipelines, LLM integrations, and database behavior. Includes
   12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 repository: https://github.com/VoltAgent/awesome-codex-subagents
@@ -9,10 +9,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4

@@ -1,5 +1,5 @@
 name: anthropics_skills_claude-api
-version: 0.0.0
+version: 0.0.2
 description: 'Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built
   with this skill should include prompt caching. Also handles migrating existing Claude
   API code between Claude model versions (4.5 → 4.6, 4.6 → 4.7, retired-model replacements).
@@ -15,10 +15,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

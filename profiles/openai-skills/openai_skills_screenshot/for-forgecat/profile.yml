@@ -1,5 +1,5 @@
-name: openai_skills_screenshot
-version: 0.0.6
+name: "@forgecat/openai_skills_screenshot"
+version: 0.0.9
 description: Use when the user explicitly asks for a desktop or system screenshot
   (full screen, specific app or window, or a pixel region), or when tool-specific
   capture capabilities are unavailable and an OS-level capture is needed.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,6 @@ skills:
   description: Use when the user explicitly asks for a desktop or system screenshot
     (full screen, specific app or window, or a pixel region), or when tool-specific
     capture capabilities are unavailable and an OS-level capture is needed.
+  scripts:
+  - path: skills/screenshot/scripts/ensure_macos_permissions.sh
+  - path: skills/screenshot/scripts/take_screenshot.py

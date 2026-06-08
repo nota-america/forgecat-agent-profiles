@@ -1,5 +1,5 @@
-name: openai_skills_figma
-version: 0.0.4
+name: "@forgecat/openai_skills_figma"
+version: 0.0.6
 description: Use the Figma MCP server to fetch design context, screenshots, variables,
   and assets from Figma, and to translate Figma nodes into production code. Trigger
   when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
+      - claude-code
     partial:
-    - claude-code
     - cursor
+    - codex
   models:
     recommended:
     - gpt-5.4

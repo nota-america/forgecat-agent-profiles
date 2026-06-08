@@ -1,5 +1,5 @@
-name: openai_skills_develop-web-game
-version: 0.0.6
+name: "@forgecat/openai_skills_develop-web-game"
+version: 0.0.9
 description: 'Use when Codex is building or iterating on a web game (HTML/JS) and
   needs a reliable development + testing loop: implement small changes, run a Playwright-based
   test script with short input bursts and intentional pauses, inspect screenshots/text,
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -27,3 +27,5 @@ skills:
     needs a reliable development + testing loop: implement small changes, run a Playwright-based
     test script with short input bursts and intentional pauses, inspect screenshots/text,
     and review console errors with render_game_to_text.'
+  scripts:
+  - path: skills/develop-web-game/scripts/web_game_playwright_client.js

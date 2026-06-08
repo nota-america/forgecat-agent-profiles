@@ -1,5 +1,5 @@
-name: openai_skills_system-skill-creator
-version: 0.0.6
+name: "@forgecat/openai_skills_system-skill-creator"
+version: 0.0.9
 description: Guide for creating effective skills. This skill should be used when users
   want to create a new skill (or update an existing skill) that extends Codex's capabilities
   with specialized knowledge, workflows, or tool integrations.
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,7 @@ skills:
   description: Guide for creating effective skills. This skill should be used when
     users want to create a new skill (or update an existing skill) that extends Codex's
     capabilities with specialized knowledge, workflows, or tool integrations.
+  scripts:
+  - path: skills/skill-creator/scripts/generate_openai_yaml.py
+  - path: skills/skill-creator/scripts/init_skill.py
+  - path: skills/skill-creator/scripts/quick_validate.py

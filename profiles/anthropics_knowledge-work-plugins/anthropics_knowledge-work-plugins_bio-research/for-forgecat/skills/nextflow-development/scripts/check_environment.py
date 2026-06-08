@@ -117,7 +117,7 @@ def check_nextflow() -> CheckResult:
             name="Nextflow",
             passed=False,
             message="Nextflow not found in PATH",
-            fix="curl -s https://get.nextflow.io | bash && mv nextflow ~/bin/ && export PATH=$HOME/bin:$PATH"
+            fix="curl -fsSL https://get.nextflow.io -o get-nextflow.sh && less get-nextflow.sh && bash get-nextflow.sh && mv nextflow ~/bin/ && export PATH=$HOME/bin:$PATH"
         )
 
     try:

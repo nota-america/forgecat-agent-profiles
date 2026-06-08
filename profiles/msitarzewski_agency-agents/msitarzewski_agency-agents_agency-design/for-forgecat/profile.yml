@@ -1,5 +1,5 @@
 name: msitarzewski_agency-agents_agency-design
-version: 0.0.7
+version: 0.0.9
 description: Design division from The Agency — 8 specialized agent personalities from
   msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality,
   and production-ready workflows.
@@ -10,10 +10,10 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - codex
-    - cursor
+      - codex
   models:
     recommended:
     - claude-4-opus

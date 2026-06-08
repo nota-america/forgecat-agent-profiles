@@ -1,5 +1,5 @@
-name: openai_skills_figma-create-new-file
-version: 0.0.6
+name: "@forgecat/openai_skills_figma-create-new-file"
+version: 0.0.9
 description: Create a new blank Figma file. Use when the user wants to create a new
   Figma design or FigJam file, or when you need a new file before calling use_figma.
   Handles plan resolution via whoami if needed. Usage — /figma-create-new-file [editorType]
@@ -11,10 +11,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4

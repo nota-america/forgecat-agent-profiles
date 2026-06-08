@@ -1,5 +1,5 @@
 name: anthropics_skills_frontend-design
-version: 0.0.0
+version: 0.0.2
 description: Create distinctive, production-grade frontend interfaces with high design
   quality. Use this skill when the user asks to build web components, pages, artifacts,
   posters, or applications (examples include websites, landing pages, dashboards,
@@ -11,10 +11,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

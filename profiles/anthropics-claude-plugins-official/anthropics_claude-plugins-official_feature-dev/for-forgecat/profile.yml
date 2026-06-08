@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_feature-dev
-version: 0.0.0
+version: 0.0.2
 description: Comprehensive feature development workflow with specialized agents for
   codebase exploration, architecture design, and quality review
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev
@@ -8,10 +8,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

@@ -1,5 +1,5 @@
-name: openai_skills_system-skill-installer
-version: 0.0.6
+name: "@forgecat/openai_skills_system-skill-installer"
+version: 0.0.9
 description: Install Codex skills into $CODEX_HOME/skills from a curated list or a
   GitHub repo path. Use when a user asks to list installable skills, install a curated
   skill, or install a skill from another repo (including private repos).
@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -25,3 +25,7 @@ skills:
   description: Install Codex skills into $CODEX_HOME/skills from a curated list or
     a GitHub repo path. Use when a user asks to list installable skills, install a
     curated skill, or install a skill from another repo (including private repos).
+  scripts:
+  - path: skills/skill-installer/scripts/github_utils.py
+  - path: skills/skill-installer/scripts/install-skill-from-github.py
+  - path: skills/skill-installer/scripts/list-skills.py

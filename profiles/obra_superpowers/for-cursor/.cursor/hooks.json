@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "_forgecat": "@forgecat/obra_superpowers#superpowers-session-start",
+        "command": ".forgecat/profiles/@forgecat/obra_superpowers/hooks/_fc_wrap.sh cursor session-start.sh"
+      }
+    ]
+  }
+}

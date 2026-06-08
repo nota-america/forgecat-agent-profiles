@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-storage
-version: 0.0.0
+version: 0.0.2
 description: 'Azure Storage Services including Blob Storage, File Shares, Queue Storage,
   Table Storage, and Data Lake. Answers questions about storage access tiers (hot,
   cool, cold, archive), when to use each tier, and tier comparison. Provides object
@@ -16,10 +16,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

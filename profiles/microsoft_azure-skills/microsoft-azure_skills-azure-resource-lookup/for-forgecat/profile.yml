@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-resource-lookup
-version: 0.0.0
+version: 0.0.2
 description: 'List, find, and show Azure resources across subscriptions or resource
   groups. Handles prompts like "list the websites in my subscription", "list my web
   apps", "show my app services", "list virtual machines", "list my VMs", "show storage
@@ -15,10 +15,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

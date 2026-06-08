@@ -1,5 +1,5 @@
-name: openai_skills_linear
-version: 0.0.6
+name: "@forgecat/openai_skills_linear"
+version: 0.0.9
 description: Manage issues, projects & team workflows in Linear. Use when the user
   wants to read, create or updates tickets in Linear.
 repository: https://github.com/openai/skills
@@ -9,10 +9,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4

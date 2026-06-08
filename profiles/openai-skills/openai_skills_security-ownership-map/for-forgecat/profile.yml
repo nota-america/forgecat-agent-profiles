@@ -1,5 +1,5 @@
-name: openai_skills_security-ownership-map
-version: 0.0.6
+name: "@forgecat/openai_skills_security-ownership-map"
+version: 0.0.9
 description: 'Analyze git repositories to build a security ownership topology (people-to-file),
   compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases
   and visualization. Trigger only when the user explicitly wants a security-oriented
@@ -14,10 +14,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
-    - claude-code
-    - cursor
+      - claude-code
+      - codex
+      - cursor
+    partial: []
   models:
     recommended:
     - gpt-5.4
@@ -33,3 +33,8 @@ skills:
     sensitive code, security maintainers, CODEOWNERS reality checks for risk, sensitive
     hotspots, or ownership clusters). Do not trigger for general maintainer lists
     or non-security ownership questions.'
+  scripts:
+  - path: skills/security-ownership-map/scripts/build_ownership_map.py
+  - path: skills/security-ownership-map/scripts/community_maintainers.py
+  - path: skills/security-ownership-map/scripts/query_ownership.py
+  - path: skills/security-ownership-map/scripts/run_ownership_map.py

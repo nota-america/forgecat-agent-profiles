@@ -1,5 +1,5 @@
-name: cursor_plugins_team-kit
-version: 0.0.5
+name: "@forgecat/cursor_plugins_team-kit"
+version: 0.0.8
 description: 'Internal workflows used by Cursor developers for CI, code review, and
   shipping. Covers the full dev loop: CI monitoring and fixing, PR creation, merge
   conflicts, smoke tests, compiler checks, code cleanup, and work summaries.'
@@ -10,10 +10,10 @@ sourcePlatform: cursor
 compatibility:
   platforms:
     tested:
-    - cursor
+      - claude-code
+      - cursor
     partial:
-    - claude-code
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []
@@ -54,6 +54,8 @@ skills:
     annotations, and renders diffs with moved-code detection. Use when the user pastes
     a GitHub PR URL and asks for a review, walkthrough, or summary, or says 'review
     this PR'.
+  scripts:
+  - path: skills/pr-review-canvas/renderer.js
 - name: review-and-ship
   path: skills/review-and-ship/SKILL.md
   description: Run a structured review, close key issues, and ship changes via PR

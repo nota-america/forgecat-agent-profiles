@@ -12,7 +12,9 @@
 
 ```bash
 # Nextflow
-curl -s https://get.nextflow.io | bash
+curl -fsSL https://get.nextflow.io -o get-nextflow.sh
+less get-nextflow.sh
+bash get-nextflow.sh
 mv nextflow ~/bin/
 export PATH="$HOME/bin:$PATH"
 

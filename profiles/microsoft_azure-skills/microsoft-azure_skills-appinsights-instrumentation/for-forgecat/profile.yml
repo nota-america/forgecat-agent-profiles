@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-appinsights-instrumentation
-version: 0.0.0
+version: 0.0.2
 description: 'Guidance for instrumenting webapps with Azure Application Insights.
   Provides telemetry patterns, SDK setup, and configuration references. WHEN: how
   to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

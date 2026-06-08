@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-kusto
-version: 0.0.0
+version: 0.0.2
 description: 'Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL
   for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto
   database queries, Azure Data Explorer, ADX clusters, log analytics, time series
@@ -10,10 +10,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

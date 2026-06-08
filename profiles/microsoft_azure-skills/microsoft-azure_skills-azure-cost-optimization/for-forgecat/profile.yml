@@ -1,5 +1,5 @@
 name: microsoft-azure_skills-azure-cost-optimization
-version: 0.0.0
+version: 0.0.2
 description: 'Unified Azure cost management: query historical costs, forecast future
   spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure
   bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending",
@@ -18,10 +18,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []

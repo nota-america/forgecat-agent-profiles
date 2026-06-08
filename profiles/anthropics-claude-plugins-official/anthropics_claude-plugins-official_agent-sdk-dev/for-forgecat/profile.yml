@@ -1,5 +1,5 @@
 name: anthropics_claude-plugins-official_agent-sdk-dev
-version: 0.0.0
+version: 0.0.2
 description: Claude Agent SDK Development Plugin
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev
 license: Apache-2.0
@@ -7,10 +7,10 @@ visibility: public
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
+      - cursor
     partial:
-    - cursor
-    - codex
+      - codex
   models:
     recommended: []
     minimum: []
