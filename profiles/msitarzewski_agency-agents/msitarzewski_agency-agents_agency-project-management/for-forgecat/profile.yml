@@ -1,5 +1,5 @@
-name: msitarzewski_agency-agents_agency-project-management
-version: 0.0.9
+name: "@forgecat/msitarzewski_agency-agents_agency-project-management"
+version: 0.0.10
 description: Project Management division from The Agency — 6 specialized agent personalities
   from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality,
   and production-ready workflows.
@@ -12,7 +12,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended:

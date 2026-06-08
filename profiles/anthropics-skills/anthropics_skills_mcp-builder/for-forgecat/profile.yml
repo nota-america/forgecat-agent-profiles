@@ -1,5 +1,5 @@
-name: anthropics_skills_mcp-builder
-version: 0.0.2
+name: "@forgecat/anthropics_skills_mcp-builder"
+version: 0.0.3
 description: Guide for creating high-quality MCP (Model Context Protocol) servers
   that enable LLMs to interact with external services through well-designed tools.
   Use when building MCP servers to integrate external APIs or services, whether in
@@ -12,7 +12,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -24,3 +23,6 @@ skills:
     that enable LLMs to interact with external services through well-designed tools.
     Use when building MCP servers to integrate external APIs or services, whether
     in Python (FastMCP) or Node/TypeScript (MCP SDK).
+  scripts:
+  - path: skills/mcp-builder/scripts/connections.py
+  - path: skills/mcp-builder/scripts/evaluation.py

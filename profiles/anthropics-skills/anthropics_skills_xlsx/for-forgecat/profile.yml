@@ -1,5 +1,5 @@
-name: anthropics_skills_xlsx
-version: 0.0.2
+name: "@forgecat/anthropics_skills_xlsx"
+version: 0.0.3
 description: 'Use this skill any time a spreadsheet file is the primary input or output.
   This means any task where the user wants to: open, read, edit, or fix an existing
   .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting,
@@ -20,7 +20,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -40,3 +39,17 @@ skills:
     The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable
     is a Word document, HTML report, standalone Python script, database pipeline,
     or Google Sheets API integration, even if tabular data is involved.'
+  scripts:
+  - path: skills/xlsx/scripts/recalc.py
+  - path: skills/xlsx/scripts/office/pack.py
+  - path: skills/xlsx/scripts/office/soffice.py
+  - path: skills/xlsx/scripts/office/unpack.py
+  - path: skills/xlsx/scripts/office/validate.py
+  - path: skills/xlsx/scripts/office/helpers/__init__.py
+  - path: skills/xlsx/scripts/office/helpers/merge_runs.py
+  - path: skills/xlsx/scripts/office/helpers/simplify_redlines.py
+  - path: skills/xlsx/scripts/office/validators/__init__.py
+  - path: skills/xlsx/scripts/office/validators/base.py
+  - path: skills/xlsx/scripts/office/validators/docx.py
+  - path: skills/xlsx/scripts/office/validators/pptx.py
+  - path: skills/xlsx/scripts/office/validators/redlining.py

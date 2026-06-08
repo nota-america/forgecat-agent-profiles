@@ -1,5 +1,5 @@
-name: anthropics_skills_webapp-testing
-version: 0.0.2
+name: "@forgecat/anthropics_skills_webapp-testing"
+version: 0.0.3
 description: Toolkit for interacting with and testing local web applications using
   Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing
   browser screenshots, and viewing browser logs.
@@ -11,7 +11,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -22,3 +21,8 @@ skills:
   description: Toolkit for interacting with and testing local web applications using
     Playwright. Supports verifying frontend functionality, debugging UI behavior,
     capturing browser screenshots, and viewing browser logs.
+  scripts:
+  - path: skills/webapp-testing/examples/console_logging.py
+  - path: skills/webapp-testing/examples/element_discovery.py
+  - path: skills/webapp-testing/examples/static_html_automation.py
+  - path: skills/webapp-testing/scripts/with_server.py

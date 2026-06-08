@@ -1,0 +1,39 @@
+[mcp_servers.pubmed]
+type = "http"
+url = "https://pubmed.mcp.claude.com/mcp"
+
+[mcp_servers.biorender]
+type = "http"
+url = "https://mcp.services.biorender.com/mcp"
+
+[mcp_servers.biorxiv]
+type = "http"
+url = "https://mcp.deepsense.ai/biorxiv/mcp"
+
+[mcp_servers.c-trials]
+type = "http"
+url = "https://mcp.deepsense.ai/clinical_trials/mcp"
+
+[mcp_servers.chembl]
+type = "http"
+url = "https://mcp.deepsense.ai/chembl/mcp"
+
+[mcp_servers.synapse]
+type = "http"
+url = "https://mcp.synapse.org/mcp"
+
+[mcp_servers.wiley]
+type = "http"
+url = "https://connector.scholargateway.ai/mcp"
+
+[mcp_servers.owkin]
+type = "http"
+url = "https://mcp.k.owkin.com/mcp"
+
+[mcp_servers.ot]
+type = "http"
+url = "https://mcp.platform.opentargets.org/mcp"
+
+[mcp_servers.benchling]
+type = "http"
+url = ""

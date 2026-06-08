@@ -1,5 +1,5 @@
-name: microsoft-azure_skills-microsoft-foundry
-version: 0.0.2
+name: "@forgecat/microsoft-azure_skills-microsoft-foundry"
+version: 0.0.3
 description: 'Deploy, evaluate, and manage Foundry agents end-to-end: Docker build,
   ACR push, hosted/prompt agent create, container start, batch eval, continuous eval,
   prompt optimizer workflows, agent.yaml, dataset curation from traces. USE FOR: deploy
@@ -21,7 +21,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -42,3 +41,7 @@ skills:
     knowledge index, agent monitoring, customize deployment, onboard, availability.
     DO NOT USE FOR: Azure Functions, App Service, general Azure deploy (use azure-deploy),
     general Azure prep (use azure-prepare).'
+  scripts:
+  - path: skills/microsoft-foundry/models/deploy-model/scripts/generate_deployment_url.sh
+  - path: skills/microsoft-foundry/models/deploy-model/capacity/scripts/discover_and_rank.sh
+  - path: skills/microsoft-foundry/models/deploy-model/capacity/scripts/query_capacity.sh

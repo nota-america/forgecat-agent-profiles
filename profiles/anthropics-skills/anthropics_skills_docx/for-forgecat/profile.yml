@@ -1,5 +1,5 @@
-name: anthropics_skills_docx
-version: 0.0.2
+name: "@forgecat/anthropics_skills_docx"
+version: 0.0.3
 description: 'Use this skill whenever the user wants to create, read, edit, or manipulate
   Word documents (.docx files). Triggers include: any mention of ''Word doc'', ''word
   document'', ''.docx'', or requests to produce professional documents with formatting
@@ -18,7 +18,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -36,3 +35,19 @@ skills:
     user asks for a ''report'', ''memo'', ''letter'', ''template'', or similar deliverable
     as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google
     Docs, or general coding tasks unrelated to document generation.'
+  scripts:
+  - path: skills/docx/scripts/__init__.py
+  - path: skills/docx/scripts/accept_changes.py
+  - path: skills/docx/scripts/comment.py
+  - path: skills/docx/scripts/office/pack.py
+  - path: skills/docx/scripts/office/soffice.py
+  - path: skills/docx/scripts/office/unpack.py
+  - path: skills/docx/scripts/office/validate.py
+  - path: skills/docx/scripts/office/helpers/__init__.py
+  - path: skills/docx/scripts/office/helpers/merge_runs.py
+  - path: skills/docx/scripts/office/helpers/simplify_redlines.py
+  - path: skills/docx/scripts/office/validators/__init__.py
+  - path: skills/docx/scripts/office/validators/base.py
+  - path: skills/docx/scripts/office/validators/docx.py
+  - path: skills/docx/scripts/office/validators/pptx.py
+  - path: skills/docx/scripts/office/validators/redlining.py

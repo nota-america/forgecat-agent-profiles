@@ -1,5 +1,5 @@
-name: vercel-labs_agent-skills_react-native-skills
-version: 0.0.5
+name: "@forgecat/vercel-labs_agent-skills_react-native-skills"
+version: 0.0.6
 description: React Native and Expo best practices for building performant mobile apps.
   Use when building React Native components, optimizing list performance, implementing
   animations, or working with native modules. Triggers on tasks involving React Native,
@@ -12,14 +12,13 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
     minimum: []
 skills:
 - name: vercel-react-native-skills
-  path: SKILL.md
+  path: skills/vercel-react-native-skills/SKILL.md
   description: React Native and Expo best practices for building performant mobile
     apps. Use when building React Native components, optimizing list performance,
     implementing animations, or working with native modules. Triggers on tasks involving

@@ -1,5 +1,5 @@
-name: anthropics_skills_pdf
-version: 0.0.2
+name: "@forgecat/anthropics_skills_pdf"
+version: 0.0.3
 description: Use this skill whenever the user wants to do anything with PDF files.
   This includes reading or extracting text/tables from PDFs, combining or merging
   multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks,
@@ -14,7 +14,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []
@@ -28,3 +27,12 @@ skills:
     creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images,
     and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file
     or asks to produce one, use this skill.
+  scripts:
+  - path: skills/pdf/scripts/check_bounding_boxes.py
+  - path: skills/pdf/scripts/check_fillable_fields.py
+  - path: skills/pdf/scripts/convert_pdf_to_images.py
+  - path: skills/pdf/scripts/create_validation_image.py
+  - path: skills/pdf/scripts/extract_form_field_info.py
+  - path: skills/pdf/scripts/extract_form_structure.py
+  - path: skills/pdf/scripts/fill_fillable_fields.py
+  - path: skills/pdf/scripts/fill_pdf_form_with_annotations.py

@@ -1,5 +1,5 @@
 name: "@forgecat/tldraw_tldraw"
-version: 0.0.3
+version: 0.0.4
 description: Draw and visually collaborate with your agents inside Cursor.
 repository: https://github.com/tldraw/tldraw
 license: '-'
@@ -9,7 +9,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []

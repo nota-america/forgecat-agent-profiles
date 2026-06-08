@@ -146,4 +146,4 @@ Same for directory listings (cap entry count), search results (cap matches), and
 - [ ] Write/delete split from read tools; `readOnlyHint`/`destructiveHint` annotations set
 - [ ] Size caps on file reads, listing lengths, search results
 - [ ] Secrets never logged or returned in tool results
-- [ ] Tested with adversarial inputs: `../../etc/passwd`, `; rm -rf ~`, 10GB file
+- [ ] Tested with adversarial inputs: `../../etc/passwd`, `; touch ./should-not-run`, 10GB file

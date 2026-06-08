@@ -1,5 +1,5 @@
 name: "@forgecat/vercel-labs_agent-skills_web-design-guidelines"
-version: 0.0.6
+version: 0.0.7
 description: Review UI code for Web Interface Guidelines compliance. Use when asked
   to "review my UI", "check accessibility", "audit design", "review UX", or "check
   my site against best practices".
@@ -10,15 +10,15 @@ compatibility:
   platforms:
     tested:
       - claude-code
-    partial:
       - codex
+    partial:
       - cursor
   models:
     recommended: []
     minimum: []
 skills:
 - name: web-design-guidelines
-  path: SKILL.md
+  path: skills/web-design-guidelines/SKILL.md
   description: Review UI code for Web Interface Guidelines compliance. Use when asked
     to "review my UI", "check accessibility", "audit design", "review UX", or "check
     my site against best practices".

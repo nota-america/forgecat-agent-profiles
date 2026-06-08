@@ -1,5 +1,5 @@
 name: "@forgecat/cursor_plugins_team-kit"
-version: 0.0.8
+version: 0.0.9
 description: 'Internal workflows used by Cursor developers for CI, code review, and
   shipping. Covers the full dev loop: CI monitoring and fixing, PR creation, merge
   conflicts, smoke tests, compiler checks, code cleanup, and work summaries.'
@@ -12,7 +12,6 @@ compatibility:
     tested:
       - claude-code
       - cursor
-    partial:
       - codex
   models:
     recommended: []

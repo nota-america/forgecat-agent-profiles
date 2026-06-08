@@ -5,7 +5,8 @@
 > in the **azd-deployment** plugin skill if installed.
 
 ## Install
-curl -fsSL https://aka.ms/install-azd.sh | bash
+curl -fsSL https://aka.ms/install-azd.sh -o /tmp/install-azd.sh
+bash /tmp/install-azd.sh
 
 ## Quick Start
 ```bash

@@ -27,10 +27,10 @@ If you previously installed superpowers using `git clone` and symlinks, remove t
 ```bash
 # Remove old symlinks
 rm -f ~/.config/opencode/plugins/superpowers.js
-rm -rf ~/.config/opencode/skills/superpowers
+mv ~/.config/opencode/skills/superpowers ~/.config/opencode/skills/superpowers.bak
 
-# Optionally remove the cloned repo
-rm -rf ~/.config/opencode/superpowers
+# Optionally archive the cloned repo
+mv ~/.config/opencode/superpowers ~/.config/opencode/superpowers.bak
 
 # Remove skills.paths from opencode.json if you added one for superpowers
 ```
