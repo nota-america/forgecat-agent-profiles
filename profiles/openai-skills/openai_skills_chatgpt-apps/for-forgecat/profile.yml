@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_chatgpt-apps"
-version: 0.0.9
+version: 0.0.10
 description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications
   that combine an MCP server and widget UI. Use when Codex needs to design tools,
   register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply

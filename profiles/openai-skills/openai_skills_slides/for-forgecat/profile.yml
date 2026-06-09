@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_slides"
-version: 0.0.9
+version: 0.0.10
 description: Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled
   layout helpers, and render/validation utilities. Use when tasks involve building
   a new PowerPoint deck, recreating slides from screenshots/PDFs/reference decks,

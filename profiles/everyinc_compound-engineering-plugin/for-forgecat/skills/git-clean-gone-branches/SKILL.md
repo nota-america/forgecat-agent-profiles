@@ -45,7 +45,7 @@ This is a yes-or-no decision on the entire list -- do not offer multi-selection 
 
 If the user confirms, delete each branch. For each branch:
 
-1. Check if it has an associated worktree (`git worktree list | grep "\\[$branch\\]"`)
+1. Check if it has an associated worktree (`git worktree list | grep "\[$branch\]"`)
 2. If a worktree exists and is not the main repo root, remove it first: `git worktree remove --force "$worktree_path"`
 3. Delete the branch: `git branch -D "$branch"`
 

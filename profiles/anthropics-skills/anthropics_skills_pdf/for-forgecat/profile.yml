@@ -1,5 +1,5 @@
 name: "@forgecat/anthropics_skills_pdf"
-version: 0.0.3
+version: 0.0.4
 description: Use this skill whenever the user wants to do anything with PDF files.
   This includes reading or extracting text/tables from PDFs, combining or merging
   multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks,

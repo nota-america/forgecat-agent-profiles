@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 
 # Bio-Research
@@ -51,7 +51,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research |
-| Version | `0.0.4` |
+| Version | `0.0.7` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -63,8 +63,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
 | Cursor | Partial |
+| Codex | Tested |
 
 ## Dependencies
 

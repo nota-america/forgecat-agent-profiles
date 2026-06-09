@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Continual Learning
 
@@ -28,18 +28,19 @@ npx forgecat install @forgecat/cursor_plugins_continual-learning
 |---|---|
 | Author | `Cursor` |
 | Original repository | `https://github.com/cursor/plugins` |
-| Version | `0.0.4` |
+| Version | `0.0.6` |
 | Original commit | `9c39b57` (2026-03-13) |
 | License | `MIT` |
 | Source platform | `cursor` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
-| Cursor | Tested |
 | Claude Code | Tested |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ### Models
 | Model | Role |

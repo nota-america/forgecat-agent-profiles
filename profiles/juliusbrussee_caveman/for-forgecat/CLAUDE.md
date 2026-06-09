@@ -1,11 +1,11 @@
 # CLAUDE.md — caveman
 
-## Forgecat packaging note
+## ForgeCat packaging note
 
-This converted Forgecat profile does not install the upstream top-level
+This converted ForgeCat profile does not install the upstream top-level
 `bin/`, `src/`, or full `hooks/` helper tree directly. Runtime helper files
 that hooks and commands need are packaged under `skills/caveman/...`, because
-Forgecat installs skill directories across Claude Code, Codex, and Cursor.
+ForgeCat installs skill directories across Claude Code, Codex, and Cursor.
 Top-level `hooks/caveman-activate.js` and
 `hooks/caveman-mode-tracker.js` are launchers that dispatch to the installed
 skill helper path.

@@ -1,5 +1,5 @@
 name: "@forgecat/microsoft-azure_skills-azure-storage"
-version: 0.0.3
+version: 0.0.4
 description: 'Azure Storage Services including Blob Storage, File Shares, Queue Storage,
   Table Storage, and Data Lake. Answers questions about storage access tiers (hot,
   cool, cold, archive), when to use each tier, and tier comparison. Provides object

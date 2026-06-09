@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_figma-create-design-system-rules"
-version: 0.0.9
+version: 0.0.10
 description: Generates custom design system rules for the user's codebase. Use when
   user says 'create design system rules', 'generate rules for my project', 'set up
   design rules', 'customize design system guidelines', or wants to establish project-specific

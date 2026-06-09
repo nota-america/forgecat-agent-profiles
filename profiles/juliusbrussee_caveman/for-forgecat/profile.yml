@@ -1,4 +1,5 @@
 name: "@forgecat/juliusbrussee_caveman"
+version: 0.1.3
 description: Ultra-compressed communication mode for coding agents, including caveman response style, terse commit/review helpers, memory-file compression, Cavecrew subagents, and Claude/Codex session-start activation hooks.
 repository: https://github.com/JuliusBrussee/caveman
 license: MIT
@@ -96,7 +97,7 @@ commands:
 rules:
 - name: caveman-activate
   path: rules/caveman-activate.md
-  description: Always-on caveman activation rule used by caveman-init and Forgecat rule installation.
+  description: Always-on caveman activation rule used by caveman-init and ForgeCat rule installation.
 hooks:
 - id: caveman-claude-session-start
   platform: claude-code

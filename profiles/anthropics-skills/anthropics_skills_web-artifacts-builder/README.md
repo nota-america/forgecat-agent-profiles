@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Anthropic Skills — Web Artifacts Builder
 
@@ -26,7 +26,7 @@ npx forgecat install @forgecat/anthropics_skills_web-artifacts-builder
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.0` |
+| Version | `0.0.3` |
 | Original commit | `5128e18` |
 | License | Complete terms in LICENSE.txt |
 | Source platform | Claude Code |
@@ -38,8 +38,8 @@ npx forgecat install @forgecat/anthropics_skills_web-artifacts-builder
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 

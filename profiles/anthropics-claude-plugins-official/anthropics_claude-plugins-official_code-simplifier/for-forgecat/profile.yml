@@ -1,5 +1,5 @@
 name: "@forgecat/anthropics_claude-plugins-official_code-simplifier"
-version: 0.0.3
+version: 0.0.4
 description: Agent that simplifies and refines code for clarity, consistency, and
   maintainability while preserving functionality
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier

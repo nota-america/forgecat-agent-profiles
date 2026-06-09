@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Azure Skills — Azure Diagnostics
 
@@ -28,7 +28,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-diagnostics
 |---|---|
 | Author | Microsoft |
 | Original repository | https://github.com/microsoft/azure-skills |
-| Version | `0.0.0` |
+| Version | `0.0.4` |
 | Original commit | `a990650` |
 | License | MIT |
 | Source platform | Claude Code, Cursor |
@@ -40,8 +40,8 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-diagnostics
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 

@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Figma
 
@@ -27,7 +27,7 @@ npx forgecat install @forgecat/openai_skills_figma
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.4` |
+| Version | `0.0.7` |
 | Original commit | `dc48aff` (2026-03-17) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -38,9 +38,9 @@ npx forgecat install @forgecat/openai_skills_figma
 
 | Platform | Status |
 |---|---|
-| Codex | Tested |
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
 ### Models
 

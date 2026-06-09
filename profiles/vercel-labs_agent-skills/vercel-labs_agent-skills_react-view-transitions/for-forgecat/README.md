@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # React View Transitions
 
@@ -28,7 +28,7 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-view-transitions
 |---|---|
 | Author | vercel |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.0` |
+| Version | `0.0.9` |
 | Original commit | `47863b2` |
 | License | MIT |
 | Source platform | Claude Code skills (Agent Skills format) |
@@ -41,7 +41,7 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-view-transitions
 |---|---|
 | Claude Code | Tested |
 | Cursor | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
 ## Dependencies
 

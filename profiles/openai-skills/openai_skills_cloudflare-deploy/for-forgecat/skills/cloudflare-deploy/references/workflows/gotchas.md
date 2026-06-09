@@ -45,7 +45,7 @@
 ### "Instance ID Collision"
 
 **Cause:** Reusing instance IDs causing conflicts  
-**Solution:** Use unique IDs with timestamp: `await env.MY_WORKFLOW.create({ id: \`${userId}-${Date.now()}\`, params: {} })`
+**Solution:** Use unique IDs with timestamp: `await env.MY_WORKFLOW.create({ id: **Solution:** Use unique IDs with timestamp: ${userId}-${Date.now()}\`, params: {} })`
 
 ### "Instance Data Disappeared After Completion"
 

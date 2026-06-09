@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # commit-commands
 
@@ -30,7 +30,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_commit-command
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/commit-commands |
-| Version | `0.0.0` |
+| Version | `0.0.2` |
 | Original commit | `cf62a6c` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -42,7 +42,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_commit-command
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |
 
 ---

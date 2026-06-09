@@ -1,5 +1,5 @@
 name: "@forgecat/microsoft-azure_skills-azure-cost-optimization"
-version: 0.0.3
+version: 0.0.4
 description: 'Unified Azure cost management: query historical costs, forecast future
   spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure
   bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending",

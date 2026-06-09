@@ -1,5 +1,5 @@
 name: "@forgecat/cursor_plugins_continual-learning"
-version: 0.0.5
+version: 0.0.6
 description: Incrementally learns durable user preferences and workspace facts from
   transcript changes and keeps AGENTS.md up to date with plain bullet points.
 repository: https://github.com/cursor/plugins

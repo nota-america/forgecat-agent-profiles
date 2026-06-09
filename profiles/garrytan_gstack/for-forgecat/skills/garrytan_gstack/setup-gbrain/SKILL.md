@@ -351,7 +351,7 @@ Net line closes the tradeoff. Per-skill instructions may add stricter rules.
     Wrong: `"question": "請選擇\uXXXX\uXXXX\uXXXX\uXXXX"`
     Right: `"question": "請選擇管理工具"`
 
-    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\\`.
+    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\`.
 
 ### Self-check before emitting
 
@@ -1592,7 +1592,7 @@ Run `/setup-gbrain` again any time gbrain feels off; it's safe and idempotent.
 
 If any row is YELLOW or RED, the verdict line says so and the failing rows
 surface a one-line "next action" (e.g.,
-`Engine .......... ERR  PGLite corrupt — run \`gbrain restore-from-sync\` (V1.5)`).
+`Engine .......... ERR  PGLite corrupt — run gbrain restore-from-sync\` (V1.5)`).
 For V1, restore-from-sync is a V1.5 P0 cross-repo TODO; until it ships,
 the user's brain remote (with brain-sync enabled) holds curated artifacts
 as markdown + git, recoverable manually via `gbrain import` from a clone.

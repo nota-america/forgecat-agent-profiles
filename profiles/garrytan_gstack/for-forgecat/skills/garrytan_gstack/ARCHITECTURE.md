@@ -155,7 +155,7 @@ Page content harvested by CDP can contain lone UTF-16 surrogate halves (orphaned
 | `GET /activity/stream` (SSE) | `browse/src/server.ts` | `sanitizeReplacer` passed to `JSON.stringify` |
 | `GET /inspector/events` (SSE) | `browse/src/server.ts` | `sanitizeReplacer` passed to `JSON.stringify` |
 
-`sanitizeReplacer` is a `JSON.stringify` replacer function that cleans every string value during encoding. Post-stringify regex doesn't work here — `JSON.stringify` has already converted `\uD800` into the literal escape sequence `"\\ud800"` before the regex could match, so the replacer must run inside the encoding pipeline. The pure-string helper `sanitizeLoneSurrogates` is used directly for `text/plain` responses.
+`sanitizeReplacer` is a `JSON.stringify` replacer function that cleans every string value during encoding. Post-stringify regex doesn't work here — `JSON.stringify` has already converted `\uD800` into the literal escape sequence `"\ud800"` before the regex could match, so the replacer must run inside the encoding pipeline. The pure-string helper `sanitizeLoneSurrogates` is used directly for `text/plain` responses.
 
 **Architectural invariant.** Every new SSE/WebSocket writer or HTTP response that ships page-content-derived strings MUST go through one of two paths: `JSON.stringify(payload, sanitizeReplacer)` for object payloads, or `sanitizeLoneSurrogates(body)` for text bodies. New surfaces that bypass both will desync the system. Inline comments at both SSE producers in `server.ts` say so; `browse/test/server-sanitize-surrogates.test.ts` pins wiring with bug-repro + invariant tests (`handleCommandInternalImpl` rename, central sanitization line, replacer existence, SSE producers stringify with replacer).
 

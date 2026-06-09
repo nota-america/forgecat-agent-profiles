@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # skill-creator
 
@@ -26,7 +26,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_skill-creator
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator |
-| Version | `0.0.0` |
+| Version | `0.0.4` |
 | Original commit | `cf62a6c` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -38,5 +38,5 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_skill-creator
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |

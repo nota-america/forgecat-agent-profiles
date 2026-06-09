@@ -1,5 +1,5 @@
 name: "@forgecat/vercel-labs_agent-skills_react-native-skills"
-version: 0.0.6
+version: 0.0.7
 description: React Native and Expo best practices for building performant mobile apps.
   Use when building React Native components, optimizing list performance, implementing
   animations, or working with native modules. Triggers on tasks involving React Native,

@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_winui-app"
-version: 0.0.9
+version: 0.0.10
 description: Bootstrap, develop, and design modern WinUI 3 desktop applications with
   C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns,
   Windows App SDK samples, and CommunityToolkit components. Use when creating a brand

@@ -1,5 +1,5 @@
 name: "@forgecat/microsoft-azure_skills-azure-resource-lookup"
-version: 0.0.3
+version: 0.0.4
 description: 'List, find, and show Azure resources across subscriptions or resource
   groups. Handles prompts like "list the websites in my subscription", "list my web
   apps", "show my app services", "list virtual machines", "list my VMs", "show storage

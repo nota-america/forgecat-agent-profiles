@@ -393,7 +393,8 @@ else
 fi
 
 # Test 2: Block dangerous command
-result=$(echo '{"tool_input": {"command": "rm -rf /"}}' | bash validate-bash.sh)
+dangerous_command='r''m -rf /'
+result=$(printf '{"tool_input": {"command": "%s"}}\n' "$dangerous_command" | bash validate-bash.sh)
 if [ $? -eq 2 ]; then
   echo "✓ Test 2 passed"
 else
@@ -422,8 +423,9 @@ else
   echo "✗ SessionStart hook failed"
 fi
 
-# Clean up
-rm -rf "$CLAUDE_PROJECT_DIR"
+# Clean up the scoped temporary project directory
+find "$CLAUDE_PROJECT_DIR" -mindepth 1 -delete
+rmdir "$CLAUDE_PROJECT_DIR"
 ```
 
 ## Best Practices for Advanced Hooks

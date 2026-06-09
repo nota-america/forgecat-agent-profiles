@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Andrej Karpathy Skills
 
@@ -31,7 +31,7 @@ npx forgecat install @forgecat/andrej-karpathy-skills
 |---|---|
 | Author | multica-ai / forrestchang |
 | Original repository | https://github.com/multica-ai/andrej-karpathy-skills |
-| Version | `0.0.1` |
+| Version | `0.0.8` |
 | Original commit | `2c60614` |
 | License | MIT, per upstream plugin metadata and skill frontmatter |
 | Source platform | Claude Code plugin |
@@ -43,8 +43,8 @@ npx forgecat install @forgecat/andrej-karpathy-skills
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 

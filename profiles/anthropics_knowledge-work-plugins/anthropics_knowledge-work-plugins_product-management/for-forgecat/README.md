@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 
 # Product Management
@@ -67,7 +67,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_product-managem
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management |
-| Version | `0.0.4` |
+| Version | `0.0.7` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -79,8 +79,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_product-managem
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
+| Cursor | Tested |
 | Codex | Partial |
-| Cursor | Partial |
 
 ## Dependencies
 
