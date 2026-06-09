@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # jupyter-notebook
 
@@ -23,18 +23,19 @@ npx forgecat install @forgecat/openai_skills_jupyter-notebook
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.6` |
+| Version | `0.0.10` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

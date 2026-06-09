@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_notion-spec-to-implementation"
-version: 0.0.9
+version: 0.0.10
 description: Turn Notion specs into implementation plans, tasks, and progress tracking;
   use when implementing PRDs/feature specs and creating Notion plans + tasks from
   them.

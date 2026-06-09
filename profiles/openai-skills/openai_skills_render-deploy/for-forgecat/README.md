@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # render-deploy
 
@@ -26,18 +26,19 @@ npx forgecat install @forgecat/openai_skills_render-deploy
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.5` |
+| Version | `0.0.8` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
-| Codex | Tested |
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
 ### Models
 | Model | Role |

@@ -1,8 +1,8 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # obra-superpowers
 
-Superpowers software development methodology for coding agents, packaged as a forgecat profile with skills and a session-start bootstrap hook.
+Superpowers software development methodology for coding agents, packaged as a ForgeCat profile with skills and a session-start bootstrap hook.
 
 ## Tags
 
@@ -45,7 +45,7 @@ npx forgecat install @forgecat/obra_superpowers
 |---|---|
 | Author | Jesse Vincent |
 | Original repository | https://github.com/obra/superpowers |
-| Version | `0.0.5` |
+| Version | `0.0.10` |
 | Original commit | `f2cbfbe` |
 | License | MIT |
 | Source platform | Claude Code |
@@ -57,5 +57,5 @@ npx forgecat install @forgecat/obra_superpowers
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |

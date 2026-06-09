@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # compound-engineering
 
@@ -32,7 +32,7 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 |---|---|
 | Author | Kieran Klaassen |
 | Original repository | https://github.com/EveryInc/compound-engineering-plugin |
-| Version | `0.0.0` |
+| Version | `0.0.5` |
 | Original commit | `a6183ed` |
 | License | `MIT` |
 | Source platform | Cursor |
@@ -43,9 +43,9 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Tested |
-| Codex | Partial |
+| Codex | Tested |
 
 
 ---

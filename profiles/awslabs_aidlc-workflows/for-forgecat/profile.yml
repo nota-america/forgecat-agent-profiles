@@ -1,5 +1,5 @@
 name: "@forgecat/awslabs_aidlc-workflows"
-version: 0.0.6
+version: 0.0.7
 description: AI-DLC adaptive workflow rules profile for project-level agent guidance
   and stage-by-stage software delivery.
 repository: https://github.com/awslabs/aidlc-workflows

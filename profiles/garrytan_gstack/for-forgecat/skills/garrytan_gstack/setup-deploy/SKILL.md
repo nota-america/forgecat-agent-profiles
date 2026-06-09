@@ -352,7 +352,7 @@ Net line closes the tradeoff. Per-skill instructions may add stricter rules.
     Wrong: `"question": "請選擇\uXXXX\uXXXX\uXXXX\uXXXX"`
     Right: `"question": "請選擇管理工具"`
 
-    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\\`.
+    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\`.
 
 ### Self-check before emitting
 
@@ -743,7 +743,7 @@ Based on what was detected, guide the user through platform-specific configurati
 
 If `fly.toml` detected:
 
-1. Extract app name: `grep -m1 "^app" fly.toml | sed 's/app = "\(.*\)"/\1/'`
+1. Extract app name: `grep -m1 "^app" fly.toml | sed 's/app = "\(.*\)"//'`
 2. Check if `fly` CLI is installed: `which fly 2>/dev/null`
 3. If installed, verify: `fly status --app {app} 2>/dev/null`
 4. Infer URL: `https://{app}.fly.dev`

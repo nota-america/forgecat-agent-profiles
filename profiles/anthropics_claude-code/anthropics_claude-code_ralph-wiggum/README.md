@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # ralph-wiggum
 
@@ -37,7 +37,7 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 |---|---|
 | Author | Daisy Hollman, Anthropic |
 | Original repository | https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum |
-| Version | `0.0.0` |
+| Version | `0.0.3` |
 | Original plugin version | `1.0.0` |
 | Original commit | `d08288e` |
 | License | Complete terms in LICENSE.md |
@@ -50,5 +50,5 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |

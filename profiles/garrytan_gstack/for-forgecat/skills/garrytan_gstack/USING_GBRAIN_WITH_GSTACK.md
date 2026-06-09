@@ -327,7 +327,7 @@ The skill re-collects a PAT, skips project creation, resumes polling.
 You have a stale lock directory. If you're sure no other instance is actually running:
 
 ```bash
-rm -rf ~/.gstack/.setup-gbrain.lock.d
+rmdir ~/.gstack/.setup-gbrain.lock.d
 ```
 
 Then re-run.

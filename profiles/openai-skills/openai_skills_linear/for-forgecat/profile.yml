@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_linear"
-version: 0.0.9
+version: 0.0.10
 description: Manage issues, projects & team workflows in Linear. Use when the user
   wants to read, create or updates tickets in Linear.
 repository: https://github.com/openai/skills

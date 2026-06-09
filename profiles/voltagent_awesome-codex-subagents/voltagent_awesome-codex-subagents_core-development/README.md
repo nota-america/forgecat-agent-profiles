@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # 01. Core Development
 
@@ -31,18 +31,19 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_core-developmen
 |---|---|
 | Author | `VoltAgent + community contributors` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
-| Version | `0.0.8` |
+| Version | `0.0.12` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
 | Codex | Tested |
-| Claude Code | Partial |
-| Cursor | Partial |
 
 ### Models
 | Model | Role |

@@ -1,9 +1,27 @@
-*written by Forgecat*
+*written by ForgeCat*
 
 # Ralph Loop
 
 Ralph Loop runs Cursor in a self-referential loop, feeding the same prompt back after every turn until the task is complete. It implements the [Ralph Wiggum technique](https://ghuntley.com/ralph/) pioneered by Geoffrey Huntley.
 
+## Details
+
+| Field | Value |
+|---|---|
+| Original repository | https://github.com/cursor/plugins |
+| Version | `0.0.7` |
+| License | MIT |
+| Source platform | Cursor |
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 ## How it works
 
 Two hooks drive the loop. An `afterAgentResponse` hook watches each response for a `<promise>` tag matching the completion phrase. A `stop` hook fires when Cursor finishes a turn. If the promise hasn't been detected and the iteration limit hasn't been reached, the stop hook sends the original prompt back as a `followup_message`, starting the next iteration. Cursor sees its own previous edits in the working tree and git history, iterates on them, and repeats. The prompt never changes. The code does.

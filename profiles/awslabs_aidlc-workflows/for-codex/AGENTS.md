@@ -2452,22 +2452,22 @@ Create `aidlc-docs/construction/build-and-test/build-instructions.md`:
 ## Build Steps
 
 ### 1. Install Dependencies
-\`\`\`bash
+\`\\`bash
 [Command to install dependencies]
 # Example: npm install, mvn dependency:resolve, pip install -r requirements.txt
-\`\`\`
+\`\\`
 
 ### 2. Configure Environment
-\`\`\`bash
+\`\\`bash
 [Commands to set up environment]
 # Example: export variables, configure credentials
-\`\`\`
+\`\\`
 
 ### 3. Build All Units
-\`\`\`bash
+\`\\`bash
 [Command to build all units]
 # Example: mvn clean install, npm run build, brazil-build
-\`\`\`
+\`\\`
 
 ### 4. Verify Build Success
 - **Expected Output**: [Describe successful build output]
@@ -2497,10 +2497,10 @@ Create `aidlc-docs/construction/build-and-test/unit-test-instructions.md`:
 ## Run Unit Tests
 
 ### 1. Execute All Unit Tests
-\`\`\`bash
+\`\\`bash
 [Command to run all unit tests]
 # Example: mvn test, npm test, pytest tests/unit
-\`\`\`
+\`\\`
 
 ### 2. Review Test Results
 - **Expected**: [X] tests pass, 0 failures
@@ -2542,24 +2542,24 @@ Test interactions between units/services to ensure they work together correctly.
 ## Setup Integration Test Environment
 
 ### 1. Start Required Services
-\`\`\`bash
+\`\\`bash
 [Commands to start services]
 # Example: docker-compose up, start test database
-\`\`\`
+\`\\`
 
 ### 2. Configure Service Endpoints
-\`\`\`bash
+\`\\`bash
 [Commands to configure endpoints]
 # Example: export API_URL=http://localhost:8080
-\`\`\`
+\`\\`
 
 ## Run Integration Tests
 
 ### 1. Execute Integration Test Suite
-\`\`\`bash
+\`\\`bash
 [Command to run integration tests]
 # Example: mvn integration-test, npm run test:integration
-\`\`\`
+\`\\`
 
 ### 2. Verify Service Interactions
 - **Test Scenarios**: [List key integration test scenarios]
@@ -2567,10 +2567,10 @@ Test interactions between units/services to ensure they work together correctly.
 - **Logs Location**: [Where to check logs]
 
 ### 3. Cleanup
-\`\`\`bash
+\`\\`bash
 [Commands to clean up test environment]
 # Example: docker-compose down, stop test services
-\`\`\`
+\`\\`
 ```
 
 ---
@@ -2594,10 +2594,10 @@ Validate system performance under load to ensure it meets requirements.
 ## Setup Performance Test Environment
 
 ### 1. Prepare Test Environment
-\`\`\`bash
+\`\\`bash
 [Commands to set up performance testing]
 # Example: scale services, configure load balancers
-\`\`\`
+\`\\`
 
 ### 2. Configure Test Parameters
 - **Test Duration**: [X] minutes
@@ -2607,16 +2607,16 @@ Validate system performance under load to ensure it meets requirements.
 ## Run Performance Tests
 
 ### 1. Execute Load Tests
-\`\`\`bash
+\`\\`bash
 [Command to run load tests]
 # Example: jmeter -n -t test.jmx, k6 run script.js
-\`\`\`
+\`\\`
 
 ### 2. Execute Stress Tests
-\`\`\`bash
+\`\\`bash
 [Command to run stress tests]
 # Example: gradually increase load until failure
-\`\`\`
+\`\\`
 
 ### 3. Analyze Performance Results
 - **Response Time**: [Actual vs Expected]

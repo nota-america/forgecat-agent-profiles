@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_notion-meeting-intelligence"
-version: 0.0.9
+version: 0.0.10
 description: Prepare meeting materials with Notion context and Codex research; use
   when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.
 repository: https://github.com/openai/skills

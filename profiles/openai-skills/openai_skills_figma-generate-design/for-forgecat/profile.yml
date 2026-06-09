@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_figma-generate-design"
-version: 0.0.9
+version: 0.0.10
 description: 'Use this skill alongside figma-use when the task involves translating
   an application page, view, or multi-section layout into Figma. Triggers: ''write
   to Figma'', ''create in Figma from code'', ''push page to Figma'', ''take this app/page

@@ -355,7 +355,7 @@ Net line closes the tradeoff. Per-skill instructions may add stricter rules.
     Wrong: `"question": "請選擇\uXXXX\uXXXX\uXXXX\uXXXX"`
     Right: `"question": "請選擇管理工具"`
 
-    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\\`.
+    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\`.
 
 ### Self-check before emitting
 
@@ -1205,11 +1205,11 @@ Every finding MUST include a confidence score (1-10):
 
 **Finding format:**
 
-\`[SEVERITY] (confidence: N/10) file:line — description\`
+\`[SEVERITY] (confidence: N/10) file:line — description\
 
 Example:
-\`[P1] (confidence: 9/10) app/models/user.rb:42 — SQL injection via string interpolation in where clause\`
-\`[P2] (confidence: 5/10) app/controllers/api/v1/users_controller.rb:18 — Possible N+1 query, verify with production logs\`
+\`[P1] (confidence: 9/10) app/models/user.rb:42 — SQL injection via string interpolation in where clause\
+\`[P2] (confidence: 5/10) app/controllers/api/v1/users_controller.rb:18 — Possible N+1 query, verify with production logs\
 
 ### Pre-emit verification gate (#1539 — kills the "field doesn't exist" FP class)
 

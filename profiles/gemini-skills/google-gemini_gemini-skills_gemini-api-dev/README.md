@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Google Gemini Skills — Gemini Api Dev
 
@@ -26,7 +26,7 @@ npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-api-dev
 |---|---|
 | Author | Google Gemini |
 | Original repository | https://github.com/google-gemini/gemini-skills |
-| Version | `0.0.0` |
+| Version | `0.0.4` |
 | Original commit | `f9138ae` |
 | License | Apache 2.0 |
 | Source platform | Claude Code, Gemini CLI, Cursor |
@@ -38,8 +38,8 @@ npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-api-dev
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 

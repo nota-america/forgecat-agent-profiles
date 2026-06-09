@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_security-ownership-map"
-version: 0.0.9
+version: 0.0.10
 description: 'Analyze git repositories to build a security ownership topology (people-to-file),
   compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases
   and visualization. Trigger only when the user explicitly wants a security-oriented

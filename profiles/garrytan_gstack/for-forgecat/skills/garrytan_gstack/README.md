@@ -345,26 +345,9 @@ while IFS= read -r dir; do
       ;;
   esac
 done
-
-# 3. Remove gstack
-rm -rf $GSTACK_ROOT
-
-# 4. Remove global state
-rm -rf ~/.gstack
-
-# 5. Remove integrations (skip any you never installed)
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
-rm -rf $GSTACK_ROOT* 2>/dev/null
-
-# 6. Remove temp files
-rm -f /tmp/gstack-* 2>/dev/null
-
-# 7. Per-project cleanup (run from each project root)
-rm -rf .gstack .gstack-worktrees $GSTACK_ROOT 2>/dev/null
-rm -rf $GSTACK_ROOT* .factory/skills/garrytan_gstack* 2>/dev/null
 ```
+
+Then delete the cloned gstack root, `~/.gstack`, project-local `.gstack*` state, and any agent-specific gstack skill directories you installed. Prefer restoring the repo and running `$GSTACK_ROOT/bin/gstack-uninstall` when possible, because it prompts before destructive cleanup and handles all supported host directories.
 
 ### Clean up CLAUDE.md
 

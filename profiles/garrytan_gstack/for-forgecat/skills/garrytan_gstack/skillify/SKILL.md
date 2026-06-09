@@ -349,7 +349,7 @@ Net line closes the tradeoff. Per-skill instructions may add stricter rules.
     Wrong: `"question": "請選擇\uXXXX\uXXXX\uXXXX\uXXXX"`
     Right: `"question": "請選擇管理工具"`
 
-    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\\`.
+    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\`.
 
 ### Self-check before emitting
 

@@ -1,4 +1,4 @@
-*written by Forgecat*
+*written by ForgeCat*
 
 # JuliusBrussee Caveman
 
@@ -40,7 +40,7 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 |---|---|
 | Author | Julius Brussee |
 | Original repository | https://github.com/JuliusBrussee/caveman |
-| Version | `0.0.0` |
+| Version | `0.1.3` |
 | Original commit | `655b7d9c5431f822264b7732e9901c5578ac84cf` |
 | License | MIT |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin/config, Gemini extension, opencode plugin, and skills installer |
@@ -52,8 +52,8 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
 ### Models
 
@@ -67,7 +67,7 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 - Python 3.10+ for `caveman-compress`.
 - Claude Code session logs are required for full `/caveman-stats` behavior.
 
-Forgecat note: The original README below is preserved for source context. Its install commands, CI/test links, and source-only paths refer to the upstream repository; the Forgecat runtime bundle intentionally includes only the files needed by the converted profile.
+ForgeCat note: The original README below is preserved for source context. Its install commands, CI/test links, and source-only paths refer to the upstream repository; the ForgeCat runtime bundle intentionally includes only the files needed by the converted profile.
 
 
 ---
@@ -173,10 +173,10 @@ One line. Find every agent. Install for each.
 
 ```bash
 # macOS / Linux / WSL / Git Bash
-# Upstream curl-to-shell install command omitted in Forgecat profile. See original repository.
+# Upstream curl-to-shell install command omitted in ForgeCat profile. See original repository.
 
 # Windows (PowerShell 5.1+)
-# Upstream PowerShell remote-exec install command omitted in Forgecat profile. See original repository.
+# Upstream PowerShell remote-exec install command omitted in ForgeCat profile. See original repository.
 ```
 
 ~30 seconds. Needs Node ≥18. Skip agent you no have. Safe to re-run.
@@ -258,7 +258,7 @@ Caveman teach lobster brevity — same canonical installer, scoped to one agent:
 
 ```bash
 # macOS / Linux / WSL
-# Upstream curl-to-shell install command omitted in Forgecat profile. See original repository. -s -- --only openclaw
+# Upstream curl-to-shell install command omitted in ForgeCat profile. See original repository. -s -- --only openclaw
 
 # Windows (PowerShell): no Node? install Node ≥18 first, then
 npx -y github:JuliusBrussee/caveman -- --only openclaw

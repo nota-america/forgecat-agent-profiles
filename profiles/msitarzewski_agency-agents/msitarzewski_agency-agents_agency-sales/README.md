@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Agency Sales
 
@@ -28,18 +28,19 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-sales
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.7` |
+| Version | `0.0.11` |
 | Original commit | `9c31d86` (2026-03-23) |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
-| Cursor | Partial |
+| Cursor | Tested |
+| Codex | Tested |
 
 ### Models
 | Model | Role |

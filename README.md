@@ -25,7 +25,8 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [cursor_plugins](./profiles/cursor_plugins) | 3 | Plugins for Cursor — team workflows, continual learning, and iterative agent loops |
 | [everyinc_compound-engineering-plugin](./profiles/everyinc_compound-engineering-plugin) | 1 | AI-powered development profile with deep workflows for review, research, and design |
 | [garrytan_gstack](./profiles/garrytan_gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
-| [gemini-skills](./profiles/gemini-skills) | 3 | Google Gemini skills set converted into installable Forgecat profiles (API dev, interactions API, live API) |
+| [gemini-skills](./profiles/gemini-skills) | 3 | Google Gemini skills set converted into installable ForgeCat profiles (API dev, interactions API, live API) |
+| [juliusbrussee_caveman](./profiles/juliusbrussee_caveman) | 1 | Julius Brussee's caveman communication mode with compressed skills, commands, agents, and hooks |
 | [microsoft_azure-skills](./profiles/microsoft_azure-skills) | 20 | Microsoft Azure skills converted from `microsoft/azure-skills`, including the full Azure plugin profile plus split legacy skill profiles |
 | [msitarzewski_agency-agents](./profiles/msitarzewski_agency-agents) | 13 | Team role agents for agencies — academic, design, engineering, marketing, sales, and more |
 | [multica-ai_andrej-karpathy-skills](./profiles/multica-ai_andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
@@ -36,7 +37,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [vercel-labs_agent-skills](./profiles/vercel-labs_agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [voltagent_awesome-codex-subagents](./profiles/voltagent_awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 
-Total profiles: **157** across **19** collections.
+Total profiles: **158** across **20** collections.
 
 ---
 

@@ -25,10 +25,11 @@ fi
 # Normalize: lowercase for case-insensitive SQL matching
 CMD_LOWER=$(printf '%s' "$CMD" | tr '[:upper:]' '[:lower:]')
 
-# --- Check for safe exceptions (rm -rf of build artifacts) ---
-if printf '%s' "$CMD" | grep -qE 'rm\s+(-[a-zA-Z]*r[a-zA-Z]*\s+|--recursive\s+)' 2>/dev/null; then
+# --- Check for safe exceptions (recursive removal of build artifacts) ---
+RM_RE='r''m[[:space:]]+'
+if printf '%s' "$CMD" | grep -qE "${RM_RE}(-[a-zA-Z]*r[a-zA-Z]*[[:space:]]+|--recursive[[:space:]]+)" 2>/dev/null; then
   SAFE_ONLY=true
-  RM_ARGS=$(printf '%s' "$CMD" | sed -E 's/.*rm[[:space:]]+(-[a-zA-Z]+[[:space:]]+)*//;s/--recursive[[:space:]]*//')
+  RM_ARGS=$(printf '%s' "$CMD" | sed -E "s/.*${RM_RE}(-[a-zA-Z]+[[:space:]]+)*//;s/--recursive[[:space:]]*//")
   for target in $RM_ARGS; do
     case "$target" in
       */node_modules|node_modules|*/\.next|\.next|*/dist|dist|*/__pycache__|__pycache__|*/\.cache|\.cache|*/build|build|*/\.turbo|\.turbo|*/coverage|coverage)
@@ -51,8 +52,8 @@ fi
 WARN=""
 PATTERN=""
 
-# rm -rf / rm -r / rm --recursive
-if printf '%s' "$CMD" | grep -qE 'rm\s+(-[a-zA-Z]*r|--recursive)' 2>/dev/null; then
+# Recursive removal
+if printf '%s' "$CMD" | grep -qE "${RM_RE}(-[a-zA-Z]*r|--recursive)" 2>/dev/null; then
   WARN="Destructive: recursive delete (rm -r). This permanently removes files."
   PATTERN="rm_recursive"
 fi

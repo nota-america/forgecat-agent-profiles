@@ -347,7 +347,7 @@ All paths in component fields must follow these rules:
 - ❌ `"/Users/name/plugin/commands"`
 - ❌ `"commands"` (missing `./`)
 - ❌ `"../shared/commands"`
-- ❌ `".\\commands"` (backslash)
+- ❌ `".\commands"` (backslash)
 
 ### Resolution Order
 

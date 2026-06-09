@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # gstack
 
@@ -89,7 +89,7 @@ npx forgecat install @forgecat/garrytan_gstack
 |---|---|
 | Author | `Garry Tan` |
 | Original repository | `https://github.com/garrytan/gstack` |
-| Version | `0.0.2` |
+| Version | `0.0.10` |
 | Original commit | `22f8c7f` (2026-05-26) |
 | License | `MIT` |
 | Source platform | `claude-code` |
@@ -101,7 +101,7 @@ npx forgecat install @forgecat/garrytan_gstack
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |
 
 ## Dependencies

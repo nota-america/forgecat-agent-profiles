@@ -1,5 +1,5 @@
 name: "@forgecat/microsoft-azure_skills-appinsights-instrumentation"
-version: 0.0.3
+version: 0.0.4
 description: 'Guidance for instrumenting webapps with Azure Application Insights.
   Provides telemetry patterns, SDK setup, and configuration references. WHEN: how
   to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application

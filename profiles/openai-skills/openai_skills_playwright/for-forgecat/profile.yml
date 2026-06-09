@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_playwright"
-version: 0.0.9
+version: 0.0.10
 description: Use when the task requires automating a real browser from the terminal
   (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging)
   via `playwright-cli` or the bundled wrapper script.

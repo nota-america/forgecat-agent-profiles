@@ -43,7 +43,7 @@ Use this file when the task involves building, running, launch failures, startup
 ## Build and Launch Guidance
 
 - Prefer explicit platform targets when WinUI output is sensitive to architecture defaults. If `AnyCPU` creates ambiguity, use `x64` for local verification.
-- For unpackaged verification, prefer launching the built `.exe` from `bin\Debug\...\win-x64\` or the project-specific output path.
+- For unpackaged verification, prefer launching the built `.exe` from `bin\Debug\...\win-x64- For unpackaged verification, prefer launching the built `.exe` from  or the project-specific output path.
 - After a successful final launch verification, do not immediately tear the app down just because verification succeeded; keep it open for the user unless it blocks the next required action.
 - If `dotnet run` throws bootstrapper, deployment, or COM activation errors, treat that as a signal that the chosen launch path or packaging setup is wrong for the current app.
 - Stop old app instances before rebuilding if they can lock output files.

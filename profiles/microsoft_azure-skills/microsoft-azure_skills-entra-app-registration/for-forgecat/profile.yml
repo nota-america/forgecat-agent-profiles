@@ -1,5 +1,5 @@
 name: "@forgecat/microsoft-azure_skills-entra-app-registration"
-version: 0.0.3
+version: 0.0.4
 description: 'Guides Microsoft Entra ID app registration, OAuth 2.0 authentication,
   and MSAL integration. USE FOR: create app registration, register Azure AD app, configure
   OAuth, set up authentication, add API permissions, generate service principal, MSAL

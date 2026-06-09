@@ -1,8 +1,8 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Azure Skills Plugin
 
-Microsoft Azure skills, Azure MCP configuration, and telemetry hook support packaged as one Forgecat profile.
+Microsoft Azure skills, Azure MCP configuration, and telemetry hook support packaged as one ForgeCat profile.
 
 ## Tags
 - Azure
@@ -26,17 +26,18 @@ npx forgecat install @forgecat/microsoft-azure_skills
 |---|---|
 | Author | `Microsoft` |
 | Original repository | `https://github.com/microsoft/azure-skills` |
-| Version | `0.0.0` |
+| Version | `0.0.4` |
 | Original commit | `7cb89c2` (2026-05-28) |
 | License | `MIT` |
 | Source platform | `multi-host` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |
 
 ### Models

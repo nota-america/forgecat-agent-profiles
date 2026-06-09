@@ -1,5 +1,5 @@
-name: anthropics_claude-plugins-official_code-review
-version: 0.0.1
+name: "@forgecat/anthropics_claude-plugins-official_code-review"
+version: 0.0.2
 description: Automated code review for pull requests using multiple specialized agents
   with confidence-based scoring
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review

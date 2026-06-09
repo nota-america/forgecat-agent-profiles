@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Context7
 
@@ -31,7 +31,7 @@ npx forgecat install @forgecat/upstash_context7
 |---|---|
 | Author | `Upstash` |
 | Original repository | `https://github.com/upstash/context7` |
-| Version | `0.0.6` |
+| Version | `0.0.9` |
 | Original commit | `383e127` (2026-03-16) |
 | Converted path | `plugins/claude/context7/` |
 | License | `MIT` |
@@ -39,11 +39,12 @@ npx forgecat install @forgecat/upstash_context7
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
 | Cursor | Partial |
+| Codex | Partial |
 
 ### Models
 | Model | Role |

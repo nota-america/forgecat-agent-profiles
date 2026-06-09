@@ -50,7 +50,7 @@ Ask the user for (infer when possible, except where noted):
 
 ### Step 2: Create Capacity Reservation Group and Reservation
 
-> ⚠️ **PowerShell users:** Replace `\` line continuations with backticks (`` ` ``) or collapse commands to a single line.
+> ⚠️ **PowerShell users:** Replace `> ⚠️ **PowerShell users:** Replace  line continuations with backticks (`` ` ``) or collapse commands to a single line.
 
 ```bash
 # Create the CRG

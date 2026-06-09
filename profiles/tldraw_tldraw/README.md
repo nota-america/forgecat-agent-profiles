@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # tldraw
 
@@ -33,7 +33,7 @@ npx forgecat install @forgecat/tldraw_tldraw
 |---|---|
 | Author | tldraw |
 | Original repository | https://github.com/tldraw/tldraw |
-| Version | `0.0.0` |
+| Version | `0.0.5` |
 | Original commit | `8e0d015` |
 | License | `-` |
 | Source platform | Cursor |
@@ -44,6 +44,6 @@ npx forgecat install @forgecat/tldraw_tldraw
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Tested |
-| Codex | Partial |
+| Codex | Tested |

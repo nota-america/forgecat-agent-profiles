@@ -15,7 +15,7 @@
 # PATH; setup skills should refuse broken environments.
 #
 # Prerequisites (checked before doing anything):
-#   - bun   (install: curl -fsSL https://bun.sh/install | bash)
+#   - bun   (install from https://bun.sh/docs/installation)
 #   - git
 #   - network reachability to https://github.com
 #
@@ -67,7 +67,7 @@ check_prereq() {
 }
 
 if ! $VALIDATE_ONLY; then
-  check_prereq bun "Install: curl -fsSL https://bun.sh/install | bash"
+  check_prereq bun "Install from https://bun.sh/docs/installation"
   check_prereq git "Install: xcode-select --install (macOS) or your package manager"
 
   # GitHub reachability — fail fast if offline rather than hanging `git clone`.

@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # JuliusBrussee Caveman
 
@@ -40,7 +40,7 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 |---|---|
 | Author | Julius Brussee |
 | Original repository | https://github.com/JuliusBrussee/caveman |
-| Version | `0.0.0` |
+| Version | `0.1.4` |
 | Original commit | `655b7d9c5431f822264b7732e9901c5578ac84cf` |
 | License | MIT |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin/config, Gemini extension, opencode plugin, and skills installer |
@@ -52,8 +52,8 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
 ### Models
 

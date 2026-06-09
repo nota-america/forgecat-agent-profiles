@@ -1,15 +1,33 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # obra-superpowers
 
-Forgecat profile converted from [obra/superpowers](https://github.com/obra/superpowers). This package keeps the upstream README below while installing through Forgecat.
+ForgeCat profile converted from [obra/superpowers](https://github.com/obra/superpowers). This package keeps the upstream README below while installing through ForgeCat.
 
 ```bash
 npx forgecat install @forgecat/obra_superpowers
 ```
 
+## Details
+
+| Field | Value |
+|---|---|
+| Original repository | https://github.com/obra/superpowers |
+| Version | `0.0.10` |
+| License | MIT |
+| Source platform | Claude Code |
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 ---
 
 *written by original source*

@@ -1,5 +1,5 @@
-name: anthropics_claude-plugins-official_plugin-dev
-version: 0.0.3
+name: "@forgecat/anthropics_claude-plugins-official_plugin-dev"
+version: 0.0.4
 description: Plugin development toolkit with skills for creating agents, commands,
   hooks, MCP integrations, and comprehensive plugin structure guidance
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/plugin-dev
@@ -18,6 +18,8 @@ compatibility:
 skills:
 - name: agent-development
   path: skills/agent-development/SKILL.md
+  scripts:
+    - path: skills/agent-development/scripts/validate-agent.sh
   description: This skill should be used when the user asks to "create an agent",
     "add an agent", "write a subagent", "agent frontmatter", "when to use description",
     "agent examples", "agent tools", "agent colors", "autonomous agent", or needs
@@ -33,6 +35,13 @@ skills:
     user interaction patterns, or command development best practices for Claude Code.
 - name: hook-development
   path: skills/hook-development/SKILL.md
+  scripts:
+    - path: skills/hook-development/examples/load-context.sh
+    - path: skills/hook-development/examples/validate-bash.sh
+    - path: skills/hook-development/examples/validate-write.sh
+    - path: skills/hook-development/scripts/hook-linter.sh
+    - path: skills/hook-development/scripts/test-hook.sh
+    - path: skills/hook-development/scripts/validate-hook-schema.sh
   description: This skill should be used when the user asks to "create a hook", "add
     a PreToolUse/PostToolUse/Stop hook", "validate tool use", "implement prompt-based
     hooks", "use ${CLAUDE_PLUGIN_ROOT}", "set up event-driven automation", "block
@@ -50,6 +59,10 @@ skills:
     tool and service integration.
 - name: plugin-settings
   path: skills/plugin-settings/SKILL.md
+  scripts:
+    - path: skills/plugin-settings/examples/read-settings-hook.sh
+    - path: skills/plugin-settings/scripts/parse-frontmatter.sh
+    - path: skills/plugin-settings/scripts/validate-settings.sh
   description: This skill should be used when the user asks about "plugin settings",
     "store plugin configuration", "user-configurable plugin", ".local.md files", "plugin
     state files", "read YAML frontmatter", "per-project plugin settings", or wants

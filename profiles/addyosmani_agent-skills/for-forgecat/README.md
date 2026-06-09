@@ -1,6 +1,6 @@
-*written by Forgecat*
+*written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # addyosmani-agent-skills
 
@@ -74,7 +74,7 @@ npx forgecat install @forgecat/addyosmani_agent-skills
 |---|---|
 | Author | Addy Osmani |
 | Original repository | https://github.com/addyosmani/agent-skills |
-| Version | `0.0.2` |
+| Version | `0.0.6` |
 | Original commit | `2a62238` |
 | License | MIT |
 | Source platform | Claude Code |
@@ -86,7 +86,7 @@ npx forgecat install @forgecat/addyosmani_agent-skills
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |
 
 

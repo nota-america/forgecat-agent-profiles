@@ -1,4 +1,4 @@
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Cursor Team Kit
 
@@ -37,18 +37,19 @@ npx forgecat install @forgecat/cursor_plugins_team-kit
 |---|---|
 | Author | `Cursor` |
 | Original repository | `https://github.com/cursor/plugins` |
-| Version | `0.0.5` |
+| Version | `0.0.10` |
 | Original commit | `9c39b57` (2026-03-13) |
 | License | `MIT` |
 | Source platform | `cursor` |
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
+| Claude Code | Tested |
 | Cursor | Tested |
-| Claude Code | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
 ### Models
 | Model | Role |

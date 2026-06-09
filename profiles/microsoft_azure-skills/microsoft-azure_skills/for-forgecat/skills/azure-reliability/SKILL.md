@@ -344,7 +344,7 @@ Do you want me to set up multi-region failover now? (yes / no / later)
 
 - **yes** → proceed with [references/configure-multi-region.md](references/configure-multi-region.md). Confirm secondary region choice with the user, then:
   1. Generate the multi-region IaC (Bicep / Terraform additions for the secondary region + Front Door).
-  2. Confirm once with the user: `📦 Multi-region IaC generated. Ready to deploy with \`azd up\`. Proceed? (yes / no)`
+  2. Confirm once with the user: `📦 Multi-region IaC generated. Ready to deploy with   2. Confirm once with the user: azd up\`. Proceed? (yes / no)`
   3. On **yes**, **the skill runs the deploy itself** (`azd up` / `az deployment group create` / `terraform apply`) and streams output. Do not stop and tell the user to run it.
   4. After successful deploy, run a final re-assessment so the user sees Multi-region failover flip to 🟢 ON.
 - **no / later** → leave the deployment as-is. Note that single-region zone-redundant is a reliable end state; multi-region can be revisited anytime.

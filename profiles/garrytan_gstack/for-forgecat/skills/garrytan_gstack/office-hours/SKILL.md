@@ -386,7 +386,7 @@ Net line closes the tradeoff. Per-skill instructions may add stricter rules.
     Wrong: `"question": "請選擇\uXXXX\uXXXX\uXXXX\uXXXX"`
     Right: `"question": "請選擇管理工具"`
 
-    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\\`.
+    Only JSON-mandatory escapes remain allowed: `\n`, `\t`, `\"`, `\`.
 
 ### Self-check before emitting
 
@@ -1207,7 +1207,7 @@ rm -f "$TMPERR_OH" "$CODEX_PROMPT_FILE"
 ```
 
 **Error handling:** All errors are non-blocking — second opinion is a quality enhancement, not a prerequisite.
-- **Auth failure:** If stderr contains "auth", "login", "unauthorized", or "API key": "Codex authentication failed. Run \`codex login\` to authenticate." Fall back to Claude subagent.
+- **Auth failure:** If stderr contains "auth", "login", "unauthorized", or "API key": "Codex authentication failed. Run \`codex login- **Auth failure:** If stderr contains "auth", "login", "unauthorized", or "API key": "Codex authentication failed. Run \ to authenticate." Fall back to Claude subagent.
 - **Timeout:** "Codex timed out after 5 minutes." Fall back to Claude subagent.
 - **Empty response:** "Codex returned no response." Fall back to Claude subagent.
 

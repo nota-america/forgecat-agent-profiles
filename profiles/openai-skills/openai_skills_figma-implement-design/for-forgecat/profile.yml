@@ -1,5 +1,5 @@
 name: "@forgecat/openai_skills_figma-implement-design"
-version: 0.0.9
+version: 0.0.10
 description: Translates Figma designs into production-ready application code with
   1:1 visual fidelity. Use when implementing UI code from Figma files, when user mentions
   'implement design', 'generate code', 'implement component', provides Figma URLs,

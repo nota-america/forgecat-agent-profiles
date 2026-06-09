@@ -1,5 +1,5 @@
 name: "@forgecat/vercel-labs_agent-skills_deploy-to-vercel"
-version: 0.0.7
+version: 0.0.8
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like "deploy my app", "deploy and give me the link", "push this
   live", or "create a preview deployment".
