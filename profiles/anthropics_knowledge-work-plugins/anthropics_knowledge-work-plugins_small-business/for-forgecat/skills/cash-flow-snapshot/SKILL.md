@@ -130,7 +130,8 @@ Source(s): [connectors used]
 ```
 
 **XLSX workbook** (always):
-Read `xlsx/SKILL.md` before generating. Produce a workbook with three sheets:
+Use the installed `xlsx` skill from the `@forgecat/anthropics_skills_xlsx`
+dependency before generating. Produce a workbook with three sheets:
 
 1. **Summary** — the 30/60/90 forecast table with confidence bands. Beneath
    each window row, expand inline sub-rows showing the individual transactions
