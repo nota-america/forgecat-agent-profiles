@@ -17,7 +17,7 @@ Pre-built small business workflows (including payroll planning, month-end close,
 
 ## Installation
 
-```
+```bash
 npx forgecat install @forgecat/anthropics_knowledge-work-plugins_small-business
 ```
 
@@ -80,10 +80,10 @@ Trigger this skill whenever the user mentions: quarterly taxes, estimated tax pa
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/small-business |
+| Version | `pending-registry-publish` |
 | Original commit | 69d3780 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
-| Tested runtime status | Untested in Forgecat runtime; source platform preserved from Claude Code plugin. |
 
 ## Compatibility
 
@@ -91,9 +91,9 @@ Trigger this skill whenever the user mentions: quarterly taxes, estimated tax pa
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
+| Codex | Partial |
 
 ## Dependencies
 

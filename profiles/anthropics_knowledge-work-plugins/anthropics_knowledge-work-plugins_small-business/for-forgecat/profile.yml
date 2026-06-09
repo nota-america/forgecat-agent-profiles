@@ -5,11 +5,12 @@ description: Pre-built small business workflows (including payroll planning, mon
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/small-business
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
+    partial:
     - cursor
     - codex
   models:
