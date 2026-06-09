@@ -1,5 +1,5 @@
 name: "@forgecat/juliusbrussee_caveman"
-version: 0.1.4
+version: 0.1.5
 description: Ultra-compressed communication mode for coding agents, including caveman response style, terse commit/review helpers, memory-file compression, Cavecrew subagents, and Claude/Codex session-start activation hooks.
 repository: https://github.com/JuliusBrussee/caveman
 license: MIT
@@ -9,9 +9,9 @@ compatibility:
   platforms:
     tested:
     - claude-code
+    - cursor
     partial:
     - codex
-    - cursor
   models:
     recommended:
     - haiku
