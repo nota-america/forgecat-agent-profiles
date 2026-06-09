@@ -218,70 +218,70 @@ skills:
     "draft a response," "answer this customer," "where's my order," or "I want a refund."
 commands:
 - name: plan-payroll
-  path: skills/plan-payroll/SKILL.md
+  path: commands/plan-payroll.md
   description: Forecasts cash, ranks overdue invoices, and stages PayPal reminders so the
     owner can confidently run payroll. Accepts optional horizon and payroll-date arguments.
 - name: month-heads-up
-  path: skills/month-heads-up/SKILL.md
+  path: commands/month-heads-up.md
   description: Runs on the 25th — shows the next 30-day cash-flow outlook and flags anything
     that needs attention before month-end. Accepts optional 30 or 60 day horizon.
 - name: close-month
-  path: skills/close-month/SKILL.md
+  path: commands/close-month.md
   description: Closes the month — reconciles QB vs payment processors, flags gaps, writes
     P&L narrative, exports close packet. Accepts optional month and save-to arguments.
 - name: price-check
-  path: skills/price-check/SKILL.md
+  path: commands/price-check.md
   description: Produces a margin-by-product table and three pricing-scenario data views so
     the owner can see the full financial picture before making a pricing decision. Accepts
     optional product name argument.
 - name: tax-prep
-  path: skills/tax-prep/SKILL.md
+  path: commands/tax-prep.md
   description: Prepares tax-season materials — quarterly estimated tax calculation or year-end
     1099 prep — and produces an accountant handoff packet. Accepts optional mode and year
     arguments.
 - name: call-list
-  path: skills/call-list/SKILL.md
+  path: commands/call-list.md
   description: Ranks the top-5 leads most worth calling today, supplies talking points from
     email history, blocks time on the calendar, and drafts follow-up messages. Accepts optional
     count and date arguments.
 - name: run-campaign
-  path: skills/run-campaign/SKILL.md
+  path: commands/run-campaign.md
   description: Runs an end-to-end marketing campaign — sales analysis, content brief, Canva
     assets, HubSpot send. Accepts optional lookback and channel arguments.
 - name: sales-brief
-  path: skills/sales-brief/SKILL.md
+  path: commands/sales-brief.md
   description: Surfaces top and bottom sellers, identifies seasonality patterns, and produces
     a 2-week content brief to push winners and clear slow movers. Accepts optional lookback
     window of 30, 60, or 90 days.
 - name: customer-pulse-check
-  path: skills/customer-pulse-check/SKILL.md
+  path: commands/customer-pulse-check.md
   description: Synthesizes themes from PayPal disputes, HubSpot tickets, and review exports
     into a top-3 fixable issues list with drafted response templates. Accepts optional since-date
     argument.
 - name: handle-complaint
-  path: skills/handle-complaint/SKILL.md
+  path: commands/handle-complaint.md
   description: Handles an incoming customer complaint end-to-end — pulls context, drafts a
     response, and suggests an operational fix. Accepts optional email or ticket ID argument.
 - name: crm-cleanup
-  path: skills/crm-cleanup/SKILL.md
+  path: commands/crm-cleanup.md
   description: Scans HubSpot for stale deals, duplicate contacts, and missing fields, then
     fixes what the owner approves. Accepts optional scope argument for deals, contacts, or
     all.
 - name: review-contract
-  path: skills/review-contract/SKILL.md
+  path: commands/review-contract.md
   description: Reviews a contract in plain English, surfaces red flags with severity ratings,
     and produces a marked-up docx/PDF with suggested redlines. Accepts optional file path
     or DocuSign envelope ID.
 - name: monday-brief
-  path: skills/monday-brief/SKILL.md
+  path: commands/monday-brief.md
   description: Generates a one-page Monday morning briefing — cash, sales, pipeline, week
     ahead, top three to-dos. Accepts optional post destination and save-to arguments.
 - name: friday-brief
-  path: skills/friday-brief/SKILL.md
+  path: commands/friday-brief.md
   description: Delivers the Friday end-of-week pulse — revenue vs prior week, top sellers,
     wins and watches. Accepts optional lookback window of 7 or 14 days.
 - name: quarterly-review
-  path: skills/quarterly-review/SKILL.md
+  path: commands/quarterly-review.md
   description: Generates a full QBR narrative — revenue trend, margin trend, customer health,
     top opportunities and risks — as a presentation-ready PDF or deck. Accepts optional quarter
     and save-to arguments.
