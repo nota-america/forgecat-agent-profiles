@@ -10,10 +10,10 @@ sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-      - claude-code
       - codex
+    partial:
+      - claude-code
       - cursor
-    partial: []
   models:
     recommended:
     - gpt-5.4
