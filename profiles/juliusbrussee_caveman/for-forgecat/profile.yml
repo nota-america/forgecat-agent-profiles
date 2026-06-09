@@ -1,0 +1,118 @@
+name: "@forgecat/juliusbrussee_caveman"
+description: Ultra-compressed communication mode for coding agents, including caveman response style, terse commit/review helpers, memory-file compression, Cavecrew subagents, and Claude/Codex session-start activation hooks.
+repository: https://github.com/JuliusBrussee/caveman
+license: MIT
+visibility: public
+sourcePlatform: multi-platform
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    partial:
+    - codex
+    - cursor
+  models:
+    recommended:
+    - haiku
+    minimum: []
+keywords:
+- productivity
+- communication
+- brevity
+- token-efficiency
+skills:
+- name: caveman
+  path: skills/caveman/SKILL.md
+  description: >
+    Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
+  scripts:
+  - path: skills/caveman/hooks/caveman-activate.js
+  - path: skills/caveman/hooks/caveman-mode-tracker.js
+  - path: skills/caveman/hooks/caveman-config.js
+  - path: skills/caveman/hooks/caveman-stats.js
+  - path: skills/caveman/hooks/caveman-statusline.sh
+  - path: skills/caveman/bin/lib/openclaw.js
+  - path: skills/caveman/src/tools/caveman-init.js
+- name: caveman-commit
+  path: skills/caveman-commit/SKILL.md
+  description: >
+    Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why" isn't obvious. Use when user says "write a commit", "commit message", "generate commit", "/commit", or invokes /caveman-commit. Auto-triggers when staging changes.
+- name: caveman-review
+  path: skills/caveman-review/SKILL.md
+  description: >
+    Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "code review", "review the diff", "/review", or invokes /caveman-review. Auto-triggers when reviewing pull requests.
+- name: caveman-compress
+  path: skills/caveman-compress/SKILL.md
+  description: >
+    Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md. Trigger: /caveman-compress FILEPATH or "compress memory file"
+  scripts:
+  - path: skills/caveman-compress/scripts/__init__.py
+  - path: skills/caveman-compress/scripts/__main__.py
+  - path: skills/caveman-compress/scripts/benchmark.py
+  - path: skills/caveman-compress/scripts/cli.py
+  - path: skills/caveman-compress/scripts/compress.py
+  - path: skills/caveman-compress/scripts/detect.py
+  - path: skills/caveman-compress/scripts/validate.py
+- name: caveman-help
+  path: skills/caveman-help/SKILL.md
+  description: >
+    Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman".
+- name: caveman-stats
+  path: skills/caveman-stats/SKILL.md
+  description: >
+    Show real token usage and estimated savings for the current session. Reads directly from the Claude Code session log — no AI estimation. Triggers on /caveman-stats. Output is injected by the mode-tracker hook; the model itself does not compute the numbers.
+- name: cavecrew
+  path: skills/cavecrew/SKILL.md
+  description: >
+    Decision guide for delegating to caveman-style subagents. Tells the main thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit), or `cavecrew-reviewer` (diff review) instead of doing the work inline or using vanilla `Explore`. Subagent output is caveman-compressed so the tool-result injected back into main context is ~60% smaller — main context lasts longer across long sessions. Trigger: "delegate to subagent", "use cavecrew", "spawn investigator/builder/reviewer", "save context", "compressed agent output".
+agents:
+- name: cavecrew-builder
+  path: agents/cavecrew-builder.md
+  description: >
+    Surgical 1-2 file edit. Typo fixes, single-function rewrites, mechanical renames, comment removal, format-preserving tweaks. Hard refuses 3+ file scope. Returns caveman diff receipt. Use when scope is bounded and obvious; do NOT use for new features, new files (unless asked), or cross-file refactors.
+- name: cavecrew-investigator
+  path: agents/cavecrew-investigator.md
+  description: >
+    Read-only code locator. Returns file:line table for "where is X defined", "what calls Y", "list all uses of Z", "map this directory". Output is caveman-compressed so the main thread eats ~60% fewer tokens than vanilla Explore. Refuses to suggest fixes.
+  model: haiku
+- name: cavecrew-reviewer
+  path: agents/cavecrew-reviewer.md
+  description: >
+    Diff/branch/file reviewer. One line per finding, severity-tagged, no praise, no scope creep. Output format `path:line: <emoji> <severity>: <problem>. <fix>.` Use for "review this PR", "review my diff", "audit this file". Skips formatting nits unless they change meaning.
+  model: haiku
+commands:
+- name: caveman
+  path: commands/caveman.md
+  description: Switch caveman intensity level (lite/full/ultra/wenyan)
+- name: caveman-commit
+  path: commands/caveman-commit.md
+  description: Generate terse caveman-style commit message
+- name: caveman-review
+  path: commands/caveman-review.md
+  description: One-line code review comments
+- name: caveman-init
+  path: commands/caveman-init.md
+  description: Drop the always-on caveman activation rule into the current repo for every IDE agent
+rules:
+- name: caveman-activate
+  path: rules/caveman-activate.md
+  description: Always-on caveman activation rule used by caveman-init and Forgecat rule installation.
+hooks:
+- id: caveman-claude-session-start
+  platform: claude-code
+  trigger: SessionStart
+  command: ./hooks/caveman-activate.js
+  timeout: 5
+  description: Activate caveman mode and inject the full caveman ruleset at Claude Code session start.
+- id: caveman-claude-user-prompt-submit
+  platform: claude-code
+  trigger: UserPromptSubmit
+  command: ./hooks/caveman-mode-tracker.js
+  timeout: 5
+  description: Track slash-command and natural-language caveman mode changes in Claude Code prompts.
+- id: caveman-codex-session-start
+  platform: codex
+  trigger: SessionStart
+  command: ./hooks/codex-session-start.sh
+  timeout: 5
+  description: Inject the original Codex caveman SessionStart context from the source hooks.json inline command.
