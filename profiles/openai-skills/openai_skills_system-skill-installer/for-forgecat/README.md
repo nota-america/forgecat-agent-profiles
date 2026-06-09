@@ -33,8 +33,8 @@ npx forgecat install @forgecat/openai_skills_system-skill-installer
 
 | Platform | Status |
 |---|---|
-| Claude Code | Tested |
-| Cursor | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
 | Codex | Tested |
 
 ### Models
