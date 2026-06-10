@@ -41,7 +41,7 @@ npx forgecat install @forgecat/xixu-me_skills
 |---|---|
 | Author | Xi Xu |
 | Original repository | https://github.com/xixu-me/skills/tree/main/skills |
-| Version | `0.1.0` |
+| Version | `0.1.2` |
 | Original commit | `fa39ac2eafbf727ea4dd3ae1c8af36fcb82f32e4` (2026-05-28) |
 | License | MIT |
 | Source platform | Agent Skills |
@@ -53,7 +53,7 @@ npx forgecat install @forgecat/xixu-me_skills
 | Platform | Status |
 |---|---|
 | Codex | Tested |
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
 
 ### Models

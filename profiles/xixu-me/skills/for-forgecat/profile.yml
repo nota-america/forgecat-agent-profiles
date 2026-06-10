@@ -11,8 +11,8 @@ compatibility:
   platforms:
     tested:
     - codex
-    partial:
     - claude-code
+    partial:
     - cursor
   models:
     recommended: []
