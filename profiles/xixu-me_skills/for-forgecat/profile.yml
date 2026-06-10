@@ -1,0 +1,98 @@
+name: "@forgecat/xixu-me_skills"
+description: >-
+  Xi Xu Agent Skills collection for userscripts, GitHub Actions documentation, secure Linux hosting, OpenClaw
+  self-hosting, README localization, LiteLLM Copilot routing, browser-session workflows, and Xdrop/Xget/tzst
+  tooling.
+repository: https://github.com/xixu-me/skills/tree/main/skills
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested:
+    - codex
+    partial:
+    - claude-code
+    - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: develop-userscripts
+  path: skills/develop-userscripts/SKILL.md
+  description: >-
+    Use when building, debugging, packaging, or publishing browser userscripts for Tampermonkey or ScriptCat,
+    including GM APIs, metadata blocks, permission issues, @match/@grant/@connect setup, ScriptCat background
+    or scheduled scripts, UserConfig blocks, or subscription workflows.
+- name: github-actions-docs
+  path: skills/github-actions-docs/SKILL.md
+  description: >-
+    Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions
+    workflows, workflow syntax, triggers, matrices, runners, reusable workflows, artifacts, caching, secrets,
+    OIDC, deployments, custom actions, or Actions Runner Controller, especially when they need official
+    GitHub documentation, exact links, or docs-grounded YAML guidance.
+- name: openclaw-secure-linux-cloud
+  path: skills/openclaw-secure-linux-cloud/SKILL.md
+  description: >-
+    Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between
+    SSH tunneling, Tailscale, or reverse-proxy exposure, or reviewing Podman, pairing, sandboxing, token
+    auth, and tool-permission defaults for a secure personal deployment.
+- name: opensource-guide-coach
+  path: skills/opensource-guide-coach/SKILL.md
+  description: >-
+    Use when a user wants guidance on starting, contributing to, growing, governing, funding, securing,
+    or sustaining an open source project, or asks about contributor onboarding, community health, maintainer
+    burnout, code of conduct, metrics, legal basics, or open source project adoption.
+- name: readme-i18n
+  path: skills/readme-i18n/SKILL.md
+  description: >-
+    Use when the user wants to translate a repository README, make a repo multilingual, localize docs,
+    add a language switcher, internationalize the README, or update localized README variants in a GitHub-style
+    repository.
+- name: running-claude-code-via-litellm-copilot
+  path: skills/running-claude-code-via-litellm-copilot/SKILL.md
+  description: >-
+    Use when routing Claude Code through a local LiteLLM proxy to GitHub Copilot, reducing direct Anthropic
+    spend, configuring ANTHROPIC_BASE_URL or ANTHROPIC_MODEL overrides, or troubleshooting Copilot proxy
+    setup failures such as model-not-found, no localhost traffic, or GitHub 401/403 auth errors.
+- name: secure-linux-web-hosting
+  path: skills/secure-linux-web-hosting/SKILL.md
+  description: >-
+    Use when setting up, hardening, or reviewing a cloud server for self-hosting, including DNS, SSH,
+    firewalls, Nginx, static-site hosting, reverse-proxying an app, HTTPS with Let's Encrypt or ACME clients,
+    safe HTTP-to-HTTPS redirects, or optional post-launch network tuning such as BBR.
+- name: skills-cli
+  path: skills/skills-cli/SKILL.md
+  description: >-
+    Use when users ask to discover, install, list, check, update, remove, back up, restore, sync, or initialize
+    Agent Skills, mention `bunx skills`, `npx skills`, `skills.sh`, or `skills-lock.json`, ask "find a
+    skill for X", or want help extending agent capabilities with installable skills.
+- name: tzst
+  path: skills/tzst/SKILL.md
+  description: >-
+    Use when the user needs to create, extract, flatten, list, test, install, script, or troubleshoot
+    `tzst` CLI workflows for `.tzst` or `.tar.zst` archives, including compression levels, streaming mode,
+    extraction filters, conflict resolution, JSON output, or standalone binary setup, even if they describe
+    the archive task without naming `tzst`.
+- name: use-my-browser
+  path: skills/use-my-browser/SKILL.md
+  description: >-
+    Use when work depends on the user's live browser session or visible rendered state rather than static
+    fetches, especially for browser debugging contexts or DevTools-selected elements or requests, logged-in
+    dashboards or CMS flows, localhost apps, forms, uploads, downloads, media inspection, DOM or iframe
+    inspection, Shadow DOM, or browser failures that look like soft 404s, auth walls, anti-bot checks,
+    or rate limits.
+- name: xdrop
+  path: skills/xdrop/SKILL.md
+  description: >-
+    Use this skill when the user wants to send or fetch files through an Xdrop server from the terminal,
+    asks to automate encrypted Xdrop share-link workflows, provides an Xdrop `/t/:transferId#k=...` link
+    to download and decrypt locally, or needs Xdrop CLI flags such as `--quiet`, `--json`, `--expires-in`,
+    `--output`, or `--api-url`, even if they do not explicitly mention the skill name.
+- name: xget
+  path: skills/xget/SKILL.md
+  description: >-
+    Use when tasks involve Xget URL rewriting, registry/package/container/API acceleration, integrating
+    Xget into Git, download tools, package managers, container builds, AI SDKs, CI/CD, deployment, self-hosting,
+    or adapting commands and config from the live README `Use Cases` section into files, environments,
+    shells, or base URLs.
