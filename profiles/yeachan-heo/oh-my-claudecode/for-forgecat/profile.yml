@@ -1,0 +1,107 @@
+name: "@forgecat/yeachan-heo_oh-my-claudecode-agents"
+description: >-
+  Agents-only package of 19 Claude Code orchestration agents from
+  Yeachan-Heo/oh-my-claudecode, including planning, execution, review, debugging,
+  testing, security, research, and documentation roles.
+repository: https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents
+license: MIT
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - codex
+    - cursor
+    partial: []
+  models:
+    recommended:
+    - opus
+    - sonnet
+    minimum:
+    - haiku
+agents:
+- name: analyst
+  path: agents/analyst.md
+  description: Pre-planning consultant for requirements analysis (Opus)
+  model: opus
+- name: architect
+  path: agents/architect.md
+  description: Strategic Architecture & Debugging Advisor (Opus, READ-ONLY)
+  model: opus
+- name: code-reviewer
+  path: agents/code-reviewer.md
+  description: Expert code review specialist with severity-rated feedback, logic defect
+    detection, SOLID principle checks, style, performance, and quality strategy
+  model: opus
+- name: code-simplifier
+  path: agents/code-simplifier.md
+  description: Simplifies and refines code for clarity, consistency, and maintainability
+    while preserving all functionality. Focuses on recently modified code unless instructed
+    otherwise.
+  model: opus
+- name: critic
+  path: agents/critic.md
+  description: Work plan and code review expert - thorough, structured, multi-perspective
+    (Opus)
+  model: opus
+- name: debugger
+  path: agents/debugger.md
+  description: Root-cause analysis, regression isolation, stack trace analysis, build/compilation
+    error resolution
+  model: sonnet
+- name: designer
+  path: agents/designer.md
+  description: UI/UX Designer-Developer for stunning interfaces (Sonnet)
+  model: sonnet
+- name: document-specialist
+  path: agents/document-specialist.md
+  description: External Documentation & Reference Specialist
+  model: sonnet
+- name: executor
+  path: agents/executor.md
+  description: Focused task executor for implementation work (Sonnet)
+  model: sonnet
+- name: explore
+  path: agents/explore.md
+  description: Codebase search specialist for finding files and code patterns
+  model: haiku
+- name: git-master
+  path: agents/git-master.md
+  description: Git expert for atomic commits, rebasing, and history management with style
+    detection
+  model: sonnet
+- name: planner
+  path: agents/planner.md
+  description: Strategic planning consultant with interview workflow (Opus)
+  model: opus
+- name: qa-tester
+  path: agents/qa-tester.md
+  description: Interactive CLI testing specialist using tmux for session management
+  model: sonnet
+- name: scientist
+  path: agents/scientist.md
+  description: Data analysis and research execution specialist
+  model: sonnet
+- name: security-reviewer
+  path: agents/security-reviewer.md
+  description: Security vulnerability detection specialist (OWASP Top 10, secrets, unsafe
+    patterns)
+  model: opus
+- name: test-engineer
+  path: agents/test-engineer.md
+  description: Test strategy, integration/e2e coverage, flaky test hardening, TDD workflows
+  model: sonnet
+- name: tracer
+  path: agents/tracer.md
+  description: Evidence-driven causal tracing with competing hypotheses, evidence for/against,
+    uncertainty tracking, and next-probe recommendations
+  model: sonnet
+- name: verifier
+  path: agents/verifier.md
+  description: Verification strategy, evidence-based completion checks, test adequacy
+  model: sonnet
+- name: writer
+  path: agents/writer.md
+  description: Technical documentation writer for README, API docs, and comments (Haiku)
+  model: haiku
