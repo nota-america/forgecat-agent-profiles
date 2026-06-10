@@ -43,12 +43,8 @@ skills:
     this into a campaign," or hands off an approved brief for execution.'
 - name: cash-flow-snapshot
   path: skills/cash-flow-snapshot/SKILL.md
-  description: Reads AR/AP, historical cash timing, and known fixed costs from QuickBooks,
-    PayPal, Stripe, or Square — or a CSV upload — and produces a 30/60/90-day cash flow forecast
-    with percentage-variance confidence bands and named risk flags. Delivers a chat summary
-    and a downloadable XLSX. Use when the user asks "forecast my cash flow," "will I make
-    payroll," mentions "runway," or says "cash crunch." Falls back to CSV upload when no connector
-    is live.
+  description: |
+    Reads AR/AP, historical cash timing, and known fixed costs from QuickBooks, PayPal, Stripe, or Square — or a CSV upload — and produces a 30/60/90-day cash flow forecast with percentage-variance confidence bands and named risk flags. Delivers a chat summary and a downloadable XLSX. Use when the user asks "forecast my cash flow," "will I make payroll," mentions "runway," or says "cash crunch." Falls back to CSV upload when no connector is live.
 - name: close-month
   path: skills/close-month/SKILL.md
   description: Closes the month — reconciles QB vs payment processors, flags gaps, writes
@@ -212,10 +208,8 @@ skills:
     in a context that suggests they are worried about their tax bill.'
 - name: ticket-deflector
   path: skills/ticket-deflector/SKILL.md
-  description: Reads a forwarded customer email or ticket, pulls order/refund status from
-    PayPal and account history from HubSpot, drafts a tone-matched reply in the owner's writing
-    voice, and can issue a PayPal refund with explicit owner approval. Use when the user says
-    "draft a response," "answer this customer," "where's my order," or "I want a refund."
+  description: |
+    Reads a forwarded customer email or ticket, pulls order/refund status from PayPal and account history from HubSpot, drafts a tone-matched reply in the owner's writing voice, and can issue a PayPal refund with explicit owner approval. Use when the user says "draft a response," "answer this customer," "where's my order," or "I want a refund."
 commands:
 - name: plan-payroll
   path: commands/plan-payroll.md
