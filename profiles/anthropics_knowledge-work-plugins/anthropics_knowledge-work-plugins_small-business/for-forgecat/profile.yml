@@ -8,9 +8,9 @@ visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
+    partial:
     - cursor
     - codex
   models:
@@ -287,6 +287,3 @@ commands:
     and save-to arguments.
 mcp:
   path: mcp.jsonc
-dependencies:
-  '@forgecat/anthropics_skills_docx': ^0.0.0
-  '@forgecat/anthropics_skills_xlsx': ^0.0.0

@@ -80,7 +80,7 @@ Trigger this skill whenever the user mentions: quarterly taxes, estimated tax pa
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/small-business |
-| Version | `0.1.2` |
+| Version | `pending-registry-publish` |
 | Original commit | 69d3780 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -91,7 +91,7 @@ Trigger this skill whenever the user mentions: quarterly taxes, estimated tax pa
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
 

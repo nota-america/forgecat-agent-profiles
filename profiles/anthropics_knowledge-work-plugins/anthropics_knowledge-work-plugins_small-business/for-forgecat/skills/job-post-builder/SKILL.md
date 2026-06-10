@@ -172,8 +172,8 @@ Build from scratch using `references/job-post-structure.md` as the full template
 - Keep the required qualifications list tight — every line is a reason someone doesn't apply
 - If compensation isn't provided, omit the range rather than invent one
 
-Save as `[Role]-Job-Post.docx` using the installed `docx` skill from the
-`@forgecat/anthropics_skills_docx` dependency before generating the file.
+Save as `[Role]-Job-Post.docx` and read `reference/docx-helper.md` before
+generating the file.
 
 ---
 
