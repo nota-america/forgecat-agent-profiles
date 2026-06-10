@@ -8,9 +8,9 @@ visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested:
-    - claude-code
+    tested: []
     partial:
+    - claude-code
     - cursor
     - codex
   models:
