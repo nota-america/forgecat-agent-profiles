@@ -1,0 +1,26 @@
+name: "@forgecat/xixu-me_skills_openclaw-secure-linux-cloud"
+description: >-
+  Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between
+  SSH tunneling, Tailscale, or reverse-proxy exposure, or reviewing Podman, pairing, sandboxing, token
+  auth, and tool-permission defaults for a secure personal deployment.
+repository: https://github.com/xixu-me/skills/tree/main/skills/openclaw-secure-linux-cloud
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested:
+    - codex
+    partial:
+    - claude-code
+    - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: openclaw-secure-linux-cloud
+  path: skills/openclaw-secure-linux-cloud/SKILL.md
+  description: >-
+    Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between
+    SSH tunneling, Tailscale, or reverse-proxy exposure, or reviewing Podman, pairing, sandboxing, token
+    auth, and tool-permission defaults for a secure personal deployment.

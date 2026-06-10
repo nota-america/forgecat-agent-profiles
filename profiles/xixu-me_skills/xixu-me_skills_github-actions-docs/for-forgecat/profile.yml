@@ -1,0 +1,28 @@
+name: "@forgecat/xixu-me_skills_github-actions-docs"
+description: >-
+  Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions
+  workflows, workflow syntax, triggers, matrices, runners, reusable workflows, artifacts, caching, secrets,
+  OIDC, deployments, custom actions, or Actions Runner Controller, especially when they need official
+  GitHub documentation, exact links, or docs-grounded YAML guidance.
+repository: https://github.com/xixu-me/skills/tree/main/skills/github-actions-docs
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested:
+    - codex
+    partial:
+    - claude-code
+    - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: github-actions-docs
+  path: skills/github-actions-docs/SKILL.md
+  description: >-
+    Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions
+    workflows, workflow syntax, triggers, matrices, runners, reusable workflows, artifacts, caching, secrets,
+    OIDC, deployments, custom actions, or Actions Runner Controller, especially when they need official
+    GitHub documentation, exact links, or docs-grounded YAML guidance.

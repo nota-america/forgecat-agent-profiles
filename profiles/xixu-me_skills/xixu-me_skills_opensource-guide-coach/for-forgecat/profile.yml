@@ -1,0 +1,26 @@
+name: "@forgecat/xixu-me_skills_opensource-guide-coach"
+description: >-
+  Use when a user wants guidance on starting, contributing to, growing, governing, funding, securing,
+  or sustaining an open source project, or asks about contributor onboarding, community health, maintainer
+  burnout, code of conduct, metrics, legal basics, or open source project adoption.
+repository: https://github.com/xixu-me/skills/tree/main/skills/opensource-guide-coach
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested:
+    - codex
+    partial:
+    - claude-code
+    - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: opensource-guide-coach
+  path: skills/opensource-guide-coach/SKILL.md
+  description: >-
+    Use when a user wants guidance on starting, contributing to, growing, governing, funding, securing,
+    or sustaining an open source project, or asks about contributor onboarding, community health, maintainer
+    burnout, code of conduct, metrics, legal basics, or open source project adoption.
