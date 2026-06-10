@@ -38,8 +38,9 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
+| [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
 
-Total profiles: **161** across **22** collections.
+Total profiles: **162** across **23** collections.
 
 ### Profile Directory Layout
 
