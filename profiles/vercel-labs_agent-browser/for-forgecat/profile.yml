@@ -1,4 +1,4 @@
-name: vercel-labs_agent-browser
+name: '@forgecat/vercel-labs_agent-browser'
 description: Browser automation CLI for AI agents. Fast native Rust CLI.
 repository: https://github.com/vercel-labs/agent-browser
 license: Apache-2.0

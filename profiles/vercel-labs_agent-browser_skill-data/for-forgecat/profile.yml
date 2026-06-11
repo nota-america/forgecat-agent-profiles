@@ -1,4 +1,4 @@
-name: vercel-labs_agent-browser_skill-data
+name: '@forgecat/vercel-labs_agent-browser_skill-data'
 description: Agent-browser workflow skills for core browser automation and specialized AgentCore, QA, Electron, Slack, and Vercel Sandbox tasks.
 repository: https://github.com/vercel-labs/agent-browser
 license: Apache-2.0
@@ -17,6 +17,10 @@ skills:
   - name: core
     path: skills/core/SKILL.md
     description: Core agent-browser usage guide. Read this before running any agent-browser commands. Covers the snapshot-and-ref workflow, navigating pages, interacting with elements (click, fill, type, select), extracting text and data, taking screenshots, managing tabs, handling forms and auth, waiting for content, running multiple browser sessions in parallel, and troubleshooting common failures. Use when the user asks to interact with a website, fill a form, click something, extract data, take a screenshot, log into a site, test a web app, or automate any browser task.
+    scripts:
+      - path: skills/core/templates/authenticated-session.sh
+      - path: skills/core/templates/capture-workflow.sh
+      - path: skills/core/templates/form-automation.sh
   - name: agentcore
     path: skills/agentcore/SKILL.md
     description: Run agent-browser on AWS Bedrock AgentCore cloud browsers. Use when the user wants to use AgentCore, run browser automation on AWS, use a cloud browser with AWS credentials, or needs a managed browser session backed by AWS infrastructure. Triggers include "use agentcore", "run on AWS", "cloud browser with AWS", "bedrock browser", "agentcore session", or any task requiring AWS-hosted browser automation.

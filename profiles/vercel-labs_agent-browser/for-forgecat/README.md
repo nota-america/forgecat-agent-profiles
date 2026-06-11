@@ -1453,7 +1453,7 @@ agent-browser -p ios --device "John's iPhone" open https://example.com
 To enable Browserless, use the `-p` flag:
 
 ```bash
-export BROWSERLESS_API_KEY="your-api-token"
+export BROWSERLESS_API_KEY=your-api-token
 agent-browser -p browserless open https://example.com
 ```
 
@@ -1461,7 +1461,7 @@ Or use environment variables for CI/scripts:
 
 ```bash
 export AGENT_BROWSER_PROVIDER=browserless
-export BROWSERLESS_API_KEY="your-api-token"
+export BROWSERLESS_API_KEY=your-api-token
 agent-browser open https://example.com
 ```
 
@@ -1485,7 +1485,7 @@ Get your API token from the [Browserless Dashboard](https://browserless.io).
 To enable Browserbase, use the `-p` flag:
 
 ```bash
-export BROWSERBASE_API_KEY="your-api-key"
+export BROWSERBASE_API_KEY=your-api-key
 agent-browser -p browserbase open https://example.com
 ```
 
@@ -1493,7 +1493,7 @@ Or use environment variables for CI/scripts:
 
 ```bash
 export AGENT_BROWSER_PROVIDER=browserbase
-export BROWSERBASE_API_KEY="your-api-key"
+export BROWSERBASE_API_KEY=your-api-key
 agent-browser open https://example.com
 ```
 
@@ -1508,7 +1508,7 @@ Get your API key from the [Browserbase Dashboard](https://browserbase.com/overvi
 To enable Browser Use, use the `-p` flag:
 
 ```bash
-export BROWSER_USE_API_KEY="your-api-key"
+export BROWSER_USE_API_KEY=your-api-key
 agent-browser -p browseruse open https://example.com
 ```
 
@@ -1516,7 +1516,7 @@ Or use environment variables for CI/scripts:
 
 ```bash
 export AGENT_BROWSER_PROVIDER=browseruse
-export BROWSER_USE_API_KEY="your-api-key"
+export BROWSER_USE_API_KEY=your-api-key
 agent-browser open https://example.com
 ```
 
@@ -1531,7 +1531,7 @@ Get your API key from the [Browser Use Cloud Dashboard](https://cloud.browser-us
 To enable Kernel, use the `-p` flag:
 
 ```bash
-export KERNEL_API_KEY="your-api-key"
+export KERNEL_API_KEY=your-api-key
 agent-browser -p kernel open https://example.com
 ```
 
@@ -1539,7 +1539,7 @@ Or use environment variables for CI/scripts:
 
 ```bash
 export AGENT_BROWSER_PROVIDER=kernel
-export KERNEL_API_KEY="your-api-key"
+export KERNEL_API_KEY=your-api-key
 agent-browser open https://example.com
 ```
 
