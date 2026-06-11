@@ -35,16 +35,20 @@ manifests.each do |manifest_path|
 
   owner, repository_name = source_owner_and_repository(repository)
   expected_prefix = Pathname.new("profiles").join(owner, repository_name).to_s
+  package_name = manifest["name"].to_s.strip
+  allowed_prefixes = [expected_prefix]
+  allowed_prefixes << "#{expected_prefix}_agents" if package_name.end_with?("_agents")
   actual_profile_path = Pathname.new(manifest_path)
                                 .dirname
                                 .parent
                                 .relative_path_from(ROOT)
                                 .to_s
 
-  next if actual_profile_path == expected_prefix ||
-          actual_profile_path.start_with?("#{expected_prefix}/")
+  next if allowed_prefixes.any? do |prefix|
+    actual_profile_path == prefix || actual_profile_path.start_with?("#{prefix}/")
+  end
 
-  errors << "#{actual_profile_path}: expected to live under #{expected_prefix}"
+  errors << "#{actual_profile_path}: expected to live under #{allowed_prefixes.join(' or ')}"
 rescue ArgumentError => e
   errors << "#{Pathname.new(manifest_path).relative_path_from(ROOT)}: #{e.message}"
 end
