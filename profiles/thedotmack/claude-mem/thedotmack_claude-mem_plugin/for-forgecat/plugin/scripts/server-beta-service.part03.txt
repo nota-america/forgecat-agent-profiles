@@ -1,0 +1,419 @@
+ (project_id, team_id) REFERENCES projects(id, team_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS observations (
+  id TEXT PRIMARY KEY,
+  project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+  team_id TEXT NOT NULL REFERENCES teams(id) ON DELETE CASCADE,
+  server_session_id TEXT REFERENCES server_sessions(id) ON DELETE SET NULL,
+  kind TEXT NOT NULL DEFAULT 'observation',
+  content TEXT NOT NULL,
+  content_search TSVECTOR GENERATED ALWAYS AS (to_tsvector('english', content)) STORED,
+  generation_key TEXT,
+  metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+  embedding JSONB,
+  created_by_job_id TEXT REFERENCES observation_generation_jobs(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  FOREIGN KEY (project_id, team_id) REFERENCES projects(id, team_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS observation_sources (
+  id TEXT PRIMARY KEY,
+  observation_id TEXT NOT NULL REFERENCES observations(id) ON DELETE CASCADE,
+  agent_event_id TEXT REFERENCES agent_events(id) ON DELETE CASCADE,
+  generation_job_id TEXT REFERENCES observation_generation_jobs(id) ON DELETE SET NULL,
+  source_type TEXT NOT NULL CHECK (source_type IN ('agent_event', 'session_summary', 'observation_reindex', 'manual')),
+  source_id TEXT NOT NULL,
+  metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (observation_id, source_type, source_id),
+  UNIQUE (source_type, source_id, generation_job_id, observation_id),
+  CHECK (
+    (source_type = 'agent_event' AND agent_event_id IS NOT NULL AND source_id = agent_event_id)
+    OR
+    (source_type <> 'agent_event' AND agent_event_id IS NULL)
+  )
+);
+
+CREATE TABLE IF NOT EXISTS observation_generation_job_events (
+  id TEXT PRIMARY KEY,
+  generation_job_id TEXT NOT NULL REFERENCES observation_generation_jobs(id) ON DELETE CASCADE,
+  event_type TEXT NOT NULL CHECK (event_type IN ('queued', 'enqueued', 'processing', 'retry_scheduled', 'completed', 'failed', 'cancelled')),
+  status_after TEXT NOT NULL CHECK (status_after IN ('queued', 'processing', 'completed', 'failed', 'cancelled')),
+  attempt INTEGER NOT NULL DEFAULT 0,
+  details JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_agent_events_project_session ON agent_events(project_id, server_session_id, occurred_at);
+ALTER TABLE server_sessions ADD COLUMN IF NOT EXISTS idempotency_key TEXT;
+-- #2560 \u2014 platform_source on agent_events (consistent with server_sessions and
+-- the plan-09 scoping): which platform produced the event (claude-code,
+-- opencode, cursor, ...). Idempotent so an existing DB upgrades in place.
+ALTER TABLE agent_events ADD COLUMN IF NOT EXISTS platform_source TEXT;
+CREATE INDEX IF NOT EXISTS idx_agent_events_platform_source
+  ON agent_events(team_id, project_id, platform_source, occurred_at)
+  WHERE platform_source IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_server_sessions_platform_source
+  ON server_sessions(team_id, project_id, platform_source, started_at)
+  WHERE platform_source IS NOT NULL;
+ALTER TABLE observations ADD COLUMN IF NOT EXISTS content_search TSVECTOR GENERATED ALWAYS AS (to_tsvector('english', content)) STORED;
+ALTER TABLE observations DROP CONSTRAINT IF EXISTS observations_generation_key_key;
+ALTER TABLE observation_generation_jobs DROP CONSTRAINT IF EXISTS observation_generation_jobs_source_type_source_id_job_type_key;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_server_sessions_project_idempotency
+  ON server_sessions(project_id, idempotency_key)
+  WHERE idempotency_key IS NOT NULL;
+-- Supports the session linkage lookup on the /v1/events ingest path
+-- (WHERE content_session_id = $1 AND project_id = $2 ...).
+CREATE INDEX IF NOT EXISTS idx_server_sessions_content_session
+  ON server_sessions(project_id, content_session_id)
+  WHERE content_session_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_observations_generation_key_scope
+  ON observations(team_id, project_id, generation_key)
+  WHERE generation_key IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_observation_jobs_source_scope
+  ON observation_generation_jobs(team_id, project_id, source_type, source_id, job_type);
+CREATE INDEX IF NOT EXISTS idx_projects_team ON projects(team_id, id);
+CREATE INDEX IF NOT EXISTS idx_agent_events_team_project ON agent_events(team_id, project_id, occurred_at);
+CREATE INDEX IF NOT EXISTS idx_observations_project_session ON observations(project_id, server_session_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_observations_team_project ON observations(team_id, project_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_observations_content_search ON observations USING GIN (content_search);
+CREATE INDEX IF NOT EXISTS idx_observation_sources_event ON observation_sources(agent_event_id);
+CREATE INDEX IF NOT EXISTS idx_observation_sources_source ON observation_sources(source_type, source_id);
+CREATE INDEX IF NOT EXISTS idx_observation_jobs_status_next_attempt ON observation_generation_jobs(status, next_attempt_at, created_at);
+CREATE INDEX IF NOT EXISTS idx_observation_jobs_team_project ON observation_generation_jobs(team_id, project_id, status, created_at);
+CREATE INDEX IF NOT EXISTS idx_observation_jobs_event ON observation_generation_jobs(agent_event_id);
+CREATE INDEX IF NOT EXISTS idx_observation_jobs_source ON observation_generation_jobs(source_type, source_id);
+CREATE INDEX IF NOT EXISTS idx_observation_job_events_job_created ON observation_generation_job_events(generation_job_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_audit_log_scope_created ON audit_log(project_id, team_id, created_at);
+`});var Sc={};Si(Sc,{PostgresAgentEventsRepository:()=>lr,PostgresAuthRepository:()=>mt,PostgresObservationGenerationJobEventsRepository:()=>ft,PostgresObservationGenerationJobRepository:()=>Fe,PostgresObservationRepository:()=>ur,PostgresObservationSourcesRepository:()=>Un,PostgresProjectsRepository:()=>jn,PostgresServerSessionsRepository:()=>bt,PostgresTeamsRepository:()=>ds,SERVER_BETA_POSTGRES_SCHEMA_VERSION:()=>zE,SERVER_BETA_POSTGRES_TABLES:()=>xoe,bootstrapServerBetaPostgresSchema:()=>Pf,buildAgentEventIdempotencyKey:()=>UT,buildObservationGenerationJobIdempotencyKey:()=>BT,buildObservationGenerationKey:()=>$l,buildServerSessionIdempotencyKey:()=>XT,checkPostgresHealth:()=>OY,closePostgresPool:()=>jY,createPostgresPool:()=>pu,createPostgresStorageRepositories:()=>WE,getPostgresDatabaseUrl:()=>BK,getSharedPostgresPool:()=>Hb,parsePostgresConfig:()=>Oo,withPostgresTransaction:()=>$r});function WE(r){return{teams:new ds(r),projects:new jn(r),auth:new mt(r),sessions:new bt(r),agentEvents:new lr(r),observations:new ur(r),observationSources:new Un(r),observationGenerationJobs:new Fe(r),observationGenerationJobEvents:new ft(r)}}var Da=M(()=>{"use strict";Ls();hn();Jn();vo();xc();Bn();Df();Ls();hn();du();Jn();vo();zs();xc();YE();Bn();Df()});var nn,wc,QE,Ic,v4=M(()=>{"use strict";nn=require("fs"),wc=require("path"),QE=require("os");Dy();Ic=class{static DEFAULTS={CLAUDE_MEM_MODEL:"claude-haiku-4-5-20251001",CLAUDE_MEM_CONTEXT_OBSERVATIONS:"50",CLAUDE_MEM_WORKER_PORT:String(37700+(process.getuid?.()??77)%100),CLAUDE_MEM_WORKER_HOST:"127.0.0.1",CLAUDE_MEM_API_TIMEOUT_MS:String(yT(ho.API_REQUEST)),CLAUDE_MEM_SKIP_TOOLS:"ListMcpResourcesTool,SlashCommand,Skill,TodoWrite,AskUserQuestion",CLAUDE_MEM_PROVIDER:"claude",CLAUDE_MEM_CLAUDE_AUTH_METHOD:"subscription",CLAUDE_MEM_GEMINI_API_KEY:"",CLAUDE_MEM_GEMINI_MODEL:"gemini-2.5-flash-lite",CLAUDE_MEM_GEMINI_RATE_LIMITING_ENABLED:"true",CLAUDE_MEM_GEMINI_MAX_CONTEXT_MESSAGES:"20",CLAUDE_MEM_GEMINI_MAX_TOKENS:"100000",CLAUDE_MEM_OPENROUTER_API_KEY:"",CLAUDE_MEM_OPENROUTER_MODEL:"xiaomi/mimo-v2-flash:free",CLAUDE_MEM_OPENROUTER_BASE_URL:"",CLAUDE_MEM_OPENROUTER_SITE_URL:"",CLAUDE_MEM_OPENROUTER_APP_NAME:"claude-mem",CLAUDE_MEM_OPENROUTER_MAX_CONTEXT_MESSAGES:"20",CLAUDE_MEM_OPENROUTER_MAX_TOKENS:"100000",CLAUDE_MEM_DATA_DIR:(0,wc.join)((0,QE.homedir)(),".claude-mem"),CLAUDE_MEM_LOG_LEVEL:"INFO",CLAUDE_MEM_PYTHON_VERSION:"3.13",CLAUDE_CODE_PATH:"",CLAUDE_MEM_MODE:"code",CLAUDE_MEM_CONTEXT_SHOW_READ_TOKENS:"false",CLAUDE_MEM_CONTEXT_SHOW_WORK_TOKENS:"false",CLAUDE_MEM_CONTEXT_SHOW_SAVINGS_AMOUNT:"false",CLAUDE_MEM_CONTEXT_SHOW_SAVINGS_PERCENT:"true",CLAUDE_MEM_CONTEXT_FULL_COUNT:"0",CLAUDE_MEM_CONTEXT_FULL_FIELD:"narrative",CLAUDE_MEM_CONTEXT_SESSION_COUNT:"10",CLAUDE_MEM_CONTEXT_SHOW_LAST_SUMMARY:"true",CLAUDE_MEM_CONTEXT_SHOW_LAST_MESSAGE:"false",CLAUDE_MEM_CONTEXT_SHOW_TERMINAL_OUTPUT:"true",CLAUDE_MEM_WELCOME_HINT_ENABLED:"true",CLAUDE_MEM_FOLDER_CLAUDEMD_ENABLED:"false",CLAUDE_MEM_FOLDER_USE_LOCAL_MD:"false",CLAUDE_MEM_TRANSCRIPTS_ENABLED:"true",CLAUDE_MEM_TRANSCRIPTS_CONFIG_PATH:(0,wc.join)((0,QE.homedir)(),".claude-mem","transcript-watch.json"),CLAUDE_MEM_CODEX_TRANSCRIPT_INGESTION:"false",CLAUDE_MEM_MAX_CONCURRENT_AGENTS:"2",CLAUDE_MEM_HOOK_FAIL_LOUD_THRESHOLD:"3",CLAUDE_MEM_EXCLUDED_PROJECTS:"",CLAUDE_MEM_FOLDER_MD_EXCLUDE:"[]",CLAUDE_MEM_FOLDER_MD_SKELETON_DENYLIST:"[]",CLAUDE_MEM_SEMANTIC_INJECT:"false",CLAUDE_MEM_SEMANTIC_INJECT_LIMIT:"5",CLAUDE_MEM_TIER_ROUTING_ENABLED:"true",CLAUDE_MEM_TIER_SIMPLE_MODEL:"haiku",CLAUDE_MEM_TIER_SUMMARY_MODEL:"",CLAUDE_MEM_TIER_FAST_MODEL:"haiku",CLAUDE_MEM_TIER_SMART_MODEL:"sonnet",CLAUDE_MEM_CHROMA_ENABLED:"true",CLAUDE_MEM_CHROMA_MODE:"local",CLAUDE_MEM_CHROMA_HOST:"127.0.0.1",CLAUDE_MEM_CHROMA_PORT:"8000",CLAUDE_MEM_CHROMA_SSL:"false",CLAUDE_MEM_CHROMA_API_KEY:"",CLAUDE_MEM_CHROMA_TENANT:"default_tenant",CLAUDE_MEM_CHROMA_DATABASE:"default_database",CLAUDE_MEM_TELEGRAM_ENABLED:"true",CLAUDE_MEM_TELEGRAM_BOT_TOKEN:"",CLAUDE_MEM_TELEGRAM_CHAT_ID:"",CLAUDE_MEM_TELEGRAM_TRIGGER_TYPES:"security_alert",CLAUDE_MEM_TELEGRAM_TRIGGER_CONCEPTS:"",CLAUDE_MEM_QUEUE_ENGINE:"sqlite",CLAUDE_MEM_REDIS_URL:"",CLAUDE_MEM_REDIS_HOST:"127.0.0.1",CLAUDE_MEM_REDIS_PORT:"6379",CLAUDE_MEM_REDIS_MODE:"external",CLAUDE_MEM_QUEUE_REDIS_PREFIX:`claude_mem_${process.env.CLAUDE_MEM_WORKER_PORT??String(37700+(process.getuid?.()??77)%100)}`,CLAUDE_MEM_AUTH_MODE:"api-key",CLAUDE_MEM_RUNTIME:"worker",CLAUDE_MEM_SERVER_BETA_URL:`http://127.0.0.1:${process.env.CLAUDE_MEM_SERVER_PORT??String(37877+(process.getuid?.()??77)%100)}`,CLAUDE_MEM_SERVER_BETA_API_KEY:"",CLAUDE_MEM_SERVER_BETA_PROJECT_ID:""};static getAllDefaults(){return{...this.DEFAULTS}}static get(e){return process.env[e]??this.DEFAULTS[e]}static getInt(e){let t=this.get(e);return parseInt(t,10)}static getBool(e){let t=this.get(e);return t==="true"||t===!0}static applyEnvOverrides(e){let t={...e};for(let n of Object.keys(this.DEFAULTS))process.env[n]!==void 0&&(t[n]=process.env[n]);return t}static loadFromFile(e,t=!0){try{if(!(0,nn.existsSync)(e)){let o=this.getAllDefaults();try{let c=(0,wc.dirname)(e);(0,nn.existsSync)(c)||(0,nn.mkdirSync)(c,{recursive:!0}),(0,nn.writeFileSync)(e,JSON.stringify(o,null,2),"utf-8"),console.log("[SETTINGS] Created settings file with defaults:",e)}catch(c){console.warn("[SETTINGS] Failed to create settings file, using in-memory defaults:",e,c instanceof Error?c.message:String(c))}return t?this.applyEnvOverrides(o):o}let n=(0,nn.readFileSync)(e,"utf-8"),i=JSON.parse(n.replace(/^\uFEFF/,"")),s=i;if(i.env&&typeof i.env=="object"){s=i.env;try{(0,nn.writeFileSync)(e,JSON.stringify(s,null,2),"utf-8"),console.log("[SETTINGS] Migrated settings file from nested to flat schema:",e)}catch(o){console.warn("[SETTINGS] Failed to auto-migrate settings file:",e,o instanceof Error?o.message:String(o))}}let a={...this.DEFAULTS};for(let o of Object.keys(this.DEFAULTS))s[o]!==void 0&&(a[o]=s[o]);return t?this.applyEnvOverrides(a):a}catch(n){console.warn("[SETTINGS] Failed to load settings, using defaults:",e,n instanceof Error?n.message:String(n));let i=this.getAllDefaults();return t?this.applyEnvOverrides(i):i}}}});function Ioe(){let r=Pa("CLAUDE_MEM_QUEUE_ENGINE").trim().toLowerCase();if(r==="sqlite"||r==="bullmq")return r;throw new Error(`Invalid CLAUDE_MEM_QUEUE_ENGINE=${r}; expected sqlite or bullmq`)}function S4(){let r=Ioe(),e=_oe(Pa("CLAUDE_MEM_REDIS_MODE")),t=Pa("CLAUDE_MEM_REDIS_URL").trim()||null,n=Pa("CLAUDE_MEM_REDIS_HOST").trim()||"127.0.0.1",i=koe(Pa("CLAUDE_MEM_REDIS_PORT")),s=Toe(Pa("CLAUDE_MEM_QUEUE_REDIS_PREFIX")),a=t?Koe(t):Aoe(n,i);return{engine:r,mode:e,url:t,host:t?E4(t).host:n,port:t?E4(t).port:i,prefix:s,connection:a}}function Pa(r){if(process.env[r]!==void 0)return process.env[r];if((0,x4.existsSync)(vy)){let e=Ic.loadFromFile(vy,!1)[r];if(e!==void 0)return e}return Ic.get(r)}function _oe(r){let e=r.trim().toLowerCase();if(e==="external"||e==="managed"||e==="docker")return e;throw new Error(`Invalid CLAUDE_MEM_REDIS_MODE=${r}; expected external, managed, or docker`)}function koe(r){let e=Number.parseInt(r,10);if(!Number.isInteger(e)||e<=0||e>65535)throw new Error(`Invalid CLAUDE_MEM_REDIS_PORT=${r}; expected a TCP port`);return e}function Toe(r){return(r.trim()||"claude_mem").replace(/[^a-zA-Z0-9_-]/g,"_")}function Aoe(r,e){return{host:r,port:e,maxRetriesPerRequest:null,connectTimeout:1e3,lazyConnect:!0}}function Koe(r){let e=new URL(r);if(e.protocol!=="redis:"&&e.protocol!=="rediss:")throw new Error("CLAUDE_MEM_REDIS_URL must use redis:// or rediss://");let t=e.pathname.length>1?Number.parseInt(e.pathname.slice(1),10):void 0;if(t!==void 0&&(!Number.isInteger(t)||t<0))throw new Error(`Invalid Redis database in CLAUDE_MEM_REDIS_URL: ${e.pathname}`);return{host:e.hostname||"127.0.0.1",port:e.port?Number.parseInt(e.port,10):6379,username:e.username?decodeURIComponent(e.username):void 0,password:e.password?decodeURIComponent(e.password):void 0,db:t,tls:e.protocol==="rediss:"?{}:void 0,maxRetriesPerRequest:null,connectTimeout:1e3,lazyConnect:!0}}function E4(r){let e=new URL(r);return{host:e.hostname||"127.0.0.1",port:e.port?Number.parseInt(e.port,10):6379}}var x4,w4=M(()=>{"use strict";x4=require("fs");v4();Ur()});function Mf(r){if(!r)return;let e=Number(r);if(!Number.isNaN(e)&&e>=0)return Math.floor(e*1e3);let t=Date.parse(r);if(!Number.isNaN(t)){let n=t-Date.now();return n>0?n:0}}function Ei(r){let{status:e,providerLabel:t}=r,n=r.bodyText??"",i=n.toLowerCase(),s=r.headers?Mf(r.headers.get("retry-after")):void 0;if(i.includes("quota exceeded")||i.includes("insufficient credits")||i.includes("insufficient_quota")||i.includes("resource_exhausted"))return new fe(`${t} quota exhausted${e!==void 0?` (status ${e})`:""}`,{kind:"quota_exhausted",cause:r.cause});if(e===429)return new fe(`${t} rate limit (429)`,{kind:"rate_limit",cause:r.cause,...s!==void 0?{retryAfterMs:s}:{}});if(e===401||e===403)return new fe(`${t} auth error (status ${e})`,{kind:"auth_invalid",cause:r.cause});if(e===400||e===404)return new fe(`${t} bad request (status ${e})`,{kind:"unrecoverable",cause:r.cause});if(e!==void 0&&e>=500&&e<600)return new fe(`${t} upstream error (status ${e})`,{kind:"transient",cause:r.cause});if(e===void 0){let a=r.cause instanceof Error?r.cause.message:String(r.cause);return new fe(`${t} network error: ${a}`,{kind:"transient",cause:r.cause})}return new fe(`${t} API error: ${e}${n?` - ${n.substring(0,200)}`:""}`,{kind:"unrecoverable",cause:r.cause})}var fe,_c=M(()=>{"use strict";fe=class extends Error{kind;retryAfterMs;cause;constructor(e,t){super(e),this.name="ServerClassifiedProviderError",this.kind=t.kind,this.cause=t.cause,t.retryAfterMs!==void 0&&(this.retryAfterMs=t.retryAfterMs)}}});function Ooe(r){let e=r.match(/^\s*```(?:xml)?\s*\n([\s\S]*?)\n```\s*$/i);return e?e[1]:r}function XE(r,e){if(typeof r!="string"||!r.trim())return{valid:!1};r=Ooe(r);let t=/<skip_summary(?:\s+reason="([^"]*)")?\s*\/>/.exec(r);if(t)return{valid:!0,observations:[],summary:{request:null,investigated:null,learned:null,completed:null,next_steps:null,notes:null,skipped:!0,skip_reason:t[1]??null}};let n=/<(observation|summary)\b/i.exec(r);if(!n)return{valid:!1};if(n[1].toLowerCase()==="observation"){let a=joe(r,e);return a.length===0?{valid:!1}:{valid:!0,observations:a,summary:null}}let s=Roe(r,e);return s?{valid:!0,observations:[],summary:s}:{valid:!1}}function joe(r,e){let t=[],n=/<observation>([\s\S]*?)<\/observation>/g,i;for(;(i=n.exec(r))!==null;){let s=i[1],a=sn(s,"type"),o=sn(s,"title"),c=sn(s,"subtitle"),l=sn(s,"narrative"),u=Lf(s,"facts","fact"),d=Lf(s,"concepts","concept"),p=Lf(s,"files_read","file"),f=Lf(s,"files_modified","file"),y=On.getInstance().getActiveMode().observation_types.map(I=>I.id),b=y[0],g=b;a?y.includes(a.trim())?g=a.trim():_.error("PARSER",`Invalid observation type: ${a}, using "${b}"`,{correlationId:e}):_.error("PARSER",`Observation missing type field, using "${b}"`,{correlationId:e});let E=d.filter(I=>I!==g);if(E.length!==d.length&&_.debug("PARSER","Removed observation type from concepts array",{correlationId:e,type:g,originalConcepts:d,cleanedConcepts:E}),!o&&!l&&u.length===0&&E.length===0){_.warn("PARSER","Skipping empty observation (all content fields null)",{correlationId:e,type:g});continue}t.push({type:g,title:o,subtitle:c,facts:u,narrative:l,concepts:E,files_read:p,files_modified:f})}return t}function Roe(r,e){let n=/<summary>([\s\S]*?)<\/summary>/.exec(r);if(!n)return null;let i=n[1],s=sn(i,"request"),a=sn(i,"investigated"),o=sn(i,"learned"),c=sn(i,"completed"),l=sn(i,"next_steps"),u=sn(i,"notes");return!s&&!a&&!o&&!c&&!l?(_.warn("PARSER","Summary block has no sub-tags \u2014 rejecting false positive",{correlationId:e}),null):{request:s,investigated:a,learned:o,completed:c,next_steps:l,notes:u}}function sn(r,e){let n=new RegExp(`<${e}>([\\s\\S]*?)</${e}>`).exec(r);if(!n)return null;let i=n[1].trim();return i===""?null:i}function Lf(r,e,t){let n=[],s=new RegExp(`<${e}>([\\s\\S]*?)</${e}>`).exec(r);if(!s)return n;let a=s[1],o=new RegExp(`<${t}>([\\s\\S]*?)</${t}>`,"g"),c;for(;(c=o.exec(a))!==null;){let l=c[1].trim();l&&n.push(l)}return n}var I4=M(()=>{"use strict";ge();Cf()});function kc(r){let e=Object.fromEntries(T4.map(i=>[i,0]));_4.lastIndex=0;let t=0,n=r.replace(_4,(i,s)=>(e[s]=(e[s]??0)+1,t+=1,""));return t>k4&&_.warn("SYSTEM","tag count exceeds limit",void 0,{tagCount:t,maxAllowed:k4,contentLength:r.length}),{stripped:n.trim(),counts:e}}var T4,_4,k4,Coe,Ove,jve,ZE=M(()=>{"use strict";ge();T4=["private","claude-mem-context","system_instruction","system-instruction","persisted-output","system-reminder"],_4=new RegExp(`<(${T4.join("|")})\\b[^>]*>[\\s\\S]*?</\\1>`,"g"),k4=100;Coe=["task-notification"],Ove=new RegExp(`^\\s*<(${Coe.join("|")})\\b[^>]*>(?:(?!<\\1\\b|</\\1\\b)[\\s\\S])*</\\1>\\s*$`),jve=256*1024});async function A4(r){let{job:e,rawText:t}=r,n=XE(t,e.id);if(!n.valid)return{kind:"parse_error",jobId:e.id,reason:"parser rejected response"};let i=n.observations??[],a=n.summary?.skipped===!0||i.length===0;return await $r(r.pool,async o=>{let c=new ur(o),l=new Un(o),u=new Fe(o),d=new ft(o),p=new mt(o),f=await u.getByIdForScope({id:e.id,projectId:e.projectId,teamId:e.teamId});if(!f)throw new Error(`generation job ${e.id} not found in scope`);if(f.status==="completed"||f.status==="cancelled"||f.status==="failed")return _.info("SYSTEM","generation job already in terminal status; skipping persistence",{jobId:f.id,status:f.status}),{kind:"completed",jobId:f.id,observations:[],privateContentDetected:a};let m=[];for(let y=0;y<i.length;y++){let b=i[y],g=Poe(b);if(!g||g.trim().length===0)continue;let E=kc(g);if(!E.stripped||E.stripped.trim().length===0)continue;let I=$l({generationJobId:f.id,parsedObservationIndex:y,content:E.stripped}),k=await c.create({projectId:f.projectId,teamId:f.teamId,serverSessionId:f.serverSessionId,kind:b.type??"observation",content:E.stripped,generationKey:I,metadata:{title:b.title,subtitle:b.subtitle,facts:b.facts,narrative:b.narrative,concepts:b.concepts,files_read:b.files_read,files_modified:b.files_modified,provider:r.providerLabel,model:r.modelId??null},createdByJobId:f.id});m.push(k),await l.addSource({observationId:k.id,projectId:f.projectId,teamId:f.teamId,sourceType:f.sourceType,sourceId:f.sourceId,agentEventId:f.agentEventId??null,generationJobId:f.id,metadata:{provider:r.providerLabel,parsedObservationIndex:y,source_adapter:r.sourceAdapter??null,actor_id:r.actorId??null,api_key_id:r.apiKeyId??null}});try{await p.createAuditLog({teamId:f.teamId,projectId:f.projectId,actorId:r.actorId??null,apiKeyId:r.apiKeyId??null,action:"observation.created",resourceType:"observation",resourceId:k.id,details:{generationJobId:f.id,sourceType:f.sourceType,sourceId:f.sourceId,provider:r.providerLabel,model:r.modelId??null,sourceAdapter:r.sourceAdapter??null,parsedObservationIndex:y}})}catch(L){_.warn("SYSTEM","audit_log observation.created insert failed",{observationId:k.id,error:L instanceof Error?L.message:String(L)})}}await u.transitionStatus({id:f.id,projectId:f.projectId,teamId:f.teamId,status:"completed"}),await d.append({generationJobId:f.id,projectId:f.projectId,teamId:f.teamId,eventType:"completed",statusAfter:"completed",attempt:f.attempts,details:{provider:r.providerLabel,model:r.modelId??null,observationCount:m.length,privateContentDetected:a,workerId:r.workerId??null}});try{await p.createAuditLog({teamId:f.teamId,projectId:f.projectId,actorId:r.actorId??null,apiKeyId:r.apiKeyId??null,action:"generation_job.completed",resourceType:"observation_generation_job",resourceId:f.id,details:{generationJobId:f.id,provider:r.providerLabel,model:r.modelId??null,observationCount:m.length,observationIds:m.map(y=>y.id),sourceAdapter:r.sourceAdapter??null}})}catch(y){_.warn("SYSTEM","audit log insert failed during generation",{jobId:f.id,error:y instanceof Error?y.message:String(y)})}return{kind:"completed",jobId:f.id,observations:m,privateContentDetected:a}})}async function Tc(r){await $r(r.pool,async e=>{let t=new Fe(e),n=new ft(e),i=await t.getByIdForScope({id:r.job.id,projectId:r.job.projectId,teamId:r.job.teamId});if(!i||i.status==="completed"||i.status==="cancelled")return;let s=r.retryable&&i.attempts<i.maxAttempts,a=s?"queued":"failed";await t.transitionStatus({id:i.id,projectId:i.projectId,teamId:i.teamId,status:a,lastError:{reason:r.reason,classification:r.classification??null},...s?{nextAttemptAt:new Date(Date.now()+Moe(i.attempts))}:{}}),await n.append({generationJobId:i.id,projectId:i.projectId,teamId:i.teamId,eventType:s?"retry_scheduled":"failed",statusAfter:a,attempt:i.attempts,details:{reason:r.reason,classification:r.classification??null,workerId:r.workerId??null}})})}async function K4(r){let{job:e,rawText:t}=r;if(e.sourceType!=="session_summary")return{kind:"parse_error",jobId:e.id,reason:"session summary processor invoked on non-summary job"};let n=XE(t,e.id);if(!n.valid)return{kind:"parse_error",jobId:e.id,reason:"parser rejected summary response"};let i=n.summary??null,s=i?.skipped===!0,a=i?Doe(i):"",o=s||a.trim().length===0;return await $r(r.pool,async c=>{let l=new ur(c),u=new Un(c),d=new Fe(c),p=new ft(c),f=new mt(c),m=await d.getByIdForScope({id:e.id,projectId:e.projectId,teamId:e.teamId});if(!m)throw new Error(`session summary generation job ${e.id} not found in scope`);if(m.status==="completed"||m.status==="cancelled"||m.status==="failed")return _.info("SYSTEM","session summary job already in terminal status; skipping persistence",{jobId:m.id,status:m.status}),{kind:"completed",jobId:m.id,observations:[],privateContentDetected:o};let y=[];if(!o){let g=kc(a).stripped??"";if(g.trim().length>0){let E=$l({generationJobId:m.id,parsedObservationIndex:0,content:g}),I=await l.create({projectId:m.projectId,teamId:m.teamId,serverSessionId:m.serverSessionId,kind:"summary",content:g,generationKey:E,metadata:{request:i?.request??null,investigated:i?.investigated??null,learned:i?.learned??null,completed:i?.completed??null,next_steps:i?.next_steps??null,notes:i?.notes??null,provider:r.providerLabel,model:r.modelId??null},createdByJobId:m.id});y.push(I),await u.addSource({observationId:I.id,projectId:m.projectId,teamId:m.teamId,sourceType:"session_summary",sourceId:m.sourceId,generationJobId:m.id,metadata:{provider:r.providerLabel,parsedObservationIndex:0,source_adapter:r.sourceAdapter??null,actor_id:r.actorId??null,api_key_id:r.apiKeyId??null}});try{await f.createAuditLog({teamId:m.teamId,projectId:m.projectId,actorId:r.actorId??null,apiKeyId:r.apiKeyId??null,action:"observation.created",resourceType:"observation",resourceId:I.id,details:{generationJobId:m.id,sourceType:"session_summary",sourceId:m.sourceId,provider:r.providerLabel,model:r.modelId??null,sourceAdapter:r.sourceAdapter??null,kind:"summary"}})}catch(k){_.warn("SYSTEM","audit_log observation.created (summary) insert failed",{observationId:I.id,error:k instanceof Error?k.message:String(k)})}}}await d.transitionStatus({id:m.id,projectId:m.projectId,teamId:m.teamId,status:"completed"}),await p.append({generationJobId:m.id,projectId:m.projectId,teamId:m.teamId,eventType:"completed",statusAfter:"completed",attempt:m.attempts,details:{provider:r.providerLabel,model:r.modelId??null,observationCount:y.length,privateContentDetected:o,workerId:r.workerId??null,sourceType:"session_summary"}});try{await f.createAuditLog({teamId:m.teamId,projectId:m.projectId,actorId:r.actorId??null,apiKeyId:r.apiKeyId??null,action:"generation_job.completed",resourceType:"observation_generation_job",resourceId:m.id,details:{generationJobId:m.id,provider:r.providerLabel,model:r.modelId??null,observationCount:y.length,observationIds:y.map(b=>b.id),sourceAdapter:r.sourceAdapter??null,sourceType:"session_summary"}})}catch(b){_.warn("SYSTEM","audit log insert failed during summary generation",{jobId:m.id,error:b instanceof Error?b.message:String(b)})}return{kind:"completed",jobId:m.id,observations:y,privateContentDetected:o}})}function Doe(r){let e=[];return r.request&&e.push(`Request: ${r.request}`),r.investigated&&e.push(`Investigated: ${r.investigated}`),r.learned&&e.push(`Learned: ${r.learned}`),r.completed&&e.push(`Completed: ${r.completed}`),r.next_steps&&e.push(`Next steps: ${r.next_steps}`),r.notes&&e.push(`Notes: ${r.notes}`),e.join(`
+
+`).trim()}function Poe(r){let e=[];return r.title&&e.push(r.title),r.subtitle&&e.push(r.subtitle),r.narrative&&e.push(r.narrative),r.facts&&r.facts.length>0&&e.push(r.facts.map(t=>`- ${t}`).join(`
+`)),e.join(`
+
+`).trim()}function Moe(r){let e=5e3*Math.pow(5,Math.max(0,r));return Math.min(e,600*1e3)}var O4=M(()=>{"use strict";I4();ge();vo();Jn();hn();zs();ZE()});var Nf,qf,j4=M(()=>{"use strict";ge();Ls();Jn();xc();hn();mu();_c();O4();Bn();Nf=class extends Error{reason;constructor(e,t){super(t),this.reason=e}},qf=class{constructor(e){this.options=e}options;async process(e){let t=`bullmq:${e.id??"?"}`,n=e.data?.request_id??null,i;try{i=VK(e.data)}catch(o){throw o instanceof jo&&_.error("SYSTEM","rejecting malformed job payload at execution",{correlationId:t,issues:o.issues}),o}if(i.kind!=="event"&&i.kind!=="event-batch"&&i.kind!=="summary")throw _.warn("SYSTEM","unsupported job kind for ProviderObservationGenerator",{correlationId:t,kind:i.kind}),new Error(`unsupported job kind: ${i.kind}`);let s=await this.loadCanonicalOutbox(i.generation_job_id);if(!s)return _.info("SYSTEM","job row not found by id; nothing to do",{correlationId:t,generationJobId:i.generation_job_id}),{jobId:i.generation_job_id,status:"completed",observationCount:0};if(s.teamId!==i.team_id||s.projectId!==i.project_id){let o=new Nf("scope_mismatch",`BullMQ payload team/project does not match outbox row (jobId=${i.generation_job_id})`);throw await this.auditScopeViolation(i,s,o,t),await Tc({pool:this.options.pool,job:s,reason:o.message,classification:"scope_mismatch",retryable:!1,...this.options.workerId!==void 0?{workerId:this.options.workerId}:{}}),o}if(i.api_key_id&&await this.isApiKeyRevoked(i.api_key_id)){let c=new Nf("revoked_key",`api key ${i.api_key_id} is revoked; refusing to generate for outbox ${s.id}`);throw await this.auditRevokedKey(i,s,c,t),await Tc({pool:this.options.pool,job:s,reason:c.message,classification:"revoked_key",retryable:!1,...this.options.workerId!==void 0?{workerId:this.options.workerId}:{}}),c}let a=await this.lockOutbox(i.generation_job_id,i.team_id,i.project_id);if(!a)return _.info("SYSTEM","job no longer exists or is in terminal status; nothing to do",{correlationId:t,generationJobId:i.generation_job_id}),{jobId:i.generation_job_id,status:"completed",observationCount:0};_.info("SYSTEM","[generation] job locked for processing",{correlationId:t,jobId:a.id,bullmqJobId:e.id??null,requestId:n,sourceType:a.sourceType,attempt:a.attempts}),await this.auditEvent({teamId:a.teamId,projectId:a.projectId,apiKeyId:i.api_key_id,actorId:i.actor_id,action:"generation_job.processing",resourceId:a.id,details:{sourceType:a.sourceType,sourceId:a.sourceId,sourceAdapter:i.source_adapter,attempt:a.attempts,correlationId:t,requestId:n}});try{let o=await this.loadEvents(a,i),c=await this.loadProject(a),l=await this.options.provider.generate({job:a,events:o,project:{projectId:a.projectId,teamId:a.teamId,serverSessionId:a.serverSessionId,projectName:c?.name??null}}),u={pool:this.options.pool,job:a,rawText:l.rawText,modelId:l.modelId,providerLabel:l.providerLabel,apiKeyId:i.api_key_id,actorId:i.actor_id,sourceAdapter:i.source_adapter,...this.options.workerId!==void 0?{workerId:this.options.workerId}:{}},d=a.sourceType==="session_summary"?await K4(u):await A4(u);if(d.kind==="parse_error")throw await Tc({pool:this.options.pool,job:a,reason:d.reason,classification:"parse_error",retryable:!1,...this.options.workerId!==void 0?{workerId:this.options.workerId}:{}}),new Error(`generation parse error: ${d.reason}`);return _.info("SYSTEM","generation completed",{correlationId:t,jobId:d.jobId,bullmqJobId:e.id??null,requestId:n,observationCount:d.observations.length,privateContentDetected:d.privateContentDetected}),{jobId:d.jobId,status:"completed",observationCount:d.observations.length}}catch(o){let c=o instanceof fe?o:null,l=c?c.kind==="transient"||c.kind==="rate_limit":!1;throw await Tc({pool:this.options.pool,job:a,reason:o instanceof Error?o.message:String(o),classification:c?.kind??"unknown",retryable:l,...this.options.workerId!==void 0?{workerId:this.options.workerId}:{}}),o}}async loadCanonicalOutbox(e){let n=(await this.options.pool.query("SELECT * FROM observation_generation_jobs WHERE id = $1",[e])).rows[0];return n?{id:n.id,projectId:n.project_id,teamId:n.team_id,agentEventId:n.agent_event_id,sourceType:n.source_type,sourceId:n.source_id,serverSessionId:n.server_session_id,jobType:n.job_type,status:n.status,idempotencyKey:n.idempotency_key,bullmqJobId:n.bullmq_job_id,attempts:n.attempts,maxAttempts:n.max_attempts,nextAttemptAtEpoch:n.next_attempt_at?.getTime()??null,lockedAtEpoch:n.locked_at?.getTime()??null,lockedBy:n.locked_by,completedAtEpoch:n.completed_at?.getTime()??null,failedAtEpoch:n.failed_at?.getTime()??null,cancelledAtEpoch:n.cancelled_at?.getTime()??null,lastError:n.last_error&&typeof n.last_error=="object"?n.last_error:null,payload:n.payload&&typeof n.payload=="object"&&!Array.isArray(n.payload)?n.payload:{},createdAtEpoch:n.created_at.getTime(),updatedAtEpoch:n.updated_at.getTime()}:null}async isApiKeyRevoked(e){let n=(await this.options.pool.query("SELECT revoked_at, expires_at FROM api_keys WHERE id = $1",[e])).rows[0];return!!(!n||n.revoked_at||n.expires_at&&n.expires_at.getTime()<=Date.now())}async auditScopeViolation(e,t,n,i){_.error("SYSTEM","BullMQ payload scope mismatch \u2014 refusing to generate",{correlationId:i,generationJobId:e.generation_job_id,payloadTeamId:e.team_id,payloadProjectId:e.project_id,canonicalTeamId:t.teamId,canonicalProjectId:t.projectId}),await this.auditEvent({teamId:t.teamId,projectId:t.projectId,apiKeyId:e.api_key_id,actorId:e.actor_id,action:"generation_job.scope_violation",resourceId:t.id,details:{reason:"scope_mismatch",message:n.message,payloadTeamId:e.team_id,payloadProjectId:e.project_id,canonicalTeamId:t.teamId,canonicalProjectId:t.projectId,sourceAdapter:e.source_adapter,correlationId:i}})}async auditRevokedKey(e,t,n,i){_.warn("SYSTEM","api key revoked between enqueue and execute \u2014 refusing to generate",{correlationId:i,generationJobId:e.generation_job_id,apiKeyId:e.api_key_id}),await this.auditEvent({teamId:t.teamId,projectId:t.projectId,apiKeyId:e.api_key_id,actorId:e.actor_id,action:"generation_job.revoked_key",resourceId:t.id,details:{reason:"revoked_key",message:n.message,sourceAdapter:e.source_adapter,correlationId:i}})}async auditEvent(e){try{await new mt(this.options.pool).createAuditLog({teamId:e.teamId,projectId:e.projectId,actorId:e.actorId,apiKeyId:e.apiKeyId,action:e.action,resourceType:"observation_generation_job",resourceId:e.resourceId,details:e.details??{}})}catch(t){_.warn("SYSTEM","audit_log insert failed in ProviderObservationGenerator",{action:e.action,error:t instanceof Error?t.message:String(t)})}}async lockOutbox(e,t,n){let i=new Fe(this.options.pool),s=await i.getByIdForScope({id:e,projectId:n,teamId:t});return!s||s.status==="completed"||s.status==="cancelled"||s.status==="failed"?null:s.status==="processing"?(_.info("SYSTEM","generation job already in processing; skipping duplicate worker run",{jobId:s.id,lockedBy:s.lockedBy,lockedAtEpoch:s.lockedAtEpoch,attempts:s.attempts}),null):await i.transitionStatus({id:s.id,projectId:s.projectId,teamId:s.teamId,status:"processing",lockedBy:this.options.workerId??"server-beta-worker"})}async loadEvents(e,t){let n=new lr(this.options.pool);if(e.sourceType==="session_summary")return e.serverSessionId?await new bt(this.options.pool).listUnprocessedEvents({serverSessionId:e.serverSessionId,projectId:e.projectId,teamId:e.teamId}):[];if(e.sourceType!=="agent_event")return[];if(t.kind==="event"){let i=await n.getByIdForScope({id:t.agent_event_id,projectId:e.projectId,teamId:e.teamId});return i?[i]:[]}if(t.kind==="event-batch"){let i=[];for(let s of t.agent_event_ids){let a=await n.getByIdForScope({id:s,projectId:e.projectId,teamId:e.teamId});a&&i.push(a)}return i}return[]}async loadProject(e){return await new jn(this.options.pool).getByIdForTeam(e.projectId,e.teamId)}}});var Ac,R4=M(()=>{"use strict";ge();hn();j4();Ac=class{constructor(e){this.options=e;this.workerId=e.workerId??`server-beta-${process.pid}`,this.generator=e.generatorFactory?e.generatorFactory(e.pool,e.provider,this.workerId):new qf({pool:e.pool,provider:e.provider,workerId:this.workerId})}options;kind="generation-worker-manager";started=!1;closed=!1;generator;workerId;start(){if(this.started)return;let e=async t=>{try{return await this.generator.process(t)}catch(n){throw _.warn("SYSTEM","observation generator failed",{jobId:t.id,kind:t.data.kind,error:n instanceof Error?n.message:String(n)}),n}};this.options.queueManager.start("event",e),this.options.queueManager.start("summary",e);for(let t of["event","summary"])try{this.options.queueManager.getQueue(t).observe({onStalled:i=>{this.auditStalledJob(i,t)}})}catch(n){_.warn("SYSTEM",`failed to wire stalled observer for ${t} lane`,{error:n instanceof Error?n.message:String(n)})}this.started=!0}async auditStalledJob(e,t){try{let i=(await this.options.pool.query("SELECT id, team_id, project_id FROM observation_generation_jobs WHERE bullmq_job_id = $1 LIMIT 1",[e])).rows[0];if(!i)return;await new mt(this.options.pool).createAuditLog({teamId:i.team_id,projectId:i.project_id,actorId:null,apiKeyId:null,action:"generation_job.stalled",resourceType:"observation_generation_job",resourceId:i.id,details:{lane:t,bullmqJobId:e}})}catch(n){_.warn("SYSTEM","failed to audit stalled generation_job",{bullmqJobId:e,error:n instanceof Error?n.message:String(n)})}}getHealth(){return this.closed?{status:"errored",reason:"generation-worker-manager closed"}:{status:this.started?"active":"disabled",reason:this.started?"BullMQ Worker attached to event queue with ProviderObservationGenerator":"wired but not started",details:{provider:this.options.provider.providerLabel,workerId:this.workerId}}}async close(){this.closed||(this.closed=!0)}}});function Ma(r,e={}){let t=e.mode??qoe(),n=!1,i=!0,s=[];for(let d of r.events){let p=Noe(d);p.hadPrivate&&(n=!0),p.body.length>0&&(i=!1,s.push(p.body))}let a=r.events.length>0&&i,o=r.project.serverSessionId?`
+  <server_session_id>${Rn(r.project.serverSessionId)}</server_session_id>`:"",c=r.project.projectName?`
+  <project_name>${Rn(r.project.projectName)}</project_name>`:"",l=Foe(t);return{prompt:["<server_beta_observation_request>",`  <project_id>${Rn(r.project.projectId)}</project_id>`,`  <team_id>${Rn(r.project.teamId)}</team_id>`+o+c,`  <generation_job_id>${Rn(r.job.id)}</generation_job_id>`,"  <agent_events>",s.length>0?s.join(`
+`):"    <!-- empty after privacy stripping -->","  </agent_events>","</server_beta_observation_request>","","You are observing an agent at work. Return one or more","<observation>...</observation> XML blocks summarizing durable, useful","discoveries from the events above. If the events contain nothing worth","recording (e.g., everything was scrubbed by privacy filters or the","activity was trivial), return a single self-closing <skip_summary />","tag and nothing else. Do not include any prose outside the XML.","","Schema for each <observation> block:",l].join(`
+`),hadPrivateContent:n,skippedAll:a}}function Noe(r){let e=typeof r.payload=="string"?r.payload:JSON.stringify(r.payload??{},null,2),t=kc(e),n=(t.counts.private??0)>0,i=t.stripped.length>C4?t.stripped.slice(0,C4)+`
+[...truncated]`:t.stripped;return i.trim().length===0?{body:"",hadPrivate:n}:{body:["    <agent_event>",`      <id>${Rn(r.id)}</id>`,`      <event_type>${Rn(r.eventType)}</event_type>`,`      <source_adapter>${Rn(r.sourceAdapter)}</source_adapter>`,`      <occurred_at>${new Date(r.occurredAtEpoch).toISOString()}</occurred_at>`,"      <payload>",Rn(i),"      </payload>","    </agent_event>"].join(`
+`),hadPrivate:n}}function qoe(){try{return On.getInstance().getActiveMode()}catch{return{observation_types:Loe}}}function Foe(r){return["<observation>",`  <type>[ ${r.observation_types.map(t=>t.id).join(" | ")} ]</type>`,"  <title>...</title>","  <subtitle>...</subtitle>","  <facts><fact>...</fact></facts>","  <narrative>...</narrative>","  <concepts><concept>...</concept></concepts>","  <files_read><file>...</file></files_read>","  <files_modified><file>...</file></files_modified>","</observation>"].join(`
+`)}function Rn(r){return r.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&apos;")}var Loe,C4,Ff=M(()=>{"use strict";Cf();ZE();Loe=[{id:"discovery"},{id:"progress"},{id:"blocker"},{id:"decision"}],C4=16*1024});function ex(r){let e=r.status,t=r.bodyText??"",n=t.toLowerCase(),i=r.headers?Mf(r.headers.get("retry-after")):void 0;if(n.includes("overloaded"))return new fe(`Anthropic overloaded${e!==void 0?` (status ${e})`:""}`,{kind:"transient",cause:r.cause});if(e===401||e===403||n.includes("invalid api key"))return new fe(`Anthropic auth invalid${e!==void 0?` (status ${e})`:""}`,{kind:"auth_invalid",cause:r.cause});if(e===429)return new fe("Anthropic rate limit (429)",{kind:"rate_limit",cause:r.cause,...i!==void 0?{retryAfterMs:i}:{}});if(n.includes("quota exceeded"))return new fe("Anthropic quota exhausted",{kind:"quota_exhausted",cause:r.cause});if(n.includes("prompt is too long")||n.includes("context window")||n.includes("max_tokens"))return new fe("Anthropic context overflow",{kind:"unrecoverable",cause:r.cause});if(e===529)return new fe("Anthropic overloaded (529)",{kind:"transient",cause:r.cause});if(e!==void 0&&e>=500&&e<600)return new fe(`Anthropic upstream error (status ${e})`,{kind:"transient",cause:r.cause});if(e===400)return new fe("Anthropic bad request (400)",{kind:"unrecoverable",cause:r.cause});if(e===void 0){let s=r.cause instanceof Error?r.cause.message:String(r.cause);return new fe(`Anthropic network error: ${s}`,{kind:"transient",cause:r.cause})}return new fe(`Anthropic API error: ${e}${t?` - ${t.substring(0,200)}`:""}`,{kind:"unrecoverable",cause:r.cause})}async function $oe(r){try{return await r.text()}catch{return""}}var Joe,Uoe,Goe,Boe,Jf,D4=M(()=>{"use strict";ge();_c();Ff();Joe="https://api.anthropic.com/v1/messages",Uoe="2023-06-01",Goe="claude-sonnet-4-6",Boe=Goe,Jf=class{providerLabel="claude";apiKey;model;maxOutputTokens;fetchImpl;constructor(e){if(!e.apiKey)throw new fe("Anthropic API key not configured",{kind:"auth_invalid",cause:new Error("apiKey is required")});this.apiKey=e.apiKey,this.model=e.model??Boe,this.maxOutputTokens=e.maxOutputTokens??4096,this.fetchImpl=e.fetchImpl??fetch}async generate(e,t){let{prompt:n,skippedAll:i}=Ma(e);if(i)return{rawText:'<skip_summary reason="all_events_private" />',providerLabel:this.providerLabel,modelId:this.model};let s;try{s=await this.fetchImpl(Joe,{method:"POST",headers:{"Content-Type":"application/json","x-api-key":this.apiKey,"anthropic-version":Uoe},body:JSON.stringify({model:this.model,max_tokens:this.maxOutputTokens,temperature:.3,messages:[{role:"user",content:n}]}),signal:t})}catch(d){throw ex({cause:d})}if(!s.ok){let d=await $oe(s);throw ex({status:s.status,bodyText:d,headers:s.headers,cause:new Error(`Anthropic API error: ${s.status} - ${d}`)})}let a;try{a=await s.json()}catch(d){throw new fe("Anthropic returned invalid JSON",{kind:"parse_error",cause:d})}if(a.error)throw ex({status:s.status,bodyText:`${a.error.type??""} ${a.error.message??""}`,headers:s.headers,cause:new Error(`Anthropic API error: ${a.error.type} - ${a.error.message}`)});let c=(Array.isArray(a.content)?a.content:[]).filter(d=>d?.type==="text"&&typeof d.text=="string").map(d=>d.text).join(`
+`).trim();c||_.warn("SDK","Anthropic returned empty content array",{provider:"claude",model:this.model});let l=a.usage??{},u=typeof l.input_tokens=="number"||typeof l.output_tokens=="number"?(l.input_tokens??0)+(l.output_tokens??0):void 0;return{rawText:c,...u!==void 0?{tokensUsed:u}:{},providerLabel:this.providerLabel,modelId:this.model}}}});async function zoe(r){try{return await r.text()}catch{return""}}var Voe,Hoe,Uf,P4=M(()=>{"use strict";ge();_c();Ff();Voe="https://generativelanguage.googleapis.com/v1/models",Hoe="gemini-2.5-flash",Uf=class{providerLabel="gemini";apiKey;model;maxOutputTokens;fetchImpl;constructor(e){if(!e.apiKey)throw new fe("Gemini API key not configured",{kind:"auth_invalid",cause:new Error("apiKey is required")});this.apiKey=e.apiKey,this.model=e.model??Hoe,this.maxOutputTokens=e.maxOutputTokens??4096,this.fetchImpl=e.fetchImpl??fetch}async generate(e,t){let{prompt:n,skippedAll:i}=Ma(e);if(i)return{rawText:'<skip_summary reason="all_events_private" />',providerLabel:this.providerLabel,modelId:this.model};let s=`${Voe}/${encodeURIComponent(this.model)}:generateContent?key=${encodeURIComponent(this.apiKey)}`,a;try{a=await this.fetchImpl(s,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{role:"user",parts:[{text:n}]}],generationConfig:{temperature:.3,maxOutputTokens:this.maxOutputTokens}}),signal:t})}catch(u){throw Ei({cause:u,providerLabel:"Gemini"})}if(!a.ok){let u=await zoe(a);throw Ei({status:a.status,bodyText:u,headers:a.headers,cause:new Error(`Gemini API error: ${a.status} - ${u}`),providerLabel:"Gemini"})}let o;try{o=await a.json()}catch(u){throw new fe("Gemini returned invalid JSON",{kind:"parse_error",cause:u})}if(o.error)throw Ei({status:a.status,bodyText:`${o.error.status??""} ${o.error.message??""}`,headers:a.headers,cause:new Error(`Gemini API error: ${o.error.status} - ${o.error.message}`),providerLabel:"Gemini"});let c=o.candidates?.[0]?.content?.parts?.[0]?.text?.trim()??"";c||_.warn("SDK","Gemini returned empty content",{provider:"gemini",model:this.model});let l=typeof o.usageMetadata?.totalTokenCount=="number"?o.usageMetadata.totalTokenCount:void 0;return{rawText:c,...l!==void 0?{tokensUsed:l}:{},providerLabel:this.providerLabel,modelId:this.model}}}});function L4(r){let e=(r??"").trim();if(!e)return Yoe;let t=e.replace(/\/+$/,"");return t.toLowerCase().endsWith(M4)?t:`${t}${M4}`}var Yoe,M4,N4=M(()=>{"use strict";Yoe="https://openrouter.ai/api/v1/chat/completions",M4="/chat/completions"});async function Qoe(r){try{return await r.text()}catch{return""}}var Woe,Gf,q4=M(()=>{"use strict";N4();ge();_c();Ff();Woe="anthropic/claude-3.5-sonnet",Gf=class{providerLabel="openrouter";apiKey;model;apiUrl;maxOutputTokens;siteUrl;appName;fetchImpl;constructor(e){if(!e.apiKey)throw new fe("OpenRouter API key not configured",{kind:"auth_invalid",cause:new Error("apiKey is required")});this.apiKey=e.apiKey,this.model=e.model??Woe,this.apiUrl=L4(e.baseUrl),this.maxOutputTokens=e.maxOutputTokens??4096,this.siteUrl=e.siteUrl??"https://github.com/thedotmack/claude-mem",this.appName=e.appName??"claude-mem",this.fetchImpl=e.fetchImpl??fetch}async generate(e,t){let{prompt:n,skippedAll:i}=Ma(e);if(i)return{rawText:'<skip_summary reason="all_events_private" />',providerLabel:this.providerLabel,modelId:this.model};let s;try{s=await this.fetchImpl(this.apiUrl,{method:"POST",headers:{Authorization:`Bearer ${this.apiKey}`,"HTTP-Referer":this.siteUrl,"X-Title":this.appName,"Content-Type":"application/json"},body:JSON.stringify({model:this.model,messages:[{role:"user",content:n}],temperature:.3,max_tokens:this.maxOutputTokens}),signal:t})}catch(l){throw Ei({cause:l,providerLabel:"OpenRouter"})}if(!s.ok){let l=await Qoe(s);throw Ei({status:s.status,bodyText:l,headers:s.headers,cause:new Error(`OpenRouter API error: ${s.status} - ${l}`),providerLabel:"OpenRouter"})}let a;try{a=await s.json()}catch(l){throw new fe("OpenRouter returned invalid JSON",{kind:"parse_error",cause:l})}if(a.error)throw Ei({status:s.status,bodyText:`${a.error.code??""} ${a.error.message??""}`,headers:s.headers,cause:new Error(`OpenRouter API error: ${a.error.code} - ${a.error.message}`),providerLabel:"OpenRouter"});let o=a.choices?.[0]?.message?.content?.trim()??"";o||_.warn("SDK","OpenRouter returned empty content",{provider:"openrouter",model:this.model});let c=typeof a.usage?.total_tokens=="number"?a.usage.total_tokens:void 0;return{rawText:o,...c!==void 0?{tokensUsed:c}:{},providerLabel:this.providerLabel,modelId:this.model}}}});var La,Bf,Na,$f,Vf,F4=M(()=>{"use strict";La=class{constructor(e){this.reason=e}reason;getHealth(){return{status:"disabled",reason:this.reason}}async close(){}},Bf=class extends La{kind="queue-manager"},Na=class extends La{kind="generation-worker-manager"},$f=class extends La{kind="provider-registry"},Vf=class extends La{kind="event-broadcaster"}});var tx={};Si(tx,{createServerBetaService:()=>Xoe,detectDockerEnvironment:()=>U4,loadServerBetaMode:()=>B4,validateServerBetaEnv:()=>G4});function U4(r=process.env){if(r.CLAUDE_MEM_DOCKER==="1"||r.CLAUDE_MEM_DOCKER==="true")return!0;try{if((0,J4.existsSync)("/.dockerenv"))return!0}catch{}return!1}function G4(r={}){let e=r.env??process.env,t=r.isDocker??U4(e),n=[],i=(e.CLAUDE_MEM_RUNTIME??"").trim();i?i!=="server-beta"&&t&&n.push(`CLAUDE_MEM_RUNTIME=${i} is invalid in Docker; the server-beta image only runs CLAUDE_MEM_RUNTIME=server-beta.`):t&&_.warn("SYSTEM","CLAUDE_MEM_RUNTIME unset; server-beta container assumes runtime=server-beta");let s=(e.CLAUDE_MEM_AUTH_MODE??"api-key").trim();t&&(s==="local-dev"&&n.push("CLAUDE_MEM_AUTH_MODE=local-dev is not allowed in Docker. Set CLAUDE_MEM_AUTH_MODE=api-key and create a key with `claude-mem server api-key create`."),(e.CLAUDE_MEM_ALLOW_LOCAL_DEV_BYPASS==="1"||e.CLAUDE_MEM_ALLOW_LOCAL_DEV_BYPASS==="true")&&n.push("CLAUDE_MEM_ALLOW_LOCAL_DEV_BYPASS is not allowed in Docker. Loopback bypass cannot be enforced inside a container; remove the variable."));let a=(e.CLAUDE_MEM_QUEUE_ENGINE??"").trim().toLowerCase();t&&(a?a!=="bullmq"&&n.push(`CLAUDE_MEM_QUEUE_ENGINE=${a} is not allowed in Docker. Only "bullmq" is supported (no in-process queues across container boundaries).`):n.push('CLAUDE_MEM_QUEUE_ENGINE is required in Docker; set it to "bullmq".'));let o=!!(e.CLAUDE_MEM_SERVER_DATABASE_URL??"").trim();o||n.push("CLAUDE_MEM_SERVER_DATABASE_URL is required to start server-beta (Postgres connection string).");let c=!!(e.CLAUDE_MEM_REDIS_URL??"").trim();if(a==="bullmq"&&!c&&n.push("CLAUDE_MEM_REDIS_URL is required when CLAUDE_MEM_QUEUE_ENGINE=bullmq."),n.length>0){let l=["server-beta startup configuration is invalid:",...n.map(u=>`  - ${u}`)].join(`
+`);throw new Error(l)}return{isDocker:t,runtime:i||"server-beta",authMode:s,queueEngine:a||"disabled",hasDatabaseUrl:o,hasRedisUrl:c}}function B4(){let r=On.getInstance();r.loadMode("code"),r.getActiveMode(),_.info("SYSTEM","Server beta mode loaded",{mode:"code"})}async function Xoe(r={}){try{On.getInstance().loadMode("code")}catch(o){_.warn("SYSTEM","server-beta: failed to load mode at startup (mode files optional)",{error:o instanceof Error?o.message:String(o)})}r.skipEnvValidation||G4(),B4();let e=r.pool??Hb({requireDatabaseUrl:!0}),t=await rce(e,r.bootstrapSchema??!0),n=r.queueManager??tce(),i=r.generationDisabled??(process.env.CLAUDE_MEM_GENERATION_DISABLED==="1"||process.env.CLAUDE_MEM_GENERATION_DISABLED==="true"),s=r.generationWorkerManager??(i?new Na("CLAUDE_MEM_GENERATION_DISABLED is set; this server runs HTTP only. A separate `claude-mem server worker start` process consumes the BullMQ queues."):Zoe(e,n,r.generationProvider)),a={runtime:"server-beta",postgres:{pool:e,bootstrap:t},authMode:r.authMode??nce(process.env.CLAUDE_MEM_AUTH_MODE),queueManager:n,generationWorkerManager:s,providerRegistry:new $f("Phase 5 keeps the provider registry boundary as inert; per-call providers are owned by the generation worker manager."),eventBroadcaster:new Vf("Phase 2 boundary only; SSE/event broadcasting is not wired."),storage:WE(e)};return s instanceof Ac&&s.start(),new Kc({graph:a})}function Zoe(r,e,t){if(!(e instanceof us))return new Na("queue manager is disabled; set CLAUDE_MEM_QUEUE_ENGINE=bullmq to enable provider generation.");let n=t??ece();return n?new Ac({pool:r,queueManager:e,provider:n}):new Na("no server generation provider configured; set CLAUDE_MEM_SERVER_PROVIDER and the matching API key to enable.")}function ece(){let r=(process.env.CLAUDE_MEM_SERVER_PROVIDER??"").trim().toLowerCase();if(!r)return null;try{if(r==="claude"||r==="anthropic"){let e=process.env.ANTHROPIC_API_KEY??process.env.CLAUDE_MEM_ANTHROPIC_API_KEY??"";if(!e)return null;let t={apiKey:e};return process.env.CLAUDE_MEM_SERVER_MODEL&&(t.model=process.env.CLAUDE_MEM_SERVER_MODEL),new Jf(t)}if(r==="gemini"){let e=process.env.GEMINI_API_KEY??process.env.CLAUDE_MEM_GEMINI_API_KEY??"";if(!e)return null;let t={apiKey:e};return process.env.CLAUDE_MEM_SERVER_MODEL&&(t.model=process.env.CLAUDE_MEM_SERVER_MODEL),new Uf(t)}if(r==="openrouter"){let e=process.env.OPENROUTER_API_KEY??process.env.CLAUDE_MEM_OPENROUTER_API_KEY??"";if(!e)return null;let t={apiKey:e};process.env.CLAUDE_MEM_SERVER_MODEL&&(t.model=process.env.CLAUDE_MEM_SERVER_MODEL);let n=process.env.CLAUDE_MEM_OPENROUTER_BASE_URL??process.env.OPENROUTER_BASE_URL;return n&&(t.baseUrl=n),new Gf(t)}}catch{return null}return null}function tce(){let r=S4();return r.engine!=="bullmq"?new Bf(`Queue engine is "${r.engine}"; set CLAUDE_MEM_QUEUE_ENGINE=bullmq to activate the server-beta queue manager.`):new us(r)}async function rce(r,e){if(!e)return{initialized:!1,schemaVersion:null,appliedAt:null};await Pf(r);let n=(await r.query(`
+      SELECT version, applied_at
+      FROM server_beta_schema_migrations
+      WHERE version = $1
+    `,[1])).rows[0];return{initialized:n?.version===1,schemaVersion:typeof n?.version=="number"?n.version:null,appliedAt:n?.applied_at?new Date(n.applied_at).toISOString():null}}function nce(r){return r==="local-dev"||r==="disabled"?r:"api-key"}var J4,rx=M(()=>{"use strict";J4=require("fs");ge();Cf();Da();YE();w4();VE();R4();D4();P4();q4();$4();F4()});var t8={};Si(t8,{HOOK_API_KEY_SCOPES:()=>W4,bootstrapServerBetaApiKey:()=>Q4,createRawApiKey:()=>X4,hashApiKey:()=>Z4,persistServerBetaSettings:()=>sce,rotateServerBetaApiKey:()=>ice});async function Q4(r={}){let e=r.closePool??r.pool===void 0,t=r.pool??e8();try{let n=await ace(t),i=await oce(t,n),s=X4(),a=Z4(s),o=new mt(t),c=await o.createApiKey({keyHash:a,teamId:n,projectId:i,actorId:z4,scopes:[...W4]});return await o.createAuditLog({teamId:n,projectId:i,actorId:z4,apiKeyId:c.id,action:"api_key.create",resourceType:"api_key",resourceId:c.id,details:{source:"server-beta-bootstrap"}}),{rawKey:s,apiKeyId:c.id,teamId:n,projectId:i}}finally{e&&await t.end().catch(()=>{})}}async function ice(r={}){let e=r.pool===void 0,t=r.pool??e8();try{return r.previousApiKeyId&&await t.query("UPDATE api_keys SET revoked_at = now() WHERE id = $1 AND revoked_at IS NULL",[r.previousApiKeyId]),await Q4({pool:t,closePool:!1})}finally{e&&await t.end().catch(()=>{})}}function sce(r,e){let t=(0,Y4.dirname)(r);(0,Dr.existsSync)(t)||(0,Dr.mkdirSync)(t,{recursive:!0});let n={};if((0,Dr.existsSync)(r))try{n=JSON.parse((0,Dr.readFileSync)(r,"utf-8"))}catch{n={}}let i=n.env&&typeof n.env=="object"?n.env:n;i.CLAUDE_MEM_SERVER_BETA_API_KEY=e.apiKey,i.CLAUDE_MEM_SERVER_BETA_PROJECT_ID=e.projectId,e.serverBaseUrl&&(i.CLAUDE_MEM_SERVER_BETA_URL=e.serverBaseUrl),(0,Dr.writeFileSync)(r,JSON.stringify(i,null,2),"utf-8");try{(0,Dr.chmodSync)(r,384)}catch{}}function X4(){return`cmem_${(0,Hf.randomBytes)(32).toString("base64url")}`}function Z4(r){return(0,Hf.createHash)("sha256").update(r).digest("hex")}async function ace(r){let e=await r.query("SELECT id FROM teams WHERE name = $1 LIMIT 1",[V4]);return e.rows[0]?e.rows[0].id:(await new ds(r).create({name:V4,metadata:{source:"local-hook-bootstrap"}})).id}async function oce(r,e){let t=await r.query("SELECT id FROM projects WHERE team_id = $1 AND name = $2 LIMIT 1",[e,H4]);return t.rows[0]?t.rows[0].id:(await new jn(r).create({teamId:e,name:H4,metadata:{source:"local-hook-bootstrap"}})).id}function e8(){let r=Oo({requireDatabaseUrl:!0});if(!r)throw new Error("Cannot bootstrap server-beta API key: CLAUDE_MEM_SERVER_DATABASE_URL is not set.");return pu(r)}var Hf,Dr,Y4,V4,H4,z4,W4,r8=M(()=>{"use strict";Hf=require("crypto"),Dr=require("fs"),Y4=require("path");zs();du();hn();xc();Df();V4="local-hook-team",H4="local-hook-project",z4="system:local-hook-bootstrap",W4=Object.freeze(["events:write","sessions:write","observations:read","jobs:read"])});var yce={};Si(yce,{ServerBetaService:()=>Kc,assertServerRuntimeForCli:()=>Wf,migrateServerBetaApiKeyScopes:()=>p8,runServerBetaApiKeyCli:()=>d8,runServerBetaCli:()=>Yf,runServerBetaGenerationWorker:()=>y8,runServerBetaJobsCli:()=>h8,runServerBetaKeysCli:()=>m8,serializeActiveServerKeyRow:()=>f8,startCommandWantsDaemon:()=>u8});module.exports=lt(yce);async function l8(r){let e=r.queueManager;if(!(e instanceof us))return[];try{return await e.getLaneMetrics()}catch{return[]}}function lce(r){let e=r.getHttpServer()?.address();return e&&typeof e!="string"?e.port:null}function u8(r){return r.some(e=>e==="--daemon"||e==="-d")}async function Yf(r=process.argv.slice(2)){let e=r[0]??"--daemon",t=b8(),n=process.env.CLAUDE_MEM_SERVER_HOST??c8;if(e==="worker"){let i=(r[1]??"--daemon").toLowerCase();if(i==="start"||i==="--daemon"||i==="run"){await y8();return}console.error("Usage: server-beta-service worker start"),process.exit(1)}if(e==="server"&&r[1]?.toLowerCase()==="api-key"){await d8(r.slice(2));return}if(e==="server"&&r[1]?.toLowerCase()==="keys"){await m8(r.slice(2));return}if(e==="server"&&r[1]?.toLowerCase()==="jobs"){await h8(r.slice(2));return}switch(e){case"start":{let i=zf();if(Fn(i)){console.log(JSON.stringify({status:"ready",runtime:xi,pid:i.pid,port:i.port}));return}if(u8(r.slice(1))){let a=dce(t);a===void 0&&(console.error("Failed to spawn server beta daemon."),process.exit(1)),console.log(JSON.stringify({status:"starting",runtime:xi,pid:a,port:t}));return}await n8(t,n);return}case"stop":{let i=zf();if(!Fn(i)){ix(),console.log("Server beta is not running");return}process.kill(i.pid,"SIGTERM"),await hce(i.pid,5e3),ix(),console.log("Server beta stopped");return}case"restart":{await Yf(["stop"]),await Yf(["start","--daemon"]);return}case"status":{let i=fce(),s=zf();i&&Fn(s)?(console.log("Server beta is running"),console.log(`  PID: ${i.pid}`),console.log(`  Port: ${i.port}`),console.log(`  Runtime: ${i.runtime}`),console.log(`  Started: ${i.startedAt}`)):console.log("Server beta is not running");return}case"--daemon":{await n8(t,n);return}default:console.error("Usage: server-beta-service start [--daemon] | stop | restart | status"),console.error("  start            run the server in the foreground (default; systemd Type=simple)"),console.error("  start --daemon   detach and run as a background daemon"),console.error("  stop             stop a running daemon"),console.error("  restart          stop then start (daemon)"),console.error("  status           print runtime status"),console.error("  server api-key create|list|revoke|migrate-scopes   manage Postgres API keys"),console.error("  server keys                                        list active keys (no secrets)"),console.error("  server jobs [list|inspect <id>]                    list/inspect generation jobs"),process.exit(1)}}async function n8(r,e){let t=zf();(Fn(t)||await mce(r,e))&&process.exit(0);let{createServerBetaService:n}=await Promise.resolve().then(()=>(rx(),tx)),i=await n(),s=async()=>{await i.stop(),process.exit(0)};process.once("SIGTERM",s),process.once("SIGINT",s),await i.start()}function Wf(r,e=process.env){let t=(e.CLAUDE_MEM_RUNTIME??"").trim().toLowerCase();if(t&&t!=="server-beta")throw new Error(`\`server ${r}\` is a server-beta runtime command, but CLAUDE_MEM_RUNTIME=${t}. Set CLAUDE_MEM_RUNTIME=server-beta (and CLAUDE_MEM_SERVER_DATABASE_URL) to run server operations, or use the worker CLI (\`worker-service ...\`) for the worker runtime.`);if(!(e.CLAUDE_MEM_SERVER_DATABASE_URL??"").trim())throw new Error(`CLAUDE_MEM_SERVER_DATABASE_URL is required for \`server ${r}\`. This command talks to the server-beta Postgres backend; export the connection string before running it.`)}async function d8(r){let e=r[0]?.toLowerCase(),t=Qf(r.slice(1));try{Wf("api-key")}catch(l){console.error(l instanceof Error?l.message:String(l)),process.exit(1)}if(e==="migrate-scopes"){await p8(r.slice(1));return}let{getSharedPostgresPool:n}=await Promise.resolve().then(()=>(Da(),Sc)),{PostgresAuthRepository:i}=await Promise.resolve().then(()=>(hn(),VT)),{createHash:s,randomBytes:a}=await import("crypto"),o=n({requireDatabaseUrl:!0}),c=new i(o);if(e==="create"){let l=(t.scope??t.scopes??"memories:read").split(",").map(y=>y.trim()).filter(Boolean),u=t.team??null,d=t.project??null;if(!u||!d){let{bootstrapServerBetaApiKey:y}=await Promise.resolve().then(()=>(r8(),t8)),b=await y({pool:o,closePool:!1});u=b.teamId,d=b.projectId}let p=`cmem_${a(24).toString("hex")}`,f=s("sha256").update(p).digest("hex"),m=await c.createApiKey({keyHash:f,teamId:u,projectId:d,scopes:l,actorId:"system:server-beta-cli"});console.log(JSON.stringify({id:m.id,key:p,name:t.name??"server-api-key",teamId:u,projectId:d,scopes:l},null,2));return}if(e==="list"){let l=t.team??null,u=Number.parseInt(t.limit??"100",10),d=Number.parseInt(t.offset??"0",10),p=Number.isFinite(u)&&u>0&&u<=500?u:100,f=Number.isFinite(d)&&d>=0?d:0,m=l?"WHERE team_id = $1":"",y=l?[l,p,f]:[p,f],b=l?2:1,g=l?3:2,E=await o.query(`SELECT id, team_id, project_id, scopes, revoked_at, expires_at, last_used_at, created_at
+         FROM api_keys
+         ${m}
+         ORDER BY created_at DESC
+         LIMIT $${b} OFFSET $${g}`,y);console.log(JSON.stringify({teamId:l,limit:p,offset:f,count:E.rows.length,keys:E.rows.map(I=>({id:I.id,teamId:I.team_id,projectId:I.project_id,scopes:I.scopes,status:I.revoked_at?"revoked":"active",lastUsedAt:I.last_used_at?.toISOString()??null,expiresAt:I.expires_at?.toISOString()??null,createdAt:I.created_at.toISOString()}))},null,2));return}if(e==="revoke"){let l=r[1];l||(console.error("Usage: server-beta-service server api-key revoke <id>"),process.exit(1)),(await o.query(`UPDATE api_keys SET revoked_at = now()
+         WHERE id = $1 AND revoked_at IS NULL
+         RETURNING id`,[l])).rowCount===0&&(console.error(`API key not found or already revoked: ${l}`),process.exit(1)),console.log(JSON.stringify({id:l,status:"revoked"},null,2));return}console.error(`Unknown server api-key subcommand: ${e??"(none)"}`),console.error("Usage: server-beta-service server api-key create|list|revoke|migrate-scopes"),process.exit(1)}async function p8(r){let e=r[0]&&!r[0].startsWith("--")?r[0]:void 0,t=Qf(r);e||(console.error("Usage: server-beta-service server api-key migrate-scopes <id> [--scope a,b]"),process.exit(1));let n=(t.scope??t.scopes??uce.join(",")).split(",").map(o=>o.trim()).filter(Boolean),{getSharedPostgresPool:i}=await Promise.resolve().then(()=>(Da(),Sc));(await i({requireDatabaseUrl:!0}).query(`UPDATE api_keys
+       SET scopes = $2::jsonb, updated_at = now()
+     WHERE id = $1 AND revoked_at IS NULL
+     RETURNING id, scopes`,[e,JSON.stringify(n)])).rowCount===0&&(console.error(`API key not found or revoked: ${e}`),process.exit(1)),console.log(JSON.stringify({id:e,scopes:n,status:"scopes-migrated"},null,2))}function f8(r){return{id:r.id,teamId:r.team_id,projectId:r.project_id,scopes:r.scopes,status:"active",lastUsedAt:r.last_used_at?.toISOString()??null,expiresAt:r.expires_at?.toISOString()??null,createdAt:r.created_at.toISOString()}}async function m8(r){try{Wf("keys")}catch(u){console.error(u instanceof Error?u.message:String(u)),process.exit(1)}let e=Qf(r),t=e.team??null,n=Number.parseInt(e.limit??"100",10),i=Number.isFinite(n)&&n>0&&n<=500?n:100,{getSharedPostgresPool:s}=await Promise.resolve().then(()=>(Da(),Sc)),a=s({requireDatabaseUrl:!0}),o=t?"WHERE revoked_at IS NULL AND (expires_at IS NULL OR expires_at > now()) AND team_id = $2":"WHERE revoked_at IS NULL AND (expires_at IS NULL OR expires_at > now())",c=t?[i,t]:[i],l=await a.query(`SELECT id, team_id, project_id, scopes, expires_at, last_used_at, created_at
+       FROM api_keys
+       ${o}
+       ORDER BY created_at DESC
+       LIMIT $1`,c);console.log(JSON.stringify({teamId:t,count:l.rows.length,keys:l.rows.map(f8)},null,2))}async function h8(r){try{Wf("jobs")}catch(p){console.error(p instanceof Error?p.message:String(p)),process.exit(1)}let e=(r[0]&&!r[0].startsWith("--")?r[0]:"list").toLowerCase(),{getSharedPostgresPool:t}=await Promise.resolve().then(()=>(Da(),Sc)),n=t({requireDatabaseUrl:!0});if(e==="inspect"){let p=r[1];p||(console.error("Usage: server-beta-service server jobs inspect <id>"),process.exit(1));let f=await n.query(`SELECT id, project_id, team_id, source_type, source_id, status, attempts,
+              max_attempts, created_at, completed_at, failed_at, last_error, payload
+         FROM observation_generation_jobs WHERE id = $1`,[p]);f.rowCount===0&&(console.error(`Generation job not found: ${p}`),process.exit(1)),console.log(JSON.stringify(f.rows[0],null,2));return}let i=Qf(e==="list"?r.slice(1):r),s=i.status??null,a=Number.parseInt(i.limit??"50",10),c=[Number.isFinite(a)&&a>0&&a<=500?a:50],l="";s&&(c.unshift(s),l="WHERE status = $1");let u=c.length,d=await n.query(`SELECT id, project_id, team_id, source_type, status, attempts, created_at
+       FROM observation_generation_jobs
+       ${l}
+       ORDER BY created_at DESC
+       LIMIT $${u}`,c);console.log(JSON.stringify({status:s??"any",count:d.rows.length,jobs:d.rows.map(p=>({id:p.id,projectId:p.project_id,teamId:p.team_id,sourceType:p.source_type,status:p.status,attempts:p.attempts,createdAt:p.created_at.toISOString()}))},null,2))}function Qf(r){let e={};for(let t=0;t<r.length;t++){let n=r[t];if(n&&n.startsWith("--")){let i=n.indexOf("=");i>-1?e[n.slice(2,i)]=n.slice(i+1):(e[n.slice(2)]=r[t+1]??"",t+=1)}}return e}async function y8(){let{validateServerBetaEnv:r,createServerBetaService:e}=await Promise.resolve().then(()=>(rx(),tx));r(),delete process.env.CLAUDE_MEM_GENERATION_DISABLED;let t=await e(),n=t.getRuntimeState();_.info("SYSTEM","Server beta generation worker started (no HTTP)",{pid:process.pid,queue:n.boundaries.queueManager,generation:n.boundaries.generationWorkerManager}),console.log(JSON.stringify({status:"worker-running",runtime:xi,pid:process.pid}));let i=!1,s=async()=>{if(!i){i=!0;try{await t.stop()}finally{process.exit(0)}}};process.once("SIGTERM",s),process.once("SIGINT",s),await new Promise(()=>{})}function b8(){let r=Number.parseInt(process.env.CLAUDE_MEM_SERVER_PORT??"",10);return Number.isInteger(r)&&r>0?r:cce+(process.getuid?.()??77)%100}function dce(r){let e=typeof __filename<"u"?__filename:(0,o8.fileURLToPath)(bce.url),t=(0,i8.spawn)(process.execPath,[e,"--daemon"],{detached:!0,stdio:"ignore",env:{...mo(process.env),CLAUDE_MEM_SERVER_PORT:String(r)}});return t.unref(),t.pid}function pce(r){(0,_t.mkdirSync)((0,a8.dirname)($e.serverBetaRuntime()),{recursive:!0});let e={pid:r.pid,port:r.port,startedAt:r.startedAt,startToken:Cy(r.pid)??void 0};(0,_t.writeFileSync)($e.serverBetaPid(),JSON.stringify(e,null,2)),(0,_t.writeFileSync)($e.serverBetaPort(),`${r.port}
+`),(0,_t.writeFileSync)($e.serverBetaRuntime(),JSON.stringify(r,null,2))}function zf(){if(!(0,_t.existsSync)($e.serverBetaPid()))return null;try{return JSON.parse((0,_t.readFileSync)($e.serverBetaPid(),"utf-8"))}catch{return null}}function fce(){if(!(0,_t.existsSync)($e.serverBetaRuntime()))return null;try{return JSON.parse((0,_t.readFileSync)($e.serverBetaRuntime(),"utf-8"))}catch{return null}}function ix(){(0,_t.rmSync)($e.serverBetaPid(),{force:!0}),(0,_t.rmSync)($e.serverBetaPort(),{force:!0}),(0,_t.rmSync)($e.serverBetaRuntime(),{force:!0})}async function mce(r,e){return new Promise(t=>{let n=s8.default.connect({port:r,host:e});n.once("connect",()=>{n.destroy(),t(!0)}),n.once("error",()=>t(!1))})}async function hce(r,e){let t=Date.now()+e;for(;Date.now()<t;){if(!Fn({pid:r,port:0,startedAt:""}))return;await new Promise(n=>setTimeout(n,100))}}var i8,_t,s8,a8,o8,bce,xi,c8,cce,nx,Kc,uce,$4=M(()=>{i8=require("child_process"),_t=require("fs"),s8=ct(require("net"),1),a8=require("path"),o8=require("url");qT();Ur();ge();Ps();Fl();dO();ng();fO();VE();h4();bce={},xi="server-beta",c8="127.0.0.1",cce=37877,nx=class{constructor(e){this.graph=e}graph;setupRoutes(e){e.get("/healthz",(t,n)=>{n.json({status:"ok",runtime:xi})}),e.get("/v1/info",async(t,n)=>{let i=await l8(this.graph);n.json({name:"claude-mem-server",runtime:xi,authMode:this.graph.authMode,postgres:{initialized:this.graph.postgres.bootstrap.initialized,schemaVersion:this.graph.postgres.bootstrap.schemaVersion},boundaries:{queueManager:this.graph.queueManager.getHealth(),generationWorkerManager:this.graph.generationWorkerManager.getHealth(),providerRegistry:this.graph.providerRegistry.getHealth(),eventBroadcaster:this.graph.eventBroadcaster.getHealth()},queueLanes:i})})}};Kc=class{graph;host;requestedPort;boundPort=null;persistRuntimeState;server=null;stopping=!1;constructor(e){this.graph=e.graph,this.host=e.host??process.env.CLAUDE_MEM_SERVER_HOST??c8,this.requestedPort=e.port??b8(),this.persistRuntimeState=e.persistRuntimeState??!0}async start(){if(this.server)return;let e=new Ul({securityHeaders:!0,getInitializationComplete:()=>this.graph.postgres.bootstrap.initialized,getMcpReady:()=>!0,onShutdown:()=>this.stop(),onRestart:async()=>{await this.stop(),await this.start()},workerPath:"",runtime:xi,getAiStatus:()=>({provider:"disabled",authMethod:this.graph.authMode,lastInteraction:null}),getQueueHealth:async()=>{let i=this.graph.queueManager.getHealth(),s=i.details??{};if(i.status!=="active"||s.engine!=="bullmq")return null;let a=await l8(this.graph);return{engine:"bullmq",redis:{status:"ok",mode:String(s.mode??"unknown"),host:String(s.host??"127.0.0.1"),port:typeof s.port=="number"?s.port:6379,prefix:String(s.prefix??"claude_mem")},lanes:a.map(o=>({kind:o.kind,name:o.name,waiting:o.waiting,active:o.active,completed:o.completed,failed:o.failed,delayed:o.delayed,stalled:o.stalled,unavailable:o.unavailable,...o.unavailableReason?{unavailableReason:o.unavailableReason}:{}}))}}});e.registerRoutes(new nx(this.graph));let t=new bu({pool:this.graph.postgres.pool,queueManager:this.graph.queueManager,authMode:this.graph.authMode==="disabled"?"api-key":this.graph.authMode,runtime:xi});e.registerRoutes(t);let n=this.graph.authMode==="disabled"?"api-key":this.graph.authMode;e.registerRoutes(new vu({pool:this.graph.postgres.pool,ingestEvents:t.getIngestEventsService(),authMode:n})),e.registerRoutes(new Eu({pool:this.graph.postgres.pool,endSession:t.getEndSessionService(),authMode:n})),e.registerRoutes(new Of),e.finalizeRoutes(),await e.listen(this.requestedPort,this.host),this.server=e,this.boundPort=lce(e)??this.requestedPort,this.persistRuntimeState&&pce(this.runtimeState()),_.info("SYSTEM","Server beta started",{host:this.host,port:this.boundPort,pid:process.pid})}async stop(){if(!this.stopping){this.stopping=!0;try{if(this.server){try{await this.server.close()}catch(e){if(e?.code!=="ERR_SERVER_NOT_RUNNING")throw e}this.server=null}await Promise.all([this.graph.queueManager.close(),this.graph.generationWorkerManager.close(),this.graph.providerRegistry.close(),this.graph.eventBroadcaster.close()]),await this.graph.postgres.pool.end()}finally{this.persistRuntimeState&&ix(),this.boundPort=null,this.stopping=!1,_.info("SYSTEM","Server beta stopped")}}}getRuntimeState(){return this.runtimeState()}runtimeState(){return{runtime:xi,pid:process.pid,port:this.boundPort??this.requestedPort,host:this.host,startedAt:new Date().toISOString(),bootstrap:this.graph.postgres.bootstrap,boundaries:{queueManager:this.graph.queueManager.getHealth(),generationWorkerManager:this.graph.generationWorkerManager.getHealth(),providerRegistry:this.graph.providerRegistry.getHealth(),eventBroadcaster:this.graph.eventBroadcaster.getHealth()}}}};uce=["memories:read","memories:write"];(process.argv[1]?.endsWith("ServerBetaService.ts")||process.argv[1]?.endsWith("server-beta-service.cjs"))&&Yf().catch(r=>{console.error(r instanceof Error?r.message:String(r)),process.exit(1)})});$4();0&&(module.exports={ServerBetaService,assertServerRuntimeForCli,migrateServerBetaApiKeyScopes,runServerBetaApiKeyCli,runServerBetaCli,runServerBetaGenerationWorker,runServerBetaJobsCli,runServerBetaKeysCli,serializeActiveServerKeyRow,startCommandWantsDaemon});
+/*! Bundled license information:
+
+depd/index.js:
+  (*!
+   * depd
+   * Copyright(c) 2014-2018 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+statuses/index.js:
+  (*!
+   * statuses
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+toidentifier/index.js:
+  (*!
+   * toidentifier
+   * Copyright(c) 2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+http-errors/index.js:
+  (*!
+   * http-errors
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+bytes/index.js:
+  (*!
+   * bytes
+   * Copyright(c) 2012-2014 TJ Holowaychuk
+   * Copyright(c) 2015 Jed Watson
+   * MIT Licensed
+   *)
+
+unpipe/index.js:
+  (*!
+   * unpipe
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+raw-body/index.js:
+  (*!
+   * raw-body
+   * Copyright(c) 2013-2014 Jonathan Ong
+   * Copyright(c) 2014-2022 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+ee-first/index.js:
+  (*!
+   * ee-first
+   * Copyright(c) 2014 Jonathan Ong
+   * MIT Licensed
+   *)
+
+on-finished/index.js:
+  (*!
+   * on-finished
+   * Copyright(c) 2013 Jonathan Ong
+   * Copyright(c) 2014 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+content-type/dist/index.js:
+content-type/index.js:
+  (*!
+   * content-type
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+mime-db/index.js:
+  (*!
+   * mime-db
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2015-2022 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+mime-types/index.js:
+  (*!
+   * mime-types
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+media-typer/index.js:
+  (*!
+   * media-typer
+   * Copyright(c) 2014-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+type-is/index.js:
+  (*!
+   * type-is
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2014-2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+body-parser/lib/read.js:
+body-parser/lib/types/raw.js:
+body-parser/lib/types/text.js:
+body-parser/index.js:
+  (*!
+   * body-parser
+   * Copyright(c) 2014-2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+body-parser/lib/types/json.js:
+body-parser/lib/types/urlencoded.js:
+  (*!
+   * body-parser
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2014-2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+encodeurl/index.js:
+  (*!
+   * encodeurl
+   * Copyright(c) 2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+escape-html/index.js:
+  (*!
+   * escape-html
+   * Copyright(c) 2012-2013 TJ Holowaychuk
+   * Copyright(c) 2015 Andreas Lubbe
+   * Copyright(c) 2015 Tiancheng "Timothy" Gu
+   * MIT Licensed
+   *)
+
+parseurl/index.js:
+  (*!
+   * parseurl
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2014-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+finalhandler/index.js:
+  (*!
+   * finalhandler
+   * Copyright(c) 2014-2022 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+express/lib/view.js:
+express/lib/application.js:
+express/lib/request.js:
+express/lib/express.js:
+express/index.js:
+  (*!
+   * express
+   * Copyright(c) 2009-2013 TJ Holowaychuk
+   * Copyright(c) 2013 Roman Shtylman
+   * Copyright(c) 2014-2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+etag/index.js:
+  (*!
+   * etag
+   * Copyright(c) 2014-2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+forwarded/index.js:
+  (*!
+   * forwarded
+   * Copyright(c) 2014-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+proxy-addr/index.js:
+  (*!
+   * proxy-addr
+   * Copyright(c) 2014-2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+express/lib/utils.js:
+express/lib/response.js:
+  (*!
+   * express
+   * Copyright(c) 2009-2013 TJ Holowaychuk
+   * Copyright(c) 2014-2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+router/lib/layer.js:
+router/lib/route.js:
+router/index.js:
+  (*!
+   * router
+   * Copyright(c) 2013 Roman Shtylman
+   * Copyright(c) 2014-2022 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+negotiator/index.js:
+  (*!
+   * negotiator
+   * Copyright(c) 2012 Federico Romero
+   * Copyright(c) 2012-2014 Isaac Z. Schlueter
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+accepts/index.js:
+  (*!
+   * accepts
+   * Copyright(c) 2014 Jonathan Ong
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+fresh/index.js:
+  (*!
+   * fresh
+   * Copyright(c) 2012 TJ Holowaychuk
+   * Copyright(c) 2016-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+range-parser/index.js:
+  (*!
+   * range-parser
+   * Copyright(c) 2012-2014 TJ Holowaychuk
+   * Copyright(c) 2015-2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+content-disposition/index.js:
+  (*!
+   * content-disposition
+   * Copyright(c) 2014-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+cookie/index.js:
+  (*!
+   * cookie
+   * Copyright(c) 2012-2014 Roman Shtylman
+   * Copyright(c) 2015 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+send/index.js:
+  (*!
+   * send
+   * Copyright(c) 2012 TJ Holowaychuk
+   * Copyright(c) 2014-2022 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+vary/index.js:
+  (*!
+   * vary
+   * Copyright(c) 2014-2017 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+serve-static/index.js:
+  (*!
+   * serve-static
+   * Copyright(c) 2010 Sencha Inc.
+   * Copyright(c) 2011 TJ Holowaychuk
+   * Copyright(c) 2014-2016 Douglas Christopher Wilson
+   * MIT Licensed
+   *)
+
+object-assign/index.js:
+  (*
+  object-assign
+  (c) Sindre Sorhus
+  @license MIT
+  *)
+*/

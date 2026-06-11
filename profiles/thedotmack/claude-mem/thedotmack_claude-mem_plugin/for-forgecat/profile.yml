@@ -1,0 +1,141 @@
+name: "@forgecat/thedotmack_claude-mem_plugin"
+description: Persistent memory and context compression profile extracted from the
+  `plugin/` scope of `thedotmack/claude-mem`, preserving claude-mem skills, MCP
+  search, worker runtime, observation modes, and Claude Code/Codex session hooks.
+repository: https://github.com/thedotmack/claude-mem/tree/main/plugin
+license: Apache-2.0
+visibility: public
+sourcePlatform: multi-platform
+compatibility:
+  platforms:
+    tested: []
+    partial:
+      - claude-code
+      - codex
+      - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+  - name: babysit
+    path: plugin/skills/babysit/SKILL.md
+    description: Watch a pull request or review cycle until it is ready to merge. Use when asked to babysit, monitor, or keep checking PR comments, reviews, and CI until all actionable issues are resolved.
+  - name: design-is
+    path: plugin/skills/design-is/SKILL.md
+    description: Audit a design against Dieter Rams' ten "Good design is..." principles, then hand off a /make-plan prompt for one of three outcomes — new design, refine design, or redesign. Use when the user says "audit this design", "design review", "check this UI against Rams", "is this UI good", "critique this design", "design audit", or asks for a critique that should lead to a plan.
+  - name: do
+    path: plugin/skills/do/SKILL.md
+    description: Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan.
+  - name: how-it-works
+    path: plugin/skills/how-it-works/SKILL.md
+    description: Explain how claude-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does claude-mem work?" or "what is this thing doing?".
+    scripts:
+      - path: plugin/scripts/bun-runner.js
+      - path: plugin/scripts/statusline-counts.js
+      - path: plugin/scripts/version-check.js
+      - path: plugin/scripts/worker-cli.js
+      - path: plugin/ui/viewer-bundle.js
+  - name: knowledge-agent
+    path: plugin/skills/knowledge-agent/SKILL.md
+    description: Build and query AI-powered knowledge bases from claude-mem observations. Use when users want to create focused "brains" from their observation history, ask questions about past work patterns, or compile expertise on specific topics.
+  - name: learn-codebase
+    path: plugin/skills/learn-codebase/SKILL.md
+    description: Prime a codebase by reading every source file in full. Use when starting work on a new or unfamiliar project, or when the user asks to "learn the codebase", "read the codebase", "prime", or "get up to speed".
+  - name: make-plan
+    path: plugin/skills/make-plan/SKILL.md
+    description: Create a detailed, phased implementation plan with documentation discovery. Use when asked to plan a feature, task, or multi-step implementation — especially before executing with do.
+  - name: mem-search
+    path: plugin/skills/mem-search/SKILL.md
+    description: Search claude-mem's persistent cross-session memory database. Use when user asks "did we already solve this?", "how did we do X last time?", or needs work from previous sessions.
+  - name: oh-my-issues
+    path: plugin/skills/oh-my-issues/SKILL.md
+    description: Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. Use when an issue tracker has accumulated dozens of reports that share underlying defects, when asked to triage / consolidate / cluster / dedupe issues, when asked to build a plan series or roadmap from open issues, or when routing a new incoming bug into an existing plan.
+  - name: pathfinder
+    path: plugin/skills/pathfinder/SKILL.md
+    description: Map a codebase into feature-grouped flowcharts, identify duplicated concerns across features, and propose a unified architecture. Use when asked to "find the ideal path," unify duplicated systems, or audit architecture before a refactor. Emits a proposed unified flowchart plus per-system /make-plan prompts.
+  - name: smart-explore
+    path: plugin/skills/smart-explore/SKILL.md
+    description: Token-optimized structural code search using tree-sitter AST parsing. Use instead of reading full files when you need to understand code structure, find functions, or explore a codebase efficiently.
+  - name: standup
+    path: plugin/skills/standup/SKILL.md
+    description: Facilitate a read-only standup across git worktrees, branches, or PRs to compare changes and produce one consolidation plan.
+  - name: timeline-report
+    path: plugin/skills/timeline-report/SKILL.md
+    description: Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from claude-mem's timeline. Use when asked for a timeline report, project history analysis, development journey, or full project report.
+  - name: claude-code-plugin-release
+    path: plugin/skills/version-bump/SKILL.md
+    description: Automated semantic versioning and release workflow for Claude Code plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, npm publishing (so `npx claude-mem@X.Y.Z` resolves), build verification, git tagging, GitHub releases, and changelog generation.
+    scripts:
+      - path: plugin/skills/version-bump/scripts/generate_changelog.js
+  - name: weekly-digests
+    path: plugin/skills/weekly-digests/SKILL.md
+    description: Generate a serial week-by-week narrative digest of a project's full claude-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving the prior week's carry-forward block — to produce one chapter per ISO week of data. Use when asked for "weekly digests", "week-by-week story", "serial timeline", or "narrative chapters" of a project's history.
+  - name: wowerpoint
+    path: plugin/skills/wowerpoint/SKILL.md
+    description: Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as shareable narrative slides.
+mcp:
+  path: mcp.jsonc
+  requiredEnv: []
+hooks:
+  - id: claude-mem-claude-session-start
+    trigger: session_start
+    command: ./hooks/claude-session-start.sh
+    description: Start the worker, run version checks, and inject claude-mem context for Claude Code sessions.
+    platforms:
+      - claude-code
+  - id: claude-mem-codex-session-start
+    trigger: session_start
+    command: ./hooks/codex-session-start.sh
+    description: Start the worker, run version checks, and inject claude-mem context for Codex sessions.
+    platforms:
+      - codex
+  - id: claude-mem-claude-session-init
+    trigger: user_prompt_submit
+    command: ./hooks/claude-session-init.sh
+    description: Seed claude-mem session initialization for Claude Code prompt submission.
+    platforms:
+      - claude-code
+  - id: claude-mem-codex-session-init
+    trigger: user_prompt_submit
+    command: ./hooks/codex-session-init.sh
+    description: Seed claude-mem session initialization for Codex prompt submission.
+    platforms:
+      - codex
+  - id: claude-mem-claude-file-context
+    trigger: pre_tool_use
+    tool_match: Read
+    command: ./hooks/claude-file-context.sh
+    description: Capture file-read context before Claude Code tool use.
+    platforms:
+      - claude-code
+  - id: claude-mem-codex-file-context
+    trigger: pre_tool_use
+    tool_match: ^Bash$|^mcp__.+__(read|view|cat)(_file|_files)?$
+    command: ./hooks/codex-file-context.sh
+    description: Capture shell and MCP read context before Codex tool use.
+    platforms:
+      - codex
+  - id: claude-mem-claude-observation
+    trigger: post_tool_use
+    command: ./hooks/claude-observation.sh
+    description: Record claude-mem observations after Claude Code tool calls.
+    platforms:
+      - claude-code
+  - id: claude-mem-codex-observation
+    trigger: post_tool_use
+    command: ./hooks/codex-observation.sh
+    description: Record claude-mem observations after Codex tool calls.
+    platforms:
+      - codex
+  - id: claude-mem-claude-summary
+    trigger: stop
+    command: ./hooks/claude-summary.sh
+    description: Summarize the active Claude Code session when it stops.
+    platforms:
+      - claude-code
+  - id: claude-mem-codex-summary
+    trigger: stop
+    command: ./hooks/codex-summary.sh
+    description: Summarize the active Codex session when it stops.
+    platforms:
+      - codex

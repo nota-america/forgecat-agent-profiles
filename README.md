@@ -34,13 +34,14 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [multica-ai/andrej-karpathy-skills](./profiles/multica-ai/andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers profile with hook-backed startup context |
 | [openai/skills](./profiles/openai/skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
+| [thedotmack/claude-mem](./profiles/thedotmack/claude-mem) | 1 | claude-mem plugin profile with persistent memory hooks, MCP search, bundled worker runtime, and viewer assets |
 | [tldraw/tldraw](./profiles/tldraw/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
 
-Total profiles: **162** across **23** collections.
+Total profiles: **163** across **24** collections.
 
 ### Profile Directory Layout
 
