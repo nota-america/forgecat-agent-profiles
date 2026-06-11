@@ -1,0 +1,20 @@
+name: "@forgecat/remotion-dev_skills_remotion"
+description: Best practices for Remotion - Video creation in React
+repository: https://github.com/remotion-dev/skills
+license: None
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+      - codex
+    partial:
+      - cursor
+  models:
+    recommended: []
+    minimum: []
+skills:
+  - name: remotion-best-practices
+    path: skills/remotion/SKILL.md
+    description: Best practices for Remotion - Video creation in React
