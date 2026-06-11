@@ -1,0 +1,50 @@
+*written by Forgecat*
+
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+
+# Remotion Skills - Remotion
+
+Best practices for Remotion - Video creation in React
+
+## Tags
+
+- remotion
+- video
+- react
+- animation
+- composition
+
+## Installation
+
+```bash
+npx forgecat install @forgecat/remotion-dev_skills_remotion
+```
+
+## Skills
+
+- **remotion-best-practices** - Best practices for Remotion - Video creation in React `skill`
+
+## Details
+
+| Field | Value |
+|---|---|
+| Author | Remotion |
+| Original repository | https://github.com/remotion-dev/skills |
+| Version | `pending-registry-publish` |
+| Original commit | `277510e78245ac0fa275d7cb6520d52e0ac2e212` |
+| License | NOASSERTION |
+| Source platform | Claude Code |
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Cursor | Partial |
+| Codex | Partial |
+
+## Dependencies
+
+- None
