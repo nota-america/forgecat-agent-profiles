@@ -1,4 +1,4 @@
-*written by forgecat*
+*written by Forgecat*
 
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
@@ -42,6 +42,7 @@ npx forgecat install @forgecat/leonxlnx_taste-skill
 |---|---|
 | Author | Leonxlnx |
 | Original repository | https://github.com/Leonxlnx/taste-skill/tree/main/skills |
+| Version | `0.1.5` |
 | Original commit | `5436c5952cc88d18a034d496988680a8c28a836a` |
 | License | MIT |
 | Source platform | Agent Skills |
