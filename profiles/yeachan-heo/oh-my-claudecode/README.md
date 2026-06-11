@@ -48,7 +48,7 @@ npx forgecat install @forgecat/yeachan-heo_oh-my-claudecode-agents
 |---|---|
 | Author | Yeachan Heo |
 | Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
-| Registry version | `0.1.1` |
+| Registry version | `0.1.2` |
 | Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
 | License | MIT |
 | Source platform | Claude Code |
@@ -60,7 +60,7 @@ npx forgecat install @forgecat/yeachan-heo_oh-my-claudecode-agents
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Tested |
+| Codex | Partial - install/materialization passes; `codex exec` did not recognize project-scoped custom agent types from `.codex/agents` in runtime smoke |
 | Cursor | Tested |
 
 ### Models

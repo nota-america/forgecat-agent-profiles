@@ -11,9 +11,9 @@ compatibility:
   platforms:
     tested:
     - claude-code
-    - codex
     - cursor
-    partial: []
+    partial:
+    - codex
   models:
     recommended:
     - opus
