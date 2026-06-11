@@ -9,7 +9,7 @@ This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh
 | Field | Value |
 |---|---|
 | Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
-| Registry version | `0.1.2` |
+| Registry version | `0.1.3` |
 | Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
 | License | MIT |
 | Source platform | claude-code |
@@ -21,7 +21,7 @@ This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial - install/materialization passes; `codex exec` did not recognize project-scoped custom agent types from `.codex/agents` in runtime smoke |
+| Codex | Tested |
 | Cursor | Tested |
 
 ## Included
