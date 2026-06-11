@@ -30,6 +30,7 @@ skills:
     path: plugin/skills/how-it-works/SKILL.md
     description: Explain how claude-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does claude-mem work?" or "what is this thing doing?".
     scripts:
+      - path: hooks/common.sh
       - path: plugin/scripts/bun-runner.js
       - path: plugin/scripts/statusline-counts.js
       - path: plugin/scripts/version-check.js
