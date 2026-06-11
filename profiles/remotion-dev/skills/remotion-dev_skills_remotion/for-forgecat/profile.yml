@@ -1,7 +1,7 @@
 name: "@forgecat/remotion-dev_skills_remotion"
 description: Best practices for Remotion - Video creation in React
 repository: https://github.com/remotion-dev/skills
-license: NOASSERTION
+license: None
 visibility: public
 sourcePlatform: claude-code
 compatibility:
