@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
 claude_mem_bootstrap_env() {
   export FORGECAT_PROFILE_DIR="$ROOT_DIR"
   export CLAUDE_PLUGIN_ROOT="$PLUGIN_ROOT"

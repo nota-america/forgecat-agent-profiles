@@ -78,65 +78,65 @@ mcp:
   path: mcp.jsonc
   requiredEnv: []
 hooks:
+  - id: claude-mem-claude-setup
+    platform: claude-code
+    trigger: Setup
+    tool_match: "*"
+    command: ./hooks/claude-setup.sh
+    description: Run the upstream claude-mem version check during Claude Code setup.
   - id: claude-mem-claude-session-start
-    trigger: session_start
+    platform: claude-code
+    trigger: SessionStart
+    tool_match: startup|clear|compact
     command: ./hooks/claude-session-start.sh
-    description: Start the worker, run version checks, and inject claude-mem context for Claude Code sessions.
-    platforms:
-      - claude-code
+    description: Start the worker and inject claude-mem context for Claude Code startup, clear, and compact events.
   - id: claude-mem-codex-session-start
-    trigger: session_start
+    platform: codex
+    trigger: SessionStart
+    tool_match: startup|resume
     command: ./hooks/codex-session-start.sh
     description: Start the worker, run version checks, and inject claude-mem context for Codex sessions.
-    platforms:
-      - codex
   - id: claude-mem-claude-session-init
-    trigger: user_prompt_submit
+    platform: claude-code
+    trigger: UserPromptSubmit
     command: ./hooks/claude-session-init.sh
     description: Seed claude-mem session initialization for Claude Code prompt submission.
-    platforms:
-      - claude-code
   - id: claude-mem-codex-session-init
-    trigger: user_prompt_submit
+    platform: codex
+    trigger: UserPromptSubmit
     command: ./hooks/codex-session-init.sh
     description: Seed claude-mem session initialization for Codex prompt submission.
-    platforms:
-      - codex
   - id: claude-mem-claude-file-context
-    trigger: pre_tool_use
+    platform: claude-code
+    trigger: PreToolUse
     tool_match: Read
     command: ./hooks/claude-file-context.sh
     description: Capture file-read context before Claude Code tool use.
-    platforms:
-      - claude-code
   - id: claude-mem-codex-file-context
-    trigger: pre_tool_use
+    platform: codex
+    trigger: PreToolUse
     tool_match: ^Bash$|^mcp__.+__(read|view|cat)(_file|_files)?$
     command: ./hooks/codex-file-context.sh
     description: Capture shell and MCP read context before Codex tool use.
-    platforms:
-      - codex
   - id: claude-mem-claude-observation
-    trigger: post_tool_use
+    platform: claude-code
+    trigger: PostToolUse
+    tool_match: "*"
     command: ./hooks/claude-observation.sh
     description: Record claude-mem observations after Claude Code tool calls.
-    platforms:
-      - claude-code
   - id: claude-mem-codex-observation
-    trigger: post_tool_use
+    platform: codex
+    trigger: PostToolUse
+    tool_match: .*
     command: ./hooks/codex-observation.sh
     description: Record claude-mem observations after Codex tool calls.
-    platforms:
-      - codex
   - id: claude-mem-claude-summary
-    trigger: stop
+    platform: claude-code
+    trigger: Stop
     command: ./hooks/claude-summary.sh
     description: Summarize the active Claude Code session when it stops.
-    platforms:
-      - claude-code
   - id: claude-mem-codex-summary
-    trigger: stop
+    platform: codex
+    trigger: Stop
     command: ./hooks/codex-summary.sh
     description: Summarize the active Codex session when it stops.
-    platforms:
-      - codex

@@ -6,6 +6,5 @@ PLUGIN_ROOT="$ROOT_DIR/plugin"
 source "$ROOT_DIR/hooks/common.sh"
 claude_mem_bootstrap_env
 
-node "$PLUGIN_ROOT/scripts/version-check.js" 1>&2 || true
 node "$PLUGIN_ROOT/scripts/bun-runner.js" "$PLUGIN_ROOT/scripts/worker-service.cjs" start </dev/null >/dev/null 2>&1 || true
 exec node "$PLUGIN_ROOT/scripts/bun-runner.js" "$PLUGIN_ROOT/scripts/worker-service.cjs" hook claude-code context
