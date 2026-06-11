@@ -18,7 +18,7 @@ Persistent memory and context compression profile converted from the `plugin/` s
 npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 ```
 
-The first `session_start` hook bootstraps the bundled plugin dependencies automatically. If you want to prewarm them before opening Claude Code or Codex, run `bun install` in `.forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/plugin`.
+The first `session_start` hook bootstraps the bundled plugin dependencies automatically. If you want to prewarm them before opening Claude Code or Codex, run `bun install` in `.forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/skills/how-it-works/runtime`.
 
 ## What It Includes
 

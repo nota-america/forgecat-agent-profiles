@@ -14,10 +14,10 @@ npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 
 ## Included Surfaces
 
-- **Skills**: 15 upstream skills from `plugin/skills/`
+- **Skills**: 15 upstream skills from root `skills/` (preserved from upstream `plugin/skills/`)
 - **Hooks**: Claude Code and Codex wrappers that preserve the upstream session-start, session-init, file-context, observation, and summarize flows
-- **MCP**: `mcp-search` stdio server using `plugin/scripts/mcp-server.cjs`
-- **Runtime assets**: `plugin/scripts/`, `plugin/modes/`, and `plugin/ui/`
+- **MCP**: `mcp-search` stdio server using `skills/how-it-works/runtime/scripts/mcp-server.cjs`
+- **Runtime assets**: `skills/how-it-works/runtime/scripts/`, `skills/how-it-works/runtime/modes/`, and `skills/how-it-works/runtime/ui/`
 
 ## Details
 
@@ -40,6 +40,6 @@ npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 
 ## Runtime Notes
 
-- `plugin/scripts/worker-service.cjs` and `plugin/scripts/server-beta-service.cjs` are bootstrap loaders that reconstruct the original upstream bundled files from chunked `*.partNN.txt` files at runtime.
+- `skills/how-it-works/runtime/scripts/worker-service.cjs` and `skills/how-it-works/runtime/scripts/server-beta-service.cjs` are bootstrap loaders that reconstruct the original upstream bundled files from chunked `*.partNN.txt` files at runtime.
 - The first `session_start` hook runs the upstream `version-check.js` flow, which attempts a one-time `bun install` for the plugin dependencies. Manual `bun install` is only needed if you want to prewarm the runtime or recover from a failed bootstrap.
 - The upstream `.claude-plugin/` and `.codex-plugin/` manifests are preserved as native artifacts only after runtime validation; they are intentionally not bundled in `for-forgecat/`.

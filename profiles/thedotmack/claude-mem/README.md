@@ -14,4 +14,4 @@ Converted profiles from `thedotmack/claude-mem`.
 npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 ```
 
-The plugin dependencies are bootstrapped on first session start by the bundled `version-check.js` flow. If you want to prewarm them manually, run `bun install` in `.forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/plugin`.
+The plugin dependencies are bootstrapped on first session start by the bundled `version-check.js` flow. If you want to prewarm them manually, run `bun install` in `.forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/skills/how-it-works/runtime`.
