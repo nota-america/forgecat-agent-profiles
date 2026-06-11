@@ -10,7 +10,6 @@ compatibility:
   platforms:
     tested:
     - claude-code
-    partial:
     - cursor
     - codex
   models:
