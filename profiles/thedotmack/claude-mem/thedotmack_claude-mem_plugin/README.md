@@ -18,6 +18,8 @@ Persistent memory and context compression profile converted from the `plugin/` s
 npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 ```
 
+The first `session_start` hook bootstraps the bundled plugin dependencies automatically. If you want to prewarm them before opening Claude Code or Codex, run `bun install` in `.forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/plugin`.
+
 ## What It Includes
 
 - **15 skills** for planning, memory lookup, codebase priming, timeline reporting, weekly digests, and release support
@@ -40,11 +42,11 @@ npx forgecat install @forgecat/thedotmack_claude-mem_plugin
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Codex | Tested |
 | Cursor | Partial |
 
 ## Runtime Notes
 
 - The two oversized upstream worker bundles are preserved as chunked source files plus tiny bootstrap loaders so the shipped profile stays within forgecat's 1 MB per-file cap.
-- After install, run `cd .forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/plugin && bun install` before using the hooks or MCP server. Forgecat does not currently install bundled JS dependencies automatically.
+- The bundled `version-check.js` flow attempts a one-time dependency install on first session start. Manual `bun install` is only needed if you want to prewarm the runtime or recover from a failed bootstrap.

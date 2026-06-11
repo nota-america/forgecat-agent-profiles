@@ -10,8 +10,6 @@ Persistent memory and context compression profile converted from the `plugin/` s
 
 ```bash
 npx forgecat install @forgecat/thedotmack_claude-mem_plugin
-cd .forgecat/profiles/@forgecat/thedotmack_claude-mem_plugin/plugin
-bun install
 ```
 
 ## Included Surfaces
@@ -36,12 +34,12 @@ bun install
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Codex | Tested |
 | Cursor | Partial |
 
 ## Runtime Notes
 
 - `plugin/scripts/worker-service.cjs` and `plugin/scripts/server-beta-service.cjs` are bootstrap loaders that reconstruct the original upstream bundled files from chunked `*.partNN.txt` files at runtime.
+- The first `session_start` hook runs the upstream `version-check.js` flow, which attempts a one-time `bun install` for the plugin dependencies. Manual `bun install` is only needed if you want to prewarm the runtime or recover from a failed bootstrap.
 - The upstream `.claude-plugin/` and `.codex-plugin/` manifests are preserved as native artifacts only after runtime validation; they are intentionally not bundled in `for-forgecat/`.
-- Forgecat does not currently run `bun install` for shipped JS bundles, so dependency installation remains a post-install step.
