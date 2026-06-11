@@ -1,33 +1,22 @@
-*written by Forgecat*
+![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # oh-my-claudecode Agents
 
-This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh-my-claudecode`.
+Agents-only forgecat profile for the upstream `Yeachan-Heo/oh-my-claudecode` Claude Code agent collection.
 
-## Details
+## Tags
 
-| Field | Value |
-|---|---|
-| Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
-| Registry version | `0.1.1` |
-| Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
-| License | MIT |
-| Source platform | claude-code |
+- agents
+- claude-code
+- orchestration
+- review
+- planning
 
-## Compatibility
+## Installation
 
-### Platforms
-
-| Platform | Status |
-|---|---|
-| Claude Code | Tested |
-| Codex | Tested |
-| Cursor | Tested |
-
-## Included
-
-- 19 upstream Claude Code agent markdown files from `agents/`
-- MIT license from the source repository
+```bash
+npx forgecat install @forgecat/yeachan-heo_oh-my-claudecode_agents
+```
 
 ## Agents
 
@@ -52,3 +41,36 @@ This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh
 | `tracer` | Evidence-driven causal tracing with competing hypotheses, evidence for/against, uncertainty tracking, and next-probe recommendations |
 | `verifier` | Verification strategy, evidence-based completion checks, test adequacy |
 | `writer` | Technical documentation writer for README, API docs, and comments (Haiku) |
+
+## Details
+
+| Field | Value |
+|---|---|
+| Author | Yeachan Heo |
+| Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
+| Registry version | `0.1.0` |
+| Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
+| License | MIT |
+| Source platform | Claude Code |
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Codex | Partial - install/materialization passes; `codex exec` did not recognize project-scoped custom agent types from `.codex/agents` in runtime smoke |
+| Cursor | Tested |
+
+### Models
+
+| Model | Role |
+|---|---|
+| `opus` | recommended |
+| `sonnet` | recommended |
+| `haiku` | minimum |
+
+## Dependencies
+
+- None. This profile packages only upstream agent markdown files and the MIT license.

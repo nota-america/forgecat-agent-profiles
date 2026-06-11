@@ -39,7 +39,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Subagents for OpenAI Codex — development, infrastructure, security, research |
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
-| [yeachan-heo/oh-my-claudecode](./profiles/yeachan-heo/oh-my-claudecode) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
+| [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 
 Total profiles: **163** across **24** collections.
 

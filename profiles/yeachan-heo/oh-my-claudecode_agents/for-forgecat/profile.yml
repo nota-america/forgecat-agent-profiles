@@ -1,4 +1,4 @@
-name: "@forgecat/yeachan-heo_oh-my-claudecode-agents"
+name: "@forgecat/yeachan-heo_oh-my-claudecode_agents"
 description: >-
   Agents-only package of 19 Claude Code orchestration agents from
   Yeachan-Heo/oh-my-claudecode, including planning, execution, review, debugging,
