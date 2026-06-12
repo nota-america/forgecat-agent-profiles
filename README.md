@@ -35,6 +35,8 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [multica-ai/andrej-karpathy-skills](./profiles/multica-ai/andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers profile with hook-backed startup context |
 | [openai/skills](./profiles/openai/skills) | 45 | Skills for OpenAI platforms — ASP.NET Core, Figma, Playwright, and more |
+| [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills library for autonomous research, training, evaluation, inference, MLOps, RAG, multimodal systems, and paper writing |
+| [remotion-dev/skills](./profiles/remotion-dev/skills) | 1 | Remotion best-practices skill for video creation in React |
 | [tldraw/tldraw](./profiles/tldraw/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skill collection split into installable profiles (deploy, React, UI audit, and workflow skills) |
@@ -42,7 +44,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 
-Total profiles: **164** across **25** collections.
+Total profiles: **166** across **27** collections.
 
 ### Profile Directory Layout
 
