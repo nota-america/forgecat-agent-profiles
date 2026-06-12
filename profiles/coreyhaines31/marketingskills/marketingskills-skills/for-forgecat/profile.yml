@@ -255,6 +255,71 @@ skills:
     'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this
     at the start of any new project before using other marketing skills — it creates `.agents/product-marketing.md` that all
     other skills reference for product, audience, and positioning context.
+  scripts:
+  - path: tools/clis/activecampaign.js
+  - path: tools/clis/adobe-analytics.js
+  - path: tools/clis/ahrefs.js
+  - path: tools/clis/airops.js
+  - path: tools/clis/amplitude.js
+  - path: tools/clis/apollo.js
+  - path: tools/clis/beehiiv.js
+  - path: tools/clis/brevo.js
+  - path: tools/clis/buffer.js
+  - path: tools/clis/calendly.js
+  - path: tools/clis/clay.js
+  - path: tools/clis/clearbit.js
+  - path: tools/clis/close.js
+  - path: tools/clis/coupler.js
+  - path: tools/clis/crossbeam.js
+  - path: tools/clis/customer-io.js
+  - path: tools/clis/dataforseo.js
+  - path: tools/clis/demio.js
+  - path: tools/clis/dub.js
+  - path: tools/clis/exa.js
+  - path: tools/clis/g2.js
+  - path: tools/clis/ga4.js
+  - path: tools/clis/github-prospects.js
+  - path: tools/clis/google-ads.js
+  - path: tools/clis/google-search-console.js
+  - path: tools/clis/hotjar.js
+  - path: tools/clis/hunter.js
+  - path: tools/clis/instantly.js
+  - path: tools/clis/intercom.js
+  - path: tools/clis/keywords-everywhere.js
+  - path: tools/clis/kit.js
+  - path: tools/clis/klaviyo.js
+  - path: tools/clis/lemlist.js
+  - path: tools/clis/linkedin-ads.js
+  - path: tools/clis/livestorm.js
+  - path: tools/clis/mailchimp.js
+  - path: tools/clis/mention-me.js
+  - path: tools/clis/meta-ads.js
+  - path: tools/clis/mixpanel.js
+  - path: tools/clis/onesignal.js
+  - path: tools/clis/optimizely.js
+  - path: tools/clis/outreach.js
+  - path: tools/clis/paddle.js
+  - path: tools/clis/partnerstack.js
+  - path: tools/clis/pendo.js
+  - path: tools/clis/plausible.js
+  - path: tools/clis/postmark.js
+  - path: tools/clis/rankparse.js
+  - path: tools/clis/resend.js
+  - path: tools/clis/rewardful.js
+  - path: tools/clis/savvycal.js
+  - path: tools/clis/segment.js
+  - path: tools/clis/semrush.js
+  - path: tools/clis/sendgrid.js
+  - path: tools/clis/similarweb.js
+  - path: tools/clis/snov.js
+  - path: tools/clis/supermetrics.js
+  - path: tools/clis/tiktok-ads.js
+  - path: tools/clis/tolt.js
+  - path: tools/clis/trustpilot.js
+  - path: tools/clis/typeform.js
+  - path: tools/clis/wistia.js
+  - path: tools/clis/zapier.js
+  - path: tools/clis/zoominfo.js
 - name: programmatic-seo
   path: skills/programmatic-seo/SKILL.md
   description: When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions
