@@ -73,7 +73,7 @@ npx forgecat install @forgecat/marketingskills-skills
 |---|---|
 | Author | `Corey Haines` |
 | Original repository | `https://github.com/coreyhaines31/marketingskills` |
-| Version | `0.0.0` |
+| Version | `0.1.1` |
 | Original commit | `4b377f2` (2026-06-10) |
 | License | `MIT` |
 | Source platform | `claude-code` |
