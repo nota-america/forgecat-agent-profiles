@@ -15,6 +15,9 @@ compatibility:
   models:
     recommended: []
     minimum: []
+platforms:
+  codex:
+    mode: override
 skills:
 - name: business-pulse
   path: skills/business-pulse/SKILL.md
