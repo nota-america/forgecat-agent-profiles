@@ -16,6 +16,9 @@ compatibility:
   models:
     recommended: []
     minimum: []
+platforms:
+  claude-code:
+    mode: override
 skills:
 - name: ab-testing
   path: skills/ab-testing/SKILL.md
