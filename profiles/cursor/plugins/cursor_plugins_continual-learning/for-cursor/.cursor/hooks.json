@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "stop": [
+      {
+        "_forgecat": "@forgecat/cursor_plugins_continual-learning#continual-learning-stop",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_continual-learning/hooks/_fc_wrap.sh cursor continual-learning-stop.ts",
+        "timeout": 30
+      }
+    ]
+  }
+}
