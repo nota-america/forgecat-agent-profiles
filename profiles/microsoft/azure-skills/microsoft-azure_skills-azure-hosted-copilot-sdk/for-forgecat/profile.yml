@@ -10,6 +10,7 @@ description: 'Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY 
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -9,6 +9,7 @@ description: 'Guides Microsoft Entra ID app registration, OAuth 2.0 authenticati
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -6,6 +6,7 @@ description: Solve competition math (IMO, Putnam, USAMO) with adversarial verifi
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-olympiad
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

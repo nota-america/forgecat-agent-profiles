@@ -7,6 +7,7 @@ description: React Native and Expo best practices for building performant mobile
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

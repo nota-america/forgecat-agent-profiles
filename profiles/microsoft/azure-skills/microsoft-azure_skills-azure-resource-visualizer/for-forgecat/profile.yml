@@ -8,6 +8,7 @@ description: 'Analyze Azure resource groups and generate detailed Mermaid archit
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

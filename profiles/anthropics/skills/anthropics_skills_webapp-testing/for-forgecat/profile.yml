@@ -6,6 +6,7 @@ description: Toolkit for interacting with and testing local web applications usi
 repository: https://github.com/anthropics/skills
 license: Complete terms in LICENSE.txt
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

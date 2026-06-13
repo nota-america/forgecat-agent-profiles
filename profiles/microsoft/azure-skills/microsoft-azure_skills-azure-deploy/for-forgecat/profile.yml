@@ -13,6 +13,7 @@ description: 'Execute Azure deployments for ALREADY-PREPARED applications that h
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

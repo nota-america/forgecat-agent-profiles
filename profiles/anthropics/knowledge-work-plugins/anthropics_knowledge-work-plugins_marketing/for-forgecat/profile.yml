@@ -6,6 +6,7 @@ description: Create content, plan campaigns, and analyze performance across mark
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

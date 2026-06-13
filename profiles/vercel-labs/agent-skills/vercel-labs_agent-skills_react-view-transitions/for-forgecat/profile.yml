@@ -12,6 +12,7 @@ description: Guide for implementing smooth, native-feeling animations using Reac
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

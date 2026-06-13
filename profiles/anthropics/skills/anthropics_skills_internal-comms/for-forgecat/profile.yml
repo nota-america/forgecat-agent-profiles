@@ -8,6 +8,7 @@ description: A set of resources to help me write all kinds of internal communica
 repository: https://github.com/anthropics/skills
 license: Complete terms in LICENSE.txt
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

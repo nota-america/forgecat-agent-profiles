@@ -5,6 +5,7 @@ description: Tools to maintain and improve CLAUDE.md files - audit quality, capt
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

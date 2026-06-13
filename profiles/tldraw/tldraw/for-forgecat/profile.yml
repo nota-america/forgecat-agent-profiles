@@ -4,6 +4,7 @@ description: Draw and visually collaborate with your agents inside Cursor.
 repository: https://github.com/tldraw/tldraw
 license: '-'
 visibility: public
+sourcePlatform: cursor
 compatibility:
   platforms:
     tested:

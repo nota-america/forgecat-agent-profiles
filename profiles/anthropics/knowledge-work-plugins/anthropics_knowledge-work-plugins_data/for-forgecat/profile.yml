@@ -5,6 +5,7 @@ description: Write SQL, explore datasets, and generate insights faster. Build vi
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/data
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

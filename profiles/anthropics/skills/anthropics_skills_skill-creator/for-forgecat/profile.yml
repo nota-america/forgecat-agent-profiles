@@ -7,6 +7,7 @@ description: Create new skills, modify and improve existing skills, and measure 
 repository: https://github.com/anthropics/skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

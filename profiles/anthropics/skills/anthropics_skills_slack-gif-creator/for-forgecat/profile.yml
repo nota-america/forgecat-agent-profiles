@@ -6,6 +6,7 @@ description: Knowledge and utilities for creating animated GIFs optimized for Sl
 repository: https://github.com/anthropics/skills
 license: Complete terms in LICENSE.txt
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

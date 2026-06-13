@@ -5,6 +5,7 @@ description: Comprehensive feature development workflow with specialized agents 
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

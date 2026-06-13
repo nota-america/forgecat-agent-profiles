@@ -11,6 +11,7 @@ description: 'Pre-deployment validation for Azure readiness. Run deep checks on 
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

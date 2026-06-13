@@ -5,6 +5,7 @@ description: Agent that simplifies and refines code for clarity, consistency, an
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

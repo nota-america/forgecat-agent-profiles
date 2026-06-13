@@ -5,6 +5,7 @@ description: Search across all of your company's tools in one place. Find anythi
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/enterprise-search
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

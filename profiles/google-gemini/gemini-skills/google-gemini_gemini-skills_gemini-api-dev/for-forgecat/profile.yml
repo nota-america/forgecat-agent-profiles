@@ -9,6 +9,7 @@ description: Use this skill when building applications with Gemini API hosted mo
 repository: https://github.com/google-gemini/gemini-skills
 license: Apache 2.0
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -5,6 +5,7 @@ description: AI-DLC adaptive workflow rules profile for project-level agent guid
 repository: https://github.com/awslabs/aidlc-workflows
 license: MIT-0
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

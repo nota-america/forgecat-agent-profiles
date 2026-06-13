@@ -8,6 +8,7 @@ description: 'Run Azure compliance and security audits with azqr plus Key Vault 
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

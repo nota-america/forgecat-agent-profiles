@@ -4,6 +4,7 @@ description: "Garry's Stack: a self-contained AI engineering workflow profile wi
 repository: https://github.com/garrytan/gstack
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

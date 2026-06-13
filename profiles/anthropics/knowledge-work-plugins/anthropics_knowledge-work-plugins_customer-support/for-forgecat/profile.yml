@@ -5,6 +5,7 @@ description: Triage tickets, draft responses, escalate issues, and build your kn
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/customer-support
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

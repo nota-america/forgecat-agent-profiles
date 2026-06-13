@@ -6,6 +6,7 @@ description: Connect to preclinical research tools and databases (literature sea
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

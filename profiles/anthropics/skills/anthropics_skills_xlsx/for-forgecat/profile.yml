@@ -15,6 +15,7 @@ description: 'Use this skill any time a spreadsheet file is the primary input or
 repository: https://github.com/anthropics/skills
 license: Proprietary. LICENSE.txt has complete terms
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

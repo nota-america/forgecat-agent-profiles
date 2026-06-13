@@ -9,6 +9,7 @@ description: Use this skill whenever the user wants to do anything with PDF file
 repository: https://github.com/anthropics/skills
 license: Proprietary. LICENSE.txt has complete terms
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

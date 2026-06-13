@@ -6,6 +6,7 @@ description: Streamline people operations — recruiting, onboarding, performanc
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/human-resources
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

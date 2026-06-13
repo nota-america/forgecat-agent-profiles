@@ -1,4 +1,4 @@
-*written by Forgecat*
+*written by ForgeCat*
 
 # Andrej Karpathy Skills
 

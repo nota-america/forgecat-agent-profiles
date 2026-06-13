@@ -7,6 +7,7 @@ description: React composition patterns that scale. Use when refactoring compone
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

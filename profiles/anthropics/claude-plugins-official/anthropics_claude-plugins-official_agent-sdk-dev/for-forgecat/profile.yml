@@ -4,6 +4,7 @@ description: Claude Agent SDK Development Plugin
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
