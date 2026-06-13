@@ -6,6 +6,7 @@ description: Deploy and manage projects on Vercel using token-based authenticati
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

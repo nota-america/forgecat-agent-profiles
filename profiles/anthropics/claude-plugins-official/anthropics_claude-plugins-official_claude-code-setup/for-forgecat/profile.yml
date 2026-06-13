@@ -5,6 +5,7 @@ description: Analyze codebases and recommend tailored Claude Code automations su
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

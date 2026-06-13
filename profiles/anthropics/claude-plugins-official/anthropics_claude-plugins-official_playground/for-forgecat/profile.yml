@@ -5,6 +5,7 @@ description: Creates interactive HTML playgrounds — self-contained single-file
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

@@ -5,6 +5,7 @@ description: AI-powered development tools for code review, research, design, and
 repository: https://github.com/EveryInc/compound-engineering-plugin
 license: MIT
 visibility: public
+sourcePlatform: cursor
 compatibility:
   platforms:
     tested:

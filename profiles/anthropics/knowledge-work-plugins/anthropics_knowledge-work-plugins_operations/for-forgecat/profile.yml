@@ -6,6 +6,7 @@ description: Optimize business operations — vendor management, process documen
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/operations
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

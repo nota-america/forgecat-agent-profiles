@@ -7,6 +7,7 @@ description: Toolkit for styling artifacts with a theme. These artifacts can be 
 repository: https://github.com/anthropics/skills
 license: Complete terms in LICENSE.txt
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

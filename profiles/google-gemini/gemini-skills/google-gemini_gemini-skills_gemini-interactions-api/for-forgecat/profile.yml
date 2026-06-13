@@ -8,6 +8,7 @@ description: Use this skill when writing code that calls the Gemini API for text
 repository: https://github.com/google-gemini/gemini-skills
 license: Apache 2.0
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

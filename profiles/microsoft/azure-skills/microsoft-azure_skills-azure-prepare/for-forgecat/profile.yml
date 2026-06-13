@@ -15,6 +15,7 @@ description: 'Prepare Azure apps for deployment (infra Bicep/Terraform, azure.ya
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -16,6 +16,7 @@ description: 'Deploy, evaluate, and manage Foundry agents end-to-end: Docker bui
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

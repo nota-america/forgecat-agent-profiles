@@ -1,4 +1,4 @@
-*written by Forgecat*
+*written by ForgeCat*
 
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 

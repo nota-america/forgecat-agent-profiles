@@ -13,6 +13,7 @@ description: 'Azure Storage Services including Blob Storage, File Shares, Queue 
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

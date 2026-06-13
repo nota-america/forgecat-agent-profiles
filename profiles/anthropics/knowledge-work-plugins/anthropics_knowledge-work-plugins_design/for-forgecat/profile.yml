@@ -6,6 +6,7 @@ description: Accelerate design workflows — critique, design system management,
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/design
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

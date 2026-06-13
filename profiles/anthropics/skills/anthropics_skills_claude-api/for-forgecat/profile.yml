@@ -12,6 +12,7 @@ description: 'Build, debug, and optimize Claude API / Anthropic SDK apps. Apps b
 repository: https://github.com/anthropics/skills
 license: Complete terms in LICENSE.txt
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

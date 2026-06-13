@@ -9,6 +9,7 @@ description: 'Helps users find the right Azure RBAC role for an identity with le
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

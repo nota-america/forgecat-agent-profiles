@@ -12,6 +12,7 @@ description: 'List, find, and show Azure resources across subscriptions or resou
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

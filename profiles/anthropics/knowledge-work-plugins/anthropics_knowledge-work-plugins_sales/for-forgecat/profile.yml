@@ -5,6 +5,7 @@ description: Prospect, craft outreach, and build deal strategy faster. Prep for 
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/sales
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

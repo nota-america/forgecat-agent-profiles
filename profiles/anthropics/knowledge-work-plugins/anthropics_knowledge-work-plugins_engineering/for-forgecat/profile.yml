@@ -6,6 +6,7 @@ description: Streamline engineering workflows — standups, code review, archite
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

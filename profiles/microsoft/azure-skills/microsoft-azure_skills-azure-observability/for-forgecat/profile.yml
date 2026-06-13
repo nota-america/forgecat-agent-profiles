@@ -12,6 +12,7 @@ description: 'Debug Azure production issues on Azure using AppLens, Azure Monito
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -15,6 +15,7 @@ description: 'Troubleshoot and resolve issues with Azure Messaging SDKs for Even
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

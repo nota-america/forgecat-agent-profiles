@@ -6,6 +6,7 @@ description: Create new skills, improve existing skills, and measure skill perfo
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

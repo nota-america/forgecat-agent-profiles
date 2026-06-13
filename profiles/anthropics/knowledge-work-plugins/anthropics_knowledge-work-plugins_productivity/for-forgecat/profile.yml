@@ -6,6 +6,7 @@ description: Manage tasks, plan your day, and build up memory of important conte
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

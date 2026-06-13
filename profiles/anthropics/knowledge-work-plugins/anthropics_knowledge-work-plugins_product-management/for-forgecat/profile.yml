@@ -5,6 +5,7 @@ description: Write feature specs, plan roadmaps, and synthesize user research fa
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

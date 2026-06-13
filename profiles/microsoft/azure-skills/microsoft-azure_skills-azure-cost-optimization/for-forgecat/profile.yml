@@ -15,6 +15,7 @@ description: 'Unified Azure cost management: query historical costs, forecast fu
 repository: https://github.com/microsoft/azure-skills
 license: MIT
 visibility: public
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:

@@ -5,6 +5,7 @@ description: Automated code review for pull requests using multiple specialized 
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

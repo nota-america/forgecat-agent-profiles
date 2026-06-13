@@ -6,6 +6,7 @@ description: Streamline finance and accounting workflows, from journal entries a
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/finance
 license: Apache-2.0
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:

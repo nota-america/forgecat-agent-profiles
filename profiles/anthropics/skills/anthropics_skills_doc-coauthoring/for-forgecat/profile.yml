@@ -9,6 +9,7 @@ description: Guide users through a structured workflow for co-authoring document
 repository: https://github.com/anthropics/skills
 license: MIT
 visibility: public
+sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
