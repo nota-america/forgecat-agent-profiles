@@ -15,7 +15,7 @@ Marketing agent skills for conversion optimization, copywriting, SEO, paid ads, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/marketingskills-skills
+npx forgecat install @forgecat/coreyhaines31_marketingskills
 ```
 
 ## Skills
@@ -71,7 +71,7 @@ npx forgecat install @forgecat/marketingskills-skills
 |---|---|
 | Author | `Corey Haines` |
 | Original repository | `https://github.com/coreyhaines31/marketingskills` |
-| Version | `0.1.1` |
+| Version | `0.1.0` |
 | Original commit | `4b377f2` (2026-06-10) |
 | License | `MIT` |
 | Source platform | `claude-code` |
