@@ -25,9 +25,11 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing agent skills for conversion optimization, copywriting, SEO, paid ads, analytics, growth, and go-to-market workflows |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Plugins for Cursor — team workflows, continual learning, and iterative agent loops |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development profile with deep workflows for review, research, and design |
+| [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work, verification, discipline packs, and early-stop guard support |
 | [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profiles built from existing profile packages |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Google Gemini skills set converted into installable ForgeCat profiles (API dev, interactions API, live API) |
+| [googleworkspace/cli](./profiles/googleworkspace/cli) | 1 | Google Workspace CLI agent skills for Drive, Gmail, Calendar, Docs, Sheets, Slides, Chat, Apps Script, personas, and recipes |
 | [juliusbrussee/caveman](./profiles/juliusbrussee/caveman) | 1 | Julius Brussee's caveman communication mode with compressed skills, commands, agents, and hooks |
 | [kepano/obsidian-skills](./profiles/kepano/obsidian-skills) | 1 | Agent skills for creating and editing Obsidian vault files, Markdown notes, Bases, Canvas files, and Obsidian CLI workflows |
 | [leonxlnx/taste-skill](./profiles/leonxlnx/taste-skill) | 1 | Skill-only Taste Skill package for premium frontend design, redesign, image-to-code, and image-generation workflows |
@@ -46,7 +48,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 
-Total profiles: **168** across **29** collections.
+Total profiles: **170** across **31** collections.
 
 ### Profile Directory Layout
 
