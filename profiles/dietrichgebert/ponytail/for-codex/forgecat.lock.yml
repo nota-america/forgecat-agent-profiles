@@ -1,22 +1,15 @@
 lockfileVersion: 1
-lastUpdated: 2026-06-15T20:34:49.559Z
+lastUpdated: 2026-06-15T21:38:20.359Z
 profiles:
   "@forgecat/dietrichgebert_ponytail":
-    version: 0.1.4
+    version: 0.1.5
     source: registry
-    integrity: sha256-c489145ce769fee298f50872710c9b993cb81ade8640803cb2ee61656939d3c6
-    installedAt: 2026-06-15T20:34:49.264Z
+    integrity: sha256-d881542868342bcdfce4e8b16d18cb05c326128917a3a3a76616e3227ee03ad0
+    installedAt: 2026-06-15T21:38:20.093Z
     files:
       .agents/skills/ponytail/SKILL.md:
         originalHash: 78c2b0eb9ec05a5d
         currentHash: 78c2b0eb9ec05a5d
-        status: clean
-        resourceType: skill
-        platform: codex
-        source: standard-convert
-      .agents/skills/ponytail-debt/SKILL.md:
-        originalHash: fa458c4fd7a4a0fc
-        currentHash: fa458c4fd7a4a0fc
         status: clean
         resourceType: skill
         platform: codex
@@ -28,9 +21,9 @@ profiles:
         resourceType: skill
         platform: codex
         source: standard-convert
-      .agents/skills/ponytail-review/SKILL.md:
-        originalHash: c926e785b3583558
-        currentHash: c926e785b3583558
+      .agents/skills/ponytail-debt/SKILL.md:
+        originalHash: fa458c4fd7a4a0fc
+        currentHash: fa458c4fd7a4a0fc
         status: clean
         resourceType: skill
         platform: codex
@@ -38,6 +31,13 @@ profiles:
       .agents/skills/ponytail-help/SKILL.md:
         originalHash: e79d84c0bd920124
         currentHash: e79d84c0bd920124
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .agents/skills/ponytail-review/SKILL.md:
+        originalHash: c926e785b3583558
+        currentHash: c926e785b3583558
         status: clean
         resourceType: skill
         platform: codex
@@ -85,8 +85,8 @@ profiles:
         resourceType: other
         platform: shared
       .forgecat/profiles/@forgecat/dietrichgebert_ponytail/README.md:
-        originalHash: 03ba2295c0b05bd9
-        currentHash: 03ba2295c0b05bd9
+        originalHash: b86c0e39cc59b3fa
+        currentHash: b86c0e39cc59b3fa
         status: clean
         resourceType: other
         platform: shared

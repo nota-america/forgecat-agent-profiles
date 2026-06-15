@@ -91,6 +91,9 @@ commands:
   - name: ponytail-debt
     path: commands/ponytail-debt.toml
     description: "Harvest ponytail: comments into a tracked debt ledger"
+  - name: ponytail-help
+    path: commands/ponytail-help.toml
+    description: Quick reference for ponytail levels, skills, and commands
 rules:
   - path: AGENTS.md
     description: Ponytail always-on lazy senior developer instruction set for AGENTS.md-compatible hosts.

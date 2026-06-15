@@ -31,6 +31,7 @@ npx forgecat install @forgecat/dietrichgebert_ponytail
 - **ponytail-review** - Review changes for over-engineering. `command`
 - **ponytail-audit** - Audit a whole repo for over-engineering. `command`
 - **ponytail-debt** - Harvest `ponytail:` comments into a ledger. `command`
+- **ponytail-help** - Quick reference for ponytail levels, skills, and commands. `command`
 
 ## Details
 
@@ -38,7 +39,7 @@ npx forgecat install @forgecat/dietrichgebert_ponytail
 |---|---|
 | Author | Dietrich Gebert |
 | Original repository | https://github.com/DietrichGebert/ponytail |
-| Version | `0.1.4` |
+| Version | `0.1.5` |
 | Original commit | `1c420ad2f306b2a096dd1e7c1b8c5ebbb4cdf3d4` |
 | License | MIT |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin, Cursor rule, OpenCode plugin, Gemini extension, pi extension, and generic AGENTS.md/skills adapters |
