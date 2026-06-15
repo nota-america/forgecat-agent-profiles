@@ -1,5 +1,5 @@
 name: '@forgecat/coreyhaines31_marketingskills'
-version: "0.1.0"
+version: "0.1.2"
 description: Marketing agent skills for conversion optimization, copywriting, SEO, paid ads, analytics, growth, and go-to-market
   workflows.
 repository: https://github.com/coreyhaines31/marketingskills
@@ -10,14 +10,18 @@ compatibility:
   platforms:
     tested:
     - claude-code
-    partial:
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []
 platforms:
   claude-code:
+    mode: override
+  cursor:
+    mode: override
+  codex:
     mode: override
 skills:
 - name: ab-testing
