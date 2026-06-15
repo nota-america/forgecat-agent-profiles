@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-session-start",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh codex ponytail-activate.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-user-prompt-submit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh codex ponytail-mode-tracker.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

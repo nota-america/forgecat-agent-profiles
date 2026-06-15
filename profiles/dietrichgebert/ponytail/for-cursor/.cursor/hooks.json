@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-session-start",
+        "command": ".forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh cursor ponytail-activate.js",
+        "timeout": 5
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-user-prompt-submit",
+        "command": ".forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh cursor ponytail-mode-tracker.js",
+        "timeout": 5
+      }
+    ]
+  }
+}

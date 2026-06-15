@@ -1,0 +1,111 @@
+lockfileVersion: 1
+lastUpdated: 2026-06-15T21:42:31.665Z
+profiles:
+  "@forgecat/dietrichgebert_ponytail":
+    version: 0.1.6
+    source: registry
+    integrity: sha256-2d57274382c16f6c0189a1593feae538e7fed79251d16dfa7d66c4a258d1bb27
+    installedAt: 2026-06-15T21:42:31.407Z
+    files:
+      .agents/skills/ponytail/SKILL.md:
+        originalHash: 78c2b0eb9ec05a5d
+        currentHash: 78c2b0eb9ec05a5d
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .agents/skills/ponytail-audit/SKILL.md:
+        originalHash: df56e712a895c4eb
+        currentHash: df56e712a895c4eb
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .agents/skills/ponytail-debt/SKILL.md:
+        originalHash: fa458c4fd7a4a0fc
+        currentHash: fa458c4fd7a4a0fc
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .agents/skills/ponytail-help/SKILL.md:
+        originalHash: e79d84c0bd920124
+        currentHash: e79d84c0bd920124
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .agents/skills/ponytail-review/SKILL.md:
+        originalHash: c926e785b3583558
+        currentHash: c926e785b3583558
+        status: clean
+        resourceType: skill
+        platform: codex
+        source: standard-convert
+      .codex/hooks.json:
+        originalHash: 89163d8fd5ae331f
+        currentHash: 89163d8fd5ae331f
+        status: clean
+        resourceType: hook
+        platform: codex
+        source: standard-convert
+        mergeContent: >-
+          {
+            "hooks": {
+              "SessionStart": [
+                {
+                  "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-session-start",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "./.forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh codex ponytail-activate.js",
+                      "timeout": 5
+                    }
+                  ]
+                }
+              ],
+              "UserPromptSubmit": [
+                {
+                  "_forgecat": "@forgecat/dietrichgebert_ponytail#ponytail-user-prompt-submit",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "./.forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh codex ponytail-mode-tracker.js",
+                      "timeout": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+      .forgecat/profiles/@forgecat/dietrichgebert_ponytail/LICENSE:
+        originalHash: ed12e98f6b41dc77
+        currentHash: ed12e98f6b41dc77
+        status: clean
+        resourceType: other
+        platform: shared
+      .forgecat/profiles/@forgecat/dietrichgebert_ponytail/README.md:
+        originalHash: 8025d2fcc6f53e9a
+        currentHash: 8025d2fcc6f53e9a
+        status: clean
+        resourceType: other
+        platform: shared
+      .forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/ponytail-activate.js:
+        originalHash: f44aee70db73651b
+        currentHash: f44aee70db73651b
+        status: clean
+        resourceType: other
+        platform: shared
+      .forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/ponytail-mode-tracker.js:
+        originalHash: 1a30d6486f1aa254
+        currentHash: 1a30d6486f1aa254
+        status: clean
+        resourceType: other
+        platform: shared
+      .forgecat/profiles/@forgecat/dietrichgebert_ponytail/hooks/_fc_wrap.sh:
+        originalHash: e17c7556b9f6ff78
+        currentHash: e17c7556b9f6ff78
+        status: clean
+        resourceType: other
+        platform: shared
+    hookOptOut: false
