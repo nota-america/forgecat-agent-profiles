@@ -24,6 +24,18 @@ The Small Business skills are vendored from `@forgecat/anthropics_knowledge-work
 | `smb-customer-ops-agent` | Customer pulse, tickets, complaints, disputes, refunds, reviews, and response drafting |
 | `smb-people-legal-agent` | Hiring packets, job posts, interview guides, offer templates, contract review, and redline workflows |
 
+## Included Skills
+
+This profile bundles the Small Business skills directly under `skills/` so the agent team works as one install.
+
+| Department agent | Skills |
+|---|---|
+| `smb-chief-of-staff` | `smb-router`, `smb-onboard`, `business-pulse`, `monday-brief`, `friday-brief`, `quarterly-review` |
+| `smb-finance-agent` | `cash-flow-snapshot`, `invoice-chase`, `margin-analyzer`, `month-end-prep`, `close-month`, `month-heads-up`, `plan-payroll`, `price-check`, `tax-season-organizer`, `tax-prep` |
+| `smb-growth-agent` | `lead-triage`, `call-list`, `crm-maintenance`, `crm-cleanup`, `content-strategy`, `canva-creator`, `run-campaign`, `sales-brief` |
+| `smb-customer-ops-agent` | `customer-pulse`, `customer-pulse-check`, `ticket-deflector`, `handle-complaint` |
+| `smb-people-legal-agent` | `job-post-builder`, `contract-review`, `review-contract` |
+
 ## Central Orchestration
 
 The root `AGENTS.md` file is the canonical orchestration profile and the single declared ForgeCat `rules` resource.
