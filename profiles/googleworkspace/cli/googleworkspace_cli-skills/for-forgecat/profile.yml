@@ -1,0 +1,457 @@
+name: '@forgecat/googleworkspace_cli-skills'
+description: Google Workspace CLI agent skills for Drive, Gmail, Calendar, Docs, Sheets, Slides, Chat, Apps Script, personas, and workflow recipes powered by the gws command-line tool.
+repository: https://github.com/googleworkspace/cli/tree/main/skills
+license: Apache-2.0
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: gws-admin-reports
+  path: skills/gws-admin-reports/SKILL.md
+  description: 'Google Workspace Admin SDK: Audit logs and usage reports.'
+- name: gws-calendar
+  path: skills/gws-calendar/SKILL.md
+  description: 'Google Calendar: Manage calendars and events.'
+- name: gws-calendar-agenda
+  path: skills/gws-calendar-agenda/SKILL.md
+  description: 'Google Calendar: Show upcoming events across all calendars.'
+- name: gws-calendar-insert
+  path: skills/gws-calendar-insert/SKILL.md
+  description: 'Google Calendar: Create a new event.'
+- name: gws-chat
+  path: skills/gws-chat/SKILL.md
+  description: 'Google Chat: Manage Chat spaces and messages.'
+- name: gws-chat-send
+  path: skills/gws-chat-send/SKILL.md
+  description: 'Google Chat: Send a message to a space.'
+- name: gws-classroom
+  path: skills/gws-classroom/SKILL.md
+  description: 'Google Classroom: Manage classes, rosters, and coursework.'
+- name: gws-docs
+  path: skills/gws-docs/SKILL.md
+  description: Read and write Google Docs.
+- name: gws-docs-write
+  path: skills/gws-docs-write/SKILL.md
+  description: 'Google Docs: Append text to a document.'
+- name: gws-drive
+  path: skills/gws-drive/SKILL.md
+  description: 'Google Drive: Manage files, folders, and shared drives.'
+- name: gws-drive-upload
+  path: skills/gws-drive-upload/SKILL.md
+  description: 'Google Drive: Upload a file with automatic metadata.'
+- name: gws-events
+  path: skills/gws-events/SKILL.md
+  description: Subscribe to Google Workspace events.
+- name: gws-events-renew
+  path: skills/gws-events-renew/SKILL.md
+  description: 'Google Workspace Events: Renew/reactivate Workspace Events subscriptions.'
+- name: gws-events-subscribe
+  path: skills/gws-events-subscribe/SKILL.md
+  description: 'Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON.'
+- name: gws-forms
+  path: skills/gws-forms/SKILL.md
+  description: Read and write Google Forms.
+- name: gws-gmail
+  path: skills/gws-gmail/SKILL.md
+  description: 'Gmail: Send, read, and manage email.'
+- name: gws-gmail-forward
+  path: skills/gws-gmail-forward/SKILL.md
+  description: 'Gmail: Forward a message to new recipients.'
+- name: gws-gmail-read
+  path: skills/gws-gmail-read/SKILL.md
+  description: 'Gmail: Read a message and extract its body or headers.'
+- name: gws-gmail-reply
+  path: skills/gws-gmail-reply/SKILL.md
+  description: 'Gmail: Reply to a message (handles threading automatically).'
+- name: gws-gmail-reply-all
+  path: skills/gws-gmail-reply-all/SKILL.md
+  description: 'Gmail: Reply-all to a message (handles threading automatically).'
+- name: gws-gmail-send
+  path: skills/gws-gmail-send/SKILL.md
+  description: 'Gmail: Send an email.'
+- name: gws-gmail-triage
+  path: skills/gws-gmail-triage/SKILL.md
+  description: 'Gmail: Show unread inbox summary (sender, subject, date).'
+- name: gws-gmail-watch
+  path: skills/gws-gmail-watch/SKILL.md
+  description: 'Gmail: Watch for new emails and stream them as NDJSON.'
+- name: gws-keep
+  path: skills/gws-keep/SKILL.md
+  description: Manage Google Keep notes.
+- name: gws-meet
+  path: skills/gws-meet/SKILL.md
+  description: Manage Google Meet conferences.
+- name: gws-modelarmor
+  path: skills/gws-modelarmor/SKILL.md
+  description: 'Google Model Armor: Filter user-generated content for safety.'
+- name: gws-modelarmor-create-template
+  path: skills/gws-modelarmor-create-template/SKILL.md
+  description: 'Google Model Armor: Create a new Model Armor template.'
+- name: gws-modelarmor-sanitize-prompt
+  path: skills/gws-modelarmor-sanitize-prompt/SKILL.md
+  description: 'Google Model Armor: Sanitize a user prompt through a Model Armor template.'
+- name: gws-modelarmor-sanitize-response
+  path: skills/gws-modelarmor-sanitize-response/SKILL.md
+  description: 'Google Model Armor: Sanitize a model response through a Model Armor template.'
+- name: gws-people
+  path: skills/gws-people/SKILL.md
+  description: 'Google People: Manage contacts and profiles.'
+- name: gws-script
+  path: skills/gws-script/SKILL.md
+  description: Manage Google Apps Script projects.
+- name: gws-script-push
+  path: skills/gws-script-push/SKILL.md
+  description: 'Google Apps Script: Upload local files to an Apps Script project.'
+- name: gws-shared
+  path: skills/gws-shared/SKILL.md
+  description: 'gws CLI: Shared patterns for authentication, global flags, and output formatting.'
+- name: gws-sheets
+  path: skills/gws-sheets/SKILL.md
+  description: 'Google Sheets: Read and write spreadsheets.'
+- name: gws-sheets-append
+  path: skills/gws-sheets-append/SKILL.md
+  description: 'Google Sheets: Append a row to a spreadsheet.'
+- name: gws-sheets-read
+  path: skills/gws-sheets-read/SKILL.md
+  description: 'Google Sheets: Read values from a spreadsheet.'
+- name: gws-slides
+  path: skills/gws-slides/SKILL.md
+  description: 'Google Slides: Read and write presentations.'
+- name: gws-tasks
+  path: skills/gws-tasks/SKILL.md
+  description: 'Google Tasks: Manage task lists and tasks.'
+- name: gws-workflow
+  path: skills/gws-workflow/SKILL.md
+  description: 'Google Workflow: Cross-service productivity workflows.'
+- name: gws-workflow-email-to-task
+  path: skills/gws-workflow-email-to-task/SKILL.md
+  description: 'Google Workflow: Convert a Gmail message into a Google Tasks entry.'
+- name: gws-workflow-file-announce
+  path: skills/gws-workflow-file-announce/SKILL.md
+  description: 'Google Workflow: Announce a Drive file in a Chat space.'
+- name: gws-workflow-meeting-prep
+  path: skills/gws-workflow-meeting-prep/SKILL.md
+  description: 'Google Workflow: Prepare for your next meeting: agenda, attendees, and linked docs.'
+- name: gws-workflow-standup-report
+  path: skills/gws-workflow-standup-report/SKILL.md
+  description: 'Google Workflow: Today''s meetings + open tasks as a standup summary.'
+- name: gws-workflow-weekly-digest
+  path: skills/gws-workflow-weekly-digest/SKILL.md
+  description: 'Google Workflow: Weekly summary: this week''s meetings + unread email count.'
+- name: persona-content-creator
+  path: skills/persona-content-creator/SKILL.md
+  description: Create, organize, and distribute content across Workspace.
+  dependencies:
+  - gws-docs
+  - gws-drive
+  - gws-gmail
+  - gws-chat
+  - gws-slides
+- name: persona-customer-support
+  path: skills/persona-customer-support/SKILL.md
+  description: Manage customer support — track tickets, respond, escalate issues.
+  dependencies:
+  - gws-gmail
+  - gws-sheets
+  - gws-chat
+  - gws-calendar
+- name: persona-event-coordinator
+  path: skills/persona-event-coordinator/SKILL.md
+  description: Plan and manage events — scheduling, invitations, and logistics.
+  dependencies:
+  - gws-calendar
+  - gws-gmail
+  - gws-drive
+  - gws-chat
+  - gws-sheets
+- name: persona-exec-assistant
+  path: skills/persona-exec-assistant/SKILL.md
+  description: Manage an executive's schedule, inbox, and communications.
+  dependencies:
+  - gws-gmail
+  - gws-calendar
+  - gws-drive
+  - gws-chat
+- name: persona-hr-coordinator
+  path: skills/persona-hr-coordinator/SKILL.md
+  description: Handle HR workflows — onboarding, announcements, and employee comms.
+  dependencies:
+  - gws-gmail
+  - gws-calendar
+  - gws-drive
+  - gws-chat
+- name: persona-it-admin
+  path: skills/persona-it-admin/SKILL.md
+  description: Administer IT — monitor security and configure Workspace.
+  dependencies:
+  - gws-gmail
+  - gws-drive
+  - gws-calendar
+- name: persona-project-manager
+  path: skills/persona-project-manager/SKILL.md
+  description: Coordinate projects — track tasks, schedule meetings, and share docs.
+  dependencies:
+  - gws-drive
+  - gws-sheets
+  - gws-calendar
+  - gws-gmail
+  - gws-chat
+- name: persona-researcher
+  path: skills/persona-researcher/SKILL.md
+  description: Organize research — manage references, notes, and collaboration.
+  dependencies:
+  - gws-drive
+  - gws-docs
+  - gws-sheets
+  - gws-gmail
+- name: persona-sales-ops
+  path: skills/persona-sales-ops/SKILL.md
+  description: Manage sales workflows — track deals, schedule calls, client comms.
+  dependencies:
+  - gws-gmail
+  - gws-calendar
+  - gws-sheets
+  - gws-drive
+- name: persona-team-lead
+  path: skills/persona-team-lead/SKILL.md
+  description: Lead a team — run standups, coordinate tasks, and communicate.
+  dependencies:
+  - gws-calendar
+  - gws-gmail
+  - gws-chat
+  - gws-drive
+  - gws-sheets
+- name: recipe-backup-sheet-as-csv
+  path: skills/recipe-backup-sheet-as-csv/SKILL.md
+  description: Export a Google Sheets spreadsheet as a CSV file for local backup or processing.
+  dependencies:
+  - gws-sheets
+  - gws-drive
+- name: recipe-batch-invite-to-event
+  path: skills/recipe-batch-invite-to-event/SKILL.md
+  description: Add a list of attendees to an existing Google Calendar event and send notifications.
+  dependencies:
+  - gws-calendar
+- name: recipe-block-focus-time
+  path: skills/recipe-block-focus-time/SKILL.md
+  description: Create recurring focus time blocks on Google Calendar to protect deep work hours.
+  dependencies:
+  - gws-calendar
+- name: recipe-bulk-download-folder
+  path: skills/recipe-bulk-download-folder/SKILL.md
+  description: List and download all files from a Google Drive folder.
+  dependencies:
+  - gws-drive
+- name: recipe-collect-form-responses
+  path: skills/recipe-collect-form-responses/SKILL.md
+  description: Retrieve and review responses from a Google Form.
+  dependencies:
+  - gws-forms
+- name: recipe-compare-sheet-tabs
+  path: skills/recipe-compare-sheet-tabs/SKILL.md
+  description: Read data from two tabs in a Google Sheet to compare and identify differences.
+  dependencies:
+  - gws-sheets
+- name: recipe-copy-sheet-for-new-month
+  path: skills/recipe-copy-sheet-for-new-month/SKILL.md
+  description: Duplicate a Google Sheets template tab for a new month of tracking.
+  dependencies:
+  - gws-sheets
+- name: recipe-create-classroom-course
+  path: skills/recipe-create-classroom-course/SKILL.md
+  description: Create a Google Classroom course and invite students.
+  dependencies:
+  - gws-classroom
+- name: recipe-create-doc-from-template
+  path: skills/recipe-create-doc-from-template/SKILL.md
+  description: Copy a Google Docs template, fill in content, and share with collaborators.
+  dependencies:
+  - gws-drive
+  - gws-docs
+- name: recipe-create-events-from-sheet
+  path: skills/recipe-create-events-from-sheet/SKILL.md
+  description: Read event data from a Google Sheets spreadsheet and create Google Calendar entries for each row.
+  dependencies:
+  - gws-sheets
+  - gws-calendar
+- name: recipe-create-expense-tracker
+  path: skills/recipe-create-expense-tracker/SKILL.md
+  description: Set up a Google Sheets spreadsheet for tracking expenses with headers and initial entries.
+  dependencies:
+  - gws-sheets
+  - gws-drive
+- name: recipe-create-feedback-form
+  path: skills/recipe-create-feedback-form/SKILL.md
+  description: Create a Google Form for feedback and share it via Gmail.
+  dependencies:
+  - gws-forms
+  - gws-gmail
+- name: recipe-create-gmail-filter
+  path: skills/recipe-create-gmail-filter/SKILL.md
+  description: Create a Gmail filter to automatically label, star, or categorize incoming messages.
+  dependencies:
+  - gws-gmail
+- name: recipe-create-meet-space
+  path: skills/recipe-create-meet-space/SKILL.md
+  description: Create a Google Meet meeting space and share the join link.
+  dependencies:
+  - gws-meet
+  - gws-gmail
+- name: recipe-create-presentation
+  path: skills/recipe-create-presentation/SKILL.md
+  description: Create a new Google Slides presentation and add initial slides.
+  dependencies:
+  - gws-slides
+- name: recipe-create-shared-drive
+  path: skills/recipe-create-shared-drive/SKILL.md
+  description: Create a Google Shared Drive and add members with appropriate roles.
+  dependencies:
+  - gws-drive
+- name: recipe-create-task-list
+  path: skills/recipe-create-task-list/SKILL.md
+  description: Set up a new Google Tasks list with initial tasks.
+  dependencies:
+  - gws-tasks
+- name: recipe-create-vacation-responder
+  path: skills/recipe-create-vacation-responder/SKILL.md
+  description: Enable a Gmail out-of-office auto-reply with a custom message and date range.
+  dependencies:
+  - gws-gmail
+- name: recipe-draft-email-from-doc
+  path: skills/recipe-draft-email-from-doc/SKILL.md
+  description: Read content from a Google Doc and use it as the body of a Gmail message.
+  dependencies:
+  - gws-docs
+  - gws-gmail
+- name: recipe-email-drive-link
+  path: skills/recipe-email-drive-link/SKILL.md
+  description: Share a Google Drive file and email the link with a message to recipients.
+  dependencies:
+  - gws-drive
+  - gws-gmail
+- name: recipe-find-free-time
+  path: skills/recipe-find-free-time/SKILL.md
+  description: Query Google Calendar free/busy status for multiple users to find a meeting slot.
+  dependencies:
+  - gws-calendar
+- name: recipe-find-large-files
+  path: skills/recipe-find-large-files/SKILL.md
+  description: Identify large Google Drive files consuming storage quota.
+  dependencies:
+  - gws-drive
+- name: recipe-forward-labeled-emails
+  path: skills/recipe-forward-labeled-emails/SKILL.md
+  description: Find Gmail messages with a specific label and forward them to another address.
+  dependencies:
+  - gws-gmail
+- name: recipe-generate-report-from-sheet
+  path: skills/recipe-generate-report-from-sheet/SKILL.md
+  description: Read data from a Google Sheet and create a formatted Google Docs report.
+  dependencies:
+  - gws-sheets
+  - gws-docs
+  - gws-drive
+- name: recipe-label-and-archive-emails
+  path: skills/recipe-label-and-archive-emails/SKILL.md
+  description: Apply Gmail labels to matching messages and archive them to keep your inbox clean.
+  dependencies:
+  - gws-gmail
+- name: recipe-log-deal-update
+  path: skills/recipe-log-deal-update/SKILL.md
+  description: Append a deal status update to a Google Sheets sales tracking spreadsheet.
+  dependencies:
+  - gws-sheets
+  - gws-drive
+- name: recipe-organize-drive-folder
+  path: skills/recipe-organize-drive-folder/SKILL.md
+  description: Create a Google Drive folder structure and move files into the right locations.
+  dependencies:
+  - gws-drive
+- name: recipe-plan-weekly-schedule
+  path: skills/recipe-plan-weekly-schedule/SKILL.md
+  description: Review your Google Calendar week, identify gaps, and add events to fill them.
+  dependencies:
+  - gws-calendar
+- name: recipe-post-mortem-setup
+  path: skills/recipe-post-mortem-setup/SKILL.md
+  description: Create a Google Docs post-mortem, schedule a Google Calendar review, and notify via Chat.
+  dependencies:
+  - gws-docs
+  - gws-calendar
+  - gws-chat
+- name: recipe-reschedule-meeting
+  path: skills/recipe-reschedule-meeting/SKILL.md
+  description: Move a Google Calendar event to a new time and automatically notify all attendees.
+  dependencies:
+  - gws-calendar
+- name: recipe-review-meet-participants
+  path: skills/recipe-review-meet-participants/SKILL.md
+  description: Review who attended a Google Meet conference and for how long.
+  dependencies:
+  - gws-meet
+- name: recipe-review-overdue-tasks
+  path: skills/recipe-review-overdue-tasks/SKILL.md
+  description: Find Google Tasks that are past due and need attention.
+  dependencies:
+  - gws-tasks
+- name: recipe-save-email-attachments
+  path: skills/recipe-save-email-attachments/SKILL.md
+  description: Find Gmail messages with attachments and save them to a Google Drive folder.
+  dependencies:
+  - gws-gmail
+  - gws-drive
+- name: recipe-save-email-to-doc
+  path: skills/recipe-save-email-to-doc/SKILL.md
+  description: Save a Gmail message body into a Google Doc for archival or reference.
+  dependencies:
+  - gws-gmail
+  - gws-docs
+- name: recipe-schedule-recurring-event
+  path: skills/recipe-schedule-recurring-event/SKILL.md
+  description: Create a recurring Google Calendar event with attendees.
+  dependencies:
+  - gws-calendar
+- name: recipe-send-team-announcement
+  path: skills/recipe-send-team-announcement/SKILL.md
+  description: Send a team announcement via both Gmail and a Google Chat space.
+  dependencies:
+  - gws-gmail
+  - gws-chat
+- name: recipe-share-doc-and-notify
+  path: skills/recipe-share-doc-and-notify/SKILL.md
+  description: Share a Google Docs document with edit access and email collaborators the link.
+  dependencies:
+  - gws-drive
+  - gws-docs
+  - gws-gmail
+- name: recipe-share-event-materials
+  path: skills/recipe-share-event-materials/SKILL.md
+  description: Share Google Drive files with all attendees of a Google Calendar event.
+  dependencies:
+  - gws-calendar
+  - gws-drive
+- name: recipe-share-folder-with-team
+  path: skills/recipe-share-folder-with-team/SKILL.md
+  description: Share a Google Drive folder and all its contents with a list of collaborators.
+  dependencies:
+  - gws-drive
+- name: recipe-sync-contacts-to-sheet
+  path: skills/recipe-sync-contacts-to-sheet/SKILL.md
+  description: Export Google Contacts directory to a Google Sheets spreadsheet.
+  dependencies:
+  - gws-people
+  - gws-sheets
+- name: recipe-watch-drive-changes
+  path: skills/recipe-watch-drive-changes/SKILL.md
+  description: Subscribe to change notifications on a Google Drive file or folder.
+  dependencies:
+  - gws-events
