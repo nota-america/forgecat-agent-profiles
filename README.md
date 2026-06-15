@@ -22,8 +22,10 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [anthropics/knowledge-work-plugins](./profiles/anthropics/knowledge-work-plugins) | 15 | Knowledge work plugins — legal, finance, HR, marketing, operations, and more |
 | [anthropics/skills](./profiles/anthropics/skills) | 17 | Anthropic skills collection converted from `anthropics/skills` subpaths (docx, pdf, pptx, xlsx, mcp-builder, and more) |
 | [awslabs/aidlc-workflows](./profiles/awslabs/aidlc-workflows) | 1 | AWS AI-DLC workflow rules profile for planning, construction, and governance workflows |
+| [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing agent skills for conversion optimization, copywriting, SEO, paid ads, analytics, growth, and go-to-market workflows |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Plugins for Cursor — team workflows, continual learning, and iterative agent loops |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development profile with deep workflows for review, research, and design |
+| [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profiles built from existing profile packages |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack — 35+ AI engineering workflow skills for planning, QA, review, and deployment |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Google Gemini skills set converted into installable ForgeCat profiles (API dev, interactions API, live API) |
 | [juliusbrussee/caveman](./profiles/juliusbrussee/caveman) | 1 | Julius Brussee's caveman communication mode with compressed skills, commands, agents, and hooks |
@@ -44,7 +46,7 @@ This repository hosts a curated set of **AI Agent Profiles** for [ForgeCat](http
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu Agent Skills collection for userscripts, GitHub Actions docs, secure hosting, browser workflows, and Xdrop/Xget/tzst tooling |
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 
-Total profiles: **166** across **27** collections.
+Total profiles: **168** across **29** collections.
 
 ### Profile Directory Layout
 
