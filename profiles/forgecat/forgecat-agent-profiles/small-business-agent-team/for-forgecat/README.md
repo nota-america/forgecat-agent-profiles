@@ -46,7 +46,7 @@ The rule tells the host agent to:
 | Source profile | `@forgecat/anthropics_knowledge-work-plugins_small-business` |
 | Repository | https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent-team |
 | License | Apache-2.0 |
-| Source platform | ForgeCat |
+| Source platform | Multi-platform |
 
 ## Compatibility
 

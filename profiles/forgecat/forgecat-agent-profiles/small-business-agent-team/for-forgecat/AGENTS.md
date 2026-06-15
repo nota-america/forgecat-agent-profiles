@@ -1,9 +1,3 @@
----
-name: small-business-agent-orchestration
-description: Central orchestration rules for the Small Business agent team.
-alwaysApply: true
----
-
 # Small Business Agent Team
 
 This profile turns the Anthropic Small Business skills into a department-based agent team. The Small Business skills are bundled in this profile; use them by name instead of recreating their workflows.

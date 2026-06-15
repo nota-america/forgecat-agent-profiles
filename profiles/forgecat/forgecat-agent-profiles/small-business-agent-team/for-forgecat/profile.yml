@@ -7,9 +7,10 @@ repository: >-
   https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent-team
 license: Apache-2.0
 visibility: public
-sourcePlatform: forgecat
+sourcePlatform: multi-platform
 compatibility:
   platforms:
+    tested: []
     partial:
     - claude-code
     - cursor
