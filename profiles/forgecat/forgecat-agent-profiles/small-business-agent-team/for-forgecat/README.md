@@ -52,6 +52,6 @@ The rule tells the host agent to:
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
