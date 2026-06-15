@@ -1,11 +1,11 @@
 lockfileVersion: 1
-lastUpdated: 2026-06-15T19:24:28.554Z
+lastUpdated: 2026-06-15T20:34:49.523Z
 profiles:
   "@forgecat/dietrichgebert_ponytail":
-    version: 0.1.3
+    version: 0.1.4
     source: registry
-    integrity: sha256-ebcf250f195d16f901db97774f7dcc52d33055b16c6e84ba75014023f9ac49f2
-    installedAt: 2026-06-15T19:24:28.273Z
+    integrity: sha256-c489145ce769fee298f50872710c9b993cb81ade8640803cb2ee61656939d3c6
+    installedAt: 2026-06-15T20:34:49.267Z
     files:
       .claude/commands/ponytail-audit.toml:
         originalHash: 1e2764d3aabfb293
@@ -35,13 +35,6 @@ profiles:
         resourceType: command
         platform: claude-code
         source: standard-convert
-      .claude/rules/ponytail.mdc:
-        originalHash: ec0b9b7df760e74c
-        currentHash: ec0b9b7df760e74c
-        status: clean
-        resourceType: rule
-        platform: claude-code
-        source: standard-convert
       .claude/skills/ponytail/SKILL.md:
         originalHash: 78c2b0eb9ec05a5d
         currentHash: 78c2b0eb9ec05a5d
@@ -49,16 +42,16 @@ profiles:
         resourceType: skill
         platform: claude-code
         source: standard-convert
-      .claude/skills/ponytail-audit/SKILL.md:
-        originalHash: df56e712a895c4eb
-        currentHash: df56e712a895c4eb
+      .claude/skills/ponytail-debt/SKILL.md:
+        originalHash: fa458c4fd7a4a0fc
+        currentHash: fa458c4fd7a4a0fc
         status: clean
         resourceType: skill
         platform: claude-code
         source: standard-convert
-      .claude/skills/ponytail-debt/SKILL.md:
-        originalHash: fa458c4fd7a4a0fc
-        currentHash: fa458c4fd7a4a0fc
+      .claude/skills/ponytail-audit/SKILL.md:
+        originalHash: df56e712a895c4eb
+        currentHash: df56e712a895c4eb
         status: clean
         resourceType: skill
         platform: claude-code
@@ -120,8 +113,8 @@ profiles:
         resourceType: other
         platform: shared
       .forgecat/profiles/@forgecat/dietrichgebert_ponytail/README.md:
-        originalHash: 561a160d797ef7c1
-        currentHash: 561a160d797ef7c1
+        originalHash: 03ba2295c0b05bd9
+        currentHash: 03ba2295c0b05bd9
         status: clean
         resourceType: other
         platform: shared

@@ -95,9 +95,6 @@ rules:
   - path: AGENTS.md
     description: Ponytail always-on lazy senior developer instruction set for AGENTS.md-compatible hosts.
     alwaysApply: true
-  - path: rules/ponytail.mdc
-    description: Ponytail, lazy senior dev mode. Always pick the simplest solution that works.
-    alwaysApply: true
 hooks:
   - id: ponytail-session-start
     trigger: session_start
