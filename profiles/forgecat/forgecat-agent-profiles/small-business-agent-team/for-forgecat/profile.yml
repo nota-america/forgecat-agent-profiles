@@ -10,11 +10,11 @@ visibility: public
 sourcePlatform: multi-platform
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []
