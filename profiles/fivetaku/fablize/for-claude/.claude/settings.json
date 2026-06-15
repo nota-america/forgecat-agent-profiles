@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "_forgecat": "@forgecat/fivetaku_fablize#fablize-user-prompt-router",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code router.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "_forgecat": "@forgecat/fivetaku_fablize#fablize-finish-the-work",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code finish-the-work.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

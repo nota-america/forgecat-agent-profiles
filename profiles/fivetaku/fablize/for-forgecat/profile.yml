@@ -1,0 +1,64 @@
+name: "@forgecat/fivetaku_fablize"
+description: A Claude Code harness that makes Opus or any Claude model see multi-step work through with evidence, verification grounding, investigation protocol, per-task routing, and early-stop guard support.
+repository: https://github.com/fivetaku/fablize
+license: MIT
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+      - claude-code
+    partial:
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+keywords:
+  - harness
+  - verification
+  - completion
+  - workflow
+  - agentic
+skills:
+  - name: fablize
+    path: skills/fablize/SKILL.md
+    description: A harness that makes Opus (or any Claude model) behave like Fable — it enforces seeing a task through to the end, with evidence and verification, as procedure. Use when starting a multi-step task (2+ sequential stories), long autonomous work, debugging or root-cause investigation, building render/executable artifacts (HTML, SVG, games, charts), or when the user says "fablize", "see it through", "verify as you go", "split into goals".
+    scripts:
+      - path: skills/fablize/scripts/goals.py
+        description: Self-contained multi-story goal ledger and verification gate used by the fablize skill.
+        runtime: python
+      - path: skills/fablize/setup/setup.sh
+        description: Idempotent setup script that injects the fablize operating block into CLAUDE.md.
+        runtime: bash
+      - path: skills/fablize/setup/uninstall.sh
+        description: Removes the fablize operating block from CLAUDE.md.
+        runtime: bash
+      - path: skills/fablize/setup/star.sh
+        description: Optional GitHub star helper invoked by setup when gh authentication is available.
+        runtime: bash
+commands:
+  - name: setup
+    path: commands/setup.md
+    description: Set up fablize always-on (inject the operating block into CLAUDE.md). On setup it also stars the repo on GitHub via gh — no separate prompt.
+hooks:
+  - id: fablize-user-prompt-router
+    trigger: user_prompt_submit
+    command: ./hooks/router.sh
+    timeout: 10
+    description: Inject the smallest matching fablize discipline pack when a submitted prompt signals debugging or render/executable artifact work.
+    platforms:
+      - claude-code
+      - cursor
+  - id: fablize-user-prompt-router-codex
+    trigger: user_prompt_submit
+    command: ./hooks/router-codex.sh
+    timeout: 10
+    description: Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON.
+    platforms:
+      - codex
+  - id: fablize-finish-the-work
+    platform: claude-code
+    trigger: Stop
+    command: ./hooks/finish-the-work.sh
+    description: Detect early termination where the assistant only promises work without doing it, then block once to continue the work.
