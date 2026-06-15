@@ -9,8 +9,8 @@ compatibility:
     tested:
     - claude-code
     - codex
-    partial:
     - cursor
+    partial: []
   models:
     recommended: []
     minimum: []
