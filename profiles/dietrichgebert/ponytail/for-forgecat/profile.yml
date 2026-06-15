@@ -1,0 +1,111 @@
+name: "@forgecat/dietrichgebert_ponytail"
+description: Lazy senior developer mode for AI agents that pushes YAGNI, standard-library-first, native-first, and minimal-code behavior through skills, commands, rules, and lifecycle hooks.
+repository: https://github.com/DietrichGebert/ponytail
+license: MIT
+visibility: public
+sourcePlatform: multi-platform
+compatibility:
+  platforms:
+    tested: []
+    partial:
+      - claude-code
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+keywords:
+  - yagni
+  - minimalism
+  - code-review
+  - productivity
+skills:
+  - name: ponytail
+    path: skills/ponytail/SKILL.md
+    description: >
+      Forces the laziest solution that actually works, simplest, shortest, most
+      minimal. Channels a senior dev who has seen everything: question whether the
+      task needs to exist at all (YAGNI), reach for the standard library before
+      custom code, native platform features before dependencies, one line before
+      fifty. Supports intensity levels: lite, full (default), ultra. Use whenever
+      the user says "ponytail", "be lazy", "lazy mode", "simplest solution",
+      "minimal solution", "yagni", "do less", or "shortest path", and whenever
+      they complain about over-engineering, bloat, boilerplate, or unnecessary
+      dependencies.
+    scripts:
+      - path: hooks/ponytail-config.js
+        description: Resolves Ponytail default mode and config paths for lifecycle hooks.
+        runtime: node
+      - path: hooks/ponytail-instructions.js
+        description: Builds Ponytail mode instructions from the main skill body.
+        runtime: node
+      - path: hooks/ponytail-runtime.js
+        description: Persists Ponytail mode state and formats hook output.
+        runtime: node
+      - path: hooks/ponytail-statusline.sh
+        description: Displays the active Ponytail mode in Claude Code statusline output.
+        runtime: bash
+  - name: ponytail-audit
+    path: skills/ponytail-audit/SKILL.md
+    description: >-
+      Whole-repo audit for over-engineering. Like ponytail-review, but scans the
+      entire codebase instead of a diff: a ranked list of what to delete, simplify,
+      or replace with stdlib/native equivalents. Use when the user says "audit this
+      codebase", "audit for over-engineering", "what can I delete from this repo",
+      "find bloat", "ponytail-audit", or "/ponytail-audit". One-shot report, does
+      not apply fixes.
+  - name: ponytail-debt
+    path: skills/ponytail-debt/SKILL.md
+    description: >-
+      Harvest every `ponytail:` comment in the codebase into a debt ledger, so the
+      deliberate shortcuts and deferrals ponytail leaves behind get tracked instead
+      of rotting into "later means never". Use when the user says "ponytail debt",
+      "/ponytail-debt", "what did ponytail defer", "list the shortcuts", "ponytail
+      ledger", or "what did we mark to do later". One-shot report, changes nothing.
+  - name: ponytail-help
+    path: skills/ponytail-help/SKILL.md
+    description: >-
+      Quick-reference card for all ponytail modes, skills, and commands.
+      One-shot display, not a persistent mode. Trigger: /ponytail-help,
+      "ponytail help", "what ponytail commands", "how do I use ponytail".
+  - name: ponytail-review
+    path: skills/ponytail-review/SKILL.md
+    description: >-
+      Code review focused exclusively on over-engineering. Finds what to delete:
+      reinvented standard library, unneeded dependencies, speculative abstractions,
+      dead flexibility. One line per finding: location, what to cut, what replaces
+      it. Use when the user says "review for over-engineering", "what can we
+      delete", "is this over-engineered", "simplify review", or invokes
+      /ponytail-review. Complements correctness-focused review, this one only
+      hunts complexity.
+commands:
+  - name: ponytail
+    path: commands/ponytail.toml
+    description: Switch ponytail intensity level (lite/full/ultra/off)
+  - name: ponytail-review
+    path: commands/ponytail-review.toml
+    description: Review changes for over-engineering, what can be deleted
+  - name: ponytail-audit
+    path: commands/ponytail-audit.toml
+    description: Audit the whole repo for over-engineering, what can be deleted
+  - name: ponytail-debt
+    path: commands/ponytail-debt.toml
+    description: "Harvest ponytail: comments into a tracked debt ledger"
+rules:
+  - path: AGENTS.md
+    description: Ponytail always-on lazy senior developer instruction set for AGENTS.md-compatible hosts.
+    alwaysApply: true
+  - path: rules/ponytail.mdc
+    description: Ponytail, lazy senior dev mode. Always pick the simplest solution that works.
+    alwaysApply: true
+hooks:
+  - id: ponytail-session-start
+    trigger: session_start
+    command: ./hooks/ponytail-activate.js
+    timeout: 5
+    description: Activate Ponytail mode and inject the active ruleset at session start.
+  - id: ponytail-user-prompt-submit
+    trigger: user_prompt_submit
+    command: ./hooks/ponytail-mode-tracker.js
+    timeout: 5
+    description: Track Ponytail mode changes from user prompts.
