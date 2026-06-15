@@ -25,16 +25,16 @@ skills:
     path: skills/fablize/SKILL.md
     description: A harness that makes Opus (or any Claude model) behave like Fable — it enforces seeing a task through to the end, with evidence and verification, as procedure. Use when starting a multi-step task (2+ sequential stories), long autonomous work, debugging or root-cause investigation, building render/executable artifacts (HTML, SVG, games, charts), or when the user says "fablize", "see it through", "verify as you go", "split into goals".
     scripts:
-      - path: scripts/goals.py
+      - path: skills/fablize/scripts/goals.py
         description: Self-contained multi-story goal ledger and verification gate used by the fablize skill.
         runtime: python
-      - path: setup/setup.sh
+      - path: skills/fablize/setup/setup.sh
         description: Idempotent setup script that injects the fablize operating block into CLAUDE.md.
         runtime: bash
-      - path: setup/uninstall.sh
+      - path: skills/fablize/setup/uninstall.sh
         description: Removes the fablize operating block from CLAUDE.md.
         runtime: bash
-      - path: setup/star.sh
+      - path: skills/fablize/setup/star.sh
         description: Optional GitHub star helper invoked by setup when gh authentication is available.
         runtime: bash
 commands:

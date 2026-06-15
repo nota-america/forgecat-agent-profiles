@@ -9,6 +9,20 @@ description: A harness that makes Opus (or any Claude model) behave like Fable �
 >
 > Apply only what the task signals (smallest matching discipline; overlap only when genuinely multi-category). When installed always-on, this routing is automatic.
 
+## Helper root
+
+Before running any fablize helper command, resolve the installed helper root from the repo root:
+
+```bash
+FABLIZE_ROOT="${CLAUDE_PLUGIN_ROOT:-}"
+if [ -z "$FABLIZE_ROOT" ]; then
+  for candidate in .claude/skills/fablize .cursor/skills/fablize .agents/skills/fablize; do
+    if [ -f "$candidate/scripts/goals.py" ]; then FABLIZE_ROOT="$candidate"; break; fi
+  done
+fi
+[ -n "$FABLIZE_ROOT" ] || { echo "fablize: installed helper root not found"; exit 1; }
+```
+
 ## 0. First run — set up automatically (once)
 
 Before doing the requested task, check whether fablize has been onboarded on this machine:
@@ -23,7 +37,7 @@ cat ~/.fablize/progress.json 2>/dev/null
   - **Options (meaning, translate):** "Local — this project only (recommended)" / "Global — all projects" / "Skip".
   - On **Local/Global** — run setup (it injects the block, writes progress.json, and stars the repo via gh — all in one), then continue with the task:
     ```bash
-    bash ${CLAUDE_PLUGIN_ROOT}/setup/setup.sh <local|global>
+    bash "${FABLIZE_ROOT}/setup/setup.sh" <local|global>
     ```
   - On **Skip** — record it so it won't ask again, then continue:
     ```bash
@@ -37,24 +51,24 @@ This means the user can just run `/fablize` (or trigger it) without running setu
 Decompose into sequential stories and complete one at a time, producing evidence as you go. Self-contained — no external goal system required. Run from the repo root; state persists in `./.fablize/` (resume with `status` even across sessions).
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/goals.py create --brief "<summary>" \
+python3 "${FABLIZE_ROOT}/scripts/goals.py" create --brief "<summary>" \
   --goal "title::verifiable objective" --goal "title::..."   # the last goal must be a verification story
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/goals.py next         # activate a story + handoff
+python3 "${FABLIZE_ROOT}/scripts/goals.py" next         # activate a story + handoff
 # ... work that story only ...
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/goals.py checkpoint --id G001 --status complete --evidence "<concrete evidence>"
+python3 "${FABLIZE_ROOT}/scripts/goals.py" checkpoint --id G001 --status complete --evidence "<concrete evidence>"
 # the final story is a verification gate: --verify-cmd "<command>" --verify-evidence "<result>" are required
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/goals.py status       # first command when resuming
+python3 "${FABLIZE_ROOT}/scripts/goals.py" status       # first command when resuming
 ```
 
 Rules: `complete` requires non-empty evidence; the final goal cannot complete without a verify command and its result (the engine refuses). If blocked, record `--status blocked` and report. Single-step tasks skip this loop.
 
 ## 2. Deep investigation (debugging / unknown cause / review)
 
-Read and follow `${CLAUDE_PLUGIN_ROOT}/packs/investigation-protocol.txt`: reproduce first → form 3+ competing hypotheses → gather evidence per hypothesis → trace the full causal chain (removing the symptom is not removing the defect) → verify before and after → report the hypotheses you rejected. For reviews, report everything including low-confidence findings and filter in a separate step.
+Read and follow `${FABLIZE_ROOT}/packs/investigation-protocol.txt`: reproduce first → form 3+ competing hypotheses → gather evidence per hypothesis → trace the full causal chain (removing the symptom is not removing the defect) → verify before and after → report the hypotheses you rejected. For reviews, report everything including low-confidence findings and filter in a separate step.
 
 ## 3. Verification grounding (render/executable artifacts — always)
 
-For artifacts whose correctness only shows when run (HTML, SVG, games, UI, charts), follow `${CLAUDE_PLUGIN_ROOT}/packs/verification-grounding-pack.txt`: run it in the real renderer → observe the actual output → fix what the observation reveals → re-run. A static parse confirms well-formed, not correct.
+For artifacts whose correctness only shows when run (HTML, SVG, games, UI, charts), follow `${FABLIZE_ROOT}/packs/verification-grounding-pack.txt`: run it in the real renderer → observe the actual output → fix what the observation reveals → re-run. A static parse confirms well-formed, not correct.
 
 ## 3-1. Working style (always)
 
@@ -66,4 +80,4 @@ Signals you have hit the model's ceiling: stuck on the same problem 2+ times; op
 
 ## Install (always-on, optional)
 
-Run once: `bash ${CLAUDE_PLUGIN_ROOT}/setup/setup.sh` → choose local (recommended) or global. Uninstall: `bash ${CLAUDE_PLUGIN_ROOT}/setup/uninstall.sh`. The UserPromptSubmit router hook registers automatically when the plugin is installed.
+Run once: `bash "${FABLIZE_ROOT}/setup/setup.sh"` → choose local (recommended) or global. Uninstall: `bash "${FABLIZE_ROOT}/setup/uninstall.sh"`. The UserPromptSubmit router hook registers automatically when the plugin is installed.

@@ -20,7 +20,14 @@ If the user picks "Cancel", stop and do nothing.
 The user already consented in Step 1, so do NOT ask about the star again. For "Local" or "Global", run setup — it stars the repo itself at the end:
 
 ```bash
-bash ${CLAUDE_PLUGIN_ROOT}/setup/setup.sh <local|global>
+FABLIZE_ROOT="${CLAUDE_PLUGIN_ROOT:-}"
+if [ -z "$FABLIZE_ROOT" ]; then
+  for candidate in .claude/skills/fablize .cursor/skills/fablize .agents/skills/fablize; do
+    if [ -f "$candidate/setup/setup.sh" ]; then FABLIZE_ROOT="$candidate"; break; fi
+  done
+fi
+[ -n "$FABLIZE_ROOT" ] || { echo "fablize: installed helper root not found"; exit 1; }
+bash "${FABLIZE_ROOT}/setup/setup.sh" <local|global>
 ```
 
 `setup.sh` backs up CLAUDE.md, injects the `<!-- FABLIZE -->` block, writes `~/.fablize/progress.json`, and then stars the repo via `gh` (skips if already starred or gh is not signed in; never blocks). Report the result briefly.
