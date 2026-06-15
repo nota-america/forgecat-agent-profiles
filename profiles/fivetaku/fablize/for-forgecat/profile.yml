@@ -50,6 +50,12 @@ hooks:
     platforms:
       - claude-code
       - cursor
+  - id: fablize-user-prompt-router-codex
+    trigger: user_prompt_submit
+    command: ./hooks/router-codex.sh
+    timeout: 10
+    description: Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON.
+    platforms:
       - codex
   - id: fablize-finish-the-work
     platform: claude-code

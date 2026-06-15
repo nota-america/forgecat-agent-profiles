@@ -53,8 +53,18 @@ echo "fablize setup complete ($scope) — applies from the next session."
 echo "  state: ~/.fablize/progress.json"
 echo "  Uninstall: bash $ROOT/setup/uninstall.sh $scope"
 echo "  Note: the router hook is auto-registered on plugin install. The early-stop hook (finish-the-work)"
-echo "        is often already registered globally — register $ROOT/hooks/finish-the-work.sh as a Stop hook"
-echo "        only if it is not (avoid duplicates)."
+STOP_HOOK="$ROOT/hooks/finish-the-work.sh"
+if [ ! -f "$STOP_HOOK" ]; then
+  for candidate in "$PWD/.forgecat/profiles"/*/hooks/finish-the-work.sh "$PWD/.forgecat/profiles"/*/*/hooks/finish-the-work.sh; do
+    if [ -f "$candidate" ]; then STOP_HOOK="$candidate"; break; fi
+  done
+fi
+if [ -f "$STOP_HOOK" ]; then
+  echo "        is often already registered globally — register $STOP_HOOK as a Stop hook"
+  echo "        only if it is not (avoid duplicates)."
+else
+  echo "        is often already registered globally. No local finish-the-work hook path was found."
+fi
 
 # Star the repo (consent was given by the setup prompt's ⭐). Deterministic — not left to the caller.
 bash "$ROOT/setup/star.sh" || true

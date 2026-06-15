@@ -2,7 +2,7 @@
 # fablize UserPromptSubmit router — when a task signal is detected, inject the relevant pack discipline as context.
 # Routing: smallest matching pack only / overlap only when genuinely multi-category / mimic observable behavior only.
 # Only verified packs are auto-routed.
-# stdin: JSON {"prompt": "..."}. stdout: extra context (only when a signal matches). Always exits 0.
+# stdin: JSON {"prompt": "..."}. stdout: host-specific context output (only when a signal matches). Always exits 0.
 set -uo pipefail
 
 # Plugin root: prefer the runtime-injected var, else fall back to this script's location.
@@ -35,5 +35,19 @@ case "$low" in
     add "[fablize:grounding] Render/executable artifact signal — follow $PACKS/verification-grounding-pack.txt grounding loop: run it in the real renderer, observe the actual output, fix what the observation reveals, then re-run. A static check is not observation." ;;
 esac
 
-[ -n "$emit" ] && printf '%s\n' "$emit"
+output_mode="${FABLIZE_HOOK_OUTPUT:-${FORGECAT_HOOK_PLATFORM:-${FORGECAT_PLATFORM_ID:-}}}"
+case "$output_mode" in
+  codex)
+    [ -n "$emit" ] && printf '%s' "$emit" | python3 -c 'import json, sys
+print(json.dumps({
+  "hookSpecificOutput": {
+    "hookEventName": "UserPromptSubmit",
+    "additionalContext": sys.stdin.read()
+  }
+}, ensure_ascii=False))'
+    ;;
+  *)
+    [ -n "$emit" ] && printf '%s\n' "$emit"
+    ;;
+esac
 exit 0
