@@ -122,7 +122,7 @@ npx forgecat install @forgecat/googleworkspace_cli-skills
 |---|---|
 | Author | Justin Poehnelt |
 | Original repository | https://github.com/googleworkspace/cli/tree/main/skills |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Original commit | `a3768d0e82ad83cca2da97724e46bea4ff0e6dbd` |
 | License | Apache-2.0 |
 | Source platform | Agent Skills |
@@ -133,9 +133,9 @@ npx forgecat install @forgecat/googleworkspace_cli-skills
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
+| Claude Code | Tested |
 | Cursor | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
 ## Dependencies
 

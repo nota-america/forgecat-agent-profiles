@@ -6,11 +6,11 @@ visibility: public
 sourcePlatform: agent-skills
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
-    - cursor
     - codex
+    partial:
+    - cursor
   models:
     recommended: []
     minimum: []
