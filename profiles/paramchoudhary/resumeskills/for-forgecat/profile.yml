@@ -6,14 +6,21 @@ visibility: public
 sourcePlatform: agent-skills
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
       - claude-code
       - cursor
       - codex
+    partial: []
   models:
     recommended: []
     minimum: []
+platforms:
+  claude-code:
+    mode: override
+  cursor:
+    mode: override
+  codex:
+    mode: override
 skills:
   - name: academic-cv-builder
     path: skills/academic-cv-builder/SKILL.md

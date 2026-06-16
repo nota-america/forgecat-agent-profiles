@@ -49,7 +49,7 @@ npx forgecat install @forgecat/paramchoudhary_resumeskills
 |---|---|
 | Author | Param Choudhary |
 | Original repository | https://github.com/Paramchoudhary/ResumeSkills/tree/main/skills |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Original commit | `24c6edc8942edceba609e897ee8ec24f09d7581f` (2026-05-20) |
 | License | MIT |
 | Source platform | Agent Skills |
@@ -60,9 +60,9 @@ npx forgecat install @forgecat/paramchoudhary_resumeskills
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 
