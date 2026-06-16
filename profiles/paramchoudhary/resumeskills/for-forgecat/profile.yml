@@ -1,0 +1,77 @@
+name: "@forgecat/paramchoudhary_resumeskills"
+description: Resume and career-development agent skills for ATS optimization, resume writing, job matching, interview prep, and job offer decisions.
+repository: https://github.com/Paramchoudhary/ResumeSkills/tree/main/skills
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested: []
+    partial:
+      - claude-code
+      - cursor
+      - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+  - name: academic-cv-builder
+    path: skills/academic-cv-builder/SKILL.md
+    description: Format CVs for academic positions with publications, grants, and teaching
+  - name: career-changer-translator
+    path: skills/career-changer-translator/SKILL.md
+    description: Translate skills from one industry to another, identify transferable skills
+  - name: cover-letter-generator
+    path: skills/cover-letter-generator/SKILL.md
+    description: Create personalized, compelling cover letters from resume and job description
+  - name: creative-portfolio-resume
+    path: skills/creative-portfolio-resume/SKILL.md
+    description: Balance visual design with ATS compatibility for creative roles
+  - name: executive-resume-writer
+    path: skills/executive-resume-writer/SKILL.md
+    description: Create C-suite and VP level resumes emphasizing strategic leadership
+  - name: interview-prep-generator
+    path: skills/interview-prep-generator/SKILL.md
+    description: Generate STAR stories, practice questions, and talking points from resume
+  - name: job-description-analyzer
+    path: skills/job-description-analyzer/SKILL.md
+    description: Analyze job postings, calculate match scores, identify gaps, and create application strategy
+  - name: linkedin-profile-optimizer
+    path: skills/linkedin-profile-optimizer/SKILL.md
+    description: Optimize LinkedIn profile for searchability, recruiter visibility, and engagement
+  - name: offer-comparison-analyzer
+    path: skills/offer-comparison-analyzer/SKILL.md
+    description: Compare multiple job offers side-by-side with total compensation analysis
+  - name: portfolio-case-study-writer
+    path: skills/portfolio-case-study-writer/SKILL.md
+    description: Transform resume bullets into detailed portfolio case studies
+  - name: reference-list-builder
+    path: skills/reference-list-builder/SKILL.md
+    description: Format professional references properly and prepare reference materials
+  - name: resume-ats-optimizer
+    path: skills/resume-ats-optimizer/SKILL.md
+    description: Optimize resumes for Applicant Tracking Systems, check ATS compatibility, and analyze keyword match
+  - name: resume-bullet-writer
+    path: skills/resume-bullet-writer/SKILL.md
+    description: Transform weak resume bullets into achievement-focused statements with metrics and impact
+  - name: resume-formatter
+    path: skills/resume-formatter/SKILL.md
+    description: Ensure ATS-friendly formatting and create clean scannable layouts
+  - name: resume-quantifier
+    path: skills/resume-quantifier/SKILL.md
+    description: Find opportunities to add metrics and estimate numbers when exact data unavailable
+  - name: resume-section-builder
+    path: skills/resume-section-builder/SKILL.md
+    description: Create targeted resume sections optimized for different experience levels and roles
+  - name: resume-tailor
+    path: skills/resume-tailor/SKILL.md
+    description: Customize resume for specific job postings while maintaining truthfulness
+  - name: resume-version-manager
+    path: skills/resume-version-manager/SKILL.md
+    description: Track different resume versions, maintain master resume, manage tailored versions
+  - name: salary-negotiation-prep
+    path: skills/salary-negotiation-prep/SKILL.md
+    description: Research market rates, build negotiation strategy, and create counter-offer scripts
+  - name: tech-resume-optimizer
+    path: skills/tech-resume-optimizer/SKILL.md
+    description: Optimize resumes for software engineering, PM, and technical roles
