@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a broken profile install, runtime failure, or metadata problem.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: profile
+    attributes:
+      label: Profile
+      description: The full ForgeCat profile name.
+      placeholder: "@forgecat/openai_skills_frontend-skill"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - claude-code
+        - cursor
+        - codex
+        - registry or metadata
+        - other
+    validations:
+      required: true
+  - type: input
+    id: forgecat-version
+    attributes:
+      label: ForgeCat CLI version
+      placeholder: "forgecat --version"
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: Paste the exact command that failed.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Paste the error or describe the incorrect installed files/runtime behavior.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include logs, installed file paths, runtime prompts, screenshots, or source links.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for the same profile and failure.
+          required: true
+        - label: I included the exact profile name, platform, command, and error/result.
+          required: true

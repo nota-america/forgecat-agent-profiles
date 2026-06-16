@@ -1,0 +1,54 @@
+name: Profile request
+description: Request a new public source repository to be converted into a ForgeCat profile.
+title: "[Profile request]: "
+labels:
+  - profile-request
+body:
+  - type: input
+    id: source-repo
+    attributes:
+      label: Source repository
+      description: Link to the upstream GitHub repository.
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why this should be a ForgeCat profile
+      description: Who would use it, and what workflow would it improve?
+    validations:
+      required: true
+  - type: dropdown
+    id: target-platform
+    attributes:
+      label: Target platform
+      options:
+        - all supported platforms
+        - claude-code
+        - cursor
+        - codex
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: surfaces
+    attributes:
+      label: Agent surfaces
+      description: List any skills, agents, rules, commands, hooks, MCP servers, or config files you noticed.
+      placeholder: "skills/, agents/, .mcp.json, hooks/, rules, commands..."
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: Link to the upstream license, or say if you could not find one.
+      placeholder: "MIT, Apache-2.0, unknown, https://github.com/owner/repo/blob/main/LICENSE"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The source repository is public.
+          required: true
+        - label: I checked whether the repository has an explicit license.
+          required: true
