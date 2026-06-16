@@ -1,0 +1,49 @@
+name: Platform support
+description: Request testing, native artifacts, or compatibility fixes for a profile platform.
+title: "[Platform]: "
+labels:
+  - platform-support
+body:
+  - type: input
+    id: profile
+    attributes:
+      label: Profile
+      placeholder: "@forgecat/obra_superpowers"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - claude-code
+        - cursor
+        - codex
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: What support is needed?
+      description: Describe whether this is a missing tested artifact, partial support, install failure, or runtime issue.
+    validations:
+      required: true
+  - type: textarea
+    id: current-result
+    attributes:
+      label: Current result
+      description: Include install commands, runtime prompts, errors, or observed missing files.
+      render: text
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected result
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I included the exact profile and platform.
+          required: true
+        - label: I checked whether the profile already has a matching `for-<platform>` directory.
+          required: true
