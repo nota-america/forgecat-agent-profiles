@@ -2,8 +2,8 @@
 
 Install production-ready agent profiles for Claude Code, Cursor, and Codex with one command.
 
-[![Profiles](https://img.shields.io/badge/profiles-171-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-32-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-172-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-33-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 
 ![ForgeCat Agent Profiles](./assets/forgecat_banner.png)
@@ -105,6 +105,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers software-development methodology with hook-backed startup context |
 | [openai/skills](./profiles/openai/skills) | 45 | OpenAI skills for frontend, Figma, Playwright, deployment, documents, security, and more |
 | [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills for training, evaluation, inference, MLOps, RAG, multimodal systems, and papers |
+| [paramchoudhary/resumeskills](./profiles/paramchoudhary/resumeskills) | 1 | Resume and career-development skills for ATS optimization, resume writing, job matching, interview prep, and offer decisions |
 | [remotion-dev/skills](./profiles/remotion-dev/skills) | 1 | Remotion best-practices skill for video creation in React |
 | [tldraw/tldraw](./profiles/tldraw/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
@@ -115,7 +116,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 171 profiles across 32 collections.
+Total: 172 profiles across 33 collections.
 
 ## Profile Layout
 
