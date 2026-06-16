@@ -11,13 +11,11 @@ compatibility:
     tested:
     - claude-code
     - cursor
+    partial:
     - codex
   models:
     recommended: []
     minimum: []
-platforms:
-  codex:
-    mode: override
 skills:
 - name: business-pulse
   path: skills/business-pulse/SKILL.md
