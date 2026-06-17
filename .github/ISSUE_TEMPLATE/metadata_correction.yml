@@ -1,0 +1,58 @@
+name: Metadata or license correction
+description: Report incorrect profile metadata, source attribution, README text, or license information.
+title: "[Metadata]: "
+labels:
+  - metadata
+body:
+  - type: input
+    id: profile
+    attributes:
+      label: Profile
+      placeholder: "@forgecat/openai_skills_frontend-skill"
+    validations:
+      required: true
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: Correction type
+      options:
+        - Source repository URL
+        - Source path or commit
+        - License
+        - Attribution
+        - README description
+        - Platform compatibility metadata
+        - Install command
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value
+      description: Paste the current incorrect metadata or wording.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected value
+      description: Paste the corrected metadata, wording, or platform status.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link to upstream source files, license files, docs, release notes, or validation output.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I checked the upstream repository directly.
+          required: true
+        - label: I included evidence for the corrected value.
+          required: true

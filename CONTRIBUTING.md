@@ -15,6 +15,8 @@ Good contributions include:
 
 Please keep changes focused. A PR should usually touch one profile, one collection, or one repo-level maintenance concern.
 
+For the full acceptance bar, see [docs/profile-quality.md](./docs/profile-quality.md).
+
 ## Profile Requirements
 
 Every profile must have a canonical ForgeCat source directory:
@@ -109,6 +111,18 @@ Before submitting a repo-level documentation change, run:
 ruby scripts/check-readme-catalog.rb
 ```
 
+When changing profile platform metadata or native artifacts, run:
+
+```bash
+ruby scripts/check-profile-artifacts.rb --changed-only origin/main...HEAD
+```
+
+To audit the whole repository, run:
+
+```bash
+ruby scripts/check-profile-artifacts.rb
+```
+
 ## Pull Requests
 
 Open a PR with:
@@ -128,6 +142,10 @@ Use the issue templates for:
 
 - Broken installs or runtime failures
 - New profile requests
+- Metadata, license, or attribution corrections
 - Requests to test or add support for another platform
+- Maintainer requests for corrections, removal, or ownership changes
 
 Include exact commands, error output, profile name, ForgeCat CLI version, platform, and workspace details when reporting a failure.
+
+If you maintain an upstream project that has been converted into a ForgeCat profile, use the maintainer request template. We can correct the profile, remove it, or help you submit and maintain it directly.

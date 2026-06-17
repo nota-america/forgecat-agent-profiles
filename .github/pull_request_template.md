@@ -43,32 +43,49 @@ Checklist:
 - [ ] README install commands and profile metadata agree.
 - [ ] No secrets, local state, logs, or generated tool cache files are included.
 
-## Profile Conversion Review Checklist
+## Converter Agent Checklist
 
-Complete this table for new profiles, profile fixes, and platform compatibility updates.
+Complete this section for profile conversions, profile fixes, and platform compatibility updates. For repo maintenance PRs, mark non-applicable rows `N/A`.
 
-| Review item | Required detail |
+### At a glance
+
+| Field | Value |
 |---|---|
-| Internal file edits | List any edits made inside copied upstream files. Write `None` if upstream files were preserved without internal edits. |
-| Behavior parity risk | Explain whether the conversion could change upstream behavior. Include the reason and mitigation for any non-low risk. |
-| Platform install/runtime | For each tested platform, include the install command, installed skill/agent/hook/command/MCP surface exercised, and exact result. |
-| Notes / special cases | Record partial support, auth requirements, MCP prompts, unsupported files, source limitations, or other reviewer context. |
+| Profile |  |
+| Source repo |  |
+| Profile PR |  |
+| Registry version |  |
+| Overall status |  |
+| Main caveat |  |
+| Operator next action |  |
 
-## Platform Evidence
+### Review checklist
 
-Complete this section when `compatibility.platforms` changes.
-
-| Platform | Status | Install command | Runtime surface tested | Result |
+| Area | Status | Evidence | Risk / next action | Notes / special cases |
 |---|---|---|---|---|
-| Claude Code | not tested |  |  |  |
-| Cursor | not tested |  |  |  |
-| Codex | not tested |  |  |  |
+| PR scope |  |  |  |  |
+| Profile identity |  |  |  |  |
+| Source inventory |  |  |  |  |
+| Converted components |  |  |  |  |
+| Internal file edits |  |  |  |  |
+| Behavior parity risk |  |  |  |  |
+| Manifest/schema |  |  |  |  |
+| README/docs |  |  |  |  |
+| QA findings |  |  |  |  |
+| Validation gates |  |  |  |  |
+| Registry/version |  |  |  |  |
+| Platform install/runtime |  |  |  |  |
+| Native artifacts |  |  |  |  |
+| License/security |  |  |  |  |
+| Archive/history |  |  |  |  |
+| Operator decision |  |  |  |  |
 
 Checklist:
 
 - [ ] Tested platforms have matching native `for-<platform>` directories.
 - [ ] Partial platforms list known limitations.
 - [ ] Runtime testing exercised the installed skill, agent, hook, command, or MCP surface, not only a generic prompt.
+- [ ] The same filled checklist is included in the converter agent's final reply.
 
 ## Notes
 
