@@ -21,6 +21,8 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
 
 3. Find the dashboard code. The dashboard is at `packages/dashboard/` relative to this plugin's root directory. Check these paths in order and use the first that exists:
    - `${CLAUDE_PLUGIN_ROOT}/packages/dashboard/` (Claude Code runtime root, highest priority)
+   - `${FORGECAT_PROFILE_DIR}/packages/dashboard/` when ForgeCat exposes the installed profile runtime directory
+   - `<project-root>/.forgecat/profiles/@forgecat/egonex-ai_understand-anything_understand-anything-plugin/packages/dashboard/` (ForgeCat install runtime storage)
    - `~/.understand-anything-plugin/packages/dashboard/` (universal symlink, all installs)
    - Two levels up from `~/.agents/skills/understand-dashboard` real path (self-relative fallback)
    - Two levels up from `~/.copilot/skills/understand-dashboard` real path (Copilot personal skills fallback)
@@ -36,10 +38,18 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    SELF_RELATIVE=$([ -n "$SKILL_REAL" ] && cd "$SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
    COPILOT_SKILL_REAL=$(realpath ~/.copilot/skills/understand-dashboard 2>/dev/null || readlink -f ~/.copilot/skills/understand-dashboard 2>/dev/null || echo "")
    COPILOT_SELF_RELATIVE=$([ -n "$COPILOT_SKILL_REAL" ] && cd "$COPILOT_SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
+   FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything_understand-anything-plugin"
+   FORGECAT_PROFILE_BARE="egonex-ai_understand-anything_understand-anything-plugin"
+   FORGECAT_RUNTIME_ROOT="${PROJECT_DIR:-${PROJECT_ROOT:-$PWD}}"
 
    PLUGIN_ROOT=""
    for candidate in \
-     "${CLAUDE_PLUGIN_ROOT}" \
+     "${CLAUDE_PLUGIN_ROOT:-}" \
+     "${FORGECAT_PROFILE_DIR:-}" \
+     "$FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME" \
+     "$FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_BARE" \
+     "$PWD/.forgecat/profiles/$FORGECAT_PROFILE_NAME" \
+     "$PWD/.forgecat/profiles/$FORGECAT_PROFILE_BARE" \
      "$HOME/.understand-anything-plugin" \
      "$SELF_RELATIVE" \
      "$COPILOT_SELF_RELATIVE" \
@@ -56,6 +66,11 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
      echo "Error: Cannot find the understand-anything plugin root."
      echo "Checked:"
      echo "  - ${CLAUDE_PLUGIN_ROOT:-<unset CLAUDE_PLUGIN_ROOT>}"
+     echo "  - ${FORGECAT_PROFILE_DIR:-<unset FORGECAT_PROFILE_DIR>}"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_BARE"
+     echo "  - $PWD/.forgecat/profiles/$FORGECAT_PROFILE_NAME"
+     echo "  - $PWD/.forgecat/profiles/$FORGECAT_PROFILE_BARE"
      echo "  - $HOME/.understand-anything-plugin"
      echo "  - ${SELF_RELATIVE:-<unresolved path derived from ~/.agents/skills/understand-dashboard>}"
      echo "  - ${COPILOT_SELF_RELATIVE:-<unresolved path derived from ~/.copilot/skills/understand-dashboard>}"
