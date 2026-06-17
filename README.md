@@ -2,8 +2,8 @@
 
 Install production-ready agent profiles for Claude Code, Cursor, and Codex with one command.
 
-[![Profiles](https://img.shields.io/badge/profiles-172-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-33-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-173-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-34-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 
 ![ForgeCat Agent Profiles](./assets/forgecat_banner.png)
@@ -89,6 +89,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing skills for conversion, copywriting, SEO, paid ads, analytics, and GTM work |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Cursor plugins for team workflows, continual learning, and iterative agent loops |
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
+| [egonex-ai/understand-anything](./profiles/egonex-ai/understand-anything) | 1 | Codebase understanding skills for knowledge graphs, dashboards, architecture analysis, and onboarding |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
 | [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
@@ -116,7 +117,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 172 profiles across 33 collections.
+Total: 173 profiles across 34 collections.
 
 ## Profile Layout
 
