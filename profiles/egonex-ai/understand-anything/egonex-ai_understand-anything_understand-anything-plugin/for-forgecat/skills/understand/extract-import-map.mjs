@@ -62,8 +62,11 @@ async function readFilesParallel(paths) {
 }
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// skills/understand/ -> plugin root is two dirs up
-const pluginRoot = resolve(__dirname, '../..');
+// ForgeCat installs the package workspace as companion files under this skill.
+// Source checkouts from the original plugin keep the workspace two dirs up.
+const pluginRoot = existsSync(resolve(__dirname, 'package.json'))
+  ? __dirname
+  : resolve(__dirname, '../..');
 const require = createRequire(resolve(pluginRoot, 'package.json'));
 
 // ---------------------------------------------------------------------------

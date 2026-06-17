@@ -57,6 +57,14 @@ FORGECAT_RUNTIME_ROOT="${PROJECT_ROOT:-$PWD}"
 
 PLUGIN_ROOT=""
 for candidate in \
+  "$FORGECAT_RUNTIME_ROOT/.claude" \
+  "$FORGECAT_RUNTIME_ROOT/.codex" \
+  "$FORGECAT_RUNTIME_ROOT/.agents" \
+  "$FORGECAT_RUNTIME_ROOT/.cursor" \
+  "$PWD/.claude" \
+  "$PWD/.codex" \
+  "$PWD/.agents" \
+  "$PWD/.cursor" \
   "${CLAUDE_PLUGIN_ROOT:-}" \
   "${FORGECAT_PROFILE_DIR:-}" \
   "$FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME" \
@@ -70,7 +78,7 @@ for candidate in \
   "$HOME/.opencode/understand-anything/understand-anything-plugin" \
   "$HOME/.pi/understand-anything/understand-anything-plugin" \
   "$HOME/understand-anything/understand-anything-plugin"; do
-  if [ -n "$candidate" ] && [ -f "$candidate/package.json" ] && [ -f "$candidate/pnpm-workspace.yaml" ]; then
+  if [ -n "$candidate" ] && { [ -f "$candidate/agents/domain-analyzer.md" ] || [ -f "$candidate/agents/domain-analyzer.toml" ]; }; then
     PLUGIN_ROOT="$candidate"
     break
   fi
@@ -79,6 +87,14 @@ done
 if [ -z "$PLUGIN_ROOT" ]; then
   echo "Error: Cannot find the understand-anything plugin root."
   echo "Checked:"
+  echo "  - $FORGECAT_RUNTIME_ROOT/.claude"
+  echo "  - $FORGECAT_RUNTIME_ROOT/.codex"
+  echo "  - $FORGECAT_RUNTIME_ROOT/.agents"
+  echo "  - $FORGECAT_RUNTIME_ROOT/.cursor"
+  echo "  - $PWD/.claude"
+  echo "  - $PWD/.codex"
+  echo "  - $PWD/.agents"
+  echo "  - $PWD/.cursor"
   echo "  - ${CLAUDE_PLUGIN_ROOT:-<unset CLAUDE_PLUGIN_ROOT>}"
   echo "  - ${FORGECAT_PROFILE_DIR:-<unset FORGECAT_PROFILE_DIR>}"
   echo "  - $FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME"
@@ -135,7 +151,7 @@ The preprocessing script does NOT produce a domain graph — it produces **raw m
 
 ### Phase 4: Domain Analysis
 
-1. Read the domain-analyzer agent prompt from `$PLUGIN_ROOT/agents/domain-analyzer.md`
+1. Read the domain-analyzer agent prompt from `$PLUGIN_ROOT/agents/domain-analyzer.md` or, on Codex installs, `$PLUGIN_ROOT/agents/domain-analyzer.toml`
 2. Dispatch a subagent with the domain-analyzer prompt + the context from Phase 2 or 3
 3. The agent writes its output to `$PROJECT_ROOT/.understand-anything/intermediate/domain-analysis.json`
 

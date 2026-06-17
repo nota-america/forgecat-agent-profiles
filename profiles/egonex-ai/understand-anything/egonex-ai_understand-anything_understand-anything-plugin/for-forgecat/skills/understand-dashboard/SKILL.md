@@ -21,6 +21,9 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
 
 3. Find the dashboard code. The dashboard is at `packages/dashboard/` relative to this plugin's root directory. Check these paths in order and use the first that exists:
    - `${CLAUDE_PLUGIN_ROOT}/packages/dashboard/` (Claude Code runtime root, highest priority)
+   - `<project-root>/.claude/skills/understand/packages/dashboard/` (ForgeCat Claude Code install)
+   - `<project-root>/.agents/skills/understand/packages/dashboard/` (ForgeCat Codex install)
+   - `<project-root>/.cursor/skills/understand/packages/dashboard/` (ForgeCat Cursor install)
    - `${FORGECAT_PROFILE_DIR}/packages/dashboard/` when ForgeCat exposes the installed profile runtime directory
    - `<project-root>/.forgecat/profiles/@forgecat/egonex-ai_understand-anything_understand-anything-plugin/packages/dashboard/` (ForgeCat install runtime storage)
    - `~/.understand-anything-plugin/packages/dashboard/` (universal symlink, all installs)
@@ -44,6 +47,12 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
 
    PLUGIN_ROOT=""
    for candidate in \
+     "$FORGECAT_RUNTIME_ROOT/.claude/skills/understand" \
+     "$FORGECAT_RUNTIME_ROOT/.agents/skills/understand" \
+     "$FORGECAT_RUNTIME_ROOT/.cursor/skills/understand" \
+     "$PWD/.claude/skills/understand" \
+     "$PWD/.agents/skills/understand" \
+     "$PWD/.cursor/skills/understand" \
      "${CLAUDE_PLUGIN_ROOT:-}" \
      "${FORGECAT_PROFILE_DIR:-}" \
      "$FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME" \
@@ -65,6 +74,12 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    if [ -z "$PLUGIN_ROOT" ]; then
      echo "Error: Cannot find the understand-anything plugin root."
      echo "Checked:"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.claude/skills/understand"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.agents/skills/understand"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.cursor/skills/understand"
+     echo "  - $PWD/.claude/skills/understand"
+     echo "  - $PWD/.agents/skills/understand"
+     echo "  - $PWD/.cursor/skills/understand"
      echo "  - ${CLAUDE_PLUGIN_ROOT:-<unset CLAUDE_PLUGIN_ROOT>}"
      echo "  - ${FORGECAT_PROFILE_DIR:-<unset FORGECAT_PROFILE_DIR>}"
      echo "  - $FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME"

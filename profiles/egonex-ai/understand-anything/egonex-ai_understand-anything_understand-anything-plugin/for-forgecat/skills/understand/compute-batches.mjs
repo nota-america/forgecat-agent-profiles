@@ -27,7 +27,12 @@ import { createRequire } from 'node:module';
 const IO_PARALLELISM = 64;
 
 const __filename = fileURLToPath(import.meta.url);
-const PLUGIN_ROOT = resolve(dirname(__filename), '../..');
+// ForgeCat installs the package workspace as companion files under this skill.
+// Source checkouts from the original plugin keep the workspace two dirs up.
+const __dirname = dirname(__filename);
+const PLUGIN_ROOT = existsSync(resolve(__dirname, 'package.json'))
+  ? __dirname
+  : resolve(__dirname, '../..');
 const require = createRequire(resolve(PLUGIN_ROOT, 'package.json'));
 
 let core;

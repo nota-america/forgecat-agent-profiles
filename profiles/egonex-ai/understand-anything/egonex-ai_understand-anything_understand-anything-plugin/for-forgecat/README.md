@@ -49,7 +49,7 @@ npx forgecat install @forgecat/egonex-ai_understand-anything_understand-anything
 |---|---|
 | Author | Egonex |
 | Original repository | https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin |
-| Version | `0.0.0` |
+| Version | `0.1.2` |
 | Original commit | `ba9ba1f73ce4f2ce35aeaaa55b01c9f8d4279bfe` |
 | License | MIT |
 | Source platform | Claude Code |

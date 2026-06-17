@@ -85,8 +85,14 @@ Determine whether to run a full analysis or incremental update.
    FORGECAT_PROFILE_BARE="egonex-ai_understand-anything_understand-anything-plugin"
    FORGECAT_RUNTIME_ROOT="${PROJECT_ROOT:-$PWD}"
 
-   PLUGIN_ROOT=""
+   PACKAGE_ROOT=""
    for candidate in \
+     "$FORGECAT_RUNTIME_ROOT/.claude/skills/understand" \
+     "$FORGECAT_RUNTIME_ROOT/.agents/skills/understand" \
+     "$FORGECAT_RUNTIME_ROOT/.cursor/skills/understand" \
+     "$PWD/.claude/skills/understand" \
+     "$PWD/.agents/skills/understand" \
+     "$PWD/.cursor/skills/understand" \
      "${CLAUDE_PLUGIN_ROOT:-}" \
      "${FORGECAT_PROFILE_DIR:-}" \
      "$FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME" \
@@ -101,14 +107,20 @@ Determine whether to run a full analysis or incremental update.
      "$HOME/.pi/understand-anything/understand-anything-plugin" \
      "$HOME/understand-anything/understand-anything-plugin"; do
      if [ -n "$candidate" ] && [ -f "$candidate/package.json" ] && [ -f "$candidate/pnpm-workspace.yaml" ]; then
-       PLUGIN_ROOT="$candidate"
+       PACKAGE_ROOT="$candidate"
        break
      fi
    done
 
-   if [ -z "$PLUGIN_ROOT" ]; then
-     echo "Error: Cannot find the understand-anything plugin root."
+   if [ -z "$PACKAGE_ROOT" ]; then
+     echo "Error: Cannot find the understand-anything package root."
      echo "Checked:"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.claude/skills/understand"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.agents/skills/understand"
+     echo "  - $FORGECAT_RUNTIME_ROOT/.cursor/skills/understand"
+     echo "  - $PWD/.claude/skills/understand"
+     echo "  - $PWD/.agents/skills/understand"
+     echo "  - $PWD/.cursor/skills/understand"
      echo "  - ${CLAUDE_PLUGIN_ROOT:-<unset CLAUDE_PLUGIN_ROOT>}"
      echo "  - ${FORGECAT_PROFILE_DIR:-<unset FORGECAT_PROFILE_DIR>}"
      echo "  - $FORGECAT_RUNTIME_ROOT/.forgecat/profiles/$FORGECAT_PROFILE_NAME"
@@ -126,8 +138,8 @@ Determine whether to run a full analysis or incremental update.
      exit 1
    fi
 
-   if [ ! -f "$PLUGIN_ROOT/packages/core/dist/index.js" ]; then
-     cd "$PLUGIN_ROOT" && (pnpm install --frozen-lockfile 2>/dev/null || pnpm install) && pnpm --filter @understand-anything/core build
+   if [ ! -f "$PACKAGE_ROOT/packages/core/dist/index.js" ]; then
+     cd "$PACKAGE_ROOT" && (pnpm install --frozen-lockfile 2>/dev/null || pnpm install) && pnpm --filter @understand-anything/core build
    fi
    ```
 
