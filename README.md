@@ -5,8 +5,6 @@ Install production-ready agent profiles for Claude Code, Cursor, and Codex with 
 [![Profiles](https://img.shields.io/badge/profiles-172-blue)](#browse-profiles)
 [![Collections](https://img.shields.io/badge/collections-33-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
-[![Source Fidelity](https://img.shields.io/badge/source--fidelity-reviewed-green)](#profile-quality)
-[![Install Evidence](https://img.shields.io/badge/tested--platforms-evidence--based-green)](#profile-quality)
 
 ![ForgeCat Agent Profiles](./assets/forgecat_banner.png)
 
@@ -60,8 +58,6 @@ ForgeCat profiles are curated to be source-faithful and reviewable, not just cop
 | License checked | The upstream license is reflected in `for-forgecat/profile.yml` when it is clear. |
 | Install evidence | A platform is marked tested only after a real install/runtime check. |
 | Native artifact included | Tested platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
-
-See [docs/profile-quality.md](./docs/profile-quality.md) for the full acceptance bar and review checklist.
 
 ## Supported Platforms
 
@@ -177,7 +173,6 @@ Before opening a PR:
 
 If you maintain an upstream repository that has been converted here, use the maintainer request issue template for corrections, takedown requests, or ownership changes. We can update attribution, fix platform notes, remove a profile, or help you submit the profile directly.
 
-For outreach wording and optional docs/install snippets, see [docs/maintainer-outreach.md](./docs/maintainer-outreach.md).
 
 ## Request a Profile
 

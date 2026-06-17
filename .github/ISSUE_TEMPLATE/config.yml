@@ -3,9 +3,3 @@ contact_links:
   - name: ForgeCat docs
     url: https://forgecat.ai/docs
     about: Read the ForgeCat documentation.
-  - name: Profile quality bar
-    url: https://github.com/nota-america/forgecat-agent-profiles/blob/main/docs/profile-quality.md
-    about: Review profile acceptance criteria before opening a contribution.
-  - name: Maintainer outreach
-    url: https://github.com/nota-america/forgecat-agent-profiles/blob/main/docs/maintainer-outreach.md
-    about: Read how ForgeCat contacts upstream maintainers.

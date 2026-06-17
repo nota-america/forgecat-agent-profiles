@@ -15,8 +15,6 @@ Good contributions include:
 
 Please keep changes focused. A PR should usually touch one profile, one collection, or one repo-level maintenance concern.
 
-For the full acceptance bar, see [docs/profile-quality.md](./docs/profile-quality.md).
-
 ## Profile Requirements
 
 Every profile must have a canonical ForgeCat source directory:
