@@ -1,16 +1,45 @@
 # ForgeCat Agent Profiles
 
-Install production-ready agent profiles for Claude Code, Cursor, and Codex with one command.
+<div align="center">
+  <a href="https://github.com/nota-america/forgecat-agent-profiles">
+    <img width="1500" alt="ForgeCat Agent Profiles" src="./assets/forgecat_banner.png" />
+  </a>
+
+  <h3 align="center">Open catalog of cross-platform agent profiles</h3>
+
+  <div align="center">
+    <a href="https://forgecat.ai">Website</a> |
+    <a href="https://forgecat.ai/docs">Documentation</a> |
+    <a href="#quick-start">Quick Start</a> |
+    <a href="#browse-profiles">Browse Profiles</a> |
+    <a href="https://github.com/nota-america/forgecat-agent-profiles/issues/new?template=profile_request.yml">Request a Profile</a>
+  </div>
+</div>
+
+<br />
+
+<div align="center">
 
 [![Profiles](https://img.shields.io/badge/profiles-173-blue)](#browse-profiles)
 [![Collections](https://img.shields.io/badge/collections-34-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
+[![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/forgecat.svg)](https://www.npmjs.com/package/forgecat)
 
-![ForgeCat Agent Profiles](./assets/forgecat_banner.png)
+</div>
 
-ForgeCat profiles package the files that make coding agents useful: skills, agents, rules, commands, hooks, and MCP settings. This repository curates open agent profiles from public projects and turns them into installable packages that work across supported tools.
+<h3 align="center">Star the catalog to help developers discover reusable agent workflows.</h3>
 
-## Install a Profile
+ForgeCat Agent Profiles is the public catalog for installable agent profiles: skills, agents, rules, commands, hooks, and MCP settings packaged from useful open-source projects and made available across supported coding tools.
+
+- **One catalog for agent setup**: Browse converted profiles from public Claude Code, Cursor, Codex, MCP, and agent-skill repositories.
+- **Cross-platform installs**: Use the same profile source across Claude Code, Cursor, and Codex where compatibility is available.
+- **Source-faithful packaging**: Keep attribution, license metadata, upstream behavior, and profile-specific caveats visible.
+- **Reviewable platform evidence**: Mark platforms as tested only after install/runtime checks and matching native artifacts.
+
+<h2 id="quick-start">Quick Start</h2>
 
 Install the ForgeCat CLI:
 
@@ -18,7 +47,7 @@ Install the ForgeCat CLI:
 npm install -g forgecat
 ```
 
-Search for profiles:
+Search the catalog:
 
 ```bash
 forgecat search frontend
@@ -36,16 +65,26 @@ forgecat install @forgecat/obra_superpowers -p cursor
 
 Use `forgecat install <profile> -p <platform>` with one of the supported platform ids below.
 
-## Why Star This Repo
+## Why ForgeCat
 
-This repository is the public catalog of ForgeCat-compatible agent profiles. Starring it helps developers discover reusable agent workflows instead of rebuilding the same skills, rules, and MCP setup in each tool.
+Agent workflows are increasingly stored as project files: `AGENTS.md`, `CLAUDE.md`, `.cursorrules`, skills, subagents, commands, hooks, and MCP configuration. ForgeCat profiles make those workflows easier to discover, inspect, install, and port across tools.
 
-You should watch or star this repo if you want:
+| Need | ForgeCat profile repo provides |
+|---|---|
+| Find useful agent workflows | A curated catalog grouped by original source owner and repository |
+| Reuse across coding tools | Platform-aware profile packages for Claude Code, Cursor, and Codex |
+| Trust what is being installed | Source links, license metadata, profile READMEs, and conversion notes |
+| Improve the catalog | Issue templates for profile requests, metadata fixes, platform support, and maintainer requests |
 
-- New agent profiles as they are converted and tested
-- Cross-platform ports of useful Claude Code, Cursor, and Codex workflows
-- Practical examples of profile packaging, attribution, licensing, and platform compatibility
-- A place to request profiles from public agent-skill repositories
+## Supported Platforms
+
+| Platform | ForgeCat id | What gets installed |
+|---|---|---|
+| Claude Code | `claude-code` | Claude-native skills, agents, commands, MCP, hooks, and project settings where supported |
+| Cursor | `cursor` | Cursor rules, agents, MCP configuration, and compatible profile resources |
+| Codex | `codex` | Codex skills, instructions, MCP configuration, hooks, and compatible profile resources |
+
+Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. When a profile is marked tested, the matching native `for-<platform>` artifact should also exist in the profile directory.
 
 ## Profile Quality
 
@@ -58,16 +97,6 @@ ForgeCat profiles are curated to be source-faithful and reviewable, not just cop
 | License checked | The upstream license is reflected in `for-forgecat/profile.yml` when it is clear. |
 | Install evidence | A platform is marked tested only after a real install/runtime check. |
 | Native artifact included | Tested platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
-
-## Supported Platforms
-
-| Platform | ForgeCat id | What gets installed |
-|---|---|---|
-| Claude Code | `claude-code` | Claude-native skills, agents, commands, MCP, hooks, and project settings where supported |
-| Cursor | `cursor` | Cursor rules, agents, MCP configuration, and compatible profile resources |
-| Codex | `codex` | Codex skills, instructions, MCP configuration, hooks, and compatible profile resources |
-
-Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. When a profile is marked tested, the matching native `for-<platform>` artifact should also exist in the profile directory.
 
 ## Featured Profiles
 
