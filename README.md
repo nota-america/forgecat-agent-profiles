@@ -1,5 +1,3 @@
-# ForgeCat Agent Profiles
-
 <div align="center">
   <a href="https://github.com/nota-america/forgecat-agent-profiles">
     <img width="1500" alt="ForgeCat Agent Profiles" src="./assets/forgecat_banner.png" />
