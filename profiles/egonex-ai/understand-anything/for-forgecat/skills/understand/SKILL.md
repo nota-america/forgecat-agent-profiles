@@ -81,8 +81,8 @@ Determine whether to run a full analysis or incremental update.
    SELF_RELATIVE=$([ -n "$SKILL_REAL" ] && cd "$SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
    COPILOT_SKILL_REAL=$(realpath ~/.copilot/skills/understand 2>/dev/null || readlink -f ~/.copilot/skills/understand 2>/dev/null || echo "")
    COPILOT_SELF_RELATIVE=$([ -n "$COPILOT_SKILL_REAL" ] && cd "$COPILOT_SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
-   FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything_understand-anything-plugin"
-   FORGECAT_PROFILE_BARE="egonex-ai_understand-anything_understand-anything-plugin"
+   FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything"
+   FORGECAT_PROFILE_BARE="egonex-ai_understand-anything"
    FORGECAT_RUNTIME_ROOT="${PROJECT_ROOT:-$PWD}"
 
    PACKAGE_ROOT=""

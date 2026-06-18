@@ -25,7 +25,7 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    - `<project-root>/.agents/skills/understand/packages/dashboard/` (ForgeCat Codex install)
    - `<project-root>/.cursor/skills/understand/packages/dashboard/` (ForgeCat Cursor install)
    - `${FORGECAT_PROFILE_DIR}/packages/dashboard/` when ForgeCat exposes the installed profile runtime directory
-   - `<project-root>/.forgecat/profiles/@forgecat/egonex-ai_understand-anything_understand-anything-plugin/packages/dashboard/` (ForgeCat install runtime storage)
+   - `<project-root>/.forgecat/profiles/@forgecat/egonex-ai_understand-anything/packages/dashboard/` (ForgeCat install runtime storage)
    - `~/.understand-anything-plugin/packages/dashboard/` (universal symlink, all installs)
    - Two levels up from `~/.agents/skills/understand-dashboard` real path (self-relative fallback)
    - Two levels up from `~/.copilot/skills/understand-dashboard` real path (Copilot personal skills fallback)
@@ -41,8 +41,8 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    SELF_RELATIVE=$([ -n "$SKILL_REAL" ] && cd "$SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
    COPILOT_SKILL_REAL=$(realpath ~/.copilot/skills/understand-dashboard 2>/dev/null || readlink -f ~/.copilot/skills/understand-dashboard 2>/dev/null || echo "")
    COPILOT_SELF_RELATIVE=$([ -n "$COPILOT_SKILL_REAL" ] && cd "$COPILOT_SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
-   FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything_understand-anything-plugin"
-   FORGECAT_PROFILE_BARE="egonex-ai_understand-anything_understand-anything-plugin"
+   FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything"
+   FORGECAT_PROFILE_BARE="egonex-ai_understand-anything"
    FORGECAT_RUNTIME_ROOT="${PROJECT_DIR:-${PROJECT_ROOT:-$PWD}}"
 
    PLUGIN_ROOT=""

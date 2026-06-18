@@ -1,5 +1,3 @@
-*written by ForgeCat*
-
 ![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Understand Anything Plugin
@@ -17,7 +15,7 @@ AI-powered codebase understanding for analyzing projects, building knowledge gra
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/egonex-ai_understand-anything_understand-anything-plugin
+npx forgecat install @forgecat/egonex-ai_understand-anything
 ```
 
 ## Skills
@@ -49,7 +47,7 @@ npx forgecat install @forgecat/egonex-ai_understand-anything_understand-anything
 |---|---|
 | Author | Egonex |
 | Original repository | https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin |
-| Version | `0.1.2` |
+| Version | `0.1.0` |
 | Original commit | `ba9ba1f73ce4f2ce35aeaaa55b01c9f8d4279bfe` |
 | License | MIT |
 | Source platform | Claude Code |

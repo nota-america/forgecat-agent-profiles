@@ -1,4 +1,4 @@
-name: "@forgecat/egonex-ai_understand-anything_understand-anything-plugin"
+name: "@forgecat/egonex-ai_understand-anything"
 description: AI-powered codebase understanding for analyzing projects, building knowledge graphs, launching dashboards, explaining code, and onboarding teams.
 repository: https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin
 license: MIT

@@ -51,8 +51,8 @@ SKILL_REAL=$(realpath ~/.agents/skills/understand-domain 2>/dev/null || readlink
 SELF_RELATIVE=$([ -n "$SKILL_REAL" ] && cd "$SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
 COPILOT_SKILL_REAL=$(realpath ~/.copilot/skills/understand-domain 2>/dev/null || readlink -f ~/.copilot/skills/understand-domain 2>/dev/null || echo "")
 COPILOT_SELF_RELATIVE=$([ -n "$COPILOT_SKILL_REAL" ] && cd "$COPILOT_SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
-FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything_understand-anything-plugin"
-FORGECAT_PROFILE_BARE="egonex-ai_understand-anything_understand-anything-plugin"
+FORGECAT_PROFILE_NAME="@forgecat/egonex-ai_understand-anything"
+FORGECAT_PROFILE_BARE="egonex-ai_understand-anything"
 FORGECAT_RUNTIME_ROOT="${PROJECT_ROOT:-$PWD}"
 
 PLUGIN_ROOT=""
