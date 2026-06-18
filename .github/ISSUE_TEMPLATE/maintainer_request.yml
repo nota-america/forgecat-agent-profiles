@@ -1,0 +1,56 @@
+name: Maintainer request
+description: Request a correction, removal, or ownership change for a profile based on your upstream repository.
+title: "[Maintainer]: "
+labels:
+  - maintainer-request
+body:
+  - type: input
+    id: upstream-repo
+    attributes:
+      label: Upstream repository
+      description: The original repository that was converted into a ForgeCat profile.
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: ForgeCat profile
+      description: Link to the profile directory or package name.
+      placeholder: "@forgecat/owner_repo or https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/..."
+    validations:
+      required: true
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      options:
+        - Correct description, attribution, or license
+        - Correct platform support notes
+        - Remove the profile
+        - I want to maintain or submit the profile directly
+        - Question about adding ForgeCat install docs
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Tell us what is inaccurate, what should change, or what outcome you prefer.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or preferred wording
+      description: Link to source files, docs, license files, or suggested wording.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I am a maintainer, contributor, or representative of the upstream project, or I am filing this at their request.
+          required: true
+        - label: I included the upstream repository and ForgeCat profile link or package name.
+          required: true

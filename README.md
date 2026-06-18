@@ -47,6 +47,18 @@ You should watch or star this repo if you want:
 - Practical examples of profile packaging, attribution, licensing, and platform compatibility
 - A place to request profiles from public agent-skill repositories
 
+## Profile Quality
+
+ForgeCat profiles are curated to be source-faithful and reviewable, not just copied into a common folder shape.
+
+| Signal | What it means |
+|---|---|
+| Source reviewed | The upstream repository was inspected directly before conversion. |
+| Attribution kept | Profile metadata and docs link back to the original source repository. |
+| License checked | The upstream license is reflected in `for-forgecat/profile.yml` when it is clear. |
+| Install evidence | A platform is marked tested only after a real install/runtime check. |
+| Native artifact included | Tested platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
+
 ## Supported Platforms
 
 | Platform | ForgeCat id | What gets installed |
@@ -157,6 +169,11 @@ Before opening a PR:
 3. Confirm the original license and preserve source attribution.
 4. Run `forgecat validate` from the profile's `for-forgecat/` directory.
 5. If you mark a platform as tested, include the matching native `for-<platform>` artifact and note the install/runtime evidence in the PR.
+
+## Maintainers
+
+If you maintain an upstream repository that has been converted here, use the maintainer request issue template for corrections, takedown requests, or ownership changes. We can update attribution, fix platform notes, remove a profile, or help you submit the profile directly.
+
 
 ## Request a Profile
 
