@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-173-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-34-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-174-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-35-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -144,6 +144,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [multica-ai/andrej-karpathy-skills](./profiles/multica-ai/andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers software-development methodology with hook-backed startup context |
 | [openai/skills](./profiles/openai/skills) | 45 | OpenAI skills for frontend, Figma, Playwright, deployment, documents, security, and more |
+| [op7418/humanizer-zh](./profiles/op7418/humanizer-zh) | 1 | Chinese Humanizer skill for editing AI-generated text into more natural writing |
 | [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills for training, evaluation, inference, MLOps, RAG, multimodal systems, and papers |
 | [paramchoudhary/resumeskills](./profiles/paramchoudhary/resumeskills) | 1 | Resume and career-development skills for ATS optimization, resume writing, interview prep, and offer decisions |
 | [remotion-dev/skills](./profiles/remotion-dev/skills) | 1 | Remotion best-practices skill for video creation in React |
@@ -156,7 +157,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 173 profiles across 34 collections.
+Total: 174 profiles across 35 collections.
 
 ## Profile Layout
 
