@@ -25,6 +25,8 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](./LICENSE)
 [![npm version](https://img.shields.io/npm/v/forgecat.svg)](https://www.npmjs.com/package/forgecat)
+[![Discord](https://img.shields.io/badge/Discord-Join%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/ydJAjazXy)
+[![Reddit](https://img.shields.io/badge/Reddit-r%2FForgeCat-FF4500?logo=reddit&logoColor=white)](https://www.reddit.com/r/ForgeCat/)
 
 </div>
 
