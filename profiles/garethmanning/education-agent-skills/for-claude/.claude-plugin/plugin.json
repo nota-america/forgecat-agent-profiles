@@ -1,0 +1,34 @@
+{
+  "name": "education-agent-skills",
+  "display_name": "Education Agent Skills Library",
+  "version": "2.1.0",
+  "description": "165 evidence-based pedagogical skills for educators. Curriculum design, assessment, learning science, wellbeing, professional learning, historical thinking, and more.",
+  "author": {
+    "name": "Gareth Manning",
+    "url": "https://github.com/GarethManning"
+  },
+  "homepage": "https://github.com/GarethManning/education-agent-skills",
+  "license": "CC BY-SA 4.0",
+  "skills": [
+    "./skills/ai-learning-science",
+    "./skills/ai-literacy",
+    "./skills/curriculum-alignment",
+    "./skills/curriculum-assessment",
+    "./skills/eal-language-development",
+    "./skills/environmental-experiential-learning",
+    "./skills/explicit-instruction",
+    "./skills/global-cross-cultural-pedagogies",
+    "./skills/historical-thinking",
+    "./skills/inclusive-design",
+    "./skills/literacy-critical-thinking",
+    "./skills/memory-learning-science",
+    "./skills/montessori-alternative-approaches",
+    "./skills/original-frameworks",
+    "./skills/professional-learning",
+    "./skills/questioning-discussion",
+    "./skills/self-regulated-learning",
+    "./skills/student-learning",
+    "./skills/systems-thinking",
+    "./skills/wellbeing-motivation-agency"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "education-agent-skills",
+  "owner": {
+    "name": "Gareth Manning",
+    "url": "https://github.com/GarethManning"
+  },
+  "metadata": {
+    "description": "165 evidence-based pedagogical skills for educators. Curriculum design, assessment, learning science, wellbeing, professional learning, historical thinking, and more.",
+    "version": "2.1.0"
+  },
+  "plugins": [
+    {
+      "name": "education-agent-skills",
+      "description": "Evidence-based pedagogical skills covering curriculum design, assessment, learning science, student wellbeing, and professional learning.",
+      "version": "2.1.0",
+      "author": {
+        "name": "Gareth Manning"
+      },
+      "source": "./"
+    }
+  ]
+}
