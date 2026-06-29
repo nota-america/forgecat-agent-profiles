@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-173-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-34-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-174-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-35-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -133,6 +133,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
 | [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
+| [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Gemini API, interactions API, and live API development skills |
 | [googleworkspace/cli](./profiles/googleworkspace/cli) | 1 | Google Workspace CLI skills for Drive, Gmail, Calendar, Docs, Sheets, Slides, Chat, and Apps Script |
 | [juliusbrussee/caveman](./profiles/juliusbrussee/caveman) | 1 | Caveman communication mode with compressed skills, commands, agents, and hooks |
@@ -156,7 +157,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 173 profiles across 34 collections.
+Total: 174 profiles across 35 collections.
 
 ## Profile Layout
 
