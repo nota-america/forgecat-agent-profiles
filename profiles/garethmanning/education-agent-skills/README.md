@@ -195,7 +195,7 @@ npx forgecat install @forgecat/garethmanning_education-agent-skills
 |---|---|
 | Author | Gareth Manning |
 | Original repository | https://github.com/GarethManning/education-agent-skills/tree/main/skills |
-| Version | `0.1.3` |
+| Version | `0.1.4` |
 | Original commit | `9c06a5c557bf929c8e6b702056fcd0f56836670b` |
 | License | CC-BY-SA-4.0 |
 | Source platform | Claude Code, Codex, and Cursor |
