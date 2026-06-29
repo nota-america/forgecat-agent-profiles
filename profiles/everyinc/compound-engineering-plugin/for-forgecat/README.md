@@ -4,16 +4,17 @@
 
 # compound-engineering
 
-AI-powered development tools for code review, research, design, and workflow automation.
+Brainstorm, plan, debug, review, and compound learnings with AI agents.
 
 ## Tags
 
 - claude-code
 - cursor
+- codex
+- skills
 - code-review
 - workflow
-- research
-- design
+- compound-engineering
 
 ## Installation
 
@@ -21,21 +22,50 @@ AI-powered development tools for code review, research, design, and workflow aut
 npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 ```
 
-## Skills / Agents / Commands
+## Components
 
-- **skills/** — 37 reusable skills for planning, review, bug triage, browser testing, and workflow automation.
-- **agents/** — 42 specialist agents across research, review, design, and workflow domains.
+- **skills/** — 26 Compound Engineering skills for brainstorming, planning, debugging, review, PR workflows, testing, and captured learnings.
+- **standalone agents** — 0. Specialist reviewer/research behavior is preserved as skill-local reference assets inside the owning skills, matching the current upstream plugin structure.
+
+## Included Skills
+
+- `ce-brainstorm`
+- `ce-code-review`
+- `ce-commit`
+- `ce-commit-push-pr`
+- `ce-compound`
+- `ce-compound-refresh`
+- `ce-debug`
+- `ce-doc-review`
+- `ce-dogfood-beta`
+- `ce-ideate`
+- `ce-optimize`
+- `ce-plan`
+- `ce-polish`
+- `ce-product-pulse`
+- `ce-promote`
+- `ce-proof`
+- `ce-resolve-pr-feedback`
+- `ce-riffrec-feedback-analysis`
+- `ce-setup`
+- `ce-simplify-code`
+- `ce-strategy`
+- `ce-test-browser`
+- `ce-test-xcode`
+- `ce-work`
+- `ce-worktree`
+- `lfg`
 
 ## Details
 
 | Field | Value |
 |---|---|
-| Author | Kieran Klaassen |
+| Author | Kieran Klaassen and Trevin Chow |
 | Original repository | https://github.com/EveryInc/compound-engineering-plugin |
-| Version | `0.0.5` |
-| Original commit | `a6183ed` |
+| Original plugin version | `3.15.0` |
+| Original commit | `2b38897` |
 | License | `MIT` |
-| Source platform | Cursor |
+| Source platform | Multi-host: Claude Code, Cursor, Codex, Kimi, Agy, and Pi plugin manifests |
 
 ## Compatibility
 
@@ -47,208 +77,466 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 | Cursor | Tested |
 | Codex | Tested |
 
+> Platform artifacts have been refreshed from the upstream skills-only plugin layout and are marked tested for Claude Code, Cursor, and Codex.
 
 ---
 *written by original source*
 
-# Compounding Engineering Plugin
+# Compound Engineering
 
-AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last.
+[![Build Status](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml)
 
-## Components
+AI skills that make each unit of engineering work easier than the last.
 
-| Component | Count |
-|-----------|-------|
-| Agents | 50+ |
-| Skills | 40+ |
+## Philosophy
 
-## Skills
+**Each unit of engineering work should make subsequent units easier -- not harder.**
 
-### Core Workflow
+Traditional development accumulates technical debt. Every feature adds complexity. Every bug fix leaves behind a little more local knowledge that someone has to rediscover later. The codebase gets larger, the context gets harder to hold, and the next change becomes slower.
 
-The primary entry points for engineering work, invoked as slash commands:
+Compound engineering inverts this. 80% is in planning and review, 20% is in execution:
 
-| Skill | Description |
-|-------|-------------|
-| `/ce:ideate` | Discover high-impact project improvements through divergent ideation and adversarial filtering |
-| `/ce:brainstorm` | Explore requirements and approaches before planning |
-| `/ce:plan` | Create structured plans for any multi-step task -- software features, research workflows, events, study plans -- with automatic confidence checking |
-| `/ce:review` | Structured code review with tiered persona agents, confidence gating, and dedup pipeline |
-| `/ce:work` | Execute work items systematically |
-| `/ce:compound` | Document solved problems to compound team knowledge |
-| `/ce:compound-refresh` | Refresh stale or drifting learnings and decide whether to keep, update, replace, or archive them |
+- Plan thoroughly before writing code with `/ce-brainstorm` and `/ce-plan` using one readiness-based plan artifact
+- Review to catch issues and calibrate judgment with `/ce-code-review` and `/ce-doc-review`
+- Codify knowledge so it is reusable with `/ce-compound`
+- Keep quality high so future changes are easy
 
-### Git Workflow
+The point is not ceremony. The point is leverage. A good brainstorm makes the plan sharper. A good plan makes execution smaller. A good review catches the pattern, not just the bug. A good compound note means the next agent does not have to learn the same lesson from scratch.
 
-| Skill | Description |
-|-------|-------------|
-| `git-clean-gone-branches` | Clean up local branches whose remote tracking branch is gone |
-| `git-commit` | Create a git commit with a value-communicating message |
-| `git-commit-push-pr` | Commit, push, and open a PR with an adaptive description; also update an existing PR description |
-| `git-worktree` | Manage Git worktrees for parallel development |
+**Learn more**
 
-### Workflow Utilities
+- [Compound engineering: how Every codes with agents](https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents)
+- [The story behind compounding engineering](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it)
 
-| Skill | Description |
-|-------|-------------|
-| `/changelog` | Create engaging changelogs for recent merges |
-| `/feature-video` | Record video walkthroughs and add to PR description |
-| `/reproduce-bug` | Reproduce bugs using logs and console |
-| `/report-bug-ce` | Report a bug in the compound-engineering plugin |
-| `/resolve-pr-feedback` | Resolve PR review feedback in parallel |
-| `/sync` | Sync Claude Code config across machines |
-| `/test-browser` | Run browser tests on PR-affected pages |
-| `/test-xcode` | Build and test iOS apps on simulator using XcodeBuildMCP |
-| `/onboarding` | Generate `ONBOARDING.md` to help new contributors understand the codebase |
-| `/todo-resolve` | Resolve todos in parallel |
-| `/todo-triage` | Triage and prioritize pending todos |
+## Workflow
 
-### Development Frameworks
+The core loop is six steps: **brainstorm** the requirements, **plan** the implementation, **work** through the plan, **simplify** what you wrote, **review** the result, then **compound** the learning -- and repeat with better context.
 
-| Skill | Description |
-|-------|-------------|
-| `agent-native-architecture` | Build AI agents using prompt-native architecture |
-| `andrew-kane-gem-writer` | Write Ruby gems following Andrew Kane's patterns |
-| `dhh-rails-style` | Write Ruby/Rails code in DHH's 37signals style |
-| `dspy-ruby` | Build type-safe LLM applications with DSPy.rb |
-| `frontend-design` | Create production-grade frontend interfaces |
+| Skill | Purpose |
+|-------|---------|
+| `/ce-brainstorm` | Interactive Q&A to think through a feature or problem and write a requirements-only unified plan before planning |
+| `/ce-plan` | Enrich feature ideas or requirements-only plans into implementation-ready plans |
+| `/ce-work` | Execute implementation-ready plans with worktrees and task tracking |
+| `/ce-simplify-code` | Refine the freshly written code for clarity and reuse before review |
+| `/ce-code-review` | Multi-agent review against the plan before merging |
+| `/ce-compound` | Capture the learning into `docs/solutions/` so the next loop starts smarter |
 
-### Review & Quality
+Each cycle compounds: `/ce-compound` writes learnings that the next `/ce-brainstorm` and `/ce-plan` read as grounding -- brainstorms sharpen plans, plans inform future plans, reviews catch more issues, patterns get documented. That return arrow is the whole point.
 
-| Skill | Description |
-|-------|-------------|
-| `claude-permissions-optimizer` | Optimize Claude Code permissions from session history |
-| `document-review` | Review documents using parallel persona agents for role-specific feedback |
-| `setup` | Reserved for future project-level workflow configuration; code review agent selection is automatic |
+### Additional skills
 
-### Content & Collaboration
+These sit around the loop or get reached for on demand -- not every cycle needs them.
 
-| Skill | Description |
-|-------|-------------|
-| `every-style-editor` | Review copy for Every's style guide compliance |
-| `proof` | Create, edit, and share documents via Proof collaborative editor |
-| `todo-create` | File-based todo tracking system |
+| Skill | When to reach for it |
+|-------|---------|
+| `/ce-ideate` | *Before the loop*, when you don't yet know what to build -- generates and critically ranks grounded ideas, then routes the strongest one into `/ce-brainstorm` |
+| `/ce-strategy` | *Upstream anchor* -- creates and maintains `STRATEGY.md`, read as grounding by ideate, brainstorm, and plan so strategy choices flow into every feature |
+| `/ce-product-pulse` | *Outer loop* -- a time-windowed report on what users actually experienced (usage, performance, errors), saved to `docs/pulse-reports/`; its follow-ups feed back into ideation and brainstorming |
+| `/ce-debug` | *Instead of brainstorm -> plan -> work* when the input is a bug rather than a feature -- reproduce, trace the causal chain to root cause, then fix |
 
-### Automation & Tools
+For the full catalog and how each skill chains together, see [docs/skills](docs/skills/README.md). The complete inventory is [below](#full-skill-inventory).
 
-| Skill | Description |
-|-------|-------------|
-| `agent-browser` | CLI-based browser automation using Vercel's agent-browser |
-| `gemini-imagegen` | Generate and edit images using Google's Gemini API |
-| `orchestrating-swarms` | Comprehensive guide to multi-agent swarm orchestration |
-| `rclone` | Upload files to S3, Cloudflare R2, Backblaze B2, and cloud storage |
+## Quick Example
 
-### Beta / Experimental
+**Finding a direction** -- when you don't have a specific idea yet, ideate first, then carry the strongest survivor into the loop:
 
-| Skill | Description |
-|-------|-------------|
+```text
+/ce-ideate new drawing tools
+/ce-ideate surprise me
+/ce-ideate github issues   # ground ideas in your open issues instead of a prompt
+```
+
+`/ce-ideate` does the homework first (codebase, past learnings, prior art on the web, optionally your issue tracker), then hands you a ranked set of grounded candidates to take into `/ce-brainstorm`.
+
+**Standard feature loop** -- turn a rough idea into shipped, reviewed code:
+
+```text
+/ce-brainstorm make background job retries safer
+/ce-plan
+/ce-work
+/ce-simplify-code
+/ce-code-review
+/ce-compound
+```
+
+**Simplifying code** -- use it after fresh implementation work, or point it at code that keeps slowing changes down:
+
+```text
+/ce-simplify-code
+/ce-simplify-code simplify the code in my most-churned file
+```
+
+The first pass tightens recent branch changes before review. The targeted pass is useful when one file keeps absorbing unrelated fixes, follow-ups, or merge conflicts.
+
+**Debugging a bug** -- when you start from broken behavior instead of a feature:
+
+```text
+/ce-debug the checkout webhook sometimes creates duplicate invoices
+/ce-code-review
+/ce-compound
+```
+
+**Autonomous** -- hand off a feature and let the agent run the whole pipeline:
+
+```text
+/ce-brainstorm describe the feature
+/lfg
+```
+
+`/lfg` runs the loop hands-off: it plans, works through the plan, simplifies, runs code review and applies the fixes, runs browser tests, commits, pushes, opens a PR, then watches CI and repairs failures until it's green. Start it after `/ce-brainstorm` so it plans against real requirements rather than a one-line prompt. It's the autopilot version of the standard loop -- neat when you want to step away and come back to an open, green PR.
+
+## Getting Started
+
+After installing, run `/ce-setup` in any project. It checks repo-local config, reports optional tool capabilities, and helps keep machine-local CE settings safely gitignored.
+
+The `compound-engineering` plugin currently ships 26 skills and 0 standalone agents. Specialist review, research, and workflow behavior lives inside the owning skills as skill-local prompt assets.
+
+### Full Skill Inventory
+
+| Skill | Purpose |
+|-------|---------|
+| `/ce-strategy` | Create or maintain `STRATEGY.md` |
+| `/ce-ideate` | Generate and critically evaluate grounded ideas |
+| `/ce-brainstorm` | Explore requirements and write a right-sized requirements doc |
+| `/ce-plan` | Create structured implementation plans |
+| `/ce-work` | Execute implementation plans systematically |
+| `/ce-code-review` | Review code with skill-local reviewer personas |
+| `/ce-doc-review` | Review requirements and plan documents |
+| `/ce-debug` | Reproduce failures, trace root cause, and fix bugs |
+| `/ce-compound` | Document solved problems to compound team knowledge |
+| `/ce-compound-refresh` | Refresh stale or drifting learnings |
+| `/ce-optimize` | Run iterative optimization loops |
+| `/ce-product-pulse` | Generate time-windowed product pulse reports |
+| `/ce-riffrec-feedback-analysis` | Convert Riffrec recordings or notes into structured feedback |
+| `/ce-resolve-pr-feedback` | Resolve PR review feedback |
+| `/ce-commit` | Create a git commit with a clear message |
+| `/ce-commit-push-pr` | Commit, push, and open a PR |
+| `/ce-worktree` | Ensure work happens in an isolated git worktree |
+| `/ce-promote` | Draft user-facing announcement copy |
+| `/ce-test-browser` | Run browser tests on PR-affected pages |
+| `/ce-test-xcode` | Build and test iOS apps on simulator |
+| `/ce-setup` | Diagnose optional tool capabilities and project config |
+| `/ce-simplify-code` | Simplify recent code changes |
+| `/ce-polish` | Start a dev server and iterate on UX polish |
+| `/ce-proof` | Create, edit, and share Proof documents |
+| `/ce-dogfood-beta` | Diff-scoped browser QA of the active branch |
 | `/lfg` | Full autonomous engineering workflow |
-| `/slfg` | Full autonomous workflow with swarm mode for parallel execution |
 
-## Agents
+---
 
-Agents are specialized subagents invoked by skills — you typically don't call these directly.
+## Install
 
-### Review
+### Claude Code
 
-| Agent | Description |
-|-------|-------------|
-| `agent-native-reviewer` | Verify features are agent-native (action + context parity) |
-| `api-contract-reviewer` | Detect breaking API contract changes |
-| `cli-agent-readiness-reviewer` | Evaluate CLI agent-friendliness against 7 core principles |
-| `cli-readiness-reviewer` | CLI agent-readiness persona for ce:review (conditional, structured JSON) |
-| `architecture-strategist` | Analyze architectural decisions and compliance |
-| `code-simplicity-reviewer` | Final pass for simplicity and minimalism |
-| `correctness-reviewer` | Logic errors, edge cases, state bugs |
-| `data-integrity-guardian` | Database migrations and data integrity |
-| `data-migration-expert` | Validate ID mappings match production, check for swapped values |
-| `data-migrations-reviewer` | Migration safety with confidence calibration |
-| `deployment-verification-agent` | Create Go/No-Go deployment checklists for risky data changes |
-| `dhh-rails-reviewer` | Rails review from DHH's perspective |
-| `julik-frontend-races-reviewer` | Review JavaScript/Stimulus code for race conditions |
-| `kieran-rails-reviewer` | Rails code review with strict conventions |
-| `kieran-python-reviewer` | Python code review with strict conventions |
-| `kieran-typescript-reviewer` | TypeScript code review with strict conventions |
-| `maintainability-reviewer` | Coupling, complexity, naming, dead code |
-| `pattern-recognition-specialist` | Analyze code for patterns and anti-patterns |
-| `performance-oracle` | Performance analysis and optimization |
-| `performance-reviewer` | Runtime performance with confidence calibration |
-| `reliability-reviewer` | Production reliability and failure modes |
-| `schema-drift-detector` | Detect unrelated schema.rb changes in PRs |
-| `security-reviewer` | Exploitable vulnerabilities with confidence calibration |
-| `security-sentinel` | Security audits and vulnerability assessments |
-| `testing-reviewer` | Test coverage gaps, weak assertions |
-| `project-standards-reviewer` | CLAUDE.md and AGENTS.md compliance |
-| `adversarial-reviewer` | Construct failure scenarios to break implementations across component boundaries |
-
-### Document Review
-
-| Agent | Description |
-|-------|-------------|
-| `coherence-reviewer` | Review documents for internal consistency, contradictions, and terminology drift |
-| `design-lens-reviewer` | Review plans for missing design decisions, interaction states, and AI slop risk |
-| `feasibility-reviewer` | Evaluate whether proposed technical approaches will survive contact with reality |
-| `product-lens-reviewer` | Challenge problem framing, evaluate scope decisions, surface goal misalignment |
-| `scope-guardian-reviewer` | Challenge unjustified complexity, scope creep, and premature abstractions |
-| `security-lens-reviewer` | Evaluate plans for security gaps at the plan level (auth, data, APIs) |
-| `adversarial-document-reviewer` | Challenge premises, surface unstated assumptions, and stress-test decisions |
-
-### Research
-
-| Agent | Description |
-|-------|-------------|
-| `best-practices-researcher` | Gather external best practices and examples |
-| `framework-docs-researcher` | Research framework documentation and best practices |
-| `git-history-analyzer` | Analyze git history and code evolution |
-| `issue-intelligence-analyst` | Analyze GitHub issues to surface recurring themes and pain patterns |
-| `learnings-researcher` | Search institutional learnings for relevant past solutions |
-| `repo-research-analyst` | Research repository structure and conventions |
-| `slack-researcher` | Search Slack for organizational context relevant to the current task |
-
-### Design
-
-| Agent | Description |
-|-------|-------------|
-| `design-implementation-reviewer` | Verify UI implementations match Figma designs |
-| `design-iterator` | Iteratively refine UI through systematic design iterations |
-| `figma-design-sync` | Synchronize web implementations with Figma designs |
-
-### Workflow
-
-| Agent | Description |
-|-------|-------------|
-| `bug-reproduction-validator` | Systematically reproduce and validate bug reports |
-| `lint` | Run linting and code quality checks on Ruby and ERB files |
-| `pr-comment-resolver` | Address PR comments and implement fixes |
-| `spec-flow-analyzer` | Analyze user flows and identify gaps in specifications |
-
-### Docs
-
-| Agent | Description |
-|-------|-------------|
-| `ankane-readme-writer` | Create READMEs following Ankane-style template for Ruby gems |
-
-## Browser Automation
-
-This plugin uses **agent-browser CLI** for browser automation tasks. Install it globally:
-
-```bash
-npm install -g agent-browser
-agent-browser install  # Downloads Chromium
+```text
+/plugin marketplace add EveryInc/compound-engineering-plugin
+/plugin install compound-engineering
 ```
 
-The `agent-browser` skill provides comprehensive documentation on usage.
+> **Already have Compound Engineering installed?** Compound Engineering moved to a root-native layout. You must refresh the marketplace *before* updating — see [Existing Installs](#existing-installs). Running `/plugin update` alone keeps you on the old version.
 
-## Installation
+### Cursor
 
-```bash
-claude /plugin install compound-engineering
+In Cursor Agent chat, install from the plugin marketplace:
+
+```text
+/add-plugin compound-engineering
 ```
 
-## Version History
+Or search for "compound engineering" in the plugin marketplace.
 
-See the repo root [CHANGELOG.md](../../CHANGELOG.md) for canonical release history.
+### Codex App
+
+Compound Engineering is not listed in Codex's built-in plugin marketplace yet. Add it as a custom marketplace:
+
+1. In the Codex app, open **Plugins** from the sidebar.
+2. Click **Add** / **Add plugin marketplace**.
+3. Enter:
+
+   | Field | Value |
+   | --- | --- |
+   | Source | `EveryInc/compound-engineering-plugin` |
+   | Git ref | `main` |
+   | Sparse paths | leave blank |
+
+4. Click **Add marketplace**.
+5. Select **Compound Engineering**, install **compound-engineering**, then restart Codex.
+
+The Codex app install is self-contained for Compound Engineering. Specialist reviewer and research behavior lives inside the skills as local prompt assets; no separate custom-agent install step is required.
+
+### Codex CLI
+
+Register the marketplace, then install the plugin.
+
+1. **Register the marketplace with Codex:**
+
+   ```bash
+   codex plugin marketplace add EveryInc/compound-engineering-plugin
+   ```
+
+2. **Install the plugin:**
+
+   ```bash
+   codex plugin add compound-engineering@compound-engineering-plugin
+   ```
+
+   You can also launch `codex`, run `/plugins`, find the **Compound Engineering** marketplace, select the **compound-engineering** plugin, and choose **Install**. Restart Codex after install completes.
+
+The native Codex plugin install is self-contained for Compound Engineering. Specialist reviewer and research behavior lives inside the skills as local prompt assets; no separate custom-agent install step is required.
+
+For a non-default Codex profile, run every Codex-related step against the same `CODEX_HOME`. This example installs CE into a `work` profile:
+
+```bash
+CODEX_HOME="$HOME/.codex/profiles/work" codex plugin marketplace add EveryInc/compound-engineering-plugin
+CODEX_HOME="$HOME/.codex/profiles/work" codex plugin add compound-engineering@compound-engineering-plugin
+```
+
+The marketplace step only makes the plugin available; the plugin install is what activates the native CE skills for that profile.
+
+### Kimi Code CLI
+
+Kimi Code CLI can install Compound Engineering directly from this repository because the repo ships a native `.kimi-plugin/plugin.json` manifest:
+
+```text
+/plugins install https://github.com/EveryInc/compound-engineering-plugin
+```
+
+You can also browse it through Kimi's custom marketplace flow:
+
+```text
+/plugins marketplace https://raw.githubusercontent.com/EveryInc/compound-engineering-plugin/main/.kimi-plugin/marketplace.json
+```
+
+After installing or updating, run `/reload` or start a new Kimi session so the plugin skills are loaded.
+
+### GitHub Copilot
+
+For **VS Code Copilot Agent Plugins**:
+
+1. Run `Chat: Install Plugin from Source` from the VS Code command palette
+2. Use `EveryInc/compound-engineering-plugin` for the repo
+3. Select `compound-engineering` when VS Code shows the plugins in this repository
+
+For **Copilot CLI**, use:
+
+Inside Copilot CLI:
+
+```text
+/plugin marketplace add EveryInc/compound-engineering-plugin
+/plugin install compound-engineering@compound-engineering-plugin
+```
+
+From a shell with the `copilot` binary:
+
+```bash
+copilot plugin marketplace add EveryInc/compound-engineering-plugin
+copilot plugin install compound-engineering@compound-engineering-plugin
+```
+
+Copilot CLI reads the existing Claude-compatible plugin manifests, so no separate Bun install step is needed.
+
+### Factory Droid
+
+From a shell with the `droid` binary:
+
+```bash
+droid plugin marketplace add https://github.com/EveryInc/compound-engineering-plugin
+droid plugin install compound-engineering@compound-engineering-plugin
+```
+
+Droid uses `plugin@marketplace` plugin IDs; here `compound-engineering` is the plugin and `compound-engineering-plugin` is the marketplace name. Droid installs the existing Claude Code-compatible plugin and translates the format automatically, so no Bun install step is needed.
+
+### Qwen Code
+
+```bash
+qwen extensions install EveryInc/compound-engineering-plugin:compound-engineering
+```
+
+Qwen Code installs Claude Code-compatible plugins directly from GitHub and converts the plugin format during install, so no Bun install step is needed.
+
+### OpenCode
+
+Add Compound Engineering to the `plugin` array in your global or project `opencode.json`:
+
+```json
+{
+  "plugin": ["compound-engineering@git+https://github.com/EveryInc/compound-engineering-plugin.git"]
+}
+```
+
+Restart OpenCode after changing the config. The OpenCode plugin registers the Compound Engineering skills directory directly; no Bun installer or generated skill copy is required. See [`.opencode/INSTALL.md`](.opencode/INSTALL.md) for pinning examples.
+
+### Pi
+
+Install Compound Engineering as a Pi package from this repository:
+
+```bash
+pi install git:github.com/EveryInc/compound-engineering-plugin
+```
+
+Required companion for CE workflows that dispatch reviewer, research, or implementation subagents:
+
+```bash
+pi install npm:pi-subagents
+```
+
+Recommended companion for richer blocking questions:
+
+```bash
+pi install npm:pi-ask-user
+```
+
+### Antigravity CLI (`agy`)
+
+Google has replaced the consumer Gemini CLI with [Antigravity CLI](https://antigravity.google) (`agy`), which still runs on Gemini models. Unlike Gemini CLI, `agy` installs plugins from a **local checkout** (not a repository URL), so clone this repository and install the bundled `.agy` plugin directory:
+
+```bash
+git clone https://github.com/EveryInc/compound-engineering-plugin
+agy plugin install ./compound-engineering-plugin/.agy
+```
+
+`agy` also loads `GEMINI.md` workspace context from the checkout.
+
+### Existing Installs
+
+Compound Engineering moved to a root-native, skills-only layout. An existing marketplace install keeps a **cached** marketplace snapshot that still points at the old `plugins/compound-engineering` path, so updating the plugin on its own reads that stale snapshot and leaves you on the previous version. Refresh the cached marketplace **first**, then update the plugin — order matters.
+
+**Claude Code**
+
+```text
+/plugin marketplace update compound-engineering-plugin
+/plugin update compound-engineering
+```
+
+**Codex CLI**
+
+```bash
+codex plugin marketplace upgrade compound-engineering-plugin
+codex plugin add compound-engineering@compound-engineering-plugin
+```
+
+There is no `codex plugin update`; re-running `add` reinstalls from the refreshed snapshot. For a non-default profile, run both commands against the same `CODEX_HOME`.
+
+**Codex App**
+
+Refresh the marketplace from the **Plugins** panel (remove and re-add the `EveryInc/compound-engineering-plugin` marketplace if there is no refresh control), then reinstall **compound-engineering** and restart Codex.
+
+If you configured a host with a direct path or sparse path under `plugins/compound-engineering`, edit or reinstall that source so it points at the repository root with no sparse path.
+
+If a previous Bun-installed copy is still shadowing native plugin skills, run the current cleanup command from a checkout of this repository:
+
+```bash
+git clone https://github.com/EveryInc/compound-engineering-plugin.git /tmp/compound-engineering-plugin-cleanup
+cd /tmp/compound-engineering-plugin-cleanup
+bun install
+bun run cleanup --target all
+```
+
+---
+
+## Local Development
+
+```bash
+bun install
+bun test
+bun run release:validate
+```
+
+### From your local checkout
+
+For active development, load this checkout directly in the harness you want to test.
+
+**Claude Code**
+
+```bash
+claude --plugin-dir "$PWD"
+```
+
+**Codex App**
+
+In the app's **Add plugin marketplace** form, use this checkout as the source:
+
+| Field | Value |
+| --- | --- |
+| Source | `/path/to/compound-engineering-plugin` |
+| Git ref | current branch, or leave blank for a local folder |
+| Sparse paths | leave blank |
+
+**Codex CLI**
+
+```bash
+codex plugin marketplace add "$PWD"
+codex plugin add compound-engineering@compound-engineering-plugin
+```
+
+Use a separate `CODEX_HOME` when you want to keep local testing isolated from your normal Codex profile. The Codex marketplace entry points at the public Git plugin source so root-shaped plugin repos install correctly; use a temporary marketplace catalog with a `source.url` plus `ref` when testing unpublished plugin-content changes end to end.
+
+**Kimi Code CLI**
+
+Inside Kimi Code CLI:
+
+```text
+/plugins install /path/to/compound-engineering-plugin
+```
+
+To test the local marketplace catalog instead, pass the catalog path:
+
+```text
+/plugins marketplace /path/to/compound-engineering-plugin/.kimi-plugin/marketplace.json
+```
+
+**OpenCode**
+
+```json
+{
+  "plugin": ["/path/to/compound-engineering-plugin"]
+}
+```
+
+Restart OpenCode after changing `opencode.json`.
+
+**Pi**
+
+```bash
+pi -e "$PWD"
+```
+
+**Antigravity CLI (`agy`)**
+
+```bash
+agy plugin install "$PWD/.agy"
+```
+
+`agy` installs the bundled `.agy` plugin directory from your checkout and loads `GEMINI.md` workspace context.
+
+## Limitations
+
+OpenCode and Pi use native package/plugin loading from this repository. The Bun CLI remains for repository development and converter maintenance, not normal installation.
+
+Release versions are owned by release automation. Routine feature PRs should not hand-bump plugin or marketplace manifest versions.
+
+## FAQ
+
+### Do I need Bun to install Compound Engineering?
+
+No. Bun is only needed for repo development tasks and converter maintenance.
+
+### Where do I see all available skills?
+
+The skill inventory is in this README. Each skill's authoritative runtime spec lives in `skills/<skill>/SKILL.md`.
+
+### Where is release history?
+
+GitHub Releases are the canonical release-notes surface. The root [`CHANGELOG.md`](CHANGELOG.md) points to that history.
+
+## Contributing
+
+Contributions are welcome. Issues, bug reports, and pull requests all help make this better, and we genuinely appreciate them — bug reports especially.
+
+A note on what to expect: Compound Engineering is opinionated by design. It's maintained by [@kieranklaassen](https://github.com/kieranklaassen) and [@tmchow](https://github.com/tmchow), and its direction reflects a specific point of view about how AI-assisted engineering should work. So while we welcome help, we can't promise to accept every change — some proposals won't fit that vision even when they're good ideas on their own.
+
+Open an issue or send a PR, and we'll fold in what moves the plugin in the right direction. We just want to be upfront that not everything will land.
 
 ## License
 
-MIT
+[MIT](LICENSE)
