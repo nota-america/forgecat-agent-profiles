@@ -23,11 +23,12 @@ If the plan already has a `deepened:` date:
 
 **Section Checklists:**
 
-**Requirements Trace**
+**Requirements**
 - Requirements are vague or disconnected from implementation units
 - Success criteria are missing or not reflected downstream
 - Units do not clearly advance the traced requirements
 - Origin requirements are not clearly carried forward
+- Origin A/F/AE IDs (when supplied by the upstream brainstorm) are not preserved where planning decisions touch them, or are referenced inconsistently across Requirements, units, and test scenarios
 
 **Context & Research / Sources & References**
 - Relevant repo patterns are named but never used in decisions or implementation units
@@ -40,6 +41,7 @@ If the plan already has a `deepened:` date:
 - Rationale does not explain tradeoffs or rejected alternatives
 - The decision does not connect back to scope, requirements, or origin context
 - An obvious design fork exists but the plan never addresses why one path won
+- Agent/tool/workflow features lack an explicit decision about action parity, context parity, shared workspace, tool granularity, or approval posture
 
 **Open Questions**
 - Product blockers are hidden as assumptions
@@ -66,12 +68,16 @@ If the plan already has a `deepened:` date:
 - Test scenarios are vague (don't name inputs and expected outcomes), skip applicable categories (e.g., no error paths for a unit with failure modes, no integration scenarios for a unit crossing layers), or are disproportionate to the unit's complexity
 - Feature-bearing units have blank or missing test scenarios (feature-bearing units require actual test scenarios; the `Test expectation: none` annotation is only valid for non-feature-bearing units)
 - Verification outcomes are vague or not expressed as observable results
+- Agent-relevant units do not include agent-native verification: parity checks, context-injection checks, tool-result checks, approval/failure behavior, or checkpoint/resume where applicable
+- Existing U-IDs were renumbered after a unit was reordered, split, or deleted (U-IDs are stable: never renumber existing IDs; gaps from deletions are preserved; new units take the next unused number)
+- A unit realizing an origin Key Flow does not cite the F-ID, or a unit enforcing an origin Acceptance Example does not cite the AE-ID, when origin supplies them
 
 **System-Wide Impact**
 - Affected interfaces, callbacks, middleware, entry points, or parity surfaces are missing
 - Failure propagation is underexplored
 - State lifecycle, caching, or data integrity risks are absent where relevant
 - Integration coverage is weak for cross-layer work
+- Agent-facing tools, prompts, runtime context, shared workspaces, approval gates, or human-only boundaries are missing when the feature affects agent-capable systems
 
 **Risks & Dependencies / Documentation / Operational Notes**
 - Risks are listed without mitigation
@@ -91,48 +97,52 @@ Strengthening [section names] — [brief reason for each, e.g., "decision ration
 
 For each selected section, choose the smallest useful agent set. Do **not** run every agent. Use at most **1-3 agents per section** and usually no more than **8 agents total**.
 
-Use fully-qualified agent names inside Task calls.
+The names below are skill-local prompt asset file stems under `references/agents/`, not standalone agent types. For each selected name, read `references/agents/<name>.md` and seed a generic subagent with that prompt content plus the section context described below. Do not use `subagent_type`, typed `Agent` names, or platform-level CE agent registration.
 
 **Deterministic Section-to-Agent Mapping:**
 
-**Requirements Trace / Open Questions classification**
-- `compound-engineering:workflow:spec-flow-analyzer` for missing user flows, edge cases, and handoff gaps
-- `compound-engineering:research:repo-research-analyst` (Scope: `architecture, patterns`) for repo-grounded patterns, conventions, and implementation reality checks
+**Requirements / Open Questions classification**
+- `spec-flow-analyzer` for missing user flows, edge cases, and handoff gaps
+- `repo-research-analyst` (Scope: `architecture, patterns`) for repo-grounded patterns, conventions, and implementation reality checks
 
 **Context & Research / Sources & References gaps**
-- `compound-engineering:research:learnings-researcher` for institutional knowledge and past solved problems
-- `compound-engineering:research:framework-docs-researcher` for official framework or library behavior
-- `compound-engineering:research:best-practices-researcher` for current external patterns and industry guidance
-- Add `compound-engineering:research:git-history-analyzer` only when historical rationale or prior art is materially missing
+- `learnings-researcher` for institutional knowledge and past solved problems
+- `framework-docs-researcher` for official framework or library behavior
+- `best-practices-researcher` for current external patterns and industry guidance
+- `web-researcher` for landscape/prior-art gaps — competitor patterns, market signals, or an unsettled external option set (which library/provider/approach) that recommendations depend on
+- Add `git-history-analyzer` only when historical rationale or prior art is materially missing
 
 **Key Technical Decisions**
-- `compound-engineering:review:architecture-strategist` for design integrity, boundaries, and architectural tradeoffs
-- Add `compound-engineering:research:framework-docs-researcher` or `compound-engineering:research:best-practices-researcher` when the decision needs external grounding beyond repo evidence
+- `architecture-strategist` for design integrity, boundaries, and architectural tradeoffs
+- `agent-native-planning-strategist` when the decision involves agents, prompts, tools, MCP, workflow automation, action/context parity, shared workspace, approval gates, or agent execution lifecycle
+- Add `framework-docs-researcher` or `best-practices-researcher` when the decision needs external grounding beyond repo evidence
 
 **High-Level Technical Design**
-- `compound-engineering:review:architecture-strategist` for validating that the technical design accurately represents the intended approach and identifying gaps
-- `compound-engineering:research:repo-research-analyst` (Scope: `architecture, patterns`) for grounding the technical design in existing repo patterns and conventions
-- Add `compound-engineering:research:best-practices-researcher` when the technical design involves a DSL, API surface, or pattern that benefits from external validation
+- `architecture-strategist` for validating that the technical design accurately represents the intended approach and identifying gaps
+- `repo-research-analyst` (Scope: `architecture, patterns`) for grounding the technical design in existing repo patterns and conventions
+- `agent-native-planning-strategist` when the technical design includes agent orchestration, MCP/tools, prompt-defined behavior, shared workspace, checkpoint/resume, approvals, or agent-to-UI communication
+- Add `best-practices-researcher` when the technical design involves a DSL, API surface, or pattern that benefits from external validation
 
 **Implementation Units / Verification**
-- `compound-engineering:research:repo-research-analyst` (Scope: `patterns`) for concrete file targets, patterns to follow, and repo-specific sequencing clues
-- `compound-engineering:review:pattern-recognition-specialist` for consistency, duplication risks, and alignment with existing patterns
-- Add `compound-engineering:workflow:spec-flow-analyzer` when sequencing depends on user flow or handoff completeness
+- `repo-research-analyst` (Scope: `patterns`) for concrete file targets, patterns to follow, and repo-specific sequencing clues
+- `pattern-recognition-specialist` for consistency, duplication risks, and alignment with existing patterns
+- `agent-native-planning-strategist` when units should cover agent-accessible domain actions, tool/context changes, prompt changes, or parity testing
+- Add `spec-flow-analyzer` when sequencing depends on user flow or handoff completeness
 
 **System-Wide Impact**
-- `compound-engineering:review:architecture-strategist` for cross-boundary effects, interface surfaces, and architectural knock-on impact
+- `architecture-strategist` for cross-boundary effects, interface surfaces, and architectural knock-on impact
+- `agent-native-planning-strategist` for action parity, context parity, shared workspace, tool granularity, approval boundaries, and agent execution lifecycle in agent-capable systems
 - Add the specific specialist that matches the risk:
-  - `compound-engineering:review:performance-oracle` for scalability, latency, throughput, and resource-risk analysis
-  - `compound-engineering:review:security-sentinel` for auth, validation, exploit surfaces, and security boundary review
-  - `compound-engineering:review:data-integrity-guardian` for migrations, persistent state safety, consistency, and data lifecycle risks
+  - `performance-oracle` for scalability, latency, throughput, and resource-risk analysis
+  - `security-sentinel` for auth, validation, exploit surfaces, and security boundary review
+  - `data-integrity-guardian` for migrations, persistent state safety, consistency, and data lifecycle risks
 
 **Risks & Dependencies / Operational Notes**
 - Use the specialist that matches the actual risk:
-  - `compound-engineering:review:security-sentinel` for security, auth, privacy, and exploit risk
-  - `compound-engineering:review:data-integrity-guardian` for persistent data safety, constraints, and transaction boundaries
-  - `compound-engineering:review:data-migration-expert` for migration realism, backfills, and production data transformation risk
-  - `compound-engineering:review:deployment-verification-agent` for rollout checklists, rollback planning, and launch verification
-  - `compound-engineering:review:performance-oracle` for capacity, latency, and scaling concerns
+  - `security-sentinel` for security, auth, privacy, and exploit risk
+  - `data-integrity-guardian` for migrations, backfills, persistent data safety, constraints, transaction boundaries, and production data transformation risk (plan context — not the PR-review `data-migration-reviewer` persona)
+  - `deployment-verification-agent` for rollout checklists, rollback planning, and launch verification
+  - `performance-oracle` for capacity, latency, and scaling concerns
 
 **Agent Prompt Shape:**
 
@@ -164,21 +174,28 @@ Signals that justify artifact-backed mode:
 
 If artifact-backed mode is not clearly warranted, stay in direct mode.
 
-Artifact-backed mode uses a per-run scratch directory under `.context/compound-engineering/ce-plan/deepen/`.
+Artifact-backed mode uses a per-run OS-temp scratch directory. Create it once before dispatching sub-agents and capture its **absolute path** — pass that absolute path to each sub-agent so they write to it directly. Do not use `.context/`; the artifacts are per-run throwaway that are cleaned up when deepening ends (see 5.3.6b), matching the repo Scratch Space convention for one-shot artifacts. Do not pass unresolved shell-variable strings to sub-agents; they need the resolved absolute path.
+
+```bash
+SCRATCH_DIR="$(mktemp -d -t ce-plan-deepen-XXXXXX)"
+echo "$SCRATCH_DIR"
+```
+
+Refer to the echoed absolute path as `<scratch-dir>` throughout the rest of this workflow.
 
 ## 5.3.6 Run Targeted Research
 
-Launch the selected agents in parallel using the execution mode chosen above. If the current platform does not support parallel dispatch, run them sequentially instead. Omit the `mode` parameter when dispatching so the user's configured permission settings apply.
+Launch the selected local prompt assets as generic subagents in parallel using the execution mode chosen above. If the current platform does not support parallel dispatch, run them sequentially instead. Omit the `mode` parameter when dispatching so the user's configured permission settings apply.
 
 Prefer local repo and institutional evidence first. Use external research only when the gap cannot be closed responsibly from repo context or already-cited sources.
 
 If a selected section can be improved by reading the origin document more carefully, do that before dispatching external agents.
 
-**Direct mode:** Have each selected agent return its findings directly to the parent. Keep the return payload focused: strongest findings only, the evidence or sources that matter, the concrete planning improvement implied by the finding.
+**Direct mode:** Have each selected prompt-seeded subagent return its findings directly to the parent. Keep the return payload focused: strongest findings only, the evidence or sources that matter, the concrete planning improvement implied by the finding.
 
-**Artifact-backed mode:** For each selected agent, instruct it to write one compact artifact file in the scratch directory and return only a short completion summary. Each artifact should contain: target section, why selected, 3-7 findings, source-backed rationale, the specific plan change implied by each finding. No implementation code, no shell commands.
+**Artifact-backed mode:** For each selected prompt-seeded subagent, pass the absolute `<scratch-dir>` path captured earlier and instruct the subagent to write one compact artifact file inside that directory, then return only a short completion summary. Each artifact should contain: target section, why selected, 3-7 findings, source-backed rationale, the specific plan change implied by each finding. No implementation code, no shell commands.
 
-If an artifact is missing or clearly malformed, re-run that agent or fall back to direct-mode reasoning for that section.
+If an artifact is missing or clearly malformed, re-run that prompt-seeded subagent or fall back to direct-mode reasoning for that section.
 
 If agent outputs conflict:
 - Prefer repo-grounded and origin-grounded evidence over generic advice
@@ -204,7 +221,7 @@ When presenting findings from multiple agents targeting the same section, presen
 
 After all agents have been reviewed, carry only the accepted findings forward to 5.3.7.
 
-If the user accepted no findings, report "No findings accepted — plan unchanged." If artifact-backed mode was used, clean up the scratch directory before continuing. Then proceed directly to Phase 5.4 (skip document-review and synthesis — the plan was not modified). This interactive-mode-only skip does not apply in auto mode; auto mode always proceeds through 5.3.7 and 5.3.8.
+If the user accepted no findings, report "No findings accepted — plan unchanged." Then proceed directly to Phase 5.4 (skip document-review and synthesis — the plan was not modified). This interactive-mode-only skip does not apply in auto mode; auto mode always proceeds through 5.3.7 and 5.3.8. No explicit scratch cleanup needed — `$SCRATCH_DIR` is OS temp and will be cleaned up by the OS; leaving it in place preserves the rejected agent artifacts for debugging.
 
 If findings were accepted and the plan was modified, proceed through 5.3.7 and 5.3.8 as normal — document-review acts as a quality gate on the changes.
 
@@ -214,10 +231,13 @@ Strengthen only the selected sections. Keep the plan coherent and preserve its o
 
 **In interactive mode:** Only integrate findings the user accepted in 5.3.6b. If some findings from different agents touch the same section, reconcile them coherently but do not reintroduce rejected findings.
 
+Deepening may tighten, not only grow. A section can be strengthened by cutting as well as adding — collapse multi-idea sentences, drop hedges, and delete superseded text outright rather than leaving it as strikethrough or stacking a separate "resolutions" layer on top of it. A shorter, contradiction-free section is a stronger one. This is distinct from "rewrite the entire plan from scratch" below, which stays forbidden.
+
 Allowed changes:
+- Tighten prose in a strengthened section: cut hedges, split sentences carrying more than one idea, and remove superseded text in place (version control holds the history)
 - Clarify or strengthen decision rationale
 - Tighten requirements trace or origin fidelity
-- Reorder or split implementation units when sequencing is weak
+- Reorder or split implementation units when sequencing is weak — but **never renumber existing U-IDs**. Reordering preserves U-IDs in their new order (e.g., U1, U3, U5 reordered is correct; renumbering to U1, U2, U3 is not). Splitting keeps the original U-ID on the original concept and assigns the next unused number to the new unit. Renumbering breaks ce-work blocker and verification references that were written against the original IDs
 - Add missing pattern references, file/test paths, or verification outcomes
 - Expand system-wide impact, risks, or rollout treatment where justified
 - Reclassify open questions between `Resolved During Planning` and `Deferred to Implementation` when evidence supports the change
@@ -231,8 +251,9 @@ Do **not**:
 - Add generic `Research Insights` subsections everywhere
 - Rewrite the entire plan from scratch
 - Invent new product requirements, scope changes, or success criteria without surfacing them explicitly
+- Renumber existing U-IDs as part of reordering, splitting, deletion, or "tidying" the unit list. Deepening is the most likely accidental-renumber vector — preserve U-IDs even when the new order would look cleaner with sequential numbering
 
 If research reveals a product-level ambiguity that should change behavior or scope:
 - Do not silently decide it here
 - Record it under `Open Questions`
-- Recommend `ce:brainstorm` if the gap is truly product-defining
+- Recommend `ce-brainstorm` if the gap is truly product-defining
