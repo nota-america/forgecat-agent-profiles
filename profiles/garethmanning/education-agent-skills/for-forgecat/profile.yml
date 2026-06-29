@@ -1,0 +1,512 @@
+name: '@forgecat/garethmanning_education-agent-skills'
+description: Evidence-based education skill library for curriculum design, lesson planning, assessment, learning science, wellbeing, professional learning, historical thinking, and student-facing AI study support.
+repository: https://github.com/GarethManning/education-agent-skills/tree/main/skills
+license: CC-BY-SA-4.0
+visibility: public
+sourcePlatform: multi-platform
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - codex
+    - cursor
+    partial: []
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: adaptive-hint-sequence-designer
+  path: skills/adaptive-hint-sequence-designer/SKILL.md
+  description: Generate a cascading hint sequence for a problem type, revealing progressively without giving answers. Use when designing tutoring dialogues or scaffolded worksheets.
+- name: ai-facilitated-collaborative-learning-designer
+  path: skills/ai-facilitated-collaborative-learning-designer/SKILL.md
+  description: Design AI-supported collaborative tasks that structure group interaction and address participation problems. Use when students struggle to collaborate effectively on group tasks.
+- name: ai-feedback-design-principles
+  path: skills/ai-feedback-design-principles/SKILL.md
+  description: Audit and redesign AI-generated feedback for pedagogical quality, timing, and learning impact. Use when building or reviewing automated feedback in digital learning tools.
+- name: cognitive-tutoring-architecture-designer
+  path: skills/cognitive-tutoring-architecture-designer/SKILL.md
+  description: Map knowledge components and skill hierarchies for a cognitive tutoring system or adaptive learning platform. Use when designing intelligent tutoring software or skill-based mastery systems.
+- name: digital-worked-example-sequence
+  path: skills/digital-worked-example-sequence/SKILL.md
+  description: Create an interactive digital worked example sequence with fading for online or blended delivery. Use when building e-learning modules, LMS content, or app-based instruction.
+- name: erroneous-example-designer
+  path: skills/erroneous-example-designer/SKILL.md
+  description: Design deliberately flawed examples that develop error-detection skills and deepen understanding. Use when students make characteristic errors and need practice spotting mistakes.
+- name: formative-assessment-loop-designer
+  path: skills/formative-assessment-loop-designer/SKILL.md
+  description: Design an adaptive assessment loop where each student response triggers the next instructional move. Use when building technology-enhanced formative assessment cycles.
+- name: individual-spacing-algorithm-explainer
+  path: skills/individual-spacing-algorithm-explainer/SKILL.md
+  description: Explain and configure individual spacing algorithms using student performance data and forgetting curves. Use when personalising retention schedules in adaptive learning platforms.
+- name: intelligent-tutoring-dialogue-designer
+  path: skills/intelligent-tutoring-dialogue-designer/SKILL.md
+  description: Script a multi-turn tutoring dialogue with branching responses for anticipated student difficulties. Use when designing AI tutors, chatbot interactions, or structured one-to-one support scripts.
+- name: learning-analytics-interpretation-guide
+  path: skills/learning-analytics-interpretation-guide/SKILL.md
+  description: Interpret learning analytics data and translate dashboard findings into actionable teaching decisions. Use when reviewing LMS data, quiz patterns, or engagement metrics.
+- name: metacognitive-monitoring-ai-contexts
+  path: skills/metacognitive-monitoring-ai-contexts/SKILL.md
+  description: Design metacognitive checkpoints that prevent AI-assisted learning from bypassing genuine understanding. Use when students use AI tools and may overestimate their own comprehension.
+- name: productive-failure-desirable-difficulty-designer
+  path: skills/productive-failure-desirable-difficulty-designer/SKILL.md
+  description: Redesign a direct instruction sequence to include productive struggle before the explanation phase. Use when teaching concepts that benefit from failure-first approaches.
+- name: self-explanation-prompt-designer
+  path: skills/self-explanation-prompt-designer/SKILL.md
+  description: Create self-explanation prompts that deepen understanding of worked examples, texts, or diagrams. Use when students read material passively without engaging with underlying principles.
+- name: worked-example-to-problem-solving-transition-designer
+  path: skills/worked-example-to-problem-solving-transition-designer/SKILL.md
+  description: Design the transition from worked examples to independent problem-solving using expertise-reversal principles. Use when students follow examples but cannot solve problems alone.
+- name: ai-expertise-interrogation-designer
+  path: skills/ai-expertise-interrogation-designer/SKILL.md
+  description: Design a Funhouse Mirror activity where students use their own domain expertise to detect AI distortions, omissions, and overconfidence. Use when students know a subject well enough to evaluate AI claims about it.
+- name: ai-hallucination-fact-check-protocol
+  path: skills/ai-hallucination-fact-check-protocol/SKILL.md
+  description: Design a fact-checking protocol for AI-generated text, extending SIFT with AI-specific adaptations for hallucination detection. Use when students need to verify AI claims and citations.
+- name: ai-learning-boundary-mapper
+  path: skills/ai-learning-boundary-mapper/SKILL.md
+  description: Map which elements of an assignment benefit from AI assistance vs. which AI use undermines. Use when redesigning tasks for AI-age classrooms or setting defensible AI use policies for specific assignments.
+- name: ai-output-critical-audit-designer
+  path: skills/ai-output-critical-audit-designer/SKILL.md
+  description: Design a structured protocol for auditing AI-generated text against Ennis's six CT standards. Use when students need to critically evaluate AI output in any subject.
+- name: ai-socratic-dialogue-designer
+  path: skills/ai-socratic-dialogue-designer/SKILL.md
+  description: Design a multi-round questioning sequence for interrogating AI chatbot answers, tracking how responses shift and distinguishing genuine updates from sycophantic capitulation. Use when teaching students to probe AI critically.
+- name: disciplinary-ai-literacy-sequence-designer
+  path: skills/disciplinary-ai-literacy-sequence-designer/SKILL.md
+  description: Design a sequence where students compare AI's handling of the same question across disciplines, developing a mental model of where AI is reliable vs. distorting based on knowledge type.
+- name: prompt-literacy-sequence-designer
+  path: skills/prompt-literacy-sequence-designer/SKILL.md
+  description: Design a learning sequence teaching prompt quality — comparing vague vs. refined prompts to show why specificity and context transform AI output. Use when students use AI without understanding why output quality varies.
+- name: coverage-audit
+  path: skills/coverage-audit/SKILL.md
+  description: Takes a curriculum framework and a statutory or accreditation requirement list; produces a coverage table, gap summary, and CSV showing which framework content covers each requirement and where gaps exist.
+- name: curriculum-crosswalk
+  path: skills/curriculum-crosswalk/SKILL.md
+  description: Compares two or more band-tagged frameworks and produces a framework-neutral topic matrix showing coverage and gaps across all inputs, plus an optional reference-centric PLC crosswalk document when a reference framework is supplied.
+- name: developmental-band-translator
+  path: skills/developmental-band-translator/SKILL.md
+  description: Tags harness-decomposed curriculum items (KUDs, LTs, criteria) with a school's developmental band metadata while preserving source voice and labels. Supply the band schema; the skill derives mapping rules from it.
+- name: kud-chart-author
+  path: skills/kud-chart-author/SKILL.md
+  description: Authors or reviews Know/Understand/Do charts for competency-based learning targets across developmental bands. Handles seven input types from raw curriculum documents to existing LT sets. Routes to upstream skills when stronger inputs are available.
+- name: assessment-validity-checker
+  path: skills/assessment-validity-checker/SKILL.md
+  description: Audit a proposed assessment for construct validity, reliability, and alignment to learning objectives. Use when reviewing or quality-assuring assessments before deployment.
+- name: backwards-design-unit-planner
+  path: skills/backwards-design-unit-planner/SKILL.md
+  description: Plan a unit using backwards design from desired outcomes through assessment evidence to learning activities. Use when starting a new unit or redesigning an existing one from standards.
+- name: competency-unpacker
+  path: skills/competency-unpacker/SKILL.md
+  description: Unpack a broad standard or competency descriptor into specific, assessable success criteria and sub-skills. Use when interpreting curriculum standards or writing learning objectives.
+- name: criterion-referenced-rubric-generator
+  path: skills/criterion-referenced-rubric-generator/SKILL.md
+  description: Generate a criterion-referenced rubric with descriptive performance levels for a task or objective. Use for marking guides and general curriculum contexts. For Manning programmes where Competent = success, use coherent-rubric-logic-builder instead.
+- name: curriculum-knowledge-architecture-designer
+  path: skills/curriculum-knowledge-architecture-designer/SKILL.md
+  description: Map the epistemic structure of a subject to determine knowledge types and inform curriculum sequencing. Use when designing courses, restructuring programmes, or analysing knowledge architecture.
+- name: differentiation-adapter
+  path: skills/differentiation-adapter/SKILL.md
+  description: Adapt a classroom task for specific learner needs while preserving the core learning objective intact. Use when differentiating for SEND, EAL, gifted, ADHD, dyslexia, or anxiety.
+- name: discipline-specific-critical-thinking-task-designer
+  path: skills/discipline-specific-critical-thinking-task-designer/SKILL.md
+  description: Design discipline-specific critical thinking tasks grounded in knowledge-contingent reasoning rather than generic skills. Use when embedding higher-order thinking into subject content.
+- name: formative-assessment-technique-selector
+  path: skills/formative-assessment-technique-selector/SKILL.md
+  description: Select the right formative assessment technique for a specific learning moment, purpose, and age group. Use when choosing how to check understanding during, between, or after lessons.
+- name: gap-analysis-from-student-work
+  path: skills/gap-analysis-from-student-work/SKILL.md
+  description: Analyse student work against criteria to identify specific gaps between current performance and learning objectives. Use when reviewing submissions, planning feedback, or diagnosing learning needs.
+- name: kud-knowledge-type-mapper
+  path: skills/kud-knowledge-type-mapper/SKILL.md
+  description: Classify curriculum content into Know, Understand, and Do categories to align teaching and assessment approaches. Use when planning units, writing objectives, or selecting assessment methods.
+- name: learning-progression-builder
+  path: skills/learning-progression-builder/SKILL.md
+  description: Build a learning progression showing prerequisite-to-mastery steps for a target skill or understanding. Use when sequencing content, designing diagnostics, or mapping prerequisite gaps.
+- name: project-brief-designer
+  path: skills/project-brief-designer/SKILL.md
+  description: Design a project-based learning brief with a driving question, milestones, and assessment criteria. Use when planning PBL units, inquiry projects, or extended investigations.
+- name: scope-and-sequence-designer
+  path: skills/scope-and-sequence-designer/SKILL.md
+  description: Design a scope and sequence showing vertical and horizontal curriculum coherence across a programme or year. Use when building new programmes, restructuring subjects, or ensuring progression.
+- name: academic-language-sentence-frame-generator
+  path: skills/academic-language-sentence-frame-generator/SKILL.md
+  description: Generate tiered sentence frames for academic tasks that scaffold language production across proficiency levels. Use when EAL students need structured language support for classroom discourse.
+- name: language-demand-analyser
+  path: skills/language-demand-analyser/SKILL.md
+  description: Analyse the language demands of a classroom task to identify barriers for EAL and multilingual learners. Use when adapting tasks, planning support, or assessing linguistic accessibility.
+- name: scaffolded-task-modifier
+  path: skills/scaffolded-task-modifier/SKILL.md
+  description: Modify a classroom task with language scaffolds that preserve cognitive demand for EAL learners. Use when adapting existing tasks for students at different English proficiency levels.
+- name: sheltered-instruction-lesson-modifier
+  path: skills/sheltered-instruction-lesson-modifier/SKILL.md
+  description: Modify a lesson plan using SIOP sheltered instruction principles to support language learners across all four skills. Use when planning lessons for classes that include EAL students.
+- name: vocabulary-tiering-tool
+  path: skills/vocabulary-tiering-tool/SKILL.md
+  description: Tier vocabulary from a text or topic into everyday, academic, and technical categories with teaching priorities. Use when pre-teaching vocabulary or identifying language barriers in a text.
+- name: biophilic-learning-environment-designer
+  path: skills/biophilic-learning-environment-designer/SKILL.md
+  description: Redesign a learning space using biophilic design principles to improve focus, calm, and wellbeing. Use when classroom environment contributes to restlessness, poor attention, or stress.
+- name: ecological-inquiry-anchor-designer
+  path: skills/ecological-inquiry-anchor-designer/SKILL.md
+  description: Design an inquiry sequence anchored in a local ecosystem that embeds science or geography curriculum content. Use when teaching through local living systems like gardens, ponds, or hedgerows.
+- name: experiential-learning-cycle-designer
+  path: skills/experiential-learning-cycle-designer/SKILL.md
+  description: Structure a direct experience into a full learning cycle with concrete experience, reflection, and conceptual transfer. Use when planning field trips, simulations, or practical tasks.
+- name: interdisciplinary-real-world-connection-mapper
+  path: skills/interdisciplinary-real-world-connection-mapper/SKILL.md
+  description: Map curriculum connections across multiple subjects for a real-world problem or authentic context. Use when planning cross-curricular projects or connecting content to real issues.
+- name: outdoor-learning-sequence-designer
+  path: skills/outdoor-learning-sequence-designer/SKILL.md
+  description: Design a structured outdoor learning sequence embedding curriculum objectives in an available outdoor space. Use when planning lessons in school grounds, parks, or local natural environments.
+- name: service-learning-project-designer
+  path: skills/service-learning-project-designer/SKILL.md
+  description: Design a service-learning project connecting genuine community need with embedded curriculum learning. Use when planning community projects, civic engagement, or social action units.
+- name: checking-for-understanding-protocol-designer
+  path: skills/checking-for-understanding-protocol-designer/SKILL.md
+  description: Design a checking-for-understanding protocol with specific techniques for each lesson stage. Use when planning systematic comprehension checks during explicit or direct instruction.
+- name: explicit-instruction-sequence-builder
+  path: skills/explicit-instruction-sequence-builder/SKILL.md
+  description: Build a complete explicit instruction sequence from teacher modelling through guided practice to independent work. Use when teaching new skills, procedures, or concepts through direct instruction.
+- name: lesson-opening-designer
+  path: skills/lesson-opening-designer/SKILL.md
+  description: Design a lesson opening that activates prior knowledge and connects previous learning to today's content. Use when planning lesson starters, retrieval openers, or advance organisers.
+- name: practice-problem-sequence-designer
+  path: skills/practice-problem-sequence-designer/SKILL.md
+  description: Generate a scaffolded sequence of practice problems with graduated difficulty and strategic variability. Use when creating worksheets, homework sets, or independent practice materials.
+- name: think-aloud-script-generator
+  path: skills/think-aloud-script-generator/SKILL.md
+  description: Script a teacher think-aloud demonstrating expert reasoning processes for a specific task. Use when modelling problem-solving, writing, reading comprehension, or analytical processes.
+- name: cpa-sequence-designer
+  path: skills/cpa-sequence-designer/SKILL.md
+  description: Design a Concrete-Pictorial-Abstract learning sequence for a mathematical concept using manipulatives. Use when teaching maths through Singapore method or when students struggle with abstraction.
+- name: cross-cultural-task-validity-checker
+  path: skills/cross-cultural-task-validity-checker/SKILL.md
+  description: Check an educational practice or task for cultural bias, WEIRD assumptions, and cross-cultural validity. Use when adapting resources for diverse contexts or questioning universal claims.
+- name: culturally-responsive-teaching-designer
+  path: skills/culturally-responsive-teaching-designer/SKILL.md
+  description: Redesign a lesson to centre students' cultural backgrounds, community knowledge, and lived experience. Use when making curriculum relevant and inclusive for diverse student populations.
+- name: emergent-project-design-scaffold
+  path: skills/emergent-project-design-scaffold/SKILL.md
+  description: Scaffold an emergent project from observed children's interests using Reggio-inspired approaches. Use when following children's fascinations into deeper inquiry in early years or primary settings.
+- name: phenomenon-based-unit-anchor
+  path: skills/phenomenon-based-unit-anchor/SKILL.md
+  description: Anchor a multidisciplinary unit in a real-world phenomenon that requires multiple subject lenses to understand. Use when designing integrated or phenomenon-based units across disciplines.
+- name: place-based-inquiry-anchor
+  path: skills/place-based-inquiry-anchor/SKILL.md
+  description: Anchor curriculum learning in a specific local place with connections to community, culture, and identity. Use when connecting academic content to students' local environment and heritage.
+- name: reggio-documentation-protocol
+  path: skills/reggio-documentation-protocol/SKILL.md
+  description: Design a pedagogical documentation protocol for making children's learning processes visible and shareable. Use when documenting learning, communicating with families, or planning next steps.
+- name: ubuntu-collective-knowledge-task-designer
+  path: skills/ubuntu-collective-knowledge-task-designer/SKILL.md
+  description: Design learning tasks built on Ubuntu philosophy emphasising collective knowledge-building and mutual responsibility. Use when fostering collaboration that values community over individual competition.
+- name: variation-theory-task-designer
+  path: skills/variation-theory-task-designer/SKILL.md
+  description: Design a variation theory task using contrast, separation, and fusion to teach critical features of a concept. Use when students confuse similar concepts or fail to discern key distinctions.
+- name: central-historical-question-evaluator
+  path: skills/central-historical-question-evaluator/SKILL.md
+  description: Evaluate a teacher-drafted central historical question for its capacity to drive genuine historical inquiry. Use when assessing whether a question will generate real evidence-weighing or produce shallow responses.
+- name: close-reading-skill-builder
+  path: skills/close-reading-skill-builder/SKILL.md
+  description: Build students' capacity to read historical documents closely — attending to word choice, tone, and rhetoric as evidence of perspective. Use when students summarise sources without analysing language.
+- name: contextualisation-skill-builder
+  path: skills/contextualisation-skill-builder/SKILL.md
+  description: Build students' capacity to place historical documents in their temporal and social context. Use when students read sources without considering what was happening at the time, or know the context but don't deploy it.
+- name: corroboration-skill-builder
+  path: skills/corroboration-skill-builder/SKILL.md
+  description: Build students' capacity to compare accounts across multiple historical sources — identifying agreements, contradictions, and gaps. Use when students treat individual documents as complete answers rather than partial perspectives.
+- name: document-based-lesson-designer
+  path: skills/document-based-lesson-designer/SKILL.md
+  description: Design a complete document-based history lesson using the Reading Like a Historian four-part structure. Use when planning a primary source inquiry lesson or converting a textbook lesson into document-based investigation.
+- name: historical-document-set-curator
+  path: skills/historical-document-set-curator/SKILL.md
+  description: Design a document set for a document-based lesson — selecting and sequencing sources for analytical tension around a central question. Use when assembling sources for a new lesson or when an existing set produces flat responses.
+- name: historical-source-adapter
+  path: skills/historical-source-adapter/SKILL.md
+  description: Adapt a historical primary source for classroom use — modifying complexity and length while preserving features for sourcing, close reading, and corroboration. Use when a primary source is too complex for the target age group.
+- name: historical-thinking-assessment-designer
+  path: skills/historical-thinking-assessment-designer/SKILL.md
+  description: Design formative assessments that make students' historical thinking visible — revealing whether they source, close-read, contextualise, and corroborate. Use when assessing historical thinking skills or planning a diagnostic.
+- name: historical-thinking-strategy-modelling-guide
+  path: skills/historical-thinking-strategy-modelling-guide/SKILL.md
+  description: Design a teacher think-aloud that models historical thinking strategies with a specific document. Use when planning explicit strategy instruction or when students follow a protocol without understanding the underlying reasoning.
+- name: sourcing-skill-builder
+  path: skills/sourcing-skill-builder/SKILL.md
+  description: Build students' capacity to interrogate a historical source before reading — asking who authored it, when, why, and what this means for reliability. Use when students read documents without attending to authorship.
+- name: udl-barrier-anticipator
+  path: skills/udl-barrier-anticipator/SKILL.md
+  description: Predicts access barriers in a learning task before delivery, given a learner variability profile. Distinguishes between barriers addressable through design and those requiring specialist support.
+- name: udl-lesson-auditor
+  path: skills/udl-lesson-auditor/SKILL.md
+  description: Audits an existing lesson against UDL's three principles — engagement, representation, and action/expression. Identifies specific access barriers and suggests concrete modifications ranked by impact.
+- name: udl-options-designer
+  path: skills/udl-options-designer/SKILL.md
+  description: Generates multiple means of engagement, representation, and action/expression for a given learning goal. Produces specific, practical alternatives — not generic options — and recommends the highest-impact single change.
+- name: argument-structure-scaffold-generator
+  path: skills/argument-structure-scaffold-generator/SKILL.md
+  description: Generate argument structure scaffolds using Toulmin, PEEL, or CER frameworks for a specific claim or question. Use when teaching argumentative or analytical writing across any subject.
+- name: critical-thinking-task-designer
+  path: skills/critical-thinking-task-designer/SKILL.md
+  description: Design a critical thinking task targeting specific skills like evaluating evidence, identifying bias, or analysing arguments. Use when embedding critical analysis into subject lessons.
+- name: disciplinary-writing-scaffold
+  path: skills/disciplinary-writing-scaffold/SKILL.md
+  description: Create a writing scaffold teaching the genre conventions specific to an academic discipline. Use when students write lab reports, historical essays, or other discipline-specific text types.
+- name: media-literacy-deconstruction-protocol
+  path: skills/media-literacy-deconstruction-protocol/SKILL.md
+  description: Design a media deconstruction protocol analysing persuasion, bias, or representation in media texts. Use when teaching students to critically read advertisements, news, or social media content.
+- name: reading-comprehension-strategy-selector
+  path: skills/reading-comprehension-strategy-selector/SKILL.md
+  description: Select and sequence reading comprehension strategies matched to a specific text's challenges and demands. Use when students struggle with a text or need targeted reading support.
+- name: source-credibility-evaluation-protocol
+  path: skills/source-credibility-evaluation-protocol/SKILL.md
+  description: Design a source evaluation protocol using lateral reading and credibility checks for digital information. Use when students need to evaluate websites, online sources, or social media claims.
+- name: text-complexity-analyser
+  path: skills/text-complexity-analyser/SKILL.md
+  description: Analyse text complexity across quantitative, qualitative, and reader-task dimensions with scaffolding recommendations. Use when selecting texts, assessing readability, or planning reading support.
+- name: cognitive-load-analyser
+  path: skills/cognitive-load-analyser/SKILL.md
+  description: Analyse a learning task for cognitive load problems and recommend specific design improvements. Use when tasks overwhelm students, instructions feel complex, or materials need simplifying.
+- name: dual-coding-designer
+  path: skills/dual-coding-designer/SKILL.md
+  description: Design a visual complement to verbal content using dual coding principles for stronger encoding. Use when creating slides, diagrams, posters, or visual explanations of complex concepts.
+- name: elaborative-interrogation-generator
+  path: skills/elaborative-interrogation-generator/SKILL.md
+  description: Generate elaborative interrogation prompts that deepen encoding through targeted why and how questions. Use when students memorise without understanding or need deeper processing of content.
+- name: feedback-quality-analyser
+  path: skills/feedback-quality-analyser/SKILL.md
+  description: Analyse existing written feedback for quality, specificity, actionability, and impact on student learning. Use when reviewing teacher or peer feedback to improve feedback practices.
+- name: interleaving-unit-planner
+  path: skills/interleaving-unit-planner/SKILL.md
+  description: Redesign a blocked topic sequence into an interleaved plan with mixed practice across related topics. Use when planning units, homework schedules, or revision programmes.
+- name: retrieval-practice-generator
+  path: skills/retrieval-practice-generator/SKILL.md
+  description: Generate retrieval practice questions at varied difficulty levels for a topic or concept. Use when creating quiz starters, revision activities, or low-stakes testing materials.
+- name: spaced-practice-scheduler
+  path: skills/spaced-practice-scheduler/SKILL.md
+  description: Design a spaced retrieval schedule for any topic list and timeline. Use when planning units, term sequences, or revision programmes.
+- name: worked-example-fading-designer
+  path: skills/worked-example-fading-designer/SKILL.md
+  description: Design a worked example fading sequence from fully worked examples through to independent practice. Use when teaching procedures, algorithms, or multi-step processes to novice learners.
+- name: mixed-age-learning-task-designer
+  path: skills/mixed-age-learning-task-designer/SKILL.md
+  description: Design a learning task where mixed-age students work together with mutual benefit for all age groups. Use when planning cross-age tutoring, vertical grouping, or multi-year group activities.
+- name: prepared-environment-designer
+  path: skills/prepared-environment-designer/SKILL.md
+  description: Redesign a classroom as a prepared environment optimised for independent learning, calm transitions, and material access. Use when classroom layout hinders independence or self-directed work.
+- name: three-part-lesson-designer
+  path: skills/three-part-lesson-designer/SKILL.md
+  description: Design a Montessori three-period lesson for introducing concepts through concrete materials and naming. Use when teaching vocabulary, classifications, or concepts through hands-on materials.
+- name: uninterrupted-work-cycle-designer
+  path: skills/uninterrupted-work-cycle-designer/SKILL.md
+  description: Design an uninterrupted work cycle with choice-based activities structured within a realistic time block. Use when planning Montessori-style independent work periods or extended choice time.
+- name: assessment-design-orchestrator
+  path: skills/assessment-design-orchestrator/SKILL.md
+  description: Routes between five assessment pathways — formative, rubric/criteria, authentic/performance, peer/self, and diagnostic — with validity and equity checks. Use when a teacher needs help choosing how to assess.
+- name: coherent-rubric-logic-builder
+  path: skills/coherent-rubric-logic-builder/SKILL.md
+  description: Build a five-level rubric with coherent logic for a learning target within a developmental band. Use for Manning methodology programmes where Competent = success. For general curriculum rubrics, use criterion-referenced-rubric-generator instead.
+- name: compassionate-systems-awareness-orchestrator
+  path: skills/compassionate-systems-awareness-orchestrator/SKILL.md
+  description: Orchestrate compassionate systems tools from issue or aspiration to wise action. Use when a class needs a complete inquiry workflow.
+- name: developmental-band-system-designer
+  path: skills/developmental-band-system-designer/SKILL.md
+  description: Design a developmental band system mapping student growth from early childhood through upper secondary. Use when building competency-based curriculum architecture for a school or programme.
+- name: developmental-progression-synthesis
+  path: skills/developmental-progression-synthesis/SKILL.md
+  description: Synthesise completed KUD charts into a developmental progression matrix and per-competency narrative sections. Use when you need a programme-level view of how knowledge, understanding, and performance develop across bands.
+- name: dilemma-navigation-for-education-design
+  path: skills/dilemma-navigation-for-education-design/SKILL.md
+  description: Identify and navigate genuine dilemmas in curriculum, school, or community contexts — tensions between competing goods that cannot be solved, only navigated. Produces a structured dilemma map with both poles named and both/and possibilities.
+- name: dispositional-knowledge-assessment-designer
+  path: skills/dispositional-knowledge-assessment-designer/SKILL.md
+  description: Design multi-informant assessment approaches for dispositional competencies like curiosity or resilience. Use when assessing character strengths or competencies that written tests cannot capture.
+- name: inclusive-design-orchestrator
+  path: skills/inclusive-design-orchestrator/SKILL.md
+  description: 'Coordinates UDL and differentiation tools through a universal-first hierarchy: barrier removal before targeted differentiation before individualised accommodation. Use when planning accessible learning.'
+- name: learning-target-authoring-guide
+  path: skills/learning-target-authoring-guide/SKILL.md
+  description: Author learning targets for a competency across developmental bands with precise, observable progression language. Use when writing 'I can' statements for competency-based programmes.
+- name: multi-perspective-decision-wheel
+  path: skills/multi-perspective-decision-wheel/SKILL.md
+  description: Structure a decision or design challenge through multiple perspectives before committing to action. Use as a synthesis step after scoping, mapping, and dilemma navigation when a group needs a wiser next step.
+- name: place-based-curriculum-orchestrator
+  path: skills/place-based-curriculum-orchestrator/SKILL.md
+  description: Present pathway options and orchestrate place-based curriculum design from a local place, curriculum requirement, or community issue. Use when place should become a primary text for learning.
+- name: regenerative-project-design-orchestrator
+  path: skills/regenerative-project-design-orchestrator/SKILL.md
+  description: Present project-design pathway options and orchestrate regenerative projects using backwards design, PBL, SEEDS, compassionate systems action, or civic/service pathways.
+- name: scoping-for-transformative-learning-inquiry
+  path: skills/scoping-for-transformative-learning-inquiry/SKILL.md
+  description: Define the scope and purpose of a complex inquiry before mapping or futures work begins. Use when a class or group needs to agree what they are investigating, who it matters to, and at what scale.
+- name: seeds-regenerative-inquiry-cycle
+  path: skills/seeds-regenerative-inquiry-cycle/SKILL.md
+  description: Design a SEEDS regenerative inquiry cycle connecting place-based learning to ecological awareness for young learners. Use when building early childhood or primary inquiry around ecosystems and community.
+- name: self-determined-project-design-protocol
+  path: skills/self-determined-project-design-protocol/SKILL.md
+  description: Structure a student's self-determined project with mentoring checkpoints, competency alignment, and reflection. Use when guiding student-led projects within a competency-based framework.
+- name: single-point-rubric-designer
+  path: skills/single-point-rubric-designer/SKILL.md
+  description: Design a single-point rubric with one criterion and open columns for evidence. Use for student self-assessment, peer feedback, teacher formative feedback, or pre-task planning. Works with any learning target, with or without a band system.
+- name: three-horizons-learning-transition-mapper
+  path: skills/three-horizons-learning-transition-mapper/SKILL.md
+  description: Map a scoped topic across three coexisting horizons — current system under strain (H1), preferred future (H3), and transition innovations sorted as H2+ or H2- — to understand change dynamics and identify responsible next actions.
+- name: competency-framework-translator
+  path: skills/competency-framework-translator/SKILL.md
+  description: Translate an external competency framework like DigComp, GreenComp, or ISTE into classroom-ready activities. Use when implementing framework standards in specific teaching contexts.
+- name: instructional-coaching-conversation-guide
+  path: skills/instructional-coaching-conversation-guide/SKILL.md
+  description: Generate a coaching conversation guide with questions, protocols, and follow-up actions for a teaching focus. Use when preparing for coaching sessions, mentoring, or peer feedback conversations.
+- name: lesson-observation-protocol-designer
+  path: skills/lesson-observation-protocol-designer/SKILL.md
+  description: Design a focused lesson observation protocol with specific look-fors and evidence collection methods. Use when planning peer observations, coaching visits, or developmental classroom visits.
+- name: lesson-study-cycle-designer
+  path: skills/lesson-study-cycle-designer/SKILL.md
+  description: Design a complete lesson study cycle from research question through collaborative planning to research lesson. Use when planning jugyou kenkyuu or collaborative teacher inquiry into practice.
+- name: panel-review
+  path: skills/panel-review/SKILL.md
+  description: Seven-role depersonalised panel review of framework artefacts (KUD, criterion bank, LT definition, crosswalk, scope-and-sequence) in sequential-isolation mode. Gate rule mean>=88 AND no role<70.
+- name: pedagogical-content-knowledge-developer
+  path: skills/pedagogical-content-knowledge-developer/SKILL.md
+  description: Develop pedagogical content knowledge for a topic by surfacing common misconceptions and effective representations. Use when preparing to teach unfamiliar content or improving teaching of hard topics.
+- name: professional-development-session-designer
+  path: skills/professional-development-session-designer/SKILL.md
+  description: Design a professional development session using adult learning principles with active teacher engagement. Use when planning INSET days, CPD workshops, or staff training sessions.
+- name: reflective-practice-prompt-generator
+  path: skills/reflective-practice-prompt-generator/SKILL.md
+  description: Generate structured reflection prompts for a specific teaching experience or professional learning challenge. Use when debriefing lessons, journaling, or preparing for coaching conversations.
+- name: teacher-inquiry-cycle-designer
+  path: skills/teacher-inquiry-cycle-designer/SKILL.md
+  description: Design a practitioner inquiry cycle from research question through data collection to evidence-informed action. Use when starting action research, teacher-led investigation, or professional inquiry.
+- name: technological-pedagogical-content-knowledge-developer
+  path: skills/technological-pedagogical-content-knowledge-developer/SKILL.md
+  description: Develop TPACK for integrating a specific technology or AI tool into subject teaching with pedagogical alignment. Use when adopting new ed-tech, reviewing AI tools, or planning technology integration.
+- name: dialogic-teaching-move-generator
+  path: skills/dialogic-teaching-move-generator/SKILL.md
+  description: Generate follow-up teaching moves that extend student thinking after a specific classroom response. Use when a student says something worth exploring and the teacher wants to deepen the dialogue.
+- name: discussion-protocol-selector
+  path: skills/discussion-protocol-selector/SKILL.md
+  description: Select and configure a structured discussion protocol matched to the purpose, topic, and group readiness. Use when planning classroom discussions, Socratic seminars, or structured debate.
+- name: hinge-question-designer
+  path: skills/hinge-question-designer/SKILL.md
+  description: Design a diagnostic hinge question that reveals whether students understand enough to move on. Use when planning key checkpoints mid-lesson during explicit or direct instruction.
+- name: perspective-taking-designer
+  path: skills/perspective-taking-designer/SKILL.md
+  description: Design structured perspective-taking activities with anti-projection guardrails. Develops genuine understanding of complexity across history, social sciences, and literature — not performed empathy.
+- name: socratic-questioning-sequence-generator
+  path: skills/socratic-questioning-sequence-generator/SKILL.md
+  description: Generate a Socratic questioning sequence that develops conceptual understanding through guided inquiry. Use when facilitating philosophical discussions, concept exploration, or critical examination.
+- name: error-analysis-protocol
+  path: skills/error-analysis-protocol/SKILL.md
+  description: Design an error analysis protocol to diagnose the root cause of student mistakes and misconceptions. Use when error patterns appear in student work and targeted feedback is needed.
+- name: goal-setting-protocol-designer
+  path: skills/goal-setting-protocol-designer/SKILL.md
+  description: Design a structured goal-setting protocol using SMART or implementation-intention frameworks for students. Use when launching units, projects, or developing student self-direction habits.
+- name: metacognitive-prompt-library
+  path: skills/metacognitive-prompt-library/SKILL.md
+  description: Build a library of metacognitive prompts targeting planning, monitoring, or evaluation for a specific task. Use when developing students' thinking-about-thinking during independent work.
+- name: self-regulation-scaffold-generator
+  path: skills/self-regulation-scaffold-generator/SKILL.md
+  description: Generate scaffolds supporting student self-regulation across planning, monitoring, and evaluation phases. Use when students struggle to manage their own learning during extended or independent tasks.
+- name: study-strategy-selector
+  path: skills/study-strategy-selector/SKILL.md
+  description: Select evidence-based study strategies matched to material type, learning goal, and student habits. Use when advising students on revision techniques, homework, or independent study approaches.
+- name: ai-claim-checker
+  path: skills/ai-claim-checker/SKILL.md
+  description: After any AI-generated explanation, require the learner to identify one place it could be wrong, one thing to check, and one source to consult. Builds epistemic vigilance — treats AI output as a claim to evaluate, not truth to absorb.
+- name: confidence-calibration-check
+  path: skills/confidence-calibration-check/SKILL.md
+  description: Capture confidence ratings before and after a learning attempt to identify overconfidence and underconfidence patterns. Use when a student wants to understand how well they actually know something versus how well they think they know it.
+- name: explain-first-interrogator
+  path: skills/explain-first-interrogator/SKILL.md
+  description: Require the learner to explain a concept in their own words before the AI evaluates or extends it. Ensures the AI works from the learner's understanding rather than providing an explanation from scratch.
+- name: fading-manager
+  path: skills/fading-manager/SKILL.md
+  description: Track performance across sessions and reduce scaffolding as competence grows. Makes fading visible — the learner knows when scaffolds are removed and why. Use for sustained learning engagement where independence is the goal.
+- name: productive-failure-protocol
+  path: skills/productive-failure-protocol/SKILL.md
+  description: Stage exploration before instruction on complex problems. The learner produces two attempted approaches before consolidation — which builds on those attempts, not from scratch. Use for genuinely hard problems where struggle produces deeper learning.
+- name: progressive-hint-ladder
+  path: skills/progressive-hint-ladder/SKILL.md
+  description: Provide graduated assistance from abstract conceptual nudge to concrete procedural step, with reflection required before each escalation. Teaches help-seeking as a skill and prevents direct-answer shortcuts.
+- name: retrieve-first-gate
+  path: skills/retrieve-first-gate/SKILL.md
+  description: Before any explanation or answer, require the learner to produce a free-recall attempt and confidence rating. Use when a student wants help understanding or reviewing a topic — this skill ensures the AI works from what the learner already knows.
+- name: srl-session-wrapper
+  path: skills/srl-session-wrapper/SKILL.md
+  description: Wrap a learning session in a plan → monitor → reflect cycle. Use at the start of any substantial study session to set goals, mid-session to check strategy, and at session end to consolidate what changed. Builds self-regulated learning as a habit.
+- name: stuck-and-error-diagnosis-coach
+  path: skills/stuck-and-error-diagnosis-coach/SKILL.md
+  description: When a learner gets something wrong or feels stuck, require them to diagnose the problem before receiving help. Ensures help targets the actual cognitive breakdown, not just the surface error.
+- name: teach-back-evaluator
+  path: skills/teach-back-evaluator/SKILL.md
+  description: The learner teaches the concept to the AI, which plays a curious novice peer and identifies gaps through authentic questions. Use when the learner wants to test their understanding — teaching forces a different kind of organisation than studying.
+- name: transfer-bridge
+  path: skills/transfer-bridge/SKILL.md
+  description: After the learner demonstrates understanding of a concept, present near-transfer and far-transfer challenges. Use to test whether learning is portable or task-specific — this is what separates understanding from familiarity.
+- name: unassisted-evidence-checkpoint
+  path: skills/unassisted-evidence-checkpoint/SKILL.md
+  description: After scaffolded practice, run an unassisted check — a problem with no AI help. Separates what the learner can do with support from what they can do independently. Critical for preventing phantom attainment.
+- name: weekly-agency-review
+  path: skills/weekly-agency-review/SKILL.md
+  description: Review the week using accumulated session evidence — retrieval rates, hint depths, calibration accuracy, transfer and unassisted results. The learner identifies patterns and sets a strategy goal. Use weekly or after a multi-session period.
+- name: agency-circles-for-systems-action
+  path: skills/agency-circles-for-systems-action/SKILL.md
+  description: Map control, influence, and concern after systems analysis. Use when students need wise agency without being made responsible for everything.
+- name: aspirational-systems-iceberg
+  path: skills/aspirational-systems-iceberg/SKILL.md
+  description: Design the deeper patterns, structures, artefacts, and mental models needed to grow a desired event. Use when a class imagines a better future.
+- name: hexagon-complexity-mapper
+  path: skills/hexagon-complexity-mapper/SKILL.md
+  description: Map a complex topic by placing factors on hexagonal tiles where adjacency signals a claimed relationship. Use when students need to surface hidden connections in a system before analysis or action.
+- name: ladder-of-inference-reflection
+  path: skills/ladder-of-inference-reflection/SKILL.md
+  description: Slow down interpretation from observation to action. Use when students or adults need to examine assumptions in conflict, dialogue, or inquiry.
+- name: leverage-and-response-design
+  path: skills/leverage-and-response-design/SKILL.md
+  description: Design a wise systems intervention from an existing analysis. Maps proposed actions against Meadows' leverage points, checks for unintended consequences, and generates alternatives.
+- name: mental-model-mapper
+  path: skills/mental-model-mapper/SKILL.md
+  description: Surface beliefs, assumptions, stories, and values shaping a system. Use when deeper mental models need examining with care and evidence.
+- name: systems-awareness-iceberg
+  path: skills/systems-awareness-iceberg/SKILL.md
+  description: Map a current event below the surface into patterns, structures, and mental models. Use when a class or team needs systemic understanding before action.
+- name: systems-wellbeing-impact-mapper
+  path: skills/systems-wellbeing-impact-mapper/SKILL.md
+  description: Map systemic forces shaping a wellbeing concern without individualising the problem. Uses Bronfenbrenner's ecological model and social determinants to generate structural interventions.
+- name: agency-scaffold-generator
+  path: skills/agency-scaffold-generator/SKILL.md
+  description: Generate scaffolds that gradually increase student choice, voice, and ownership within a learning task. Use when students depend heavily on teacher direction and need to develop autonomy.
+- name: awe-wonder-experience-designer
+  path: skills/awe-wonder-experience-designer/SKILL.md
+  description: Design a moment of awe or wonder that hooks curiosity and deepens emotional engagement with content. Use when opening units, introducing surprising material, or reigniting student interest.
+- name: belonging-classroom-culture-designer
+  path: skills/belonging-classroom-culture-designer/SKILL.md
+  description: Design targeted interventions that strengthen belonging and inclusion for specific classroom dynamics. Use when students feel isolated, cliques form, or new students need integrating.
+- name: flow-state-condition-designer
+  path: skills/flow-state-condition-designer/SKILL.md
+  description: Optimise a learning activity for flow by balancing challenge level, skill, clear goals, and immediate feedback. Use when students are bored, anxious, or disengaged during a task.
+- name: implementation-intention-designer
+  path: skills/implementation-intention-designer/SKILL.md
+  description: Create if-then implementation intentions and WOOP plans for specific student behaviour change goals. Use when students know what to do but struggle to follow through on habits or routines.
+- name: motivation-diagnostic-task-redesign
+  path: skills/motivation-diagnostic-task-redesign/SKILL.md
+  description: Diagnose motivation problems in a task using self-determination theory and redesign for autonomy, competence, and relatedness. Use when students are disengaged, resistant, or going through the motions.
+- name: perma-based-lesson-designer
+  path: skills/perma-based-lesson-designer/SKILL.md
+  description: Design a lesson that embeds PERMA wellbeing elements alongside academic learning objectives. Use when planning lessons that intentionally support both content mastery and student flourishing.
+- name: restorative-practice-protocol-designer
+  path: skills/restorative-practice-protocol-designer/SKILL.md
+  description: Design a restorative practice protocol for addressing harm, rebuilding trust, and restoring relationships. Use when managing conflict, behavioural incidents, or relationship breakdown between students.
+- name: ruler-emotional-literacy-sequence
+  path: skills/ruler-emotional-literacy-sequence/SKILL.md
+  description: Design a RULER emotional literacy sequence for recognising, understanding, labelling, expressing, and regulating emotions. Use when students struggle with emotional regulation, conflict, or anxiety.
+- name: self-efficacy-builder-sequence
+  path: skills/self-efficacy-builder-sequence/SKILL.md
+  description: Design a mastery experience sequence that systematically builds student confidence in a skill they avoid. Use when students say 'I can't do this', avoid tasks, or show learned helplessness.
+- name: trauma-informed-practice-designer
+  path: skills/trauma-informed-practice-designer/SKILL.md
+  description: Design trauma-informed classroom practices that prioritise safety, predictability, connection, and regulation. Use when student behaviour may be trauma-related or the class needs a sensitive approach.
+- name: wellbeing-learning-connection-mapper
+  path: skills/wellbeing-learning-connection-mapper/SKILL.md
+  description: Map evidence-based connections between a wellbeing initiative and specific academic learning outcomes. Use when justifying wellbeing programmes, integrating SEL, or linking pastoral and academic work.
