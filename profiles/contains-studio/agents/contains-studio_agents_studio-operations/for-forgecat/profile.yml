@@ -1,0 +1,232 @@
+name: '@forgecat/contains-studio_agents_studio-operations'
+description: Claude Code sub-agents for analytics, finance, infrastructure, legal compliance, and customer support.
+repository: https://github.com/contains-studio/agents/tree/main/studio-operations
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: analytics-reporter
+  path: agents/analytics-reporter.md
+  description: 'Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization. Examples:\n\n<example>\nContext: Monthly performance review needed
+
+    user: "I need to understand how our apps performed last month"
+
+    assistant: "I''ll analyze your app performance metrics comprehensively. Let me use the analytics-reporter agent to generate insights from your data."
+
+    <commentary>
+
+    Regular performance reviews identify trends and opportunities that daily monitoring might miss.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: User behavior analysis for feature decisions
+
+    user: "Which features are users actually using in our fitness app?"
+
+    assistant: "Feature usage data is crucial for prioritization. I''ll use the analytics-reporter agent to analyze user behavior patterns and identify your most valuable features."
+
+    <commentary>
+
+    Data-driven feature decisions prevent wasting resources on unused functionality.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Revenue optimization analysis
+
+    user: "Our revenue is plateauing, need to find growth opportunities"
+
+    assistant: "Let''s dive deep into your revenue metrics. I''ll use the analytics-reporter agent to identify conversion bottlenecks and untapped opportunities."
+
+    <commentary>
+
+    Revenue plateau often hides multiple small optimization opportunities that compound.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: A/B test results interpretation
+
+    user: "We ran three different onboarding flows, which performed best?"
+
+    assistant: "I''ll analyze your A/B test results for statistical significance and practical impact. Let me use the analytics-reporter agent to interpret the data."
+
+    <commentary>
+
+    Proper test analysis prevents false positives and ensures meaningful improvements.
+
+    </commentary>
+
+    </example>'
+- name: finance-tracker
+  path: agents/finance-tracker.md
+  description: 'Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return. Examples:\n\n<example>\nContext: Planning next quarter''s development budget
+
+    user: "We have $50k for Q2, how should we allocate it?"
+
+    assistant: "I''ll create an optimized budget allocation plan. Let me use the finance-tracker agent to analyze your needs and maximize ROI."
+
+    <commentary>
+
+    Strategic budget allocation can be the difference between growth and stagnation in app development.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: App profitability analysis
+
+    user: "Our fitness app has 10k users but we''re still losing money"
+
+    assistant: "Let''s analyze your unit economics and find the path to profitability. I''ll use the finance-tracker agent to break down costs and revenue opportunities."
+
+    <commentary>
+
+    Many apps fail not from lack of users but from unsustainable unit economics.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Evaluating monetization strategies
+
+    user: "Should we switch from ads to subscriptions?"
+
+    assistant: "This requires careful financial modeling. I''ll use the finance-tracker agent to project revenues and compare monetization strategies."
+
+    <commentary>
+
+    Monetization model changes can dramatically impact both revenue and user experience.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Investor reporting preparation
+
+    user: "I need to show our investors our burn rate and runway"
+
+    assistant: "I''ll prepare comprehensive financial reports for your investors. Let me use the finance-tracker agent to create clear visualizations of your financial health."
+
+    <commentary>
+
+    Clear financial reporting builds investor confidence and secures future funding.
+
+    </commentary>
+
+    </example>'
+- name: infrastructure-maintainer
+  path: agents/infrastructure-maintainer.md
+  description: 'Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters. Examples:\n\n<example>\nContext: App experiencing slow performance
+
+    user: "Users are complaining the app is getting slower"
+
+    assistant: "I''ll diagnose and optimize your app''s performance. Let me use the infrastructure-maintainer agent to identify bottlenecks and implement solutions."
+
+    <commentary>
+
+    Performance degradation often creeps in gradually until it reaches a tipping point that drives users away.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Preparing for viral growth
+
+    user: "We might go viral next week with this influencer partnership"
+
+    assistant: "Let''s ensure your infrastructure can handle the surge. I''ll use the infrastructure-maintainer agent to audit and scale your systems proactively."
+
+    <commentary>
+
+    Viral moments can kill apps that aren''t prepared—success becomes failure without proper infrastructure.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Reducing infrastructure costs
+
+    user: "Our server costs are eating up all our profit margins"
+
+    assistant: "I''ll analyze and optimize your infrastructure spending. Let me use the infrastructure-maintainer agent to find cost savings without sacrificing performance."
+
+    <commentary>
+
+    Many apps overspend on infrastructure due to poor optimization and outdated configurations.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Setting up monitoring and alerts
+
+    user: "I want to know immediately if something breaks"
+
+    assistant: "Proactive monitoring is essential. I''ll use the infrastructure-maintainer agent to set up comprehensive health checks and alert systems."
+
+    <commentary>
+
+    The first user complaint should never be how you discover an outage.
+
+    </commentary>
+
+    </example>'
+- name: legal-compliance-checker
+  path: agents/legal-compliance-checker.md
+  description: 'Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations. Examples:\n\n<example>\nContext: Launching app in European markets
+
+    user: "We want to expand to the EU next month"
+
+    assistant: "EU expansion requires GDPR compliance. I''ll use the legal-compliance-checker agent to audit your current practices and implement necessary changes."
+
+    <commentary>
+
+    GDPR violations can result in fines up to 4% of global annual revenue—preparation is essential.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Adding AI features to the app
+
+    user: "We''re integrating ChatGPT into our education app"
+
+    assistant: "AI integration has specific legal considerations. Let me use the legal-compliance-checker agent to ensure proper disclosures and data handling."
+
+    <commentary>
+
+    AI features require transparency about data usage and potential biases, especially in education.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Collecting user health data
+
+    user: "Our fitness app will track heart rate and sleep patterns"
+
+    assistant: "Health data has strict privacy requirements. I''ll use the legal-compliance-checker agent to implement HIPAA-compliant data handling."
+
+    <commentary>
+
+    Health data mishandling can result in both regulatory fines and loss of user trust.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Implementing in-app purchases for children''s app
+
+    user: "We want to add a coin store to our kids'' game"
+
+    assistant: "Children''s apps have special requirements for purchases. Let me use the legal-compliance-checker agent to ensure COPPA compliance and parental controls."
+
+    <commentary>
+
+    Monetizing children''s apps requires careful navigation of protective regulations.
+
+    </commentary>
+
+    </example>'
+- name: support-responder
+  path: agents/support-responder.md
+  description: 'Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities. Examples:\n\n<example>\nContext: Setting up support for a new app launch
+
+    user: "We''re launching tomorrow and need customer support ready"\nassistant: "I''ll set up comprehensive customer support for your launch. Let me use the support-responder agent to create response templates and support workflows."\n<commentary>\nProactive support setup prevents launch day chaos and ensures positive user experiences.\n</commentary>\n</example>\n\n<example>\nContext: Handling increased support volume
+
+    user: "We''re getting swamped with the same questions over and over"\nassistant: "I''ll help optimize your support efficiency. Let me use the support-responder agent to identify patterns and create automated responses."\n<commentary>\nRepetitive questions indicate opportunities for automation and product improvements.\n</commentary>\n</example>\n\n<example>\nContext: Analyzing support tickets for product insights
+
+    user: "What are users actually struggling with in our app?"\nassistant: "Support tickets are a goldmine of insights. I''ll use the support-responder agent to analyze patterns and identify improvement opportunities."\n<commentary>\nSupport data provides direct feedback about user pain points and confusion.\n</commentary>\n</example>\n\n<example>\nContext: Creating help documentation
+
+    user: "Users keep asking how to connect their TikTok account"\nassistant: "Let''s create clear documentation for that. I''ll use the support-responder agent to write help articles and in-app guidance."\n<commentary>\nGood documentation reduces support load and improves user satisfaction.\n</commentary>\n</example>'

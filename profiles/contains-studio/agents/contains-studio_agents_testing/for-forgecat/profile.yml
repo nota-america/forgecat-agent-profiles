@@ -1,0 +1,232 @@
+name: '@forgecat/contains-studio_agents_testing'
+description: Claude Code sub-agents for API testing, performance benchmarking, result analysis, tool evaluation, and workflow optimization.
+repository: https://github.com/contains-studio/agents/tree/main/testing
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: api-tester
+  path: agents/api-tester.md
+  description: 'Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment. Examples:\n\n<example>\nContext: Testing API performance under load
+
+    user: "We need to test if our API can handle 10,000 concurrent users"
+
+    assistant: "I''ll help test your API''s performance under load. Let me use the api-tester agent to simulate 10,000 concurrent users and analyze response times, error rates, and resource usage."
+
+    <commentary>
+
+    Load testing prevents embarrassing outages when products go viral.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Validating API contracts
+
+    user: "Make sure our API responses match the OpenAPI spec"
+
+    assistant: "I''ll validate your API against the OpenAPI specification. Let me use the api-tester agent to test all endpoints and ensure contract compliance."
+
+    <commentary>
+
+    Contract testing prevents breaking changes that frustrate API consumers.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: API performance optimization
+
+    user: "Our API is slow, can you identify bottlenecks?"
+
+    assistant: "I''ll analyze your API performance and identify bottlenecks. Let me use the api-tester agent to profile endpoints and provide optimization recommendations."
+
+    <commentary>
+
+    Performance profiling reveals hidden inefficiencies that compound at scale.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Security testing
+
+    user: "Test our API for common security vulnerabilities"
+
+    assistant: "I''ll test your API for security vulnerabilities. Let me use the api-tester agent to check for common issues like injection attacks, authentication bypasses, and data exposure."
+
+    <commentary>
+
+    Security testing prevents costly breaches and maintains user trust.
+
+    </commentary>
+
+    </example>'
+- name: performance-benchmarker
+  path: agents/performance-benchmarker.md
+  description: 'Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring speed, identifying bottlenecks, and providing actionable optimization strategies for applications. Examples:\n\n<example>\nContext: Application speed testing
+
+    user: "Our app feels sluggish, can you benchmark it?"
+
+    assistant: "I''ll benchmark your application''s performance comprehensively. Let me use the performance-benchmarker agent to measure load times, identify bottlenecks, and provide optimization recommendations."
+
+    <commentary>
+
+    Performance benchmarking reveals invisible problems that frustrate users.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Frontend performance optimization
+
+    user: "Our website takes 5 seconds to load"
+
+    assistant: "I''ll analyze your website''s performance issues. Let me use the performance-benchmarker agent to profile load times, bundle sizes, and rendering performance."
+
+    <commentary>
+
+    Every second of load time costs conversions and user satisfaction.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Database query optimization
+
+    user: "Some queries are taking forever"
+
+    assistant: "I''ll profile your database queries to find the slow ones. Let me use the performance-benchmarker agent to analyze query performance and suggest optimizations."
+
+    <commentary>
+
+    Slow queries compound into application-wide performance degradation.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Mobile app performance
+
+    user: "Our React Native app is janky on older phones"
+
+    assistant: "I''ll benchmark your app''s performance on various devices. Let me use the performance-benchmarker agent to measure frame rates, memory usage, and identify optimization opportunities."
+
+    <commentary>
+
+    Mobile performance issues eliminate huge segments of potential users.
+
+    </commentary>
+
+    </example>'
+- name: test-results-analyzer
+  path: agents/test-results-analyzer.md
+  description: 'Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements. Examples:\n\n<example>\nContext: Analyzing test suite results
+
+    user: "Our test suite has been flaky lately, can you analyze the patterns?"
+
+    assistant: "I''ll analyze your test suite results to identify flaky patterns. Let me use the test-results-analyzer agent to examine failure trends, timing patterns, and provide stability recommendations."
+
+    <commentary>
+
+    Flaky tests erode confidence and slow development velocity.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Quality metrics reporting
+
+    user: "Generate a quality report for this sprint"
+
+    assistant: "I''ll generate a comprehensive quality report for your sprint. Let me use the test-results-analyzer agent to analyze test coverage, defect trends, and quality metrics."
+
+    <commentary>
+
+    Quality metrics make invisible problems visible and actionable.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Test trend analysis
+
+    user: "Are our tests getting slower over time?"
+
+    assistant: "I''ll analyze your test execution trends over time. Let me use the test-results-analyzer agent to examine historical data and identify performance degradation patterns."
+
+    <commentary>
+
+    Slow tests compound into slow development cycles.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Coverage analysis
+
+    user: "Which parts of our codebase lack test coverage?"
+
+    assistant: "I''ll analyze your test coverage to find gaps. Let me use the test-results-analyzer agent to identify uncovered code paths and suggest priority areas for testing."
+
+    <commentary>
+
+    Coverage gaps are where bugs love to hide.
+
+    </commentary>
+
+    </example>'
+- name: tool-evaluator
+  path: agents/tool-evaluator.md
+  description: 'Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy. Examples:\n\n<example>\nContext: Considering a new framework or library
+
+    user: "Should we use the new Vite 5.0 for our next project?"\nassistant: "I''ll evaluate Vite 5.0 for your needs. Let me use the tool-evaluator agent to assess its benefits, migration effort, and impact on development speed."\n<commentary>\nTool choices significantly impact development velocity and should be evaluated systematically.\n</commentary>\n</example>\n\n<example>\nContext: Comparing similar tools or services
+
+    user: "Supabase vs Firebase vs AWS Amplify - which should we use?"\nassistant: "I''ll compare these backend services for your use case. Let me use the tool-evaluator agent to analyze features, pricing, and development speed."\n<commentary>\nBackend service choices affect both development time and long-term costs.\n</commentary>\n</example>\n\n<example>\nContext: Evaluating AI/ML service providers
+
+    user: "We need to add AI features. OpenAI, Anthropic, or Replicate?"\nassistant: "I''ll evaluate these AI providers for your specific needs. Let me use the tool-evaluator agent to compare capabilities, costs, and integration complexity."\n<commentary>\nAI service selection impacts both features and operational costs significantly.\n</commentary>\n</example>\n\n<example>\nContext: Assessing no-code/low-code tools
+
+    user: "Could Bubble or FlutterFlow speed up our prototyping?"\nassistant: "Let''s evaluate if no-code tools fit your workflow. I''ll use the tool-evaluator agent to assess the speed gains versus flexibility trade-offs."\n<commentary>\nNo-code tools can accelerate prototyping but may limit customization.\n</commentary>\n</example>'
+- name: workflow-optimizer
+  path: agents/workflow-optimizer.md
+  description: 'Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance. Examples:\n\n<example>\nContext: Improving development workflow efficiency
+
+    user: "Our team spends too much time on repetitive tasks"
+
+    assistant: "I''ll analyze your workflow to identify automation opportunities. Let me use the workflow-optimizer agent to map current processes and recommend optimizations."
+
+    <commentary>
+
+    Workflow optimization can reclaim hours of productive time each week.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Human-AI collaboration testing
+
+    user: "Test how well our AI coding assistant integrates with developer workflows"
+
+    assistant: "I''ll evaluate the human-AI collaboration effectiveness. Let me use the workflow-optimizer agent to measure handoff efficiency and identify friction points."
+
+    <commentary>
+
+    Smooth human-AI collaboration multiplies productivity rather than just adding to it.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Process bottleneck analysis
+
+    user: "Our deployment process takes too long"
+
+    assistant: "I''ll analyze your deployment workflow for bottlenecks. Let me use the workflow-optimizer agent to time each step and identify optimization opportunities."
+
+    <commentary>
+
+    Deployment bottlenecks compound, turning minutes into hours across releases.
+
+    </commentary>
+
+    </example>\n\n<example>\nContext: Tool integration efficiency
+
+    user: "Are we using our tools effectively together?"
+
+    assistant: "I''ll analyze your tool integration and usage patterns. Let me use the workflow-optimizer agent to identify redundancies and missing automations."
+
+    <commentary>
+
+    Poor tool integration creates hidden time taxes on every task.
+
+    </commentary>
+
+    </example>'
