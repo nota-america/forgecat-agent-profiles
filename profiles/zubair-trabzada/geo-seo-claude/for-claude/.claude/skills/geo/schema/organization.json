@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://YOURDOMAIN.com/#organization",
+  "name": "YOUR_ORGANIZATION_NAME",
+  "url": "https://YOURDOMAIN.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://YOURDOMAIN.com/logo.png",
+    "width": 600,
+    "height": 60
+  },
+  "description": "YOUR_ORGANIZATION_DESCRIPTION",
+  "foundingDate": "YYYY-MM-DD",
+  "founder": {
+    "@type": "Person",
+    "name": "FOUNDER_NAME",
+    "url": "https://YOURDOMAIN.com/about/FOUNDER",
+    "sameAs": [
+      "https://www.linkedin.com/in/FOUNDER_LINKEDIN",
+      "https://twitter.com/FOUNDER_TWITTER"
+    ]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-XXX-XXX-XXXX",
+    "contactType": "customer service",
+    "email": "contact@YOURDOMAIN.com",
+    "availableLanguage": ["English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "YOUR_STREET",
+    "addressLocality": "YOUR_CITY",
+    "addressRegion": "YOUR_STATE",
+    "postalCode": "YOUR_ZIP",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/YOUR_LINKEDIN",
+    "https://www.youtube.com/@YOUR_YOUTUBE",
+    "https://www.reddit.com/r/YOUR_SUBREDDIT",
+    "https://twitter.com/YOUR_TWITTER",
+    "https://www.facebook.com/YOUR_FACEBOOK",
+    "https://github.com/YOUR_GITHUB",
+    "https://www.crunchbase.com/organization/YOUR_CRUNCHBASE",
+    "https://en.wikipedia.org/wiki/YOUR_WIKIPEDIA",
+    "https://www.wikidata.org/wiki/YOUR_WIKIDATA_ID"
+  ],
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": "XX"
+  },
+  "areaServed": "US",
+  "knowsAbout": [
+    "TOPIC_1",
+    "TOPIC_2",
+    "TOPIC_3"
+  ]
+}

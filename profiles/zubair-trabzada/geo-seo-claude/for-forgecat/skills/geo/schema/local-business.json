@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://YOURDOMAIN.com/#localbusiness",
+  "name": "YOUR_BUSINESS_NAME",
+  "url": "https://YOURDOMAIN.com",
+  "image": "https://YOURDOMAIN.com/images/storefront.jpg",
+  "description": "YOUR_BUSINESS_DESCRIPTION",
+  "telephone": "+1-XXX-XXX-XXXX",
+  "email": "contact@YOURDOMAIN.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "YOUR_STREET",
+    "addressLocality": "YOUR_CITY",
+    "addressRegion": "YOUR_STATE",
+    "postalCode": "YOUR_ZIP",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "XX.XXXXXX",
+    "longitude": "-XX.XXXXXX"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "XX.XXXXXX",
+      "longitude": "-XX.XXXXXX"
+    },
+    "geoRadius": "50 mi"
+  },
+  "sameAs": [
+    "https://www.google.com/maps/place/YOUR_GOOGLE_MAPS_URL",
+    "https://www.yelp.com/biz/YOUR_YELP_URL",
+    "https://www.facebook.com/YOUR_FACEBOOK",
+    "https://www.linkedin.com/company/YOUR_LINKEDIN",
+    "https://www.youtube.com/@YOUR_YOUTUBE",
+    "https://www.bbb.org/YOUR_BBB_URL"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "XX",
+    "bestRating": "5"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SERVICE_NAME_1",
+          "description": "SERVICE_DESCRIPTION_1"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SERVICE_NAME_2",
+          "description": "SERVICE_DESCRIPTION_2"
+        }
+      }
+    ]
+  }
+}
