@@ -32,7 +32,7 @@ npx forgecat install @forgecat/contains-studio_agents_design
 |---|---|
 | Author | Contains Studio |
 | Original repository | https://github.com/contains-studio/agents/tree/main/design |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Original commit | `a5a480c324cac64b9c569bca0b2f297d517240cb` |
 | License | Unknown |
 | Source platform | Claude Code agents |
