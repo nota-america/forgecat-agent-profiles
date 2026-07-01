@@ -1,0 +1,67 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG/#article",
+  "headline": "ARTICLE_TITLE",
+  "description": "ARTICLE_DESCRIPTION",
+  "url": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://YOURDOMAIN.com/images/ARTICLE_IMAGE.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://YOURDOMAIN.com/about/AUTHOR_SLUG/#person",
+    "name": "AUTHOR_NAME",
+    "url": "https://YOURDOMAIN.com/about/AUTHOR_SLUG",
+    "image": "https://YOURDOMAIN.com/images/authors/AUTHOR_IMAGE.jpg",
+    "jobTitle": "AUTHOR_JOB_TITLE",
+    "description": "AUTHOR_BIO_SHORT",
+    "knowsAbout": [
+      "EXPERTISE_1",
+      "EXPERTISE_2",
+      "EXPERTISE_3"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/AUTHOR_LINKEDIN",
+      "https://twitter.com/AUTHOR_TWITTER",
+      "https://github.com/AUTHOR_GITHUB",
+      "https://en.wikipedia.org/wiki/AUTHOR_WIKIPEDIA"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "UNIVERSITY_NAME"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "YOUR_ORGANIZATION_NAME",
+      "@id": "https://YOURDOMAIN.com/#organization"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://YOURDOMAIN.com/#organization",
+    "name": "YOUR_ORGANIZATION_NAME",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://YOURDOMAIN.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG"
+  },
+  "wordCount": "XXXX",
+  "articleSection": "CATEGORY",
+  "keywords": "KEYWORD_1, KEYWORD_2, KEYWORD_3",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-summary", ".key-takeaway", "h2"]
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US"
+}

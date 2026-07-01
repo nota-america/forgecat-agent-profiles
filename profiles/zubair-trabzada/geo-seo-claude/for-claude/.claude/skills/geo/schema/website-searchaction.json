@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://YOURDOMAIN.com/#website",
+  "name": "YOUR_SITE_NAME",
+  "url": "https://YOURDOMAIN.com",
+  "description": "YOUR_SITE_DESCRIPTION",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://YOURDOMAIN.com/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://YOURDOMAIN.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "inLanguage": "en-US"
+}
