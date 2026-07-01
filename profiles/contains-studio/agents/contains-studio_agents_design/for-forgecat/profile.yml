@@ -1,16 +1,17 @@
-name: '@forgecat/contains-studio_agents_design'
-description: Claude Code sub-agents for brand, UI, UX research, visual storytelling, and interaction delight.
+name: "@forgecat/contains-studio_agents_design"
+description: Claude Code sub-agents for brand, UI, UX research, visual storytelling,
+  and interaction delight.
 repository: https://github.com/contains-studio/agents/tree/main/design
 license: Unknown
 visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []

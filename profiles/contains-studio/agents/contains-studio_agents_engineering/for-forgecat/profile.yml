@@ -1,16 +1,17 @@
-name: '@forgecat/contains-studio_agents_engineering'
-description: Claude Code sub-agents for AI, backend, DevOps, frontend, mobile, rapid prototyping, and test work.
+name: "@forgecat/contains-studio_agents_engineering"
+description: Claude Code sub-agents for AI, backend, DevOps, frontend, mobile, rapid
+  prototyping, and test work.
 repository: https://github.com/contains-studio/agents/tree/main/engineering
 license: Unknown
 visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []
