@@ -1,0 +1,26 @@
+name: '@forgecat/contains-studio_agents_product'
+description: Claude Code sub-agents for feedback synthesis, sprint prioritization, and trend research.
+repository: https://github.com/contains-studio/agents/tree/main/product
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: feedback-synthesizer
+  path: agents/feedback-synthesizer.md
+  description: Transform complaints into features
+- name: sprint-prioritizer
+  path: agents/sprint-prioritizer.md
+  description: Ship maximum value in 6 days
+- name: trend-researcher
+  path: agents/trend-researcher.md
+  description: Identify viral opportunities

@@ -1,0 +1,26 @@
+name: '@forgecat/contains-studio_agents_project-management'
+description: Claude Code sub-agents for experiments, shipping coordination, and studio production workflows.
+repository: https://github.com/contains-studio/agents/tree/main/project-management
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: experiment-tracker
+  path: agents/experiment-tracker.md
+  description: Data-driven feature validation
+- name: project-shipper
+  path: agents/project-shipper.md
+  description: Launch products that don't crash
+- name: studio-producer
+  path: agents/studio-producer.md
+  description: Keep teams shipping, not meeting

@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-174-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-35-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-182-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-36-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -126,6 +126,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [anthropics/knowledge-work-plugins](./profiles/anthropics/knowledge-work-plugins) | 15 | Knowledge-work plugins for legal, finance, HR, marketing, operations, sales, and more |
 | [anthropics/skills](./profiles/anthropics/skills) | 17 | Anthropic skill profiles for documents, spreadsheets, slides, web apps, themes, and more |
 | [awslabs/aidlc-workflows](./profiles/awslabs/aidlc-workflows) | 1 | AWS AI-DLC workflow rules for planning, construction, and governance |
+| [contains-studio/agents](./profiles/contains-studio/agents) | 8 | Contains Studio Claude Code sub-agent profiles for engineering, marketing, design, product, project management, operations, testing, and studio support |
 | [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing skills for conversion, copywriting, SEO, paid ads, analytics, and GTM work |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Cursor plugins for team workflows, continual learning, and iterative agent loops |
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
@@ -158,7 +159,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 174 profiles across 35 collections.
+Total: 182 profiles across 36 collections.
 
 ## Profile Layout
 

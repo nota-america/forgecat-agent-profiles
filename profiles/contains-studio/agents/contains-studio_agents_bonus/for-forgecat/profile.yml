@@ -1,0 +1,23 @@
+name: '@forgecat/contains-studio_agents_bonus'
+description: Claude Code sub-agents for studio coaching and lightweight humor support.
+repository: https://github.com/contains-studio/agents/tree/main/bonus
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: joker
+  path: agents/joker.md
+  description: Lighten the mood with tech humor
+- name: studio-coach
+  path: agents/studio-coach.md
+  description: Rally the AI troops to excellence

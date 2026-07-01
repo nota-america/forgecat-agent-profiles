@@ -1,0 +1,38 @@
+name: '@forgecat/contains-studio_agents_engineering'
+description: Claude Code sub-agents for AI, backend, DevOps, frontend, mobile, rapid prototyping, and test work.
+repository: https://github.com/contains-studio/agents/tree/main/engineering
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: ai-engineer
+  path: agents/ai-engineer.md
+  description: Integrate AI/ML features that actually ship
+- name: backend-architect
+  path: agents/backend-architect.md
+  description: Design scalable APIs and server systems
+- name: devops-automator
+  path: agents/devops-automator.md
+  description: Deploy continuously without breaking things
+- name: frontend-developer
+  path: agents/frontend-developer.md
+  description: Build blazing-fast user interfaces
+- name: mobile-app-builder
+  path: agents/mobile-app-builder.md
+  description: Create native iOS/Android experiences
+- name: rapid-prototyper
+  path: agents/rapid-prototyper.md
+  description: Build MVPs in days, not weeks
+- name: test-writer-fixer
+  path: agents/test-writer-fixer.md
+  description: Write tests that catch real bugs

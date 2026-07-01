@@ -1,0 +1,32 @@
+name: '@forgecat/contains-studio_agents_testing'
+description: Claude Code sub-agents for API testing, performance benchmarking, result analysis, tool evaluation, and workflow optimization.
+repository: https://github.com/contains-studio/agents/tree/main/testing
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: api-tester
+  path: agents/api-tester.md
+  description: Ensure APIs work under pressure
+- name: performance-benchmarker
+  path: agents/performance-benchmarker.md
+  description: Make everything faster
+- name: test-results-analyzer
+  path: agents/test-results-analyzer.md
+  description: Find patterns in test failures
+- name: tool-evaluator
+  path: agents/tool-evaluator.md
+  description: Choose tools that actually help
+- name: workflow-optimizer
+  path: agents/workflow-optimizer.md
+  description: Eliminate workflow bottlenecks

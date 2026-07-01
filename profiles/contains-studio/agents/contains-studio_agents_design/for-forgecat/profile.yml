@@ -1,0 +1,32 @@
+name: '@forgecat/contains-studio_agents_design'
+description: Claude Code sub-agents for brand, UI, UX research, visual storytelling, and interaction delight.
+repository: https://github.com/contains-studio/agents/tree/main/design
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: brand-guardian
+  path: agents/brand-guardian.md
+  description: Keep visual identity consistent everywhere
+- name: ui-designer
+  path: agents/ui-designer.md
+  description: Design interfaces developers can actually build
+- name: ux-researcher
+  path: agents/ux-researcher.md
+  description: Turn user insights into product improvements
+- name: visual-storyteller
+  path: agents/visual-storyteller.md
+  description: Create visuals that convert and share
+- name: whimsy-injector
+  path: agents/whimsy-injector.md
+  description: Add delight to every interaction

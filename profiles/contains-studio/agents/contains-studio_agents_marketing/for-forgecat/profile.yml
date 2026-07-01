@@ -1,0 +1,38 @@
+name: '@forgecat/contains-studio_agents_marketing'
+description: Claude Code sub-agents for app store optimization, content, growth, social platforms, and community marketing.
+repository: https://github.com/contains-studio/agents/tree/main/marketing
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: app-store-optimizer
+  path: agents/app-store-optimizer.md
+  description: Dominate app store search results
+- name: content-creator
+  path: agents/content-creator.md
+  description: Generate content across all platforms
+- name: growth-hacker
+  path: agents/growth-hacker.md
+  description: Find and exploit viral growth loops
+- name: instagram-curator
+  path: agents/instagram-curator.md
+  description: Master the visual content game
+- name: reddit-community-builder
+  path: agents/reddit-community-builder.md
+  description: Win Reddit without being banned
+- name: tiktok-strategist
+  path: agents/tiktok-strategist.md
+  description: Create shareable marketing moments
+- name: twitter-engager
+  path: agents/twitter-engager.md
+  description: Ride trends to viral engagement

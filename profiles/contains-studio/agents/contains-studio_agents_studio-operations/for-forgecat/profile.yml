@@ -1,0 +1,32 @@
+name: '@forgecat/contains-studio_agents_studio-operations'
+description: Claude Code sub-agents for analytics, finance, infrastructure, legal compliance, and customer support.
+repository: https://github.com/contains-studio/agents/tree/main/studio-operations
+license: Unknown
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+agents:
+- name: analytics-reporter
+  path: agents/analytics-reporter.md
+  description: Turn data into actionable insights
+- name: finance-tracker
+  path: agents/finance-tracker.md
+  description: Keep the studio profitable
+- name: infrastructure-maintainer
+  path: agents/infrastructure-maintainer.md
+  description: Scale without breaking the bank
+- name: legal-compliance-checker
+  path: agents/legal-compliance-checker.md
+  description: Stay legal while moving fast
+- name: support-responder
+  path: agents/support-responder.md
+  description: Turn angry users into advocates
