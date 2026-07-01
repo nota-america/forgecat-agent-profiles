@@ -1,0 +1,99 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://YOURDOMAIN.com/products/PRODUCT_SLUG/#product",
+  "name": "PRODUCT_NAME",
+  "url": "https://YOURDOMAIN.com/products/PRODUCT_SLUG",
+  "description": "PRODUCT_DESCRIPTION",
+  "image": [
+    "https://YOURDOMAIN.com/images/products/PRODUCT_1.jpg",
+    "https://YOURDOMAIN.com/images/products/PRODUCT_2.jpg",
+    "https://YOURDOMAIN.com/images/products/PRODUCT_3.jpg"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "YOUR_BRAND_NAME"
+  },
+  "sku": "YOUR_SKU",
+  "gtin13": "YOUR_GTIN",
+  "mpn": "YOUR_MPN",
+  "category": "PRODUCT_CATEGORY",
+  "material": "PRODUCT_MATERIAL",
+  "color": "PRODUCT_COLOR",
+  "weight": {
+    "@type": "QuantitativeValue",
+    "value": "X.X",
+    "unitCode": "LBR"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://YOURDOMAIN.com/products/PRODUCT_SLUG",
+    "price": "XX.XX",
+    "priceCurrency": "USD",
+    "priceValidUntil": "YYYY-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "@id": "https://YOURDOMAIN.com/#organization"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "0",
+          "maxValue": "1",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "7",
+          "unitCode": "DAY"
+        }
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "30",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "XXX",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "REVIEWER_NAME"
+      },
+      "datePublished": "YYYY-MM-DD",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "REVIEW_TEXT"
+    }
+  ]
+}

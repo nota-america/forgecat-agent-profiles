@@ -6,11 +6,11 @@ visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []
