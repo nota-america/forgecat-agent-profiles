@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-173-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-34-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-174-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-35-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -154,10 +154,11 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Codex subagents for development, infrastructure, security, and research |
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu skills for userscripts, GitHub Actions docs, secure hosting, browser workflows, and tooling |
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
+| [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 
 </details>
 
-Total: 173 profiles across 34 collections.
+Total: 174 profiles across 35 collections.
 
 ## Profile Layout
 
