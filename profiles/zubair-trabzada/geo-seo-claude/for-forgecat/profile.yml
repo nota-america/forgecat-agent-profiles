@@ -25,6 +25,16 @@ skills:
   - path: skills/geo/scripts/fetch_page.py
   - path: skills/geo/scripts/llmstxt_generator.py
   - path: skills/geo/scripts/webapp/app.py
+  dependencies:
+  - beautifulsoup4>=4.12.0,<5.0.0
+  - requests>=2.32.4,<3.0.0
+  - lxml>=6.0.2,<7.0.0
+  - playwright>=1.56.0,<2.0.0
+  - Pillow>=12.1.0,<13.0.0
+  - urllib3>=2.6.3,<3.0.0
+  - validators>=0.22.0,<1.0.0
+  - flask>=3.0.0,<4.0.0
+  - rich>=13.0.0,<14.0.0
 - name: geo-audit
   path: skills/geo-audit/SKILL.md
   description: Full website GEO+SEO audit with parallel subagent delegation. Orchestrates a comprehensive Generative Engine Optimization audit across AI citability, platform analysis, technical infrastructure, content quality, and schema markup. Produces a composite GEO Score (0-100) with prioritized action plan.

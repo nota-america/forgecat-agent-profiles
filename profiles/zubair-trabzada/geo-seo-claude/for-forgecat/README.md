@@ -61,7 +61,7 @@ npx forgecat install @forgecat/zubair-trabzada_geo-seo-claude
 ## Dependencies
 
 - Python 3.8+
-- Python packages from `skills/geo/requirements.txt`
+- Python packages from `skills/geo/requirements.txt`; ForgeCat installs the files, but helper-backed workflows need these packages installed before use.
 - Optional `uv` for faster Python environment setup
 - Optional Playwright browser install for screenshots
 - Optional pandoc and Google Chrome for `geo-report-pdf`
