@@ -1,4 +1,4 @@
-name: "@nota-america-tech/engineering-agent-team"
+name: "@forgecat/engineering-agent-team"
 description: >-
   Self-contained engineering agent team that orchestrates Anthropic Engineering knowledge-work skills through a tech lead
   coordinator and focused architecture, code quality, debug/incident, and release operations agents.
@@ -11,9 +11,9 @@ compatibility:
   platforms:
     tested:
     - claude-code
-    - codex
-    partial:
     - cursor
+    - codex
+    partial: []
   models:
     recommended: []
     minimum: []

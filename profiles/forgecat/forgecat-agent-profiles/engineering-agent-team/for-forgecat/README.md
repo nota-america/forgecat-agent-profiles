@@ -9,7 +9,7 @@ Department-based agent orchestration for the Anthropic Engineering knowledge-wor
 ## Installation
 
 ```bash
-npx forgecat install @nota-america-tech/engineering-agent-team
+npx forgecat install @forgecat/engineering-agent-team
 ```
 
 The Engineering skills are vendored from `@forgecat/anthropics_knowledge-work-plugins_engineering` so the package works as a single ForgeCat install.
@@ -79,5 +79,5 @@ The profile includes the same engineering connector manifest as the source profi
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Tested |

@@ -1,4 +1,4 @@
-<!-- forgecat:@nota-america-tech/engineering-agent-team:engineering-agent-orchestration:start -->
+<!-- forgecat:@forgecat/engineering-agent-team:engineering-agent-orchestration:start -->
 # Engineering Agent Team
 
 This profile turns the Anthropic Engineering skills into a department-based engineering agent team. The Engineering skills are bundled in this profile; use them by name instead of recreating their workflows.
@@ -37,4 +37,4 @@ Use `eng-code-quality-agent` for `code-review`, `testing-strategy`, and `tech-de
 Use `eng-debug-incident-agent` for `debug` and `incident-response`.
 
 Use `eng-release-agent` for `deploy-checklist`.
-<!-- forgecat:@nota-america-tech/engineering-agent-team:engineering-agent-orchestration:end -->
+<!-- forgecat:@forgecat/engineering-agent-team:engineering-agent-orchestration:end -->
