@@ -1,0 +1,98 @@
+name: '@forgecat/zubair-trabzada_geo-seo-claude'
+description: GEO-first SEO toolkit for auditing and optimizing websites for AI-powered search engines while preserving traditional SEO foundations.
+repository: https://github.com/zubair-trabzada/geo-seo-claude
+license: MIT
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: geo
+  path: skills/geo/SKILL.md
+  description: GEO-first SEO analysis tool. Optimizes websites for AI-powered search engines (ChatGPT, Claude, Perplexity, Gemini, Google AI Overviews) while maintaining traditional SEO foundations. Performs full GEO audits, citability scoring, AI crawler analysis, llms.txt generation, brand mention scanning, platform-specific optimization, schema markup, technical SEO, content quality (E-E-A-T), and client-ready GEO report generation. Use when user says "geo", "seo", "audit", "AI search", "AI visibility", "optimize", "citability", "llms.txt", "schema", "brand mentions", "GEO report", or any URL for analysis.
+  scripts:
+  - path: skills/geo/scripts/brand_scanner.py
+  - path: skills/geo/scripts/citability_scorer.py
+  - path: skills/geo/scripts/crm_dashboard.py
+  - path: skills/geo/scripts/fetch_page.py
+  - path: skills/geo/scripts/llmstxt_generator.py
+  - path: skills/geo/scripts/webapp/app.py
+  dependencies:
+  - beautifulsoup4>=4.12.0,<5.0.0
+  - requests>=2.32.4,<3.0.0
+  - lxml>=6.0.2,<7.0.0
+  - playwright>=1.56.0,<2.0.0
+  - Pillow>=12.1.0,<13.0.0
+  - urllib3>=2.6.3,<3.0.0
+  - validators>=0.22.0,<1.0.0
+  - flask>=3.0.0,<4.0.0
+  - rich>=13.0.0,<14.0.0
+- name: geo-audit
+  path: skills/geo-audit/SKILL.md
+  description: Full website GEO+SEO audit with parallel subagent delegation. Orchestrates a comprehensive Generative Engine Optimization audit across AI citability, platform analysis, technical infrastructure, content quality, and schema markup. Produces a composite GEO Score (0-100) with prioritized action plan.
+- name: geo-brand-mentions
+  path: skills/geo-brand-mentions/SKILL.md
+  description: Brand mention and authority scanner for AI visibility. Analyzes brand presence across platforms that AI models rely on for entity recognition and citation decisions. Produces a Brand Authority Score (0-100) with platform-specific recommendations.
+- name: geo-citability
+  path: skills/geo-citability/SKILL.md
+  description: AI citability scoring and optimization. Analyzes web page content to determine how likely AI systems (ChatGPT, Claude, Perplexity, Gemini) are to cite or quote passages from the page. Provides a citability score (0-100) with specific rewrite suggestions.
+- name: geo-compare
+  path: skills/geo-compare/SKILL.md
+  description: Monthly delta tracking and progress reporting for GEO clients. Compares two GEO audits (baseline vs. current), calculates score improvements across all categories, tracks action item completion, and generates a "here's your progress" client report. Use when user says "compare", "delta", "monthly report", "progress", "confronta", "progressi", "report mensile", or when running a monthly client check-in.
+- name: geo-content
+  path: skills/geo-content/SKILL.md
+  description: Content quality and E-E-A-T assessment for AI citability — evaluate experience, expertise, authoritativeness, trustworthiness, and content structure
+- name: geo-crawlers
+  path: skills/geo-crawlers/SKILL.md
+  description: AI crawler access analysis. Checks robots.txt, meta tags, and HTTP headers to determine which AI crawlers can access the site. Provides a complete access map and recommendations for maximizing AI visibility while maintaining appropriate control.
+- name: geo-llmstxt
+  path: skills/geo-llmstxt/SKILL.md
+  description: Analyzes and generates llms.txt files -- the emerging standard for helping AI systems understand website structure and content. Can validate existing llms.txt files or generate new ones from scratch by crawling the site.
+- name: geo-platform-optimizer
+  path: skills/geo-platform-optimizer/SKILL.md
+  description: Platform-specific AI search optimization — audit and optimize for Google AI Overviews, ChatGPT, Perplexity, Gemini, and Bing Copilot individually
+- name: geo-proposal
+  path: skills/geo-proposal/SKILL.md
+  description: Auto-generate a professional, client-ready GEO service proposal from audit data. Creates a full proposal in markdown and PDF including executive summary, findings, recommended service packages (Basic/Standard/Premium), pricing, timeline, and terms. Use when user says "proposal", "proposta", "offerta", "preventivo", "generate proposal", or after completing a GEO audit for a prospect.
+- name: geo-prospect
+  path: skills/geo-prospect/SKILL.md
+  description: 'CRM-lite for managing GEO agency prospects and clients. Track leads through the full sales pipeline: Lead → Qualified → Proposal Sent → Won → Lost. Store audit history, notes, deal values, and generate pipeline summaries. Use when user says "prospect", "lead", "client", "pipeline", "crm", "nuovo prospect", "aggiungi cliente", or when managing the business side of GEO services.'
+- name: geo-report
+  path: skills/geo-report/SKILL.md
+  description: Generate a professional, client-facing GEO report combining all audit results into a single deliverable with scores, findings, and prioritized actions
+- name: geo-report-pdf
+  path: skills/geo-report-pdf/SKILL.md
+  description: Generate a professional PDF report from a GEO audit using pandoc + Chrome headless. Converts GEO-AUDIT-REPORT.md into a styled, client-ready PDF with a cover page, color-coded score tables, severity-tagged findings, and a 90-day roadmap.
+- name: geo-schema
+  path: skills/geo-schema/SKILL.md
+  description: Schema.org structured data audit and generation optimized for AI discoverability — detect, validate, and generate JSON-LD markup
+- name: geo-technical
+  path: skills/geo-technical/SKILL.md
+  description: Technical SEO audit with GEO-specific checks — crawlability, indexability, security, performance, SSR, and AI crawler access
+- name: geo-update
+  path: skills/geo-update/SKILL.md
+  description: Pull the latest GEO-SEO skill updates from the upstream repository. Compares installed files against the latest release, shows what changed, and updates all skills, agents, scripts, and schema templates in place.
+agents:
+- name: geo-ai-visibility
+  path: agents/geo-ai-visibility.md
+  description: 'GEO specialist analyzing AI search visibility: citability scoring, AI crawler access, llms.txt compliance, and brand mention presence across AI-cited platforms. Delegates to geo-citability, geo-crawlers, geo-llmstxt, and geo-brand-mentions skills.'
+- name: geo-content
+  path: agents/geo-content.md
+  description: Content quality specialist evaluating E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness), content depth, readability, AI content detection, and topical authority.
+- name: geo-platform-analysis
+  path: agents/geo-platform-analysis.md
+  description: Platform optimization specialist analyzing readiness for Google AI Overviews, ChatGPT web search, Perplexity AI, Google Gemini, and Bing Copilot.
+- name: geo-schema
+  path: agents/geo-schema.md
+  description: Schema markup specialist detecting, validating, and generating structured data (JSON-LD preferred). Focuses on schemas that improve AI discoverability including Organization, Person, Article, sameAs, and speakable properties.
+- name: geo-technical
+  path: agents/geo-technical.md
+  description: Technical SEO specialist analyzing crawlability, indexability, security, URL structure, mobile optimization, Core Web Vitals (INP replaces FID), server-side rendering, and JavaScript dependency.

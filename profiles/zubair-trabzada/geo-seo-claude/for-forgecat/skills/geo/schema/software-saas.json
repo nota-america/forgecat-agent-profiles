@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://YOURDOMAIN.com/#software",
+  "name": "YOUR_SOFTWARE_NAME",
+  "url": "https://YOURDOMAIN.com",
+  "description": "YOUR_SOFTWARE_DESCRIPTION",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Windows, macOS, Linux",
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "XX",
+    "highPrice": "XXX",
+    "priceCurrency": "USD",
+    "offerCount": "3",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter Plan",
+        "price": "XX",
+        "priceCurrency": "USD",
+        "priceValidUntil": "YYYY-12-31",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Professional Plan",
+        "price": "XX",
+        "priceCurrency": "USD",
+        "priceValidUntil": "YYYY-12-31",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise Plan",
+        "price": "XXX",
+        "priceCurrency": "USD",
+        "priceValidUntil": "YYYY-12-31",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "XXX",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "FEATURE_1",
+    "FEATURE_2",
+    "FEATURE_3",
+    "FEATURE_4"
+  ],
+  "screenshot": "https://YOURDOMAIN.com/images/screenshot.png",
+  "softwareVersion": "X.X",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://YOURDOMAIN.com/#organization"
+  },
+  "sameAs": [
+    "https://www.g2.com/products/YOUR_G2",
+    "https://www.capterra.com/p/YOUR_CAPTERRA",
+    "https://www.producthunt.com/products/YOUR_PH",
+    "https://github.com/YOUR_GITHUB"
+  ]
+}

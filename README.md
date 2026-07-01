@@ -105,7 +105,6 @@ ForgeCat profiles are curated to be source-faithful and reviewable, not just cop
 | [OpenAI frontend skill](./profiles/openai/skills/openai_skills_frontend-skill) | `forgecat install @forgecat/openai_skills_frontend-skill -p codex` | Visually strong web apps, landing pages, prototypes, and UI polish |
 | [Compound Engineering](./profiles/everyinc/compound-engineering-plugin) | `forgecat install @forgecat/everyinc_compound-engineering-plugin -p claude-code` | Code review, research, planning, design review, and engineering workflows |
 | [Superpowers](./profiles/obra/superpowers) | `forgecat install @forgecat/obra_superpowers -p cursor` | Planning, TDD, debugging, review, subagents, and session-start workflow guidance |
-| [tldraw](./profiles/tldraw/tldraw) | `forgecat install @forgecat/tldraw_tldraw -p cursor` | Visual collaboration with agent workflows |
 | [Azure skills](./profiles/microsoft/azure-skills) | `forgecat search azure` | Azure deployment, observability, compliance, RBAC, storage, and AI workflows |
 
 ## Browse Profiles
@@ -151,12 +150,12 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills for training, evaluation, inference, MLOps, RAG, multimodal systems, and papers |
 | [paramchoudhary/resumeskills](./profiles/paramchoudhary/resumeskills) | 1 | Resume and career-development skills for ATS optimization, resume writing, interview prep, and offer decisions |
 | [remotion-dev/skills](./profiles/remotion-dev/skills) | 1 | Remotion best-practices skill for video creation in React |
-| [tldraw/tldraw](./profiles/tldraw/tldraw) | 1 | Visual collaboration profile powered by the tldraw MCP server |
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skills for deployment, React, UI audits, and workflow patterns |
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Codex subagents for development, infrastructure, security, and research |
 | [xixu-me/skills](./profiles/xixu-me/skills) | 1 | Xi Xu skills for userscripts, GitHub Actions docs, secure hosting, browser workflows, and tooling |
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
+| [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 
 </details>
 
