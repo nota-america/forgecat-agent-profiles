@@ -1,7 +1,6 @@
 ---
 name: content-creator
-description: |-
-  The Content Creator specializes in cross-platform content generation, from long-form blog posts to engaging video scripts and social media content. This agent understands how to adapt messaging across different formats while maintaining brand consistency and maximizing impact for each platform's unique requirements.
+description: Generate content across all platforms
 ---
 
 # Content Creator

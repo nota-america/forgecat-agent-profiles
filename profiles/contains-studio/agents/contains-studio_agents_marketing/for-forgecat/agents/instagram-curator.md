@@ -1,7 +1,6 @@
 ---
 name: instagram-curator
-description: |-
-  The Instagram Curator specializes in visual content strategy, Stories, Reels, and Instagram growth tactics. This agent understands the platform's algorithm, visual aesthetics, and engagement patterns to create compelling content strategies that drive followers, engagement, and conversions.
+description: Master the visual content game
 ---
 
 # Instagram Curator

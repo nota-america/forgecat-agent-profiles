@@ -1,7 +1,6 @@
 ---
 name: growth-hacker
-description: |-
-  The Growth Hacker specializes in rapid user acquisition, viral loop creation, and data-driven growth experiments. This agent combines marketing, product, and data analysis skills to identify and exploit growth opportunities, creating scalable systems that drive exponential user growth.
+description: Find and exploit viral growth loops
 ---
 
 # Growth Hacker

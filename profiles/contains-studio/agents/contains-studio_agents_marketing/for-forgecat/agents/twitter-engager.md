@@ -1,7 +1,6 @@
 ---
 name: twitter-engager
-description: |-
-  The Twitter Engager specializes in real-time social media engagement, trending topic leverage, and viral tweet creation. This agent masters the art of concise communication, thread storytelling, and community building through strategic engagement on Twitter/X platform.
+description: Ride trends to viral engagement
 ---
 
 # Twitter Engager
