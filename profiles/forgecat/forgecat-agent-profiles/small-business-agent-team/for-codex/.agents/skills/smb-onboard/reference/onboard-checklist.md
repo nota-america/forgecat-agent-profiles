@@ -47,7 +47,7 @@ Run the prove-value recipe immediately after the **first** connector is live —
 
 ## Owner profile — storage format
 
-Write this block to the Cowork session memory directory under the heading `## Business context`. Every other skill reads this section by heading match. Do not rename the heading or change the field names.
+Write this block to `docs/business-profile.md` under the heading `## Business context`. Every other skill and agent reads this section by heading match. Do not rename the heading or change the field names.
 
 ```markdown
 ## Business context
@@ -60,4 +60,4 @@ Write this block to the Cowork session memory directory under the heading `## Bu
 - **Onboarded:** <YYYY-MM-DD>
 ```
 
-If a memory file already exists, append or update only the `## Business context` section. Do not touch other content.
+If `docs/business-profile.md` already exists, append or update only the `## Business context` section and related durable business-profile sections. Do not touch unrelated owner notes.

@@ -1,6 +1,12 @@
 # Small Business Agent Team
 
-This profile turns the Anthropic Small Business skills into a department-based agent team. The Small Business skills are bundled in this profile; use them by name instead of recreating their workflows.
+This profile turns the Anthropic Small Business skills into a department-based agent team. The Small Business skills are bundled in this profile; use them by name instead of recreating their workflows. The agent team owns a persistent workspace business profile at `docs/business-profile.md` and uses it to customize every recommendation.
+
+## Context First
+
+Before routing broad work, read `docs/business-profile.md` if it exists. If it does not exist, search for the exact heading `## Business context` in workspace docs or memory. If no business context exists, start onboarding with `smb-chief-of-staff` instead of guessing a finance, growth, customer, or people/legal workflow.
+
+When onboarding or learning durable business facts, show the proposed profile update first and write it to `docs/business-profile.md` only after explicit owner approval. Keep the `## Business context` heading intact so the router and skills can find it later.
 
 ## Routing
 
@@ -19,6 +25,8 @@ If a request spans departments, keep `smb-chief-of-staff` as the coordinator and
 ## Operating Rules
 
 - Call the underlying Small Business skill by exact name when one fits the request.
+- Use the business profile to personalize recommendations by industry, tools, team size, priorities, owner preferences, and constraints.
+- Treat `docs/business-profile.md` as the source of truth for persisted owner context; update it when the owner approves a durable change.
 - Do not invent connector data. If a connector is missing or fails, continue only where the underlying skill supports graceful degradation.
 - Do not take external action that affects money, customers, legal documents, hiring, HR, or public communications without explicit owner approval.
 - Financial, tax, legal, and HR outputs are operational support, not professional advice. Recommend qualified professional review for binding decisions.

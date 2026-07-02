@@ -18,6 +18,14 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: smallBusinessOperatingManual
+references:
+- id: smallBusinessOperatingManual
+  path: operating/small-business-agent-operating.md
+  type: operating-instructions
+- id: businessProfileTemplate
+  path: reference/business-profile-template.md
 agents:
 - name: smb-chief-of-staff
   path: agents/smb-chief-of-staff.md

@@ -35,7 +35,7 @@ Whenever a connector comes up — recommending one, naming what to try next, or 
 
 ## Workflow
 
-1. **Welcome and assess.** Greet the owner briefly. Check which connectors are already active. If a `## Business context` block already exists in the owner's CLAUDE.md or memory, read it first — then skip to the return-session path: show the existing profile, ask what's changed, update only the fields that changed. Do not re-interview from scratch.
+1. **Welcome and assess.** Greet the owner briefly. Check which connectors are already active. First read `docs/business-profile.md` if it exists. If not, search the workspace and memory for the exact heading `## Business context`. If business context already exists, skip to the return-session path: show the existing profile, ask what's changed, update only the fields that changed. Do not re-interview from scratch.
 
 2. **Pick two functions, then check what the owner uses.** Ask: *"What are your biggest day-to-day headaches — money, customers, scheduling, or getting organized?"* Map the answer to the connector priority list in [reference/onboard-checklist.md](reference/onboard-checklist.md).
 
@@ -51,7 +51,7 @@ Whenever a connector comes up — recommending one, naming what to try next, or 
 
 4. **Interview the owner.** Ask the five questions from [reference/onboard-checklist.md](reference/onboard-checklist.md), one at a time, conversationally. Wait for the full answer before moving to the next. If the owner seems pressed for time, compress to three: industry, headaches, tools — but never fewer.
 
-5. **Store context.** Show the owner the full profile before writing. Wait for explicit approval. Write the block to the Cowork session memory directory under the heading `## Business context` using the exact format in [reference/onboard-checklist.md](reference/onboard-checklist.md). If a memory file already exists, update only the `## Business context` section — do not touch other content. Confirm: *"Saved. Every skill from here will know your business."*
+5. **Store context.** Show the owner the full profile before writing. Wait for explicit approval. Write or update `docs/business-profile.md`, preserving the exact heading `## Business context` and the fields in [reference/onboard-checklist.md](reference/onboard-checklist.md). If a profile already exists, update only the business context and related durable sections — do not touch unrelated owner notes. Confirm: *"Saved. Every skill from here will know your business."*
 
 6. **Set the weekly cadence.** Propose: *"Each Monday, just say 'weekly check-in' and I'll pull a snapshot of your numbers, flag anything urgent, and remind you what's due."* If they prefer a different phrase or day, store it in the profile. If tools are connected, name one skill the owner can try right now. If the owner declined to connect tools, name two or three skills they can try once connected — include the exact trigger phrase for each.
 
@@ -59,6 +59,7 @@ Whenever a connector comes up — recommending one, naming what to try next, or 
 
 - **Show context before writing.** Display the full owner profile draft before storing it. Wait for explicit approval.
 - **Never overwrite existing context silently.** If a `## Business context` block already exists, show current vs. proposed before writing any changes.
+- **Use the workspace profile.** Persist context in `docs/business-profile.md` so the owner can inspect and edit it directly.
 - **Never connect a tool on the owner's behalf.** Guide; do not act. Connector auth is always owner-initiated.
 
 ## Reference
