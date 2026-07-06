@@ -139,6 +139,19 @@ function emitBlock(reason) {
   process.stdout.write(`${JSON.stringify(payload)}\n`);
 }
 
+function emitNotice(message) {
+  const payload = {
+    continue: true,
+    priority: "INFO",
+    message,
+    hookSpecificOutput: {
+      hookEventName: "Stop",
+      additionalContext: message,
+    },
+  };
+  process.stdout.write(`${JSON.stringify(payload)}\n`);
+}
+
 const input = readInput();
 const root = workspaceRoot(input);
 const { assistant, user } = loadTurnText(input);
@@ -174,6 +187,6 @@ if (blockCount(root, input, kind) >= 1) {
 
 markBlocked(root, input, kind);
 
-emitBlock(
-  "Before ending, add a short Small Business checkpoint: selected agent/department, current blocker or safe local result, any approval-gated action, whether `docs/business-profile.md` or `docs/business-operating-plan.md` should be updated, and the single next owner decision. Keep it concise and do not take external action."
+emitNotice(
+  "Small Business checkpoint suggestion: include the selected agent/department, current blocker or safe local result, any approval-gated action, whether `docs/business-profile.md` or `docs/business-operating-plan.md` should be updated, and the single next owner decision. Keep it concise and do not take external action."
 );

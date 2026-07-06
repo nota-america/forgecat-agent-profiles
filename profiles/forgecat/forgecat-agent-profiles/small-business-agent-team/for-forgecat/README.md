@@ -56,9 +56,9 @@ The profile registers three high-value lifecycle hooks:
 
 - `session_start` hydrates each new session with business profile, operating plan, and onboarding status.
 - `user_prompt_submit` classifies small-business prompts and nudges the host assistant to hand off to the matching department agent.
-- `stop` blocks first-session capability-menu answers that did not hand off to `smb-chief-of-staff`, then runs a checkpoint guard when small-business work is about to end without a department, blocker, approval, profile/plan update, or next owner decision.
+- `stop` blocks first-session capability-menu answers that did not hand off to `smb-chief-of-staff`; for ordinary missing operating checkpoints, it adds non-blocking guidance instead of forcing a Claude Code stop-hook error.
 
-The hooks do not call external services and do not edit business docs. They only add routing/context or ask the assistant to complete a missing operating checkpoint.
+The hooks do not call external services and do not edit business docs. They only add routing/context, correct first-session menu failures, or suggest a missing operating checkpoint.
 
 ## Included Skills
 

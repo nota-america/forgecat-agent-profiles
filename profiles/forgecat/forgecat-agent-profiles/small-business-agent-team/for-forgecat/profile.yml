@@ -45,7 +45,7 @@ hooks:
   trigger: stop
   command: ./hooks/smb-stop-checkpoint.js
   timeout: 5
-  description: One-shot stop checkpoint that asks for agent, blocker, approval, profile or plan update, and next owner decision when missing.
+  description: Blocks first-session capability menus; otherwise gives non-blocking checkpoint guidance for agent, blocker, approval, profile or plan update, and next owner decision.
 agents:
 - name: smb-chief-of-staff
   path: agents/smb-chief-of-staff.md
