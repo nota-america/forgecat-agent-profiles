@@ -1,0 +1,3 @@
+!`node ".forgecat/profiles/@forgecat/openai_codex-plugin-cc_codex/scripts/codex-companion.mjs" transfer "$ARGUMENTS"`
+
+Present the command output to the user exactly as returned. Preserve the Codex session ID and the `codex resume <session-id>` command.

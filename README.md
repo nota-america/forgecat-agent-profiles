@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-182-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-36-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-183-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -146,6 +146,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [msitarzewski/agency-agents](./profiles/msitarzewski/agency-agents) | 13 | Agency role agents for academic, design, engineering, marketing, sales, and operations teams |
 | [multica-ai/andrej-karpathy-skills](./profiles/multica-ai/andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers software-development methodology with hook-backed startup context |
+| [openai/codex-plugin-cc](./profiles/openai/codex-plugin-cc) | 1 | OpenAI Codex plugin for Claude Code review, delegation, session transfer, background jobs, and optional hooks |
 | [openai/skills](./profiles/openai/skills) | 45 | OpenAI skills for frontend, Figma, Playwright, deployment, documents, security, and more |
 | [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills for training, evaluation, inference, MLOps, RAG, multimodal systems, and papers |
 | [paramchoudhary/resumeskills](./profiles/paramchoudhary/resumeskills) | 1 | Resume and career-development skills for ATS optimization, resume writing, interview prep, and offer decisions |
@@ -159,7 +160,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 182 profiles across 36 collections.
+Total: 183 profiles across 37 collections.
 
 ## Profile Layout
 
