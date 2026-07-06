@@ -1,0 +1,1 @@
+!`node ".forgecat/profiles/@forgecat/openai_codex-plugin-cc_codex/scripts/codex-companion.mjs" cancel "$ARGUMENTS"`
