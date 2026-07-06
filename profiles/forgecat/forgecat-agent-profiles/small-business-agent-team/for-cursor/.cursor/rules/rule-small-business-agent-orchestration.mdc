@@ -30,6 +30,8 @@ Delegation rules:
 
 The root assistant may only classify the request, read minimal context needed for routing, and perform the handoff. The selected agent owns the work.
 
+For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", do not answer with a department menu. Immediately hand off to `smb-chief-of-staff` when native handoff is available, or follow that agent's instructions directly when it is not. Start onboarding with one concise question.
+
 ## Context First
 
 Before routing broad work, read `docs/business-profile.md` if it exists. If it does not exist, search for the exact heading `## Business context` in workspace docs or memory. If no business context exists, start onboarding with `smb-chief-of-staff` instead of guessing a finance, growth, customer, or people/legal workflow.

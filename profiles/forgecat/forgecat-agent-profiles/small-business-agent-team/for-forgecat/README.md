@@ -46,6 +46,8 @@ The profile still requires explicit owner approval before touching money, custom
 
 The root instructions now treat the top-level assistant as a dispatcher. On Claude Code, matching business requests should immediately call the `Task` tool with the exact department agent name, such as `smb-finance-agent` for cash/payroll work or `smb-customer-ops-agent` for complaints and refunds. Broad or mixed requests go to `smb-chief-of-staff`, which coordinates follow-up department agents.
 
+First-session prompts like "hi", "what can you do", or "help me get started" are intentionally not answered with a capability menu. They route to `smb-chief-of-staff` for onboarding, starting with one concise business-context question.
+
 If a host cannot invoke subagents directly, it must say that and then follow the matching agent's instructions exactly instead of presenting a generic menu.
 
 ## Lifecycle Hooks
@@ -54,7 +56,7 @@ The profile registers three high-value lifecycle hooks:
 
 - `session_start` hydrates each new session with business profile, operating plan, and onboarding status.
 - `user_prompt_submit` classifies small-business prompts and nudges the host assistant to hand off to the matching department agent.
-- `stop` runs a one-shot checkpoint guard when small-business work is about to end without a department, blocker, approval, profile/plan update, or next owner decision.
+- `stop` blocks first-session capability-menu answers that did not hand off to `smb-chief-of-staff`, then runs a checkpoint guard when small-business work is about to end without a department, blocker, approval, profile/plan update, or next owner decision.
 
 The hooks do not call external services and do not edit business docs. They only add routing/context or ask the assistant to complete a missing operating checkpoint.
 

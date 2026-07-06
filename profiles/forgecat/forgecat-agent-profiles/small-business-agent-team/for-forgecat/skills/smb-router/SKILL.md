@@ -86,16 +86,13 @@ If the owner's request genuinely spans multiple commands, pick the most urgent o
 
 ### Step 4 — Handle "what can you do?"
 
-When the owner asks for a general overview, organize by what matters to them — not by a flat list. Use their business context if available.
+When no business profile exists, treat "what can you do?", "hi", "I'm new", "set me up", and similar first-session prompts as onboarding, not as a request for a catalog. Route to `smb-onboard` and ask one question:
 
-Group into four buckets and lead with the one most relevant to their stored headaches:
+> What kind of business do you run, and what is the one operational headache you want fixed first?
 
-**Your money:** `/plan-payroll` · `/month-heads-up` · `/close-month` · `/price-check` · `/tax-prep`
-**Your customers:** `/call-list` · `/run-campaign` · `/sales-brief` · `/customer-pulse-check` · `/handle-complaint` · `/crm-cleanup`
-**Your contracts:** `/review-contract`
-**Your week:** `/monday-brief` · `/friday-brief` · `/quarterly-review`
+You may add one short sentence that the answer will help tailor finance, growth, customer, people/legal, and weekly-brief support. Do not list commands, departments, connectors, or skill menus unless the owner explicitly asks for the catalog.
 
-Keep it to 2-3 sentences per bucket. End with: "What's on your mind? I'll get you to the right place."
+If a business profile already exists, use it to recommend the single most relevant next action. Still do not dump a menu.
 
 ### Step 5 — Handle zero-connector bootstrap
 

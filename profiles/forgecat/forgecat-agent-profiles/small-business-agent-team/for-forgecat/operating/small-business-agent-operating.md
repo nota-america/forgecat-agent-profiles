@@ -26,6 +26,8 @@ For Claude Code, handoff means invoking the `Task` tool with the matching `subag
 
 The root assistant may read the business profile only when needed to choose the route. It must not complete the department workflow itself unless the host platform cannot call subagents; in that fallback case, it must say that subagent invocation is unavailable and then follow the selected agent's instructions.
 
+For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", the route is always `smb-chief-of-staff`. The root assistant must not present a capability menu; it should start onboarding through the chief-of-staff agent with one concise question.
+
 ## Canonical Business Profile
 
 Use `docs/business-profile.md` in the owner workspace as the canonical profile.

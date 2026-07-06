@@ -73,14 +73,27 @@ function statePath(root, input) {
   return path.join(root, ".forgecat", "profiles", "@forgecat", "small-business-agent-team", "state", `stop-checkpoint-${sessionId}.json`);
 }
 
-function alreadyBlocked(root, input) {
-  return fs.existsSync(statePath(root, input));
+function readState(root, input) {
+  try {
+    return JSON.parse(fs.readFileSync(statePath(root, input), "utf8"));
+  } catch {
+    return {};
+  }
 }
 
-function markBlocked(root, input) {
+function markBlocked(root, input, kind) {
   const file = statePath(root, input);
+  const state = readState(root, input);
+  const counts = state.counts && typeof state.counts === "object" ? state.counts : {};
+  counts[kind] = (Number(counts[kind]) || 0) + 1;
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify({ blockedAt: new Date().toISOString() }, null, 2));
+  fs.writeFileSync(file, JSON.stringify({ blockedAt: new Date().toISOString(), counts }, null, 2));
+}
+
+function blockCount(root, input, kind) {
+  const state = readState(root, input);
+  const counts = state.counts && typeof state.counts === "object" ? state.counts : {};
+  return Number(counts[kind]) || 0;
 }
 
 function looksLikeSmallBusinessWork(text) {
@@ -89,6 +102,32 @@ function looksLikeSmallBusinessWork(text) {
 
 function hasCheckpoint(text) {
   return /\b(next step|next decision|owner's next|approval|blocked|blocker|operating plan|agent log|profile update|read-only|no files written|standing by|routed to|subagent|handoff)\b/i.test(text);
+}
+
+function isFirstSessionBroadPrompt(text) {
+  return /\b(hi|hello|hey|what can you do|help me get started|help me with my business|set me up|get started|i'?m new|what should i focus)\b/i.test(text);
+}
+
+function looksLikeCapabilityMenu(text) {
+  const categories = ["finance", "growth", "sales", "customer", "people", "legal", "hiring", "briefs"];
+  const hitCount = categories.filter((category) => new RegExp(`\\b${category}\\b`, "i").test(text)).length;
+  return hitCount >= 3 || /\b(here'?s what i can help|i can help with|what i can do|team of specialists|chief of staff plus|by department|example requests?|try one of these)\b/i.test(text);
+}
+
+function hasActualHandoff(text) {
+  return /\b(subagent_type|Task tool|called? the Task|delegated to|handed off to|routed to)\b/i.test(text) ||
+    /\b(smb-chief-of-staff|smb-finance-agent|smb-growth-agent|smb-customer-ops-agent|smb-people-legal-agent)\b/i.test(text);
+}
+
+function looksLikeOnboardingStart(text) {
+  return /\?/.test(text) &&
+    /\b(business|company|team|tools?|headaches?|challenge|customers?|sell|service|product|industry|cadence)\b/i.test(text) &&
+    !looksLikeCapabilityMenu(text);
+}
+
+function looksLikeFirstSessionCapabilityAnswer(text) {
+  return /\b(first session|first step|onboarding|set up|small business agent team|capabilit|what i can do|what's on your plate)\b/i.test(text) &&
+    looksLikeCapabilityMenu(text);
 }
 
 function emitBlock(reason) {
@@ -105,13 +144,36 @@ const root = workspaceRoot(input);
 const { assistant, user } = loadTurnText(input);
 const turnText = `${user}\n${assistant}`;
 
-if (!assistant || !looksLikeSmallBusinessWork(turnText) || hasCheckpoint(assistant) || alreadyBlocked(root, input)) {
+if (!assistant) {
   process.exit(0);
 }
 
-markBlocked(root, input);
+if ((isFirstSessionBroadPrompt(user) && looksLikeCapabilityMenu(assistant) && !hasActualHandoff(assistant)) || looksLikeFirstSessionCapabilityAnswer(assistant)) {
+  const kind = "broad-menu-without-handoff";
+  if (blockCount(root, input, kind) < 2) {
+    markBlocked(root, input, kind);
+    emitBlock(
+      "This first-session broad request was answered as a capability menu. Before ending, replace it with agent-led onboarding: use `smb-chief-of-staff` and ask exactly one concise question, \"What kind of business do you run, and what is the one operational headache you want fixed first?\" Do not add another menu, example list, or checkpoint-only response."
+    );
+  }
+  process.exit(0);
+}
+
+if (isFirstSessionBroadPrompt(user) && (hasActualHandoff(assistant) || looksLikeOnboardingStart(assistant))) {
+  process.exit(0);
+}
+
+if (!looksLikeSmallBusinessWork(turnText) || hasCheckpoint(assistant)) {
+  process.exit(0);
+}
+
+const kind = "missing-checkpoint";
+if (blockCount(root, input, kind) >= 1) {
+  process.exit(0);
+}
+
+markBlocked(root, input, kind);
 
 emitBlock(
   "Before ending, add a short Small Business checkpoint: selected agent/department, current blocker or safe local result, any approval-gated action, whether `docs/business-profile.md` or `docs/business-operating-plan.md` should be updated, and the single next owner decision. Keep it concise and do not take external action."
 );
-

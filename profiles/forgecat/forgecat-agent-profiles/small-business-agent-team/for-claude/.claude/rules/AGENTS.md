@@ -32,6 +32,8 @@ Delegation rules:
 
 The root assistant may only classify the request, read minimal context needed for routing, and perform the handoff. The selected agent owns the work.
 
+For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", do not answer with a department menu. Immediately call the `Task` tool with `subagent_type: "smb-chief-of-staff"` and have that agent start onboarding with one concise question. The acceptable root response is only a short routing sentence plus the subagent call.
+
 ## Autonomous Operating Loop
 
 For broad requests, delegate to `smb-chief-of-staff`; it must run a bounded operating loop:

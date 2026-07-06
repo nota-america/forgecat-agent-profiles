@@ -50,6 +50,8 @@ Delegation rules:
 
 The root assistant may only do the classification, read minimal context needed for routing, and perform the actual handoff. The selected agent owns the work.
 
+For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", do not answer with a department menu. Immediately delegate to `smb-chief-of-staff` and have that agent start onboarding with one concise question. The acceptable root response is only a short routing sentence plus the subagent call or selected-agent execution.
+
 ## Routing
 
 Start with `smb-chief-of-staff` when the owner asks a broad question such as "what should I focus on", "help me with my business", "set me up", "catch me up", or "what can you do".
@@ -117,6 +119,8 @@ For Claude Code, handoff means invoking the `Task` tool with the matching `subag
 - `smb-people-legal-agent` for hiring, job posts, interview guides, offer templates, contracts, NDAs, MSAs, vendor agreements, and redlines.
 
 The root assistant may read the business profile only when needed to choose the route. It must not complete the department workflow itself unless the host platform cannot call subagents; in that fallback case, it must say that subagent invocation is unavailable and then follow the selected agent's instructions.
+
+For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", the route is always `smb-chief-of-staff`. The root assistant must not present a capability menu; it should start onboarding through the chief-of-staff agent with one concise question.
 
 ## Canonical Business Profile
 
