@@ -20,6 +20,7 @@ Last updated: <YYYY-MM-DD>
 - **Team:** <roles, contractors, scheduling constraints>
 - **Owner preferences:** <tone, approval style, communication rules>
 - **Important constraints:** <cash timing, compliance, inventory, staffing, legal, tax, or operational constraints>
+- **Autonomy preferences:** <what the agent may draft, organize, or update without asking; what always needs approval>
 
 ## Tool map
 
@@ -41,4 +42,3 @@ Last updated: <YYYY-MM-DD>
 ## Recent decisions and durable notes
 
 - <YYYY-MM-DD>: <decision, preference, or fact worth preserving>
-

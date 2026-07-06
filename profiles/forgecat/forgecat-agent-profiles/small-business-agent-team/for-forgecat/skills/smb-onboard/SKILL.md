@@ -53,13 +53,16 @@ Whenever a connector comes up — recommending one, naming what to try next, or 
 
 5. **Store context.** Show the owner the full profile before writing. Wait for explicit approval. Write or update `docs/business-profile.md`, preserving the exact heading `## Business context` and the fields in [reference/onboard-checklist.md](reference/onboard-checklist.md). If a profile already exists, update only the business context and related durable sections — do not touch unrelated owner notes. Confirm: *"Saved. Every skill from here will know your business."*
 
-6. **Set the weekly cadence.** Propose: *"Each Monday, just say 'weekly check-in' and I'll pull a snapshot of your numbers, flag anything urgent, and remind you what's due."* If they prefer a different phrase or day, store it in the profile. If tools are connected, name one skill the owner can try right now. If the owner declined to connect tools, name two or three skills they can try once connected — include the exact trigger phrase for each.
+6. **Create the operating loop.** Unless the owner asked not to edit files, create or update `docs/business-operating-plan.md` with the owner's top three headaches as active priorities and append a `docs/business-agent-log.md` entry for the onboarding session. Queue any connector setup, first recipe, weekly cadence, or external action that still needs owner approval.
+
+7. **Set the weekly cadence.** Propose: *"Each Monday, just say 'weekly check-in' and I'll pull your operating plan, numbers, open loops, and approval queue, then flag anything urgent."* If they prefer a different phrase or day, store it in the profile. If tools are connected, name one skill the owner can try right now. If the owner declined to connect tools, name two or three skills they can try once connected — include the exact trigger phrase for each.
 
 ## Approval gates
 
 - **Show context before writing.** Display the full owner profile draft before storing it. Wait for explicit approval.
 - **Never overwrite existing context silently.** If a `## Business context` block already exists, show current vs. proposed before writing any changes.
 - **Use the workspace profile.** Persist context in `docs/business-profile.md` so the owner can inspect and edit it directly.
+- **Start the operating workspace.** Use `docs/business-operating-plan.md` and `docs/business-agent-log.md` so future sessions resume from the same priorities instead of starting from scratch.
 - **Never connect a tool on the owner's behalf.** Guide; do not act. Connector auth is always owner-initiated.
 
 ## Reference
