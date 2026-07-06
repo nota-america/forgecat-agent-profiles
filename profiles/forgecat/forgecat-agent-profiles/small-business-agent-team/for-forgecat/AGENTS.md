@@ -29,6 +29,26 @@ For broad requests, do not only name a skill. Run a bounded operating loop:
 
 Safe local documentation and planning updates do not need a separate approval unless the owner asked not to edit files. Profile writes and all external actions still require explicit approval.
 
+## Mandatory Agent Delegation
+
+The host assistant must not merely describe the team or answer department work from the root context. When a request matches one of the routes below, immediately delegate to the named agent using the platform's subagent mechanism.
+
+- Claude Code: use the `Task` tool with `subagent_type` set to the exact agent name.
+- Cursor: use the native agent handoff mechanism when available.
+- Codex: use the installed `.codex/agents` definition or the matching agent instructions when a direct subagent tool is unavailable.
+
+Delegation rules:
+
+1. Broad owner/operator requests must go to `smb-chief-of-staff`.
+2. Finance requests must go to `smb-finance-agent`.
+3. Growth, CRM, sales, lead, content, or campaign requests must go to `smb-growth-agent`.
+4. Customer issue, complaint, refund, support, or review requests must go to `smb-customer-ops-agent`.
+5. Hiring, HR, contract, NDA, MSA, vendor agreement, or redline requests must go to `smb-people-legal-agent`.
+6. Mixed requests must start with `smb-chief-of-staff`, which coordinates follow-up department agents.
+7. If the platform cannot invoke subagents, state that limitation briefly and then follow the matching agent's instructions exactly.
+
+The root assistant may only do the classification, read minimal context needed for routing, and perform the actual handoff. The selected agent owns the work.
+
 ## Routing
 
 Start with `smb-chief-of-staff` when the owner asks a broad question such as "what should I focus on", "help me with my business", "set me up", "catch me up", or "what can you do".
@@ -41,7 +61,7 @@ Route to `smb-customer-ops-agent` for customer complaints, support tickets, refu
 
 Route to `smb-people-legal-agent` for hiring, job posts, interview guides, offer letters, contracts, NDAs, MSAs, vendor agreements, DocuSign envelopes, or redline requests.
 
-If a request spans departments, keep `smb-chief-of-staff` as the coordinator and delegate the department-specific parts in sequence.
+If a request spans departments, delegate first to `smb-chief-of-staff` as the coordinator; it should delegate the department-specific parts in sequence.
 
 ## Operating Rules
 

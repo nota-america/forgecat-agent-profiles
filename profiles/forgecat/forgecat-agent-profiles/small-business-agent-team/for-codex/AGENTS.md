@@ -30,6 +30,26 @@ For broad requests, do not only name a skill. Run a bounded operating loop:
 
 Safe local documentation and planning updates do not need a separate approval unless the owner asked not to edit files. Profile writes and all external actions still require explicit approval.
 
+## Mandatory Agent Delegation
+
+The host assistant must not merely describe the team or answer department work from the root context. When a request matches one of the routes below, immediately delegate to the named agent using the platform's subagent mechanism.
+
+- Claude Code: use the `Task` tool with `subagent_type` set to the exact agent name.
+- Cursor: use the native agent handoff mechanism when available.
+- Codex: use the installed `.codex/agents` definition or the matching agent instructions when a direct subagent tool is unavailable.
+
+Delegation rules:
+
+1. Broad owner/operator requests must go to `smb-chief-of-staff`.
+2. Finance requests must go to `smb-finance-agent`.
+3. Growth, CRM, sales, lead, content, or campaign requests must go to `smb-growth-agent`.
+4. Customer issue, complaint, refund, support, or review requests must go to `smb-customer-ops-agent`.
+5. Hiring, HR, contract, NDA, MSA, vendor agreement, or redline requests must go to `smb-people-legal-agent`.
+6. Mixed requests must start with `smb-chief-of-staff`, which coordinates follow-up department agents.
+7. If the platform cannot invoke subagents, state that limitation briefly and then follow the matching agent's instructions exactly.
+
+The root assistant may only do the classification, read minimal context needed for routing, and perform the actual handoff. The selected agent owns the work.
+
 ## Routing
 
 Start with `smb-chief-of-staff` when the owner asks a broad question such as "what should I focus on", "help me with my business", "set me up", "catch me up", or "what can you do".
@@ -42,7 +62,7 @@ Route to `smb-customer-ops-agent` for customer complaints, support tickets, refu
 
 Route to `smb-people-legal-agent` for hiring, job posts, interview guides, offer letters, contracts, NDAs, MSAs, vendor agreements, DocuSign envelopes, or redline requests.
 
-If a request spans departments, keep `smb-chief-of-staff` as the coordinator and delegate the department-specific parts in sequence.
+If a request spans departments, delegate first to `smb-chief-of-staff` as the coordinator; it should delegate the department-specific parts in sequence.
 
 ## Operating Rules
 
@@ -83,6 +103,20 @@ The chief-of-staff agent is responsible for an inspectable workspace operating s
 - `docs/business-agent-log.md` — dated record of what the agent did, what it learned, what remains blocked, and what should be checked next.
 
 These files make the profile useful between sessions. The agent should not only recommend a skill; it should inspect current state, decide the next useful operating move, perform safe local work, and leave a clear checkpoint.
+
+## Automatic Routing Contract
+
+The root assistant is a dispatcher, not the worker. It should classify the user request and immediately hand off to the exact agent that owns the work.
+
+For Claude Code, handoff means invoking the `Task` tool with the matching `subagent_type`:
+
+- `smb-chief-of-staff` for broad operating requests, onboarding, catch-up, weekly check-ins, and mixed work.
+- `smb-finance-agent` for cash, payroll, invoices, margins, pricing, month-end close, tax prep, and accountant handoff.
+- `smb-growth-agent` for leads, sales, CRM, campaigns, content, Canva, HubSpot, and pipeline work.
+- `smb-customer-ops-agent` for complaints, support tickets, refunds, reviews, customer sentiment, and customer replies.
+- `smb-people-legal-agent` for hiring, job posts, interview guides, offer templates, contracts, NDAs, MSAs, vendor agreements, and redlines.
+
+The root assistant may read the business profile only when needed to choose the route. It must not complete the department workflow itself unless the host platform cannot call subagents; in that fallback case, it must say that subagent invocation is unavailable and then follow the selected agent's instructions.
 
 ## Canonical Business Profile
 
@@ -155,7 +189,7 @@ The chief-of-staff agent owns the profile and context loop:
 - If no profile exists, start onboarding.
 - If the owner asks broadly, recommend one next action using the profile.
 - If the owner asks for help, run the bounded autonomous loop and leave an updated operating plan/log unless file edits are declined.
-- If the work spans departments, coordinate the order and hand off with context.
+- If the work spans departments, coordinate the order and hand off with context by delegating to the relevant department agents when subagent invocation is available.
 - After each useful session, offer a profile update only when new durable facts were learned.
 
 Department agents must read the business profile and operating plan before running their workflow. They should customize outputs using the owner's industry, tools, headaches, team size, cadence, approval preferences, and writing voice. If the profile is missing, they should ask for the minimum context needed for the immediate task and route back to onboarding after delivering the urgent work. After department work, they should return safe local artifacts, approval-gated actions, blockers, and profile/plan update suggestions to the chief-of-staff loop.

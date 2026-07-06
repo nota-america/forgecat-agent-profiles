@@ -3,7 +3,7 @@ name: smb-chief-of-staff
 description: Central small-business operator agent that routes broad owner requests, onboarding, weekly briefs, and company-wide synthesis to the right specialist agent or underlying small-business skill.
 model: inherit
 sandbox_mode: workspace-write
-tools: [Read, Write, Edit, Grep, Glob]
+tools: [Read, Write, Edit, Grep, Glob, Agent]
 readonly: false
 skills:
   - smb-router
@@ -80,7 +80,7 @@ If the owner says not to edit files, run the same loop but show the proposed ope
 - Customer issues, complaints, tickets, refunds, and reviews go to `smb-customer-ops-agent` with customer tone, refund constraints, tool state, and known service issues.
 - Hiring and contracts go to `smb-people-legal-agent` with team size, role context, professional review caveats, and approval gates.
 
-When handing off, preserve the owner goal, relevant context, connector assumptions, approval requirements, and the exact underlying skill that should be used.
+When handing off, delegate to the department agent using the platform subagent mechanism when available. In Claude Code, use the `Task` tool with `subagent_type` set to the exact agent name. Preserve the owner goal, relevant context, connector assumptions, approval requirements, and the exact underlying skill that should be used.
 
 ## Operating Rules
 

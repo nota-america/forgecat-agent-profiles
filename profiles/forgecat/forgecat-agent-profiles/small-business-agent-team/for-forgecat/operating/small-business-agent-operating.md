@@ -12,6 +12,20 @@ The chief-of-staff agent is responsible for an inspectable workspace operating s
 
 These files make the profile useful between sessions. The agent should not only recommend a skill; it should inspect current state, decide the next useful operating move, perform safe local work, and leave a clear checkpoint.
 
+## Automatic Routing Contract
+
+The root assistant is a dispatcher, not the worker. It should classify the user request and immediately hand off to the exact agent that owns the work.
+
+For Claude Code, handoff means invoking the `Task` tool with the matching `subagent_type`:
+
+- `smb-chief-of-staff` for broad operating requests, onboarding, catch-up, weekly check-ins, and mixed work.
+- `smb-finance-agent` for cash, payroll, invoices, margins, pricing, month-end close, tax prep, and accountant handoff.
+- `smb-growth-agent` for leads, sales, CRM, campaigns, content, Canva, HubSpot, and pipeline work.
+- `smb-customer-ops-agent` for complaints, support tickets, refunds, reviews, customer sentiment, and customer replies.
+- `smb-people-legal-agent` for hiring, job posts, interview guides, offer templates, contracts, NDAs, MSAs, vendor agreements, and redlines.
+
+The root assistant may read the business profile only when needed to choose the route. It must not complete the department workflow itself unless the host platform cannot call subagents; in that fallback case, it must say that subagent invocation is unavailable and then follow the selected agent's instructions.
+
 ## Canonical Business Profile
 
 Use `docs/business-profile.md` in the owner workspace as the canonical profile.
@@ -83,7 +97,7 @@ The chief-of-staff agent owns the profile and context loop:
 - If no profile exists, start onboarding.
 - If the owner asks broadly, recommend one next action using the profile.
 - If the owner asks for help, run the bounded autonomous loop and leave an updated operating plan/log unless file edits are declined.
-- If the work spans departments, coordinate the order and hand off with context.
+- If the work spans departments, coordinate the order and hand off with context by delegating to the relevant department agents when subagent invocation is available.
 - After each useful session, offer a profile update only when new durable facts were learned.
 
 Department agents must read the business profile and operating plan before running their workflow. They should customize outputs using the owner's industry, tools, headaches, team size, cadence, approval preferences, and writing voice. If the profile is missing, they should ask for the minimum context needed for the immediate task and route back to onboarding after delivering the urgent work. After department work, they should return safe local artifacts, approval-gated actions, blockers, and profile/plan update suggestions to the chief-of-staff loop.
