@@ -82,7 +82,7 @@ Look right?
 - [ ] Connected second tool (Gmail) before starting interview
 - [ ] Asked all 5 interview questions one at a time
 - [ ] Showed profile draft before writing
-- [ ] Wrote context under `## Business context` in `~/.claude/CLAUDE.md`
+- [ ] Wrote context under `## Business context` in `docs/business-profile.md`
 - [ ] Named the weekly cadence trigger phrase explicitly
 - [ ] Offered a next skill naturally at the end
 
