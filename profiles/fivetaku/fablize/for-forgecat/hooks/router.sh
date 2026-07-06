@@ -8,7 +8,7 @@ set -uo pipefail
 # Plugin root: prefer the runtime-injected var, else fall back to this script's location.
 ROOT="${CLAUDE_PLUGIN_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
 if [ ! -d "$ROOT/packs" ]; then
-  for candidate in "$PWD/.claude/skills/fablize" "$PWD/.cursor/skills/fablize" "$PWD/.agents/skills/fablize"; do
+  for candidate in "$ROOT/skills/fablize" "$PWD/.claude/skills/fablize" "$PWD/.cursor/skills/fablize" "$PWD/.agents/skills/fablize"; do
     if [ -d "$candidate/packs" ]; then ROOT="$candidate"; break; fi
   done
 fi
