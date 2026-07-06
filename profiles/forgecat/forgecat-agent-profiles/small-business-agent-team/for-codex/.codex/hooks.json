@@ -1,0 +1,41 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "_forgecat": "@forgecat/small-business-agent-team#smb-session-context",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/small-business-agent-team/hooks/_fc_wrap.sh codex smb-session-start.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "_forgecat": "@forgecat/small-business-agent-team#smb-routing-nudge",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/small-business-agent-team/hooks/_fc_wrap.sh codex smb-routing-nudge.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "_forgecat": "@forgecat/small-business-agent-team#smb-stop-checkpoint",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/small-business-agent-team/hooks/_fc_wrap.sh codex smb-stop-checkpoint.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
+

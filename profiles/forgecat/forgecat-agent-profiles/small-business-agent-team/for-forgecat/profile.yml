@@ -30,6 +30,22 @@ references:
   path: reference/business-operating-plan-template.md
 - id: businessAgentLogTemplate
   path: reference/business-agent-log-template.md
+hooks:
+- id: smb-session-context
+  trigger: session_start
+  command: ./hooks/smb-session-start.js
+  timeout: 5
+  description: Hydrates each new session with the current small-business profile, operating plan state, and onboarding reminder.
+- id: smb-routing-nudge
+  trigger: user_prompt_submit
+  command: ./hooks/smb-routing-nudge.js
+  timeout: 5
+  description: Classifies small-business prompts and nudges the host assistant to hand off to the matching department agent.
+- id: smb-stop-checkpoint
+  trigger: stop
+  command: ./hooks/smb-stop-checkpoint.js
+  timeout: 5
+  description: One-shot stop checkpoint that asks for agent, blocker, approval, profile or plan update, and next owner decision when missing.
 agents:
 - name: smb-chief-of-staff
   path: agents/smb-chief-of-staff.md
