@@ -42,6 +42,12 @@ The workspace operating files are:
 
 The profile still requires explicit owner approval before touching money, customers, CRM records, public communications, legal/HR documents, or external systems.
 
+## Automatic Agent Routing
+
+The root instructions now treat the top-level assistant as a dispatcher. On Claude Code, matching business requests should immediately call the `Task` tool with the exact department agent name, such as `smb-finance-agent` for cash/payroll work or `smb-customer-ops-agent` for complaints and refunds. Broad or mixed requests go to `smb-chief-of-staff`, which coordinates follow-up department agents.
+
+If a host cannot invoke subagents directly, it must say that and then follow the matching agent's instructions exactly instead of presenting a generic menu.
+
 ## Included Skills
 
 This profile bundles the Small Business skills directly under `skills/` so the agent team works as one install.
@@ -61,6 +67,7 @@ The root `AGENTS.md` file is the canonical orchestration profile and the single 
 The rule tells the host agent to:
 
 - start broad owner/operator questions with `smb-chief-of-staff`
+- automatically delegate to the matching department agent instead of answering from the root context
 - read `docs/business-profile.md` before broad routing
 - start onboarding when no `## Business context` exists
 - maintain `docs/business-operating-plan.md` and `docs/business-agent-log.md` for active work and resume state
