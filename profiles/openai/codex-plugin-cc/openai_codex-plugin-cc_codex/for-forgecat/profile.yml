@@ -1,0 +1,82 @@
+name: "@forgecat/openai_codex-plugin-cc_codex"
+description: Use Codex from Claude Code to review code, delegate tasks, transfer sessions, and manage background Codex jobs through slash commands, a rescue subagent, and optional hooks.
+repository: https://github.com/openai/codex-plugin-cc/tree/main/plugins/codex
+license: Apache-2.0
+visibility: public
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested: []
+    partial:
+      - claude-code
+      - cursor
+      - codex
+  models:
+    recommended:
+      - gpt-5.4
+    minimum: []
+references:
+  - id: scripts
+    path: scripts
+  - id: prompts
+    path: prompts
+  - id: schemas
+    path: schemas
+agents:
+  - name: codex-rescue
+    path: agents/codex-rescue.md
+    description: Proactively use when Claude Code is stuck, wants a second implementation or diagnosis pass, needs a deeper root-cause investigation, or should hand a substantial coding task to Codex through the shared runtime
+commands:
+  - name: adversarial-review
+    path: commands/adversarial-review.md
+    description: Run a Codex review that challenges the implementation approach and design choices
+  - name: cancel
+    path: commands/cancel.md
+    description: Cancel an active background Codex job in this repository
+  - name: rescue
+    path: commands/rescue.md
+    description: Delegate investigation, an explicit fix request, or follow-up rescue work to the Codex rescue subagent
+  - name: result
+    path: commands/result.md
+    description: Show the stored final output for a finished Codex job in this repository
+  - name: review
+    path: commands/review.md
+    description: Run a Codex code review against local git state
+  - name: setup
+    path: commands/setup.md
+    description: Check whether the local Codex CLI is ready and optionally toggle the stop-time review gate
+  - name: status
+    path: commands/status.md
+    description: Show active and recent Codex jobs for this repository, including review-gate status
+  - name: transfer
+    path: commands/transfer.md
+    description: Transfer the current Claude Code session into a resumable Codex thread
+skills:
+  - name: codex-cli-runtime
+    path: skills/codex-cli-runtime/SKILL.md
+    description: Internal helper contract for calling the codex-companion runtime from Claude Code
+  - name: codex-result-handling
+    path: skills/codex-result-handling/SKILL.md
+    description: Internal guidance for presenting Codex helper output back to the user
+  - name: gpt-5-4-prompting
+    path: skills/gpt-5-4-prompting/SKILL.md
+    description: Internal guidance for composing Codex and GPT-5.4 prompts for coding, review, diagnosis, and research tasks inside the Codex Claude Code plugin
+hooks:
+  - id: codex-companion-session-start
+    platform: claude-code
+    trigger: SessionStart
+    command: ./hooks/session-start.sh
+    timeout: 5
+    description: Export Codex Companion session and transcript environment for Claude Code sessions.
+  - id: codex-companion-session-end
+    platform: claude-code
+    trigger: SessionEnd
+    command: ./hooks/session-end.sh
+    timeout: 5
+    description: Clean up Codex Companion background jobs and shared broker state when a Claude Code session ends.
+  - id: codex-companion-stop-review-gate
+    platform: claude-code
+    trigger: Stop
+    command: ./hooks/stop-review-gate.sh
+    timeout: 900
+    description: Optionally run a stop-time Codex review gate before ending a Claude Code turn.
