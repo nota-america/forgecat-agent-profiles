@@ -39,7 +39,7 @@ npx forgecat install @forgecat/openai_codex-plugin-cc_codex
 |---|---|
 | Author | OpenAI |
 | Original repository | https://github.com/openai/codex-plugin-cc/tree/main/plugins/codex |
-| Version | `0.1.1` |
+| Version | `0.1.3` |
 | Original commit | `80c31f99570876c3ef40327838b0a2ca1ae2cd9c` |
 | License | Apache-2.0 |
 | Source platform | Claude Code |
@@ -50,9 +50,9 @@ npx forgecat install @forgecat/openai_codex-plugin-cc_codex
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 
 ### Models
 
