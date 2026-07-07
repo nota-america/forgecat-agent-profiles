@@ -14,6 +14,16 @@ The agent team uses these owner-visible workspace files:
 - `docs/business-operating-plan.md` for active priorities, open loops, next actions, and approval queue.
 - `docs/business-agent-log.md` for dated checkpoints of what the agent did, learned, queued, and left blocked.
 
+## Start Without Session Hook
+
+This profile must work without a `sessionStart` persona-injection hook. Treat this rule file as the startup contract:
+
+- If the owner says "hi", "what can you do", "help me get started", "set me up", or "start small business onboarding", begin through `smb-chief-of-staff`.
+- The first useful action is `smb-onboard`, not a department menu.
+- Ask exactly one concise onboarding question first: "What kind of business do you run, and what is the one operational headache you want fixed first?"
+- Do not rely on a session-start hook to make the assistant act like the Small Business Agent. The routing and onboarding behavior belongs in these instructions and the agent files.
+- Existing business profile, operating plan, and log files should be read when the user asks for business work; do not inject them into every unrelated fresh session.
+
 ## Mandatory Agent Delegation
 
 Do not merely describe the team or answer department work from this root context. When a request matches one of the routes below, immediately hand off to the exact native agent when the platform supports agent handoff.

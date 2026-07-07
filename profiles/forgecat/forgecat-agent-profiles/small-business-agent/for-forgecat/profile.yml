@@ -31,11 +31,6 @@ references:
 - id: businessAgentLogTemplate
   path: reference/business-agent-log-template.md
 hooks:
-- id: smb-session-context
-  trigger: session_start
-  command: ./hooks/smb-session-start.js
-  timeout: 5
-  description: Hydrates each new session with the current small-business profile, operating plan state, and onboarding reminder.
 - id: smb-routing-nudge
   trigger: user_prompt_submit
   command: ./hooks/smb-routing-nudge.js

@@ -1,17 +1,5 @@
 {
   "hooks": {
-    "SessionStart": [
-      {
-        "_forgecat": "@forgecat/small-business-agent#smb-session-context",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "./.forgecat/profiles/@forgecat/small-business-agent/hooks/_fc_wrap.sh claude-code smb-session-start.js",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
     "UserPromptSubmit": [
       {
         "_forgecat": "@forgecat/small-business-agent#smb-routing-nudge",
@@ -38,4 +26,3 @@
     ]
   }
 }
-

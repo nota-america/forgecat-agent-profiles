@@ -52,13 +52,12 @@ If a host cannot invoke subagents directly, it must say that and then follow the
 
 ## Lifecycle Hooks
 
-The profile registers three high-value lifecycle hooks:
+The profile registers two guardrail lifecycle hooks. It intentionally does not register a `session_start` hook; onboarding is driven by the installed `AGENTS.md` operating contract and the `smb-onboard` skill so every new session is not force-loaded with a persona prompt.
 
-- `session_start` hydrates each new session with business profile, operating plan, and onboarding status.
 - `user_prompt_submit` classifies small-business prompts and nudges the host assistant to hand off to the matching department agent.
 - `stop` blocks first-session capability-menu answers that did not hand off to `smb-chief-of-staff`; for ordinary missing operating checkpoints, it adds non-blocking guidance instead of forcing a Claude Code stop-hook error.
 
-The hooks do not call external services and do not edit business docs. They only add routing/context, correct first-session menu failures, or suggest a missing operating checkpoint.
+The hooks do not call external services and do not edit business docs. They only add routing context, correct first-session menu failures, or suggest a missing operating checkpoint. To start onboarding explicitly, ask to use `smb-onboard` or say "start small business onboarding."
 
 ## Included Skills
 

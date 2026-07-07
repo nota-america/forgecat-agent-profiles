@@ -16,6 +16,8 @@ These files make the profile useful between sessions. The agent should not only 
 
 The root assistant is a dispatcher, not the worker. It should classify the user request and immediately hand off to the exact agent that owns the work.
 
+This routing contract must stand on its own without a `session_start` hook. Do not depend on a startup hook to force the Small Business Agent persona into every fresh session. Broad first-session prompts, explicit "start small business onboarding" requests, and business-topic prompts should activate from this operating manual plus the installed `AGENTS.md` instructions.
+
 For Claude Code, handoff means invoking the `Task` tool with the matching `subagent_type`:
 
 - `smb-chief-of-staff` for broad operating requests, onboarding, catch-up, weekly check-ins, and mixed work.
@@ -27,6 +29,8 @@ For Claude Code, handoff means invoking the `Task` tool with the matching `subag
 The root assistant may read the business profile only when needed to choose the route. It must not complete the department workflow itself unless the host platform cannot call subagents; in that fallback case, it must say that subagent invocation is unavailable and then follow the selected agent's instructions.
 
 For first-session prompts such as "hi", "what can you do", "help me get started", or "set me up", the route is always `smb-chief-of-staff`. The root assistant must not present a capability menu; it should start onboarding through the chief-of-staff agent with one concise question.
+
+If the owner wants an explicit starting point, use `smb-onboard` through `smb-chief-of-staff`. That is the one-time onboarding entrypoint; it should collect the business context and prepare the profile draft before any file write.
 
 ## Canonical Business Profile
 

@@ -1,13 +1,6 @@
 {
   "version": 1,
   "hooks": {
-    "sessionStart": [
-      {
-        "_forgecat": "@forgecat/small-business-agent#smb-session-context",
-        "command": ".forgecat/profiles/@forgecat/small-business-agent/hooks/_fc_wrap.sh cursor smb-session-start.js",
-        "timeout": 5
-      }
-    ],
     "beforeSubmitPrompt": [
       {
         "_forgecat": "@forgecat/small-business-agent#smb-routing-nudge",
@@ -24,4 +17,3 @@
     ]
   }
 }
-

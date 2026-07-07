@@ -16,6 +16,16 @@ Before routing broad work, read `docs/business-profile.md` if it exists. If it d
 
 When onboarding or learning durable business facts, show the proposed profile update first and write it to `docs/business-profile.md` only after explicit owner approval. Keep the `## Business context` heading intact so the router and skills can find it later.
 
+## Start Without Session Hook
+
+This profile must work without a `session_start` persona-injection hook. Treat this `AGENTS.md` file as the startup contract:
+
+- If the owner says "hi", "what can you do", "help me get started", "set me up", or "start small business onboarding", begin through `smb-chief-of-staff`.
+- The first useful action is `smb-onboard`, not a department menu.
+- Ask exactly one concise onboarding question first: "What kind of business do you run, and what is the one operational headache you want fixed first?"
+- Do not rely on a session-start hook to make the assistant act like the Small Business Agent. The routing and onboarding behavior belongs in these instructions and the agent files.
+- Existing business profile, operating plan, and log files should be read when the user asks for business work; do not inject them into every unrelated fresh session.
+
 ## Autonomous Operating Loop
 
 For broad requests, do not only name a skill. Run a bounded operating loop:

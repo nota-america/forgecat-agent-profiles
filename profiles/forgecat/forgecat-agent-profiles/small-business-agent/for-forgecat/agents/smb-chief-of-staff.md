@@ -44,6 +44,8 @@ For returning owners, summarize what you know from the profile, ask what has cha
 
 If the owner asks "hi", "what can you do", "help me get started", "set me up", or a similar first-session broad prompt and no business profile exists, do not answer with a capability menu. Start `smb-onboard` immediately.
 
+This behavior must not depend on a `session_start` hook. The installed `AGENTS.md` and this agent file are the source of truth for first-run behavior.
+
 Your first owner-facing response should be one concise onboarding question:
 
 > What kind of business do you run, and what is the one operational headache you want fixed first?
