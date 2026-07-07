@@ -1,0 +1,48 @@
+name: '@forgecat/nomadamas_slides-grab'
+description: Agent-first presentation framework for planning, designing, editing,
+  and exporting HTML slides with shared Codex and Claude Code skills.
+repository: https://github.com/NomaDamas/slides-grab
+license: MIT
+visibility: public
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: slides-grab
+  path: skills/slides-grab/SKILL.md
+  description: End-to-end presentation workflow usable in Codex and Claude Code. Use
+    when making a full presentation from scratch — planning, designing slides, editing,
+    and exporting. PDF and per-slide PNG are preferred; PPTX/Figma export is experimental
+    / unstable.
+- name: slides-grab-card-news
+  path: skills/slides-grab-card-news/SKILL.md
+  description: Generate square Instagram-style card news by reusing the slides-grab
+    workflow with card-news mode enabled. Defaults to per-slide PNG export.
+- name: slides-grab-design
+  path: skills/slides-grab-design/SKILL.md
+  description: Stage 2 design skill usable in Codex and Claude Code. Generate and
+    iterate slide-XX.html files in the selected slides workspace.
+- name: slides-grab-export
+  path: skills/slides-grab-export/SKILL.md
+  description: Stage 3 conversion skill usable in Codex and Claude Code. Convert approved
+    HTML slides to PDF or per-slide PNG reliably, and to experimental / unstable PPTX/Figma
+    outputs on a best-effort basis.
+- name: slides-grab-plan
+  path: skills/slides-grab-plan/SKILL.md
+  description: Stage 1 planning skill usable in Codex and Claude Code. Build and iterate
+    slide-outline.md until explicit user approval.
+agents:
+- name: design-critic-agent
+  path: agents/design-critic-agent.md
+  description: Run the slides-grab design gate before export.
+- name: slides-grab-design-critic
+  path: agents/slides-grab-design-critic.md
+  description: Run the slides-grab design gate before export.
