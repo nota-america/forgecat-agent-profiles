@@ -112,7 +112,7 @@ const firstSessionDirective = !hasBusinessProfile(root) && route.agent === "smb-
   ? "\n\nFirst-session directive: do not ask the chief-of-staff agent to produce a capability overview, department menu, connector list, or example-command list. Ask it to start onboarding with one concise question: \"What kind of business do you run, and what is the one operational headache you want fixed first?\""
   : "";
 const message =
-  `Small Business Agent Team routing hook: classify this as ${route.label} work and hand off to ` +
+  `Small Business Agent routing hook: classify this as ${route.label} work and hand off to ` +
   `\`${route.agent}\` before doing department work from the root context.${mixed}\n\n` +
   `Claude Code: call the Task/Agent tool with \`subagent_type: "${route.agent}"\`. ` +
   `Cursor/Codex: use the nearest native agent handoff; if unavailable, state that limitation and follow the selected agent instructions exactly.\n\n` +

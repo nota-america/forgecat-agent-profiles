@@ -1,10 +1,10 @@
 ---
-name: "@forgecat/small-business-agent-team"
+name: "@forgecat/small-business-agent"
 description: >-
-  Self-contained department-based small business agent team that orchestrates Anthropic Small Business knowledge-work skills
+  Self-contained department-based small business agent that orchestrates Anthropic Small Business knowledge-work skills
   through a chief-of-staff router and focused finance, growth, customer operations, and people/legal agents.
 repository: >-
-  https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent-team
+  https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent
 license: Apache-2.0
 visibility: public
 sourcePlatform: multi-platform

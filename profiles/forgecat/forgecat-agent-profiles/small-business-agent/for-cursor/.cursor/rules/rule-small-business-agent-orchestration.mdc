@@ -2,7 +2,7 @@
 alwaysApply: false
 ---
 
-# Small Business Agent Team
+# Small Business Agent
 
 This profile turns the Anthropic Small Business skills into a department-based agent team. The Small Business skills are bundled in this profile; use them by name instead of recreating their workflows. The agent team owns a persistent workspace business profile at `docs/business-profile.md` and uses it to customize every recommendation.
 

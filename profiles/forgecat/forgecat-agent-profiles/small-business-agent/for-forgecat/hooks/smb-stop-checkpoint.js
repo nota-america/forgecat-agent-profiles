@@ -70,7 +70,7 @@ function loadTurnText(input) {
 
 function statePath(root, input) {
   const sessionId = String(input.session_id || input.conversation_id || "default").replace(/[^a-zA-Z0-9_.-]/g, "_");
-  return path.join(root, ".forgecat", "profiles", "@forgecat", "small-business-agent-team", "state", `stop-checkpoint-${sessionId}.json`);
+  return path.join(root, ".forgecat", "profiles", "@forgecat", "small-business-agent", "state", `stop-checkpoint-${sessionId}.json`);
 }
 
 function readState(root, input) {
@@ -126,7 +126,7 @@ function looksLikeOnboardingStart(text) {
 }
 
 function looksLikeFirstSessionCapabilityAnswer(text) {
-  return /\b(first session|first step|onboarding|set up|small business agent team|capabilit|what i can do|what's on your plate)\b/i.test(text) &&
+  return /\b(first session|first step|onboarding|set up|small business agent|capabilit|what i can do|what's on your plate)\b/i.test(text) &&
     looksLikeCapabilityMenu(text);
 }
 
@@ -134,7 +134,7 @@ function emitBlock(reason) {
   const payload = {
     decision: "block",
     reason,
-    systemMessage: "Small Business Agent Team checkpoint required",
+    systemMessage: "Small Business Agent checkpoint required",
   };
   process.stdout.write(`${JSON.stringify(payload)}\n`);
 }

@@ -2,14 +2,14 @@
 
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# Small Business Agent Team
+# Small Business Agent
 
 Department-based agent orchestration for the Anthropic Small Business knowledge-work profile. Install this profile to get the Small Business skills, MCP connector manifest, a chief-of-staff router, finance, growth, customer operations, and people/legal agents, plus a persistent workspace business profile and operating plan in one package.
 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/small-business-agent-team
+npx forgecat install @forgecat/small-business-agent
 ```
 
 The Small Business skills are vendored from `@forgecat/anthropics_knowledge-work-plugins_small-business` so the package works as a single ForgeCat install.
@@ -97,7 +97,7 @@ The rule tells the host agent to:
 |---|---|
 | Author | ForgeCat |
 | Source profile | `@forgecat/anthropics_knowledge-work-plugins_small-business` |
-| Repository | https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent-team |
+| Repository | https://github.com/nota-america/forgecat-agent-profiles/tree/main/profiles/forgecat/forgecat-agent-profiles/small-business-agent |
 | License | Apache-2.0 |
 | Source platform | Multi-platform |
 

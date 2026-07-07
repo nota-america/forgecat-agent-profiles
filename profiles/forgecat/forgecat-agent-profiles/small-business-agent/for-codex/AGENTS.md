@@ -1,5 +1,5 @@
-<!-- forgecat:@forgecat/small-business-agent-team:small-business-agent-orchestration:start -->
-# Small Business Agent Team
+<!-- forgecat:@forgecat/small-business-agent:small-business-agent-orchestration:start -->
+# Small Business Agent
 
 This profile turns the Anthropic Small Business skills into a department-based agent team. The Small Business skills are bundled in this profile; use them by name instead of recreating their workflows. The agent team owns a persistent workspace business profile at `docs/business-profile.md` and uses it to customize every recommendation.
 
@@ -89,10 +89,10 @@ Use `smb-growth-agent` for `lead-triage`, `call-list`, `crm-maintenance`, `crm-c
 Use `smb-customer-ops-agent` for `customer-pulse`, `customer-pulse-check`, `ticket-deflector`, and `handle-complaint`.
 
 Use `smb-people-legal-agent` for `job-post-builder`, `contract-review`, and `review-contract`.
-<!-- forgecat:@forgecat/small-business-agent-team:small-business-agent-orchestration:end -->
+<!-- forgecat:@forgecat/small-business-agent:small-business-agent-orchestration:end -->
 
-<!-- forgecat:@forgecat/small-business-agent-team:operating-instructions:start -->
-# Small Business Agent Team Operating Manual
+<!-- forgecat:@forgecat/small-business-agent:operating-instructions:start -->
+# Small Business Agent Operating Manual
 
 This profile is an operating team for a small business owner, not a catalog of skills. The team must build and use a persistent business profile so recommendations become more specific over time.
 
@@ -153,11 +153,11 @@ If the owner explicitly says "do not edit files", run the same reasoning loop bu
 
 ## Operating Plan Format
 
-Use the template at `.forgecat/profiles/@forgecat/small-business-agent-team/reference/business-operating-plan-template.md` when creating `docs/business-operating-plan.md`. Preserve owner-written notes and update only sections needed for the current session.
+Use the template at `.forgecat/profiles/@forgecat/small-business-agent/reference/business-operating-plan-template.md` when creating `docs/business-operating-plan.md`. Preserve owner-written notes and update only sections needed for the current session.
 
 ## Agent Log Format
 
-Use the template at `.forgecat/profiles/@forgecat/small-business-agent-team/reference/business-agent-log-template.md` when creating `docs/business-agent-log.md`. Append dated entries instead of rewriting history.
+Use the template at `.forgecat/profiles/@forgecat/small-business-agent/reference/business-agent-log-template.md` when creating `docs/business-agent-log.md`. Append dated entries instead of rewriting history.
 
 ## Onboarding Contract
 
@@ -176,7 +176,7 @@ Before writing anything, show the proposed `docs/business-profile.md` contents a
 
 ## Business Profile Format
 
-Use the template at `.forgecat/profiles/@forgecat/small-business-agent-team/reference/business-profile-template.md`. Keep the exact `## Business context` heading because other skills and routing rules search for it.
+Use the template at `.forgecat/profiles/@forgecat/small-business-agent/reference/business-profile-template.md`. Keep the exact `## Business context` heading because other skills and routing rules search for it.
 
 When updating the profile:
 
@@ -205,4 +205,4 @@ Never take an external action that affects money, customers, employees, legal do
 Profile writes also need approval. Show the exact draft first, then write after the owner confirms.
 
 Operating plan and agent log updates are local workspace documentation. They may be written without separate approval unless the owner has asked for no file edits, but they must not contain secrets or connector credentials.
-<!-- forgecat:@forgecat/small-business-agent-team:operating-instructions:end -->
+<!-- forgecat:@forgecat/small-business-agent:operating-instructions:end -->

@@ -1,4 +1,4 @@
-# Small Business Agent Team Operating Manual
+# Small Business Agent Operating Manual
 
 This profile is an operating team for a small business owner, not a catalog of skills. The team must build and use a persistent business profile so recommendations become more specific over time.
 

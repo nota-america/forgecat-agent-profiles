@@ -55,7 +55,7 @@ const status = [
   logExists ? "agent log present" : "agent log missing",
 ].join("; ");
 
-let context = `Small Business Agent Team startup: ${status}.`;
+let context = `Small Business Agent startup: ${status}.`;
 
 if (profileExists) {
   const profilePreview = readFirstLines(root, "docs/business-profile.md");
