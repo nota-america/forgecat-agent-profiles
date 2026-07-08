@@ -1,4 +1,4 @@
-name: "@forgecat/mengto_skills_media"
+name: "@forgecat/mango_skills_agent-skills-media"
 description: "Media asset retrieval skills for Aura Assets and Unsplash image selection workflows."
 repository: https://github.com/MengTo/Skills/tree/main/agent-skills/media
 license: MIT

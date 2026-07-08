@@ -14,7 +14,7 @@ Media asset retrieval skills for Aura Assets and Unsplash image selection workfl
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/mengto_skills_media
+npx forgecat install @forgecat/mango_skills_agent-skills-media
 ```
 
 ## Skills

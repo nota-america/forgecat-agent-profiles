@@ -14,7 +14,7 @@ Web design skills covering visual styles, animation systems, WebGL backgrounds, 
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/mengto_skills_web_design
+npx forgecat install @forgecat/mango_skills_agent-skills-web-design
 ```
 
 ## Skills

@@ -1,3 +1,5 @@
+*written by ForgeCat*
+
 ![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # MengTo Skills Codex
@@ -14,7 +16,7 @@ Codex-oriented agent skills for browser automation, support workflows, UI captur
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/mengto_skills_codex
+npx forgecat install @forgecat/mango_skills_agent-skills-codex
 ```
 
 ## Skills

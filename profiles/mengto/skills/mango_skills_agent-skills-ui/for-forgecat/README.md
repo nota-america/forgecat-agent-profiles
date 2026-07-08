@@ -16,7 +16,7 @@ UI and frontend design skills for taste enforcement, visual systems, SwiftUI, SE
 ## Installation
 
 ```bash
-npx forgecat install @forgecat/mengto_skills_ui
+npx forgecat install @forgecat/mango_skills_agent-skills-ui
 ```
 
 ## Skills
