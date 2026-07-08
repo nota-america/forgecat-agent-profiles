@@ -1,0 +1,32 @@
+name: "@forgecat/mengto_skills_media"
+description: "Media asset retrieval skills for Aura Assets and Unsplash image selection workflows."
+repository: https://github.com/MengTo/Skills/tree/main/agent-skills/media
+license: MIT
+visibility: public
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: aura-asset-images
+  path: skills/aura-asset-images/SKILL.md
+  description: >-
+    Use when you need high-quality stock-style images from Aura Assets (aura.build/assets) similar
+    to Unsplash for design mockups and marketing: backgrounds, abstract wallpapers, architecture,
+    portraits, and headshots. Includes a workflow for searching by tag on aura.build/assets and
+    returns 5 real image URLs per category plus practical guidance for using different resolutions
+    and aspect ratios.
+- name: unsplash-asset-images
+  path: skills/unsplash-asset-images/SKILL.md
+  description: >-
+    Use when you need to pick high-quality Unsplash images for product/design assets (avatars,
+    headshots, portraits, large website backgrounds, and abstract wallpapers) and output real
+    Unsplash URLs plus practical instructions for producing the right resolutions and aspect
+    ratios (1:1, 4:5, 3:4, 16:9, 9:16).
