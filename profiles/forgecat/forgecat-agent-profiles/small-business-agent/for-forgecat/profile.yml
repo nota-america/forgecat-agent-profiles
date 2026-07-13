@@ -30,11 +30,6 @@ references:
   path: reference/business-operating-plan-template.md
 - id: businessAgentLogTemplate
   path: reference/business-agent-log-template.md
-agents:
-- name: business-onboarding-assistant
-  path: agents/business-onboarding-assistant.md
-  description: >-
-    Purpose-scoped helper for first-run small-business onboarding, owner interviews, and proposed workspace profile updates.
 skills:
 - name: business-pulse
   path: skills/business-pulse/SKILL.md

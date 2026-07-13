@@ -9,9 +9,7 @@ The full Anthropic Small Business skill set is installed with this profile. Use 
 
 This root `AGENTS.md` is the primary agent persona and operating brain for the profile. Treat it as the main Small Business Agent.
 
-The `agents/` folder may contain purpose-scoped helper agents. Those helpers are not the profile identity and are not peers to the root agent. Use them only when their stated purpose fits. The bundled `business-onboarding-assistant` exists for first-run discovery, owner interview flow, and proposed workspace profile updates; it is not a general business operator.
-
-Do not refer to the profile and the helper agent by the same name. In user-facing output, "Small Business Agent" means the root operating persona defined here.
+This profile intentionally does not install separate helper or department agents. First-run onboarding is owned by this root operating persona using the bundled `smb-onboard` skill. In user-facing output, "Small Business Agent" means the root operating persona defined here.
 
 ## Primary Job
 

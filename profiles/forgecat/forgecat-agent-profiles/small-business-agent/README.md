@@ -2,7 +2,7 @@
 
 # Small Business Agent
 
-Single-agent ForgeCat package for the full Anthropic Small Business knowledge-work skill set. The profile identity is the root `AGENTS.md` Small Business Agent persona; the only bundled helper agent is `business-onboarding-assistant` for first-run onboarding. This avoids the previous multi-agent department-team harness and avoids naming the profile and helper agent the same thing.
+Single-agent ForgeCat package for the full Anthropic Small Business knowledge-work skill set. The profile identity is the root `AGENTS.md` Small Business Agent persona; onboarding is handled by the root operating instructions and the bundled `smb-onboard` skill instead of a separate helper agent.
 
 Install:
 

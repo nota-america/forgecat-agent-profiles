@@ -6,7 +6,7 @@
 
 A single small-business operator profile built from the full Anthropic Small Business knowledge-work skill set. It is designed for owner-operators who want one root agent persona to onboard the business, keep track of current priorities, run business pulse checks, and call the right bundled skill when finance, growth, customer, people, legal, or operating work comes up.
 
-This is intentionally not a multi-agent department team. The detailed operating behavior lives in root `AGENTS.md`. The only bundled helper agent is `business-onboarding-assistant`, which is purpose-scoped to first-run onboarding and workspace profile setup.
+This is intentionally not a multi-agent department team. The detailed operating behavior lives in root `AGENTS.md`; first-run onboarding is handled by those root instructions and the bundled `smb-onboard` skill instead of a separate helper agent.
 
 ## Installation
 
@@ -20,14 +20,7 @@ npx forgecat install @forgecat/small-business-agent
 - Reads `docs/business-profile.md`, `docs/business-operating-plan.md`, and `docs/business-agent-log.md` when they exist.
 - Produces current-state checks and one recommended next action.
 - Uses the full bundled Small Business skill set by exact skill name.
-- Keeps the profile identity separate from the helper agent identity.
 - Queues external actions for approval instead of sending, posting, paying, refunding, filing, updating, or publishing on its own.
-
-## Included Agent
-
-| Agent | Owns |
-|---|---|
-| `business-onboarding-assistant` | First-run owner interview, onboarding flow, and proposed workspace profile updates |
 
 ## Operating Instructions
 
@@ -36,7 +29,7 @@ The root `AGENTS.md` file is the canonical operating manual. It is installed as 
 The operating manual tells the host agent to:
 
 - treat root `AGENTS.md` as the main Small Business Agent persona
-- keep helper agents purpose-scoped and distinct from the profile name
+- keep onboarding inside the main agent flow instead of a separate helper agent
 - ask one onboarding question instead of showing a menu when no business context exists
 - preserve the exact `## Business context` heading in `docs/business-profile.md`
 - use one central agent instead of department subagents
