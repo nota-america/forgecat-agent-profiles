@@ -10,15 +10,39 @@
             "timeout": 10
           }
         ]
+      },
+      {
+        "_forgecat": "@forgecat/fivetaku_fablize#fablize-user-prompt-gate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code gate_prompt.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "_forgecat": "@forgecat/fivetaku_fablize#fablize-post-tool-gate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code gate_post_tool.py",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Bash|Edit|Write|NotebookEdit|MultiEdit"
       }
     ],
     "Stop": [
       {
-        "_forgecat": "@forgecat/fivetaku_fablize#fablize-finish-the-work",
+        "_forgecat": "@forgecat/fivetaku_fablize#fablize-stop-gate",
         "hooks": [
           {
             "type": "command",
-            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code finish-the-work.sh"
+            "command": "./.forgecat/profiles/@forgecat/fivetaku_fablize/hooks/_fc_wrap.sh claude-code gate_stop.py",
+            "timeout": 10
           }
         ]
       }

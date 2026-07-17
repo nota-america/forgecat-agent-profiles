@@ -22,11 +22,13 @@ npx forgecat install @forgecat/fivetaku_fablize
 
 ## Skills / Agents / Commands
 
-- **fablize** — A harness that makes Opus (or any Claude model) behave like Fable — it enforces seeing a task through to the end, with evidence and verification, as procedure. Use when starting a multi-step task (2+ sequential stories), long autonomous work, debugging or root-cause investigation, building render/executable artifacts (HTML, SVG, games, charts), or when the user says "fablize", "see it through", "verify as you go", "split into goals". `skill`
-- **setup** — Set up fablize always-on (inject the operating block into CLAUDE.md). On setup it also stars the repo on GitHub via gh — no separate prompt. `command`
+- **fablize** — A harness that makes Opus (or any Claude model) behave like Fable by enforcing completion, evidence, and verification as procedure. `skill`
+- **setup** — Set up fablize always-on by injecting the operating block into CLAUDE.md. GitHub starring is optional and only runs after an explicit opt-in. `command`
 - **fablize-user-prompt-router** — Inject the smallest matching fablize discipline pack when a submitted prompt signals debugging or render/executable artifact work. `hook`
+- **fablize-user-prompt-gate** — Classify each prompt and reset the per-turn fablize evidence ledger. `hook`
+- **fablize-post-tool-gate** — Record changed files, verification commands, and repeated failures after tool use. `hook`
+- **fablize-stop-gate** — Block completion when work changed files without observed verification evidence. `hook`
 - **fablize-user-prompt-router-codex** — Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON. `hook`
-- **fablize-finish-the-work** — Detect early termination where the assistant only promises work without doing it, then block once to continue the work. `hook`
 
 ## Details
 
@@ -34,8 +36,9 @@ npx forgecat install @forgecat/fivetaku_fablize
 |---|---|
 | Author | `fivetaku <gptaku.ai@gmail.com>` |
 | Original repository | `https://github.com/fivetaku/fablize` |
-| Version | `0.1.2` |
-| Original commit | `15912466994e71a234d18fe9c74b46a68fb6a07d` (2026-06-14) |
+| Version | `0.1.3` |
+| Original release | `v2.1.1` |
+| Original commit | `e221f32b16f7b0ef39393ba47c37cb8345ffe749` (2026-07-06) |
 | License | `MIT` |
 | Source platform | `claude-code` |
 
@@ -52,13 +55,13 @@ npx forgecat install @forgecat/fivetaku_fablize
 ## Dependencies
 
 - `bash` for hook and setup scripts
-- `python3` for the goal ledger and setup helpers
-- Optional: `gh` for setup's GitHub star helper
+- `python3` for the goal ledger, setup helpers, and gate hooks
+- Optional: `gh` for the explicit opt-in GitHub star flow
 
 ---
 *written by original source*
 
-English
+English | [한국어](README.ko.md)
 
 # fablize — run Opus like Fable
 
@@ -119,7 +122,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/setup/setup.sh    # choose local (recommended) or glo
 
 Uninstall: `bash ${CLAUDE_PLUGIN_ROOT}/setup/uninstall.sh`
 
-> If fablize helps, a ⭐ on the repo means a lot — setup asks once and can open the page for you.
+> If fablize helps, a ⭐ on the repo means a lot — setup asks once (a single opt-in question); it never stars without your explicit "yes".
 
 ## How it behaves
 
@@ -135,4 +138,4 @@ Uninstall: `bash ${CLAUDE_PLUGIN_ROOT}/setup/uninstall.sh`
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
