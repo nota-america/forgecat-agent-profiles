@@ -28,19 +28,40 @@ skills:
       - path: skills/fablize/scripts/goals.py
         description: Self-contained multi-story goal ledger and verification gate used by the fablize skill.
         runtime: python
+      - path: skills/fablize/scripts/gate/classify_task.py
+        description: Classifies prompts for the fablize observation gate.
+        runtime: python
+      - path: skills/fablize/scripts/gate/ledger.py
+        description: Shared per-session evidence ledger helpers for fablize gate hooks.
+        runtime: python
+      - path: skills/fablize/scripts/gate/parse_tool_result.py
+        description: Parses tool results for changes, verification commands, and failures.
+        runtime: python
+      - path: skills/fablize/scripts/gate/verify_state.py
+        description: Evaluates whether the current turn has enough verification evidence to stop.
+        runtime: python
+      - path: skills/fablize/scripts/shadow/analyze.py
+        description: Optional shadow measurement analysis helper for fablize experiments.
+        runtime: python
+      - path: skills/fablize/scripts/shadow/outcome_collect.py
+        description: Optional shadow measurement outcome collection helper.
+        runtime: python
+      - path: skills/fablize/scripts/shadow/shadow_collect.py
+        description: Optional shadow measurement event collection helper.
+        runtime: python
+      - path: skills/fablize/scripts/shadow/shadow_logger.py
+        description: Optional shadow measurement logging helper used by gate holdout mode.
+        runtime: python
       - path: skills/fablize/setup/setup.sh
         description: Idempotent setup script that injects the fablize operating block into CLAUDE.md.
         runtime: bash
       - path: skills/fablize/setup/uninstall.sh
         description: Removes the fablize operating block from CLAUDE.md.
         runtime: bash
-      - path: skills/fablize/setup/star.sh
-        description: Optional GitHub star helper invoked by setup when gh authentication is available.
-        runtime: bash
 commands:
   - name: setup
     path: commands/setup.md
-    description: Set up fablize always-on (inject the operating block into CLAUDE.md). On setup it also stars the repo on GitHub via gh — no separate prompt.
+    description: Set up fablize always-on by injecting the operating block into CLAUDE.md. GitHub starring is optional and only runs after an explicit opt-in.
 hooks:
   - id: fablize-user-prompt-router
     trigger: user_prompt_submit
@@ -50,6 +71,28 @@ hooks:
     platforms:
       - claude-code
       - cursor
+  - id: fablize-user-prompt-gate
+    trigger: user_prompt_submit
+    command: ./hooks/gate_prompt.py
+    timeout: 10
+    description: Classify each prompt and reset the per-turn fablize evidence ledger.
+    platforms:
+      - claude-code
+  - id: fablize-post-tool-gate
+    trigger: post_tool_use
+    tool_match: Bash|Edit|Write|NotebookEdit|MultiEdit
+    command: ./hooks/gate_post_tool.py
+    timeout: 10
+    description: Record changed files, verification commands, and repeated failures after tool use.
+    platforms:
+      - claude-code
+  - id: fablize-stop-gate
+    trigger: stop
+    command: ./hooks/gate_stop.py
+    timeout: 10
+    description: Block completion when work changed files without observed verification evidence.
+    platforms:
+      - claude-code
   - id: fablize-user-prompt-router-codex
     trigger: user_prompt_submit
     command: ./hooks/router-codex.sh
@@ -57,8 +100,3 @@ hooks:
     description: Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON.
     platforms:
       - codex
-  - id: fablize-finish-the-work
-    platform: claude-code
-    trigger: Stop
-    command: ./hooks/finish-the-work.sh
-    description: Detect early termination where the assistant only promises work without doing it, then block once to continue the work.

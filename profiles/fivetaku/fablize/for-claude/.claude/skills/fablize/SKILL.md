@@ -37,13 +37,14 @@ cat ~/.fablize/progress.json 2>/dev/null
 ```
 
 - If the file **exists** — skip onboarding, go straight to the task.
-- If it is **missing** — onboard once with a single AskUserQuestion. **Phrase the question and options in the user's current conversation language** (detect it from recent messages — Korean, English, Japanese, etc.). Do not describe the star in words — just append a ⭐ to the question.
-  - **Question (meaning, translate to the user's language):** "Set up fablize? ⭐"
+- If it is **missing** — onboard once with a single AskUserQuestion. **Phrase the question and options in the user's current conversation language** (detect it from recent messages — Korean, English, Japanese, etc.).
+  - **Question (meaning, translate to the user's language):** "Set up fablize?"
   - **Options (meaning, translate):** "Local — this project only (recommended)" / "Global — all projects" / "Skip".
-  - On **Local/Global** — run setup (it injects the block, writes progress.json, and stars the repo via gh — all in one), then continue with the task:
+  - On **Local/Global** — run setup (it injects the block and writes progress.json; it never stars anything by itself), then continue with the task:
     ```bash
     bash "${FABLIZE_ROOT}/setup/setup.sh" <local|global>
     ```
+    After setup, run `bash "${FABLIZE_ROOT}/setup/setup.sh" ask` — if it prints `STAR_ASK <lang>`, ask once via AskUserQuestion (in the user's language) whether they'd like to give the repo an optional GitHub star, then run `setup.sh star yes` or `setup.sh star no` accordingly. If it prints nothing, skip silently.
   - On **Skip** — record it so it won't ask again, then continue:
     ```bash
     mkdir -p ~/.fablize && printf '{"setup_done":false,"skipped":true}' > ~/.fablize/progress.json
@@ -81,7 +82,7 @@ Lead with the outcome. Stay within the requested scope (no incidental refactors 
 
 ## 4. At the capability ceiling (escalate)
 
-Signals you have hit the model's ceiling: stuck on the same problem 2+ times; open-ended creation where detail itself is the value; deep review that needs out-of-spec discovery. These are capability, not procedure, and a harness cannot fill them. In order: (1) adaptive thinking already scales with difficulty — recommend `/effort xhigh` to the user to push the current model to its ceiling; (2) if still short, hand off to a stronger model in a fresh session with an evidence package (symptoms, attempts, failure point, repro); (3) otherwise report the limit honestly and name where a human must step in.
+Signals you have hit the model's ceiling: stuck on the same problem 2+ times; open-ended creation where detail itself is the value; deep review that needs out-of-spec discovery. These are capability, not procedure, and a harness cannot fill them. In order: (1) adaptive thinking already scales with difficulty — recommend `/effort xhigh` to the user to push the current model to its ceiling; (2) **reactive effort delegation** — if the blocker is a bounded, hard *slice* (not the whole task), delegate just that slice to a background Workflow with `effort:'max'` (model inherited): package the evidence (symptoms, attempts, failure point, repro, the specific sub-question) as the `agent()` prompt, force a structured return via `schema`, then resume with its result as authoritative. This is the only real per-task effort knob in a normal session — the Agent tool exposes `model` but no `effort`; only Workflow/Agent SDK do. **Opt-in, and not yet proven on real work** (the shadow layer in `docs/MEASUREMENT_PROTOCOL.md` measures whether it helps): use it for a genuinely stuck slice, not routinely, and **never trigger it from risk/deep classification alone** — that over-escalates simple high-risk tasks (false-escalate); (3) if still short, hand off to a stronger model in a fresh session with the same evidence package; (4) otherwise report the limit honestly and name where a human must step in.
 
 ## Install (always-on, optional)
 

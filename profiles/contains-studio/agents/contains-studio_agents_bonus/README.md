@@ -29,7 +29,7 @@ npx forgecat install @forgecat/contains-studio_agents_bonus
 |---|---|
 | Author | Contains Studio |
 | Original repository | https://github.com/contains-studio/agents/tree/main/bonus |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | `a5a480c324cac64b9c569bca0b2f297d517240cb` |
 | License | Unknown |
 | Source platform | Claude Code agents |
@@ -40,9 +40,9 @@ npx forgecat install @forgecat/contains-studio_agents_bonus
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 
 ## Dependencies
 
