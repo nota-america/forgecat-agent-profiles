@@ -43,7 +43,7 @@ npx forgecat install @forgecat/leonxlnx_taste-skill
 | Author | Leonxlnx |
 | Original repository | https://github.com/Leonxlnx/taste-skill/tree/main/skills |
 | Version | `0.1.5` |
-| Original commit | `5436c5952cc88d18a034d496988680a8c28a836a` |
+| Original commit | `b17742737e796305d829b3ad39eda3add0d79060` |
 | License | MIT |
 | Source platform | Agent Skills |
 | Scope | `skills/` only |
