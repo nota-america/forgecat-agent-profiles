@@ -52,7 +52,7 @@ npx forgecat install @forgecat/ayghri_i-have-adhd
 *written by original source*
 
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+  <img src="https://raw.githubusercontent.com/ayghri/i-have-adhd/559f8e041dc92de0c47032a8a9289cea2ef5496b/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD-friendly outputs. No ADHD diagnosis needed!</strong>
@@ -88,7 +88,7 @@ Then type `$i-have-adhd` to apply the output style explicitly. The skill can als
 
 </details>
 
-Install instructions for other coding agents live in [INSTALL.md](./INSTALL.md).
+Install instructions for other coding agents live in [INSTALL.md](https://github.com/ayghri/i-have-adhd/blob/559f8e041dc92de0c47032a8a9289cea2ef5496b/INSTALL.md).
 
 ## What it does
 
