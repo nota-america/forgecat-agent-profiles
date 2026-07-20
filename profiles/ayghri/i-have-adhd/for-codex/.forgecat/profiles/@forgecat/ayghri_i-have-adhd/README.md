@@ -29,7 +29,7 @@ npx forgecat install @forgecat/ayghri_i-have-adhd
 |---|---|
 | Author | Ayoub G. |
 | Original repository | https://github.com/ayghri/i-have-adhd |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | 559f8e0 |
 | License | MIT |
 | Source platform | multi-host |
@@ -41,7 +41,7 @@ npx forgecat install @forgecat/ayghri_i-have-adhd
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Tested |
 
 ## Dependencies
