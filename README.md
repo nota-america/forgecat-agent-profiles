@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-186-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -121,6 +121,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | Collection | Profiles | Description |
 |---|---:|---|
 | [addyosmani/agent-skills](./profiles/addyosmani/agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
+| [ayghri/i-have-adhd](./profiles/ayghri/i-have-adhd) | 1 | ADHD-friendly output shaping skill for concise, action-first agent replies |
 | [anthropics/claude-code](./profiles/anthropics/claude-code) | 1 | Claude Code profile conversion |
 | [anthropics/claude-plugins-official](./profiles/anthropics/claude-plugins-official) | 16 | Official Anthropic Claude plugin conversions for skills, agents, commands, and MCP |
 | [anthropics/knowledge-work-plugins](./profiles/anthropics/knowledge-work-plugins) | 15 | Knowledge-work plugins for legal, finance, HR, marketing, operations, sales, and more |
@@ -160,7 +161,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 186 profiles across 37 collections.
+Total: 187 profiles across 38 collections.
 
 ## Profile Layout
 
