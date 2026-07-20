@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-183-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -121,6 +121,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | Collection | Profiles | Description |
 |---|---:|---|
 | [addyosmani/agent-skills](./profiles/addyosmani/agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
+| [ayghri/i-have-adhd](./profiles/ayghri/i-have-adhd) | 1 | ADHD-friendly output shaping skill for concise, action-first agent replies |
 | [anthropics/claude-code](./profiles/anthropics/claude-code) | 1 | Claude Code profile conversion |
 | [anthropics/claude-plugins-official](./profiles/anthropics/claude-plugins-official) | 16 | Official Anthropic Claude plugin conversions for skills, agents, commands, and MCP |
 | [anthropics/knowledge-work-plugins](./profiles/anthropics/knowledge-work-plugins) | 15 | Knowledge-work plugins for legal, finance, HR, marketing, operations, sales, and more |
@@ -130,7 +131,6 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing skills for conversion, copywriting, SEO, paid ads, analytics, and GTM work |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Cursor plugins for team workflows, continual learning, and iterative agent loops |
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
-| [egonex-ai/understand-anything](./profiles/egonex-ai/understand-anything) | 1 | Codebase understanding skills for knowledge graphs, dashboards, architecture analysis, and onboarding |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
 | [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
@@ -145,6 +145,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [microsoft/azure-skills](./profiles/microsoft/azure-skills) | 20 | Microsoft Azure skills for deployment, observability, compliance, storage, AI, and more |
 | [msitarzewski/agency-agents](./profiles/msitarzewski/agency-agents) | 13 | Agency role agents for academic, design, engineering, marketing, sales, and operations teams |
 | [multica-ai/andrej-karpathy-skills](./profiles/multica-ai/andrej-karpathy-skills) | 1 | Andrej Karpathy coding guidelines for focused, verifiable agent work |
+| [mengto/skills](./profiles/mengto/skills) | 4 | MengTo agent skills packaged as mango_skills_agent-skills profiles for Codex workflows, media assets, UI design, and web design systems |
 | [obra/superpowers](./profiles/obra/superpowers) | 1 | Superpowers software-development methodology with hook-backed startup context |
 | [openai/codex-plugin-cc](./profiles/openai/codex-plugin-cc) | 1 | OpenAI Codex plugin for Claude Code review, delegation, session transfer, background jobs, and optional hooks |
 | [openai/skills](./profiles/openai/skills) | 45 | OpenAI skills for frontend, Figma, Playwright, deployment, documents, security, and more |
@@ -160,7 +161,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 183 profiles across 37 collections.
+Total: 187 profiles across 38 collections.
 
 ## Profile Layout
 

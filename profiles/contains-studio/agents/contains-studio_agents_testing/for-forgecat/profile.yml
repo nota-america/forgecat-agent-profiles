@@ -1,16 +1,17 @@
-name: '@forgecat/contains-studio_agents_testing'
-description: Claude Code sub-agents for API testing, performance benchmarking, result analysis, tool evaluation, and workflow optimization.
+name: "@forgecat/contains-studio_agents_testing"
+description: Claude Code sub-agents for API testing, performance benchmarking, result
+  analysis, tool evaluation, and workflow optimization.
 repository: https://github.com/contains-studio/agents/tree/main/testing
 license: Unknown
 visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
+    partial: []
   models:
     recommended: []
     minimum: []
