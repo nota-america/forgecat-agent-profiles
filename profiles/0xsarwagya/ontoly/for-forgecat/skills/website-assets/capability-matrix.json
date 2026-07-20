@@ -1,0 +1,169 @@
+{
+  "capabilities": [
+    {
+      "capability": "EvidencePack",
+      "skills": [
+        "architecture-review",
+        "impact-analysis",
+        "codebase-onboarding",
+        "request-tracing",
+        "dependency-analysis",
+        "security-review",
+        "configuration-analysis",
+        "framework-analysis",
+        "documentation",
+        "refactoring",
+        "performance-analysis",
+        "dead-code-analysis",
+        "migration-analysis",
+        "sdk-generation"
+      ]
+    },
+    {
+      "capability": "ExplainArchitecture",
+      "skills": [
+        "architecture-review",
+        "codebase-onboarding",
+        "framework-analysis",
+        "documentation",
+        "migration-analysis",
+        "sdk-generation"
+      ]
+    },
+    {
+      "capability": "FindAuthenticationFlow",
+      "skills": [
+        "security-review"
+      ]
+    },
+    {
+      "capability": "FindConfiguration",
+      "skills": [
+        "configuration-analysis"
+      ]
+    },
+    {
+      "capability": "FindConfigurationUsage",
+      "skills": [
+        "security-review",
+        "configuration-analysis",
+        "migration-analysis"
+      ]
+    },
+    {
+      "capability": "FindCycles",
+      "skills": [
+        "architecture-review",
+        "dependency-analysis",
+        "refactoring"
+      ]
+    },
+    {
+      "capability": "FindDeadCode",
+      "skills": [
+        "dead-code-analysis"
+      ]
+    },
+    {
+      "capability": "FindDependencies",
+      "skills": [
+        "architecture-review",
+        "impact-analysis",
+        "dependency-analysis",
+        "configuration-analysis",
+        "refactoring",
+        "performance-analysis",
+        "migration-analysis"
+      ]
+    },
+    {
+      "capability": "FindDependents",
+      "skills": [
+        "impact-analysis",
+        "dependency-analysis",
+        "refactoring",
+        "dead-code-analysis"
+      ]
+    },
+    {
+      "capability": "FindEntrypoints",
+      "skills": [
+        "codebase-onboarding",
+        "dead-code-analysis"
+      ]
+    },
+    {
+      "capability": "FindFeatureOwner",
+      "skills": [
+        "codebase-onboarding",
+        "framework-analysis"
+      ]
+    },
+    {
+      "capability": "FindNode",
+      "skills": [
+        "impact-analysis",
+        "request-tracing",
+        "framework-analysis"
+      ]
+    },
+    {
+      "capability": "FindResponsibleFunction",
+      "skills": [
+        "request-tracing",
+        "security-review",
+        "sdk-generation"
+      ]
+    },
+    {
+      "capability": "FindUnusedFeature",
+      "skills": [
+        "dead-code-analysis"
+      ]
+    },
+    {
+      "capability": "GraphStatistics",
+      "skills": [
+        "architecture-review",
+        "codebase-onboarding",
+        "dependency-analysis",
+        "configuration-analysis",
+        "framework-analysis",
+        "documentation",
+        "performance-analysis",
+        "sdk-generation"
+      ]
+    },
+    {
+      "capability": "ImpactAnalysis",
+      "skills": [
+        "impact-analysis",
+        "refactoring",
+        "migration-analysis"
+      ]
+    },
+    {
+      "capability": "InspectModule",
+      "skills": [
+        "documentation"
+      ]
+    },
+    {
+      "capability": "TraceExecution",
+      "skills": [
+        "request-tracing",
+        "performance-analysis"
+      ]
+    },
+    {
+      "capability": "TraceRequestLifecycle",
+      "skills": [
+        "request-tracing",
+        "security-review",
+        "documentation",
+        "performance-analysis",
+        "sdk-generation"
+      ]
+    }
+  ]
+}

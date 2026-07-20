@@ -1,0 +1,47 @@
+---
+title: "Software Graph"
+description: "The semantic graph Ontoly builds from a repository."
+order: 1
+---
+
+The Software Graph is a deterministic representation of repository
+structure.
+
+```text
+Repository
+  -> Package
+    -> Module
+      -> Function
+      -> Class
+      -> Interface
+      -> Configuration
+```
+
+Edges explain relationships:
+
+- `CONTAINS`
+- `IMPORTS`
+- `CALLS`
+- `USES`
+- `RETURNS`
+- `THROWS`
+- `CREATES`
+- `EXTENDS`
+- `IMPLEMENTS`
+- `REFERENCES`
+
+Every edge may include evidence with a source span and confidence level. No
+relationship should be hidden magic.
+
+## Stable IDs
+
+Stable IDs make caching, diffing, and incremental builds possible:
+
+```text
+fn:src/auth/login.ts:login
+class:src/users/service.ts:UserService
+mod:src/users/index.ts
+pkg:@acme/app
+```
+
+IDs must be derived from deterministic repository facts.

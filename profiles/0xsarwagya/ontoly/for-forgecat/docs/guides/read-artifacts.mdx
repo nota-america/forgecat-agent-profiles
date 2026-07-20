@@ -1,0 +1,34 @@
+---
+title: "Read Artifacts"
+description: "Inspect the graph files generated under .ontoly."
+order: 1
+---
+
+After `ontoly build`, inspect the graph:
+
+```sh
+ontoly inspect
+ontoly graph --json
+```
+
+The canonical artifact is:
+
+```text
+.ontoly/SoftwareGraph.json
+```
+
+Derived artifacts exist for fast local access and human inspection:
+
+```text
+.ontoly/graph.json
+.ontoly/indexes.json
+.ontoly/diagnostics.json
+.ontoly/metadata.json
+.ontoly/statistics.json
+.ontoly/cache.json
+```
+
+`.ontoly/graph.json` is written as a compatibility alias for older tools.
+
+Downstream tools should prefer the public packages over manually depending
+on private artifact details.

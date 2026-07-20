@@ -1,0 +1,34 @@
+---
+title: "Plugin System"
+description: "How plugins consume the Software Graph."
+order: 3
+---
+
+Every plugin receives:
+
+```ts
+SoftwareGraph
+```
+
+Nothing else is required. A plugin should not need to search files or parse
+source to perform its job.
+
+```ts
+import type { OntolyPlugin } from "@0xsarwagya/ontoly-core";
+
+export const plugin: OntolyPlugin = {
+  name: "example",
+  version: "1.0.0",
+  run: ({ graph }) => ({
+    artifacts: [
+      {
+        path: "graph.json",
+        mediaType: "application/json",
+        contents: JSON.stringify(graph, null, 2),
+      },
+    ],
+  }),
+};
+```
+
+This keeps the compiler narrow and makes everything else replaceable.

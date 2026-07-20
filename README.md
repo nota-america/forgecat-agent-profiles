@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-188-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-39-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -120,6 +120,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 | Collection | Profiles | Description |
 |---|---:|---|
+| [0xsarwagya/ontoly](./profiles/0xsarwagya/ontoly) | 1 | Ontoly graph-first software understanding skills for coding agents |
 | [addyosmani/agent-skills](./profiles/addyosmani/agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
 | [ayghri/i-have-adhd](./profiles/ayghri/i-have-adhd) | 1 | ADHD-friendly output shaping skill for concise, action-first agent replies |
 | [anthropics/claude-code](./profiles/anthropics/claude-code) | 1 | Claude Code profile conversion |
@@ -161,7 +162,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 187 profiles across 38 collections.
+Total: 188 profiles across 39 collections.
 
 ## Profile Layout
 

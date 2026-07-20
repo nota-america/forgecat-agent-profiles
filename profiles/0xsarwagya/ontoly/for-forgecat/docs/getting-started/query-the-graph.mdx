@@ -1,0 +1,51 @@
+---
+title: "Query the Graph"
+description: "Use Ontoly's deterministic CLI and query engine."
+order: 3
+---
+
+## CLI
+
+After building the included example, start with a symbol that exists in that
+graph:
+
+```sh
+ontoly build examples/basic
+ontoly search UserService --root examples/basic
+ontoly impact UserService --root examples/basic
+ontoly evidence UserService --root examples/basic
+```
+
+`UserService` is used in first-run docs because it is present in
+`examples/basic`; made-up placeholder terms are intentionally avoided because
+they do not resolve to graph candidates.
+
+## TypeScript API
+
+```ts
+import { buildSoftwareGraph } from "@0xsarwagya/ontoly-compiler";
+import { createQueryEngine } from "@0xsarwagya/ontoly-query";
+
+const graph = await buildSoftwareGraph({ root: process.cwd() });
+const query = createQueryEngine(graph);
+
+const login = query.find("login");
+const services = query.services();
+const dependencies = query.dependencies("mod:src/auth/login.ts");
+```
+
+Queries are structural and deterministic. They do not call language models,
+embedding indexes, or remote services.
+
+Core methods:
+
+- `find()`
+- `trace()`
+- `walk()`
+- `related()`
+- `dependencies()`
+- `callers()`
+- `callees()`
+- `routes()`
+- `models()`
+- `services()`

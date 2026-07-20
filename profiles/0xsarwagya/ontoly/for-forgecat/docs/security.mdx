@@ -1,0 +1,35 @@
+---
+title: "Security"
+description: "What Ontoly does and does not protect."
+order: 99
+---
+
+Ontoly analyzes local source code and writes local graph artifacts.
+
+It does not:
+
+- execute repository application code
+- upload source code
+- call hosted AI services
+- generate embeddings
+- provide access control
+
+Graph artifacts may contain file paths, symbol names, configuration names,
+and structural relationships. Treat `.ontoly/` as repository metadata.
+
+## Supported Versions
+
+| Version | Supported |
+| ------- | --------- |
+| `1.0.0-rc.x` | Yes |
+| `0.1.x alpha` | Security-only when the fix is low risk |
+
+## Reporting
+
+Report vulnerabilities privately through GitHub Security Advisories for
+`0xsarwagya/ontoly`.
+
+Include the affected command or package, reproduction steps, expected impact,
+and whether generated artifacts are sanitized. Do not attach private source
+code, secrets, production graph artifacts, or customer repository names unless
+they are required to reproduce the issue and safe to disclose privately.

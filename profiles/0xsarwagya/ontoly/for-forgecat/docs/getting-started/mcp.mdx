@@ -1,0 +1,36 @@
+---
+title: "MCP"
+description: "Expose graph-backed capabilities to AI agents."
+order: 4
+---
+
+Start the local capability runtime:
+
+```sh
+ontoly mcp
+```
+
+List the capability names available in the current runtime:
+
+```sh
+ontoly mcp --list
+```
+
+Representative capabilities include:
+
+- `ExplainArchitecture`
+- `FindAuthenticationFlow`
+- `FindDependencies`
+- `FindResponsibleFunction`
+- `GraphStatistics`
+- `ImpactAnalysis`
+- `SemanticContext`
+- `TraceRequestLifecycle`
+
+The MCP layer consumes the Software Graph. It does not rebuild repository
+context, search files, or use AI to infer relationships.
+
+When an LLM consumes MCP responses, use
+[LLM Enhancement](/docs/llm-enhancement). Non-LLM tools can call MCP
+directly, but LLM-facing answers must preserve graph evidence, confidence, and
+fallback boundaries.

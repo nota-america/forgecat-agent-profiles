@@ -1,0 +1,103 @@
+{
+  "minimumOntolyVersion": "1.0.0-rc.5",
+  "skills": [
+    {
+      "id": "architecture-review",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "codebase-onboarding",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "configuration-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "dead-code-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "dependency-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "documentation",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "framework-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "impact-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "migration-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "performance-analysis",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "refactoring",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "request-tracing",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "sdk-generation",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    },
+    {
+      "id": "security-review",
+      "version": "1.0.0-rc.5",
+      "minimumOntolyVersion": "1.0.0-rc.5",
+      "deprecated": false,
+      "enhancement": "LLM Enhancement"
+    }
+  ]
+}

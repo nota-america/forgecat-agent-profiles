@@ -1,0 +1,62 @@
+---
+title: "Installation"
+description: "Install Ontoly and initialize repository-local graph artifacts."
+order: 1
+---
+
+## Why
+
+Ontoly is repository-local. It should be installed beside the code it analyzes
+so graph generation is reproducible for every developer and CI run.
+
+## Install
+
+Install the CLI as a development dependency:
+
+```sh
+pnpm add -D @0xsarwagya/ontoly-cli@rc
+```
+
+Run commands through your package manager:
+
+```sh
+pnpm exec ontoly --help
+pnpm exec ontoly build .
+```
+
+## Initialize
+
+Initialize a repository:
+
+```sh
+pnpm exec ontoly init
+```
+
+This creates:
+
+```text
+.ontoly/
+ontoly.config.ts
+```
+
+The config is intentionally small:
+
+```ts
+import { defineOntolyConfig } from "@0xsarwagya/ontoly-cli";
+
+export default defineOntolyConfig({
+  outputDir: ".ontoly",
+  parsers: {
+    typescript: true,
+  },
+});
+```
+
+Ontoly keeps generated graph artifacts local to the repository.
+
+## Verify
+
+```sh
+pnpm exec ontoly --help
+pnpm exec ontoly doctor .
+```

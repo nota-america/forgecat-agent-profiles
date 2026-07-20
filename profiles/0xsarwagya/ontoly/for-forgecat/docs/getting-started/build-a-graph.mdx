@@ -1,0 +1,79 @@
+---
+title: "Build a Graph"
+description: "Compile a TypeScript repository into a deterministic Software Graph."
+order: 2
+---
+
+## Why
+
+The graph is the artifact every downstream tool consumes. Build it once, then
+query, validate, export, or expose it through MCP.
+
+## Build
+
+Run:
+
+```sh
+ontoly build examples/basic
+```
+
+The compiler:
+
+1. discovers package and TypeScript files
+2. parses source
+3. extracts symbols
+4. extracts relationships
+5. builds indexes
+6. writes graph artifacts
+
+Artifacts are written to `ontoly-output/` by default:
+
+```text
+SoftwareGraph.json
+manifest.json
+coverage.json
+quality.json
+semantic-model.json
+reports/
+nodes/
+relationships/
+communities/
+html/
+```
+
+For the compact cache-style artifact directory, pass `--output .ontoly`:
+
+```sh
+ontoly build examples/basic --output .ontoly
+```
+
+That writes:
+
+```text
+SoftwareGraph.json
+graph.json
+cache.json
+indexes.json
+diagnostics.json
+metadata.json
+statistics.json
+```
+
+Identical input should produce identical graph IDs and deterministic graph
+hashes. The generated timestamp is intentionally fixed inside the graph
+metadata so the graph hash is not invalidated by build time.
+
+## Inspect
+
+```sh
+ontoly inspect UserService --root examples/basic
+ontoly search UserService --root examples/basic
+ontoly impact UserService --root examples/basic
+ontoly coverage examples/basic
+```
+
+If something feels off:
+
+```sh
+ontoly doctor .
+```

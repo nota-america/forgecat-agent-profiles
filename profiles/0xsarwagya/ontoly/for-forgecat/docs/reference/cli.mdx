@@ -1,0 +1,27 @@
+---
+title: "CLI"
+description: "Ontoly command reference."
+order: 1
+---
+
+```text
+ontoly init
+ontoly build
+ontoly watch
+ontoly inspect
+ontoly graph
+ontoly graph --format html
+ontoly evidence "remove PlanDefinition support"
+ontoly trace
+ontoly doctor
+ontoly export
+ontoly mcp
+ontoly enhancer list
+ontoly enhancer run semantic-index .
+ontoly enhancer graph --format mermaid
+ontoly benchmark
+```
+
+The CLI is a thin wrapper around the compiler, cache, query, and MCP
+packages. Enhancers add deterministic artifact transformations above the
+immutable Software Graph.

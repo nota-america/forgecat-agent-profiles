@@ -1,0 +1,20 @@
+---
+title: "Compiler Pipeline"
+description: "How Ontoly turns source files into graph artifacts."
+order: 2
+---
+
+Ontoly's compiler pipeline has six stages:
+
+1. Repository discovery
+2. Language parsing
+3. Symbol resolution
+4. Relationship extraction
+5. Diagnostics
+6. Optimization and persistence
+
+Version 1 focuses on TypeScript. OpenAPI, Prisma, GraphQL, and other
+frontends should enter as parsers that produce the same graph contract.
+
+The compiler is deterministic. Plugins can transform or export the graph,
+but they do not mutate compiler internals.

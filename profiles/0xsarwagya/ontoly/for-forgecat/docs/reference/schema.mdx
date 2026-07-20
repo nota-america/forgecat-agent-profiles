@@ -1,0 +1,19 @@
+---
+title: "Schema"
+description: "The top-level Software Graph shape."
+order: 2
+---
+
+```ts
+interface SoftwareGraph {
+  version: string;
+  repository: SoftwareGraphRepository;
+  nodes: SoftwareGraphNode[];
+  edges: SoftwareGraphEdge[];
+  diagnostics: SoftwareGraphDiagnostic[];
+  indexes: GraphIndexes;
+  metadata: SoftwareGraphMetadata;
+}
+```
+
+Schema changes require an RFC before implementation.
