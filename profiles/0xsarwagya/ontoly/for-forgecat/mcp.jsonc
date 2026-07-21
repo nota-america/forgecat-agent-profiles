@@ -2,7 +2,7 @@
   "mcpServers": {
     "ontoly": {
       "command": "npx",
-      "args": ["-y", "@0xsarwagya/ontoly-cli@rc", "mcp"]
+      "args": ["-y", "@0xsarwagya/ontoly-cli@1.0.0-rc.5", "mcp"]
     }
   }
 }
