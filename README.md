@@ -20,7 +20,7 @@
 
 [![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
 [![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
-[![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
+[![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](./LICENSE)
@@ -35,7 +35,7 @@
 ForgeCat Agent Profiles is the public catalog for installable agent profiles: skills, agents, rules, commands, hooks, and MCP settings packaged from useful open-source projects and made available across supported coding tools.
 
 - **One catalog for agent setup**: Browse converted profiles from public Claude Code, Cursor, Codex, MCP, and agent-skill repositories.
-- **Cross-platform installs**: Use the same profile source across Claude Code, Cursor, and Codex where compatibility is available.
+- **Cross-platform installs**: Use the same profile source across Claude Code, Cursor, Codex, OpenClaw, and Hermes where compatibility is available.
 - **Source-faithful packaging**: Keep attribution, license metadata, upstream behavior, and profile-specific caveats visible.
 - **Reviewable platform evidence**: Mark platforms as tested only after install/runtime checks and matching native artifacts.
 
@@ -83,8 +83,10 @@ Agent workflows are increasingly stored as project files: `AGENTS.md`, `CLAUDE.m
 | Claude Code | `claude-code` | Claude-native skills, agents, commands, MCP, hooks, and project settings where supported |
 | Cursor | `cursor` | Cursor rules, agents, MCP configuration, and compatible profile resources |
 | Codex | `codex` | Codex skills, instructions, MCP configuration, hooks, and compatible profile resources |
+| OpenClaw | `openclaw` | Home-agent instructions, persona, identity, tool conventions, and skills where supported |
+| Hermes | `hermes` | Home-agent SOUL sections and skills where supported |
 
-Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. When a profile is marked tested, the matching native `for-<platform>` artifact should also exist in the profile directory.
+Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. When a profile is marked tested for an artifact-based platform, the matching native `for-<platform>` artifact should also exist in the profile directory.
 
 ## Profile Quality
 
@@ -96,7 +98,7 @@ ForgeCat profiles are curated to be source-faithful and reviewable, not just cop
 | Attribution kept | Profile metadata and docs link back to the original source repository. |
 | License checked | The upstream license is reflected in `for-forgecat/profile.yml` when it is clear. |
 | Install evidence | A platform is marked tested only after a real install/runtime check. |
-| Native artifact included | Tested platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
+| Native artifact included | Tested artifact-based platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. Home-agent platforms install from ForgeCat instruction and skill resources. |
 
 ## Featured Profiles
 
@@ -133,7 +135,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
-| [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
+| [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored OpenClaw/Hermes small-business agent profile |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Gemini API, interactions API, and live API development skills |
