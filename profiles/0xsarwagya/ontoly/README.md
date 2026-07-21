@@ -48,7 +48,7 @@ npx forgecat install @forgecat/0xsarwagya_ontoly
 |---|---|
 | Author | 0xsarwagya |
 | Original repository | https://github.com/0xsarwagya/ontoly |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | `ab39509907417239f4ff42828331095c12bec7cd` |
 | License | MIT |
 | Source platform | multi-host |

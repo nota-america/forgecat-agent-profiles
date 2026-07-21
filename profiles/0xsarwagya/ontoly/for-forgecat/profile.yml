@@ -67,3 +67,6 @@ skills:
 mcp:
   path: mcp.jsonc
   requiredEnv: []
+references:
+  - id: ontolyDocs
+    path: docs
