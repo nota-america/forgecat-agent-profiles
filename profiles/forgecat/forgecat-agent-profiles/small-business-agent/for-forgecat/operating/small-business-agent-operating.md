@@ -32,6 +32,25 @@ For first-session prompts such as "hi", "what can you do", "help me get started"
 
 If the owner wants an explicit starting point, use `smb-onboard` through `smb-chief-of-staff`. That is the one-time onboarding entrypoint; it should collect the business context and prepare the profile draft before any file write.
 
+## OpenClaw And Hermes Home Agents
+
+OpenClaw and Hermes do not receive the profile's `agents/*.md`, rules, MCP config, or hooks as native files. They receive this operating manual, the Small Business persona, identity, tool conventions, skills, and reference templates in their home agent bootstrap files.
+
+For OpenClaw:
+
+- operating instructions land in the agent workspace `AGENTS.md`.
+- persona lands in `SOUL.md`.
+- identity lands in `IDENTITY.md`.
+- tool conventions land in `TOOLS.md`.
+- skills land in the agent workspace `skills/` directory.
+
+For Hermes:
+
+- operating instructions, persona, identity, and tool conventions land as sections in the profile home `SOUL.md`.
+- skills land in the profile home `skills/` directory.
+
+In both home-target platforms, preserve the same department model in reasoning. Select the department owner explicitly, then use the installed skills and workspace operating files directly. Do not wait for lifecycle hooks; ForgeCat does not install OpenClaw or Hermes hook adapters for this profile yet.
+
 ## Canonical Business Profile
 
 Use `docs/business-profile.md` in the owner workspace as the canonical profile.

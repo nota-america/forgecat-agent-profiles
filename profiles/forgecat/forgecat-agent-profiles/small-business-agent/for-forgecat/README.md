@@ -14,6 +14,13 @@ npx forgecat install @forgecat/small-business-agent
 
 The Small Business skills are vendored from `@forgecat/anthropics_knowledge-work-plugins_small-business` so the package works as a single ForgeCat install.
 
+For OpenClaw or Hermes home-target agents, use ForgeCat 0.3.2 or newer:
+
+```bash
+npx forgecat@0.3.2 install @forgecat/small-business-agent --platform openclaw --target-agent <agent-name>
+npx forgecat@0.3.2 install @forgecat/small-business-agent --platform hermes --target-profile <profile-name>
+```
+
 ## Agents
 
 | Agent | Owns |
@@ -50,6 +57,15 @@ First-session prompts like "hi", "what can you do", or "help me get started" are
 
 If a host cannot invoke subagents directly, it must say that and then follow the matching agent's instructions exactly instead of presenting a generic menu.
 
+## OpenClaw And Hermes Home Agent Support
+
+OpenClaw and Hermes do not receive the `agents/*.md` files as native subagents. Instead, ForgeCat 0.3.2 installs home-agent bootstrap sections:
+
+- OpenClaw: `AGENTS.md` for operating instructions, `SOUL.md` for persona, `IDENTITY.md` for identity, `TOOLS.md` for tool conventions, plus the bundled skills under the agent workspace `skills/` directory.
+- Hermes: `SOUL.md` sections for operating instructions, persona, identity, and tool conventions, plus the bundled skills under the profile home `skills/` directory.
+
+The home-agent instructions preserve the department model even without native subagent dispatch. The agent selects the department owner explicitly, uses the installed Small Business skills by exact name, and maintains `docs/business-profile.md`, `docs/business-operating-plan.md`, and `docs/business-agent-log.md` for continuity.
+
 ## Lifecycle Hooks
 
 The profile registers two guardrail lifecycle hooks. It intentionally does not register a `session_start` hook; onboarding is driven by the installed `AGENTS.md` operating contract and the `smb-onboard` skill so every new session is not force-loaded with a persona prompt.
@@ -58,6 +74,8 @@ The profile registers two guardrail lifecycle hooks. It intentionally does not r
 - `stop` blocks first-session capability-menu answers that did not hand off to `smb-chief-of-staff`; for ordinary missing operating checkpoints, it adds non-blocking guidance instead of forcing a Claude Code stop-hook error.
 
 The hooks do not call external services and do not edit business docs. They only add routing context, correct first-session menu failures, or suggest a missing operating checkpoint. To start onboarding explicitly, ask to use `smb-onboard` or say "start small business onboarding."
+
+OpenClaw and Hermes are partial because ForgeCat does not install hook adapters for those platforms yet. The persona, identity, operating instructions, tool conventions, skills, and references install through the 0.3.2 home-target path.
 
 ## Included Skills
 
@@ -107,3 +125,5 @@ The rule tells the host agent to:
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |

@@ -14,16 +14,31 @@ compatibility:
     - claude-code
     - cursor
     - codex
-    partial: []
+    partial:
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 instructions:
   operatingRef: smallBusinessOperatingManual
+  personaRef: smallBusinessPersona
+  identityRef: smallBusinessIdentity
+  additionalRefs:
+  - smallBusinessToolConventions
 references:
 - id: smallBusinessOperatingManual
   path: operating/small-business-agent-operating.md
   type: operating-instructions
+- id: smallBusinessPersona
+  path: operating/small-business-agent-persona.md
+  type: persona
+- id: smallBusinessIdentity
+  path: operating/small-business-agent-identity.md
+  type: identity
+- id: smallBusinessToolConventions
+  path: operating/small-business-agent-tools.md
+  type: tool-conventions
 - id: businessProfileTemplate
   path: reference/business-profile-template.md
 - id: businessOperatingPlanTemplate
