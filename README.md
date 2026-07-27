@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-186-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -133,7 +133,6 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
-| [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Gemini API, interactions API, and live API development skills |
@@ -161,7 +160,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 187 profiles across 38 collections.
+Total: 186 profiles across 37 collections.
 
 ## Profile Layout
 
