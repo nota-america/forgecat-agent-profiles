@@ -10,7 +10,7 @@ ForgeCat package of [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-not-
 forgecat install @forgecat/im-not-ai -p claude-code
 ```
 
-Claude Code and Cursor receive the source Claude workflow through ForgeCat's standard conversion. Codex receives the upstream single-call Fast Path through a platform override. All three platforms are tested with published-registry fresh installs and runtime scenarios.
+Claude Code and Cursor receive the source Claude workflow through ForgeCat's standard conversion. Codex receives the upstream single-call Fast Path through a platform override. All three remain partial until a published fresh-install runtime scenario passes.
 
 ## Packaging note
 

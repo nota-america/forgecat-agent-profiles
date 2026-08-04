@@ -6,11 +6,11 @@ license: MIT
 sourcePlatform: multi-host
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
       - claude-code
       - cursor
       - codex
+    partial: []
   models:
     recommended:
       - opus

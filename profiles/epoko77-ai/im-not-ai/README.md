@@ -47,9 +47,9 @@ npx forgecat install @forgecat/im-not-ai
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
 
 ### Models
 
@@ -68,4 +68,4 @@ npx forgecat install @forgecat/im-not-ai
 - Claude Code and Cursor use standard conversion of the upstream Claude surfaces.
 - Codex uses the upstream single-call Fast Path through a platform override.
 - Five executable paths in `humanize-korean/SKILL.md` point to the co-installed runtime; a separate adapter changes only the generated-output root.
-- Compatibility remains Partial until a published-registry fresh-install runtime scenario is recorded.
+- Claude Code, Cursor, and Codex were verified with published-registry fresh installs, installed-skill discovery, and a light-mode Korean humanization scenario.
