@@ -2,13 +2,14 @@
 
 # slides-grab
 
-Agent-first presentation workflow for planning, designing, visually editing, and exporting HTML slides with shared Codex and Claude Code skills.
+Agent-first presentation workflow for planning, designing, editing, and exporting HTML or image-native slides with shared Codex and Claude Code skills.
 
 ## Tags
 
 - presentations
 - slides
 - html-slides
+- image-native
 - codex
 - claude-code
 
@@ -18,24 +19,26 @@ Agent-first presentation workflow for planning, designing, visually editing, and
 npx forgecat install @forgecat/nomadamas_slides-grab
 ```
 
-After installing the profile, install the upstream runtime dependency in the workspace where you will create or export decks:
+Install the upstream runtime dependency in the workspace where you will create or export decks:
 
 ```bash
 npm install slides-grab
 npx playwright install chromium
 ```
 
-The ForgeCat profile provides the agent skills and design-review agents. The `slides-grab` npm CLI provides rendering, validation, editor, image, PDF, PNG, PPTX, and Figma-export commands.
+The ForgeCat profile supplies the agent skills, design-review agents, co-installed templates, and design-style references. The `slides-grab` npm CLI supplies rendering, validation, editing, image generation, and export commands.
 
 ## Skills / Agents / Commands
 
-- **slides-grab** — End-to-end presentation workflow usable in Codex and Claude Code. Use when making a full presentation from scratch — planning, designing slides, editing, and exporting. PDF and per-slide PNG are preferred; PPTX/Figma export is experimental / unstable. `skill`
-- **slides-grab-card-news** — Generate square Instagram-style card news by reusing the slides-grab workflow with card-news mode enabled. Defaults to per-slide PNG export. `skill`
-- **slides-grab-design** — Stage 2 design skill usable in Codex and Claude Code. Generate and iterate slide-XX.html files in the selected slides workspace. `skill`
-- **slides-grab-export** — Stage 3 conversion skill usable in Codex and Claude Code. Convert approved HTML slides to PDF or per-slide PNG reliably, and to experimental / unstable PPTX/Figma outputs on a best-effort basis. `skill`
-- **slides-grab-plan** — Stage 1 planning skill usable in Codex and Claude Code. Build and iterate slide-outline.md until explicit user approval. `skill`
-- **design-critic-agent** — Run the slides-grab design gate before export. `agent`
-- **slides-grab-design-critic** — Run the slides-grab design gate before export. `agent`
+- **slides-grab** — Routes presentation work to the HTML or image-native pipeline, then coordinates planning, design, and export. `skill`
+- **slides-grab-card-news** — Produces square Instagram-style card-news slides with PNG export defaults. `skill`
+- **slides-grab-design** — Builds and iterates slide HTML after the outline is approved. `skill`
+- **slides-grab-export** — Exports approved slides to PDF or PNG, with best-effort PPTX and Figma outputs. `skill`
+- **slides-grab-html** — Builds editable semantic HTML presentations with generated supporting imagery. `skill`
+- **slides-grab-image** — Builds image-native presentations that prioritize visual fidelity to reference templates. `skill`
+- **slides-grab-plan** — Creates and revises the presentation outline before design begins. `skill`
+- **design-critic-agent** — Runs the Claude Code design gate before export. `agent`
+- **slides-grab-design-critic** — Runs the Codex design gate before export. `agent`
 
 ## Details
 
@@ -44,7 +47,7 @@ The ForgeCat profile provides the agent skills and design-review agents. The `sl
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
 | Version | `pending-registry-publish` |
-| Original commit | `c71fc4b39daff3f3a7a397332c82337c8f52bf27` |
+| Original commit | `745c931c8f5556d8b9fdfe6718c8a507f6223935` |
 | License | MIT |
 | Source platform | multi-host |
 
@@ -58,11 +61,11 @@ The ForgeCat profile provides the agent skills and design-review agents. The `sl
 | Cursor | Partial |
 | Codex | Partial |
 
-Cursor is marked partial because the shared skill text can be inspected by ForgeCat-supported clients, but the upstream runtime adapters and documented install flow target Claude Code and Codex. Runtime export/editing features require the external `slides-grab` npm CLI.
+Cursor remains partial because upstream directly targets Claude Code and Codex. No platform is promoted to tested until an exact published registry version passes a fresh install and component-aware runtime probe.
 
 ## Dependencies
 
 - Node.js >= 20
 - npm package: `slides-grab`
 - Playwright Chromium: `npx playwright install chromium`
-- Optional: `yt-dlp` for video download, Codex/Claude CLI auth for interactive agent editing, image-provider credentials for generated imagery
+- Optional: `yt-dlp` for video download and supported model-provider authentication for generated imagery

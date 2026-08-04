@@ -57,7 +57,7 @@ Every element must earn its place. When a slide feels empty, solve it with layou
 
 ## Color Discipline
 
-- Pull every color from the approved style spec in `src/design-styles-data.js` (or the user's brand tokens when they override the bundled style). Do not invent fresh standalone hex colors mid-slide.
+- Pull every color from the approved style spec in `{{ref:designStyles}}` (or the user's brand tokens when they override the bundled style). Do not invent fresh standalone hex colors mid-slide.
 - If the approved palette is too restrictive for a specific slide, extend it harmonically with `oklch()` — derive neighbors from the existing accent or surface — rather than picking a fresh hex from scratch.
 - Keep one accent color per deck. Two background colors max across the entire deck; use them to introduce rhythm between section dividers and content slides, not to decorate individual slides.
 - Every color must trace back to the approved palette or a documented harmonic extension of it.

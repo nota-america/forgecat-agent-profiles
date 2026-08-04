@@ -235,47 +235,47 @@ grid-template-columns: 1fr 2.3fr;
 ## Slide Templates
 
 ### 1. Cover Slide
-- Template file: `templates/cover.html`
+- Template file: `{{ref:templates}}/cover.html`
 
 ### 2. Table of Contents (Contents)
-- Template file: `templates/contents.html`
+- Template file: `{{ref:templates}}/contents.html`
 
 ### 3. Section Divider
-- Template file: `templates/section-divider.html`
+- Template file: `{{ref:templates}}/section-divider.html`
 
 ### 4. Content Slide
-- Template file: `templates/content.html`
+- Template file: `{{ref:templates}}/content.html`
 
 ### 5. Statistics/Data Slide
-- Template file: `templates/statistics.html`
+- Template file: `{{ref:templates}}/statistics.html`
 
 ### 6. Image + Text (Split Layout)
-- Template file: `templates/split-layout.html`
+- Template file: `{{ref:templates}}/split-layout.html`
 
 ### 7. Team Introduction
-- Template file: `templates/team.html`
+- Template file: `{{ref:templates}}/team.html`
 
 ### 8. Quote Slide
-- Template file: `templates/quote.html`
+- Template file: `{{ref:templates}}/quote.html`
 
 ### 9. Timeline Slide
-- Template file: `templates/timeline.html`
+- Template file: `{{ref:templates}}/timeline.html`
 
 ### 10. Closing Slide
-- Template file: `templates/closing.html`
+- Template file: `{{ref:templates}}/closing.html`
 
 ### 11. Chart Slide
-- Template file: `templates/chart.html`
+- Template file: `{{ref:templates}}/chart.html`
 
 ### 12. Diagram Slide
-- Template file: `templates/diagram.html`
+- Template file: `{{ref:templates}}/diagram.html`
 
 ### 13. Tldraw Diagram Slide
-- Template file: `templates/diagram-tldraw.html`
+- Template file: `{{ref:templates}}/diagram-tldraw.html`
 - Use this when the slide needs a complex diagram that will be easier to author in `tldraw` and safer to export as a local image asset.
 
 ### Custom Templates
-- Custom template directory: `templates/custom/`
+- Custom template directory: `{{ref:templates}}/custom/`
 - Users can add template files as drop-in for reuse.
 
 ---

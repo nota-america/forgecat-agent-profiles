@@ -4,13 +4,14 @@
 
 # slides-grab
 
-Agent-first presentation workflow for planning, designing, visually editing, and exporting HTML slides with shared Codex and Claude Code skills.
+Agent-first presentation workflow for planning, designing, editing, and exporting HTML or image-native slides with shared Codex and Claude Code skills.
 
 ## Tags
 
 - presentations
 - slides
 - html-slides
+- image-native
 - codex
 - claude-code
 
@@ -20,24 +21,26 @@ Agent-first presentation workflow for planning, designing, visually editing, and
 npx forgecat install @forgecat/nomadamas_slides-grab
 ```
 
-After installing the profile, install the upstream runtime dependency in the workspace where you will create or export decks:
+Install the upstream runtime dependency in the workspace where you will create or export decks:
 
 ```bash
 npm install slides-grab
 npx playwright install chromium
 ```
 
-The ForgeCat profile provides the agent skills and design-review agents. The `slides-grab` npm CLI provides rendering, validation, editor, image, PDF, PNG, PPTX, and Figma-export commands.
+The ForgeCat profile supplies the agent skills, design-review agents, co-installed templates, and design-style references. The `slides-grab` npm CLI supplies rendering, validation, editing, image generation, and export commands.
 
 ## Skills / Agents / Commands
 
-- **slides-grab** — End-to-end presentation workflow usable in Codex and Claude Code. Use when making a full presentation from scratch — planning, designing slides, editing, and exporting. PDF and per-slide PNG are preferred; PPTX/Figma export is experimental / unstable. `skill`
-- **slides-grab-card-news** — Generate square Instagram-style card news by reusing the slides-grab workflow with card-news mode enabled. Defaults to per-slide PNG export. `skill`
-- **slides-grab-design** — Stage 2 design skill usable in Codex and Claude Code. Generate and iterate slide-XX.html files in the selected slides workspace. `skill`
-- **slides-grab-export** — Stage 3 conversion skill usable in Codex and Claude Code. Convert approved HTML slides to PDF or per-slide PNG reliably, and to experimental / unstable PPTX/Figma outputs on a best-effort basis. `skill`
-- **slides-grab-plan** — Stage 1 planning skill usable in Codex and Claude Code. Build and iterate slide-outline.md until explicit user approval. `skill`
-- **design-critic-agent** — Run the slides-grab design gate before export. `agent`
-- **slides-grab-design-critic** — Run the slides-grab design gate before export. `agent`
+- **slides-grab** — Routes presentation work to the HTML or image-native pipeline, then coordinates planning, design, and export. `skill`
+- **slides-grab-card-news** — Produces square Instagram-style card-news slides with PNG export defaults. `skill`
+- **slides-grab-design** — Builds and iterates slide HTML after the outline is approved. `skill`
+- **slides-grab-export** — Exports approved slides to PDF or PNG, with best-effort PPTX and Figma outputs. `skill`
+- **slides-grab-html** — Builds editable semantic HTML presentations with generated supporting imagery. `skill`
+- **slides-grab-image** — Builds image-native presentations that prioritize visual fidelity to reference templates. `skill`
+- **slides-grab-plan** — Creates and revises the presentation outline before design begins. `skill`
+- **design-critic-agent** — Runs the Claude Code design gate before export. `agent`
+- **slides-grab-design-critic** — Runs the Codex design gate before export. `agent`
 
 ## Details
 
@@ -46,7 +49,7 @@ The ForgeCat profile provides the agent skills and design-review agents. The `sl
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
 | Version | `pending-registry-publish` |
-| Original commit | `c71fc4b39daff3f3a7a397332c82337c8f52bf27` |
+| Original commit | `745c931c8f5556d8b9fdfe6718c8a507f6223935` |
 | License | MIT |
 | Source platform | multi-host |
 
@@ -60,21 +63,23 @@ The ForgeCat profile provides the agent skills and design-review agents. The `sl
 | Cursor | Partial |
 | Codex | Partial |
 
-Cursor is marked partial because the shared skill text can be inspected by ForgeCat-supported clients, but the upstream runtime adapters and documented install flow target Claude Code and Codex. Runtime export/editing features require the external `slides-grab` npm CLI.
+Cursor remains partial because upstream directly targets Claude Code and Codex. No platform is promoted to tested until an exact published registry version passes a fresh install and component-aware runtime probe.
 
 ## Dependencies
 
 - Node.js >= 20
 - npm package: `slides-grab`
 - Playwright Chromium: `npx playwright install chromium`
-- Optional: `yt-dlp` for video download, Codex/Claude CLI auth for interactive agent editing, image-provider credentials for generated imagery
+- Optional: `yt-dlp` for video download and supported model-provider authentication for generated imagery
 
 ---
-*written by original source, with ForgeCat safety/link rewrites*
+*written by original source*
+
+> ForgeCat packaging note: source links are pinned, the repository-star instruction is neutralized, and installed asset paths in skill files use ForgeCat reference tokens.
 
 <h1 align="center">slides-grab</h1>
 
-<p align="center"><a href="https://github.com/NomaDamas/slides-grab/blob/main/README-ko.md">한국어 README</a> | <a href="https://github.com/NomaDamas/slides-grab/blob/main/README.md">English</a></p>
+<p align="center"><a href="https://github.com/NomaDamas/slides-grab/blob/745c931c8f5556d8b9fdfe6718c8a507f6223935/README-ko.md">한국어 README</a> | <a href="https://github.com/NomaDamas/slides-grab/blob/745c931c8f5556d8b9fdfe6718c8a507f6223935/README.md">English</a></p>
 
 <p align="center">Select context for agents directly from AI-generated HTML slides</p>
 
@@ -94,7 +99,7 @@ The editor is pure javascript file. You can easily add up new features like addi
 
 <p align="center">
   <a href="https://github.com/NomaDamas/slides-grab/releases/download/v0.0.1-demo/demo.mp4">
-    <img src="https://raw.githubusercontent.com/NomaDamas/slides-grab/main/docs/assets/demo.gif" alt="slides-grab demo" width="720">
+    <img src="https://raw.githubusercontent.com/NomaDamas/slides-grab/745c931c8f5556d8b9fdfe6718c8a507f6223935/docs/assets/demo.gif" alt="slides-grab demo" width="720">
   </a>
 </p>
 
@@ -108,20 +113,20 @@ The editor is pure javascript file. You can easily add up new features like addi
 
 ## Quick Start
 
-> ForgeCat note: the upstream README contains a repository-star request for agents. That promotional instruction is intentionally neutralized in this ForgeCat package; do not run `gh star` unless the user explicitly asks you to star the upstream repository.
+> ForgeCat note: upstream asks agents to request a repository star. Do not run `gh star` unless the user explicitly asks you to star the upstream repository.
 
 Paste one of these into your coding agent:
 
 **Claude Code:**
 
 ```
-Read https://raw.githubusercontent.com/NomaDamas/slides-grab/main/docs/installation/claude.md and follow every step.
+Read https://raw.githubusercontent.com/NomaDamas/slides-grab/745c931c8f5556d8b9fdfe6718c8a507f6223935/docs/installation/claude.md and follow every step.
 ```
 
 **Codex:**
 
 ```
-Read https://raw.githubusercontent.com/NomaDamas/slides-grab/main/docs/installation/codex.md and follow every step.
+Read https://raw.githubusercontent.com/NomaDamas/slides-grab/745c931c8f5556d8b9fdfe6718c8a507f6223935/docs/installation/codex.md and follow every step.
 ```
 
 Or use the repo directly if you want to develop on slides-grab itself:
@@ -156,21 +161,23 @@ There are many AI tools that generate slide HTML. Almost none let you **visually
 
 Workflow commands support `--slides-dir <path>` (default: `slides`).
 
-On a fresh clone, the discovery commands (`--help`, `list-templates`, `list-styles`, and `preview-styles`) work without a deck. `edit`, `build-viewer`, `validate`, `png`, and `design-gate` require an existing slides workspace containing `slide-*.html`; `convert`, `pdf`, and `figma` additionally require a fresh `Proceed` design gate.
+On a fresh clone, the discovery commands (`--help`, `list-templates`, `list-styles`, and `preview-styles`) work without a deck. `edit`, `edit-image`, `build-viewer`, `validate`, `png`, and `design-gate` require an existing slides workspace containing `slide-*.html`; `convert`, `pdf`, and `figma` additionally require a fresh `Proceed` design gate.
 
 ```bash
-slides-grab edit              # Launch visual slide editor
+slides-grab edit              # Launch HTML slide editor
+slides-grab edit-image        # Launch image-native slide editor
 slides-grab build-viewer      # Build single-file viewer.html
 slides-grab validate          # Validate slide HTML (Playwright-based)
 slides-grab convert           # Export to experimental / unstable PPTX
 slides-grab convert --resolution 2160p  # Higher-resolution raster PPTX export
+slides-grab convert --engine text  # Export editable text with best-effort DOM extraction
 slides-grab figma             # Export an experimental / unstable Figma Slides importable PPTX
 slides-grab pdf               # Export PDF in capture mode (default)
 slides-grab pdf --resolution 2160p  # Higher-resolution image-backed PDF export
 slides-grab pdf --mode print  # Export searchable/selectable text PDF
 slides-grab png               # Render one PNG per slide (default 2160p)
 slides-grab png --slide-mode card-news  # Render square 1:1 PNGs for Instagram
-slides-grab image --prompt "..."    # Generate a local slide image with god-tibo-imagen by default (uses your local Codex ChatGPT login — no API key required)
+slides-grab image --prompt "..."    # Generate a local slide image with codex-imagen by default (uses your local Codex ChatGPT login — no API key required)
 slides-grab fetch-video --url <youtube-url> --slides-dir decks/my-deck  # Download a local video asset with yt-dlp
 slides-grab tldraw           # Render a .tldr diagram into a slide-sized local SVG asset
 slides-grab list-templates    # Show available slide templates
@@ -189,6 +196,34 @@ slides-grab preview-styles  # Local HTML preview
 
 Tell the agent which style to use (or ask for something custom) — no config files needed.
 
+## Reference-template and Image-native Workflows
+
+Use `slides-grab import-template` when you have an existing corporate deck, filled example slides, HTML reference screens, or brand images that should drive a new deck. Prefer **filled representative decks** over empty master templates: filled slides reveal real text density, schema limits, font fallback behavior, image treatment, and layout stress cases. Empty master templates are insufficient by themselves because they do not show how the design behaves under real content.
+
+```bash
+slides-grab import-template \
+  --input references/acme-qbr.pptx \
+  --input references/acme-product-page.html \
+  --slides-dir decks/acme-qbr
+```
+
+The import writes `<slides-dir>/.slides-grab/template-pack.json` plus preview assets. In Stage 1, record `style: template-pack` in `slide-outline.md`; in Stage 2, generate HTML slides that follow the template pack roles, bbox/schema limits, colors, fonts, and previewed layout families. Run `slides-grab validate --slides-dir <path>` and `slides-grab design-gate` before export.
+
+For image-first decks, generate each image-native slide with `slides-grab image --image-native --name slide-XX --reference <template-page.png> --slides-dir <path>`. The command writes the generated PNG, `slide-XX.html` wrapper, and regeneration metadata required by `slides-grab edit-image` together. Reuse imported template page preview PNGs as `--reference` inputs for style/layout guidance:
+
+```bash
+slides-grab image \
+  --image-native \
+  --name slide-01 \
+  --prompt "<whole-slide prompt>" \
+  --slides-dir decks/acme-image \
+  --reference decks/acme-qbr/.slides-grab/template-previews/page-01.png
+```
+
+Image-native slides are raster wrappers around generated PNG assets. They are useful for fast visual exploration or image-led concepts, but they are less editable than HTML: revise them with `slides-grab edit-image --slides-dir <path>`, not direct semantic HTML edits. Use HTML mode when the deck must remain highly editable, accessible, searchable, or easy to convert; use image-native mode when visual composition matters more than downstream editability.
+
+OpenAI-compatible image providers can be configured without changing slide files: `slides-grab image --provider openai --base-url <url> --api-key-env <ENV_NAME>`, or environment variables `OPENAI_IMAGE_API_KEY`, `OPENAI_IMAGE_BASE_URL`, and `OPENAI_BASE_URL`. Tests and fixtures should use mocked provider responses (injected `generateImageImpl` or `PPT_AGENT_MOCK_IMAGE_PROVIDER=1` for the editor server) and must not require external image API credentials.
+
 ## Asset Contract
 
 Slides should store local image and video files in `<slides-dir>/assets/` and reference them as `./assets/<file>` from each `slide-XX.html`.
@@ -200,7 +235,7 @@ Slides should store local image and video files in `<slides-dir>/assets/` and re
 - Unsupported: absolute filesystem paths such as `/Users/...` or `C:\\...`
 - Unsupported for saved slides: remote video URLs; download them into `<slides-dir>/assets/` first
 
-For bespoke generated imagery, slides-grab bundles **god-tibo-imagen** as the default provider. It reuses your local Codex ChatGPT login (`~/.codex/auth.json`), so **no separate OpenAI/Google API key is required** — you only need a Codex CLI ChatGPT login on an account that is entitled to image generation:
+For bespoke generated imagery, slides-grab bundles **codex-imagen** as the default provider. It reuses your local Codex ChatGPT login (`~/.codex/auth.json`), so **no separate OpenAI/Google API key is required** — you only need a Codex CLI ChatGPT login on an account that is entitled to image generation:
 
 ```bash
 codex login            # one-time setup if not already logged in
@@ -209,14 +244,14 @@ slides-grab image --slides-dir decks/my-deck --prompt "Editorial hero image of a
 
 The command saves the result into `<slides-dir>/assets/` and prints the portable `./assets/<file>` reference to use from slide HTML.
 
-> ⚠️ **WARNING**: god-tibo-imagen calls an unsupported private Codex backend that may break without notice. It also requires a Codex/ChatGPT account that is entitled to image generation; not all ChatGPT accounts have this entitlement.
+> ⚠️ **WARNING**: codex-imagen calls an unsupported private Codex backend that may break without notice. It also requires a Codex/ChatGPT account that is entitled to image generation; not all ChatGPT accounts have this entitlement.
 
 Optional alternative providers via `--provider`:
 
-- `--provider codex` (alias `openai`): Codex/OpenAI `gpt-image-2`. Requires `OPENAI_API_KEY`. Maps `--aspect-ratio` to the nearest supported OpenAI image size (`16:9` defaults to a landscape `1536x1024` request).
+- `--provider openai`: OpenAI `gpt-image-2`. Requires `OPENAI_API_KEY`. Maps `--aspect-ratio` to the nearest supported OpenAI image size (`16:9` defaults to a landscape `1536x1024` request).
 - `--provider nano-banana` (alias `gemini`): Google `gemini-3-pro-image-preview`. Requires `GOOGLE_API_KEY` (or `GEMINI_API_KEY`). Supports `--image-size 2K|4K`.
 
-If the default god-tibo-imagen call fails, slides-grab automatically falls back to whichever optional provider has credentials available; otherwise it asks you to fall back to web search + local download into `assets/`.
+If the default codex-imagen call fails, slides-grab automatically falls back to whichever optional provider has credentials available; otherwise it asks you to fall back to web search + local download into `assets/`.
 
 Run `slides-grab validate --slides-dir <path>` before export to catch missing local assets and discouraged path forms.
 
@@ -225,6 +260,8 @@ Run `slides-grab validate --slides-dir <path>` before export to catch missing lo
 When a slide contains a `<video>`, PDF export now uses the video's poster/thumbnail still instead of a live autoplay frame. Prefer setting `poster="./assets/<file>"` for stable export output.
 
 `slides-grab pdf` and `slides-grab convert` now default to `2160p` / `4k` raster output for sharper exports. You can still override with `--resolution <preset>` using `720p`, `1080p`, `1440p`, `2160p`, or `4k` when you want smaller or faster artifacts.
+
+`slides-grab convert` defaults to `--engine raster` for the most reliable visual fidelity. Use `--engine text` when editable PowerPoint text matters more than exact rendering. The text engine is experimental: it requires semantic text tags, may reject unsupported HTML/CSS, and rasterizes canvas/SVG visuals. `--resolution` can only be used with the raster engine. Both engines use the same presentation or card-news PowerPoint slide size.
 
 ### Downloading Web Videos into Deck Assets
 
@@ -245,11 +282,13 @@ Prerequisite: create or generate a deck in `decks/my-deck/` first.
 
 ```bash
 slides-grab edit       --slides-dir decks/my-deck
+slides-grab edit-image --slides-dir decks/my-deck
 slides-grab validate   --slides-dir decks/my-deck
 slides-grab pdf        --slides-dir decks/my-deck --output decks/my-deck.pdf
 slides-grab pdf        --slides-dir decks/my-deck --mode print --output decks/my-deck-searchable.pdf
 slides-grab png        --slides-dir decks/my-deck --output-dir decks/my-deck/out-png
 slides-grab convert    --slides-dir decks/my-deck --output decks/my-deck.pptx
+slides-grab convert    --slides-dir decks/my-deck --output decks/my-deck-editable.pptx --engine text
 slides-grab figma      --slides-dir decks/my-deck --output decks/my-deck-figma.pptx
 ```
 
@@ -260,7 +299,7 @@ slides-grab figma      --slides-dir decks/my-deck --output decks/my-deck-figma.p
 Instagram-style card news uses a 720pt × 720pt frame end-to-end. Pass `--mode card-news` (or `--slide-mode card-news` for `pdf`/`png`) at every stage and prefer `slides-grab png` as the primary export so each card becomes an Instagram-ready PNG.
 
 ```bash
-slides-grab edit     --slides-dir decks/my-cards --mode card-news
+slides-grab edit     --slides-dir decks/my-cards --mode card-news  # HTML card-news editor
 slides-grab validate --slides-dir decks/my-cards --mode card-news
 slides-grab png      --slides-dir decks/my-cards --slide-mode card-news --resolution 2160p
 # Optional extras (PPTX / Figma remain experimental / unstable)
@@ -299,8 +338,8 @@ This command reuses the HTML to PPTX pipeline and emits a `.pptx` deck intended 
 
 ## Installation Guides
 
-- [Claude detailed guide](https://github.com/NomaDamas/slides-grab/blob/main/docs/installation/claude.md)
-- [Codex detailed guide](https://github.com/NomaDamas/slides-grab/blob/main/docs/installation/codex.md)
+- [Claude detailed guide](docs/installation/claude.md)
+- [Codex detailed guide](docs/installation/codex.md)
 
 ## npm Package
 

@@ -4,7 +4,7 @@ description: Run the slides-grab design gate before export.
 tools: Read, Grep, Glob, Bash, Task
 ---
 
-Use the canonical gate in `skills/slides-grab-design/references/design-gate.md`.
+Use the canonical gate in `{{ref:designGate}}`.
 
 Required workflow:
 
@@ -13,7 +13,7 @@ Required workflow:
 3. Produce two read-only review reports:
    - Pass A: System Contract / Constraint Integrity.
    - Pass B: Audience Impact / Expressive Readability.
-   Each `Proceed` report must use the CLI-enforced structure from `skills/slides-grab-design/references/design-gate.md`: role title, `VERDICT: PASS`, confidence, rendered PNG evidence filenames, current `slide-*.html: <sha256>` fingerprints, `Unresolved Critical: 0`, `Blocking findings: None`, findings table, and all required checks marked `PASS`.
+   Each `Proceed` report must use the CLI-enforced structure from `{{ref:designGate}}`: role title, `VERDICT: PASS`, confidence, rendered PNG evidence filenames, current `slide-*.html: <sha256>` fingerprints, `Unresolved Critical: 0`, `Blocking findings: None`, findings table, and all required checks marked `PASS`.
 4. If both passes conclude Proceed, record the gate with:
 
 ```bash
