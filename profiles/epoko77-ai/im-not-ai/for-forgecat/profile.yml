@@ -10,7 +10,8 @@ compatibility:
       - claude-code
       - cursor
       - codex
-    partial: []
+    partial:
+      - openclaw
   models:
     recommended:
       - opus
