@@ -46,7 +46,7 @@ The ForgeCat profile supplies the agent skills, design-review agents, co-install
 |---|---|
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
-| Version | `pending-registry-publish` |
+| Version | `0.1.2` |
 | Original commit | `745c931c8f5556d8b9fdfe6718c8a507f6223935` |
 | License | MIT |
 | Source platform | multi-host |
@@ -59,9 +59,9 @@ The ForgeCat profile supplies the agent skills, design-review agents, co-install
 |---|---|
 | Claude Code | Partial |
 | Cursor | Partial |
-| Codex | Partial |
+| Codex | Tested |
 
-Cursor remains partial because upstream directly targets Claude Code and Codex. No platform is promoted to tested until an exact published registry version passes a fresh install and component-aware runtime probe.
+Codex passed a fresh exact-version registry install plus skill, agent, and `slides-grab` CLI runtime probes. Claude Code remains partial because its runtime probe hit the local account session limit. Cursor remains partial because Cursor Agent was not authenticated in the test environment.
 
 ## Dependencies
 
