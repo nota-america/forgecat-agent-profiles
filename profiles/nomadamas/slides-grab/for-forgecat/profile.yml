@@ -8,10 +8,10 @@ sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:
-    - codex
-    partial:
     - claude-code
     - cursor
+    - codex
+    partial: []
   models:
     recommended: []
     minimum: []

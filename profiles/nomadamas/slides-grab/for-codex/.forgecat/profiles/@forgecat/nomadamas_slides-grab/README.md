@@ -48,7 +48,7 @@ The ForgeCat profile supplies the agent skills, design-review agents, co-install
 |---|---|
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
-| Version | `0.1.2` |
+| Version | `0.1.3` |
 | Original commit | `745c931c8f5556d8b9fdfe6718c8a507f6223935` |
 | License | MIT |
 | Source platform | multi-host |
@@ -59,11 +59,11 @@ The ForgeCat profile supplies the agent skills, design-review agents, co-install
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
 | Codex | Tested |
 
-Codex passed a fresh exact-version registry install plus skill, agent, and `slides-grab` CLI runtime probes. Claude Code remains partial because its runtime probe hit the local account session limit. Cursor remains partial because Cursor Agent was not authenticated in the test environment.
+Claude Code, Cursor, and Codex passed fresh exact-version registry installs and component-aware skill and agent runtime probes. OpenClaw also passed installation and skill discovery as a ForgeCat home-agent target; OpenClaw is not a native `for-*` artifact platform in the current ForgeCat schema.
 
 ## Dependencies
 
