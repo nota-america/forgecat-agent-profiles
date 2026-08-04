@@ -27,7 +27,8 @@ npx forgecat install @forgecat/im-not-ai
 - **humanize-diagnostician** — Strict-mode diagnosis agent. `agent`
 - **humanize-finalizer** — Strict/heavy final meaning-preservation and naturalness auditor. `agent`
 - **korean-ai-tell-taxonomist** — Taxonomy maintenance specialist. `agent`
-- **translationese-research-distiller**, **korean-translation-scholar**, **taxonomy-gap-analyzer**, **post-editese-metric-engineer**, **quick-rules-integrator** — Research/development support agents preserved from source. `agent`
+
+- **translationese-research-distiller**, **korean-translation-scholar**, **taxonomy-gap-analyzer**, **post-editese-metric-engineer**, **quick-rules-integrator** — Source-maintenance research/development agents; they require an upstream checkout for their development paths. `agent`
 
 ## Details
 
@@ -36,7 +37,7 @@ npx forgecat install @forgecat/im-not-ai
 | Author | epoko77-ai |
 | Original repository | https://github.com/epoko77-ai/im-not-ai |
 | Version | `pending-registry-publish` |
-| Original commit | `3120cb8` |
+| Original commit | `53e24e8f92cf344efcb812103f7c2b203e7efffc` |
 | License | MIT |
 | Source platform | multi-host |
 
@@ -58,5 +59,11 @@ npx forgecat install @forgecat/im-not-ai
 
 ## Dependencies
 
-- Python 3 standard library for bundled deterministic helper scripts.
+- Python 3 standard library for co-installed deterministic helper scripts and gates.
 - Host LLM/agent runtime capable of invoking the bundled skills and agents.
+
+## Conversion notes
+
+- Standard Claude Code and Cursor conversions use ForgeCat references for the full v2.3 runtime tree.
+- Codex uses the upstream native standalone skill as an override.
+- Compatibility remains Partial until a published-registry fresh-install runtime scenario is recorded.

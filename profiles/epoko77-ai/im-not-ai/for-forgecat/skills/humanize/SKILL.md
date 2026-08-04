@@ -31,5 +31,5 @@ $ARGUMENTS
 - `--strict` — 정밀 3콜(진단→겨냥 윤문→finalize) 강제
 
 ## 참고
-- 분류 체계: `humanize-korean/references/ai-tell-taxonomy.md`
-- 윤문 처방: `humanize-korean/references/rewriting-playbook.md`
+- 분류 체계: `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md`
+- 윤문 처방: `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/rewriting-playbook.md`

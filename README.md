@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-186-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -122,6 +122,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Cursor plugins for team workflows, continual learning, and iterative agent loops |
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
+| [epoko77-ai/im-not-ai](./profiles/epoko77-ai/im-not-ai) | 1 | Korean AI-text humanizer with deterministic routing, structural gates, and native Codex support |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
@@ -148,7 +149,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 | [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 
-Total: 186 profiles across 37 collections.
+Total: 187 profiles across 38 collections.
 
 ## Profile Layout
 

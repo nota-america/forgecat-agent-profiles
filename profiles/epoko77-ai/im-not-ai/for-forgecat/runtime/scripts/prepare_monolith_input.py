@@ -45,19 +45,12 @@ import traceback
 from datetime import date
 from pathlib import Path
 
-# Resolve project layout. This file lives at:
-#   {project_root}/scripts/prepare_monolith_input.py
-# metrics.py is at either the ForgeCat layout:
-#   {project_root}/skills/humanize-korean/references/metrics.py
-# or the original Claude Code source layout:
-#   {project_root}/.claude/skills/humanize-korean/references/metrics.py
+# Resolve the co-installed ForgeCat runtime layout. User work products stay
+# relative to the caller's current working directory; only bundled metrics are
+# resolved relative to this script.
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parent
-_METRICS_CANDIDATES = [
-    PROJECT_ROOT / "skills" / "humanize-korean" / "references",
-    PROJECT_ROOT / ".claude" / "skills" / "humanize-korean" / "references",
-]
-METRICS_DIR = next((p for p in _METRICS_CANDIDATES if p.exists()), _METRICS_CANDIDATES[0])
+METRICS_DIR = PROJECT_ROOT / ".claude" / "skills" / "humanize-korean" / "references"
 
 # Make metrics.py importable without polluting global state.
 sys.path.insert(0, str(METRICS_DIR))
@@ -93,12 +86,12 @@ def _resolve_run_dir(run_dir_arg: str | None, text_arg: str | None) -> Path:
     if run_dir_arg:
         rd = Path(run_dir_arg)
         if not rd.is_absolute():
-            rd = PROJECT_ROOT / rd
+            rd = Path.cwd() / rd
         rd.mkdir(parents=True, exist_ok=True)
         return rd
     if text_arg is None:
         raise SystemExit("Either --run-dir or --text is required")
-    workspace = PROJECT_ROOT / "_workspace"
+    workspace = Path.cwd() / "_workspace"
     rd = _next_run_dir(workspace)
     rd.mkdir(parents=True, exist_ok=True)
     return rd

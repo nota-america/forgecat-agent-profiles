@@ -1,7 +1,5 @@
-name: '@forgecat/im-not-ai'
-description: Humanize KR profile for detecting and rewriting Korean AI-generated text into natural Korean
-  while preserving meaning, with Claude Code skills, specialist agents, deterministic metric/chunking
-  scripts, and Korean AI-tell taxonomy references.
+name: "@forgecat/im-not-ai"
+description: "Humanize Korean AI-generated text with source-faithful skills, deterministic preprocessing and structural gates, specialist runtime agents, and an upstream-native Codex Fast Path."
 visibility: public
 repository: https://github.com/epoko77-ai/im-not-ai
 license: MIT
@@ -10,109 +8,98 @@ compatibility:
   platforms:
     tested: []
     partial:
-    - claude-code
-    - cursor
-    - codex
+      - claude-code
+      - cursor
+      - codex
   models:
     recommended:
-    - opus
+      - opus
     minimum: []
+platforms:
+  codex:
+    mode: override
+instructions:
+  operatingRef: operatingInstructions
+references:
+  - id: operatingInstructions
+    path: AGENTS.md
+    type: operating-instructions
+  - id: humanizeRuntime
+    path: runtime
+  - id: sourceDocs
+    path: docs/source
 agents:
-- name: humanize-diagnostician
-  path: agents/humanize-diagnostician.md
-  description: 정밀(strict) 모드 1단계 진단 에이전트. 글 전체를 한 번에 보고 "가장 지배적인 AI 티 패턴 3~6개"를 taxonomy ID와 함께 진단한다.
-    불안정한 span 열거(0↔18개로 요동) 대신 "무엇이 이 글을 지배하는가"라는 안정적 판단을 내려, 후속 윤문 콜이 그 진단을 겨냥하게 한다. 산출물은 02_diagnosis.md
-    1개. 도구 호출 3회 캡(Read 결합입력 + Read taxonomy + Write 진단). 이 진단이 정밀 모드 품질의 결정 변수다.
-  model: opus
-- name: humanize-finalizer
-  path: agents/humanize-finalizer.md
-  description: 정밀(strict) 모드 3단계 마무리 에이전트. 원문과 윤문본을 직접 대조해 ①의미 보존(15항 — 각주·제목·없던 주장 주입 포함) ②자연성(잔존 AI
-    티 + 과윤문 양방향)을 한 콜로 병합 판정하고, 문제 구간만 국소 보정한다. 전체 재작성 금지 — 의미 드리프트(빈 수사를 없던 주장으로 대체)를 막는 게 존재 이유. 은퇴한
-    content-fidelity-auditor·naturalness-reviewer 2인을 대체한다. 산출물은 final.md + 09_finalize.json. 도구 호출 4회
-    캡.
-  model: opus
-- name: humanize-monolith
-  path: agents/humanize-monolith.md
-  description: v1.6.1 Fast Path 단일 호출 윤문 에이전트. 한 호출 안에서 탐지·윤문·자체검증을 일괄 수행하여 5,000자 이하 한글 입력을 2~3분 안에 처리한다.
-    산출물은 final.md 1개(본문 끝에 `<!-- HUMANIZE-SUMMARY -->` HTML 주석 블록으로 메트릭·등급·자체검증 통합). 도구 호출 chain 3회 캡.
-    깊은 검증이 필요하면 정밀 모드(진단→윤문→finalize 3콜) 사용.
-  model: opus
-- name: korean-ai-tell-taxonomist
-  path: agents/korean-ai-tell-taxonomist.md
-  description: AI가 생성한 한글 글의 "AI 티" 패턴을 체계적으로 분류·확장·버전 관리하는 도메인 전문가. `references/ai-tell-taxonomy.md`를
-    단일 진실 원천(SSOT)으로 유지하며, 실제 입력에서 관찰된 신규 패턴을 검증해 v1 → v2로 승격한다.
-  model: opus
-- name: korean-translation-scholar
-  path: agents/korean-translation-scholar.md
-  description: 한국 번역학계(이근희·김정우·김도훈·김순영·김혜영·이영옥·곽은주·조의연)와 국제 번역학(Baker·Toury·Laviosa·Chesterman·Toral·Sarti)의
-    학술 인용 계보를 Humanize KR 본진 SSOT(taxonomy.md)와 외부 references/scholarship.md 양면에 안전하게 안착시키는 학술 정통성 큐레이터.
-    보고서의 학술 자산을 본진 분류 체계가 검증 가능한 형태로 흡수하되, SSOT 룰북 슬림성을 해치지 않게 메타필드 + 외부 파일로 분리. 본진 패턴에 출처를 박을 때 호출.
-  model: opus
-- name: post-editese-metric-engineer
-  path: agents/post-editese-metric-engineer.md
-  description: Toral 2019 post-editese 3축(단순화·정규화·간섭)을 한국어 정량 지표로 구체화하고, 보고서 8유형 검출 시그널을 metrics.py에 추가해
-    회귀 검증 가능 상태로 만드는 정량 엔지니어. 표준 라이브러리만, 형태소 분석은 정규식·접미사 사전으로 근사(konlpy·mecab 금지 — v1.6 정책 보존). monolith
-    외부 사전 처리(prepare_monolith_input.py)에 결합되어 도구 호출 캡 3회 보존. 신규 metric 추가 또는 metric 회귀 검증 시 호출.
-  model: opus
-- name: quick-rules-integrator
-  path: agents/quick-rules-integrator.md
-  description: 신규 분류 체계 v2.0과 metrics·playbook 패치를 quick-rules.md(monolith 전용 슬림 룰북, 126줄 → ≤180줄)에 안착하고
-    monolith 도구 호출 3회 캡(v1.6.1) 회귀를 검증한 뒤, GitHub PR 초안과 CHANGELOG를 작성하는 통합 엔지니어. 본진 룰북 슬림성·monolith 정의
-    무수정·v1.x 발행 정책(사용자 명시 승인 후 푸시)을 3대 가드로 삼음. v2.0 변경 묶음을 PR로 발행 직전 단계에서 호출.
-  model: opus
-- name: taxonomy-gap-analyzer
-  path: agents/taxonomy-gap-analyzer.md
-  description: Humanize KR 본진 v1.6 분류 체계(10대 카테고리·61+ 패턴)와 외부 학술 보고서 후보 풀(translationese-research-distiller
-    산출물)을 3-축 매트릭스(이미 본진·보강·신규)로 매핑해 분류학자에게 승격 결정 입력을 제공하는 갭 분석가. 사실 발견만 하고 승격 결정은 하지 않는다 — taxonomist가
-    최종 판정자. 본진 v1.6 → v2.0 업그레이드 회차 또는 외부 보고서를 본진과 합칠 때 호출.
-  model: opus
-- name: translationese-research-distiller
-  path: agents/translationese-research-distiller.md
-  description: 한국어 번역투(translationese) 학술 보고서를 8유형·15항목 PE 체크리스트·post-editese 3축·학술 인용 계보·예문 코퍼스로 분해해
-    후속 분류·승격 단계가 직접 소비할 수 있는 구조화 JSON으로 증류하는 도메인 추출가. 보고서 본문에 명시된 사실만 추출하고 자체 추정·확장은 금지. 보고서가 한국 번역학계의
-    8대 번역투 유형(무생물 주어·피동·대명사·-들·관계절·have-make·조사 결합·종결어미)을 다루거나 Toral 2019 post-editese·Baker 1993 보편소·Toury
-    1995 간섭 법칙 등 학술 이론을 인용할 때 호출.
-  model: opus
+  - name: humanize-diagnostician
+    path: agents/humanize-diagnostician.md
+    description: "정밀(strict) 모드 1단계 진단 에이전트. 글 전체를 한 번에 보고 \"가장 지배적인 AI 티 패턴 3~6개\"를 taxonomy ID와 함께 진단한다. 불안정한 span 열거(0↔18개로 요동) 대신 \"무엇이 이 글을 지배하는가\"라는 안정적 판단을 내려, 후속 윤문 콜이 그 진단을 겨냥하게 한다. 산출물은 02_diagnosis.md 1개. 도구 호출 3회 캡(Read 결합입력 + Read taxonomy + Write 진단). 이 진단이 정밀 모드 품질의 결정 변수다."
+    model: opus
+  - name: humanize-finalizer
+    path: agents/humanize-finalizer.md
+    description: "정밀(strict) 모드 3단계 마무리 에이전트. 원문과 윤문본을 직접 대조해 ①의미 보존(15항 — 각주·제목·없던 주장 주입 포함) ②자연성(잔존 AI 티 + 과윤문 양방향)을 한 콜로 병합 판정하고, 문제 구간만 국소 보정한다. 전체 재작성 금지 — 의미 드리프트(빈 수사를 없던 주장으로 대체)를 막는 게 존재 이유. 은퇴한 content-fidelity-auditor·naturalness-reviewer 2인을 대체한다. 산출물은 final.md + 09_finalize.json. 도구 호출 4회 캡."
+    model: opus
+  - name: humanize-monolith
+    path: agents/humanize-monolith.md
+    description: "v1.6.1 Fast Path 단일 호출 윤문 에이전트. 한 호출 안에서 탐지·윤문·자체검증을 일괄 수행하여 5,000자 이하 한글 입력을 2~3분 안에 처리한다. 산출물은 final.md 1개(본문 끝에 `<!-- HUMANIZE-SUMMARY -->` HTML 주석 블록으로 메트릭·등급·자체검증 통합). 도구 호출 chain 3회 캡. 깊은 검증이 필요하면 정밀 모드(진단→윤문→finalize 3콜) 사용."
+    model: opus
+  - name: korean-ai-tell-taxonomist
+    path: agents/korean-ai-tell-taxonomist.md
+    description: "AI가 생성한 한글 글의 \"AI 티\" 패턴을 체계적으로 분류·확장·버전 관리하는 도메인 전문가. ForgeCat co-installed runtime의 `ai-tell-taxonomy.md`를 단일 진실 원천(SSOT)으로 유지하며, 실제 입력에서 관찰된 신규 패턴을 검증해 v1 → v2로 승격한다."
+    model: opus
+  - name: korean-translation-scholar
+    path: agents/korean-translation-scholar.md
+    description: "한국 번역학계(이근희·김정우·김도훈·김순영·김혜영·이영옥·곽은주·조의연)와 국제 번역학(Baker·Toury·Laviosa·Chesterman·Toral·Sarti)의 학술 인용 계보를 Humanize KR 본진 SSOT(taxonomy.md)와 외부 references/scholarship.md 양면에 안전하게 안착시키는 학술 정통성 큐레이터. 보고서의 학술 자산을 본진 분류 체계가 검증 가능한 형태로 흡수하되, SSOT 룰북 슬림성을 해치지 않게 메타필드 + 외부 파일로 분리. 본진 패턴에 출처를 박을 때 호출."
+    model: opus
+  - name: post-editese-metric-engineer
+    path: agents/post-editese-metric-engineer.md
+    description: "Toral 2019 post-editese 3축(단순화·정규화·간섭)을 한국어 정량 지표로 구체화하고, 보고서 8유형 검출 시그널을 metrics.py에 추가해 회귀 검증 가능 상태로 만드는 정량 엔지니어. 표준 라이브러리만, 형태소 분석은 정규식·접미사 사전으로 근사(konlpy·mecab 금지 — v1.6 정책 보존). monolith 외부 사전 처리(prepare_monolith_input.py)에 결합되어 도구 호출 캡 3회 보존. 신규 metric 추가 또는 metric 회귀 검증 시 호출."
+    model: opus
+  - name: quick-rules-integrator
+    path: agents/quick-rules-integrator.md
+    description: "신규 분류 체계 v2.0과 metrics·playbook 패치를 quick-rules.md(monolith 전용 슬림 룰북, 126줄 → ≤180줄)에 안착하고 monolith 도구 호출 3회 캡(v1.6.1) 회귀를 검증한 뒤, GitHub PR 초안과 CHANGELOG를 작성하는 통합 엔지니어. 본진 룰북 슬림성·monolith 정의 무수정·v1.x 발행 정책(사용자 명시 승인 후 푸시)을 3대 가드로 삼음. v2.0 변경 묶음을 PR로 발행 직전 단계에서 호출."
+    model: opus
+  - name: taxonomy-gap-analyzer
+    path: agents/taxonomy-gap-analyzer.md
+    description: "Humanize KR 본진 v1.6 분류 체계(10대 카테고리·61+ 패턴)와 외부 학술 보고서 후보 풀(translationese-research-distiller 산출물)을 3-축 매트릭스(이미 본진·보강·신규)로 매핑해 분류학자에게 승격 결정 입력을 제공하는 갭 분석가. 사실 발견만 하고 승격 결정은 하지 않는다 — taxonomist가 최종 판정자. 본진 v1.6 → v2.0 업그레이드 회차 또는 외부 보고서를 본진과 합칠 때 호출."
+    model: opus
+  - name: translationese-research-distiller
+    path: agents/translationese-research-distiller.md
+    description: "한국어 번역투(translationese) 학술 보고서를 8유형·15항목 PE 체크리스트·post-editese 3축·학술 인용 계보·예문 코퍼스로 분해해 후속 분류·승격 단계가 직접 소비할 수 있는 구조화 JSON으로 증류하는 도메인 추출가. 보고서 본문에 명시된 사실만 추출하고 자체 추정·확장은 금지. 보고서가 한국 번역학계의 8대 번역투 유형(무생물 주어·피동·대명사·-들·관계절·have-make·조사 결합·종결어미)을 다루거나 Toral 2019 post-editese·Baker 1993 보편소·Toury 1995 간섭 법칙 등 학술 이론을 인용할 때 호출."
+    model: opus
 skills:
-- name: humanize
-  path: skills/humanize/SKILL.md
-  description: AI가 쓴 한글 텍스트를 자연스럽게 윤문하는 진입 명령. humanize-korean 파이프라인을 Fast 모드(기본)로 실행하고 `--strict`면 정밀
-    3콜(진단→겨냥 윤문→finalize). 트리거 — "/humanize".
-- name: humanize-korean
-  path: skills/humanize-korean/SKILL.md
-  description: AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람이 쓴 글처럼" 윤문해주는 오케스트레이터 스킬. 번역투·영어 인용 과다·기계적 병렬·관용구·피동태
-    남용·접속사 남발·리듬 균일성·이모지/불릿 과다 등 10대 카테고리 70개 AI 티 패턴을 탐지·분류해 내용은 한 글자도 건드리지 않고 문체·리듬·표현만 자연스러운 한국어로 재작성한다.
-    shim의 route_hint(light|standard|heavy)로 경로를 정해 잘 쓴 글은 1콜, 표준은 2콜, 중증·장문만 3+콜(진단→겨냥 윤문→finalize)로 처리한다.
-    트리거 — "AI 티 없애줘", "AI 같은 글 자연스럽게", "GPT/ChatGPT 문체", "AI 번역투 고쳐", "사람이 쓴 것처럼 윤문", "AI 윤문", "ChatGPT
-    티 제거", "한글 AI 탐지·윤문", "AI 글 사람처럼", "번역투 제거", "영어 인용 많은 글 윤문", "AI 글 티 안 나게", "휴머나이저", "humanize Korean",
-    "AI detector bypass 한글". 후속 작업 — "특정 카테고리만 다시", "윤문 강도 조정", "장르 바꿔서", "이 문단만", "2차 윤문" 도 모두 이 스킬.
-    단순 맞춤법·오탈자 교정은 직접 처리, 번역은 번역 스킬, 내용 추가·삭제를 동반한 재작성은 별도 집필 스킬.
-  scripts:
-  - path: scripts/prepare_monolith_input.py
-    runtime: python
-    description: Builds metric-enriched monolith input, computes route_hint, and optionally chunks long
-      inputs for Humanize KR.
-  - path: scripts/verify_change_rate.py
-    runtime: python
-    description: Deterministically verifies edit/change rate thresholds and gates over-aggressive Korean
-      text rewrites.
-  - path: scripts/reassemble_chunks.py
-    runtime: python
-    description: Reassembles chunked Humanize KR outputs into a single final Markdown document.
-  - path: scripts/build_quick_rules.py
-    runtime: python
-    description: Regenerates the quick-rules reference from the AI-tell taxonomy source of truth.
-  - path: skills/humanize-korean/references/metrics.py
-    runtime: python
-    description: Computes the baseline Humanize KR Korean AI-tell metrics used by the input shim.
-  - path: skills/humanize-korean/references/metrics_v2.py
-    runtime: python
-    description: Computes the v2 post-editese and Korean AI-tell metrics used by the input shim.
-- name: humanize-redo
-  path: skills/humanize-redo/SKILL.md
-  description: 가장 최근 윤문 결과를 2차로 다시 다듬는다 — 특정 카테고리·문단·강도 조정도 가능. humanize-korean strict 윤문(Phase B)을 기존
-    run_id에 재실행해 잔존 finding을 처리한다. 트리거 — "/humanize-redo".
-rules:
-- name: humanize-kr-operating-instructions
-  path: AGENTS.md
-  description: Operating instructions for the Humanize KR Korean AI-text humanizer profile.
+  - name: humanize
+    path: skills/humanize/SKILL.md
+    description: "AI가 쓴 한글 텍스트를 자연스럽게 윤문하는 진입 명령. humanize-korean 파이프라인을 Fast 모드(기본)로 실행하고 `--strict`면 정밀 3콜(진단→겨냥 윤문→finalize). 트리거 — \"/humanize\"."
+  - name: humanize-korean
+    path: skills/humanize-korean/SKILL.md
+    description: "AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 \"사람이 쓴 글처럼\" 윤문해주는 오케스트레이터 스킬. 번역투·영어 인용 과다·기계적 병렬·관용구·피동태 남용·접속사 남발·리듬 균일성·이모지/불릿 과다 등 10대 카테고리 70개 AI 티 패턴을 탐지·분류해 내용은 한 글자도 건드리지 않고 문체·리듬·표현만 자연스러운 한국어로 재작성한다. shim의 route_hint(light|standard|heavy)로 경로를 정해 잘 쓴 글은 1콜, 표준은 2콜, 중증·장문만 3+콜(진단→겨냥 윤문→finalize)로 처리한다. 트리거 — \"AI 티 없애줘\", \"AI 같은 글 자연스럽게\", \"GPT/ChatGPT 문체\", \"AI 번역투 고쳐\", \"사람이 쓴 것처럼 윤문\", \"AI 윤문\", \"ChatGPT 티 제거\", \"한글 AI 탐지·윤문\", \"AI 글 사람처럼\", \"번역투 제거\", \"영어 인용 많은 글 윤문\", \"AI 글 티 안 나게\", \"휴머나이저\", \"humanize Korean\", \"AI detector bypass 한글\". 후속 작업 — \"특정 카테고리만 다시\", \"윤문 강도 조정\", \"장르 바꿔서\", \"이 문단만\", \"2차 윤문\" 도 모두 이 스킬. 단순 맞춤법·오탈자 교정은 직접 처리, 번역은 번역 스킬, 내용 추가·삭제를 동반한 재작성은 별도 집필 스킬."
+    scripts:
+      - path: runtime/scripts/prepare_monolith_input.py
+        runtime: python
+        description: Builds metric-enriched input, computes route_hint, and optionally chunks long inputs.
+      - path: runtime/scripts/reassemble_chunks.py
+        runtime: python
+        description: Reassembles chunked Humanize KR outputs with deterministic integrity checks.
+      - path: runtime/scripts/verify_change_rate.py
+        runtime: python
+        description: Applies the deterministic edit-rate gate.
+      - path: runtime/scripts/verify_gates.py
+        runtime: python
+        description: Applies v2.3 structural convergence, fidelity, and edit-rate gates.
+      - path: runtime/scripts/build_quick_rules.py
+        runtime: python
+        description: Regenerates the quick-rule index from the taxonomy.
+      - path: runtime/scripts/build_diagnosis_rules.py
+        runtime: python
+        description: Regenerates the slim diagnosis index from the taxonomy.
+      - path: runtime/.claude/skills/humanize-korean/references/metrics.py
+        runtime: python
+        description: Computes baseline Korean AI-tell metrics.
+      - path: runtime/.claude/skills/humanize-korean/references/metrics_v2.py
+        runtime: python
+        description: Computes v2 post-editese and structural metrics.
+      - path: runtime/tests/golden/checks.py
+        runtime: python
+        description: Provides deterministic fidelity checks consumed by verify_gates.py.
+  - name: humanize-redo
+    path: skills/humanize-redo/SKILL.md
+    description: "가장 최근 윤문 결과를 2차로 다시 다듬는다 — 특정 카테고리·문단·강도 조정도 가능. humanize-korean heavy 경로를 기존 run_id에 재실행해 잔존 finding을 처리한다. 트리거 — \"/humanize-redo\"."

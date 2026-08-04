@@ -32,15 +32,12 @@ import re
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_REFS_CANDIDATES = [
-    os.path.join(_HERE, "..", "skills", "humanize-korean", "references"),
-    os.path.join(_HERE, "..", ".claude", "skills", "humanize-korean", "references"),
-]
-for _candidate in _REFS_CANDIDATES:
-    _REFS = os.path.abspath(_candidate)
-    if os.path.isdir(_REFS) and _REFS not in sys.path:
-        sys.path.insert(0, _REFS)
-        break
+_REFS = os.path.join(
+    _HERE, "..", ".claude", "skills", "humanize-korean", "references"
+)
+_REFS = os.path.abspath(_REFS)
+if _REFS not in sys.path:
+    sys.path.insert(0, _REFS)
 
 import metrics_v2 as _m  # noqa: E402  (sys.path mutation is intentional)
 

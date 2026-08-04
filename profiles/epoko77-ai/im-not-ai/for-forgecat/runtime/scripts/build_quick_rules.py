@@ -31,11 +31,9 @@ import re
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_REF_CANDIDATES = [
-    os.path.join(_HERE, "..", "skills", "humanize-korean", "references"),
-    os.path.join(_HERE, "..", ".claude", "skills", "humanize-korean", "references"),
-]
-_REFS = next((os.path.abspath(p) for p in _REF_CANDIDATES if os.path.isdir(p)), os.path.abspath(_REF_CANDIDATES[0]))
+_REFS = os.path.abspath(
+    os.path.join(_HERE, "..", ".claude", "skills", "humanize-korean", "references")
+)
 _TAXONOMY = os.path.join(_REFS, "ai-tell-taxonomy.md")
 _HEADER = os.path.join(_REFS, "quick-rules.header.md")
 _FOOTER = os.path.join(_REFS, "quick-rules.footer.md")
