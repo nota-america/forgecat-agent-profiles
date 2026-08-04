@@ -17,6 +17,11 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+- id: agentsMd
+  path: AGENTS.md
 skills:
 - name: vercel-react-native-skills
   path: skills/vercel-react-native-skills/SKILL.md
@@ -25,9 +30,6 @@ skills:
     implementing animations, or working with native modules. Triggers on tasks involving
     React Native, Expo, mobile performance, or native platform APIs.
 rules:
-- name: react-native-skills-agents
-  path: AGENTS.md
-  description: Expanded instruction guide for react-native-skills.
 - name: _sections
   path: rules/_sections.md
   description: Rule file rules/_sections.md

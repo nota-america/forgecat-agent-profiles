@@ -19,6 +19,11 @@ keywords:
   - minimalism
   - code-review
   - productivity
+instructions:
+  operatingRef: agentsMd
+references:
+  - id: agentsMd
+    path: AGENTS.md
 skills:
   - name: ponytail
     path: skills/ponytail/SKILL.md
@@ -94,10 +99,6 @@ commands:
   - name: ponytail-help
     path: commands/ponytail-help.toml
     description: Quick reference for ponytail levels, skills, and commands
-rules:
-  - path: AGENTS.md
-    description: Ponytail always-on lazy senior developer instruction set for AGENTS.md-compatible hosts.
-    alwaysApply: true
 hooks:
   - id: ponytail-session-start
     trigger: session_start
