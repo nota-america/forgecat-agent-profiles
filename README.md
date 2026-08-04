@@ -18,14 +18,14 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-186-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](./LICENSE)
 [![npm version](https://img.shields.io/npm/v/forgecat.svg)](https://www.npmjs.com/package/forgecat)
-[![Discord](https://img.shields.io/badge/Discord-Join%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/ydJAjazXy)
+[![Discord](https://img.shields.io/badge/Discord-Join%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/re3w8WGnb)
 [![Reddit](https://img.shields.io/badge/Reddit-r%2FForgeCat-FF4500?logo=reddit&logoColor=white)](https://www.reddit.com/r/ForgeCat/)
 
 </div>
@@ -121,6 +121,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | Collection | Profiles | Description |
 |---|---:|---|
 | [addyosmani/agent-skills](./profiles/addyosmani/agent-skills) | 1 | Production-grade engineering skills pack by Addy Osmani |
+| [ayghri/i-have-adhd](./profiles/ayghri/i-have-adhd) | 1 | ADHD-friendly output shaping skill for concise, action-first agent replies |
 | [anthropics/claude-code](./profiles/anthropics/claude-code) | 1 | Claude Code profile conversion |
 | [anthropics/claude-plugins-official](./profiles/anthropics/claude-plugins-official) | 16 | Official Anthropic Claude plugin conversions for skills, agents, commands, and MCP |
 | [anthropics/knowledge-work-plugins](./profiles/anthropics/knowledge-work-plugins) | 15 | Knowledge-work plugins for legal, finance, HR, marketing, operations, sales, and more |
@@ -130,10 +131,8 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [coreyhaines31/marketingskills](./profiles/coreyhaines31/marketingskills) | 1 | Marketing skills for conversion, copywriting, SEO, paid ads, analytics, and GTM work |
 | [cursor/plugins](./profiles/cursor/plugins) | 3 | Cursor plugins for team workflows, continual learning, and iterative agent loops |
 | [dietrichgebert/ponytail](./profiles/dietrichgebert/ponytail) | 1 | Ponytail mode hooks and workflow support |
-| [egonex-ai/understand-anything](./profiles/egonex-ai/understand-anything) | 1 | Codebase understanding skills for knowledge graphs, dashboards, architecture analysis, and onboarding |
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
-| [forgecat/forgecat-agent-profiles](./profiles/forgecat/forgecat-agent-profiles) | 1 | ForgeCat-authored orchestration profile built from existing profile packages |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Gemini API, interactions API, and live API development skills |
@@ -161,7 +160,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 
 </details>
 
-Total: 187 profiles across 38 collections.
+Total: 186 profiles across 37 collections.
 
 ## Profile Layout
 
