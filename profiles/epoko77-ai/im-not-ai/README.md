@@ -36,7 +36,7 @@ npx forgecat install @forgecat/im-not-ai
 |---|---|
 | Author | epoko77-ai |
 | Original repository | https://github.com/epoko77-ai/im-not-ai |
-| Version | `0.1.2` |
+| Version | `0.1.3` |
 | Original commit | `53e24e8f92cf344efcb812103f7c2b203e7efffc` |
 | License | MIT |
 | Source platform | multi-host |
