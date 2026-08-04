@@ -17,6 +17,11 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+- id: agentsMd
+  path: AGENTS.md
 skills:
 - name: vercel-react-best-practices
   path: skills/vercel-react-best-practices/SKILL.md
@@ -26,9 +31,6 @@ skills:
     components, Next.js pages, data fetching, bundle optimization, or performance
     improvements.
 rules:
-- name: react-best-practices-agents
-  path: AGENTS.md
-  description: Expanded instruction guide for react-best-practices.
 - name: _sections
   path: rules/_sections.md
   description: Rule file rules/_sections.md

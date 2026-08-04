@@ -72,7 +72,7 @@ npx forgecat install @forgecat/addyosmani_agent-skills
 |---|---|
 | Author | Addy Osmani |
 | Original repository | https://github.com/addyosmani/agent-skills |
-| Version | `0.0.6` |
+| Version | `0.0.7` |
 | Original commit | `2a62238` |
 | License | MIT |
 | Source platform | Claude Code |

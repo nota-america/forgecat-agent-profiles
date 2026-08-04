@@ -16,13 +16,18 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
       - codex
     partial:
+      - claude-code
       - cursor
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+- id: agentsMd
+  path: AGENTS.md
 skills:
 - name: vercel-react-view-transitions
   path: skills/vercel-react-view-transitions/SKILL.md

@@ -14,6 +14,11 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+  - id: agentsMd
+    path: AGENTS.md
 skills:
   - name: "ce-brainstorm"
     path: "skills/ce-brainstorm/SKILL.md"

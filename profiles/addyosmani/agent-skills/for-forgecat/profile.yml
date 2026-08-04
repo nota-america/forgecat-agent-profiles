@@ -16,6 +16,11 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+  - id: agentsMd
+    path: AGENTS.md
 hooks:
   - id: agent-skills-session-start
     trigger: session_start
