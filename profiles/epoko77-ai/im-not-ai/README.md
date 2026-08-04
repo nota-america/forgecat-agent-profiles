@@ -64,5 +64,8 @@ npx forgecat install @forgecat/im-not-ai
 
 ## Conversion notes
 
-- Claude Code, Cursor, and Codex use ForgeCat's standard conversion with the same full v2.3 runtime reference.
+- Upstream instruction, agent, script, and reference contents are preserved without editorial rewriting.
+- Claude Code and Cursor use standard conversion of the upstream Claude surfaces.
+- Codex uses the upstream single-call Fast Path through a platform override.
+- Five executable paths in `humanize-korean/SKILL.md` point to the co-installed runtime; a separate adapter changes only the generated-output root.
 - Compatibility remains Partial until a published-registry fresh-install runtime scenario is recorded.

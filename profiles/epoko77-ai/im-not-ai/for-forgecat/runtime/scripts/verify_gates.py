@@ -13,7 +13,7 @@ ending_comma -86%, C-8 대구 -75%가 숨어 있었다. 이 스크립트는 문�
     P1 목표달성 — before z > +2.0인 어휘 S1 지표가 after에서 z <= +1.0으로
                   내려왔는가. 미달(> +2.0)·과교정(< -1.5)은 WARN.
     P2 전멸    — C-8 대구: before >= 5 AND after == 0 이면 FAIL.
-    P3 golden  — lib/checks.run_checks() 실패 목록 (수치 주입 포함).
+    P3 golden  — tests/golden/checks.run_checks() 실패 목록 (수치 주입 포함).
     P4 터치율  — 원문 문장 중 after에 그대로 없는 비율 + 수치 소실 관찰.
                  게이트 아님, 보고만 (수치 소실은 문장 병합·표기 통합의
                  정상 부산물일 수 있어 exit code에 기여하지 않는다).
@@ -42,9 +42,9 @@ import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, ".."))
-_REFS = os.path.join(_ROOT, "references")
-_LIB = os.path.join(_ROOT, "lib")
-for _p in (_REFS, _LIB):
+_REFS = os.path.join(_ROOT, ".claude", "skills", "humanize-korean", "references")
+_GOLDEN = os.path.join(_ROOT, "tests", "golden")
+for _p in (_REFS, _GOLDEN):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 

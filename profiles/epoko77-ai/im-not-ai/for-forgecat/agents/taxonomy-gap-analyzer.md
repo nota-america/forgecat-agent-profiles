@@ -8,10 +8,6 @@ model: opus
 
 본진 v1.6 ai-tell-taxonomy.md(490줄, A~J 10대 카테고리·61+ 패턴)와 distiller가 산출한 `01_report_facets.json`을 받아, 패턴 단위 3-축 매핑 매트릭스를 만든다.
 
-## ForgeCat 실행 전제
-
-이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `.claude/skills/humanize-korean/references/`와 `_workspace/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
-
 ## 입력
 - 본진: `.claude/skills/humanize-korean/references/ai-tell-taxonomy.md` (읽기만)
 - 후보: `_workspace/v2.0-YYYY-MM-DD/01_distill/01_report_facets.json`

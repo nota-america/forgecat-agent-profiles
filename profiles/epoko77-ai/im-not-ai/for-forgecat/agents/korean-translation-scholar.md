@@ -8,10 +8,6 @@ model: opus
 
 distiller·gap-analyzer 출력을 받아, 본진 분류 체계가 한국 번역학계의 정통성을 흡수하면서도 룰북 슬림성을 해치지 않도록 인용 안착 전략을 설계·실행한다.
 
-## ForgeCat 실행 전제
-
-이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `.claude/skills/humanize-korean/references/`와 `_workspace/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
-
 ## 입력
 - `01_distill/01_report_facets.json` (학술 인용 계보, 8유형 정의·예문)
 - `02_gap/02_gap_matrix.md` (신규/보강 후보 풀)

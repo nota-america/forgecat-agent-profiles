@@ -8,10 +8,6 @@ model: opus
 
 v1.6 metrics.py(308줄, 8지표)에 post-editese 3축 정량 지표와 보고서 8유형 검출 시그널을 추가한다. 본진 monolith·5인 정의는 무수정.
 
-## ForgeCat 실행 전제
-
-이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `.claude/skills/humanize-korean/references/`, `scripts/`, `tests/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
-
 ## 입력
 - 기존 metrics.py: `.claude/skills/humanize-korean/references/metrics.py`
 - 기존 baseline.json: `.claude/skills/humanize-korean/references/baseline.json`
@@ -28,47 +24,47 @@ v1.6 metrics.py(308줄, 8지표)에 post-editese 3축 정량 지표와 보고서
 ```python
 # === Post-Editese 3축 ===
 def lexical_diversity_ttr(text: str) -> float:
-    '''type-token ratio, 단순화 지표'''
+    """type-token ratio, 단순화 지표"""
 
 def lexical_density(text: str) -> float:
-    '''content word ratio (한자어·고유명사·동사·형용사)'''
+    """content word ratio (한자어·고유명사·동사·형용사)"""
 
 def normalisation_score(text: str) -> float:
-    '''평서형 ~한다/~된다/~이다 정형구 수렴 비율'''
+    """평서형 ~한다/~된다/~이다 정형구 수렴 비율"""
 
 def interference_index(text: str) -> dict:
-    '''영어 통사구조 보존도 (8유형 가중 합산)'''
+    """영어 통사구조 보존도 (8유형 가중 합산)"""
 
 # === 8유형 검출 시그널 ===
 def inanimate_subject_rate(text: str) -> float:
-    '''T1: 무생물 주어 + 만능 동사(보여준다/시사한다/만든다) 비율'''
+    """T1: 무생물 주어 + 만능 동사(보여준다/시사한다/만든다) 비율"""
 
 def by_passive_count(text: str) -> int:
-    '''T2a: ~에 의해 + 피동 빈도 (단순 ~에 의해 제외)'''
+    """T2a: ~에 의해 + 피동 빈도 (단순 ~에 의해 제외)"""
 
 def double_passive_count(text: str) -> int:
-    '''T2b: ~되어진다/~여지다/잊혀지다/보여지다/쓰여지다'''
+    """T2b: ~되어진다/~여지다/잊혀지다/보여지다/쓰여지다"""
 
 def pronoun_density(text: str) -> float:
-    '''T3: 그/그녀/그것/그들 단락당 빈도 (영형 대명사 회피율의 역지표)'''
+    """T3: 그/그녀/그것/그들 단락당 빈도 (영형 대명사 회피율의 역지표)"""
 
 def deul_overuse_rate(text: str) -> float:
-    '''T4: 무정물·추상명사 + -들 (데이터들·정보들·결과들·연구들·아이디어들·문제들)'''
+    """T4: 무정물·추상명사 + -들 (데이터들·정보들·결과들·연구들·아이디어들·문제들)"""
 
 def relative_clause_nesting(text: str) -> int:
-    '''T5: 관형구 3중 이상 중첩 ('~한 ~의 ~을 ~한 ~이/가') 빈도'''
+    """T5: 관형구 3중 이상 중첩 ('~한 ~의 ~을 ~한 ~이/가') 빈도"""
 
 def have_make_literal_count(text: str) -> int:
-    '''T6: ~을 가지다/~을 만들다/~을 가지고 있다 빈도'''
+    """T6: ~을 가지다/~을 만들다/~을 가지고 있다 빈도"""
 
 def double_particle_count(text: str) -> int:
-    '''T7: ~에서의/~에로의/~으로의/~에의 빈도'''
+    """T7: ~에서의/~에로의/~으로의/~에의 빈도"""
 
 def progressive_aspect_rate(text: str) -> float:
-    '''T8b: ~고 있다 빈도 (단순 시제로 환원 가능한 사례 우선)'''
+    """T8b: ~고 있다 빈도 (단순 시제로 환원 가능한 사례 우선)"""
 
 def da_streak_rate(text: str) -> int:
-    '''T8a: '~다'로 끝나는 문장 4개 이상 연속 출현 횟수'''
+    """T8a: '~다'로 끝나는 문장 4개 이상 연속 출현 횟수"""
 ```
 
 각 함수는:

@@ -8,10 +8,6 @@ model: opus
 
 taxonomist v2.0 산출물(taxonomy.md·promotion_decisions)과 metric-engineer·scholar 패치를 받아, quick-rules.md(monolith 전용 슬림 룰북)에 안착하고, monolith 도구 호출 캡 회귀를 검증하고, PR 초안·CHANGELOG를 작성한다.
 
-## ForgeCat 실행 전제
-
-이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `agents/`, `.claude/skills/humanize-korean/references/`, `scripts/`, `tests/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
-
 ## 입력
 - `04_taxonomy/ai-tell-taxonomy.md` v2.0 (taxonomist 최종본)
 - `04_taxonomy/04_promotion_decisions.md` (신규/보강 결정 기록)

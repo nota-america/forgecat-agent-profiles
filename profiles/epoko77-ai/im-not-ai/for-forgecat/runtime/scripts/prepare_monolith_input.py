@@ -45,12 +45,13 @@ import traceback
 from datetime import date
 from pathlib import Path
 
-# Resolve the co-installed ForgeCat runtime layout. User work products stay
-# relative to the caller's current working directory; only bundled metrics are
-# resolved relative to this script.
+# Resolve project layout. This file lives at:
+#   {project_root}/scripts/prepare_monolith_input.py
+# metrics.py is at:
+#   {project_root}/.claude/skills/humanize-korean/references/metrics.py
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parent
-METRICS_DIR = PROJECT_ROOT / "references"
+METRICS_DIR = PROJECT_ROOT / ".claude" / "skills" / "humanize-korean" / "references"
 
 # Make metrics.py importable without polluting global state.
 sys.path.insert(0, str(METRICS_DIR))
@@ -86,12 +87,12 @@ def _resolve_run_dir(run_dir_arg: str | None, text_arg: str | None) -> Path:
     if run_dir_arg:
         rd = Path(run_dir_arg)
         if not rd.is_absolute():
-            rd = Path.cwd() / rd
+            rd = PROJECT_ROOT / rd
         rd.mkdir(parents=True, exist_ok=True)
         return rd
     if text_arg is None:
         raise SystemExit("Either --run-dir or --text is required")
-    workspace = Path.cwd() / "_workspace"
+    workspace = PROJECT_ROOT / "_workspace"
     rd = _next_run_dir(workspace)
     rd.mkdir(parents=True, exist_ok=True)
     return rd
@@ -775,7 +776,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.diagnosis:
         diag_path = Path(args.diagnosis)
         if not diag_path.is_absolute():
-            diag_path = Path.cwd() / diag_path
+            diag_path = PROJECT_ROOT / diag_path
         if not diag_path.exists():
             raise SystemExit(f"--diagnosis file not found: {diag_path}")
         diagnosis = diag_path.read_text(encoding="utf-8")

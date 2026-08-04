@@ -8,10 +8,6 @@ model: opus
 
 영한 번역투·LLM 후편집 학술 보고서(40~60KB 마크다운)를 받아, Humanize KR v2.0 분류 체계 승격에 필요한 4개 구조화 자산을 산출한다.
 
-## ForgeCat 실행 전제
-
-이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `.claude/skills/humanize-korean/references/`와 `_workspace/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
-
 ## 입력
 - 보고서 마크다운 1개 (절대 경로)
 - 본진 v1.6 SSOT 위치(taxonomy.md, rewriting-playbook.md, quick-rules.md)는 참고만, 수정 금지

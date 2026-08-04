@@ -7,7 +7,7 @@ description: AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람�
 # Humanize Korean — AI 한글 티 제거 오케스트레이터 (v2.3)
 
 > **v2.3.0** — 구조 수렴 게이트(`verify_gates.py` 4축: 목표달성·대구 전멸·수치·golden) + 진단 슬림 인덱스(`diagnosis-rules.md`, taxonomy 83%↓). (v2.2: route_hint 3경로 + 단일 콜 우선)
-> 버전 히스토리·실측 근거·테스트 시나리오: [`design-notes.md`]({{ref:humanizeRuntime}}/references/design-notes.md)
+> 버전 히스토리·실측 근거·테스트 시나리오: [`references/design-notes.md`](references/design-notes.md)
 
 ## Phase 0: 컨텍스트 확인 및 경로 결정
 
@@ -42,7 +42,7 @@ humanize-korean v2.3 — 경로: {light|standard|heavy} ({route_hint|사용자 �
 3. 첫 300자로 장르 자동 추정 (사용자 명시 시 우선)
 4. 사전 처리 shim을 Bash로 1회 실행:
    ```
-   python3 {{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre}
+   python3 {{ref:humanizeRuntime}}/forgecat/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre}
    ```
    - `--genre` 값은 영문 키: `essay | column | report | blog | abstract` (생략 시 `essay`). 장르 힌트 매핑: 칼럼→`column`, 리포트→`report`, 블로그→`blog`, 공적/기타→`essay`.
    - `--run-dir`는 프로젝트 루트 기준 상대 경로 허용 (스크립트가 절대화). 그 외 인자: `--text`(run-dir 없이 즉석 실행 시 새 run 디렉토리 자동 생성), `--baseline`(baseline JSON 경로 override, 평소 불필요), `--diagnosis`(진단 텍스트 파일을 점수 블록 앞에 prepend — standard·heavy의 진단 결합용).
@@ -57,7 +57,7 @@ humanize-korean v2.3 — 경로: {light|standard|heavy} ({route_hint|사용자 �
 어휘 티가 거의 없고 구조 티만 미미한 글. 목표는 **과윤문 방지**이지 많이 고치는 게 아니다.
 
 1. **진단 생략.** `humanize-monolith`를 `Agent` 도구로 1회 호출 — 청킹 없음.
-   - 입력: `input_path=01_input_with_metrics.txt`, `quick_rules_path={{ref:humanizeRuntime}}/references/quick-rules.md`, `genre_hint`, 그리고 강도 지시 `보수`(원문에 없던 표현 삽입 금지, 확신 없는 구간은 그대로 둔다).
+   - 입력: `input_path=01_input_with_metrics.txt`, `quick_rules_path=${CLAUDE_SKILL_DIR}/references/quick-rules.md`, `genre_hint`, 그리고 강도 지시 `보수`(원문에 없던 표현 삽입 금지, 확신 없는 구간은 그대로 둔다).
    - 출력: `final.md` (본문 + `<!-- HUMANIZE-SUMMARY -->` 블록).
 2. Phase 2.5 변경률 게이트(Bash — LLM 콜 아님).
 3. **조기 종료 보고**: monolith 탐지가 거의 없고 게이트 변경률이 5% 미만이면, 결과 전달을 "이미 좋은 글입니다 — 손댄 곳은 {N}곳({요지}) 정도"로 요약한다. 억지로 더 고치지 않는다.
@@ -68,12 +68,12 @@ humanize-korean v2.3 — 경로: {light|standard|heavy} ({route_hint|사용자 �
 ## Standard 경로 (2콜) — 보통의 AI 초안
 
 1. **진단 1콜**: `humanize-diagnostician`을 `Agent` 도구로 1회 호출.
-   - 입력: `input_path=01_input_with_metrics.txt`, `taxonomy_path={{ref:humanizeRuntime}}/references/diagnosis-rules.md` (진단 전용 슬림 인덱스 — 71패턴 전수, taxonomy에서 자동 생성)
+   - 입력: `input_path=01_input_with_metrics.txt`, `taxonomy_path=references/diagnosis-rules.md` (진단 전용 슬림 인덱스 — 71패턴 전수, taxonomy에서 자동 생성)
    - 출력: `02_diagnosis.md` — 글 전체의 **지배 패턴 3~6개**(본진 ID + 근거 + 처방) + 장르·격식 + 보존 지침.
    - 진단은 span을 세지 않는다. "무엇이 이 글을 지배하는가"를 판단한다(안정적).
 2. shim으로 진단을 monolith 입력 앞에 결합 (Bash — LLM 콜 아님):
    ```
-   python3 {{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre} --diagnosis _workspace/{run_id}/02_diagnosis.md
+   python3 {{ref:humanizeRuntime}}/forgecat/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre} --diagnosis _workspace/{run_id}/02_diagnosis.md
    ```
    → `01_input_with_metrics.txt`가 [진단 → 정량 블록 → 원문] 순으로 재생성된다.
 3. **윤문 1콜**: `humanize-monolith` 1회 호출 — **청킹 없음. 1만자급도 단일 콜이다.** → `final.md`.
@@ -92,7 +92,7 @@ Standard의 1과 동일 — `humanize-diagnostician` 1콜 → `02_diagnosis.md`.
 ### Phase P2: 겨냥 윤문
 1. shim으로 진단 결합 (Bash). **heavy에서만** `--chunk`를 함께 줄 수 있다:
    ```
-   python3 {{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre} --diagnosis _workspace/{run_id}/02_diagnosis.md --chunk
+   python3 {{ref:humanizeRuntime}}/forgecat/prepare_monolith_input.py --run-dir _workspace/{run_id} --genre {genre} --diagnosis _workspace/{run_id}/02_diagnosis.md --chunk
    ```
    - 분할 여부·경계는 100% shim(Python)이 정한다(문단·문장 경계, 헤딩 승격, 말미 각주 passthrough — 청킹 임계는 shim 관리).
    - 산출: `01_chunk_{NN}_input_with_metrics.txt` N개 + `chunk_manifest.json`.
@@ -186,7 +186,7 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 
 ```
 01_input.txt
-    ↓ [{{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py — 정량 점수 shim, Bash 1회]
+    ↓ [scripts/prepare_monolith_input.py — 정량 점수 shim, Bash 1회]
 00_metrics.json (route_hint 포함) + 01_input_with_metrics.txt
     ↓ route_hint (사용자 명시가 오버라이드)
     ├─ light ──→ [humanize-monolith ×1, 보수] ──→ final.md ──→ [verify_gates.py]
@@ -219,7 +219,11 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 
 **모델:** 런타임 3종 모두 `model: opus`. (모델 선택은 본 스킬의 관할이 아니다 — 오픈소스 사용자가 정한다. v2.2의 절감은 전적으로 콜 수·경로에서 온다.)
 
-**에이전트 정의 위치:** ForgeCat이 이 프로필에 선언된 9종을 대상 플랫폼의 표준 에이전트 위치에 설치한다. 런타임 3종과 유지보수·연구개발 6종을 배송한다.
+**에이전트 정의 위치:** 저장소 루트 `agents/`에 12종 정의(플러그인 컨벤션). Claude Code 탐색 경로:
+1. 플러그인 설치 시 — `humanize-korean` 플러그인이 `agents/`를 번들로 제공(전역).
+2. 스크립트 설치 시 — `install.sh`가 `agents/*.md`를 `~/.claude/agents/`에 심링크(전역).
+
+`.claude/agents/`에는 총 10개 정의가 있으나, **본 스킬 런타임이 호출하는 것은 3종뿐**이다.
 
 **런타임 3종 (스킬 실행 중 호출)**
 - `humanize-monolith` — 전 경로 공용 윤문 콜
@@ -229,7 +233,7 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 **유지보수 1종 (별도 명령으로만 트리거)**
 - `korean-ai-tell-taxonomist` — 분류 체계(SSOT) 유지·확장. 본 스킬 실행 중에는 호출되지 않음
 
-(개발용 1회성 5종은 소스 유지보수 표면으로 보존하지만 일반 윤문 런타임은 호출하지 않는다. v2.1 은퇴 5종의 계보와 테스트 시나리오는 [`design-notes.md`]({{ref:humanizeRuntime}}/references/design-notes.md) 참조.)
+(개발용 1회성 5종·v2.1 은퇴 5종의 계보와 테스트 시나리오는 `references/design-notes.md` 참조.)
 
 ## 주의 사항
 
@@ -244,10 +248,10 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 
 ## 참고 자료
 
-- 슬림 룰북 (monolith 전용): [`quick-rules.md`]({{ref:humanizeRuntime}}/references/quick-rules.md) — S1·S2 핵심 패턴 + 자체검증 체크리스트
-- 진단 인덱스 (diagnostician 전용): [`diagnosis-rules.md`]({{ref:humanizeRuntime}}/references/diagnosis-rules.md) — 71패턴 전수 ID·정의·시그니처. `build_diagnosis_rules.py`가 taxonomy에서 자동 생성(직접 편집 금지)
-- 정량 점수 shim: `{{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py` — `metrics_v2.py`(실패 시 `metrics.py` fallback) + `baseline.json` 기반 사전 점수 + `route_hint` 산출
-- 분류 체계 본진 (SSOT — 유지보수·taxonomist 전용): [`ai-tell-taxonomy.md`]({{ref:humanizeRuntime}}/references/ai-tell-taxonomy.md) — 10대분류 × 활성 70 패턴 (+A-17 hold 1건) 전수. 런타임 콜은 이 파일을 직접 읽지 않는다
-- 윤문 처방 (진단 전용): [`rewriting-playbook.md`]({{ref:humanizeRuntime}}/references/rewriting-playbook.md) — 카테고리별 치환 레시피·장르별 허용 표
-- 학술 인용 외부 SSOT: [`scholarship.md`]({{ref:humanizeRuntime}}/references/scholarship.md) — v2.0 학자 인용·caveat verbatim 보존
-- 웹 서비스 스펙 (옵션): [`web-service-spec.md`]({{ref:humanizeRuntime}}/references/web-service-spec.md) — 웹 확장 시 로드
+- 슬림 룰북 (monolith 전용): [`references/quick-rules.md`](references/quick-rules.md) — S1·S2 핵심 패턴 + 자체검증 체크리스트
+- 진단 인덱스 (diagnostician 전용): [`references/diagnosis-rules.md`](references/diagnosis-rules.md) — 71패턴 전수 ID·정의·시그니처. `build_diagnosis_rules.py`가 taxonomy에서 자동 생성(직접 편집 금지)
+- 정량 점수 shim: `scripts/prepare_monolith_input.py` — `references/metrics_v2.py`(실패 시 `metrics.py` fallback) + `references/baseline.json` 기반 사전 점수 + `route_hint` 산출
+- 분류 체계 본진 (SSOT — 유지보수·taxonomist 전용): [`references/ai-tell-taxonomy.md`](references/ai-tell-taxonomy.md) — 10대분류 × 활성 70 패턴 (+A-17 hold 1건) 전수. 런타임 콜은 이 파일을 직접 읽지 않는다
+- 윤문 처방 (진단 전용): [`references/rewriting-playbook.md`](references/rewriting-playbook.md) — 카테고리별 치환 레시피·장르별 허용 표
+- 학술 인용 외부 SSOT: [`references/scholarship.md`](references/scholarship.md) — v2.0 학자 인용·caveat verbatim 보존
+- 웹 서비스 스펙 (옵션): [`references/web-service-spec.md`](references/web-service-spec.md) — 웹 확장 시 로드

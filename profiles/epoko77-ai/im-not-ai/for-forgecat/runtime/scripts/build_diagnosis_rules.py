@@ -44,7 +44,9 @@ from build_quick_rules import (  # noqa: E402
     parse_taxonomy,
 )
 
-_REFS = os.path.abspath(os.path.join(_HERE, "..", "references"))
+_REFS = os.path.abspath(
+    os.path.join(_HERE, "..", ".claude", "skills", "humanize-korean", "references")
+)
 _TAXONOMY = os.path.join(_REFS, "ai-tell-taxonomy.md")
 _OUT = os.path.join(_REFS, "diagnosis-rules.md")
 
