@@ -189,7 +189,7 @@ model: haiku
 
 ```yaml
 ---
-argument-hint: [pr-number] [priority] [assignee]
+argument-hint: "[pr-number] [priority] [assignee]"
 ---
 ```
 
@@ -222,7 +222,7 @@ Capture all arguments as single string:
 ```markdown
 ---
 description: Fix issue by number
-argument-hint: [issue-number]
+argument-hint: "[issue-number]"
 ---
 
 Fix issue #$ARGUMENTS following our coding standards and best practices.
@@ -249,7 +249,7 @@ Capture individual arguments with `$1`, `$2`, `$3`, etc.:
 ```markdown
 ---
 description: Review PR with priority and assignee
-argument-hint: [pr-number] [priority] [assignee]
+argument-hint: "[pr-number] [priority] [assignee]"
 ---
 
 Review pull request #$1 with priority level $2.
@@ -298,7 +298,7 @@ Include file contents in command:
 ```markdown
 ---
 description: Review specific file
-argument-hint: [file-path]
+argument-hint: "[file-path]"
 ---
 
 Review @$1 for:
@@ -419,7 +419,7 @@ Organize commands in subdirectories:
 
 ```markdown
 ---
-argument-hint: [pr-number]
+argument-hint: "[pr-number]"
 ---
 
 $IF($1,
@@ -452,7 +452,7 @@ Please provide a PR number. Usage: /review-pr [number]
 ```markdown
 ---
 description: Deploy application to environment
-argument-hint: [environment] [version]
+argument-hint: "[environment] [version]"
 ---
 
 <!--
@@ -491,7 +491,7 @@ Provide specific feedback for each file.
 ```markdown
 ---
 description: Run tests for specific file
-argument-hint: [test-file]
+argument-hint: "[test-file]"
 allowed-tools: Bash(npm:*)
 ---
 
@@ -505,7 +505,7 @@ Analyze results and suggest fixes for failures.
 ```markdown
 ---
 description: Generate documentation for file
-argument-hint: [source-file]
+argument-hint: "[source-file]"
 ---
 
 Generate comprehensive documentation for @$1 including:
@@ -522,7 +522,7 @@ Generate comprehensive documentation for @$1 including:
 ```markdown
 ---
 description: Complete PR workflow
-argument-hint: [pr-number]
+argument-hint: "[pr-number]"
 allowed-tools: Bash(gh:*), Read
 ---
 
@@ -651,7 +651,7 @@ plugin-name/
 ```markdown
 ---
 description: Deploy using plugin configuration
-argument-hint: [environment]
+argument-hint: "[environment]"
 allowed-tools: Read, Bash(*)
 ---
 
@@ -666,7 +666,7 @@ Monitor deployment and report status.
 ```markdown
 ---
 description: Generate docs from template
-argument-hint: [component]
+argument-hint: "[component]"
 ---
 
 Template: @${CLAUDE_PLUGIN_ROOT}/templates/docs.md
@@ -702,7 +702,7 @@ Launch plugin agents for complex tasks:
 ```markdown
 ---
 description: Deep code review
-argument-hint: [file-path]
+argument-hint: "[file-path]"
 ---
 
 Initiate comprehensive review of @$1 using the code-reviewer agent.
@@ -734,7 +734,7 @@ Leverage plugin skills for specialized knowledge:
 ```markdown
 ---
 description: Document API with standards
-argument-hint: [api-file]
+argument-hint: "[api-file]"
 ---
 
 Document API in @$1 following plugin standards.
@@ -774,7 +774,7 @@ Combine agents, skills, and scripts:
 ```markdown
 ---
 description: Comprehensive review workflow
-argument-hint: [file]
+argument-hint: "[file]"
 allowed-tools: Bash(node:*), Read
 ---
 
@@ -811,7 +811,7 @@ Commands should validate inputs and resources before processing.
 ```markdown
 ---
 description: Deploy with validation
-argument-hint: [environment]
+argument-hint: "[environment]"
 ---
 
 Validate environment: !`echo "$1" | grep -E "^(dev|staging|prod)$" || echo "INVALID"`
@@ -828,7 +828,7 @@ Show usage: /deploy [environment]
 ```markdown
 ---
 description: Process configuration
-argument-hint: [config-file]
+argument-hint: "[config-file]"
 ---
 
 Check file exists: !`test -f $1 && echo "EXISTS" || echo "MISSING"`
