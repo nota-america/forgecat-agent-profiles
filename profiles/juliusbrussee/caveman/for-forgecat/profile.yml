@@ -7,10 +7,10 @@ visibility: public
 sourcePlatform: multi-platform
 compatibility:
   platforms:
-    tested:
+    tested: []
+    partial:
     - claude-code
     - cursor
-    partial:
     - codex
   models:
     recommended:
@@ -21,6 +21,11 @@ keywords:
 - communication
 - brevity
 - token-efficiency
+instructions:
+  operatingRef: agentsMd
+references:
+- id: agentsMd
+  path: AGENTS.md
 skills:
 - name: caveman
   path: skills/caveman/SKILL.md

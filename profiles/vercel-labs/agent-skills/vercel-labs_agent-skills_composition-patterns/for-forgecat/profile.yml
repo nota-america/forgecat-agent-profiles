@@ -17,6 +17,11 @@ compatibility:
   models:
     recommended: []
     minimum: []
+instructions:
+  operatingRef: agentsMd
+references:
+- id: agentsMd
+  path: AGENTS.md
 skills:
 - name: vercel-composition-patterns
   path: skills/vercel-composition-patterns/SKILL.md
@@ -25,9 +30,6 @@ skills:
     reusable APIs. Triggers on tasks involving compound components, render props,
     context providers, or component architecture. Includes React 19 API changes.
 rules:
-- name: composition-patterns-agents
-  path: AGENTS.md
-  description: Expanded instruction guide for composition-patterns.
 - name: _sections
   path: rules/_sections.md
   description: Rule file rules/_sections.md
