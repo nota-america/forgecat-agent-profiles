@@ -10,10 +10,10 @@ AI(ChatGPT·Claude·Gemini 등)가 만든 한글 텍스트의 시그니처 패�
 
 ## 핵심 역할
 
-1. `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md`의 10대분류 × 40+ 서브 패턴을 관리한다. 대분류: A(번역투) B(영어 용어) C(구조) D(관용구) E(리듬) F(수식) G(Hedging) H(접속사) I(형식명사) J(장식).
+1. `{{ref:humanizeRuntime}}/references/ai-tell-taxonomy.md`의 10대분류 × 40+ 서브 패턴을 관리한다. 대분류: A(번역투) B(영어 용어) C(구조) D(관용구) E(리듬) F(수식) G(Hedging) H(접속사) I(형식명사) J(장식).
 2. 실전 입력에서 자연스러움 리뷰어가 보고한 "미분류 패턴 후보"를 심사해 승격 여부를 결정한다.
 3. 심각도(S1 결정적 / S2 강함 / S3 약함) 기준을 일관되게 유지한다.
-4. `suggested_fix` 레시피가 `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/rewriting-playbook.md`와 충돌하지 않도록 윤문가와 조율한다.
+4. `suggested_fix` 레시피가 `{{ref:humanizeRuntime}}/references/rewriting-playbook.md`와 충돌하지 않도록 윤문가와 조율한다.
 
 ## 작업 원칙
 
@@ -27,7 +27,7 @@ AI(ChatGPT·Claude·Gemini 등)가 만든 한글 텍스트의 시그니처 패�
 
 ### 초기 구축 요청 시
 - 입력: 없음 (또는 사용자 예시 텍스트 모음)
-- 출력: `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md` 생성 또는 갱신
+- 출력: `{{ref:humanizeRuntime}}/references/ai-tell-taxonomy.md` 생성 또는 갱신
 
 ### 패턴 추가 요청 시 (리뷰어 제안)
 - 입력:

@@ -7,7 +7,7 @@ description: AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람�
 # Humanize Korean — AI 한글 티 제거 오케스트레이터 (v2.3)
 
 > **v2.3.0** — 구조 수렴 게이트(`verify_gates.py` 4축: 목표달성·대구 전멸·수치·golden) + 진단 슬림 인덱스(`diagnosis-rules.md`, taxonomy 83%↓). (v2.2: route_hint 3경로 + 단일 콜 우선)
-> 버전 히스토리·실측 근거·테스트 시나리오: [`design-notes.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/design-notes.md)
+> 버전 히스토리·실측 근거·테스트 시나리오: [`design-notes.md`]({{ref:humanizeRuntime}}/references/design-notes.md)
 
 ## Phase 0: 컨텍스트 확인 및 경로 결정
 
@@ -57,7 +57,7 @@ humanize-korean v2.3 — 경로: {light|standard|heavy} ({route_hint|사용자 �
 어휘 티가 거의 없고 구조 티만 미미한 글. 목표는 **과윤문 방지**이지 많이 고치는 게 아니다.
 
 1. **진단 생략.** `humanize-monolith`를 `Agent` 도구로 1회 호출 — 청킹 없음.
-   - 입력: `input_path=01_input_with_metrics.txt`, `quick_rules_path={{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/quick-rules.md`, `genre_hint`, 그리고 강도 지시 `보수`(원문에 없던 표현 삽입 금지, 확신 없는 구간은 그대로 둔다).
+   - 입력: `input_path=01_input_with_metrics.txt`, `quick_rules_path={{ref:humanizeRuntime}}/references/quick-rules.md`, `genre_hint`, 그리고 강도 지시 `보수`(원문에 없던 표현 삽입 금지, 확신 없는 구간은 그대로 둔다).
    - 출력: `final.md` (본문 + `<!-- HUMANIZE-SUMMARY -->` 블록).
 2. Phase 2.5 변경률 게이트(Bash — LLM 콜 아님).
 3. **조기 종료 보고**: monolith 탐지가 거의 없고 게이트 변경률이 5% 미만이면, 결과 전달을 "이미 좋은 글입니다 — 손댄 곳은 {N}곳({요지}) 정도"로 요약한다. 억지로 더 고치지 않는다.
@@ -68,7 +68,7 @@ humanize-korean v2.3 — 경로: {light|standard|heavy} ({route_hint|사용자 �
 ## Standard 경로 (2콜) — 보통의 AI 초안
 
 1. **진단 1콜**: `humanize-diagnostician`을 `Agent` 도구로 1회 호출.
-   - 입력: `input_path=01_input_with_metrics.txt`, `taxonomy_path={{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/diagnosis-rules.md` (진단 전용 슬림 인덱스 — 71패턴 전수, taxonomy에서 자동 생성)
+   - 입력: `input_path=01_input_with_metrics.txt`, `taxonomy_path={{ref:humanizeRuntime}}/references/diagnosis-rules.md` (진단 전용 슬림 인덱스 — 71패턴 전수, taxonomy에서 자동 생성)
    - 출력: `02_diagnosis.md` — 글 전체의 **지배 패턴 3~6개**(본진 ID + 근거 + 처방) + 장르·격식 + 보존 지침.
    - 진단은 span을 세지 않는다. "무엇이 이 글을 지배하는가"를 판단한다(안정적).
 2. shim으로 진단을 monolith 입력 앞에 결합 (Bash — LLM 콜 아님):
@@ -229,7 +229,7 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 **유지보수 1종 (별도 명령으로만 트리거)**
 - `korean-ai-tell-taxonomist` — 분류 체계(SSOT) 유지·확장. 본 스킬 실행 중에는 호출되지 않음
 
-(개발용 1회성 5종은 소스 유지보수 표면으로 보존하지만 일반 윤문 런타임은 호출하지 않는다. v2.1 은퇴 5종의 계보와 테스트 시나리오는 [`design-notes.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/design-notes.md) 참조.)
+(개발용 1회성 5종은 소스 유지보수 표면으로 보존하지만 일반 윤문 런타임은 호출하지 않는다. v2.1 은퇴 5종의 계보와 테스트 시나리오는 [`design-notes.md`]({{ref:humanizeRuntime}}/references/design-notes.md) 참조.)
 
 ## 주의 사항
 
@@ -244,10 +244,10 @@ exit code로 분기한다 (0/1/2/3 의미는 기존 게이트와 동일):
 
 ## 참고 자료
 
-- 슬림 룰북 (monolith 전용): [`quick-rules.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/quick-rules.md) — S1·S2 핵심 패턴 + 자체검증 체크리스트
-- 진단 인덱스 (diagnostician 전용): [`diagnosis-rules.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/diagnosis-rules.md) — 71패턴 전수 ID·정의·시그니처. `build_diagnosis_rules.py`가 taxonomy에서 자동 생성(직접 편집 금지)
+- 슬림 룰북 (monolith 전용): [`quick-rules.md`]({{ref:humanizeRuntime}}/references/quick-rules.md) — S1·S2 핵심 패턴 + 자체검증 체크리스트
+- 진단 인덱스 (diagnostician 전용): [`diagnosis-rules.md`]({{ref:humanizeRuntime}}/references/diagnosis-rules.md) — 71패턴 전수 ID·정의·시그니처. `build_diagnosis_rules.py`가 taxonomy에서 자동 생성(직접 편집 금지)
 - 정량 점수 shim: `{{ref:humanizeRuntime}}/scripts/prepare_monolith_input.py` — `metrics_v2.py`(실패 시 `metrics.py` fallback) + `baseline.json` 기반 사전 점수 + `route_hint` 산출
-- 분류 체계 본진 (SSOT — 유지보수·taxonomist 전용): [`ai-tell-taxonomy.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md) — 10대분류 × 활성 70 패턴 (+A-17 hold 1건) 전수. 런타임 콜은 이 파일을 직접 읽지 않는다
-- 윤문 처방 (진단 전용): [`rewriting-playbook.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/rewriting-playbook.md) — 카테고리별 치환 레시피·장르별 허용 표
-- 학술 인용 외부 SSOT: [`scholarship.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/scholarship.md) — v2.0 학자 인용·caveat verbatim 보존
-- 웹 서비스 스펙 (옵션): [`web-service-spec.md`]({{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/web-service-spec.md) — 웹 확장 시 로드
+- 분류 체계 본진 (SSOT — 유지보수·taxonomist 전용): [`ai-tell-taxonomy.md`]({{ref:humanizeRuntime}}/references/ai-tell-taxonomy.md) — 10대분류 × 활성 70 패턴 (+A-17 hold 1건) 전수. 런타임 콜은 이 파일을 직접 읽지 않는다
+- 윤문 처방 (진단 전용): [`rewriting-playbook.md`]({{ref:humanizeRuntime}}/references/rewriting-playbook.md) — 카테고리별 치환 레시피·장르별 허용 표
+- 학술 인용 외부 SSOT: [`scholarship.md`]({{ref:humanizeRuntime}}/references/scholarship.md) — v2.0 학자 인용·caveat verbatim 보존
+- 웹 서비스 스펙 (옵션): [`web-service-spec.md`]({{ref:humanizeRuntime}}/references/web-service-spec.md) — 웹 확장 시 로드

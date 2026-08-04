@@ -32,9 +32,7 @@ import re
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_REFS = os.path.join(
-    _HERE, "..", ".claude", "skills", "humanize-korean", "references"
-)
+_REFS = os.path.join(_HERE, "..", "references")
 _REFS = os.path.abspath(_REFS)
 if _REFS not in sys.path:
     sys.path.insert(0, _REFS)

@@ -29,4 +29,4 @@ $ARGUMENTS
 
 ## 참고
 - 풀 파이프라인 신규 실행은 `/humanize`.
-- 분류 체계: `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md`
+- 분류 체계: `{{ref:humanizeRuntime}}/references/ai-tell-taxonomy.md`

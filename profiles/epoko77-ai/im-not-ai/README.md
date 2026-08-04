@@ -64,6 +64,5 @@ npx forgecat install @forgecat/im-not-ai
 
 ## Conversion notes
 
-- Standard Claude Code and Cursor conversions use ForgeCat references for the full v2.3 runtime tree.
-- Codex uses the upstream native standalone skill as an override.
+- Claude Code, Cursor, and Codex use ForgeCat's standard conversion with the same full v2.3 runtime reference.
 - Compatibility remains Partial until a published-registry fresh-install runtime scenario is recorded.

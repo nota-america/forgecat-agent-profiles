@@ -1,5 +1,5 @@
 name: "@forgecat/im-not-ai"
-description: "Humanize Korean AI-generated text with source-faithful skills, deterministic preprocessing and structural gates, specialist runtime agents, and an upstream-native Codex Fast Path."
+description: "Humanize Korean AI-generated text with source-faithful skills, deterministic preprocessing and structural gates, and specialist runtime agents."
 visibility: public
 repository: https://github.com/epoko77-ai/im-not-ai
 license: MIT
@@ -15,9 +15,6 @@ compatibility:
     recommended:
       - opus
     minimum: []
-platforms:
-  codex:
-    mode: override
 instructions:
   operatingRef: operatingInstructions
 references:
@@ -26,8 +23,6 @@ references:
     type: operating-instructions
   - id: humanizeRuntime
     path: runtime
-  - id: sourceDocs
-    path: docs/source
 agents:
   - name: humanize-diagnostician
     path: agents/humanize-diagnostician.md
@@ -91,13 +86,13 @@ skills:
       - path: runtime/scripts/build_diagnosis_rules.py
         runtime: python
         description: Regenerates the slim diagnosis index from the taxonomy.
-      - path: runtime/.claude/skills/humanize-korean/references/metrics.py
+      - path: runtime/references/metrics.py
         runtime: python
         description: Computes baseline Korean AI-tell metrics.
-      - path: runtime/.claude/skills/humanize-korean/references/metrics_v2.py
+      - path: runtime/references/metrics_v2.py
         runtime: python
         description: Computes v2 post-editese and structural metrics.
-      - path: runtime/tests/golden/checks.py
+      - path: runtime/lib/checks.py
         runtime: python
         description: Provides deterministic fidelity checks consumed by verify_gates.py.
   - name: humanize-redo

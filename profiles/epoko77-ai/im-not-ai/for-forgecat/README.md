@@ -11,7 +11,6 @@ ForgeCat conversion of [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-n
 - `humanize-monolith`, `humanize-diagnostician`, and `humanize-finalizer`: the active runtime agents.
 - Six upstream taxonomy, scholarship, research, metric, gap-analysis, and integration agents for source-maintenance workflows.
 - `runtime/`: deterministic preprocessing, chunk reassembly, metric, taxonomy, and structural-gate assets co-installed as a ForgeCat reference.
-- `platforms/codex/`: upstream's native standalone Codex skill as an override.
 
 The five research/development agents beyond the taxonomist are shipped source-faithfully for completeness. They depend on an upstream source checkout's development workspace and tests, and the current v2.3 text-humanization runtime does not call them.
 
@@ -28,7 +27,7 @@ Choose `cursor` or `codex` with `-p` for those targets. All three are marked par
 - Python 3 is required; the helper scripts use the standard library.
 - Run outputs are created under `_workspace/` in the user's current working directory.
 - The standard conversion uses ForgeCat reference tokens for every bundled runtime path.
-- The Codex override retains the upstream native fast-path skill and colocated references.
+- Claude Code, Cursor, and Codex all use ForgeCat's standard conversion so the complete skill, agent, instruction, and runtime surface is installed consistently.
 
 ## Provenance
 
@@ -38,4 +37,4 @@ Choose `cursor` or `codex` with `-p` for those targets. All three are marked par
 - License: MIT
 - Source platforms: Claude Code plugin/commands, Codex skill, Gemini commands
 
-The upstream license is preserved in `LICENSE`; source installation and release documents are preserved under the `sourceDocs` reference.
+The upstream license is preserved in `LICENSE`. Repository-only installation, release, and Gemini packaging documents remain available in the upstream repository and are not installed with this runtime profile.

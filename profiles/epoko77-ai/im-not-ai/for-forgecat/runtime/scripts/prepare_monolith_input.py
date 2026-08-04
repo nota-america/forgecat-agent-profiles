@@ -50,7 +50,7 @@ from pathlib import Path
 # resolved relative to this script.
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parent
-METRICS_DIR = PROJECT_ROOT / ".claude" / "skills" / "humanize-korean" / "references"
+METRICS_DIR = PROJECT_ROOT / "references"
 
 # Make metrics.py importable without polluting global state.
 sys.path.insert(0, str(METRICS_DIR))
@@ -775,7 +775,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.diagnosis:
         diag_path = Path(args.diagnosis)
         if not diag_path.is_absolute():
-            diag_path = PROJECT_ROOT / diag_path
+            diag_path = Path.cwd() / diag_path
         if not diag_path.exists():
             raise SystemExit(f"--diagnosis file not found: {diag_path}")
         diagnosis = diag_path.read_text(encoding="utf-8")
