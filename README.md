@@ -20,7 +20,7 @@
 
 [![Profiles](https://img.shields.io/badge/profiles-186-blue)](#browse-profiles)
 [![Collections](https://img.shields.io/badge/collections-37-blue)](#browse-profiles)
-[![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-green)](#supported-platforms)
+[![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](./LICENSE)
@@ -35,9 +35,9 @@
 ForgeCat Agent Profiles is the public catalog for installable agent profiles: skills, agents, rules, commands, hooks, and MCP settings packaged from useful open-source projects and made available across supported coding tools.
 
 - **One catalog for agent setup**: Browse converted profiles from public Claude Code, Cursor, Codex, MCP, and agent-skill repositories.
-- **Cross-platform installs**: Use the same profile source across Claude Code, Cursor, and Codex where compatibility is available.
+- **Cross-platform installs**: Use the same profile source across Claude Code, Cursor, Codex, OpenClaw, and Hermes where compatibility is available.
 - **Source-faithful packaging**: Keep attribution, license metadata, upstream behavior, and profile-specific caveats visible.
-- **Reviewable platform evidence**: Mark platforms as tested only after install/runtime checks and matching native artifacts.
+- **Reviewable platform evidence**: Mark platforms as tested only after install/runtime checks and, for project-target platforms, matching native artifacts.
 
 <h2 id="quick-start">Quick Start</h2>
 
@@ -72,7 +72,7 @@ Agent workflows are increasingly stored as project files: `AGENTS.md`, `CLAUDE.m
 | Need | ForgeCat profile repo provides |
 |---|---|
 | Find useful agent workflows | A curated catalog grouped by original source owner and repository |
-| Reuse across coding tools | Platform-aware profile packages for Claude Code, Cursor, and Codex |
+| Reuse across coding tools | Platform-aware profile packages for Claude Code, Cursor, Codex, OpenClaw, and Hermes |
 | Trust what is being installed | Source links, license metadata, profile READMEs, and conversion notes |
 | Improve the catalog | Issue templates for profile requests, metadata fixes, platform support, and maintainer requests |
 
@@ -83,8 +83,10 @@ Agent workflows are increasingly stored as project files: `AGENTS.md`, `CLAUDE.m
 | Claude Code | `claude-code` | Claude-native skills, agents, commands, MCP, hooks, and project settings where supported |
 | Cursor | `cursor` | Cursor rules, agents, MCP configuration, and compatible profile resources |
 | Codex | `codex` | Codex skills, instructions, MCP configuration, hooks, and compatible profile resources |
+| OpenClaw | `openclaw` | Skills and profile instructions installed into an OpenClaw agent workspace |
+| Hermes | `hermes` | Skills and profile instructions installed into a Hermes profile home |
 
-Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. When a profile is marked tested, the matching native `for-<platform>` artifact should also exist in the profile directory.
+Each profile declares its tested and partial platforms in `for-forgecat/profile.yml`. Tested project-target platforms should include the matching native `for-<platform>` artifact. OpenClaw and Hermes are home-target platforms: ForgeCat installs skills and profile-scoped instruction sections into the selected agent workspace or profile home.
 
 ## Profile Quality
 
@@ -96,16 +98,7 @@ ForgeCat profiles are curated to be source-faithful and reviewable, not just cop
 | Attribution kept | Profile metadata and docs link back to the original source repository. |
 | License checked | The upstream license is reflected in `for-forgecat/profile.yml` when it is clear. |
 | Install evidence | A platform is marked tested only after a real install/runtime check. |
-| Native artifact included | Tested platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
-
-## Featured Profiles
-
-| Profile | Install | Good for |
-|---|---|---|
-| [OpenAI frontend skill](./profiles/openai/skills/openai_skills_frontend-skill) | `forgecat install @forgecat/openai_skills_frontend-skill -p codex` | Visually strong web apps, landing pages, prototypes, and UI polish |
-| [Compound Engineering](./profiles/everyinc/compound-engineering-plugin) | `forgecat install @forgecat/everyinc_compound-engineering-plugin -p claude-code` | Code review, research, planning, design review, and engineering workflows |
-| [Superpowers](./profiles/obra/superpowers) | `forgecat install @forgecat/obra_superpowers -p cursor` | Planning, TDD, debugging, review, subagents, and session-start workflow guidance |
-| [Azure skills](./profiles/microsoft/azure-skills) | `forgecat search azure` | Azure deployment, observability, compliance, RBAC, storage, and AI workflows |
+| Native artifact included | Tested project-target platforms should have matching `for-claude/`, `for-cursor/`, or `for-codex/` directories. |
 
 ## Browse Profiles
 
@@ -114,9 +107,6 @@ Profiles are grouped by their original source owner and repository:
 ```text
 profiles/<source-owner>/<source-repository-or-collection>/
 ```
-
-<details>
-<summary>Show all collections</summary>
 
 | Collection | Profiles | Description |
 |---|---:|---|
@@ -158,8 +148,6 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 | [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 
-</details>
-
 Total: 186 profiles across 37 collections.
 
 ## Profile Layout
@@ -177,7 +165,7 @@ profiles/<source-owner>/<source-repository>/
 └── for-codex/
 ```
 
-`for-forgecat/` is the canonical ForgeCat package source. Native `for-claude`, `for-cursor`, and `for-codex` directories are added when the profile has been tested and materialized for those platforms.
+`for-forgecat/` is the canonical ForgeCat package source. Native `for-claude`, `for-cursor`, and `for-codex` directories are added when the profile has been tested and materialized for those project-target platforms. OpenClaw and Hermes are materialized into their home targets at install time.
 
 ## Contributing
 
@@ -189,7 +177,7 @@ Good contributions include:
 
 - Adding a new profile from a public source repository
 - Fixing profile packaging when installed files do not match the original source behavior
-- Adding missing native platform artifacts after a real platform test
+- Adding missing native artifacts for project-target platforms after a real platform test
 - Improving README clarity, installation examples, attribution, or license metadata
 - Reporting a profile that installs incorrectly or no longer matches its upstream source
 
@@ -199,7 +187,7 @@ Before opening a PR:
 2. Verify the upstream source repository directly. Do not rely only on copied metadata.
 3. Confirm the original license and preserve source attribution.
 4. Run `forgecat validate` from the profile's `for-forgecat/` directory.
-5. If you mark a platform as tested, include the matching native `for-<platform>` artifact and note the install/runtime evidence in the PR.
+5. If you mark a project-target platform as tested, include the matching native `for-<platform>` artifact. For every tested platform, note the install/runtime evidence in the PR.
 
 ## Maintainers
 
@@ -212,7 +200,7 @@ Open an issue with:
 
 - Source repository URL
 - Why the profile would be useful
-- Target platform: `claude-code`, `cursor`, `codex`, or all supported platforms
+- Target platform: `claude-code`, `cursor`, `codex`, `openclaw`, `hermes`, or all supported platforms
 - Any license or setup requirements you already know about
 
 Profiles with clear agent surfaces, permissive licensing, active usage, and strong developer value are the best candidates.
