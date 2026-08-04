@@ -11,7 +11,8 @@ PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
 PLATFORM_ARTIFACTS = {
   "claude-code" => "for-claude",
   "cursor" => "for-cursor",
-  "codex" => "for-codex"
+  "codex" => "for-codex",
+  "openclaw" => "for-openclaw"
 }.freeze
 
 def fail_with(errors)
