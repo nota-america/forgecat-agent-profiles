@@ -30,7 +30,7 @@ AI(ChatGPT·Claude·Gemini 등)가 만든 한글 텍스트의 시그니처 패�
 - 출력: `{{ref:humanizeRuntime}}/.claude/skills/humanize-korean/references/ai-tell-taxonomy.md` 생성 또는 갱신
 
 ### 패턴 추가 요청 시 (리뷰어 제안)
-- 입력: 
+- 입력:
   - 제안 패턴 설명
   - 실증 사례(원문 span) 2건 이상
   - 제안 심각도
