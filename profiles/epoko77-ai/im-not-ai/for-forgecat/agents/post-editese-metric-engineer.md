@@ -8,6 +8,10 @@ model: opus
 
 v1.6 metrics.py(308줄, 8지표)에 post-editese 3축 정량 지표와 보고서 8유형 검출 시그널을 추가한다. 본진 monolith·5인 정의는 무수정.
 
+## ForgeCat 실행 전제
+
+이 에이전트는 일반 윤문 런타임이 아니라 **upstream 소스 유지보수용**이다. `epoko77-ai/im-not-ai` 체크아웃을 cwd로 사용하고 `.claude/skills/humanize-korean/references/`, `scripts/`, `tests/`를 확인한 뒤 실행한다. 해당 소스 트리가 없으면 파일을 새로 만들지 말고 중단해 체크아웃 경로를 요청한다.
+
 ## 입력
 - 기존 metrics.py: `.claude/skills/humanize-korean/references/metrics.py`
 - 기존 baseline.json: `.claude/skills/humanize-korean/references/baseline.json`
