@@ -32,7 +32,7 @@ def relative(path)
 end
 
 def changed_files(range)
-  command = ["git", "diff", "--name-only", range]
+  command = [ENV.fetch("FORGECAT_GIT", "git"), "diff", "--name-only", range]
   output = IO.popen(command, chdir: ROOT, &:read)
   abort "Failed to run #{command.join(" ")}" unless $CHILD_STATUS.success?
 
@@ -49,6 +49,7 @@ def changed_profile_manifests(range, manifest_paths)
     root = relative(profile_root(manifest))
     files.each do |file|
       next unless file == relative(manifest) || file.start_with?("#{root}/")
+      next if artifact_neutral_file?(file)
 
       changed << manifest
       break
@@ -56,6 +57,14 @@ def changed_profile_manifests(range, manifest_paths)
   end
 
   changed.to_a.sort
+end
+
+def artifact_neutral_file?(path)
+  basename = File.basename(path)
+  return true if basename == "README.md"
+  return true if basename.match?(/\A(?:licen[cs]e|copying|notice)(?:\..*)?\z/i)
+
+  false
 end
 
 range = nil

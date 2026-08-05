@@ -15,12 +15,17 @@
 - Source repository:
 - Source path or subdirectory:
 - License evidence:
+- Included license path:
+- Conversion/modification summary:
 
 Checklist:
 
 - [ ] I inspected the upstream source repository directly.
 - [ ] I preserved source attribution in the profile README or metadata.
 - [ ] I confirmed the license and reflected it in `for-forgecat/profile.yml`.
+- [ ] I included the exact upstream license and applicable NOTICE files in the shipping package.
+- [ ] I linked the profile README to the included license file.
+- [ ] I documented conversion and content changes under `## Conversion and modifications`.
 - [ ] I did not add files that are unrelated to the profile runtime.
 
 ## Validation
@@ -40,6 +45,8 @@ Results:
 Checklist:
 
 - [ ] `forgecat validate` passes from the profile's `for-forgecat/` directory.
+- [ ] `ruby scripts/check-profile-licenses.rb` passes without new policy exceptions.
+- [ ] `ruby scripts/generate-third-party-notices.rb --check` passes.
 - [ ] README install commands and profile metadata agree.
 - [ ] No secrets, local state, logs, or generated tool cache files are included.
 

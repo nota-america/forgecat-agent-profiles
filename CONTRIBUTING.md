@@ -60,10 +60,15 @@ Before opening a PR:
 1. Check the upstream repository for `LICENSE`, `LICENSE.md`, `LICENSE.txt`, package metadata, and README license notes.
 2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear.
 3. Include the upstream repository URL in `repository`.
-4. Keep license files from the upstream source when they are part of the package.
-5. Do not mark an unknown license as permissive.
+4. Include the exact upstream license file in every independently shipped `for-forgecat` package. Do not create a generic license or copyright notice when upstream does not provide one.
+5. Preserve the upstream copyright notice and any applicable `NOTICE` file.
+6. Add a `## Conversion and modifications` section to the profile README that explains what the forgecat conversion changed.
+7. Link the README's license value to the included license file.
+8. Do not mark an unknown license as permissive.
 
 If the license is missing or ambiguous, open an issue before publishing the profile publicly.
+
+Existing unresolved cases are recorded in `config/license-policy-exceptions.yml`. Do not add an exception merely to make CI pass: every exception needs a concrete upstream reason and separate resolution.
 
 ## Platform Compatibility
 
@@ -107,6 +112,13 @@ Before submitting a repo-level documentation change, run:
 
 ```bash
 ruby scripts/check-readme-catalog.rb
+```
+
+For license or profile changes, also run:
+
+```bash
+ruby scripts/check-profile-licenses.rb
+ruby scripts/generate-third-party-notices.rb --check
 ```
 
 When changing profile platform metadata or native artifacts, run:

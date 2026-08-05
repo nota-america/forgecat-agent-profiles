@@ -217,3 +217,5 @@ Profiles with clear agent surfaces, permissive licensing, active usage, and stro
 This repository is distributed under the Apache License 2.0. See [LICENSE](./LICENSE).
 
 Individual profiles may include content from their original source repositories and can carry their own license terms. Check each profile's `for-forgecat/profile.yml`, README, and included license files before redistributing or modifying profile content.
+
+The generated [Third-Party License Notices](./THIRD_PARTY_NOTICES.md) index links each profile to its upstream source, recorded license, included license copy, NOTICE file, and any policy exception that still requires review.

@@ -7,6 +7,10 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-profile-licenses.rb
+      - scripts/generate-third-party-notices.rb
+      - config/license-policy-exceptions.yml
+      - THIRD_PARTY_NOTICES.md
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -16,6 +20,10 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-profile-licenses.rb
+      - scripts/generate-third-party-notices.rb
+      - config/license-policy-exceptions.yml
+      - THIRD_PARTY_NOTICES.md
       - .github/workflows/catalog-check.yml
 
 jobs:
@@ -33,6 +41,12 @@ jobs:
 
       - name: Check README catalog
         run: ruby scripts/check-readme-catalog.rb
+
+      - name: Check profile licenses
+        run: ruby scripts/check-profile-licenses.rb
+
+      - name: Check third-party notice index
+        run: ruby scripts/generate-third-party-notices.rb --check
 
       - name: Fetch base branch
         if: github.event_name == 'pull_request'
