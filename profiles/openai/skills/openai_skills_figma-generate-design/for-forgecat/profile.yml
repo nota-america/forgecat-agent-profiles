@@ -10,7 +10,7 @@ description: 'Use this skill alongside figma-use when the task involves translat
   via search_design_system, imports them, and assembles screens incrementally section-by-section
   using design system tokens instead of hardcoded values.'
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:

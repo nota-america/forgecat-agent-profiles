@@ -6,6 +6,13 @@
 
 Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-code-se
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup |
 | Version | `0.0.4` |
 | Original commit | `cf62a6c` |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

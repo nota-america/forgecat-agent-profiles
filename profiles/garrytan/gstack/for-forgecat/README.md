@@ -6,6 +6,13 @@
 
 AI engineering workflow stack for planning, review, QA, security, browser automation, design, deployment, iOS workflows, documentation, and OpenClaw companion skills.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - engineering-workflow
@@ -93,7 +100,7 @@ npx forgecat install @forgecat/garrytan_gstack
 | Original repository | `https://github.com/garrytan/gstack` |
 | Version | `0.0.10` |
 | Original commit | `22f8c7f` (2026-05-26) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

@@ -4,13 +4,20 @@
 
 Ralph Loop runs Cursor in a self-referential loop, feeding the same prompt back after every turn until the task is complete. It implements the [Ralph Wiggum technique](https://ghuntley.com/ralph/) pioneered by Geoffrey Huntley.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Details
 
 | Field | Value |
 |---|---|
 | Original repository | https://github.com/cursor/plugins |
 | Version | `0.0.7` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Cursor |
 
 ## Compatibility

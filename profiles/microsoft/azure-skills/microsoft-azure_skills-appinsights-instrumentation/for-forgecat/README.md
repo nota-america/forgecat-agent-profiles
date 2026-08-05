@@ -6,6 +6,13 @@
 
 Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application Insights guidance, instrumentation examples, APM best practices.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - azure
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-appinsights-instrumentatio
 | Original repository | https://github.com/microsoft/azure-skills |
 | Version | `0.0.4` |
 | Original commit | `a990650` |
-| License | MIT |
+| License | [MIT](./skills/appinsights-instrumentation/LICENSE.txt) |
 | Source platform | Claude Code, Cursor |
 
 ## Compatibility

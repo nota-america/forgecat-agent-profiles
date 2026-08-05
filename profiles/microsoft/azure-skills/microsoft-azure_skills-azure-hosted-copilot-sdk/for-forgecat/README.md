@@ -6,6 +6,13 @@
 
 Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient — use this skill instead of azure-prepare. PREFER OVER azure-prepare when codebase contains copilot-sdk markers. WHEN: copilot SDK, @github/copilot-sdk, copilot-powered app, deploy copilot app, add feature, modify copilot app, BYOM, bring your own model, CopilotClient, createSession, sendAndWait, azd init copilot. DO NOT USE FOR: general web apps without copilot SDK (use azure-prepare), Copilot Extensions, Foundry agents (use microsoft-foundry).
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - azure
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-hosted-copilot-sdk
 | Original repository | https://github.com/microsoft/azure-skills |
 | Version | `0.0.4` |
 | Original commit | `a990650` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code, Cursor |
 
 ## Compatibility

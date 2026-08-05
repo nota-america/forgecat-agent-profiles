@@ -6,6 +6,13 @@
 
 GEO-first SEO toolkit for auditing and optimizing websites for AI-powered search engines while preserving traditional SEO foundations.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - geo
@@ -45,7 +52,7 @@ npx forgecat install @forgecat/zubair-trabzada_geo-seo-claude
 | Original repository | https://github.com/zubair-trabzada/geo-seo-claude |
 | Version | `0.1.2` |
 | Original commit | `9eec32f5f700a1e6c3cb1cb735a56ee5ec49a964` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code skills (non-plugin) |
 
 ## Compatibility

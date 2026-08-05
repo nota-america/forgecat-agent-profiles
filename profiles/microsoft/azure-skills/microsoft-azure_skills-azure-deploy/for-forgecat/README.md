@@ -6,6 +6,13 @@
 
 Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when the user asks to CREATE a new application — use azure-prepare instead. This skill runs azd up, azd deploy, terraform apply, and az deployment commands with built-in error recovery. Requires .azure/deployment-plan.md from azure-prepare and validated status from azure-validate. WHEN: "run azd up", "run azd deploy", "execute deployment", "push to production", "push to cloud", "go live", "ship it", "bicep deploy", "terraform apply", "publish to Azure", "launch on Azure". DO NOT USE WHEN: "create and deploy", "build and deploy", "create a new app", "set up infrastructure", "create and deploy to Azure using Terraform" — use azure-prepare for these.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - azure
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-deploy
 | Original repository | https://github.com/microsoft/azure-skills |
 | Version | `0.0.4` |
 | Original commit | `a990650` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code, Cursor |
 
 ## Compatibility

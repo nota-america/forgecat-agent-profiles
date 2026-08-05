@@ -6,6 +6,13 @@
 
 Converted rule bundle for teams using AI-DLC core workflow with detailed stage rules.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - ai-dlc
@@ -40,7 +47,7 @@ npx forgecat install @forgecat/awslabs_aidlc-workflows
 | Original repository | https://github.com/awslabs/aidlc-workflows |
 | Version | `0.0.7` |
 | Original commit | 182b6e9edcbfca5357987ed22dccc8582ee52288 |
-| License | MIT-0 |
+| License | [MIT-0](./LICENSE) |
 | Source platform | Multi-agent rules (Claude Code, Cursor) |
 
 ## Compatibility

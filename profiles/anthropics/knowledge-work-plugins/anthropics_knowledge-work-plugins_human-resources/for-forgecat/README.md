@@ -7,6 +7,13 @@
 
 Streamline people operations with Claude. Covers the full employee lifecycle — recruiting pipeline, interview prep, offer drafting, onboarding, performance reviews, compensation analysis, org planning, people reporting, and policy lookup. Connects to Slack, Notion, Atlassian, Microsoft 365, Google Calendar, and Gmail.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - human-resources
@@ -54,7 +61,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_human-resources
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/human-resources |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

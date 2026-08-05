@@ -6,6 +6,13 @@
 
 Production-grade engineering skills pack for AI coding agents.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - engineering
@@ -76,7 +83,7 @@ npx forgecat install @forgecat/addyosmani_agent-skills
 | Original repository | https://github.com/addyosmani/agent-skills |
 | Version | `0.0.6` |
 | Original commit | `2a62238` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code |
 
 ## Compatibility

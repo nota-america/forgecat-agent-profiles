@@ -6,7 +6,7 @@ description: Create distinctive, production-grade frontend interfaces with high 
   React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates
   creative, polished code and UI design that avoids generic AI aesthetics.
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

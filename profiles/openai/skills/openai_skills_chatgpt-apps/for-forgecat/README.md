@@ -6,6 +6,13 @@
 
 Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned project scaffold. Prefer a docs-first workflow by invoking the openai-docs skill or OpenAI developer docs MCP tools before generating code.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Curated Skill
 - Chatgpt Apps
@@ -28,7 +35,7 @@ npx forgecat install @forgecat/openai_skills_chatgpt-apps
 | Original repository | `https://github.com/openai/skills` |
 | Version | `0.0.10` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
-| License | `Apache-2.0` |
+| License | [Apache-2.0](./LICENSE.txt) |
 | Source platform | `codex` |
 
 ## Compatibility

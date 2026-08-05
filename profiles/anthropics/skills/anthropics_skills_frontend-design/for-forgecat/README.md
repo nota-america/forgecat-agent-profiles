@@ -6,6 +6,13 @@
 
 Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/anthropics_skills_frontend-design
 | Original repository | https://github.com/anthropics/skills |
 | Version | `0.0.4` |
 | Original commit | `5128e18` |
-| License | Complete terms in LICENSE.txt |
+| License | [Apache-2.0](./skills/frontend-design/LICENSE.txt) |
 | Source platform | Claude Code |
 
 ## Compatibility

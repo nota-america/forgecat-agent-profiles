@@ -6,6 +6,13 @@
 
 Spatial Computing division from The Agency — 6 specialized agent personalities from msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality, and production-ready workflows.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Spatial Computing
 - XR
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-spatial-computi
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
 | Version | `0.0.11` |
 | Original commit | `9c31d86` (2026-03-23) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 ADHD-friendly output shaping for agent replies: action first, numbered steps, no tangents, and visible progress.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - adhd
@@ -31,7 +38,7 @@ npx forgecat install @forgecat/ayghri_i-have-adhd
 | Original repository | https://github.com/ayghri/i-have-adhd |
 | Version | `0.1.2` |
 | Original commit | 559f8e0 |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | multi-host |
 
 ## Compatibility

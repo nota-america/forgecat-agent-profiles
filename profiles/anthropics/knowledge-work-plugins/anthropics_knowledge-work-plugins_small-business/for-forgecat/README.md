@@ -7,6 +7,13 @@
 
 Pre-built small business workflows (including payroll planning, month-end close, weekly briefs, and growth campaigns) using your QuickBooks, PayPal, HubSpot, Docusign, Gsuite, O365, Canva, and other connected tools. You approve every step that touches money or customers.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - smb
@@ -84,7 +91,7 @@ Trigger this skill whenever the user mentions: quarterly taxes, estimated tax pa
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/small-business |
 | Version | `0.1.13` |
 | Original commit | 69d3780 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

@@ -5,7 +5,7 @@ description: Guide for creating high-quality MCP (Model Context Protocol) server
   Use when building MCP servers to integrate external APIs or services, whether in
   Python (FastMCP) or Node/TypeScript (MCP SDK).
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

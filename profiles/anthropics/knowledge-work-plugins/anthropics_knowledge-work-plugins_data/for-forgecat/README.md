@@ -7,6 +7,13 @@
 
 Query, visualize, and interpret datasets with Claude. Write SQL across all major warehouse dialects, run statistical analysis, build dashboards, and validate your work before sharing. Connects to Snowflake, BigQuery, Databricks, Amplitude, Hex, and more.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - data
@@ -57,7 +64,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_data
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/data |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

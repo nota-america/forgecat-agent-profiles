@@ -6,6 +6,13 @@
 
 Web design skills covering visual styles, animation systems, WebGL backgrounds, landing pages, layout systems, and frontend effects.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - web-design
@@ -92,7 +99,7 @@ npx forgecat install @forgecat/mango_skills_agent-skills-web-design
 | Original repository | https://github.com/MengTo/Skills/tree/main/agent-skills/web-design |
 | Version | `pending-registry-publish` |
 | Original commit | `25f872a94e3bbee85ecacba4041fa52c21cb0e44` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | agent-skills |
 
 ## Compatibility

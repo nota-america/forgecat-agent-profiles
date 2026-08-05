@@ -12,7 +12,7 @@ forgecat install @forgecat/im-not-ai -p claude-code
 
 Claude Code and Cursor receive the source Claude workflow through ForgeCat's standard conversion. Codex receives the upstream single-call Fast Path through a platform override. Those three platforms are tested with published-registry fresh installs and runtime scenarios. OpenClaw remains partial until its runtime scenario is verified.
 
-## Packaging note
+## Conversion and modifications
 
 Upstream files are copied without editorial rewriting. The only change inside an upstream skill is replacement of five executable script paths with ForgeCat reference paths. A separate ForgeCat adapter keeps generated `_workspace/` output in the user's current directory without modifying the original Python shim.
 

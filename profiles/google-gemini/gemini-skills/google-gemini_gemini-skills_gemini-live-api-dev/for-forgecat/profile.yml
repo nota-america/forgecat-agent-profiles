@@ -6,7 +6,7 @@ description: Use this skill when building real-time, bidirectional streaming app
   ephemeral tokens for client-side auth, and all Live API configuration options. SDKs
   covered - google-genai (Python), @google/genai (JavaScript/TypeScript).
 repository: https://github.com/google-gemini/gemini-skills
-license: Apache 2.0
+license: Apache-2.0
 visibility: public
 sourcePlatform: multi-host
 compatibility:

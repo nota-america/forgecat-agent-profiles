@@ -6,6 +6,13 @@
 
 Review and verification agents that work especially well as read-heavy Codex subagents.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Quality & Security
 
@@ -39,7 +46,7 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_quality-securit
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
 | Version | `0.0.10` |
 | Original commit | `5b7a405` (2026-03-19) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `codex` |
 
 ## Compatibility

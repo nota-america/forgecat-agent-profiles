@@ -6,6 +6,13 @@
 
 Internal-style workflows for CI, code review, shipping, and test reliability.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Internal Workflows
 - CI
@@ -41,7 +48,7 @@ npx forgecat install @forgecat/cursor-team-kit
 | Original repository | `https://github.com/cursor/plugins` |
 | Version | `0.0.10` |
 | Original commit | `9c39b57` (2026-03-13) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `cursor` |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 Translates Figma designs into production-ready application code with 1:1 visual fidelity. Use when implementing UI code from Figma files, when user mentions "implement design", "generate code", "implement component", provides Figma URLs, or asks to build components matching Figma specs. For Figma canvas writes via `use_figma`, use `figma-use`.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Curated Skill
 - Figma Implement Design
@@ -28,7 +35,7 @@ npx forgecat install @forgecat/openai_skills_figma-implement-design
 | Original repository | `https://github.com/openai/skills` |
 | Version | `0.0.10` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
-| License | `Apache-2.0` |
+| License | [Apache-2.0](./LICENSE.txt) |
 | Source platform | `codex` |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. WHEN: semantic caching, token limit, content safety, load balancing, AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend, add AI Foundry model, test AI gateway, LLM policies, configure AI backend, token metrics, AI cost control, convert API to MCP, import OpenAPI to gateway.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - azure
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-aigateway
 | Original repository | https://github.com/microsoft/azure-skills |
 | Version | `0.0.4` |
 | Original commit | `a990650` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code, Cursor |
 
 ## Compatibility

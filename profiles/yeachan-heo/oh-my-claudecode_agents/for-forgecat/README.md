@@ -4,6 +4,13 @@
 
 This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh-my-claudecode`.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Details
 
 | Field | Value |
@@ -11,7 +18,7 @@ This profile packages only the upstream `agents/` directory from `Yeachan-Heo/oh
 | Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
 | Registry version | `0.1.4` |
 | Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | claude-code |
 
 ## Compatibility

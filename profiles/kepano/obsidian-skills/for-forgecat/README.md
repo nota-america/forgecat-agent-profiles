@@ -6,6 +6,13 @@
 
 Create and edit Obsidian vault files including Markdown, Bases, and Canvas. Use when working with .md, .base, or .canvas files in an Obsidian vault.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - skills
@@ -39,7 +46,7 @@ npx forgecat install @forgecat/kepano_obsidian-skills
 | Original repository | https://github.com/kepano/obsidian-skills |
 | Version | `0.1.1` |
 | Original commit | `a1dc48e68138490d522c04cbf5822214c6eb1202` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Packaging Notes

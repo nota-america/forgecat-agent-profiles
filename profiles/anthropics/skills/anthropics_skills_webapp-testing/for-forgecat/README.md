@@ -6,6 +6,13 @@
 
 Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/anthropics_skills_webapp-testing
 | Original repository | https://github.com/anthropics/skills |
 | Version | `0.0.4` |
 | Original commit | `5128e18` |
-| License | Complete terms in LICENSE.txt |
+| License | [Apache-2.0](./skills/webapp-testing/LICENSE.txt) |
 | Source platform | Claude Code |
 
 ## Compatibility

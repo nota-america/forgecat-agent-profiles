@@ -6,6 +6,13 @@
 
 Use when the user asks to generate, edit, extend, poll, list, download, or delete Sora videos, create reusable non-human Sora character references, or run local multi-video queues via the bundled CLI (`scripts/sora.py`); includes requests like: (i) generate AI video, (ii) edit this Sora clip, (iii) extend this video, (iv) create a character reference, (v) download video/thumbnail/spritesheet, and (vi) Sora batch planning; requires `OPENAI_API_KEY` and Sora API access.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Curated Skill
 - Sora
@@ -25,7 +32,7 @@ npx forgecat install @forgecat/openai_skills_sora
 | Original repository | `https://github.com/openai/skills` |
 | Version | `0.0.10` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
-| License | `Apache-2.0` |
+| License | [Apache-2.0](./LICENSE.txt) |
 | Source platform | `codex` |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. This skill covers the Interactions API, the recommended way to use Gemini models and agents in Python and TypeScript.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - google-gemini
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-interactions-a
 | Original repository | https://github.com/google-gemini/gemini-skills |
 | Version | `0.0.4` |
 | Original commit | `f9138ae` |
-| License | Apache 2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code, Gemini CLI, Cursor |
 
 ## Compatibility

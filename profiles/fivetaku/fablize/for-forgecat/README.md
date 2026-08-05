@@ -6,6 +6,13 @@
 
 A Claude Code harness that keeps multi-step work grounded in evidence, verification, and task-specific discipline packs.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - harness
@@ -39,7 +46,7 @@ npx forgecat install @forgecat/fivetaku_fablize
 | Version | `0.1.3` |
 | Original release | `v2.1.1` |
 | Original commit | `e221f32b16f7b0ef39393ba47c37cb8345ffe749` (2026-07-06) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

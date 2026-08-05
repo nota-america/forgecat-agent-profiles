@@ -10,13 +10,20 @@ ForgeCat profile converted from [obra/superpowers](https://github.com/obra/super
 npx forgecat install @forgecat/obra_superpowers
 ```
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Details
 
 | Field | Value |
 |---|---|
 | Original repository | https://github.com/obra/superpowers |
 | Version | `0.0.10` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code |
 
 ## Compatibility

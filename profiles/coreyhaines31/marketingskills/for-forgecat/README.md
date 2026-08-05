@@ -6,6 +6,13 @@
 
 Marketing agent skills for conversion optimization, copywriting, SEO, paid ads, analytics, growth, and go-to-market workflows.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - marketing
@@ -75,7 +82,7 @@ npx forgecat install @forgecat/coreyhaines31_marketingskills
 | Original repository | `https://github.com/coreyhaines31/marketingskills` |
 | Version | `0.1.2` |
 | Original commit | `4b377f2` (2026-06-10) |
-| License | `MIT` |
+| License | [MIT](./docs/LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

@@ -7,6 +7,13 @@
 
 Streamline finance and accounting workflows with Claude. Covers journal entries, account reconciliation, financial statement generation, variance analysis, SOX testing, month-end close management, and audit support. Connects to Snowflake, Databricks, BigQuery, Slack, and Microsoft 365.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - finance
@@ -54,7 +61,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_finance
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/finance |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

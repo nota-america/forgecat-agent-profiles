@@ -6,6 +6,13 @@
 
 Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing, theming, accessibility, responsiveness, performance, deployment, or related Windows app design and development work.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Curated Skill
 - Winui App
@@ -25,7 +32,7 @@ npx forgecat install @forgecat/openai_skills_winui-app
 | Original repository | `https://github.com/openai/skills` |
 | Version | `0.0.10` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
-| License | `Apache-2.0` |
+| License | [Apache-2.0](./LICENSE.txt) |
 | Source platform | `codex` |
 
 ## Compatibility

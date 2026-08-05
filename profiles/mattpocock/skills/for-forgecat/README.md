@@ -6,6 +6,13 @@
 
 Matt Pocock's public engineering, productivity, and misc agent skills for planning, TDD, debugging, issue workflows, architecture improvement, and concise collaboration.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - skills
@@ -51,7 +58,7 @@ npx forgecat install @forgecat/mattpocock_skills
 | Original repository | https://github.com/mattpocock/skills |
 | Version | `0.1.1` |
 | Original commit | `e3d8b735ef92ec9554b07f11f408089d81289eed` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

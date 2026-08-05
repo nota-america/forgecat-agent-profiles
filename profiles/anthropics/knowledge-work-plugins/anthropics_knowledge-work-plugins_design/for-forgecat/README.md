@@ -7,6 +7,13 @@
 
 Accelerate design workflows with Claude. Covers design critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff — from early exploration to pixel-perfect specs. Connects to Figma, Slack, Linear, Notion, and more.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - design
@@ -55,7 +62,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_design
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/design |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

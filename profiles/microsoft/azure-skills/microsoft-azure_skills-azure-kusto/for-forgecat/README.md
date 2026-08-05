@@ -6,6 +6,13 @@
 
 Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto database queries, Azure Data Explorer, ADX clusters, log analytics, time series data, IoT telemetry, anomaly detection.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - azure
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-kusto
 | Original repository | https://github.com/microsoft/azure-skills |
 | Version | `0.0.4` |
 | Original commit | `a990650` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code, Cursor |
 
 ## Compatibility

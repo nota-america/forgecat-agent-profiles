@@ -6,6 +6,13 @@
 
 Evidence-based education skills for curriculum design, assessment, learning science, wellbeing, professional learning, historical thinking, and student-facing AI study support.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - education
@@ -199,7 +206,7 @@ npx forgecat install @forgecat/garethmanning_education-agent-skills
 | Original repository | https://github.com/GarethManning/education-agent-skills/tree/main/skills |
 | Version | `0.1.4` |
 | Original commit | `9c06a5c557bf929c8e6b702056fcd0f56836670b` |
-| License | CC-BY-SA-4.0 |
+| License | [CC-BY-SA-4.0](./LICENSE) |
 | Source platform | Claude Code, Codex, and Cursor |
 
 ## Compatibility

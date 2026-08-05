@@ -7,7 +7,7 @@ description: Build or update a professional-grade design system in Figma from a 
   `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be
   loaded together.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:

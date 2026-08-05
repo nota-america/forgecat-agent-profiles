@@ -7,6 +7,13 @@
 
 Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Covers contract review with redlines, NDA triage, compliance checks, risk assessment, legal briefings, meeting prep, templated responses, e-signature routing, and vendor agreement tracking. Connects to Box, Egnyte, DocuSign, Slack, Atlassian, and Microsoft 365.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - legal
@@ -56,7 +63,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_legal
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/legal |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

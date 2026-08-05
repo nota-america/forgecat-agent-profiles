@@ -4,6 +4,13 @@
 
 Ultra-compressed communication mode for coding agents, with caveman response style, commit/review helpers, memory-file compression, Cavecrew subagents, and Claude/Codex activation hooks.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - productivity
@@ -42,7 +49,7 @@ npx forgecat install @forgecat/juliusbrussee_caveman
 | Original repository | https://github.com/JuliusBrussee/caveman |
 | Version | `0.1.5` |
 | Original commit | `655b7d9c5431f822264b7732e9901c5578ac84cf` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin/config, Gemini extension, opencode plugin, and skills installer |
 
 ## Compatibility

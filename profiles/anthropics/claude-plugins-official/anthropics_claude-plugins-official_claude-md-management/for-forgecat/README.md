@@ -6,6 +6,13 @@
 
 Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -34,7 +41,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-md-mana
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management |
 | Version | `0.0.3` |
 | Original commit | `7e401ed` |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

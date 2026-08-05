@@ -6,6 +6,13 @@
 
 Resume and career-development agent skills for job seekers, career changers, and professionals working on applications, interviews, and offers.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - resume
@@ -53,7 +60,7 @@ npx forgecat install @forgecat/paramchoudhary_resumeskills
 | Original repository | https://github.com/Paramchoudhary/ResumeSkills/tree/main/skills |
 | Version | `0.1.1` |
 | Original commit | `24c6edc8942edceba609e897ee8ec24f09d7581f` (2026-05-20) |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Agent Skills |
 
 ## Compatibility

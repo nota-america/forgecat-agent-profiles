@@ -6,6 +6,13 @@
 
 Comprehensive AI research skill library for autonomous research workflows, model training, evaluation, inference, MLOps, RAG, multimodal systems, and paper writing.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - skills
@@ -130,7 +137,7 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 | Original repository | https://github.com/Orchestra-Research/AI-Research-SKILLs |
 | Version | `0.1.4` |
 | Original commit | `28f2d29236f2bade2eb92cadb2585189589a5828` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Claude Code marketplace skills |
 
 ## Compatibility

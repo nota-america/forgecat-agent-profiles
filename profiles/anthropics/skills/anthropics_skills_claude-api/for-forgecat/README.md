@@ -6,6 +6,13 @@
 
 Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built with this skill should include prompt caching. Also handles migrating existing Claude API code between Claude model versions (4.5 → 4.6, 4.6 → 4.7, retired-model replacements). TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`; user asks for the Claude API, Anthropic SDK, or Managed Agents; user adds/modifies/tunes a Claude feature (caching, thinking, compaction, tool use, batch, files, citations, memory) or model (Opus/Sonnet/Haiku) in a file; questions about prompt caching / cache hit rate in an Anthropic SDK project. SKIP: file imports `openai`/other-provider SDK, filename like `*-openai.py`/`*-generic.py`, provider-neutral code, general programming/ML.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -30,7 +37,7 @@ npx forgecat install @forgecat/anthropics_skills_claude-api
 | Original repository | https://github.com/anthropics/skills |
 | Version | `0.0.4` |
 | Original commit | `5128e18` |
-| License | Complete terms in LICENSE.txt |
+| License | [Apache-2.0](./skills/claude-api/LICENSE.txt) |
 | Source platform | Claude Code |
 
 ## Compatibility

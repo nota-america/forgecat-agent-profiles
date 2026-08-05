@@ -7,6 +7,13 @@
 
 Search across all of your company's tools in one query — email, chat, documents, and wikis without switching between apps. Connects to Slack, Notion, Guru, Atlassian, Asana, Microsoft 365, Google Calendar, and Gmail.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - enterprise-search
@@ -51,7 +58,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_enterprise-sear
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/enterprise-search |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 Support agents for requirements, UX, and engineering-adjacent writing tasks.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Business & Product
 
@@ -34,7 +41,7 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_business-produc
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
 | Version | `0.0.10` |
 | Original commit | `5b7a405` (2026-03-19) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `codex` |
 
 ## Compatibility

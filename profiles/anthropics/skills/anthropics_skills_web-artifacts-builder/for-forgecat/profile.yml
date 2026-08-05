@@ -5,7 +5,7 @@ description: Suite of tools for creating elaborate, multi-component claude.ai HT
   Use for complex artifacts requiring state management, routing, or shadcn/ui components
   - not for simple single-file HTML/JSX artifacts.
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

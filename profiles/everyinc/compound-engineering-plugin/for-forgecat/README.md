@@ -6,6 +6,13 @@
 
 Brainstorm, plan, debug, review, and compound learnings with AI agents.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - claude-code
@@ -64,7 +71,7 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 | Original repository | https://github.com/EveryInc/compound-engineering-plugin |
 | Original plugin version | `3.15.0` |
 | Original commit | `2b38897` |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | Multi-host: Claude Code, Cursor, Codex, Kimi, Agy, and Pi plugin manifests |
 
 ## Compatibility

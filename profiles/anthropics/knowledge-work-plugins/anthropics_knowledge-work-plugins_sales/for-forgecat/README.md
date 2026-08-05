@@ -7,6 +7,13 @@
 
 Prospect, craft outreach, and build deal strategy faster with Claude. Covers account research, call prep, call summaries, personalized outreach drafting, daily briefings, pipeline review, competitive intelligence, sales asset creation, and forecasting. Connects to HubSpot, Close, Clay, ZoomInfo, Apollo, Outreach, Fireflies, Slack, Notion, and more.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - sales
@@ -62,7 +69,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_sales
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/sales |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

@@ -7,6 +7,13 @@
 
 Manage tasks, plan your day, and give Claude persistent memory of your work context. Syncs with your calendar, email, project trackers, and chat to keep everything organized. Connects to Slack, Notion, Asana, Linear, Atlassian, Monday, ClickUp, Microsoft 365, Google Calendar, and Gmail.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - productivity
@@ -53,7 +60,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_productivity
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity |
 | Version | `0.0.9` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

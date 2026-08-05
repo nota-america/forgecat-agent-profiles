@@ -5,7 +5,7 @@ description: Create beautiful visual art in .png and .pdf documents using design
   or other static piece. Create original visual designs, never copying existing artists'
   work to avoid copyright violations.
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

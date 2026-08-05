@@ -6,6 +6,13 @@
 
 Academic division from The Agency — 5 specialized academic agent personalities from msitarzewski/agency-agents.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Academic
 - Research
@@ -29,7 +36,7 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-academic
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
 | Version | `0.0.10` |
 | Original commit | `9c31d86` (2026-03-23) |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

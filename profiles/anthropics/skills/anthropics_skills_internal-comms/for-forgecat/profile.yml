@@ -6,7 +6,7 @@ description: A set of resources to help me write all kinds of internal communica
   updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
   etc.).
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

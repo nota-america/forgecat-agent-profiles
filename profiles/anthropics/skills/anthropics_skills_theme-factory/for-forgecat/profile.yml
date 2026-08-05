@@ -5,7 +5,7 @@ description: Toolkit for styling artifacts with a theme. These artifacts can be 
   that you can apply to any artifact that has been creating, or can generate a new
   theme on-the-fly.
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

@@ -7,6 +7,13 @@
 
 AI-powered research assistant for the life sciences. Connects Claude to 10 preclinical research databases and tools, and bundles 6 analysis skills covering single-cell genomics, bioinformatics pipelines, instrument data standardization, and scientific strategy.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - bio-research
@@ -55,7 +62,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research |
 | Version | `0.0.7` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./skills/instrument-data-to-allotrope/LICENSE.txt) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

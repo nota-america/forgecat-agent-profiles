@@ -6,6 +6,13 @@
 
 Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -36,7 +43,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_feature-dev
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev |
 | Version | `0.0.3` |
 | Original commit | `cf62a6c` |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

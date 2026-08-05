@@ -4,13 +4,20 @@
 
 This profile packages the upstream `xixu-me/skills` Agent Skills collection as one forgecat profile.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Details
 
 | Field | Value |
 |---|---|
 | Original repository | https://github.com/xixu-me/skills/tree/main/skills |
 | Version | `0.1.2` |
-| License | MIT |
+| License | [MIT](./LICENSE.txt) |
 | Source platform | agent-skills |
 
 ## Compatibility

@@ -5,7 +5,7 @@ description: Generates custom design system rules for the user's codebase. Use w
   design rules', 'customize design system guidelines', or wants to establish project-specific
   conventions for Figma-to-code workflows. Requires Figma MCP server connection.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:

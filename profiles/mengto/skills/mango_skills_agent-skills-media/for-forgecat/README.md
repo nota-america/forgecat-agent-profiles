@@ -6,6 +6,13 @@
 
 Media asset retrieval skills for Aura Assets and Unsplash image selection workflows.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - media
@@ -32,7 +39,7 @@ npx forgecat install @forgecat/mango_skills_agent-skills-media
 | Original repository | https://github.com/MengTo/Skills/tree/main/agent-skills/media |
 | Version | `pending-registry-publish` |
 | Original commit | `25f872a94e3bbee85ecacba4041fa52c21cb0e44` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | agent-skills |
 
 ## Compatibility

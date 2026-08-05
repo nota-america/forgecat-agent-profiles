@@ -6,6 +6,13 @@
 
 Up-to-date documentation lookup via Context7 MCP. Pull version-specific documentation and code examples directly from source repositories into your LLM context.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 - Docs Searcher
 
@@ -34,7 +41,7 @@ npx forgecat install @forgecat/upstash_context7
 | Version | `0.0.9` |
 | Original commit | `383e127` (2026-03-16) |
 | Converted path | `plugins/claude/context7/` |
-| License | `MIT` |
+| License | [MIT](./LICENSE) |
 | Source platform | `claude-code` |
 
 ## Compatibility

@@ -6,6 +6,13 @@
 
 Skill-only package of Taste Skill frontend design and image-generation agent skills from Leonxlnx/taste-skill.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - skills
@@ -44,7 +51,7 @@ npx forgecat install @forgecat/leonxlnx_taste-skill
 | Original repository | https://github.com/Leonxlnx/taste-skill/tree/main/skills |
 | Version | `0.1.5` |
 | Original commit | `b17742737e796305d829b3ad39eda3add0d79060` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Agent Skills |
 | Scope | `skills/` only |
 

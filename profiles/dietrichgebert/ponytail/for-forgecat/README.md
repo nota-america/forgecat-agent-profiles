@@ -6,6 +6,13 @@
 
 Lazy senior developer mode for AI agents, with YAGNI, standard-library-first, native-first, and minimal-code guidance packaged as skills, commands, rules, and lifecycle hooks.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - yagni
@@ -41,7 +48,7 @@ npx forgecat install @forgecat/dietrichgebert_ponytail
 | Original repository | https://github.com/DietrichGebert/ponytail |
 | Version | `0.1.6` |
 | Original commit | `1c420ad2f306b2a096dd1e7c1b8c5ebbb4cdf3d4` |
-| License | MIT |
+| License | [MIT](./LICENSE) |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin, Cursor rule, OpenCode plugin, Gemini extension, pi extension, and generic AGENTS.md/skills adapters |
 
 ## Compatibility

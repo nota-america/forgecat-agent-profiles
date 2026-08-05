@@ -7,6 +7,13 @@
 
 Write feature specs, plan roadmaps, and synthesize user research faster with Claude. Covers spec writing, roadmap updates, research synthesis, stakeholder updates, competitive briefs, metrics review, sprint planning, and product brainstorming. Connects to Linear, Asana, Monday, ClickUp, Atlassian, Figma, Amplitude, Pendo, Intercom, Fireflies, SimilarWeb, Slack, Notion, and more.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - product-management
@@ -69,7 +76,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_product-managem
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management |
 | Version | `0.0.7` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

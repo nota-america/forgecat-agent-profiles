@@ -6,6 +6,13 @@
 
 A comprehensive example plugin demonstrating all Claude Code extension options including commands, agents, skills, hooks, and MCP servers
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -35,7 +42,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_example-plugin
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin |
 | Version | `0.0.3` |
 | Original commit | `7e401ed` |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

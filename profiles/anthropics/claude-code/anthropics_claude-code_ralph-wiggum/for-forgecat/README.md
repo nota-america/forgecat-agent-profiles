@@ -6,6 +6,13 @@
 
 Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - anthropic
@@ -42,7 +49,7 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 | Version | `0.0.3` |
 | Original plugin version | `1.0.0` |
 | Original commit | `d08288e` |
-| License | Complete terms in LICENSE.md |
+| License | [Complete terms in LICENSE.md](./LICENSE.md) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

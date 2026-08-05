@@ -7,6 +7,13 @@
 
 A customer support co-pilot that handles ticket triage, response drafting, escalation packaging, customer research, and knowledge base authoring. Designed primarily for [Cowork](https://claude.com/product/cowork) with full support for Claude Code.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - customer-support
@@ -52,7 +59,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_customer-suppor
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/customer-support |
 | Version | `0.0.8` |
 | Original commit | d2ba7f6 |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin |
 
 ## Compatibility

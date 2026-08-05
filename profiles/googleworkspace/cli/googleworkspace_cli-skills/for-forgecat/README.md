@@ -6,6 +6,13 @@
 
 Google Workspace CLI agent skills for Drive, Gmail, Calendar, Docs, Sheets, Slides, Chat, Apps Script, personas, and workflow recipes powered by the `gws` command-line tool.
 
+## Conversion and modifications
+
+This profile packages the referenced upstream source in the forgecat profile
+structure. The conversion adds `profile.yml`, forgecat installation metadata,
+and platform packaging; profile-specific adapters or content changes are noted
+elsewhere in this README when present.
+
 ## Tags
 
 - googleworkspace
@@ -126,7 +133,7 @@ npx forgecat install @forgecat/googleworkspace_cli-skills
 | Original repository | https://github.com/googleworkspace/cli/tree/main/skills |
 | Version | `0.1.2` |
 | Original commit | `a3768d0e82ad83cca2da97724e46bea4ff0e6dbd` |
-| License | Apache-2.0 |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Agent Skills |
 
 ## Compatibility
