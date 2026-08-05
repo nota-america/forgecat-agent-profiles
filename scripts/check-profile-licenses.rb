@@ -1,14 +1,16 @@
 #!/usr/bin/env ruby
 
 require "optparse"
+require "digest"
 require "pathname"
+require "strscan"
 require "yaml"
 
-ROOT = Pathname(__dir__).parent.expand_path
+ROOT = Pathname(ENV.fetch("FORGECAT_ROOT", Pathname(__dir__).parent.expand_path.to_s)).expand_path
 EXCEPTIONS_PATH = ROOT.join("config/license-policy-exceptions.yml")
 LICENSE_FILE_PATTERN = /\A(?:licen[cs]e|copying)(?:\..*)?\z/i
-SPDX_ATOM = /(?:[A-Za-z0-9][A-Za-z0-9.+-]*|LicenseRef-[A-Za-z0-9.+-]+)/
-SPDX_EXPRESSION = /\A#{SPDX_ATOM}(?:\s+(?:AND|OR|WITH)\s+#{SPDX_ATOM})*\z/
+SPDX_LICENSE_IDS = %w[Apache-2.0 CC-BY-SA-4.0 MIT MIT-0].freeze
+SPDX_EXCEPTION_IDS = %w[Classpath-exception-2.0 LLVM-exception].freeze
 UNRESOLVED_LICENSES = ["", "None", "Unknown", "NOASSERTION"].freeze
 MANUAL_EXCEPTION_RULES = ["source-license-postdates-profile"].freeze
 
@@ -25,10 +27,11 @@ exceptions = {}
 exception_rows.each do |row|
   profile = row.fetch("profile")
   reason = row.fetch("reason")
+  evidence_sha256 = row.fetch("evidence_sha256")
   row.fetch("rules").each do |rule|
     key = [profile, rule]
     abort "Duplicate license exception: #{profile} #{rule}" if exceptions.key?(key)
-    exceptions[key] = reason
+    exceptions[key] = {reason: reason, evidence_sha256: evidence_sha256}
   end
 end
 
@@ -41,18 +44,31 @@ record = lambda do |profile, rule, message|
   if exceptions.key?(key)
     used_exceptions[key] = true
     target = options[:strict] ? errors : warnings
-    target << "#{profile} [#{rule}] #{message} (exception: #{exceptions[key]})"
+    target << "#{profile} [#{rule}] #{message} (exception: #{exceptions[key][:reason]})"
   else
     errors << "#{profile} [#{rule}] #{message}"
   end
 end
 
-exceptions.each do |(profile, rule), reason|
+exceptions.each do |(profile, rule), details|
   next unless MANUAL_EXCEPTION_RULES.include?(rule)
 
   used_exceptions[[profile, rule]] = true
   target = options[:strict] ? errors : warnings
-  target << "#{profile} [#{rule}] manual review required (exception: #{reason})"
+  target << "#{profile} [#{rule}] manual review required (exception: #{details[:reason]})"
+end
+
+evidence_digest = lambda do |package_dir|
+  paths = Dir.glob(package_dir.join("**/*"), File::FNM_DOTMATCH).select do |path|
+    next false unless File.file?(path)
+    basename = File.basename(path)
+    %w[profile.yml README.md].include?(basename) || basename.match?(LICENSE_FILE_PATTERN) || basename.match?(/\Anotice(?:\..*)?\z/i)
+  end.sort
+  digest = Digest::SHA256.new
+  paths.each do |path|
+    digest << Pathname(path).relative_path_from(package_dir).to_s << "\0" << File.binread(path) << "\0"
+  end
+  digest.hexdigest
 end
 
 detect_license = lambda do |text|
@@ -67,10 +83,60 @@ detect_license = lambda do |text|
   end
 end
 
+valid_spdx_expression = lambda do |expression|
+  scanner = StringScanner.new(expression)
+  tokens = []
+  until scanner.eos?
+    scanner.skip(/\s+/)
+    break if scanner.eos?
+    token = scanner.scan(/\(|\)|AND\b|OR\b|WITH\b|LicenseRef-[A-Za-z0-9.+-]+|[A-Za-z0-9][A-Za-z0-9.+-]*/)
+    break tokens = nil unless token
+    tokens << token
+  end
+
+  parse_factor = nil
+  parse_expression = nil
+  index = 0
+  parse_factor = lambda do
+    if tokens&.[](index) == "("
+      index += 1
+      return false unless parse_expression.call
+      return false unless tokens[index] == ")"
+      index += 1
+      true
+    elsif SPDX_LICENSE_IDS.include?(tokens&.[](index)) || tokens&.[](index)&.start_with?("LicenseRef-")
+      index += 1
+      if tokens[index] == "WITH"
+        index += 1
+        return false unless SPDX_EXCEPTION_IDS.include?(tokens[index])
+        index += 1
+      end
+      true
+    else
+      false
+    end
+  end
+  parse_expression = lambda do
+    return false unless parse_factor.call
+    while %w[AND OR].include?(tokens[index])
+      index += 1
+      return false unless parse_factor.call
+    end
+    true
+  end
+
+  tokens && !tokens.empty? && parse_expression.call && index == tokens.length
+end
+
+external_terms_pointer = lambda do |text|
+  text.bytesize < 2_000 && text.match?(%r{https?://}) && text.match?(/governed by .* terms/i) &&
+    !text.match?(/permission is hereby granted|apache license|creative commons/i)
+end
+
 restricted_license = lambda do |license, text|
   explicit_restrictions = text.match?(/ADDITIONAL RESTRICTIONS/i) &&
     text.match?(/Distribute, sublicense, or transfer/i)
-  custom_all_rights = !license.match?(SPDX_EXPRESSION) &&
+  custom_all_rights = (license.include?("LicenseRef-") || !valid_spdx_expression.call(license)) &&
     text.match?(/All rights reserved/i)
   explicit_restrictions || custom_all_rights
 end
@@ -86,6 +152,13 @@ manifest_paths.each do |manifest_path|
   repository = manifest.fetch("repository", "").to_s
   license = manifest.fetch("license", "").to_s.strip
 
+  expected_evidence = exceptions.each_with_object([]) do |((exception_profile, _rule), details), values|
+    values << details[:evidence_sha256] if exception_profile == profile
+  end.uniq
+  if expected_evidence.any? && expected_evidence != [evidence_digest.call(package_dir)]
+    errors << "#{profile} [exception-evidence] legal evidence changed; review and refresh the pinned exception digest"
+  end
+
   record.call(profile, "source-attribution", "repository must be a GitHub URL") unless
     repository.match?(%r{\Ahttps://github\.com/[^/]+/[^/]+})
 
@@ -96,8 +169,12 @@ manifest_paths.each do |manifest_path|
   record.call(profile, "modification-note", "README is missing '## Conversion and modifications'") unless
     readme.include?("## Conversion and modifications")
 
-  unless license.match?(SPDX_EXPRESSION) && !UNRESOLVED_LICENSES.include?(license)
+  unless valid_spdx_expression.call(license) && !UNRESOLVED_LICENSES.include?(license)
     record.call(profile, "license-spdx", "license is not a usable SPDX expression: #{license.inspect}")
+  end
+
+  if license.include?("LicenseRef-")
+    record.call(profile, "custom-license-review", "custom license terms require explicit review")
   end
 
   if manifest.fetch("visibility", "public") == "public" && UNRESOLVED_LICENSES.include?(license)
@@ -121,6 +198,9 @@ manifest_paths.each do |manifest_path|
   end
 
   license_text = license_files.map { |path| File.read(path, encoding: "UTF-8", invalid: :replace, undef: :replace) }.join("\n")
+  if external_terms_pointer.call(license_text)
+    record.call(profile, "external-terms-pointer", "included file points to mutable external terms instead of preserving the terms")
+  end
   copyright_lines = license_text.lines.grep(/copyright|©/i).reject do |line|
     line.match?(/\[yyyy\]|\[name of copyright owner\]/i)
   end
@@ -128,7 +208,7 @@ manifest_paths.each do |manifest_path|
     copyright_lines.empty?
 
   detected = detect_license.call(license_text)
-  if detected && license.match?(SPDX_EXPRESSION) && license != detected
+  if detected && valid_spdx_expression.call(license) && license != detected
     record.call(profile, "license-content", "manifest says #{license}, included license appears to be #{detected}")
   end
 

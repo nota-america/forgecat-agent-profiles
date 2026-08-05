@@ -62,7 +62,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research |
 | Version | `0.0.7` |
 | Original commit | d2ba7f6 |
-| License | [Apache-2.0](./skills/instrument-data-to-allotrope/LICENSE.txt) |
+| License | [Apache-2.0](./LICENSE) |
 | Source platform | Claude Code plugin (Cowork) |
 
 ## Compatibility

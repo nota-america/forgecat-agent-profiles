@@ -5,7 +5,7 @@ require "yaml"
 require "set"
 require "English"
 
-ROOT = File.expand_path("..", __dir__)
+ROOT = File.expand_path(ENV.fetch("FORGECAT_ROOT", File.expand_path("..", __dir__)))
 PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
 
 PLATFORM_ARTIFACTS = {
@@ -60,6 +60,8 @@ def changed_profile_manifests(range, manifest_paths)
 end
 
 def artifact_neutral_file?(path)
+  return false unless path.include?("/for-forgecat/")
+
   basename = File.basename(path)
   return true if basename == "README.md"
   return true if basename.match?(/\A(?:licen[cs]e|copying|notice)(?:\..*)?\z/i)

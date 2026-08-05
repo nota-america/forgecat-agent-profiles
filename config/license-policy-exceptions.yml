@@ -1,91 +1,227 @@
+---
 exceptions:
-  - profile: "@forgecat/anthropics_claude-code_ralph-wiggum"
-    rules: [license-spdx, restricted-license]
-    reason: "Existing P0 profile uses Anthropic commercial terms; removal or permission review is tracked separately."
-  - profile: "@forgecat/anthropics_skills_docx"
-    rules: [license-spdx, restricted-license]
-    reason: "Existing P0 profile contains Anthropic redistribution restrictions; removal is outside this P1/P2 change."
-  - profile: "@forgecat/anthropics_skills_pdf"
-    rules: [license-spdx, restricted-license]
-    reason: "Existing P0 profile contains Anthropic redistribution restrictions; removal is outside this P1/P2 change."
-  - profile: "@forgecat/anthropics_skills_pptx"
-    rules: [license-spdx, restricted-license]
-    reason: "Existing P0 profile contains Anthropic redistribution restrictions; removal is outside this P1/P2 change."
-  - profile: "@forgecat/anthropics_skills_xlsx"
-    rules: [license-spdx, restricted-license]
-    reason: "Existing P0 profile contains Anthropic redistribution restrictions; removal is outside this P1/P2 change."
-  - profile: "@forgecat/anthropics_skills_doc-coauthoring"
-    rules: [license-file]
-    reason: "Upstream source and recorded source commit do not include a license file; clarification is required."
-  - profile: "@forgecat/contains-studio_agents_bonus"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_design"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_engineering"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_marketing"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_product"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_project-management"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_studio-operations"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/contains-studio_agents_testing"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/remotion-dev_skills_remotion"
-    rules: [license-spdx, public-license, license-file]
-    reason: "Upstream repository has no explicit license; public disposition is a separate P0 decision."
-  - profile: "@forgecat/andrej-karpathy-skills"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/openai_skills_figma-code-connect-components"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/openai_skills_figma-create-design-system-rules"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/openai_skills_figma-create-new-file"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/openai_skills_figma-generate-design"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/openai_skills_figma-generate-library"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/openai_skills_figma-use"
-    rules: [copyright-notice, source-license-postdates-profile]
-    reason: "Recorded source commit lacked this license; the current Figma Developer Terms notice has no standalone copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_composition-patterns"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_deploy-to-vercel"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_react-best-practices"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_react-native-skills"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_react-view-transitions"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/vercel-labs_agent-skills_web-design-guidelines"
-    rules: [license-file]
-    reason: "Upstream README says MIT but does not provide the full license text or copyright notice."
-  - profile: "@forgecat/garethmanning_education-agent-skills"
-    rules: [source-license-postdates-profile]
-    reason: "The recorded source commit had no root license; the included CC-BY-SA-4.0 file comes from current upstream."
+- profile: "@forgecat/anthropics_claude-code_ralph-wiggum"
+  rules:
+  - license-spdx
+  - restricted-license
+  reason: Existing P0 profile uses Anthropic commercial terms; removal or permission
+    review is tracked separately.
+  evidence_sha256: fdf5365799dac1eabd649d1f34796a87c21844943632f313ab76f8da90241e52
+- profile: "@forgecat/anthropics_skills_docx"
+  rules:
+  - license-spdx
+  - restricted-license
+  - external-terms-pointer
+  reason: Existing P0 profile contains Anthropic redistribution restrictions; removal
+    is outside this P1/P2 change.
+  evidence_sha256: c09a9f84f75ba20a430ed6d74baaab5bcba00777fa960094ecbd79d0387dca53
+- profile: "@forgecat/anthropics_skills_pdf"
+  rules:
+  - license-spdx
+  - restricted-license
+  - external-terms-pointer
+  reason: Existing P0 profile contains Anthropic redistribution restrictions; removal
+    is outside this P1/P2 change.
+  evidence_sha256: 8a6829311f0524a09dcf7f20205844fd75ec684184c7330d4a664e3d9656cd42
+- profile: "@forgecat/anthropics_skills_pptx"
+  rules:
+  - license-spdx
+  - restricted-license
+  - external-terms-pointer
+  reason: Existing P0 profile contains Anthropic redistribution restrictions; removal
+    is outside this P1/P2 change.
+  evidence_sha256: 3d1cd1d661dd4244a2da14eabf5de5e7700d6aa0b51bc52b09c466011046cf35
+- profile: "@forgecat/anthropics_skills_xlsx"
+  rules:
+  - license-spdx
+  - restricted-license
+  - external-terms-pointer
+  reason: Existing P0 profile contains Anthropic redistribution restrictions; removal
+    is outside this P1/P2 change.
+  evidence_sha256: 70fbfa6133bc9cce3e5017016f294a9251984da7533476f914c3c17da4b4e004
+- profile: "@forgecat/anthropics_skills_doc-coauthoring"
+  rules:
+  - license-file
+  reason: Upstream source and recorded source commit do not include a license file;
+    clarification is required.
+  evidence_sha256: 022210c83d2054f57dc29b38f53c7100531552f6aa187409f2e2c036c15f03e2
+- profile: "@forgecat/contains-studio_agents_bonus"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 1a4c43b9e23e013be1cd581c83454e40a7b182ffbc4820a17fb7c81765a3a5c8
+- profile: "@forgecat/contains-studio_agents_design"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 6ef088d1f2e936f2f4be0720fa6bc5b4b5afa90b88285a784beeb5fdca794e82
+- profile: "@forgecat/contains-studio_agents_engineering"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 62400068d3c2794f57669b45fd6d98017bcb7245a3ba3cb3f33888ee0ccda88a
+- profile: "@forgecat/contains-studio_agents_marketing"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: d595a30034638ed129eb9a60883730bf154a16b15485d57878e84692a475603a
+- profile: "@forgecat/contains-studio_agents_product"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 9d8f9d55052ab988cc8911a454659f4890ba81a4b873794f642222408a269b25
+- profile: "@forgecat/contains-studio_agents_project-management"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 378a87ff93dfd725d67ce111bcd771531fc01217d98cd832714a80881fa049f1
+- profile: "@forgecat/contains-studio_agents_studio-operations"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: e473275b3b844b555dbe0d60a946a50d22238a2a927d0269736c97cad5401407
+- profile: "@forgecat/contains-studio_agents_testing"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 39795f943d5e6a7b814c41432dd59c3c9a429852f13c86e4f1a44892e538d4bf
+- profile: "@forgecat/remotion-dev_skills_remotion"
+  rules:
+  - license-spdx
+  - public-license
+  - license-file
+  reason: Upstream repository has no explicit license; public disposition is a separate
+    P0 decision.
+  evidence_sha256: 74c8380ca01440b9e453cffc84df9d2f0f48609d30e323a183f139b6e78e8d9c
+- profile: "@forgecat/andrej-karpathy-skills"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: 558ae766021e04b9d59c3e4a48e1cc6555845faaa000a9e94cb1c460f0765290
+- profile: "@forgecat/openai_skills_figma-code-connect-components"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: cad895a9357a8f1dbb450ebb862461965dcfc2a3018cecdb1ba5a05423a4499c
+- profile: "@forgecat/openai_skills_figma-create-design-system-rules"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: 82c95a4c4a6ba468e9dd32032e5490479c0fbf85b23b8fc596deffadc2ba8abb
+- profile: "@forgecat/openai_skills_figma-create-new-file"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: aa743bad8731d55970f31e0625dab0a928fed25c223be0cf29d9cf1cfb9a741e
+- profile: "@forgecat/openai_skills_figma-generate-design"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: ccc0261abdddce5be533c9a8796aeaf5490723a49fcf9d5bd636deb70a2ccd84
+- profile: "@forgecat/openai_skills_figma-generate-library"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: f8ddb26c0a5dd22cc06bdf5c89c6926f0538f6802e34614bf7ad2b7854faf0ba
+- profile: "@forgecat/openai_skills_figma-use"
+  rules:
+  - copyright-notice
+  - custom-license-review
+  - external-terms-pointer
+  - source-license-postdates-profile
+  reason: Recorded source commit lacked this license; the current Figma Developer
+    Terms notice has no standalone copyright notice.
+  evidence_sha256: 990e030c8c8036e6ef8f5ffef7cab53652789a036d70e7f57a2fd7c6f168ab2d
+- profile: "@forgecat/vercel-labs_agent-skills_composition-patterns"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: be414eb70f9fba65686fc4ba8d4c977e22b869ded01df1a1e69e3d2811d24f7e
+- profile: "@forgecat/vercel-labs_agent-skills_deploy-to-vercel"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: 9cc57ad71bb2a6fd415ce183afd5b081f8258b2a004271c4936f4e3617dbd844
+- profile: "@forgecat/vercel-labs_agent-skills_react-best-practices"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: a41a168d1cf63ab3a50b10149a0282e938310577ee732e18f4840728a3375d42
+- profile: "@forgecat/vercel-labs_agent-skills_react-native-skills"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: f09bf73f954e5a441e9bb02c0e8bbbe38ff07738836e41c46645b44ae1238897
+- profile: "@forgecat/vercel-labs_agent-skills_react-view-transitions"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: 7306693b81834efbd7a037c816dac95d1e3fe5572119bff4fba58f19fd47b279
+- profile: "@forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: 46d74eca5e8b3f68b6002faf3ea6fcd5473d68dd6bcc426686e0d6540ec56fe1
+- profile: "@forgecat/vercel-labs_agent-skills_web-design-guidelines"
+  rules:
+  - license-file
+  reason: Upstream README says MIT but does not provide the full license text or copyright
+    notice.
+  evidence_sha256: 2ca4b9141ad836d023f78d1ee4f25f68a9439cf015339469be33774a6e4ac827
+- profile: "@forgecat/garethmanning_education-agent-skills"
+  rules:
+  - source-license-postdates-profile
+  reason: The recorded source commit had no root license; the included CC-BY-SA-4.0
+    file comes from current upstream.
+  evidence_sha256: eee01e6763163ff06a9e537d2661e25c3793e52cb54b8935c259c58585e41293

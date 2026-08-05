@@ -9,6 +9,7 @@ on:
       - scripts/check-profile-artifacts.rb
       - scripts/check-profile-licenses.rb
       - scripts/generate-third-party-notices.rb
+      - test/license_compliance_test.rb
       - config/license-policy-exceptions.yml
       - THIRD_PARTY_NOTICES.md
       - .github/workflows/catalog-check.yml
@@ -22,6 +23,7 @@ on:
       - scripts/check-profile-artifacts.rb
       - scripts/check-profile-licenses.rb
       - scripts/generate-third-party-notices.rb
+      - test/license_compliance_test.rb
       - config/license-policy-exceptions.yml
       - THIRD_PARTY_NOTICES.md
       - .github/workflows/catalog-check.yml
@@ -47,6 +49,9 @@ jobs:
 
       - name: Check third-party notice index
         run: ruby scripts/generate-third-party-notices.rb --check
+
+      - name: Test license compliance checks
+        run: ruby test/license_compliance_test.rb
 
       - name: Fetch base branch
         if: github.event_name == 'pull_request'
