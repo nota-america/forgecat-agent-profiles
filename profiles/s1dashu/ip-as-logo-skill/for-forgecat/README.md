@@ -29,7 +29,7 @@ npx forgecat install @forgecat/s1dashu_ip-as-logo-skill
 |---|---|
 | Author | s1dashu |
 | Original repository | https://github.com/s1dashu/ip-as-logo-skill |
-| Version | `0.1.2` |
+| Version | `0.1.3` |
 | Original commit | b1bf517c54a407452cfaca98a54668cd052f8e63 |
 | License | MIT |
 | Source platform | agent-skills |
