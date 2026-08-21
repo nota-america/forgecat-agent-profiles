@@ -46,8 +46,6 @@ npx forgecat install @forgecat/s1dashu_ip-as-logo-skill
 | OpenClaw | Tested |
 | Hermes | Tested |
 
-Profile parity passed exact private `0.1.2` install and component-aware runtime verification on Claude Code, Cursor, Codex, OpenClaw, and Hermes.
-
 ### Image generation capability
 
 | Platform | Canary evidence |
