@@ -8,11 +8,12 @@ require "English"
 ROOT = File.expand_path("..", __dir__)
 PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
 
-PLATFORM_ARTIFACTS = {
+KNOWN_PLATFORMS = Set.new(%w[claude-code cursor codex openclaw hermes]).freeze
+
+PROJECT_PLATFORM_ARTIFACTS = {
   "claude-code" => "for-claude",
   "cursor" => "for-cursor",
-  "codex" => "for-codex",
-  "openclaw" => "for-openclaw"
+  "codex" => "for-codex"
 }.freeze
 
 def fail_with(errors)
@@ -82,7 +83,7 @@ manifest_paths.each do |manifest_path|
   partial = Array(platforms["partial"])
   root = profile_root(manifest_path)
 
-  unknown = (tested + partial).uniq - PLATFORM_ARTIFACTS.keys
+  unknown = (tested + partial).uniq - KNOWN_PLATFORMS.to_a
   unknown.each do |platform|
     errors << "#{relative(manifest_path)} uses unknown platform #{platform.inspect}"
   end
@@ -93,7 +94,7 @@ manifest_paths.each do |manifest_path|
   end
 
   tested.each do |platform|
-    artifact_dir = PLATFORM_ARTIFACTS[platform]
+    artifact_dir = PROJECT_PLATFORM_ARTIFACTS[platform]
     next unless artifact_dir
 
     artifact_path = File.join(root, artifact_dir)
