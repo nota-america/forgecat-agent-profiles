@@ -1,0 +1,26 @@
+name: '@forgecat/s1dashu_ip-as-logo-skill'
+description: Generate extremely simple, cute IP mascot images with rounded silhouettes, a constrained three-color palette, and lower-corner compositions.
+visibility: public
+repository: https://github.com/s1dashu/ip-as-logo-skill
+license: MIT
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: ip-as-logo
+  path: skills/ip-as-logo/SKILL.md
+  description: Generate extremely simple, cute, personified square character images with rounded heavy
+    forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition.
+    Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including
+    when the agent should infer three product-relevant directions and propose six independent candidates
+    for approval.
