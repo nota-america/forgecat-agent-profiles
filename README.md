@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-187-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-38-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-188-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-39-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -142,6 +142,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [orchestra-research/ai-research-skills](./profiles/orchestra-research/ai-research-skills) | 1 | AI research skills for training, evaluation, inference, MLOps, RAG, multimodal systems, and papers |
 | [paramchoudhary/resumeskills](./profiles/paramchoudhary/resumeskills) | 1 | Resume and career-development skills for ATS optimization, resume writing, interview prep, and offer decisions |
 | [remotion-dev/skills](./profiles/remotion-dev/skills) | 1 | Remotion best-practices skill for video creation in React |
+| [s1dashu/ip-as-logo-skill](./profiles/s1dashu/ip-as-logo-skill) | 1 | Agent Skill for generating simple, rounded IP mascot images with constrained colors and lower-corner compositions |
 | [upstash/context7](./profiles/upstash/context7) | 1 | Context7 MCP integration for up-to-date documentation lookup |
 | [vercel-labs/agent-skills](./profiles/vercel-labs/agent-skills) | 7 | Vercel agent skills for deployment, React, UI audits, and workflow patterns |
 | [voltagent/awesome-codex-subagents](./profiles/voltagent/awesome-codex-subagents) | 10 | Codex subagents for development, infrastructure, security, and research |
@@ -149,7 +150,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [yeachan-heo/oh-my-claudecode_agents](./profiles/yeachan-heo/oh-my-claudecode_agents) | 1 | Agents-only Claude Code orchestration profile from oh-my-claudecode |
 | [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 
-Total: 187 profiles across 38 collections.
+Total: 188 profiles across 39 collections.
 
 ## Profile Layout
 
