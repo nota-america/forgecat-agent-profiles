@@ -1,1 +1,0 @@
-- cobe GitHub (API/options/examples): https://github.com/shuding/cobe

@@ -1,5 +1,0 @@
-- https://mobbin.com
-- https://bentogrids.com
-- https://www.figma.com/community
-- https://icon-sets.iconify.design
-- https://simpleicons.org
