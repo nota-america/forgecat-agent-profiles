@@ -1,1 +1,0 @@
-- Three.js docs index: https://threejs.org/docs/
