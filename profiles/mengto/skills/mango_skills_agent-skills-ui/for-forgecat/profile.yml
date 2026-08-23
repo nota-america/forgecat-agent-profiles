@@ -1,0 +1,25 @@
+name: '@forgecat/mango_skills_agent-skills-ui'
+description: Design-first UI prompting guidance with reusable article and reference context for structured
+  interface generation.
+visibility: public
+repository: https://github.com/MengTo/Skills/tree/main/agent-skills/ui
+license: MIT
+sourcePlatform: agent-skills
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: design-first-ui-prompting
+  path: skills/design-first-ui-prompting/SKILL.md
+  description: Use when you need design-first, spec-driven, skimmable prompts for UI generation. Covers
+    prompt structure, constraints, variations, typography/spacing rules, and iteration workflow for consistent
+    UI outputs.
