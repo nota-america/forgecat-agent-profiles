@@ -28,7 +28,7 @@ Originality constraints: create new people, poses, clothing, objects, motif arra
 
 ## MOSSWEFT
 
-![MOSSWEFT example](../assets/examples/mossweft-v2.jpg)
+![MOSSWEFT example]({{ref:brandWorldExamples}}/mossweft-v2.jpg)
 
 ```text
 Primary request: Create an original identity image for "MOSSWEFT".
@@ -42,7 +42,7 @@ Avoid: Generic fashion posing, literal laboratory equipment, or copied flower ar
 
 ## KINTRA
 
-![KINTRA example](../assets/examples/kintra-v2.jpg)
+![KINTRA example]({{ref:brandWorldExamples}}/kintra-v2.jpg)
 
 ```text
 Primary request: Create an original identity image for "KINTRA".
@@ -56,7 +56,7 @@ Avoid: Historical gowns, duplicated dance gestures, or a static group portrait.
 
 ## NIGHTJAR
 
-![NIGHTJAR example](../assets/examples/nightjar-v2.jpg)
+![NIGHTJAR example]({{ref:brandWorldExamples}}/nightjar-v2.jpg)
 
 ```text
 Primary request: Create an original identity image for "NIGHTJAR".
@@ -70,7 +70,7 @@ Avoid: A literal radio studio, copied rooftop imagery, or duplicated source chor
 
 ## TIDETURN
 
-![TIDETURN example](../assets/examples/tideturn-v2.jpg)
+![TIDETURN example]({{ref:brandWorldExamples}}/tideturn-v2.jpg)
 
 ```text
 Primary request: Create an original identity image for "TIDETURN".
@@ -84,7 +84,7 @@ Avoid: Terrestrial garden copying, generic scuba advertising, or passive swimmer
 
 ## EMBERHOUSE
 
-![EMBERHOUSE example](../assets/examples/emberhouse-v2.jpg)
+![EMBERHOUSE example]({{ref:brandWorldExamples}}/emberhouse-v2.jpg)
 
 ```text
 Primary request: Create an original identity image for "EMBERHOUSE".

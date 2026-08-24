@@ -152,4 +152,4 @@ If one check fails, iterate with one targeted change and re-inspect. Do not rewr
 
 Read [references/example-prompts.md](references/example-prompts.md) when generating a multi-brand set or a closer-to-reference V2. It contains the MOSSWEFT, KINTRA, NIGHTJAR, TIDETURN, and EMBERHOUSE prompt patterns.
 
-Inspect `assets/examples/` only when visual comparison helps. Those images demonstrate a 70% adjacent-family result and are examples, not templates to copy.
+Inspect `{{ref:brandWorldExamples}}/` only when visual comparison helps. Those images demonstrate a 70% adjacent-family result and are examples, not templates to copy.

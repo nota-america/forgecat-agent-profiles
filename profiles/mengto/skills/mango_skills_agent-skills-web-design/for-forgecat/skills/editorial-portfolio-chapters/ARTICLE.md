@@ -13,9 +13,9 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 1. Signal Acquisition Loader Into a Decoded Hero
 
-![Signal acquisition loader with a frequency readout](assets/mara-voss-01-signal-loader.png)
+![Signal acquisition loader with a frequency readout]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-01-signal-loader.png)
 
-![Resolved editorial hero after the loader](assets/mara-voss-02-decoded-hero.png)
+![Resolved editorial hero after the loader]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-02-decoded-hero.png)
 
 > **Core idea** — Open with a restrained signal-acquisition state, then decode the hero rather than simply fading it in. Animate a compact readout and progress rule first. Resolve the display title character by character from compressed, blurred marks; then introduce the echo layer, eyebrow, supporting line, evidence strip, metadata, and scroll cue in reading order.
 >
@@ -29,7 +29,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 2. Split-Door Hero Handoff Into a Contrasting Room
 
-![Paper hero splitting apart to reveal the dark biography chapter](assets/mara-voss-03-split-door-handoff.png)
+![Paper hero splitting apart to reveal the dark biography chapter]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-03-split-door-handoff.png)
 
 > **Core idea** — Treat the hero surface as two physical doors. As the user leaves the first chapter, fade and lift the hero content, draw a narrow center seam, slide both halves outward, and reveal a contrasting chapter already waiting underneath.
 >
@@ -43,7 +43,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 3. Pinned Biography With Word-by-Word Illumination
 
-![Pinned biography with the current reading words illuminated](assets/mara-voss-04-pinned-bio-illumination.png)
+![Pinned biography with the current reading words illuminated]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-04-pinned-bio-illumination.png)
 
 > **Core idea** — Turn a biography into a reading instrument. A dominant portrait resolves first; supporting image plates begin behind it and distribute into a triptych. While the section is pinned, the paragraph moves from soft blur and low opacity to full clarity one word at a time.
 >
@@ -57,7 +57,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 4. Velocity-Reactive Archive Marquee With a Scrubbed Player
 
-![Pinned archive marquee and recording player](assets/mara-voss-05-archive-playhead-player.png)
+![Pinned archive marquee and recording player]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-05-archive-playhead-player.png)
 
 > **Core idea** — Combine a continuous archive feed with a fixed playhead and a pinned media player. The feed moves like tape: scroll direction reverses its travel and scroll velocity briefly accelerates it. Items crossing the center needle gain opacity and variable-font weight. Below, scroll changes one large media record at a time.
 >
@@ -71,7 +71,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 5. Full-Screen Chapter Wipe With a Timed Ledger
 
-![Dark chapter panel with a timestamped line reveal](assets/mara-voss-06-chapter-wipe-ledger.png)
+![Dark chapter panel with a timestamped line reveal]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-06-chapter-wipe-ledger.png)
 
 > **Core idea** — Preserve the previous chapter underneath, then sweep a full-screen ink panel across it. Once the panel owns the viewport, reveal a sequence of timestamped lines from masks and bring in small evidence cards while the final lines land.
 >
@@ -85,7 +85,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 6. Pinned Asymmetric Counter Index
 
-![Asymmetric archive metrics resolving in staggered beats](assets/mara-voss-07-pinned-counter-index.png)
+![Asymmetric archive metrics resolving in staggered beats]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-07-pinned-counter-index.png)
 
 > **Core idea** — Present metrics as an editorial index rather than a grid of identical statistic cards. Give every entry its own scale and column position. During a pinned sequence, draw its rule, unmask the numeral, count to the real value, then resolve metadata and the explanatory note.
 >
@@ -99,7 +99,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 7. Sticky Recording Stack With a Weighted Viewing Beat
 
-![A new recording plate stacking over the previous one](assets/mara-voss-08-sticky-recording-stack.png)
+![A new recording plate stacking over the previous one]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-08-sticky-recording-stack.png)
 
 > **Core idea** — Build a sequence of full-viewport media chapters with CSS `position: sticky`. Each new plate rises over the current one. The covered plate scales back, darkens, and softens slightly, creating depth without turning the stack into a 3D spectacle.
 >
@@ -113,7 +113,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 8. Pinned Catalogue With an Optical Inspection Light
 
-![Catalogue card isolated by a moving inspection light](assets/mara-voss-09-inspection-light-table.png)
+![Catalogue card isolated by a moving inspection light]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-09-inspection-light-table.png)
 
 > **Core idea** — Scatter a small collection of mounted records across a light-table canvas. Keep the collection quiet and desaturated, then move one soft inspection light from record to record. The active mount rises, regains color and contrast, and updates an optical index.
 >
@@ -127,7 +127,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 9. Opposing Evidence Plates Into a Paper-to-Black Dissolve
 
-![Opposing image plates assembled around a final statement](assets/mara-voss-10-final-entry-dissolve.png)
+![Opposing image plates assembled around a final statement]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-10-final-entry-dissolve.png)
 
 > **Core idea** — Use a short bridge chapter before a tonal shift. Two evidence plates enter from opposite sides while a central statement sharpens. Hold the completed composition, then soften the entire chapter under a black field so the next dark scene feels continuous.
 >
@@ -141,7 +141,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 10. Dark-Room Image Resolve With a Delayed Verdict
 
-![Dark recording image resolving from blur](assets/mara-voss-11-silence-dark-room.png)
+![Dark recording image resolving from blur]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-11-silence-dark-room.png)
 
 > **Core idea** — Let a low-contrast photograph ghost out of the preceding black field before its chapter pins. Resolve the image slowly, then reveal a short status character by character, followed by a two-stage title and final metadata.
 >
@@ -155,7 +155,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 11. Pinned Field Log With One Active Record
 
-![Field-log record in focus while surrounding entries recede](assets/mara-voss-12-field-log-reveal.png)
+![Field-log record in focus while surrounding entries recede]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-12-field-log-reveal.png)
 
 > **Core idea** — Keep a compact field log visible as one editorial sheet. Pin the sheet and move focus through the entries: the current record grows slightly, its thumbnail enlarges, and its stamp becomes legible while completed and upcoming notes remain present at lower contrast.
 >
@@ -169,7 +169,7 @@ Use the interaction logic with original identity, copy, colors, imagery, data, a
 
 ## 12. Footer Signal Bloom, Magnetic CTA, Cursor, and Progress Layer
 
-![Footer CTA with magnetic offset and completed scroll progress](assets/mara-voss-13-magnetic-footer-utilities.png)
+![Footer CTA with magnetic offset and completed scroll progress]({{ref:webDesignPreviews}}/editorial-portfolio-chapters/mara-voss-13-magnetic-footer-utilities.png)
 
 > **Core idea** — Finish with a pinned dark chapter where a soft signal bloom grows behind a two-line verdict. Reveal the primary CTA only after the title is complete. Add a restrained magnetic offset, a tight custom cursor, and a minimal progress meter as one coordinated utility layer.
 >

@@ -7,16 +7,19 @@ license: MIT
 sourcePlatform: agent-skills
 compatibility:
   platforms:
-    tested:
+    tested: []
+    partial:
     - claude-code
     - cursor
     - codex
     - openclaw
     - hermes
-    partial: []
   models:
     recommended: []
     minimum: []
+references:
+- id: webDesignPreviews
+  path: assets
 skills:
 - name: add-shader-cursor-trail
   path: skills/add-shader-cursor-trail/SKILL.md

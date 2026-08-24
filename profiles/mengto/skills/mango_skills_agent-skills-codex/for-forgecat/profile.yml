@@ -7,16 +7,19 @@ license: MIT
 sourcePlatform: codex
 compatibility:
   platforms:
-    tested:
+    tested: []
+    partial:
     - claude-code
     - cursor
     - codex
     - openclaw
     - hermes
-    partial: []
   models:
     recommended: []
     minimum: []
+references:
+- id: brandWorldExamples
+  path: assets/generate-reference-inspired-brand-worlds/examples
 skills:
 - name: article-prompts-to-skills
   path: skills/article-prompts-to-skills/SKILL.md

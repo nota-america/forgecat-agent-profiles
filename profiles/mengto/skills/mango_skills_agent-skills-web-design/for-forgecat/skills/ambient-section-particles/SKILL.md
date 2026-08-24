@@ -77,4 +77,4 @@ On teardown, disconnect observers, remove resize and pointer listeners, cancel t
 
 Test entry and exit pausing, background-tab recovery, fast resize, 390/768/1440 widths, device pixel ratio, pointer and touch input, reduced motion, section overflow, content focus, long text, route cleanup, and console errors. Confirm only one animation loop survives repeated mounts.
 
-Use [demo/index.html](demo/index.html) as the working reference and [demo/PROMPT.md](demo/PROMPT.md) to recreate or remix it. Keep [REFERENCES.md](REFERENCES.md) as the links-only implementation source list.
+Use [demo/index.html](demo/index.html) as the working reference and [demo/PROMPT.md](demo/PROMPT.md) to recreate or remix it. Inspect the rendered preview at `{{ref:webDesignPreviews}}/ambient-section-particles/preview.jpg`. Keep [REFERENCES.md](REFERENCES.md) as the links-only implementation source list.

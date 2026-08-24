@@ -69,4 +69,4 @@ Under `prefers-reduced-motion: reduce`, show the complete line or discrete reach
 
 Test variable step counts, uneven card heights, missing media, long translations, 390/768/1024/1440 widths, 200% zoom, fast forward and reverse scrolling, direct anchor navigation, keyboard order, reduced motion, late font/image layout, route cleanup, and console errors. The active step and line head must agree at every boundary.
 
-Use [demo/index.html](demo/index.html) as the working reference and [demo/PROMPT.md](demo/PROMPT.md) to recreate or remix it. Keep [REFERENCES.md](REFERENCES.md) as the links-only implementation source list.
+Use [demo/index.html](demo/index.html) as the working reference and [demo/PROMPT.md](demo/PROMPT.md) to recreate or remix it. Inspect the rendered preview at `{{ref:webDesignPreviews}}/scroll-progress-timeline/preview.jpg`. Keep [REFERENCES.md](REFERENCES.md) as the links-only implementation source list.

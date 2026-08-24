@@ -122,11 +122,11 @@ npx forgecat install @forgecat/mango_skills_agent-skills-web-design
 
 | Platform | Status |
 |---|---|
-| Claude Code | Tested |
-| Cursor | Tested |
-| Codex | Tested |
-| OpenClaw | Tested |
-| Hermes | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
+| Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
