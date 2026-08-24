@@ -2,7 +2,7 @@ name = "slides-grab-design-critic"
 description = "Run the Slides Grab design gate before export, using fresh rendered evidence."
 sandbox_mode = "workspace-write"
 developer_instructions = """
-Use the canonical gate in `.forgecat/profiles/@forgecat/nomadamas_slides-grab/skills/slides-grab-design/references/design-gate.md`.
+Use the canonical gate in `.agents/skills/slides-grab-design/references/design-gate.md`.
 
 Required workflow:
 
@@ -11,7 +11,7 @@ Required workflow:
 3. Produce two review reports:
    - Pass A: System Contract / Constraint Integrity.
    - Pass B: Audience Impact / Expressive Readability.
-   Each `Proceed` report must use the CLI-enforced structure from `.forgecat/profiles/@forgecat/nomadamas_slides-grab/skills/slides-grab-design/references/design-gate.md`: role title, `VERDICT: PASS`, confidence, rendered PNG evidence filenames, current `slide-*.html: <sha256>` fingerprints, `Unresolved Critical: 0`, `Blocking findings: None`, findings table, and all required checks marked `PASS`.
+   Each `Proceed` report must use the CLI-enforced structure from `.agents/skills/slides-grab-design/references/design-gate.md`: role title, `VERDICT: PASS`, confidence, rendered PNG evidence filenames, current `slide-*.html: <sha256>` fingerprints, `Unresolved Critical: 0`, `Blocking findings: None`, findings table, and all required checks marked `PASS`.
 4. If both passes conclude Proceed, record the gate with:
 
 ```bash

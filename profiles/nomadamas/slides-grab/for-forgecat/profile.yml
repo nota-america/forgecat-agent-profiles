@@ -6,13 +6,13 @@ visibility: public
 sourcePlatform: multi-host
 compatibility:
   platforms:
-    tested:
+    tested: []
+    partial:
     - claude-code
     - cursor
     - codex
     - openclaw
     - hermes
-    partial: []
   models:
     recommended: []
     minimum: []
@@ -63,7 +63,5 @@ references:
   path: src/design-styles-data.json
 - id: designDiversity
   path: src/design-diversity-data.json
-- id: designGate
-  path: skills/slides-grab-design/references/design-gate.md
 - id: thirdPartyNotices
   path: THIRD_PARTY_NOTICES.md

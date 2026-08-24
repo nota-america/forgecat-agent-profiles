@@ -25,7 +25,7 @@ npx forgecat install @forgecat/nomadamas_slides-grab
 Install the CLI version that matches the reviewed source commit, then install Chromium for Playwright:
 
 ```bash
-npm install --global slides-grab@1.5.0
+npm install --global slides-grab@1.5.1
 npx playwright install chromium
 ```
 
@@ -47,13 +47,15 @@ The ForgeCat profile installs the skills, templates, style data, and platform ad
 - Codex receives the source `slides-grab-design-critic` instructions in the current project-scoped TOML custom-agent format.
 - Cursor, OpenClaw, and Hermes receive the seven portable skills without a generated agent. The skills run the same two review passes sequentially when a platform-specific subagent is unavailable.
 
-Exact runtime verification confirmed both native adapters and the shared skill fallback across all five platforms.
+Local installation verification confirmed both native adapters and the shared skill fallback layout across all five platforms. Exact registry-version runtime verification remains pending.
 
 ## Capability notes
 
 PDF and per-slide PNG are the primary export formats. PPTX and Figma export are experimental.
 
 The default image provider uses `god-tibo-imagen@0.2.0`, local Codex authentication, and an unsupported private backend. Image generation is verified separately from profile delivery. The CLI also supports provider-specific API keys and a local web-image fallback.
+
+A fresh `slides-grab@1.5.1` install currently reports two high-severity transitive `npm audit` findings in `image-size` and `sharp`. The profile does not remediate those upstream runtime dependencies.
 
 ## Details
 
@@ -62,7 +64,7 @@ The default image provider uses `god-tibo-imagen@0.2.0`, local Codex authenticat
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
 | Version | `0.1.0` |
-| Original commit | 745c931c8f5556d8b9fdfe6718c8a507f6223935 |
+| Original commit | b904568fc8a56e7ec8ca13fffdfcc6b1952c5284 |
 | License | MIT |
 | Source platform | multi-host |
 
@@ -72,15 +74,15 @@ The default image provider uses `god-tibo-imagen@0.2.0`, local Codex authenticat
 
 | Platform | Status |
 |---|---|
-| Claude Code | Tested |
-| Cursor | Tested |
-| Codex | Tested |
-| OpenClaw | Tested |
-| Hermes | Tested |
+| Claude Code | Partial |
+| Cursor | Partial |
+| Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## External runtime requirements
 
-- `slides-grab@1.5.0`, installed globally so the bare CLI command is available
+- `slides-grab@1.5.1`, installed globally so the bare CLI command is available
 - Playwright Chromium, installed with `npx playwright install chromium`
 
 ## Third-party notices
