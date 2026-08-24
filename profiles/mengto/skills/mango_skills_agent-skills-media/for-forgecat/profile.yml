@@ -6,13 +6,13 @@ license: MIT
 sourcePlatform: agent-skills
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
     - openclaw
     - hermes
+    partial: []
   models:
     recommended: []
     minimum: []

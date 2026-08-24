@@ -30,7 +30,7 @@ npx forgecat install @forgecat/mango_skills_agent-skills-media
 |---|---|
 | Author | Meng To |
 | Original repository | https://github.com/MengTo/Skills/tree/main/agent-skills/media |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Original commit | 4c716b516b6b0143f3037631306b3730d2832344 |
 | License | MIT |
 | Source platform | agent-skills |
@@ -41,11 +41,11 @@ npx forgecat install @forgecat/mango_skills_agent-skills-media
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
-| OpenClaw | Partial |
-| Hermes | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
