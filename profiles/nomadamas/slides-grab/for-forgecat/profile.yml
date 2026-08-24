@@ -1,0 +1,69 @@
+name: '@forgecat/nomadamas_slides-grab'
+description: Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with shared skills and platform-native design review adapters.
+repository: https://github.com/NomaDamas/slides-grab
+license: MIT
+visibility: public
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
+  models:
+    recommended: []
+    minimum: []
+platforms:
+  claude-code:
+    mode: override
+  codex:
+    mode: override
+skills:
+- name: slides-grab
+  path: skills/slides-grab/SKILL.md
+  description: End-to-end presentation workflow usable in Codex and Claude Code. Routes the user request
+    to the HTML-mode or image-native-mode sub-skill, then runs the shared plan, design, and export stages.
+    PDF and per-slide PNG are preferred; PPTX/Figma export is experimental / unstable.
+- name: slides-grab-card-news
+  path: skills/slides-grab-card-news/SKILL.md
+  description: Generate square Instagram-style card news by reusing the slides-grab workflow with card-news
+    mode enabled. Defaults to per-slide PNG export.
+- name: slides-grab-design
+  path: skills/slides-grab-design/SKILL.md
+  description: Stage 2 design skill usable in Codex and Claude Code. Generate and iterate slide-XX.html
+    files in the selected slides workspace.
+- name: slides-grab-export
+  path: skills/slides-grab-export/SKILL.md
+  description: Stage 3 conversion skill usable in Codex and Claude Code. Convert approved HTML slides
+    to PDF or per-slide PNG reliably, and to experimental / unstable PPTX/Figma outputs on a best-effort
+    basis.
+- name: slides-grab-html
+  path: skills/slides-grab-html/SKILL.md
+  description: HTML-mode presentation pipeline usable in Codex and Claude Code. Build semantic slide-XX.html
+    files, generate bespoke hero/accent imagery with slides-grab image, run the design gate, and export.
+    Use when the deck needs editable, searchable, accessible text or when no existing template must be
+    matched pixel-for-pixel.
+- name: slides-grab-image
+  path: skills/slides-grab-image/SKILL.md
+  description: Image-native presentation pipeline usable in Codex and Claude Code. Generate whole-slide
+    raster images one slide at a time with slides-grab image, passing the reference template page as --reference
+    so the model copies the layout and style and only swaps the content. Use when visual fidelity to an
+    existing template matters more than editable text.
+- name: slides-grab-plan
+  path: skills/slides-grab-plan/SKILL.md
+  description: Stage 1 planning skill usable in Codex and Claude Code. Build and iterate slide-outline.md
+    until explicit user approval.
+references:
+- id: templates
+  path: templates
+- id: designStyles
+  path: src/design-styles-data.json
+- id: designDiversity
+  path: src/design-diversity-data.json
+- id: designGate
+  path: skills/slides-grab-design/references/design-gate.md
+- id: thirdPartyNotices
+  path: THIRD_PARTY_NOTICES.md

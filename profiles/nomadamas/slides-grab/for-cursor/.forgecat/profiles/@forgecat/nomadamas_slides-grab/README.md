@@ -1,0 +1,88 @@
+*written by ForgeCat*
+
+![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+
+# Slides Grab
+
+Build, review, and export HTML or image-native slide decks with the seven portable Slides Grab skills.
+
+## Tags
+
+- slides
+- presentations
+- html
+- image-generation
+- design-review
+
+## Installation
+
+```bash
+npx forgecat install @forgecat/nomadamas_slides-grab
+```
+
+## Runtime setup
+
+Install the CLI version that matches the reviewed source commit, then install Chromium for Playwright:
+
+```bash
+npm install --global slides-grab@1.5.0
+npx playwright install chromium
+```
+
+The ForgeCat profile installs the skills, templates, style data, and platform adapters. The exact global npm package puts the `slides-grab` command on `PATH` and provides the runtime that renders, validates, edits, and exports decks.
+
+## Skills
+
+- **slides-grab** — End-to-end presentation workflow usable in Codex and Claude Code. Routes the user request to the HTML-mode or image-native-mode sub-skill, then runs the shared plan, design, and export stages. PDF and per-slide PNG are preferred; PPTX/Figma export is experimental / unstable.
+- **slides-grab-card-news** — Generate square Instagram-style card news by reusing the slides-grab workflow with card-news mode enabled. Defaults to per-slide PNG export.
+- **slides-grab-design** — Stage 2 design skill usable in Codex and Claude Code. Generate and iterate slide-XX.html files in the selected slides workspace.
+- **slides-grab-export** — Stage 3 conversion skill usable in Codex and Claude Code. Convert approved HTML slides to PDF or per-slide PNG reliably, and to experimental / unstable PPTX/Figma outputs on a best-effort basis.
+- **slides-grab-html** — HTML-mode presentation pipeline usable in Codex and Claude Code. Build semantic slide-XX.html files, generate bespoke hero/accent imagery with slides-grab image, run the design gate, and export. Use when the deck needs editable, searchable, accessible text or when no existing template must be matched pixel-for-pixel.
+- **slides-grab-image** — Image-native presentation pipeline usable in Codex and Claude Code. Generate whole-slide raster images one slide at a time with slides-grab image, passing the reference template page as --reference so the model copies the layout and style and only swaps the content. Use when visual fidelity to an existing template matters more than editable text.
+- **slides-grab-plan** — Stage 1 planning skill usable in Codex and Claude Code. Build and iterate slide-outline.md until explicit user approval.
+
+## Platform adapters
+
+- Claude Code receives the source `design-critic-agent` adapter.
+- Codex receives the source `slides-grab-design-critic` instructions in the current project-scoped TOML custom-agent format.
+- Cursor, OpenClaw, and Hermes receive the seven portable skills without a generated agent. The skills run the same two review passes sequentially when a platform-specific subagent is unavailable.
+
+Exact runtime verification confirmed both native adapters and the shared skill fallback across all five platforms.
+
+## Capability notes
+
+PDF and per-slide PNG are the primary export formats. PPTX and Figma export are experimental.
+
+The default image provider uses `god-tibo-imagen@0.2.0`, local Codex authentication, and an unsupported private backend. Image generation is verified separately from profile delivery. The CLI also supports provider-specific API keys and a local web-image fallback.
+
+## Details
+
+| Field | Value |
+|---|---|
+| Author | vkehfdl1 |
+| Original repository | https://github.com/NomaDamas/slides-grab |
+| Version | `0.1.0` |
+| Original commit | 745c931c8f5556d8b9fdfe6718c8a507f6223935 |
+| License | MIT |
+| Source platform | multi-host |
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
+
+## External runtime requirements
+
+- `slides-grab@1.5.0`, installed globally so the bare CLI command is available
+- Playwright Chromium, installed with `npx playwright install chromium`
+
+## Third-party notices
+
+The bundled style data includes material derived from `corazzon/pptx-design-styles` and `epoko77-ai/design-diversity`. See `THIRD_PARTY_NOTICES.md` for attribution and license terms.
