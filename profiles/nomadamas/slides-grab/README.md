@@ -47,7 +47,7 @@ The ForgeCat profile installs the skills, templates, style data, and platform ad
 - Codex receives the source `slides-grab-design-critic` adapter.
 - Cursor, OpenClaw, and Hermes receive the seven portable skills without a generated agent. The skills run the same two review passes sequentially when a platform-specific subagent is unavailable.
 
-Local installation verification confirmed both native adapters and the shared skill fallback layout across all five platforms. Exact registry-version runtime verification remains pending.
+Installation and component-aware runtime verification passed for the native adapters and shared skill fallback layout across all five platforms.
 
 ## Capability notes
 
@@ -74,11 +74,11 @@ A fresh `slides-grab@1.5.1` install currently reports two high-severity transiti
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
-| OpenClaw | Partial |
-| Hermes | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 

@@ -6,13 +6,13 @@ visibility: public
 sourcePlatform: multi-host
 compatibility:
   platforms:
-    tested: []
-    partial:
+    tested:
     - claude-code
     - cursor
     - codex
     - openclaw
     - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
