@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "_forgecat": "@forgecat/juliusbrussee_caveman#caveman-claude-session-start",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/juliusbrussee_caveman/hooks/_fc_wrap.sh claude-code caveman-activate.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "_forgecat": "@forgecat/juliusbrussee_caveman#caveman-claude-user-prompt-submit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/juliusbrussee_caveman/hooks/_fc_wrap.sh claude-code caveman-mode-tracker.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
