@@ -29,7 +29,7 @@ npm install --global slides-grab@1.5.1
 npx playwright install chromium
 ```
 
-The ForgeCat profile installs the skills, templates, style data, and platform adapters. The exact global npm package puts the `slides-grab` command on `PATH` and provides the runtime that renders, validates, edits, and exports decks.
+The forgecat profile installs the seven portable skills, templates, and style data. The exact global npm package puts the `slides-grab` command on `PATH` and provides the runtime that renders, validates, edits, and exports decks.
 
 ## Skills
 
@@ -41,13 +41,12 @@ The ForgeCat profile installs the skills, templates, style data, and platform ad
 - **slides-grab-image** — Image-native presentation pipeline usable in Codex and Claude Code. Generate whole-slide raster images one slide at a time with slides-grab image, passing the reference template page as --reference so the model copies the layout and style and only swaps the content. Use when visual fidelity to an existing template matters more than editable text.
 - **slides-grab-plan** — Stage 1 planning skill usable in Codex and Claude Code. Build and iterate slide-outline.md until explicit user approval.
 
-## Platform adapters
+## Design review behavior
 
-- Claude Code receives the source `design-critic-agent` adapter.
-- Codex receives the source `slides-grab-design-critic` instructions in the current project-scoped TOML custom-agent format.
-- Cursor, OpenClaw, and Hermes receive the seven portable skills without a generated agent. The skills run the same two review passes sequentially when a platform-specific subagent is unavailable.
+- The registry profile uses the shared `slides-grab-design` skill on every platform. Its design gate runs native subagents or tasks when available and otherwise runs the two review passes sequentially.
+- The repository's `for-claude` and `for-codex` artifacts separately preserve the upstream runtime-native design critic adapters for direct native use. They are not duplicated inside the forgecat package.
 
-Installation and component-aware runtime verification passed for the native adapters and shared skill fallback layout across all five platforms.
+The registry package therefore follows the same portable skill layout on all five platforms.
 
 ## Capability notes
 
@@ -63,7 +62,7 @@ A fresh `slides-grab@1.5.1` install currently reports two high-severity transiti
 |---|---|
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | b904568fc8a56e7ec8ca13fffdfcc6b1952c5284 |
 | License | MIT |
 | Source platform | multi-host |
