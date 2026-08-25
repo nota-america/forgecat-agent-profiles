@@ -9,6 +9,8 @@ compatibility:
     tested:
     - claude-code
     - cursor
+    - openclaw
+    - hermes
     partial:
     - codex
   models:

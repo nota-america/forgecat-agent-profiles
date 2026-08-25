@@ -17,6 +17,8 @@ compatibility:
     tested:
       - claude-code
       - codex
+      - openclaw
+      - hermes
     partial:
       - cursor
   models:
