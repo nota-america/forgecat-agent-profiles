@@ -63,7 +63,7 @@ A fresh `slides-grab@1.5.1` install currently reports two high-severity transiti
 |---|---|
 | Author | vkehfdl1 |
 | Original repository | https://github.com/NomaDamas/slides-grab |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Original commit | b904568fc8a56e7ec8ca13fffdfcc6b1952c5284 |
 | License | MIT |
 | Source platform | multi-host |
