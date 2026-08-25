@@ -1,5 +1,5 @@
 name: '@forgecat/nomadamas_slides-grab'
-description: Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with shared skills and platform-native design review adapters.
+description: Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with seven portable skills.
 repository: https://github.com/NomaDamas/slides-grab
 license: MIT
 visibility: public
@@ -16,11 +16,6 @@ compatibility:
   models:
     recommended: []
     minimum: []
-platforms:
-  claude-code:
-    mode: override
-  codex:
-    mode: override
 skills:
 - name: slides-grab
   path: skills/slides-grab/SKILL.md
