@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-185-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-39-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-190-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-40-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -149,8 +149,9 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [zubair-trabzada/geo-seo-claude](./profiles/zubair-trabzada/geo-seo-claude) | 1 | GEO-first SEO skills and agents for AI-search visibility audits, reports, schema, crawlers, and client workflows |
 | [s1dashu/ip-as-logo-skill](./profiles/s1dashu/ip-as-logo-skill) | 1 | Generate extremely simple, cute IP mascot images with rounded silhouettes, a constrained three-color palette, and lower-corner compositions. |
 | [nomadamas/slides-grab](./profiles/nomadamas/slides-grab) | 1 | Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with shared skills and platform-native design review adapters. |
+| [mengto/skills](./profiles/mengto/skills) | 5 | Codex-oriented agent skills for auditing, browser capture, inspiration workflows, media conversion, profiling, publishing, and skill authoring. |
 
-Total: 185 profiles across 39 collections.
+Total: 190 profiles across 40 collections.
 
 ## Profile Layout
 
