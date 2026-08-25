@@ -47,7 +47,7 @@ npx forgecat install @forgecat/mango_skills_agent-skills-codex
 |---|---|
 | Author | Meng To |
 | Original repository | https://github.com/MengTo/Skills/tree/main/agent-skills/codex |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | 4c716b516b6b0143f3037631306b3730d2832344 |
 | License | MIT |
 | Source platform | codex |

@@ -111,7 +111,7 @@ npx forgecat install @forgecat/mango_skills_agent-skills-web-design
 |---|---|
 | Author | Meng To |
 | Original repository | https://github.com/MengTo/Skills/tree/main/agent-skills/web-design |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | 4c716b516b6b0143f3037631306b3730d2832344 |
 | License | MIT |
 | Source platform | agent-skills |
