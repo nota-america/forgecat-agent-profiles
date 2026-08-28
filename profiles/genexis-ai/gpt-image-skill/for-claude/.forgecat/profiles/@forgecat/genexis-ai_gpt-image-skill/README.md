@@ -29,7 +29,7 @@ npx forgecat install @forgecat/genexis-ai_gpt-image-skill
 |---|---|
 | Author | GENEXIS-AI |
 | Original repository | https://github.com/GENEXIS-AI/gpt-image-skill |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | 9da68649d1e0eb8d618a6960cbdee88af11313ec |
 | License | Unknown |
 | Source platform | multi-host |
@@ -40,11 +40,11 @@ npx forgecat install @forgecat/genexis-ai_gpt-image-skill
 
 | Platform | Status |
 |---|---|
-| Claude Code | Partial |
-| Cursor | Partial |
-| Codex | Partial |
-| OpenClaw | Partial |
-| Hermes | Partial |
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
