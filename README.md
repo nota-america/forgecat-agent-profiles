@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-190-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-40-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-191-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-41-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -126,6 +126,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
+| [genexis-ai/gpt-image-skill](./profiles/genexis-ai/gpt-image-skill) | 1 | Cross-host image generation and editing through native tools or a ChatGPT-authenticated Codex bridge |
 | [google-gemini/gemini-skills](./profiles/google-gemini/gemini-skills) | 3 | Gemini API, interactions API, and live API development skills |
 | [googleworkspace/cli](./profiles/googleworkspace/cli) | 1 | Google Workspace CLI skills for Drive, Gmail, Calendar, Docs, Sheets, Slides, Chat, and Apps Script |
 | [juliusbrussee/caveman](./profiles/juliusbrussee/caveman) | 1 | Caveman communication mode with compressed skills, commands, agents, and hooks |
@@ -151,7 +152,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [nomadamas/slides-grab](./profiles/nomadamas/slides-grab) | 1 | Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with shared skills and platform-native design review adapters. |
 | [mengto/skills](./profiles/mengto/skills) | 5 | Codex-oriented agent skills for auditing, browser capture, inspiration workflows, media conversion, profiling, publishing, and skill authoring. |
 
-Total: 190 profiles across 40 collections.
+Total: 191 profiles across 41 collections.
 
 ## Profile Layout
 
