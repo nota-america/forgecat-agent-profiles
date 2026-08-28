@@ -1,0 +1,27 @@
+name: '@forgecat/genexis-ai_gpt-image-skill'
+description: Generate and edit workspace images through a host-native image tool or a bounded Codex CLI bridge using ChatGPT sign-in.
+visibility: public
+repository: https://github.com/GENEXIS-AI/gpt-image-skill
+license: Unknown
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested: []
+    partial:
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+  models:
+    recommended: []
+    minimum: []
+skills:
+- name: gpt-image
+  path: skills/gpt-image/SKILL.md
+  description: Generate or edit raster images through the user's ChatGPT subscription and save or preview
+    workspace PNGs. Use for text-to-image, local-reference generation, edits, follow-up revisions, variants,
+    multi-image batches, or subscription-backed setup in Codex, Claude Code, and compatible local agents.
+    Preserve direct prompts verbatim; develop distinct per-output prompts when the user delegates multiple
+    concepts. Attach actual reference files. Prefer host-native image_gen; otherwise use Codex CLI with
+    ChatGPT sign-in. Never use the Images API, OPENAI_API_KEY, or API-key login.
