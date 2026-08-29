@@ -22,6 +22,7 @@
 
 require "set"
 require "English"
+require_relative "license_evidence"
 
 ROOT = File.expand_path("..", __dir__)
 PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
@@ -89,13 +90,17 @@ def pinned?(url)
   !url[%r{/(?:tree|blob)/[0-9a-f]{7,40}(?:/|$)}].nil?
 end
 
-def evidence?(profile_dir, package_dir)
-  return true if Dir.glob(File.join(profile_dir, "**", "LICENSE*"), File::FNM_CASEFOLD).any?
-  return true if File.exist?(File.join(profile_dir, "LICENSE-SOURCE.md"))
+# Additions to the baseline list would exempt a profile from the pin and evidence
+# rules, so a PR could clear the gate by naming itself. Removals are how the
+# baseline shrinks and stay allowed.
+def baseline_additions(range)
+  command = ["git", "show", "#{range.split("..").first}:scripts/license-baseline.txt"]
+  before = IO.popen(command, chdir: ROOT, err: File::NULL, &:read)
+  return [] unless $CHILD_STATUS.success?
 
-  Dir.glob(File.join(package_dir, "**", "*.md")).any? do |path|
-    File.foreach(path, encoding: "UTF-8").first(20).any? { |line| line.start_with?("license:") }
-  end
+  previous = Set.new(before.lines.map(&:strip).reject(&:empty?))
+  current = File.readlines(BASELINE_LIST, chomp: true).reject(&:empty?)
+  current.reject { |entry| previous.include?(entry) }
 end
 
 baseline = Set.new(File.exist?(BASELINE_LIST) ? File.readlines(BASELINE_LIST, chomp: true).reject(&:empty?) : [])
@@ -109,12 +114,19 @@ if ARGV.first == "--changed-only"
   manifest_paths = changed_profile_manifests(range, manifest_paths)
 end
 
+errors = []
+
+unless range.nil?
+  baseline_additions(range).each do |entry|
+    errors << "#{entry}: added to scripts/license-baseline.txt — the baseline may only shrink"
+  end
+end
+
 if manifest_paths.empty?
+  fail_with(errors)
   puts "License evidence check: no profiles touched."
   exit 0
 end
-
-errors = []
 
 manifest_paths.each do |manifest_path|
   manifest = File.read(manifest_path, encoding: "UTF-8")
@@ -144,8 +156,16 @@ manifest_paths.each do |manifest_path|
     errors << "#{name}: `repository` must pin an exact commit, not a branch — #{repository}"
   end
 
-  unless evidence?(profile_root(manifest_path), File.dirname(manifest_path))
-    errors << "#{name}: ships no license evidence (upstream LICENSE file, LICENSE-SOURCE.md, or frontmatter `license:`)"
+  kind, = LicenseEvidence.classify(profile_root(manifest_path), File.dirname(manifest_path))
+  if kind == "none"
+    note = File.join(profile_root(manifest_path), "LICENSE-SOURCE.md")
+    if File.exist?(note)
+      LicenseEvidence.license_source_problems(note).each do |problem|
+        errors << "#{name}: LICENSE-SOURCE.md #{problem}"
+      end
+    else
+      errors << "#{name}: ships no license evidence (upstream LICENSE file, LICENSE-SOURCE.md, or upstream frontmatter `license:`)"
+    end
   end
 end
 

@@ -9,6 +9,7 @@
 # fill the commit column, otherwise those cells read "no-snapshot".
 
 require "optparse"
+require_relative "license_evidence"
 
 ROOT = File.expand_path("..", __dir__)
 
@@ -39,31 +40,49 @@ end
 # with the exact file being redistributed, so it outranks a repository-root
 # LICENSE that may not cover the copied subtree.
 def shipped_evidence(profile_dir, package_dir)
-  license_file = Dir.glob(File.join(profile_dir, "**", "LICENSE*"), File::FNM_CASEFOLD).first
-  return ["license-file", license_file.delete_prefix("#{ROOT}/")] if license_file
-
-  frontmatter = Dir.glob(File.join(package_dir, "**", "*.md")).find do |path|
-    File.foreach(path, encoding: "UTF-8").first(20).any? { |line| line.start_with?("license:") }
-  end
-  return ["frontmatter", frontmatter.delete_prefix("#{ROOT}/")] if frontmatter
-
-  ["none", "-"]
+  kind, path = LicenseEvidence.classify(profile_dir, package_dir)
+  [kind, path ? path.delete_prefix("#{ROOT}/") : "-"]
 end
 
+# Snapshots live in github.com__<owner>__<repo>/commits/<short-sha>/, but the
+# directory name is a 12-character abbreviation. The full revision is recorded as
+# `archived_commit` in that directory's source.yml, and only the full one is
+# usable as provenance.
 def snapshot_commits(snapshots_dir, slug)
   return [] unless snapshots_dir
 
-  # Snapshots are stored as github.com__<owner>__<repo>/commits/<sha>/original-repo.
   owner, repo = slug.split("/")
   dir = Dir.glob(File.join(snapshots_dir, "github.com__*__*")).find do |candidate|
     File.basename(candidate).downcase == "github.com__#{owner}__#{repo}".downcase
   end
   return [] unless dir
 
-  Dir.children(File.join(dir, "commits")).sort
+  Dir.children(File.join(dir, "commits")).sort.map do |short|
+    metadata = File.join(dir, "commits", short, "source.yml")
+    next unless File.exist?(metadata)
+
+    File.read(metadata, encoding: "UTF-8")[/^archived_commit:[ \t]*([0-9a-f]{40})\s*$/, 1]
+  end.compact
 rescue Errno::ENOENT
   []
 end
+
+# A profile counts as resolved only when a matcher has confirmed its files
+# against a specific upstream revision and written a receipt. A pinned URL plus
+# a bundled license file says the metadata looks right, which is the claim this
+# audit exists to stop taking on faith.
+def match_receipts(path)
+  return {} unless File.exist?(path)
+
+  File.readlines(path, chomp: true).map do |line|
+    next if line.empty? || line.start_with?("#")
+
+    profile, commit, = line.split("\t")
+    [profile, commit] if profile && commit
+  end.compact.to_h
+end
+
+receipts = match_receipts(File.join(ROOT, "scripts/license-matches.tsv"))
 
 rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.map do |manifest_path|
   manifest = File.read(manifest_path, encoding: "UTF-8")
@@ -75,9 +94,14 @@ rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.ma
   evidence_kind, evidence_path = shipped_evidence(profile_dir, package_dir)
   commits = snapshot_commits(options[:snapshots], slug)
 
+  profile_name = profile_dir.delete_prefix("#{ROOT}/profiles/")
+  matched_commit = receipts[profile_name]
+
   status =
-    if pinned?(repository) && evidence_kind != "none"
+    if matched_commit && pinned?(repository) && evidence_kind != "none"
       "resolved"
+    elsif matched_commit
+      "matched-needs-pin-or-evidence"
     elsif commits.empty?
       "unresolved-no-snapshot"
     else
@@ -85,8 +109,9 @@ rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.ma
     end
 
   {
-    profile: profile_dir.delete_prefix("#{ROOT}/profiles/"),
+    profile: profile_name,
     upstream: slug,
+    matched: matched_commit || "-",
     license: declared_license(manifest),
     pinned: pinned?(repository) ? "yes" : "no",
     evidence: evidence_kind,
@@ -102,17 +127,20 @@ lines = ["# License provenance audit",
          "with the license it declares, the evidence it redistributes, and whether that",
          "declaration has been matched to an exact upstream commit yet.",
          "",
-         "`status` is `resolved` once a profile pins an exact source revision and ships",
-         "its evidence. `unresolved-needs-match` means a pinned snapshot of the upstream",
-         "exists and the profile's files still have to be matched against it;",
-         "`unresolved-no-snapshot` means no snapshot is on hand and the upstream has to",
-         "be fetched first. Neither unresolved state asserts that a declaration is wrong.",
+         "`status` is `resolved` only when three things hold: a matcher confirmed the",
+         "profile's files against a specific upstream revision and recorded it in",
+         "`scripts/license-matches.tsv`, `repository` pins that revision, and the profile",
+         "ships its evidence. A pinned URL on its own is a claim, not a match.",
+         "`matched-needs-pin-or-evidence` has the receipt but not yet the metadata;",
+         "`unresolved-needs-match` has a snapshot to match against; `unresolved-no-snapshot`",
+         "needs the upstream fetched first. No unresolved state asserts that a declaration",
+         "is wrong — it says nobody has checked it yet.",
          "",
-         "| profile | upstream | declared license | pinned | evidence | evidence path | snapshot commits | status |",
-         "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+         "| profile | upstream | declared license | pinned | evidence | evidence path | snapshot commits | matched commit | status |",
+         "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
 rows.each do |row|
   lines << "| #{row[:profile]} | #{row[:upstream]} | #{row[:license]} | #{row[:pinned]} | " \
-           "#{row[:evidence]} | #{row[:evidence_path]} | #{row[:commits]} | #{row[:status]} |"
+           "#{row[:evidence]} | #{row[:evidence_path]} | #{row[:commits]} | #{row[:matched]} | #{row[:status]} |"
 end
 
 summary = rows.group_by { |row| row[:status] }.transform_values(&:length).sort.map { |k, v| "#{k}=#{v}" }
