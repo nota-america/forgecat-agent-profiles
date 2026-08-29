@@ -157,6 +157,15 @@ To audit the whole repository, run:
 ruby scripts/check-profile-artifacts.rb
 ```
 
+For a license provenance report across every profile, run:
+
+```bash
+ruby scripts/license-audit.rb --snapshots <upstream-snapshots-dir>
+```
+
+The report is generated on demand and not committed — `scripts/license-baseline.txt`
+and `scripts/license-matches.tsv` hold the state it reads.
+
 ## Pull Requests
 
 Open a PR with:

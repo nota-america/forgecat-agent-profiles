@@ -1,12 +1,18 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Generates the license provenance audit table for every published profile.
+# Reports license provenance for every published profile: what each one declares,
+# what evidence it redistributes, and whether that declaration has been matched
+# to an exact upstream commit.
 #
-# For each profile it records the declared license, what evidence ships with the
-# profile, and whether a pinned upstream snapshot is available to match against.
+# The report is generated on demand rather than committed. A checked-in table
+# goes stale between regenerations and starts being read as a second source of
+# truth next to the manifests, which is the confusion this whole exercise is
+# about. scripts/license-baseline.txt and scripts/license-matches.tsv are the
+# state that is versioned; this is a view over it.
+#
 # Snapshots are optional: pass --snapshots DIR (or set FORGECAT_SNAPSHOTS) to
-# fill the commit column, otherwise those cells read "no-snapshot".
+# fill the commit column, otherwise those cells read "-".
 
 require "optparse"
 require_relative "license_evidence"
