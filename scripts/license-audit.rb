@@ -79,7 +79,7 @@ rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.ma
   evidence_kind, evidence_path = shipped_evidence(profile_dir)
   commits = snapshot_commits(options[:snapshots], slug)
 
-  profile_name = profile_dir.delete_prefix("#{ROOT}/profiles/")
+  profile_name = profile_dir.delete_prefix("#{ROOT}/")
   matched_commit = receipts[profile_name]
 
   agrees = matched_commit &&

@@ -11,8 +11,10 @@ on:
       - scripts/license_evidence.rb
       - scripts/license-baseline.txt
       - scripts/license-matches.tsv
+      - scripts/license-audit.rb
       - scripts/test-license-evidence.rb
       - scripts/test-license-gate.sh
+      - scripts/test-license-audit.sh
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -26,8 +28,10 @@ on:
       - scripts/license_evidence.rb
       - scripts/license-baseline.txt
       - scripts/license-matches.tsv
+      - scripts/license-audit.rb
       - scripts/test-license-evidence.rb
       - scripts/test-license-gate.sh
+      - scripts/test-license-audit.sh
       - .github/workflows/catalog-check.yml
 
 jobs:
@@ -58,6 +62,7 @@ jobs:
         run: |
           ruby scripts/test-license-evidence.rb
           bash scripts/test-license-gate.sh
+          bash scripts/test-license-audit.sh
 
       - name: Check license evidence on changed profiles
         if: github.event_name == 'pull_request'

@@ -10,6 +10,7 @@
 # A touched profile must:
 #   - declare an SPDX identifier (or a LicenseRef-* for custom terms)
 #   - point `repository` at an exact commit, not a moving branch
+#   - carry a match receipt confirming its files against that commit
 #   - redistribute the evidence: an upstream LICENSE file, a LICENSE-SOURCE.md
 #     quoting the upstream terms and their scope, or a shipped file whose
 #     frontmatter carries the upstream author's own `license:` line
@@ -195,7 +196,9 @@ manifest_paths.each do |manifest_path|
     errors << "#{name}: missing `repository`"
   elsif !pinned?(repository)
     errors << "#{name}: `repository` must pin a full 40-character commit, not a branch or short SHA — #{repository}"
-  elsif receipts.key?(name) && receipts[name] != LicenseEvidence.pinned_commit(repository)
+  elsif !receipts.key?(name)
+    errors << "#{name}: no match receipt in scripts/license-matches.tsv — run the matcher and record the revision its files were confirmed against"
+  elsif receipts[name] != LicenseEvidence.pinned_commit(repository)
     errors << "#{name}: `repository` pins #{LicenseEvidence.pinned_commit(repository)} but the match receipt records #{receipts[name]}"
   end
 

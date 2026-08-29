@@ -68,19 +68,23 @@ Before opening a PR:
    them, so share-alike and non-commercial terms need a decision before the
    files are copied. Open an issue with the redistribution terms instead of
    opening a PR.
-3. Point `repository` at the exact commit the profile was built from, not a branch. A branch URL moves, so it cannot show which terms applied when the files were copied.
+3. Point `repository` at the exact commit the profile was built from, using the full
+   40-character SHA, not a branch. A branch URL moves, so it cannot show which terms
+   applied when the files were copied. Record the same revision in
+   `scripts/license-matches.tsv` once the profile's files have been compared against it.
 4. Keep license files from the upstream source when they are part of the package.
 5. Do not mark an unknown license as permissive.
 
 `scripts/check-license-evidence.rb` runs on the profiles a PR touches and requires
 each one to redistribute its evidence in one of three forms:
 
-- an upstream `LICENSE*` file kept with the profile
-- a `LICENSE-SOURCE.md` in the profile directory, for upstreams that declare
-  their terms somewhere other than a license file
-- a shipped file whose frontmatter carries the upstream author's own `license:` line
+- an upstream `LICENSE*` file kept inside `for-forgecat/`
+- a `for-forgecat/LICENSE-SOURCE.md`, for upstreams that declare their terms
+  somewhere other than a license file
+- a file shipped in `for-forgecat/` whose frontmatter carries the upstream
+  author's own `license:` line
 
-`LICENSE-SOURCE.md` needs an `upstream:` line linking the pinned path the terms
+`for-forgecat/LICENSE-SOURCE.md` needs an `upstream:` line linking the pinned path the terms
 were read from, a `scope:` line naming the files they cover, an `exceptions:`
 line, and the upstream's own wording quoted in a `>` block. It records what the
 upstream said, not a license we grant on their behalf — if the upstream never
