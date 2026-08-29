@@ -10,7 +10,7 @@ description: 'Build, debug, and optimize Claude API / Anthropic SDK apps. Apps b
   an Anthropic SDK project. SKIP: file imports `openai`/other-provider SDK, filename
   like `*-openai.py`/`*-generic.py`, provider-neutral code, general programming/ML.'
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:

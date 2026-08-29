@@ -4,7 +4,7 @@ description: Deploy applications and websites to Vercel. Use when the user reque
   deployment actions like 'deploy my app', 'deploy and give me the link', 'push this
   live', or 'create a preview deployment'.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: MIT
 visibility: public
 sourcePlatform: codex
 compatibility:

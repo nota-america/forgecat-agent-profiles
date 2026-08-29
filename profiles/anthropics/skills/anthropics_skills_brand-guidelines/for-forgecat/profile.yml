@@ -5,7 +5,7 @@ description: Applies Anthropic's official brand colors and typography to any sor
   brand colors or style guidelines, visual formatting, or company design standards
   apply.
 repository: https://github.com/anthropics/skills
-license: Complete terms in LICENSE.txt
+license: Apache-2.0
 visibility: public
 sourcePlatform: claude-code
 compatibility:
