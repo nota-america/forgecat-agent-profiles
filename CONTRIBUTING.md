@@ -71,14 +71,20 @@ each one to redistribute its evidence in one of three forms:
   their terms somewhere other than a license file
 - a shipped file whose frontmatter carries the upstream author's own `license:` line
 
-`LICENSE-SOURCE.md` quotes the upstream's own wording and records the pinned URL
-it was read from, which files it covers, and any third-party exceptions. It is a
-record of what the upstream said, not a license we grant on their behalf — if the
-upstream never declared terms, the profile is not ready to publish.
+`LICENSE-SOURCE.md` needs an `upstream:` line linking the pinned path the terms
+were read from, a `scope:` line naming the files they cover, an `exceptions:`
+line, and the upstream's own wording quoted in a `>` block. It records what the
+upstream said, not a license we grant on their behalf — if the upstream never
+declared terms, the profile is not ready to publish.
+
+Only a real YAML frontmatter block counts for the third form. A `license:` line
+in prose or in a profile's own metadata table restates the manifest field rather
+than evidencing it.
 
 Profiles listed in `scripts/license-baseline.txt` predate these rules and are held
-to the license-string check only. Remove a profile from that list in the same PR
-that gives it a pinned source and its evidence.
+to the license-string check only. That list may only shrink: remove a profile from
+it in the same PR that gives it a pinned source and its evidence. Adding an entry
+fails the check, and the profile is held to the full rules anyway.
 
 If the license is missing or ambiguous, open an issue before publishing the profile publicly.
 
