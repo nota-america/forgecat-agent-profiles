@@ -7,7 +7,7 @@ description: Use this skill whenever the user wants to do anything with PDF file
   and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file
   or asks to produce one, use this skill.
 repository: https://github.com/anthropics/skills
-license: Proprietary. LICENSE.txt has complete terms
+license: LicenseRef-Anthropic-Terms
 visibility: public
 sourcePlatform: claude-code
 compatibility:

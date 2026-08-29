@@ -10,7 +10,7 @@ description: 'Use this skill any time a .pptx file is involved in any way — as
   what they plan to do with the content afterward. If a .pptx file needs to be opened,
   created, or touched, use this skill.'
 repository: https://github.com/anthropics/skills
-license: Proprietary. LICENSE.txt has complete terms
+license: LicenseRef-Anthropic-Terms
 visibility: public
 sourcePlatform: claude-code
 compatibility:

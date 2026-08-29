@@ -11,7 +11,7 @@ description: 'Use this skill whenever the user wants to create, read, edit, or m
   use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding
   tasks unrelated to document generation.'
 repository: https://github.com/anthropics/skills
-license: Proprietary. LICENSE.txt has complete terms
+license: LicenseRef-Anthropic-Terms
 visibility: public
 sourcePlatform: claude-code
 compatibility:
