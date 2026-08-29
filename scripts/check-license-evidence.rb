@@ -27,6 +27,7 @@ require_relative "license_evidence"
 ROOT = File.expand_path("..", __dir__)
 PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
 BASELINE_LIST = File.join(ROOT, "scripts/license-baseline.txt")
+RECEIPTS = File.join(ROOT, "scripts/license-matches.tsv")
 
 SPDX_IDENTIFIERS = Set.new(%w[
   Apache-2.0
@@ -87,22 +88,23 @@ def spdx?(license)
 end
 
 def pinned?(url)
-  !url[%r{/(?:tree|blob)/[0-9a-f]{7,40}(?:/|$)}].nil?
+  !LicenseEvidence.pinned_commit(url).nil?
 end
 
 # Additions to the baseline list would exempt a profile from the pin and evidence
 # rules, so a PR could clear the gate by naming itself. Removals are how the
 # baseline shrinks and stay allowed.
-def baseline_additions(range)
+def baseline_diff(range)
   command = ["git", "show", "#{range.split("..").first}:scripts/license-baseline.txt"]
   before = IO.popen(command, chdir: ROOT, err: File::NULL, &:read)
-  return [] unless $CHILD_STATUS.success?
+  return [[], []] unless $CHILD_STATUS.success?
 
-  previous = Set.new(before.lines.map(&:strip).reject(&:empty?))
+  previous = before.lines.map(&:strip).reject(&:empty?)
   current = File.readlines(BASELINE_LIST, chomp: true).reject(&:empty?)
-  current.reject { |entry| previous.include?(entry) }
+  [current - previous, previous - current]
 end
 
+receipts = LicenseEvidence.receipts(RECEIPTS)
 baseline = Set.new(File.exist?(BASELINE_LIST) ? File.readlines(BASELINE_LIST, chomp: true).reject(&:empty?) : [])
 
 manifest_paths = Dir.glob(PROFILE_GLOB).sort
@@ -117,13 +119,18 @@ end
 errors = []
 
 unless range.nil?
-  added = baseline_additions(range)
+  added, removed = baseline_diff(range)
   added.each do |entry|
     errors << "#{entry}: added to scripts/license-baseline.txt — the baseline may only shrink"
   end
   # An entry that only exists because this diff added it grants no exemption, so
   # the profile is still held to the full rules below.
   baseline -= added
+
+  # Removing an entry is how a profile graduates, and a PR that only edits the
+  # list would otherwise touch no profile path and be checked against nothing.
+  graduating = removed.map { |entry| File.join(ROOT, entry, "for-forgecat/profile.yml") }.select { |path| File.exist?(path) }
+  manifest_paths = (manifest_paths + graduating).uniq.sort
 end
 
 if manifest_paths.empty?
@@ -157,18 +164,20 @@ manifest_paths.each do |manifest_path|
   if repository.nil? || repository.empty?
     errors << "#{name}: missing `repository`"
   elsif !pinned?(repository)
-    errors << "#{name}: `repository` must pin an exact commit, not a branch — #{repository}"
+    errors << "#{name}: `repository` must pin a full 40-character commit, not a branch or short SHA — #{repository}"
+  elsif receipts.key?(name) && receipts[name] != LicenseEvidence.pinned_commit(repository)
+    errors << "#{name}: `repository` pins #{LicenseEvidence.pinned_commit(repository)} but the match receipt records #{receipts[name]}"
   end
 
-  kind, = LicenseEvidence.classify(profile_root(manifest_path), File.dirname(manifest_path))
+  kind, = LicenseEvidence.classify(profile_root(manifest_path))
   if kind == "none"
-    note = File.join(profile_root(manifest_path), "LICENSE-SOURCE.md")
+    note = LicenseEvidence.license_source_path(profile_root(manifest_path))
     if File.exist?(note)
       LicenseEvidence.license_source_problems(note).each do |problem|
-        errors << "#{name}: LICENSE-SOURCE.md #{problem}"
+        errors << "#{name}: for-forgecat/LICENSE-SOURCE.md #{problem}"
       end
     else
-      errors << "#{name}: ships no license evidence (upstream LICENSE file, LICENSE-SOURCE.md, or upstream frontmatter `license:`)"
+      errors << "#{name}: for-forgecat/ ships no license evidence (upstream LICENSE file, LICENSE-SOURCE.md, or upstream frontmatter `license:`)"
     end
   end
 end

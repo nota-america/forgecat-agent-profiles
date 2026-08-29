@@ -91,9 +91,9 @@ is wrong — it says nobody has checked it yet.
 | google-gemini/gemini-skills/google-gemini_gemini-skills_gemini-live-api-dev | google-gemini/gemini-skills | Apache-2.0 | no | none | - | f9138ae2c29136ac434a18fd6fdcd5c313895299 | - | unresolved-needs-match |
 | googleworkspace/cli/googleworkspace_cli-skills | googleworkspace/cli | Apache-2.0 | no | none | - | a3768d0e82ad83cca2da97724e46bea4ff0e6dbd | - | unresolved-needs-match |
 | juliusbrussee/caveman | JuliusBrussee/caveman | MIT | no | license-file | profiles/juliusbrussee/caveman/for-forgecat/LICENSE | 655b7d9c5431f822264b7732e9901c5578ac84cf | - | unresolved-needs-match |
-| kepano/obsidian-skills | kepano/obsidian-skills | MIT | no | license-file | profiles/kepano/obsidian-skills/for-claude/LICENSE | a1dc48e68138490d522c04cbf5822214c6eb1202 | - | unresolved-needs-match |
+| kepano/obsidian-skills | kepano/obsidian-skills | MIT | no | license-file | profiles/kepano/obsidian-skills/for-forgecat/LICENSE | a1dc48e68138490d522c04cbf5822214c6eb1202 | - | unresolved-needs-match |
 | leonxlnx/taste-skill | Leonxlnx/taste-skill | MIT | no | license-file | profiles/leonxlnx/taste-skill/for-forgecat/LICENSE | 5436c5952cc88d18a034d496988680a8c28a836a | - | unresolved-needs-match |
-| mattpocock/skills | mattpocock/skills | MIT | no | license-file | profiles/mattpocock/skills/for-claude/LICENSE | e3d8b735ef92ec9554b07f11f408089d81289eed | - | unresolved-needs-match |
+| mattpocock/skills | mattpocock/skills | MIT | no | license-file | profiles/mattpocock/skills/for-forgecat/LICENSE | e3d8b735ef92ec9554b07f11f408089d81289eed | - | unresolved-needs-match |
 | mengto/skills/mango_skills_agent-skills-codex | MengTo/Skills | MIT | no | license-file | profiles/mengto/skills/mango_skills_agent-skills-codex/for-forgecat/LICENSE | - | - | unresolved-no-snapshot |
 | mengto/skills/mango_skills_agent-skills-game-development | MengTo/Skills | MIT | no | license-file | profiles/mengto/skills/mango_skills_agent-skills-game-development/for-forgecat/LICENSE | - | - | unresolved-no-snapshot |
 | mengto/skills/mango_skills_agent-skills-media | MengTo/Skills | MIT | no | license-file | profiles/mengto/skills/mango_skills_agent-skills-media/for-forgecat/LICENSE | - | - | unresolved-no-snapshot |
@@ -181,7 +181,7 @@ is wrong — it says nobody has checked it yet.
 | openai/skills/openai_skills_vercel-deploy | openai/skills | Apache-2.0 | no | license-file | profiles/openai/skills/openai_skills_vercel-deploy/for-forgecat/LICENSE.txt | 0e7823cca07bc2cbf34718a383f9ae92525be6a5 dc48aff8208131776c9937326002bd60cf572ab6 | - | unresolved-needs-match |
 | openai/skills/openai_skills_winui-app | openai/skills | Apache-2.0 | no | license-file | profiles/openai/skills/openai_skills_winui-app/for-forgecat/LICENSE.txt | 0e7823cca07bc2cbf34718a383f9ae92525be6a5 dc48aff8208131776c9937326002bd60cf572ab6 | - | unresolved-needs-match |
 | openai/skills/openai_skills_yeet | openai/skills | Apache-2.0 | no | license-file | profiles/openai/skills/openai_skills_yeet/for-forgecat/LICENSE.txt | 0e7823cca07bc2cbf34718a383f9ae92525be6a5 dc48aff8208131776c9937326002bd60cf572ab6 | - | unresolved-needs-match |
-| orchestra-research/ai-research-skills | Orchestra-Research/AI-Research-SKILLs | MIT | no | license-file | profiles/orchestra-research/ai-research-skills/for-claude/LICENSE | 28f2d29236f2bade2eb92cadb2585189589a5828 | - | unresolved-needs-match |
+| orchestra-research/ai-research-skills | Orchestra-Research/AI-Research-SKILLs | MIT | no | license-file | profiles/orchestra-research/ai-research-skills/for-forgecat/LICENSE | 28f2d29236f2bade2eb92cadb2585189589a5828 | - | unresolved-needs-match |
 | paramchoudhary/resumeskills | Paramchoudhary/ResumeSkills | MIT | no | none | - | - | - | unresolved-no-snapshot |
 | remotion-dev/skills/remotion-dev_skills_remotion | remotion-dev/skills | None | no | none | - | - | - | unresolved-no-snapshot |
 | s1dashu/ip-as-logo-skill | s1dashu/ip-as-logo-skill | MIT | no | license-file | profiles/s1dashu/ip-as-logo-skill/for-forgecat/LICENSE | - | - | unresolved-no-snapshot |
@@ -205,6 +205,6 @@ is wrong — it says nobody has checked it yet.
 | voltagent/awesome-codex-subagents/voltagent_awesome-codex-subagents_specialized-domains | VoltAgent/awesome-codex-subagents | MIT | no | none | - | 5b7a405546e2400af88f32d9038cfd92eece3978 | - | unresolved-needs-match |
 | xixu-me/skills | xixu-me/skills | MIT | no | license-file | profiles/xixu-me/skills/for-forgecat/LICENSE.txt | fa39ac2eafbf727ea4dd3ae1c8af36fcb82f32e4 | - | unresolved-needs-match |
 | yeachan-heo/oh-my-claudecode_agents | Yeachan-Heo/oh-my-claudecode | MIT | no | license-file | profiles/yeachan-heo/oh-my-claudecode_agents/for-forgecat/LICENSE | deee3a446dadc9bfea31cdc8b19b00b16718082e | - | unresolved-needs-match |
-| zubair-trabzada/geo-seo-claude | zubair-trabzada/geo-seo-claude | MIT | no | license-file | profiles/zubair-trabzada/geo-seo-claude/for-claude/LICENSE | 9eec32f5f700a1e6c3cb1cb735a56ee5ec49a964 | - | unresolved-needs-match |
+| zubair-trabzada/geo-seo-claude | zubair-trabzada/geo-seo-claude | MIT | no | license-file | profiles/zubair-trabzada/geo-seo-claude/for-forgecat/LICENSE | 9eec32f5f700a1e6c3cb1cb735a56ee5ec49a964 | - | unresolved-needs-match |
 
 Total: 191 profiles (unresolved-needs-match=171, unresolved-no-snapshot=20).

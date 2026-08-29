@@ -8,7 +8,11 @@ on:
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
       - scripts/check-license-evidence.rb
+      - scripts/license_evidence.rb
       - scripts/license-baseline.txt
+      - scripts/license-matches.tsv
+      - scripts/test-license-evidence.rb
+      - scripts/test-license-gate.sh
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -19,7 +23,11 @@ on:
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
       - scripts/check-license-evidence.rb
+      - scripts/license_evidence.rb
       - scripts/license-baseline.txt
+      - scripts/license-matches.tsv
+      - scripts/test-license-evidence.rb
+      - scripts/test-license-gate.sh
       - .github/workflows/catalog-check.yml
 
 jobs:
@@ -45,6 +53,11 @@ jobs:
       - name: Check changed profile artifacts
         if: github.event_name == 'pull_request'
         run: ruby scripts/check-profile-artifacts.rb --changed-only origin/${{ github.base_ref }}..HEAD
+
+      - name: Test license evidence rules
+        run: |
+          ruby scripts/test-license-evidence.rb
+          bash scripts/test-license-gate.sh
 
       - name: Check license evidence on changed profiles
         if: github.event_name == 'pull_request'

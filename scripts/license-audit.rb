@@ -32,15 +32,15 @@ def repository_slug(url)
 end
 
 def pinned?(url)
-  !url[%r{/(?:tree|blob)/[0-9a-f]{7,40}(?:/|$)}].nil?
+  !LicenseEvidence.pinned_commit(url).nil?
 end
 
 # Evidence the profile itself redistributes, in descending order of strength.
 # A frontmatter `license:` line is written by the upstream author and travels
 # with the exact file being redistributed, so it outranks a repository-root
 # LICENSE that may not cover the copied subtree.
-def shipped_evidence(profile_dir, package_dir)
-  kind, path = LicenseEvidence.classify(profile_dir, package_dir)
+def shipped_evidence(profile_dir)
+  kind, path = LicenseEvidence.classify(profile_dir)
   [kind, path ? path.delete_prefix("#{ROOT}/") : "-"]
 end
 
@@ -67,22 +67,7 @@ rescue Errno::ENOENT
   []
 end
 
-# A profile counts as resolved only when a matcher has confirmed its files
-# against a specific upstream revision and written a receipt. A pinned URL plus
-# a bundled license file says the metadata looks right, which is the claim this
-# audit exists to stop taking on faith.
-def match_receipts(path)
-  return {} unless File.exist?(path)
-
-  File.readlines(path, chomp: true).map do |line|
-    next if line.empty? || line.start_with?("#")
-
-    profile, commit, = line.split("\t")
-    [profile, commit] if profile && commit
-  end.compact.to_h
-end
-
-receipts = match_receipts(File.join(ROOT, "scripts/license-matches.tsv"))
+receipts = LicenseEvidence.receipts(File.join(ROOT, "scripts/license-matches.tsv"))
 
 rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.map do |manifest_path|
   manifest = File.read(manifest_path, encoding: "UTF-8")
@@ -91,14 +76,18 @@ rows = Dir.glob(File.join(ROOT, "profiles/**/for-forgecat/profile.yml")).sort.ma
 
   repository = upstream_repository(manifest)
   slug = repository_slug(repository)
-  evidence_kind, evidence_path = shipped_evidence(profile_dir, package_dir)
+  evidence_kind, evidence_path = shipped_evidence(profile_dir)
   commits = snapshot_commits(options[:snapshots], slug)
 
   profile_name = profile_dir.delete_prefix("#{ROOT}/profiles/")
   matched_commit = receipts[profile_name]
 
+  agrees = matched_commit &&
+           LicenseEvidence.pinned_commit(repository) == matched_commit &&
+           commits.include?(matched_commit)
+
   status =
-    if matched_commit && pinned?(repository) && evidence_kind != "none"
+    if agrees && evidence_kind != "none"
       "resolved"
     elsif matched_commit
       "matched-needs-pin-or-evidence"
