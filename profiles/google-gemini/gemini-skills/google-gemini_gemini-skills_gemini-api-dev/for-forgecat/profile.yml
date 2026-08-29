@@ -7,7 +7,7 @@ description: Use this skill when building applications with Gemini API hosted mo
   JavaScript/TypeScript, com.google.genai:google-genai for Java, google.golang.org/genai
   for Go), model selection, and API capabilities.
 repository: https://github.com/google-gemini/gemini-skills
-license: Apache 2.0
+license: Apache-2.0
 visibility: public
 sourcePlatform: multi-host
 compatibility:

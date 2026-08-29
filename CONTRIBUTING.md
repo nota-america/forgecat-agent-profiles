@@ -58,10 +58,46 @@ Each profile can carry content from a different upstream project, so license rev
 Before opening a PR:
 
 1. Check the upstream repository for `LICENSE`, `LICENSE.md`, `LICENSE.txt`, package metadata, and README license notes.
-2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear.
-3. Include the upstream repository URL in `repository`.
+2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear, or `LicenseRef-<name>` when the terms are custom.
+
+   A new profile may declare `MIT`, `MIT-0`, `Apache-2.0`, `BSD-2-Clause`,
+   `BSD-3-Clause`, `ISC`, `0BSD`, `CC0-1.0`, or `Unlicense` without further
+   discussion. Copyleft (GPL, LGPL, AGPL, MPL), the Creative Commons licenses,
+   and any `LicenseRef-*` carry obligations that depend on what the profile does
+   rather than what it declares — ForgeCat converts packages and redistributes
+   them, so share-alike and non-commercial terms need a decision before the
+   files are copied. Open an issue with the redistribution terms instead of
+   opening a PR.
+3. Point `repository` at the exact commit the profile was built from, using the full
+   40-character SHA, not a branch. A branch URL moves, so it cannot show which terms
+   applied when the files were copied. Record the same revision in
+   `scripts/license-matches.tsv` once the profile's files have been compared against it.
 4. Keep license files from the upstream source when they are part of the package.
 5. Do not mark an unknown license as permissive.
+
+`scripts/check-license-evidence.rb` runs on the profiles a PR touches and requires
+each one to redistribute its evidence in one of three forms:
+
+- an upstream `LICENSE*` file kept inside `for-forgecat/`
+- a `for-forgecat/LICENSE-SOURCE.md`, for upstreams that declare their terms
+  somewhere other than a license file
+- a file shipped in `for-forgecat/` whose frontmatter carries the upstream
+  author's own `license:` line
+
+`for-forgecat/LICENSE-SOURCE.md` needs an `upstream:` line linking the pinned path the terms
+were read from, a `scope:` line naming the files they cover, an `exceptions:`
+line, and the upstream's own wording quoted in a `>` block. It records what the
+upstream said, not a license we grant on their behalf — if the upstream never
+declared terms, the profile is not ready to publish.
+
+Only a real YAML frontmatter block counts for the third form. A `license:` line
+in prose or in a profile's own metadata table restates the manifest field rather
+than evidencing it.
+
+Profiles listed in `scripts/license-baseline.txt` predate these rules and are held
+to the license-string check only. That list may only shrink: remove a profile from
+it in the same PR that gives it a pinned source and its evidence. Adding an entry
+fails the check, and the profile is held to the full rules anyway.
 
 If the license is missing or ambiguous, open an issue before publishing the profile publicly.
 
@@ -120,6 +156,15 @@ To audit the whole repository, run:
 ```bash
 ruby scripts/check-profile-artifacts.rb
 ```
+
+For a license provenance report across every profile, run:
+
+```bash
+ruby scripts/license-audit.rb --snapshots <upstream-snapshots-dir>
+```
+
+The report is generated on demand and not committed — `scripts/license-baseline.txt`
+and `scripts/license-matches.tsv` hold the state it reads.
 
 ## Pull Requests
 

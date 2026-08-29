@@ -7,6 +7,14 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-license-evidence.rb
+      - scripts/license_evidence.rb
+      - scripts/license-baseline.txt
+      - scripts/license-matches.tsv
+      - scripts/license-audit.rb
+      - scripts/test-license-evidence.rb
+      - scripts/test-license-gate.sh
+      - scripts/test-license-audit.sh
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -16,7 +24,20 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-license-evidence.rb
+      - scripts/license_evidence.rb
+      - scripts/license-baseline.txt
+      - scripts/license-matches.tsv
+      - scripts/license-audit.rb
+      - scripts/test-license-evidence.rb
+      - scripts/test-license-gate.sh
+      - scripts/test-license-audit.sh
       - .github/workflows/catalog-check.yml
+
+# The checks read the tree and report; nothing they do needs write access, and
+# the test steps execute scripts from the pull request itself.
+permissions:
+  contents: read
 
 jobs:
   readme-catalog:
@@ -41,3 +62,13 @@ jobs:
       - name: Check changed profile artifacts
         if: github.event_name == 'pull_request'
         run: ruby scripts/check-profile-artifacts.rb --changed-only origin/${{ github.base_ref }}..HEAD
+
+      - name: Test license evidence rules
+        run: |
+          ruby scripts/test-license-evidence.rb
+          bash scripts/test-license-gate.sh
+          bash scripts/test-license-audit.sh
+
+      - name: Check license evidence on changed profiles
+        if: github.event_name == 'pull_request'
+        run: ruby scripts/check-license-evidence.rb --changed-only origin/${{ github.base_ref }}..HEAD
