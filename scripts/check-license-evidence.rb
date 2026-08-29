@@ -117,9 +117,13 @@ end
 errors = []
 
 unless range.nil?
-  baseline_additions(range).each do |entry|
+  added = baseline_additions(range)
+  added.each do |entry|
     errors << "#{entry}: added to scripts/license-baseline.txt — the baseline may only shrink"
   end
+  # An entry that only exists because this diff added it grants no exemption, so
+  # the profile is still held to the full rules below.
+  baseline -= added
 end
 
 if manifest_paths.empty?
