@@ -13,7 +13,7 @@ description: 'Use this skill any time a spreadsheet file is the primary input or
   standalone Python script, database pipeline, or Google Sheets API integration, even
   if tabular data is involved.'
 repository: https://github.com/anthropics/skills
-license: Proprietary. LICENSE.txt has complete terms
+license: LicenseRef-Anthropic-Terms
 visibility: public
 sourcePlatform: claude-code
 compatibility:

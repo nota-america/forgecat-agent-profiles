@@ -6,7 +6,7 @@ description: Connects Figma design components to code components using Code Conn
   wants to establish mappings between Figma designs and code implementations. For
   canvas writes via `use_figma`, use `figma-use`.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:

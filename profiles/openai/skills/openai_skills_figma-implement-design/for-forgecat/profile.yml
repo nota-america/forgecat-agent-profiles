@@ -6,7 +6,7 @@ description: Translates Figma designs into production-ready application code wit
   or asks to build components matching Figma specs. For Figma canvas writes via `use_figma`,
   use `figma-use`.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:

@@ -5,14 +5,13 @@ description: Use the Figma MCP server to fetch design context, screenshots, vari
   when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma
   MCP setup and troubleshooting.
 repository: https://github.com/openai/skills
-license: Apache-2.0
+license: LicenseRef-Figma-Developer-Terms
 visibility: public
 sourcePlatform: codex
 compatibility:
   platforms:
-    tested:
-      - claude-code
     partial:
+    - claude-code
     - cursor
     - codex
   models:

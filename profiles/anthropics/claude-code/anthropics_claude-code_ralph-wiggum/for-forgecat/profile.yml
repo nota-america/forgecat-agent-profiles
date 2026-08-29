@@ -4,7 +4,7 @@ description: Implementation of the Ralph Wiggum technique - continuous self-refe
   AI loops for interactive iterative development. Run Claude in a while-true loop
   with the same prompt until task completion.
 repository: https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum
-license: Complete terms in LICENSE.md
+license: LicenseRef-Anthropic-Commercial-Terms
 visibility: public
 sourcePlatform: claude-code
 compatibility:
