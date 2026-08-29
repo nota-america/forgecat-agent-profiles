@@ -7,6 +7,8 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-license-evidence.rb
+      - scripts/license-baseline.txt
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -16,6 +18,8 @@ on:
       - profiles/**
       - scripts/check-readme-catalog.rb
       - scripts/check-profile-artifacts.rb
+      - scripts/check-license-evidence.rb
+      - scripts/license-baseline.txt
       - .github/workflows/catalog-check.yml
 
 jobs:
@@ -41,3 +45,7 @@ jobs:
       - name: Check changed profile artifacts
         if: github.event_name == 'pull_request'
         run: ruby scripts/check-profile-artifacts.rb --changed-only origin/${{ github.base_ref }}..HEAD
+
+      - name: Check license evidence on changed profiles
+        if: github.event_name == 'pull_request'
+        run: ruby scripts/check-license-evidence.rb --changed-only origin/${{ github.base_ref }}..HEAD

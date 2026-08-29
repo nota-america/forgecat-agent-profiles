@@ -58,10 +58,27 @@ Each profile can carry content from a different upstream project, so license rev
 Before opening a PR:
 
 1. Check the upstream repository for `LICENSE`, `LICENSE.md`, `LICENSE.txt`, package metadata, and README license notes.
-2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear.
-3. Include the upstream repository URL in `repository`.
+2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear, or `LicenseRef-<name>` when the terms are custom.
+3. Point `repository` at the exact commit the profile was built from, not a branch. A branch URL moves, so it cannot show which terms applied when the files were copied.
 4. Keep license files from the upstream source when they are part of the package.
 5. Do not mark an unknown license as permissive.
+
+`scripts/check-license-evidence.rb` runs on the profiles a PR touches and requires
+each one to redistribute its evidence in one of three forms:
+
+- an upstream `LICENSE*` file kept with the profile
+- a `LICENSE-SOURCE.md` in the profile directory, for upstreams that declare
+  their terms somewhere other than a license file
+- a shipped file whose frontmatter carries the upstream author's own `license:` line
+
+`LICENSE-SOURCE.md` quotes the upstream's own wording and records the pinned URL
+it was read from, which files it covers, and any third-party exceptions. It is a
+record of what the upstream said, not a license we grant on their behalf — if the
+upstream never declared terms, the profile is not ready to publish.
+
+Profiles listed in `scripts/license-baseline.txt` predate these rules and are held
+to the license-string check only. Remove a profile from that list in the same PR
+that gives it a pinned source and its evidence.
 
 If the license is missing or ambiguous, open an issue before publishing the profile publicly.
 
