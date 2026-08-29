@@ -34,6 +34,11 @@ on:
       - scripts/test-license-audit.sh
       - .github/workflows/catalog-check.yml
 
+# The checks read the tree and report; nothing they do needs write access, and
+# the test steps execute scripts from the pull request itself.
+permissions:
+  contents: read
+
 jobs:
   readme-catalog:
     runs-on: ubuntu-latest
