@@ -136,11 +136,43 @@ case_unknown_blocked() {
   expect "a new Unknown profile is refused" 1 "$out" "$status" "cannot be published"
 }
 
+case_gpl_blocked() {
+  local dir="$1"
+  fixture "$dir" profiles/o/r GPL-3.0-only "https://github.com/o/r/tree/$SHA/skills"
+  mkdir -p "$dir/profiles/o/r/for-forgecat"
+  echo "GPL" >"$dir/profiles/o/r/for-forgecat/LICENSE"
+  : >"$dir/scripts/license-baseline.txt"
+  commit_all "$dir" base
+  touch "$dir/profiles/o/r/for-forgecat/marker"
+  commit_all "$dir" "touch the profile"
+  local out status
+  out="$(cd "$dir" && RUBYOPT=-EUTF-8 ruby scripts/check-license-evidence.rb --changed-only HEAD~1..HEAD 2>&1)"
+  status=$?
+  expect "a new GPL profile needs review" 1 "$out" "$status" "needs review"
+}
+
+case_licenseref_blocked() {
+  local dir="$1"
+  fixture "$dir" profiles/o/r LicenseRef-Custom "https://github.com/o/r/tree/$SHA/skills"
+  mkdir -p "$dir/profiles/o/r/for-forgecat"
+  echo "Custom" >"$dir/profiles/o/r/for-forgecat/LICENSE"
+  : >"$dir/scripts/license-baseline.txt"
+  commit_all "$dir" base
+  touch "$dir/profiles/o/r/for-forgecat/marker"
+  commit_all "$dir" "touch the profile"
+  local out status
+  out="$(cd "$dir" && RUBYOPT=-EUTF-8 ruby scripts/check-license-evidence.rb --changed-only HEAD~1..HEAD 2>&1)"
+  status=$?
+  expect "a new LicenseRef-* profile needs review" 1 "$out" "$status" "custom licence"
+}
+
 run_case case_baseline_removal_only
 run_case case_baseline_addition
 run_case case_receipt_mismatch
 run_case case_receipt_agreement
 run_case case_unknown_blocked
+run_case case_gpl_blocked
+run_case case_licenseref_blocked
 
 if [ "$FAILURES" -eq 0 ]; then
   echo

@@ -29,19 +29,38 @@ PROFILE_GLOB = File.join(ROOT, "profiles/**/for-forgecat/profile.yml")
 BASELINE_LIST = File.join(ROOT, "scripts/license-baseline.txt")
 RECEIPTS = File.join(ROOT, "scripts/license-matches.tsv")
 
-SPDX_IDENTIFIERS = Set.new(%w[
+# Licences a new profile may declare without a human deciding first. The list is
+# deliberately short: everything here lets ForgeCat copy the files into the
+# registry and hand them to users if the notices travel along, which is all the
+# gate can verify on its own.
+AUTO_ALLOWED = Set.new(%w[
+  0BSD
   Apache-2.0
   BSD-2-Clause
   BSD-3-Clause
-  CC-BY-4.0
-  CC-BY-SA-4.0
   CC0-1.0
-  GPL-3.0-only
   ISC
   MIT
   MIT-0
-  MPL-2.0
   Unlicense
+]).freeze
+
+# Recognised, but each carries an obligation that depends on what the profile
+# does rather than on what it declares — share-alike on a converted package,
+# attribution terms, or bespoke wording. They need a person, so the gate names
+# them instead of guessing.
+NEEDS_REVIEW = Set.new(%w[
+  AGPL-3.0-only
+  AGPL-3.0-or-later
+  CC-BY-4.0
+  CC-BY-NC-4.0
+  CC-BY-ND-4.0
+  CC-BY-SA-4.0
+  GPL-2.0-only
+  GPL-3.0-only
+  GPL-3.0-or-later
+  LGPL-3.0-only
+  MPL-2.0
 ]).freeze
 
 def fail_with(errors)
@@ -83,8 +102,19 @@ def field(manifest, name)
   manifest[/^#{name}:[ \t]*(.+)$/, 1]&.strip
 end
 
-def spdx?(license)
-  SPDX_IDENTIFIERS.include?(license) || license.start_with?("LicenseRef-")
+# LicenseRef-* is how a custom licence is named, not a reason to accept one.
+# Until a review receipt exists to point at, a new custom declaration needs the
+# same human decision as the copyleft identifiers.
+def license_problem(license)
+  return nil if AUTO_ALLOWED.include?(license)
+
+  if NEEDS_REVIEW.include?(license)
+    "`license: #{license}` needs review before a new profile can ship it — open an issue with the redistribution terms"
+  elsif license.start_with?("LicenseRef-")
+    "`license: #{license}` is a custom licence and needs review before a new profile can ship it"
+  else
+    "`license: #{license}` is not on the accepted list (#{AUTO_ALLOWED.to_a.join(", ")})"
+  end
 end
 
 def pinned?(url)
@@ -150,8 +180,8 @@ manifest_paths.each do |manifest_path|
     errors << "#{name}: missing `license`"
   elsif %w[Unknown None].include?(license)
     errors << "#{name}: `license: #{license}` cannot be published — resolve the upstream terms first"
-  elsif !spdx?(license) && !legacy
-    errors << "#{name}: `license: #{license}` is not an SPDX identifier (use LicenseRef-* for custom terms)"
+  elsif !legacy && (problem = license_problem(license))
+    errors << "#{name}: #{problem}"
   end
 
   # The sixteen baseline profiles that spell their terms out in prose ship the

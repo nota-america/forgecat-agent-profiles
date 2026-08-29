@@ -59,6 +59,15 @@ Before opening a PR:
 
 1. Check the upstream repository for `LICENSE`, `LICENSE.md`, `LICENSE.txt`, package metadata, and README license notes.
 2. Use an SPDX identifier in `for-forgecat/profile.yml` when the license is clear, or `LicenseRef-<name>` when the terms are custom.
+
+   A new profile may declare `MIT`, `MIT-0`, `Apache-2.0`, `BSD-2-Clause`,
+   `BSD-3-Clause`, `ISC`, `0BSD`, `CC0-1.0`, or `Unlicense` without further
+   discussion. Copyleft (GPL, LGPL, AGPL, MPL), the Creative Commons licenses,
+   and any `LicenseRef-*` carry obligations that depend on what the profile does
+   rather than what it declares — ForgeCat converts packages and redistributes
+   them, so share-alike and non-commercial terms need a decision before the
+   files are copied. Open an issue with the redistribution terms instead of
+   opening a PR.
 3. Point `repository` at the exact commit the profile was built from, not a branch. A branch URL moves, so it cannot show which terms applied when the files were copied.
 4. Keep license files from the upstream source when they are part of the package.
 5. Do not mark an unknown license as permissive.
