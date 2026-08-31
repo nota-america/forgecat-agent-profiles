@@ -11,6 +11,8 @@ compatibility:
     partial:
       - cursor
       - codex
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []
