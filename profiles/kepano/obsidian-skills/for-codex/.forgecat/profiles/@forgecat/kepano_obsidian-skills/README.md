@@ -37,7 +37,7 @@ npx forgecat install @forgecat/kepano_obsidian-skills
 |---|---|
 | Author | Steph Ango |
 | Original repository | https://github.com/kepano/obsidian-skills |
-| Version | `0.1.0` |
+| Version | `0.1.2` |
 | Original commit | `a1dc48e68138490d522c04cbf5822214c6eb1202` |
 | License | MIT |
 | Source platform | Claude Code plugin |
