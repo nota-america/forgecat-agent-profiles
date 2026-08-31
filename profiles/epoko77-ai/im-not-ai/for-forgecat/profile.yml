@@ -12,6 +12,7 @@ compatibility:
       - codex
     partial:
       - openclaw
+      - hermes
   models:
     recommended:
       - opus
