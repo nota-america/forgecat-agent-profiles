@@ -41,7 +41,7 @@ npx forgecat install @forgecat/zubair-trabzada_geo-seo-claude
 |---|---|
 | Author | Zubair Trabzada |
 | Original repository | https://github.com/zubair-trabzada/geo-seo-claude |
-| Version | `0.1.2` |
+| Version | `0.1.3` |
 | Original commit | `9eec32f5f700a1e6c3cb1cb735a56ee5ec49a964` |
 | License | MIT |
 | Source platform | Claude Code skills (non-plugin) |
@@ -55,6 +55,8 @@ npx forgecat install @forgecat/zubair-trabzada_geo-seo-claude
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

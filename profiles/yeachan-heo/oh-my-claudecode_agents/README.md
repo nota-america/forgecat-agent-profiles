@@ -48,7 +48,7 @@ npx forgecat install @forgecat/yeachan-heo_oh-my-claudecode_agents
 |---|---|
 | Author | Yeachan Heo |
 | Original repository | https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main/agents |
-| Registry version | `0.1.4` |
+| Registry version | `0.1.5` |
 | Original commit | `deee3a446dadc9bfea31cdc8b19b00b16718082e` (2026-06-09) |
 | License | MIT |
 | Source platform | Claude Code |
@@ -60,8 +60,10 @@ npx forgecat install @forgecat/yeachan-heo_oh-my-claudecode_agents
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Tested |
 | Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ### Models
 

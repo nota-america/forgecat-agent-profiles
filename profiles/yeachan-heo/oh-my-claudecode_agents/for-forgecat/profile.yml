@@ -10,10 +10,13 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-    - claude-code
-    - codex
-    - cursor
+      - claude-code
+      - codex
+      - cursor
     partial: []
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended:
     - opus

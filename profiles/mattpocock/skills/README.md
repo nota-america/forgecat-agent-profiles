@@ -47,7 +47,7 @@ npx forgecat install @forgecat/mattpocock_skills
 |---|---|
 | Author | Matt Pocock |
 | Original repository | https://github.com/mattpocock/skills |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Original commit | `e3d8b735ef92ec9554b07f11f408089d81289eed` |
 | License | MIT |
 | Source platform | Claude Code plugin |
@@ -61,6 +61,8 @@ npx forgecat install @forgecat/mattpocock_skills
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 
