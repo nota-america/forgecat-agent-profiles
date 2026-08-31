@@ -22,10 +22,23 @@ Upstream files are copied without editorial rewriting. The only change inside an
 |---|---|
 | Author | epoko77-ai |
 | Original repository | https://github.com/epoko77-ai/im-not-ai |
-| Version | `0.1.3` |
+| Version | `0.1.4` |
 | Original commit | `53e24e8f92cf344efcb812103f7c2b203e7efffc` |
 | License | MIT |
 | Source platform | multi-host |
+
+
+## Compatibility
+
+### Platforms
+
+| Platform | Status |
+|---|---|
+| Claude Code | Tested |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ---
 *written by original source*

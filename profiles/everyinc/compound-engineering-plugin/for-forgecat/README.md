@@ -62,7 +62,7 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 |---|---|
 | Author | Kieran Klaassen and Trevin Chow |
 | Original repository | https://github.com/EveryInc/compound-engineering-plugin |
-| Registry version | `0.0.6` |
+| Registry version | `0.0.7` |
 | Original plugin version | `3.15.0` |
 | Original commit | `2b38897` |
 | License | `MIT` |
@@ -77,6 +77,8 @@ npx forgecat install @forgecat/everyinc_compound-engineering-plugin
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 > Platform artifacts have been refreshed from the upstream skills-only plugin layout and are marked tested for Claude Code, Cursor, and Codex.
 
