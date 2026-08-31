@@ -1,5 +1,4 @@
 name: "@forgecat/microsoft-azure_skills-azure-validate"
-version: 0.0.4
 description: 'Pre-deployment validation for Azure readiness. Run deep checks on configuration,
   infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions,
   and prerequisites before deploying. WHEN: validate my app, check deployment readiness,
@@ -18,6 +17,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

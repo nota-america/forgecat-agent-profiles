@@ -1,5 +1,4 @@
 name: "@forgecat/microsoft-azure_skills-microsoft-foundry"
-version: 0.0.4
 description: 'Deploy, evaluate, and manage Foundry agents end-to-end: Docker build,
   ACR push, hosted/prompt agent create, container start, batch eval, continuous eval,
   prompt optimizer workflows, agent.yaml, dataset curation from traces. USE FOR: deploy
@@ -23,6 +22,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

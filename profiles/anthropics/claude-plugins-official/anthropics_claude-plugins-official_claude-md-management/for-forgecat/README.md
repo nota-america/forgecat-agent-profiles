@@ -32,7 +32,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-md-mana
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management |
-| Version | `0.0.3` |
+| Version | `0.0.4` |
 | Original commit | `7e401ed` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -46,6 +46,8 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_claude-md-mana
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ---
 *written by original source*

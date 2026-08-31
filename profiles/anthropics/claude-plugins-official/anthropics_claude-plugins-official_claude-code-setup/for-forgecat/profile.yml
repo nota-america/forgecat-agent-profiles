@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_claude-code-setup"
-version: 0.0.4
 description: Analyze codebases and recommend tailored Claude Code automations such
   as hooks, skills, MCP servers, and subagents.
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup
@@ -12,6 +11,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

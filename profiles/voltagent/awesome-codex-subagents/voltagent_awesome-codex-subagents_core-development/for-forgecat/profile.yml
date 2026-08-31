@@ -1,5 +1,4 @@
 name: "@forgecat/voltagent_awesome-codex-subagents_core-development"
-version: 0.0.12
 description: Core agents for application architecture, cross-layer implementation,
   UI work, and protocol-specific development. Includes 12 Codex-native subagents from
   VoltAgent/awesome-codex-subagents.
@@ -14,6 +13,9 @@ compatibility:
       - codex
       - cursor
     partial: []
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended:
     - gpt-5.4

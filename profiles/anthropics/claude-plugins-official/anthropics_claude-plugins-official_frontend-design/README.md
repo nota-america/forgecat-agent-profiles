@@ -26,7 +26,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_frontend-desig
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design |
-| Version | `0.0.4` |
+| Version | `0.0.5` |
 | Original commit | `cf62a6c` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -40,3 +40,5 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_frontend-desig
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |

@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_playground"
-version: 0.0.4
 description: Creates interactive HTML playgrounds — self-contained single-file explorers
   with visual controls, live preview, and prompt output with copy button
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground
@@ -12,6 +11,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

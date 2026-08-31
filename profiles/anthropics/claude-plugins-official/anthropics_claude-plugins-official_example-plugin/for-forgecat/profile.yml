@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_example-plugin"
-version: 0.0.3
 description: A comprehensive example plugin demonstrating all Claude Code extension
   options including commands, agents, skills, hooks, and MCP servers
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin
@@ -13,6 +12,8 @@ compatibility:
       - cursor
     partial:
       - codex
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

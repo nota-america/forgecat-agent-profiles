@@ -28,7 +28,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-microsoft-foundry
 |---|---|
 | Author | Microsoft |
 | Original repository | https://github.com/microsoft/azure-skills |
-| Version | `0.0.0` |
+| Version | `0.0.5` |
 | Original commit | `a990650` |
 | License | MIT |
 | Source platform | Claude Code, Cursor |

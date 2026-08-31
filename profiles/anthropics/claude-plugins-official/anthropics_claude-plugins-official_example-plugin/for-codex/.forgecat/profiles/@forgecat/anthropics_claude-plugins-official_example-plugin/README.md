@@ -33,7 +33,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_example-plugin
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/example-plugin |
-| Version | `0.0.0` |
+| Version | `0.0.4` |
 | Original commit | `7e401ed` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |

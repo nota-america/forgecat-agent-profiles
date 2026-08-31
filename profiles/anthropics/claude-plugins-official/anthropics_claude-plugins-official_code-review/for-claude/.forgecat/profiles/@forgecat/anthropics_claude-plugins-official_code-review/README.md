@@ -28,7 +28,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_code-review
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review |
-| Version | `0.0.0` |
+| Version | `0.0.3` |
 | Original commit | `cf62a6c` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |

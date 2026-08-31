@@ -35,7 +35,7 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_infrastructure
 |---|---|
 | Author | `VoltAgent + community contributors` |
 | Original repository | `https://github.com/VoltAgent/awesome-codex-subagents` |
-| Version | `0.0.10` |
+| Version | `0.0.11` |
 | Original commit | `5b7a405` (2026-03-19) |
 | License | `MIT` |
 | Source platform | `codex` |
@@ -48,6 +48,8 @@ npx forgecat install @forgecat/voltagent_awesome-codex-subagents_infrastructure
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ### Models
 | Model | Role |

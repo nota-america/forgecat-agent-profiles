@@ -1,5 +1,4 @@
 name: "@forgecat/msitarzewski_agency-agents_agency-design"
-version: 0.0.11
 description: Design division from The Agency — 8 specialized agent personalities from
   msitarzewski/agency-agents. Each agent has deep domain expertise, unique personality,
   and production-ready workflows.
@@ -13,6 +12,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended:
     - claude-4-opus

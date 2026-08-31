@@ -26,7 +26,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-validate
 |---|---|
 | Author | Microsoft |
 | Original repository | https://github.com/microsoft/azure-skills |
-| Version | `0.0.4` |
+| Version | `0.0.5` |
 | Original commit | `a990650` |
 | License | MIT |
 | Source platform | Claude Code, Cursor |
@@ -40,6 +40,8 @@ npx forgecat install @forgecat/microsoft-azure_skills-azure-validate
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
