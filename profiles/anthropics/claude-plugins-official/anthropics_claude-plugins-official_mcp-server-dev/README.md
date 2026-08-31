@@ -28,7 +28,7 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_mcp-server-dev
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev |
-| Version | `0.0.4` |
+| Version | `0.0.5` |
 | Original commit | `7e401ed` |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -42,3 +42,5 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_mcp-server-dev
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |

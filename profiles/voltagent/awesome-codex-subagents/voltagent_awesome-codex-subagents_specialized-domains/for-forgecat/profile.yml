@@ -1,5 +1,4 @@
 name: "@forgecat/voltagent_awesome-codex-subagents_specialized-domains"
-version: 0.0.10
 description: Focused domain agents that still have a clear implementation or verification
   boundary. Includes 12 Codex-native subagents from VoltAgent/awesome-codex-subagents.
 repository: https://github.com/VoltAgent/awesome-codex-subagents
@@ -13,6 +12,9 @@ compatibility:
       - codex
       - cursor
     partial: []
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended:
     - gpt-5.4

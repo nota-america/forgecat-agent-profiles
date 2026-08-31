@@ -1,5 +1,4 @@
 name: "@forgecat/openai_skills_imagegen"
-version: 0.0.10
 description: Generate or edit raster images when the task benefits from AI-created
   bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background
   cutouts. Use when Codex should create a brand-new image, transform an existing image,
@@ -17,7 +16,9 @@ compatibility:
       - claude-code
       - codex
       - cursor
-    partial: []
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended:
     - gpt-5.4

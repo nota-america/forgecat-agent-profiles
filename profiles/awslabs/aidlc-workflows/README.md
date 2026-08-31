@@ -36,7 +36,7 @@ npx forgecat install @forgecat/awslabs_aidlc-workflows
 |---|---|
 | Author | AWS Labs |
 | Original repository | https://github.com/awslabs/aidlc-workflows |
-| Version | `0.0.7` |
+| Version | `0.0.8` |
 | Original commit | 182b6e9edcbfca5357987ed22dccc8582ee52288 |
 | License | MIT-0 |
 | Source platform | Multi-agent rules (Claude Code, Cursor) |
@@ -50,6 +50,8 @@ npx forgecat install @forgecat/awslabs_aidlc-workflows
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ## Dependencies
 

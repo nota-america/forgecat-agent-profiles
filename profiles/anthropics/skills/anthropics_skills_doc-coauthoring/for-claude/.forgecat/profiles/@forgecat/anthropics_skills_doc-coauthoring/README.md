@@ -28,7 +28,7 @@ npx forgecat install @forgecat/anthropics_skills_doc-coauthoring
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.0` |
+| Version | `0.0.5` |
 | Original commit | `5128e18` |
 | License | MIT |
 | Source platform | Claude Code |

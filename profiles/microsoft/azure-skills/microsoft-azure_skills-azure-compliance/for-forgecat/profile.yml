@@ -1,5 +1,4 @@
 name: "@forgecat/microsoft-azure_skills-azure-compliance"
-version: 0.0.4
 description: 'Run Azure compliance and security audits with azqr plus Key Vault expiration
   checks. Covers best-practice assessment, resource review, policy/compliance validation,
   and security posture checks. WHEN: compliance scan, security audit, BEFORE running
@@ -15,6 +14,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

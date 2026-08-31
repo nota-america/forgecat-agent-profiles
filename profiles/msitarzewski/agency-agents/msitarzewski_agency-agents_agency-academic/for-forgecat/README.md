@@ -27,7 +27,7 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-academic
 |---|---|
 | Author | `msitarzewski` |
 | Original repository | `https://github.com/msitarzewski/agency-agents` |
-| Version | `0.0.10` |
+| Version | `0.0.11` |
 | Original commit | `9c31d86` (2026-03-23) |
 | License | `MIT` |
 | Source platform | `claude-code` |
@@ -40,6 +40,8 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-academic
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ### Models
 | Model | Role |

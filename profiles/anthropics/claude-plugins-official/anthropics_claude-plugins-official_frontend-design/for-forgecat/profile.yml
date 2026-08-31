@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_frontend-design"
-version: 0.0.4
 description: Frontend design skill for UI/UX implementation
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design
 license: Apache-2.0
@@ -11,6 +10,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

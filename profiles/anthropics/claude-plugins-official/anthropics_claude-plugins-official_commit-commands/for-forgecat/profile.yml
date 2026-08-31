@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_commit-commands"
-version: 0.0.2
 description: Streamline your git workflow with simple commands for committing, pushing,
   and creating pull requests
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/commit-commands
@@ -13,6 +12,9 @@ compatibility:
       - cursor
     partial:
       - codex
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

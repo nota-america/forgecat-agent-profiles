@@ -37,7 +37,7 @@ npx forgecat install @forgecat/cursor_plugins_team-kit
 |---|---|
 | Author | `Cursor` |
 | Original repository | `https://github.com/cursor/plugins` |
-| Version | `0.0.10` |
+| Version | `0.0.11` |
 | Original commit | `9c39b57` (2026-03-13) |
 | License | `MIT` |
 | Source platform | `cursor` |
@@ -50,6 +50,8 @@ npx forgecat install @forgecat/cursor_plugins_team-kit
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 | Model | Role |

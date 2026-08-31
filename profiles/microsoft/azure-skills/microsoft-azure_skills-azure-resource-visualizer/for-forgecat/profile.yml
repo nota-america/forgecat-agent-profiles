@@ -1,5 +1,4 @@
 name: "@forgecat/microsoft-azure_skills-azure-resource-visualizer"
-version: 0.0.4
 description: 'Analyze Azure resource groups and generate detailed Mermaid architecture
   diagrams showing the relationships between individual resources. WHEN: create architecture
   diagram, visualize Azure resources, show resource relationships, generate Mermaid
@@ -15,6 +14,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

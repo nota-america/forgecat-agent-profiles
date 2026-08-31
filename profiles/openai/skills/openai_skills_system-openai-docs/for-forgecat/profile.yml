@@ -1,5 +1,4 @@
 name: "@forgecat/openai_skills_system-openai-docs"
-version: 0.0.10
 description: Use when the user asks how to build with OpenAI products or APIs and
   needs up-to-date official documentation with citations, help choosing the latest
   model for a use case, or explicit GPT-5.4 upgrade and prompt-upgrade guidance; prioritize
@@ -15,7 +14,9 @@ compatibility:
       - claude-code
       - codex
       - cursor
-    partial: []
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended:
     - gpt-5.4
