@@ -10,7 +10,9 @@ compatibility:
       - claude-code
       - codex
       - cursor
-    partial: []
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []
