@@ -16,6 +16,17 @@ Claude Code and Cursor receive the source Claude workflow through ForgeCat's sta
 
 Upstream files are copied without editorial rewriting. The only change inside an upstream skill is replacement of five executable script paths with ForgeCat reference paths. A separate ForgeCat adapter keeps generated `_workspace/` output in the user's current directory without modifying the original Python shim.
 
+## Details
+
+| Field | Value |
+|---|---|
+| Author | epoko77-ai |
+| Original repository | https://github.com/epoko77-ai/im-not-ai |
+| Version | `0.1.3` |
+| Original commit | `53e24e8f92cf344efcb812103f7c2b203e7efffc` |
+| License | MIT |
+| Source platform | multi-host |
+
 ---
 *written by original source*
 
