@@ -22,7 +22,7 @@ Tasks are tracked in a simple `TASKS.md` file that both you and the user can edi
 A visual dashboard is available for managing tasks and memory. **On first interaction with tasks:**
 
 1. Check if `dashboard.html` exists in the current working directory
-2. If not, copy it from `${CLAUDE_PLUGIN_ROOT}/skills/dashboard.html` to the current working directory
+2. If not, copy it from `.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_productivity/skills/dashboard.html` to the current working directory
 3. Inform the user: "I've added the dashboard. Run `/productivity:start` to set up the full system."
 
 The task board:

@@ -10,7 +10,7 @@ argument-hint: <description of what data you need>
 
 # /write-query - Write Optimized SQL
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_data/CONNECTORS.md`).
 
 Write a SQL query from a natural language description, optimized for your specific SQL dialect and following best practices.
 

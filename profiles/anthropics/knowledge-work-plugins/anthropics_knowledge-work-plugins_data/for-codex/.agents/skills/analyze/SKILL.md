@@ -9,7 +9,7 @@ argument-hint: <question>
 
 # /analyze - Answer Data Questions
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_data/CONNECTORS.md`).
 
 Answer a data question, from a quick lookup to a full analysis to a formal report.
 

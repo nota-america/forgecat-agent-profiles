@@ -6,7 +6,7 @@ argument-hint: "[--comprehensive]"
 
 # Update Command
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Keep your task list and memory current. Two modes:
 

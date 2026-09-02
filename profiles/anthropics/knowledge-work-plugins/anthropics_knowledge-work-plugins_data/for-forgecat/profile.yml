@@ -1,79 +1,90 @@
-name: "@forgecat/anthropics_knowledge-work-plugins_data"
-version: 0.0.8
-description: Write SQL, explore datasets, and generate insights faster. Build visualizations
-  and dashboards, and turn raw data into clear stories for stakeholders.
+name: '@forgecat/anthropics_knowledge-work-plugins_data'
+description: Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards,
+  and turn raw data into clear stories for stakeholders.
+visibility: public
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/data
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    partial:
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 skills:
 - name: analyze
   path: skills/analyze/SKILL.md
-  description: Answer data questions -- from quick lookups to full analyses. Use when
-    looking up a single metric, investigating what's driving a trend or drop, comparing
-    segments over time, or preparing a formal data report for stakeholders.
-- name: explore-data
-  path: skills/explore-data/SKILL.md
-  description: Profile and explore a dataset to understand its shape, quality, and
-    patterns. Use when encountering a new table or file, checking null rates and column
-    distributions, spotting data quality issues like duplicates or suspicious values,
-    or deciding which dimensions and metrics to analyze.
-- name: write-query
-  path: skills/write-query/SKILL.md
-  description: Write optimized SQL for your dialect with best practices. Use when
-    translating a natural-language data need into SQL, building a multi-CTE query
-    with joins and aggregations, optimizing a query against a large partitioned table,
-    or getting dialect-specific syntax for Snowflake, BigQuery, Postgres, etc.
-- name: sql-queries
-  path: skills/sql-queries/SKILL.md
-  description: Write correct, performant SQL across all major data warehouse dialects
-    (Snowflake, BigQuery, Databricks, PostgreSQL, etc.). Use when writing queries,
-    optimizing slow SQL, translating between dialects, or building complex analytical
-    queries with CTEs, window functions, or aggregations.
-- name: statistical-analysis
-  path: skills/statistical-analysis/SKILL.md
-  description: Apply statistical methods including descriptive stats, trend analysis,
-    outlier detection, and hypothesis testing. Use when analyzing distributions, testing
-    for significance, detecting anomalies, computing correlations, or interpreting
-    statistical results.
-- name: data-visualization
-  path: skills/data-visualization/SKILL.md
-  description: Create effective data visualizations with Python (matplotlib, seaborn,
-    plotly). Use when building charts, choosing the right chart type for a dataset,
-    creating publication-quality figures, or applying design principles like accessibility
-    and color theory.
-- name: create-viz
-  path: skills/create-viz/SKILL.md
-  description: Create publication-quality visualizations with Python. Use when turning
-    query results or a DataFrame into a chart, selecting the right chart type for
-    a trend or comparison, generating a plot for a report or presentation, or needing
-    an interactive chart with hover and zoom.
+  description: Answer data questions -- from quick lookups to full analyses. Use when looking up a single
+    metric, investigating what's driving a trend or drop, comparing segments over time, or preparing a
+    formal data report for stakeholders.
 - name: build-dashboard
   path: skills/build-dashboard/SKILL.md
-  description: Build an interactive HTML dashboard with charts, filters, and tables.
-    Use when creating an executive overview with KPI cards, turning query results
-    into a shareable self-contained report, building a team monitoring snapshot, or
-    needing multiple charts with filters in one browser-openable file.
-- name: validate-data
-  path: skills/validate-data/SKILL.md
-  description: QA an analysis before sharing -- methodology, accuracy, and bias checks.
-    Use when reviewing an analysis before a stakeholder presentation, spot-checking
-    calculations and aggregation logic, verifying a SQL query's results look right,
-    or assessing whether conclusions are actually supported by the data.
+  description: Build an interactive HTML dashboard with charts, filters, and tables. Use when creating
+    an executive overview with KPI cards, turning query results into a shareable self-contained report,
+    building a team monitoring snapshot, or needing multiple charts with filters in one browser-openable
+    file.
+- name: create-viz
+  path: skills/create-viz/SKILL.md
+  description: Create publication-quality visualizations with Python. Use when turning query results or
+    a DataFrame into a chart, selecting the right chart type for a trend or comparison, generating a plot
+    for a report or presentation, or needing an interactive chart with hover and zoom.
 - name: data-context-extractor
   path: skills/data-context-extractor/SKILL.md
-  description: Generate or improve a company-specific data analysis skill by extracting
-    tribal knowledge from analysts.
+  description: 'Generate or improve a company-specific data analysis skill by extracting tribal knowledge
+    from analysts.
+
+    BOOTSTRAP MODE - Triggers: "Create a data context skill", "Set up data analysis for our warehouse",
+    "Help me create a skill for our database", "Generate a data skill for [company]" → Discovers schemas,
+    asks key questions, generates initial skill with reference files
+
+    ITERATION MODE - Triggers: "Add context about [domain]", "The skill needs more info about [topic]",
+    "Update the data skill with [metrics/tables/terminology]", "Improve the [domain] reference" → Loads
+    existing skill, asks targeted questions, appends/updates reference files
+
+    Use when data analysts want Claude to understand their company''s specific data warehouse, terminology,
+    metrics definitions, and common query patterns.'
   scripts:
   - path: skills/data-context-extractor/scripts/package_data_skill.py
+    runtime: python
+    description: Package a generated data analysis skill into a distributable .skill file (zip format).
+- name: data-visualization
+  path: skills/data-visualization/SKILL.md
+  description: Create effective data visualizations with Python (matplotlib, seaborn, plotly). Use when
+    building charts, choosing the right chart type for a dataset, creating publication-quality figures,
+    or applying design principles like accessibility and color theory.
+- name: explore-data
+  path: skills/explore-data/SKILL.md
+  description: Profile and explore a dataset to understand its shape, quality, and patterns. Use when
+    encountering a new table or file, checking null rates and column distributions, spotting data quality
+    issues like duplicates or suspicious values, or deciding which dimensions and metrics to analyze.
+- name: sql-queries
+  path: skills/sql-queries/SKILL.md
+  description: Write correct, performant SQL across all major data warehouse dialects (Snowflake, BigQuery,
+    Databricks, PostgreSQL, etc.). Use when writing queries, optimizing slow SQL, translating between
+    dialects, or building complex analytical queries with CTEs, window functions, or aggregations.
+- name: statistical-analysis
+  path: skills/statistical-analysis/SKILL.md
+  description: Apply statistical methods including descriptive stats, trend analysis, outlier detection,
+    and hypothesis testing. Use when analyzing distributions, testing for significance, detecting anomalies,
+    computing correlations, or interpreting statistical results.
+- name: validate-data
+  path: skills/validate-data/SKILL.md
+  description: QA an analysis before sharing -- methodology, accuracy, and bias checks. Use when reviewing
+    an analysis before a stakeholder presentation, spot-checking calculations and aggregation logic, verifying
+    a SQL query's results look right, or assessing whether conclusions are actually supported by the data.
+- name: write-query
+  path: skills/write-query/SKILL.md
+  description: Write optimized SQL for your dialect with best practices. Use when translating a natural-language
+    data need into SQL, building a multi-CTE query with joins and aggregations, optimizing a query against
+    a large partitioned table, or getting dialect-specific syntax for Snowflake, BigQuery, Postgres, etc.
 mcp:
   path: mcp.jsonc
+references:
+- id: connectors
+  path: CONNECTORS.md

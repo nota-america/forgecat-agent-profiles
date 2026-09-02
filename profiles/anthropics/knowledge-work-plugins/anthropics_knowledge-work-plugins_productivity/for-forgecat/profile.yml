@@ -1,44 +1,46 @@
-name: "@forgecat/anthropics_knowledge-work-plugins_productivity"
-version: 0.0.9
-description: Manage tasks, plan your day, and build up memory of important context
-  about your work. Syncs with your calendar, email, and chat to keep everything organized
-  and on track.
+name: '@forgecat/anthropics_knowledge-work-plugins_productivity'
+description: Manage tasks, plan your day, and build up memory of important context about your work. Syncs
+  with your calendar, email, and chat to keep everything organized and on track.
+visibility: public
 repository: https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    partial:
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 skills:
-- name: start
-  path: skills/start/SKILL.md
-  description: Initialize the productivity system and open the dashboard. Use when
-    setting up the plugin for the first time, bootstrapping working memory from your
-    existing task list, or decoding the shorthand (nicknames, acronyms, project codenames)
-    you use in your todos.
-- name: update
-  path: skills/update/SKILL.md
-  description: Sync tasks and refresh memory from your current activity. Use when
-    pulling new assignments from your project tracker into TASKS.md, triaging stale
-    or overdue tasks, filling memory gaps for unknown people or projects, or running
-    a comprehensive scan to catch todos buried in chat and email.
 - name: memory-management
   path: skills/memory-management/SKILL.md
-  description: Two-tier memory system that makes Claude a true workplace collaborator.
-    Decodes shorthand, acronyms, nicknames, and internal language so Claude understands
-    requests like a colleague would. CLAUDE.md for working memory, memory/ directory
-    for the full knowledge base.
+  description: Two-tier memory system that makes Claude a true workplace collaborator. Decodes shorthand,
+    acronyms, nicknames, and internal language so Claude understands requests like a colleague would.
+    CLAUDE.md for working memory, memory/ directory for the full knowledge base.
+- name: start
+  path: skills/start/SKILL.md
+  description: Initialize the productivity system and open the dashboard. Use when setting up the plugin
+    for the first time, bootstrapping working memory from your existing task list, or decoding the shorthand
+    (nicknames, acronyms, project codenames) you use in your todos.
 - name: task-management
   path: skills/task-management/SKILL.md
-  description: Simple task management using a shared TASKS.md file. Reference this
-    when the user asks about their tasks, wants to add/complete tasks, or needs help
-    tracking commitments.
+  description: Simple task management using a shared TASKS.md file. Reference this when the user asks
+    about their tasks, wants to add/complete tasks, or needs help tracking commitments.
+- name: update
+  path: skills/update/SKILL.md
+  description: Sync tasks and refresh memory from your current activity. Use when pulling new assignments
+    from your project tracker into TASKS.md, triaging stale or overdue tasks, filling memory gaps for
+    unknown people or projects, or running a comprehensive scan to catch todos buried in chat and email.
 mcp:
   path: mcp.jsonc
+references:
+- id: connectors
+  path: CONNECTORS.md
+- id: dashboard
+  path: skills/dashboard.html
