@@ -65,8 +65,10 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
 | Cursor | Partial |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
