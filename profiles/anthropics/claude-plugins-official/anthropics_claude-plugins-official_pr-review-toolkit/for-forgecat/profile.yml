@@ -1,5 +1,4 @@
 name: "@forgecat/anthropics_claude-plugins-official_pr-review-toolkit"
-version: 0.0.4
 description: Comprehensive PR review agents specializing in comments, tests, error
   handling, type design, code quality, and code simplification
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pr-review-toolkit
@@ -13,6 +12,9 @@ compatibility:
       - cursor
     partial:
       - codex
+    unsupported:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

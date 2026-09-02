@@ -29,7 +29,7 @@ npx forgecat install @forgecat/upstash_context7
 |---|---|
 | Author | `Upstash` |
 | Original repository | `https://github.com/upstash/context7` |
-| Version | `0.0.9` |
+| Version | `0.0.10` |
 | Original commit | `383e127` (2026-03-16) |
 | Converted path | `plugins/claude/context7/` |
 | License | `MIT` |
@@ -43,6 +43,8 @@ npx forgecat install @forgecat/upstash_context7
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 | Model | Role |
