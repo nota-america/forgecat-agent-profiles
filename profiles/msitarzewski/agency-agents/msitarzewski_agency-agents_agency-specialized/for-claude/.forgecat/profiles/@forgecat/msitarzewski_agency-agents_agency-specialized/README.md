@@ -62,6 +62,8 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-specialized
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ### Models
 | Model | Role |

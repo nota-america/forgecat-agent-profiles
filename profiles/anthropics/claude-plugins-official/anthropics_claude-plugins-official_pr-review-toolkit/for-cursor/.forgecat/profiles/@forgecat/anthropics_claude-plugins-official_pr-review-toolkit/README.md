@@ -49,8 +49,10 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_pr-review-tool
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Partial |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ---
 *written by original source*

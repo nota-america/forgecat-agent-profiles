@@ -56,11 +56,14 @@ npx forgecat install @forgecat/msitarzewski_agency-agents_agency-specialized
 
 ## Compatibility
 ### Platforms
+
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
-| Cursor | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Unsupported |
+| Hermes | Unsupported |
 
 ### Models
 | Model | Role |

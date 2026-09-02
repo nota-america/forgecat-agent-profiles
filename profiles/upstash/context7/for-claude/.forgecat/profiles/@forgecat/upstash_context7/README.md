@@ -45,6 +45,8 @@ npx forgecat install @forgecat/upstash_context7
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 | Model | Role |
