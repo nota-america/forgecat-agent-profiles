@@ -6,7 +6,7 @@ argument-hint: "[service or release name]"
 
 # /deploy-checklist
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Generate a pre-deployment checklist to verify readiness before shipping.
 

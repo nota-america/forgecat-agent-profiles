@@ -11,7 +11,7 @@ argument-hint: <action or initiative to check>
 
 # /compliance-check -- Compliance Review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_legal/CONNECTORS.md`).
 
 Run a compliance check on a proposed action, product feature, marketing campaign, or business initiative.
 

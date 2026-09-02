@@ -9,7 +9,7 @@ argument-hint: <error message or problem description>
 
 # /debug
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_engineering/CONNECTORS.md`).
 
 Run a structured debugging session to find and fix issues systematically.
 

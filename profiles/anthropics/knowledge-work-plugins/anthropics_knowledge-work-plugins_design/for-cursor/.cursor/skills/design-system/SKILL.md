@@ -9,7 +9,7 @@ argument-hint: "[audit | document | extend] <component or system>"
 
 # /design-system
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_design/CONNECTORS.md`).
 
 Manage your design system — audit for consistency, document components, or design new patterns.
 

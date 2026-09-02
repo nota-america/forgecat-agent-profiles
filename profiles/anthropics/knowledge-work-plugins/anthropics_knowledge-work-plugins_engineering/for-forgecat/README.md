@@ -57,7 +57,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_engineering
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering |
-| Version | `0.0.8` |
+| Version | `0.0.10` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -71,6 +71,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_engineering
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

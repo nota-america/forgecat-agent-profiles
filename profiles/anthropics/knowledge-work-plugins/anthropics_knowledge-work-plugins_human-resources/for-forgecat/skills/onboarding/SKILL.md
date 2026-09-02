@@ -6,7 +6,7 @@ argument-hint: "<new hire name and role>"
 
 # /onboarding
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Generate a comprehensive onboarding plan for a new team member.
 

@@ -6,7 +6,7 @@ argument-hint: "<Figma URL, screenshot, or description>"
 
 # /design-critique
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Get structured design feedback across multiple dimensions.
 

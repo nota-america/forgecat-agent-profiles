@@ -6,7 +6,7 @@ argument-hint: "[--daily | --weekly | --since <date>]"
 
 # Digest Command
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Scan recent activity across all connected sources and generate a structured digest highlighting what matters.
 

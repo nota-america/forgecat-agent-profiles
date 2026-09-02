@@ -48,7 +48,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_customer-suppor
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/customer-support |
-| Version | `0.0.8` |
+| Version | `0.0.11` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin |
@@ -62,6 +62,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_customer-suppor
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

@@ -5,7 +5,7 @@ argument-hint: "<topic, problem, or idea to explore>"
 
 # /brainstorm
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Brainstorm a product topic with a sharp, opinionated thinking partner. This is a conversation, not a deliverable — the goal is to push thinking further than the PM would get alone.
 

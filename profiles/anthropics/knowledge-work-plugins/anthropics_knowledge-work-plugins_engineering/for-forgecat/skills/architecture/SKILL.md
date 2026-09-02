@@ -6,7 +6,7 @@ argument-hint: "<decision or system to design>"
 
 # /architecture
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Create an Architecture Decision Record (ADR) or evaluate a system design.
 

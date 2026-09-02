@@ -9,7 +9,7 @@ argument-hint: <update type and audience>
 
 # Stakeholder Update
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_product-management/CONNECTORS.md`).
 
 Generate a stakeholder update tailored to the audience and cadence.
 

@@ -6,7 +6,7 @@ argument-hint: "<update description>"
 
 # Roadmap Update
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Update, create, or reprioritize a product roadmap.
 

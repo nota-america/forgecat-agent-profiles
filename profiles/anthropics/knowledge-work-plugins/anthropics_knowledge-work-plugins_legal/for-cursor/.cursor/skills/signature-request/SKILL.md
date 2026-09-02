@@ -10,7 +10,7 @@ argument-hint: <document or contract to send>
 
 # /signature-request -- E-Signature Routing
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_legal/CONNECTORS.md`).
 
 Prepare a document for electronic signature — verify completeness, set signing order, and route for execution.
 

@@ -6,7 +6,7 @@ user-invocable: false
 
 # Source Management
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Knows what sources are available, helps connect new ones, and manages how sources are queried.
 

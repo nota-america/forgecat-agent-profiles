@@ -6,7 +6,7 @@ argument-hint: "<time period or metric focus>"
 
 # Metrics Review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Review and analyze product metrics, identify trends, and surface actionable insights.
 
