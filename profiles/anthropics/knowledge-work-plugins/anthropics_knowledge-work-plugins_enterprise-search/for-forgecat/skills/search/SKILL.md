@@ -6,7 +6,7 @@ argument-hint: "<query>"
 
 # Search Command
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Search across all connected MCP sources in a single query. Decompose the user's question, run parallel searches, and synthesize results.
 

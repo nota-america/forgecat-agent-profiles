@@ -9,7 +9,7 @@ argument-hint: <segment or rep>
 
 # /pipeline-review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_sales/CONNECTORS.md`).
 
 Analyze your pipeline health, prioritize deals, and get actionable recommendations for where to focus.
 

@@ -10,7 +10,7 @@ argument-hint: <campaign objective or product>
 
 # Campaign Plan
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_marketing/CONNECTORS.md`).
 
 Generate a comprehensive marketing campaign brief with objectives, audience, messaging, channel strategy, content calendar, and success metrics.
 

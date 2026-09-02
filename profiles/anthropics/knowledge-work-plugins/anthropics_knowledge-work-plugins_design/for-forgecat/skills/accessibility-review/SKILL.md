@@ -6,7 +6,7 @@ argument-hint: "<Figma URL, URL, or description>"
 
 # /accessibility-review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Audit a design or page for WCAG 2.1 AA accessibility compliance.
 

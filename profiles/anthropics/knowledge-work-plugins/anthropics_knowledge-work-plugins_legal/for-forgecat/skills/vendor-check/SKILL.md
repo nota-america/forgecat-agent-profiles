@@ -6,7 +6,7 @@ argument-hint: "[vendor name]"
 
 # /vendor-check -- Vendor Agreement Status
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Check the status of existing agreements with a vendor across all connected systems. Provides a consolidated view of the legal relationship.
 

@@ -10,7 +10,7 @@ argument-hint: <process or task name>
 
 # /runbook
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_operations/CONNECTORS.md`).
 
 Create a step-by-step operational runbook for a recurring task or procedure.
 

@@ -6,7 +6,7 @@ argument-hint: "<issue summary> [customer name]"
 
 # /customer-escalation
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Package a support issue into a structured escalation brief for engineering, product, or leadership. Gathers context, structures reproduction steps, assesses business impact, and identifies the right escalation target.
 

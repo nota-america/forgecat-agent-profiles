@@ -1,6 +1,6 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 
 # Design
@@ -53,7 +53,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_design
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/design |
-| Version | `0.0.4` |
+| Version | `0.0.10` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -65,8 +65,10 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_design
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Codex | Partial |
-| Cursor | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

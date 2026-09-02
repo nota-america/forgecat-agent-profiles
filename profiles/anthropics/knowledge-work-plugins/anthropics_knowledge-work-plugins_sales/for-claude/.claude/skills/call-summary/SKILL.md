@@ -10,7 +10,7 @@ argument-hint: <call notes or transcript>
 
 # /call-summary
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_sales/CONNECTORS.md`).
 
 Process call notes or a transcript to extract action items, draft follow-up communications, and update records.
 

@@ -9,7 +9,7 @@ argument-hint: "[--daily | --weekly | --since <date>]"
 
 # Digest Command
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_enterprise-search/CONNECTORS.md`).
 
 Scan recent activity across all connected sources and generate a structured digest highlighting what matters.
 

@@ -6,7 +6,7 @@ argument-hint: "<process or task name>"
 
 # /runbook
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Create a step-by-step operational runbook for a recurring task or procedure.
 

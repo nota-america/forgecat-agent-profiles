@@ -9,7 +9,7 @@ argument-hint: <vendor name or proposal>
 
 # /vendor-review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_operations/CONNECTORS.md`).
 
 Evaluate a vendor with structured analysis covering cost, risk, performance, and fit.
 

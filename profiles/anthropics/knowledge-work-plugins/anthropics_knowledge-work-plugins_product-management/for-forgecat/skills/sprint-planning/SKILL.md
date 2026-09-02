@@ -6,7 +6,7 @@ argument-hint: "[sprint name or date range]"
 
 # /sprint-planning
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Plan a sprint by scoping work, estimating capacity, and setting clear goals.
 

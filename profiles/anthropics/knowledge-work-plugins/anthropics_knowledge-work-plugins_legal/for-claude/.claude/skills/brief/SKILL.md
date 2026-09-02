@@ -11,7 +11,7 @@ argument-hint: "[daily | topic <query> | incident]"
 
 # /brief -- Legal Team Briefing
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_legal/CONNECTORS.md`).
 
 Generate contextual briefings for legal work. Supports three modes: daily brief, topic brief, and incident brief.
 

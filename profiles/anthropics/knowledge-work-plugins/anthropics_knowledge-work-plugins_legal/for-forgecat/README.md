@@ -54,7 +54,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_legal
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/legal |
-| Version | `0.0.8` |
+| Version | `0.0.10` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -68,6 +68,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_legal
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

@@ -6,7 +6,7 @@ argument-hint: "<vendor name or proposal>"
 
 # /vendor-review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Evaluate a vendor with structured analysis covering cost, risk, performance, and fit.
 

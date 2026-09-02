@@ -10,7 +10,7 @@ argument-hint: <NDA file or text>
 
 # /triage-nda -- NDA Pre-Screening
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_legal/CONNECTORS.md`).
 
 Triage the NDA: @$1
 

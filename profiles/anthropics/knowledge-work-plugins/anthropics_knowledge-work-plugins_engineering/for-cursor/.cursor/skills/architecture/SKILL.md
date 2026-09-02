@@ -9,7 +9,7 @@ argument-hint: <decision or system to design>
 
 # /architecture
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_engineering/CONNECTORS.md`).
 
 Create an Architecture Decision Record (ADR) or evaluate a system design.
 

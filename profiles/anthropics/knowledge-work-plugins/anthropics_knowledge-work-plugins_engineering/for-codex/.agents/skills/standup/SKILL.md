@@ -9,7 +9,7 @@ argument-hint: "[yesterday | today | blockers]"
 
 # /standup
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`.forgecat/profiles/@forgecat/anthropics_knowledge-work-plugins_engineering/CONNECTORS.md`).
 
 Generate a standup update by pulling together recent activity across your tools.
 

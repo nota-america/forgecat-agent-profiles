@@ -6,7 +6,7 @@ argument-hint: "<report type — headcount, attrition, diversity, org health>"
 
 # /people-report
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Generate people analytics reports from your HR data. Analyze workforce data to surface trends, risks, and opportunities.
 

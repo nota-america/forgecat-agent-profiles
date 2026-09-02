@@ -6,7 +6,7 @@ argument-hint: "<time period or campaign>"
 
 # Performance Report
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Generate a marketing performance report with key metrics, trend analysis, insights, and optimization recommendations.
 

@@ -6,7 +6,7 @@ argument-hint: "<segment or rep>"
 
 # /pipeline-review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Analyze your pipeline health, prioritize deals, and get actionable recommendations for where to focus.
 

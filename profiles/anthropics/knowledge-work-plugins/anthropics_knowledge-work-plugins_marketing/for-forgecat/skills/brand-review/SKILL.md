@@ -6,7 +6,7 @@ argument-hint: "<content to review>"
 
 # Brand Review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Review marketing content against brand voice, style guidelines, and messaging standards. Flag deviations and provide specific improvement suggestions.
 

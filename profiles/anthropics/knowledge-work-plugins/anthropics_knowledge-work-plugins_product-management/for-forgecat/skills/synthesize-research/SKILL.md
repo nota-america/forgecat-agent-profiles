@@ -6,7 +6,7 @@ argument-hint: "<research topic or question>"
 
 # Synthesize Research
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Synthesize user research from multiple sources into structured insights and recommendations.
 
