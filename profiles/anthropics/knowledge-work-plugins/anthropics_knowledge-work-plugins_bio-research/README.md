@@ -51,7 +51,7 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research |
-| Version | `0.0.7` |
+| Version | `0.0.8` |
 | Original commit | d2ba7f6 |
 | License | Apache-2.0 |
 | Source platform | Claude Code plugin (Cowork) |
@@ -65,6 +65,8 @@ npx forgecat install @forgecat/anthropics_knowledge-work-plugins_bio-research
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 

@@ -1,5 +1,4 @@
 name: "@forgecat/upstash_context7"
-version: 0.0.9
 description: Up-to-date documentation lookup via Context7 MCP. Pull version-specific
   documentation and code examples directly from source repositories into your LLM
   context. Includes MCP server (HTTP), skill, agent, and command.
@@ -10,10 +9,12 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-    - claude-code
+      - claude-code
     partial:
-    - codex
-    - cursor
+      - codex
+      - cursor
+      - openclaw
+      - hermes
   models:
     recommended:
     - claude-4-opus
