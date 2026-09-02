@@ -5,7 +5,7 @@ description: Initialize the productivity system and open the dashboard. Use when
 
 # Start Command
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> If you see unfamiliar placeholders or need to check which tools are connected, see CONNECTORS.md (`{{ref:connectors}}`).
 
 Initialize the task and memory systems, then open the unified dashboard.
 
@@ -23,7 +23,7 @@ Check the working directory for:
 
 **If `TASKS.md` doesn't exist:** Create it with the standard template (see task-management skill). Place it in the current working directory.
 
-**If `dashboard.html` doesn't exist:** Copy it from `${CLAUDE_PLUGIN_ROOT}/skills/dashboard.html` to the current working directory.
+**If `dashboard.html` doesn't exist:** Copy it from `{{ref:dashboard}}` to the current working directory.
 
 **If `CLAUDE.md` and `memory/` don't exist:** This is a fresh setup — after opening the dashboard, begin the memory bootstrap workflow (see below). Place these in the current working directory.
 
