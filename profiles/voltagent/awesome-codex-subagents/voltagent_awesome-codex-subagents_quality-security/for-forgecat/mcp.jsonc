@@ -1,0 +1,7 @@
+{
+  "servers": {
+    "chrome_devtools": {
+      "url": "http://localhost:3000/mcp"
+    }
+  }
+}
