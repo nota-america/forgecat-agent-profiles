@@ -36,7 +36,7 @@ npx forgecat install @forgecat/fivetaku_fablize
 |---|---|
 | Author | `fivetaku <gptaku.ai@gmail.com>` |
 | Original repository | `https://github.com/fivetaku/fablize` |
-| Version | `0.1.3` |
+| Version | `0.1.6` |
 | Original release | `v2.1.1` |
 | Original commit | `e221f32b16f7b0ef39393ba47c37cb8345ffe749` (2026-07-06) |
 | License | `MIT` |
