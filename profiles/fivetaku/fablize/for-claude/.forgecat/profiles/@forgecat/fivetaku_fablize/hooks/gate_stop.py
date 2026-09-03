@@ -15,6 +15,8 @@ import os
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
 _HERE = Path(__file__).resolve().parent
 
 

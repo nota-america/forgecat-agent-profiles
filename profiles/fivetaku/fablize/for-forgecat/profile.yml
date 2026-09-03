@@ -1,102 +1,125 @@
-name: "@forgecat/fivetaku_fablize"
-description: A Claude Code harness that makes Opus or any Claude model see multi-step work through with evidence, verification grounding, investigation protocol, per-task routing, and early-stop guard support.
+name: '@forgecat/fivetaku_fablize'
+description: A Claude Code harness that makes Opus or any Claude model see multi-step work through with
+  evidence, verification grounding, investigation protocol, per-task routing, and early-stop guard support.
+visibility: public
 repository: https://github.com/fivetaku/fablize
 license: MIT
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
+    - claude-code
     partial:
-      - cursor
-      - codex
+    - cursor
+    - codex
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
-keywords:
-  - harness
-  - verification
-  - completion
-  - workflow
-  - agentic
 skills:
-  - name: fablize
-    path: skills/fablize/SKILL.md
-    description: A harness that makes Opus (or any Claude model) behave like Fable — it enforces seeing a task through to the end, with evidence and verification, as procedure. Use when starting a multi-step task (2+ sequential stories), long autonomous work, debugging or root-cause investigation, building render/executable artifacts (HTML, SVG, games, charts), or when the user says "fablize", "see it through", "verify as you go", "split into goals".
-    scripts:
-      - path: skills/fablize/scripts/goals.py
-        description: Self-contained multi-story goal ledger and verification gate used by the fablize skill.
-        runtime: python
-      - path: skills/fablize/scripts/gate/classify_task.py
-        description: Classifies prompts for the fablize observation gate.
-        runtime: python
-      - path: skills/fablize/scripts/gate/ledger.py
-        description: Shared per-session evidence ledger helpers for fablize gate hooks.
-        runtime: python
-      - path: skills/fablize/scripts/gate/parse_tool_result.py
-        description: Parses tool results for changes, verification commands, and failures.
-        runtime: python
-      - path: skills/fablize/scripts/gate/verify_state.py
-        description: Evaluates whether the current turn has enough verification evidence to stop.
-        runtime: python
-      - path: skills/fablize/scripts/shadow/analyze.py
-        description: Optional shadow measurement analysis helper for fablize experiments.
-        runtime: python
-      - path: skills/fablize/scripts/shadow/outcome_collect.py
-        description: Optional shadow measurement outcome collection helper.
-        runtime: python
-      - path: skills/fablize/scripts/shadow/shadow_collect.py
-        description: Optional shadow measurement event collection helper.
-        runtime: python
-      - path: skills/fablize/scripts/shadow/shadow_logger.py
-        description: Optional shadow measurement logging helper used by gate holdout mode.
-        runtime: python
-      - path: skills/fablize/setup/setup.sh
-        description: Idempotent setup script that injects the fablize operating block into CLAUDE.md.
-        runtime: bash
-      - path: skills/fablize/setup/uninstall.sh
-        description: Removes the fablize operating block from CLAUDE.md.
-        runtime: bash
+- name: fablize
+  path: skills/fablize/SKILL.md
+  description: A harness that makes Opus (or any Claude model) behave like Fable — it enforces seeing
+    a task through to the end, with evidence and verification, as procedure. Use when starting a multi-step
+    task (2+ sequential stories), long autonomous work, debugging or root-cause investigation, building
+    render/executable artifacts (HTML, SVG, games, charts), or when the user says "fablize", "see it through",
+    "verify as you go", "split into goals".
+  scripts:
+  - path: hooks/gate_post_tool.py
+    runtime: python
+    description: fablize observation gate — PostToolUse.
+  - path: hooks/gate_prompt.py
+    runtime: python
+    description: fablize observation gate — UserPromptSubmit.
+  - path: hooks/gate_stop.py
+    runtime: python
+    description: fablize observation gate — Stop.
+  - path: hooks/router-codex.sh
+    runtime: bash
+    description: Router codex.
+  - path: hooks/router.sh
+    runtime: bash
+    description: Router.
+  - path: skills/fablize/scripts/gate/classify_task.py
+    runtime: python
+    description: Classifies prompts for the fablize observation gate.
+  - path: skills/fablize/scripts/gate/ledger.py
+    runtime: python
+    description: Shared per-session evidence ledger helpers for fablize gate hooks.
+  - path: skills/fablize/scripts/gate/parse_tool_result.py
+    runtime: python
+    description: Parses tool results for changes, verification commands, and failures.
+  - path: skills/fablize/scripts/gate/verify_state.py
+    runtime: python
+    description: Evaluates whether the current turn has enough verification evidence to stop.
+  - path: skills/fablize/scripts/goals.py
+    runtime: python
+    description: Self-contained multi-story goal ledger and verification gate used by the fablize skill.
+  - path: skills/fablize/scripts/shadow/analyze.py
+    runtime: python
+    description: Optional shadow measurement analysis helper for fablize experiments.
+  - path: skills/fablize/scripts/shadow/outcome_collect.py
+    runtime: python
+    description: Optional shadow measurement outcome collection helper.
+  - path: skills/fablize/scripts/shadow/shadow_collect.py
+    runtime: python
+    description: Optional shadow measurement event collection helper.
+  - path: skills/fablize/scripts/shadow/shadow_logger.py
+    runtime: python
+    description: Optional shadow measurement logging helper used by gate holdout mode.
+  - path: skills/fablize/setup/setup.sh
+    runtime: bash
+    description: Idempotent setup script that injects the fablize operating block into CLAUDE.md.
+  - path: skills/fablize/setup/uninstall.sh
+    runtime: bash
+    description: Removes the fablize operating block from CLAUDE.md.
 commands:
-  - name: setup
-    path: commands/setup.md
-    description: Set up fablize always-on by injecting the operating block into CLAUDE.md. GitHub starring is optional and only runs after an explicit opt-in.
+- name: setup
+  path: commands/setup.md
+  description: Set up fablize always-on (inject the operating block into CLAUDE.md).
 hooks:
-  - id: fablize-user-prompt-router
-    trigger: user_prompt_submit
-    command: ./hooks/router.sh
-    timeout: 10
-    description: Inject the smallest matching fablize discipline pack when a submitted prompt signals debugging or render/executable artifact work.
-    platforms:
-      - claude-code
-      - cursor
-  - id: fablize-user-prompt-gate
-    trigger: user_prompt_submit
-    command: ./hooks/gate_prompt.py
-    timeout: 10
-    description: Classify each prompt and reset the per-turn fablize evidence ledger.
-    platforms:
-      - claude-code
-  - id: fablize-post-tool-gate
-    trigger: post_tool_use
-    tool_match: Bash|Edit|Write|NotebookEdit|MultiEdit
-    command: ./hooks/gate_post_tool.py
-    timeout: 10
-    description: Record changed files, verification commands, and repeated failures after tool use.
-    platforms:
-      - claude-code
-  - id: fablize-stop-gate
-    trigger: stop
-    command: ./hooks/gate_stop.py
-    timeout: 10
-    description: Block completion when work changed files without observed verification evidence.
-    platforms:
-      - claude-code
-  - id: fablize-user-prompt-router-codex
-    trigger: user_prompt_submit
-    command: ./hooks/router-codex.sh
-    timeout: 10
-    description: Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON.
-    platforms:
-      - codex
+- id: fablize-user-prompt-router
+  trigger: user_prompt_submit
+  command: ./hooks/router.sh
+  timeout: 10
+  description: Inject the smallest matching fablize discipline pack when a submitted prompt signals debugging
+    or render/executable artifact work.
+  platforms:
+  - claude-code
+  - cursor
+- id: fablize-user-prompt-gate
+  trigger: user_prompt_submit
+  command: ./hooks/gate_prompt.py
+  timeout: 10
+  description: Classify each prompt and reset the per-turn fablize evidence ledger.
+  platforms:
+  - claude-code
+- id: fablize-post-tool-gate
+  trigger: post_tool_use
+  tool_match: Bash|Edit|Write|NotebookEdit|MultiEdit
+  command: ./hooks/gate_post_tool.py
+  timeout: 10
+  description: Record changed files, verification commands, and repeated failures after tool use.
+  platforms:
+  - claude-code
+- id: fablize-stop-gate
+  trigger: stop
+  command: ./hooks/gate_stop.py
+  timeout: 10
+  description: Block completion when work changed files without observed verification evidence.
+  platforms:
+  - claude-code
+- id: fablize-user-prompt-router-codex
+  trigger: user_prompt_submit
+  command: ./hooks/router-codex.sh
+  timeout: 10
+  description: Inject the smallest matching fablize discipline pack using Codex hookSpecificOutput JSON.
+  platforms:
+  - codex
+keywords:
+- harness
+- verification
+- completion
+- workflow
+- agentic
