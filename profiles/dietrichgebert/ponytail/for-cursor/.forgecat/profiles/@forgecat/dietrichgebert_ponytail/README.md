@@ -39,7 +39,7 @@ npx forgecat install @forgecat/dietrichgebert_ponytail
 |---|---|
 | Author | Dietrich Gebert |
 | Original repository | https://github.com/DietrichGebert/ponytail |
-| Version | `0.1.6` |
+| Version | `0.1.8` |
 | Original commit | `1c420ad2f306b2a096dd1e7c1b8c5ebbb4cdf3d4` |
 | License | MIT |
 | Source platform | Multi-platform: Claude Code plugin, Codex plugin, Cursor rule, OpenCode plugin, Gemini extension, pi extension, and generic AGENTS.md/skills adapters |
@@ -53,6 +53,8 @@ npx forgecat install @forgecat/dietrichgebert_ponytail
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
