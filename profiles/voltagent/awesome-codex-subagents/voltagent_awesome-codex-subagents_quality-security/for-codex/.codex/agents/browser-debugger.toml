@@ -1,7 +1,8 @@
 name = "browser-debugger"
 description = "Use when a task needs browser-based reproduction, UI evidence gathering, or client-side debugging through a browser MCP server."
 model = "gpt-5.4"
-sandbox_mode = "read-only"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
 developer_instructions = """
 Own browser debugging work as evidence-driven quality and risk reduction, not checklist theater.
 
@@ -38,3 +39,7 @@ Return:
 
 Do not broaden into unrelated frontend refactors unless explicitly requested by the parent agent.
 """
+
+[mcp_servers.chrome_devtools]
+url = "http://localhost:3000/mcp"
+startup_timeout_sec = 20
