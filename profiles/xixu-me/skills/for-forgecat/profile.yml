@@ -10,10 +10,12 @@ sourcePlatform: agent-skills
 compatibility:
   platforms:
     tested:
-    - codex
-    - claude-code
+      - codex
+      - claude-code
     partial:
-    - cursor
+      - cursor
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

@@ -7,10 +7,12 @@ sourcePlatform: multi-platform
 compatibility:
   platforms:
     tested:
-    - claude-code
-    - codex
-    - cursor
-    partial: []
+      - claude-code
+      - codex
+      - cursor
+    partial:
+      - openclaw
+      - hermes
   models:
     recommended: []
     minimum: []

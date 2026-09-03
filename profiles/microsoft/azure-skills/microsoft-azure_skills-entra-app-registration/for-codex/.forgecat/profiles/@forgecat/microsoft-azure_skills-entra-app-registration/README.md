@@ -28,7 +28,7 @@ npx forgecat install @forgecat/microsoft-azure_skills-entra-app-registration
 |---|---|
 | Author | Microsoft |
 | Original repository | https://github.com/microsoft/azure-skills |
-| Version | `0.0.0` |
+| Version | `0.0.5` |
 | Original commit | `a990650` |
 | License | MIT |
 | Source platform | Claude Code, Cursor |
@@ -40,8 +40,10 @@ npx forgecat install @forgecat/microsoft-azure_skills-entra-app-registration
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
