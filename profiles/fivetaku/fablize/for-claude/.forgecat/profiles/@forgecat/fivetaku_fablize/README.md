@@ -51,6 +51,8 @@ npx forgecat install @forgecat/fivetaku_fablize
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Dependencies
 
