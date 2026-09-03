@@ -21,7 +21,7 @@ npx forgecat install @forgecat/openai_skills_cloudflare-deploy
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.10` |
+| Version | `0.0.11` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -34,6 +34,8 @@ npx forgecat install @forgecat/openai_skills_cloudflare-deploy
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 | Model | Role |

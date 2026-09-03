@@ -26,7 +26,7 @@ npx forgecat install @forgecat/openai_skills_render-deploy
 |---|---|
 | Author | `OpenAI` |
 | Original repository | `https://github.com/openai/skills` |
-| Version | `0.0.8` |
+| Version | `0.0.9` |
 | Original commit | `0e7823cca07bc2cbf34718a383f9ae92525be6a5` (2026-03-24 14:48:51) |
 | License | `Apache-2.0` |
 | Source platform | `codex` |
@@ -39,6 +39,8 @@ npx forgecat install @forgecat/openai_skills_render-deploy
 | Claude Code | Tested |
 | Cursor | Partial |
 | Codex | Partial |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ### Models
 | Model | Role |

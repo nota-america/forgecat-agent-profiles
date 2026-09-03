@@ -9,7 +9,7 @@ This profile packages the upstream `xixu-me/skills` Agent Skills collection as o
 | Field | Value |
 |---|---|
 | Original repository | https://github.com/xixu-me/skills/tree/main/skills |
-| Version | `0.1.2` |
+| Version | `0.1.3` |
 | License | MIT |
 | Source platform | agent-skills |
 
@@ -19,9 +19,11 @@ This profile packages the upstream `xixu-me/skills` Agent Skills collection as o
 
 | Platform | Status |
 |---|---|
-| Codex | Tested |
 | Claude Code | Tested |
 | Cursor | Partial |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
 
 ## Included
 
