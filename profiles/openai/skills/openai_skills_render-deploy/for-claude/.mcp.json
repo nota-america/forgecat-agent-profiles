@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "render": {
+      "url": "https://mcp.render.com/mcp",
+      "env": {
+        "RENDER_API_KEY": "${RENDER_API_KEY}"
+      }
+    }
+  }
+}
