@@ -128,7 +128,7 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 |---|---|
 | Author | Orchestra Research |
 | Original repository | https://github.com/Orchestra-Research/AI-Research-SKILLs |
-| Version | `0.1.4` |
+| Version | `0.1.9` |
 | Original commit | `28f2d29236f2bade2eb92cadb2585189589a5828` |
 | License | MIT |
 | Source platform | Claude Code marketplace skills |
@@ -140,8 +140,10 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
@@ -155,6 +157,8 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 > **The most comprehensive open-source skills library enabling AI agents to autonomously conduct AI research — from idea to paper**
 
 > The original promo GIF is omitted from this ForgeCat package because it exceeds installable package size constraints.
+
+> Repository artwork, three generated example PDFs, and the ICML historical chart PDF are omitted from the installed profile. The chart's figure block and later cross-reference are also removed from the ICML template; the rest of the template remains.
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
@@ -211,12 +215,6 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 ## Our Mission
 
 We enable AI agents to **autonomously conduct AI research** — from literature survey and idea generation through experiment execution to paper writing. The library provides both the **research orchestration layer** (autoresearch, ideation, paper writing) and the **engineering skills** (training, evaluation, deployment) needed at each stage.
-<p align="center">
-  <img src="docs/skills.png" alt="AI Research Agent System" width="50%">
-  <br>
-  <em>System diagram of an AI research agent</em>
-</p>
-
 ## Path Towards AI Research Agent
 
 Modern AI research requires mastering dozens of specialized tools and frameworks.
