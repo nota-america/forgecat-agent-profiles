@@ -1,5 +1,4 @@
 name: "@forgecat/google-gemini_gemini-skills_gemini-api-dev"
-version: 0.0.4
 description: Use this skill when building applications with Gemini API hosted models,
   including Gemini and Gemma 4, working with multimodal content (text, images, audio,
   video), implementing function calling, using structured outputs, or needing current
@@ -16,6 +15,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+      - openclaw
+      - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
