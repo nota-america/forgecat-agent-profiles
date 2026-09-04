@@ -126,7 +126,7 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 |---|---|
 | Author | Orchestra Research |
 | Original repository | https://github.com/Orchestra-Research/AI-Research-SKILLs |
-| Version | `0.1.4` |
+| Version | `0.1.7` |
 | Original commit | `28f2d29236f2bade2eb92cadb2585189589a5828` |
 | License | MIT |
 | Source platform | Claude Code marketplace skills |
@@ -138,8 +138,10 @@ npx forgecat install @forgecat/orchestra-research_ai-research-skills
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
