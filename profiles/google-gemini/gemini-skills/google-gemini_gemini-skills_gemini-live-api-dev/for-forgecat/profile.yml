@@ -1,5 +1,4 @@
 name: "@forgecat/google-gemini_gemini-skills_gemini-live-api-dev"
-version: 0.0.4
 description: Use this skill when building real-time, bidirectional streaming applications
   with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice
   activity detection (VAD), native audio features, function calling, session management,
@@ -15,6 +14,9 @@ compatibility:
       - claude-code
       - cursor
       - codex
+      - openclaw
+      - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
