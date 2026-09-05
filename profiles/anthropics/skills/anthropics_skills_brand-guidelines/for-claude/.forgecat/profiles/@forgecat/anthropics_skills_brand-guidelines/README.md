@@ -20,7 +20,7 @@ npx forgecat install @forgecat/anthropics_skills_brand-guidelines
 
 ## Skills
 
-- **brand-guidelines** — Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply. `skill`
+- **brand-guidelines** — Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.
 
 ## Details
 
@@ -28,10 +28,10 @@ npx forgecat install @forgecat/anthropics_skills_brand-guidelines
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.0` |
-| Original commit | `5128e18` |
-| License | Complete terms in LICENSE.txt |
-| Source platform | Claude Code |
+| Version | `0.0.5` |
+| Original commit | 5128e1865d670f5d6c9cef000e6dfc4e951fb5b9 |
+| License | Apache-2.0 |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,9 +40,11 @@ npx forgecat install @forgecat/anthropics_skills_brand-guidelines
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
