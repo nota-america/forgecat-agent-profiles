@@ -28,10 +28,10 @@ npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-interactions-a
 |---|---|
 | Author | Google Gemini |
 | Original repository | https://github.com/google-gemini/gemini-skills |
-| Version | `0.0.4` |
+| Version | `0.0.5` |
 | Original commit | `f9138ae` |
-| License | Apache 2.0 |
-| Source platform | Claude Code, Gemini CLI, Cursor |
+| License | Apache-2.0 |
+| Source platform | multi-host |
 
 ## Compatibility
 
@@ -42,6 +42,8 @@ npx forgecat install @forgecat/google-gemini_gemini-skills_gemini-interactions-a
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
