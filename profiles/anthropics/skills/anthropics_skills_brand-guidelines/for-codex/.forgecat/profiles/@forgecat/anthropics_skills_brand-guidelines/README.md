@@ -1,6 +1,6 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # Anthropic Skills — Brand Guidelines
 
@@ -28,7 +28,7 @@ npx forgecat install @forgecat/anthropics_skills_brand-guidelines
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.5` |
+| Version | `0.0.7` |
 | Original commit | 5128e1865d670f5d6c9cef000e6dfc4e951fb5b9 |
 | License | Apache-2.0 |
 | Source platform | claude-code |

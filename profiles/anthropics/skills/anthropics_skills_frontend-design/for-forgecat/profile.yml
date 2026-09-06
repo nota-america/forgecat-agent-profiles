@@ -1,29 +1,30 @@
-name: "@forgecat/anthropics_skills_frontend-design"
-version: 0.0.4
-description: Create distinctive, production-grade frontend interfaces with high design
-  quality. Use this skill when the user asks to build web components, pages, artifacts,
-  posters, or applications (examples include websites, landing pages, dashboards,
-  React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates
-  creative, polished code and UI design that avoids generic AI aesthetics.
+name: '@forgecat/anthropics_skills_frontend-design'
+description: Create distinctive, production-grade frontend interfaces with high design quality. Use
+  this skill when the user asks to build web components, pages, artifacts, posters, or applications
+  (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when
+  styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic
+  AI aesthetics.
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: frontend-design
   path: skills/frontend-design/SKILL.md
-  description: Create distinctive, production-grade frontend interfaces with high
-    design quality. Use this skill when the user asks to build web components, pages,
-    artifacts, posters, or applications (examples include websites, landing pages,
-    dashboards, React components, HTML/CSS layouts, or when styling/beautifying any
-    web UI). Generates creative, polished code and UI design that avoids generic AI
-    aesthetics.
+  description: Create distinctive, production-grade frontend interfaces with high design quality. Use
+    this skill when the user asks to build web components, pages, artifacts, posters, or applications
+    (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when
+    styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic
+    AI aesthetics.
