@@ -1,28 +1,32 @@
-name: "@forgecat/anthropics_skills_algorithmic-art"
-version: 0.0.4
-description: Creating algorithmic art using p5.js with seeded randomness and interactive
-  parameter exploration. Use this when users request creating art using code, generative
-  art, algorithmic art, flow fields, or particle systems. Create original algorithmic
-  art rather than copying existing artists' work to avoid copyright violations.
+name: '@forgecat/anthropics_skills_algorithmic-art'
+description: Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration.
+  Use this when users request creating art using code, generative art, algorithmic art, flow fields, or
+  particle systems. Create original algorithmic art rather than copying existing artists' work to avoid
+  copyright violations.
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: algorithmic-art
   path: skills/algorithmic-art/SKILL.md
-  description: Creating algorithmic art using p5.js with seeded randomness and interactive
-    parameter exploration. Use this when users request creating art using code, generative
-    art, algorithmic art, flow fields, or particle systems. Create original algorithmic
-    art rather than copying existing artists' work to avoid copyright violations.
+  description: Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration.
+    Use this when users request creating art using code, generative art, algorithmic art, flow fields,
+    or particle systems. Create original algorithmic art rather than copying existing artists' work to
+    avoid copyright violations.
   scripts:
   - path: skills/algorithmic-art/templates/generator_template.js
+    runtime: node
+    description: P5.JS GENERATIVE ART - BEST PRACTICES
