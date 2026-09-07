@@ -1,29 +1,31 @@
-name: "@forgecat/anthropics_skills_mcp-builder"
-version: 0.0.4
-description: Guide for creating high-quality MCP (Model Context Protocol) servers
-  that enable LLMs to interact with external services through well-designed tools.
-  Use when building MCP servers to integrate external APIs or services, whether in
-  Python (FastMCP) or Node/TypeScript (MCP SDK).
+name: '@forgecat/anthropics_skills_mcp-builder'
+description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: mcp-builder
   path: skills/mcp-builder/SKILL.md
-  description: Guide for creating high-quality MCP (Model Context Protocol) servers
-    that enable LLMs to interact with external services through well-designed tools.
-    Use when building MCP servers to integrate external APIs or services, whether
-    in Python (FastMCP) or Node/TypeScript (MCP SDK).
+  description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to
+    interact with external services through well-designed tools. Use when building MCP servers to integrate
+    external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
   scripts:
   - path: skills/mcp-builder/scripts/connections.py
+    runtime: python
+    description: Lightweight connection handling for MCP servers.
   - path: skills/mcp-builder/scripts/evaluation.py
+    runtime: python
+    description: MCP Server Evaluation Harness
