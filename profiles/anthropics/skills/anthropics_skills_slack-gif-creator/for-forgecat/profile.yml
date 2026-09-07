@@ -1,29 +1,37 @@
-name: "@forgecat/anthropics_skills_slack-gif-creator"
-version: 0.0.4
-description: Knowledge and utilities for creating animated GIFs optimized for Slack.
-  Provides constraints, validation tools, and animation concepts. Use when users request
-  animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
+name: '@forgecat/anthropics_skills_slack-gif-creator'
+description: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: slack-gif-creator
   path: skills/slack-gif-creator/SKILL.md
-  description: Knowledge and utilities for creating animated GIFs optimized for Slack.
-    Provides constraints, validation tools, and animation concepts. Use when users
-    request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
+  description: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints,
+    validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make
+    me a GIF of X doing Y for Slack."
   scripts:
   - path: skills/slack-gif-creator/core/easing.py
+    runtime: python
+    description: Easing Functions - Timing functions for smooth animations.
   - path: skills/slack-gif-creator/core/frame_composer.py
+    runtime: python
+    description: Frame Composer - Utilities for composing visual elements into frames.
   - path: skills/slack-gif-creator/core/gif_builder.py
+    runtime: python
+    description: GIF Builder - Core module for assembling frames into GIFs optimized for Slack.
   - path: skills/slack-gif-creator/core/validators.py
+    runtime: python
+    description: Validators - Check if GIFs meet Slack's requirements.
