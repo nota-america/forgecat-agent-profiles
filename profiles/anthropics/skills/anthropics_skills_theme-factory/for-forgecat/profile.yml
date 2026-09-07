@@ -1,9 +1,5 @@
-name: "@forgecat/anthropics_skills_theme-factory"
-version: 0.0.4
-description: Toolkit for styling artifacts with a theme. These artifacts can be slides,
-  docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts
-  that you can apply to any artifact that has been creating, or can generate a new
-  theme on-the-fly.
+name: '@forgecat/anthropics_skills_theme-factory'
+description: Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
 visibility: public
@@ -11,16 +7,19 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: theme-factory
   path: skills/theme-factory/SKILL.md
-  description: Toolkit for styling artifacts with a theme. These artifacts can be
-    slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes
-    with colors/fonts that you can apply to any artifact that has been creating, or
-    can generate a new theme on-the-fly.
+  description: Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.
+references:
+- id: theme-factory-assets
+  path: assets/theme-factory
