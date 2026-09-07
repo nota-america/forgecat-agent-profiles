@@ -1,9 +1,5 @@
-name: "@forgecat/anthropics_skills_web-artifacts-builder"
-version: 0.0.3
-description: Suite of tools for creating elaborate, multi-component claude.ai HTML
-  artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).
-  Use for complex artifacts requiring state management, routing, or shadcn/ui components
-  - not for simple single-file HTML/JSX artifacts.
+name: '@forgecat/anthropics_skills_web-artifacts-builder'
+description: Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
 visibility: public
@@ -11,19 +7,26 @@ sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: web-artifacts-builder
   path: skills/web-artifacts-builder/SKILL.md
-  description: Suite of tools for creating elaborate, multi-component claude.ai HTML
-    artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).
-    Use for complex artifacts requiring state management, routing, or shadcn/ui components
-    - not for simple single-file HTML/JSX artifacts.
+  description: Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.
   scripts:
   - path: skills/web-artifacts-builder/scripts/bundle-artifact.sh
+    runtime: bash
+    description: Bundle artifact.
   - path: skills/web-artifacts-builder/scripts/init-artifact.sh
+    runtime: bash
+    description: Init artifact.
+references:
+- id: web-artifacts-builder-assets
+  path: assets/web-artifacts-builder
