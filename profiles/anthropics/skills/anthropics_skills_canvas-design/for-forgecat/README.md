@@ -20,7 +20,7 @@ npx forgecat install @forgecat/anthropics_skills_canvas-design
 
 ## Skills
 
-- **canvas-design** — Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations. `skill`
+- **canvas-design** — Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.
 
 ## Details
 
@@ -28,10 +28,10 @@ npx forgecat install @forgecat/anthropics_skills_canvas-design
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.4` |
-| Original commit | `5128e18` |
-| License | Complete terms in LICENSE.txt |
-| Source platform | Claude Code |
+| Version | `0.0.5` |
+| Original commit | 5128e1865d670f5d6c9cef000e6dfc4e951fb5b9 |
+| License | Apache-2.0 |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -42,7 +42,9 @@ npx forgecat install @forgecat/anthropics_skills_canvas-design
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.

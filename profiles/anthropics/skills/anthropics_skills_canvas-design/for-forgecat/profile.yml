@@ -1,26 +1,25 @@
-name: "@forgecat/anthropics_skills_canvas-design"
-version: 0.0.4
-description: Create beautiful visual art in .png and .pdf documents using design philosophy.
-  You should use this skill when the user asks to create a poster, piece of art, design,
-  or other static piece. Create original visual designs, never copying existing artists'
-  work to avoid copyright violations.
+name: '@forgecat/anthropics_skills_canvas-design'
+description: Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
   models:
     recommended: []
     minimum: []
 skills:
 - name: canvas-design
   path: skills/canvas-design/SKILL.md
-  description: Create beautiful visual art in .png and .pdf documents using design
-    philosophy. You should use this skill when the user asks to create a poster, piece
-    of art, design, or other static piece. Create original visual designs, never copying
-    existing artists' work to avoid copyright violations.
+  description: Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.
+references:
+- id: canvas-design-assets
+  path: assets/canvas-design
