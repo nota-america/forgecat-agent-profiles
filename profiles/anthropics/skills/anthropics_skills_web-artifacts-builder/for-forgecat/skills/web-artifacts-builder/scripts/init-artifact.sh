@@ -44,7 +44,7 @@ fi
 
 PROJECT_NAME="$1"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COMPONENTS_TARBALL="$SCRIPT_DIR/shadcn-components.tar.gz"
+COMPONENTS_TARBALL="$(cd "$(dirname "{{ref:web-artifacts-builder-assets}}/scripts/shadcn-components.tar.gz")" && pwd)/shadcn-components.tar.gz"
 
 # Check if components tarball exists
 if [ ! -f "$COMPONENTS_TARBALL" ]; then
