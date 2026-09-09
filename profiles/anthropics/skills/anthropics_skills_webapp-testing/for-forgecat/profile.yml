@@ -1,29 +1,38 @@
-name: "@forgecat/anthropics_skills_webapp-testing"
-version: 0.0.4
-description: Toolkit for interacting with and testing local web applications using
-  Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing
-  browser screenshots, and viewing browser logs.
+name: '@forgecat/anthropics_skills_webapp-testing'
+description: Toolkit for interacting with and testing local web applications using Playwright. Supports
+  verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing
+  browser logs.
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 skills:
 - name: webapp-testing
   path: skills/webapp-testing/SKILL.md
-  description: Toolkit for interacting with and testing local web applications using
-    Playwright. Supports verifying frontend functionality, debugging UI behavior,
-    capturing browser screenshots, and viewing browser logs.
+  description: Toolkit for interacting with and testing local web applications using Playwright. Supports
+    verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing
+    browser logs.
   scripts:
   - path: skills/webapp-testing/examples/console_logging.py
+    runtime: python
+    description: Console logging.
   - path: skills/webapp-testing/examples/element_discovery.py
+    runtime: python
+    description: Element discovery.
   - path: skills/webapp-testing/examples/static_html_automation.py
+    runtime: python
+    description: Static html automation.
   - path: skills/webapp-testing/scripts/with_server.py
+    runtime: python
+    description: Start one or more servers, wait for them to be ready, run a command, then clean up.
