@@ -2,15 +2,14 @@
 
 ![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# math-olympiad
+# Math Olympiad
 
-Solve competition math (IMO, Putnam, USAMO) with adversarial verification that catches what self-verification misses. Fresh-context verifiers attack proofs with specific failure patterns. Calibrated abstention over bluffing.
+Solve competition math problems with separate solver and adversarial verifier contexts, with optional LaTeX/PDF output.
 
 ## Tags
 
-- anthropic
-- claude-official
-- math-proofs
+- competition-math
+- proof-verification
 
 ## Installation
 
@@ -28,10 +27,10 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_math-olympiad
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-olympiad |
-| Version | `0.0.4` |
-| Original commit | `7e401ed` |
+| Version | `0.0.5` |
+| Original commit | 3deb821cb71ccfaaf2ffa9935e977df314ce5cd5 |
 | License | Apache-2.0 |
-| Source platform | Claude Code plugin |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -42,6 +41,12 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_math-olympiad
 | Claude Code | Tested |
 | Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
+
+## Dependencies
+
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
 
 ---
 *written by original source*
