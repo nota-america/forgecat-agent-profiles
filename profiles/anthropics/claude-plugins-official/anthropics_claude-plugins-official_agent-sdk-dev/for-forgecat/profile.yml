@@ -1,17 +1,19 @@
-name: "@forgecat/anthropics_claude-plugins-official_agent-sdk-dev"
-version: 0.0.3
+name: '@forgecat/anthropics_claude-plugins-official_agent-sdk-dev'
 description: Claude Agent SDK Development Plugin
+visibility: public
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-    partial:
-      - codex
+    - claude-code
+    - codex
+    - cursor
+    partial: []
+    unsupported:
+    - hermes
+    - openclaw
   models:
     recommended: []
     minimum: []
@@ -22,13 +24,18 @@ agents:
     configured, follows SDK best practices and documentation recommendations, and
     is ready for deployment or testing. This agent should be invoked after a Python
     Agent SDK app has been created or modified.
+  model: sonnet
 - name: agent-sdk-verifier-ts
   path: agents/agent-sdk-verifier-ts.md
   description: Use this agent to verify that a TypeScript Agent SDK application is
     properly configured, follows SDK best practices and documentation recommendations,
     and is ready for deployment or testing. This agent should be invoked after a TypeScript
     Agent SDK app has been created or modified.
+  model: sonnet
 commands:
 - name: new-sdk-app
   path: commands/new-sdk-app.md
   description: Create and setup a new Claude Agent SDK application
+platforms:
+  codex:
+    mode: override
