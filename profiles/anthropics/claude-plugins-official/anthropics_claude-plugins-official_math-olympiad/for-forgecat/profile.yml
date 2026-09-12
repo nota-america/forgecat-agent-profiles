@@ -1,18 +1,21 @@
-name: "@forgecat/anthropics_claude-plugins-official_math-olympiad"
-version: 0.0.4
+name: '@forgecat/anthropics_claude-plugins-official_math-olympiad'
 description: Solve competition math (IMO, Putnam, USAMO) with adversarial verification
   that catches what self-verification misses. Fresh-context verifiers attack proofs
   with specific failure patterns. Calibrated abstention over bluffing.
+visibility: public
 repository: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-olympiad
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []
@@ -30,4 +33,9 @@ skills:
     LaTeX is available, produces a clean PDF after verification passes.
   scripts:
   - path: skills/math-olympiad/scripts/check_latex.sh
+    runtime: bash
+    description: Check whether pdflatex or xelatex is available for optional PDF output.
   - path: skills/math-olympiad/scripts/compile_pdf.sh
+    runtime: bash
+    description: Compile a LaTeX proof body into a standalone PDF using pdflatex or
+      xelatex.
