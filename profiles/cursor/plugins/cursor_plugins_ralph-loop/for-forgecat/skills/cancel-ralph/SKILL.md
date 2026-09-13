@@ -19,7 +19,7 @@ The user wants to cancel or stop an active Ralph loop.
    - Read `.cursor/ralph/scratchpad.md` to get the current iteration from the `iteration:` field.
    - Remove the state file and any done flag:
      ```bash
-     rm -rf .cursor/ralph
+     find .cursor/ralph -mindepth 1 -delete && rmdir .cursor/ralph
      ```
    - Report: "Cancelled Ralph loop (was at iteration N)."
 

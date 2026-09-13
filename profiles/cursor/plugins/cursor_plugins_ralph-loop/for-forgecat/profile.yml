@@ -1,42 +1,62 @@
-name: "@forgecat/cursor_plugins_ralph-loop"
-version: 0.0.7
-description: Run iterative self-referential development loops where the same prompt
-  is repeated until completion criteria are met.
-repository: https://github.com/cursor/plugins
+name: '@forgecat/cursor_plugins_ralph-loop'
+description: Continuous self-referential AI loops for iterative development, implementing the Ralph Wiggum
+  technique. Run the agent in a while-true loop with the same prompt until task completion.
+repository: https://github.com/cursor/plugins/tree/main/ralph-loop
 license: MIT
 visibility: public
 sourcePlatform: cursor
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    partial:
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 skills:
-- name: ralph-loop
-  path: skills/ralph-loop/SKILL.md
-  description: Start a Ralph Loop for iterative self-referential development.
 - name: cancel-ralph
   path: skills/cancel-ralph/SKILL.md
-  description: Stop an active Ralph Loop by removing the state file.
+  description: Cancel an active Ralph Loop. Use when the user wants to stop, cancel, or abort a running
+    ralph loop.
+- name: ralph-loop
+  path: skills/ralph-loop/SKILL.md
+  description: Start a Ralph Loop for iterative self-referential development. Use when the user asks to
+    run a ralph loop, start an iterative loop, or wants repeated autonomous iteration on a task until
+    completion.
+  scripts:
+  - path: skills/ralph-loop/scripts/capture-response.sh
+    runtime: bash
+    description: Capture response.
+  - path: skills/ralph-loop/scripts/stop-hook.sh
+    runtime: bash
+    description: Stop hook.
 - name: ralph-loop-help
   path: skills/ralph-loop-help/SKILL.md
-  description: Explain the Ralph Loop technique and usage.
+  description: Explain the Ralph Loop plugin, how it works, and available skills. Use when the user asks
+    for help with ralph loop, wants to understand the technique, or needs usage examples.
+references:
+- id: cursor-plugin-avatar
+  path: assets/avatar.png
 hooks:
-- id: ralph-loop-capture-response
+- id: generated-cursor-afteragentresponse-1
   platform: cursor
   trigger: afterAgentResponse
-  command: ./hooks/capture-response.sh
-  timeout: 30
-  description: Detects a configured completion promise in the assistant response
-    and marks the active Ralph Loop as done.
-- id: ralph-loop-stop
+  command: ./hooks/generated-cursor-afteragentresponse-ordered.sh
+  description: afterAgentResponse hook for Ralph Loop.
+- id: generated-cursor-stop-1
   platform: cursor
   trigger: stop
-  command: ./hooks/stop-hook.sh
+  command: ./hooks/generated-cursor-stop-ordered.sh
+  description: Ralph Loop stop hook.
+- id: generated-cursor-followup-stop-portable
+  trigger: stop
+  command: ./hooks/generated-cursor-followup-stop-portable.sh
+  description: Continues a preserved Cursor follow-up loop on Claude Code and Codex.
+  platforms:
+  - claude-code
+  - codex
   timeout: 30
-  description: Feeds the original Ralph Loop prompt back into Cursor until the
-    completion promise or iteration limit is reached.
