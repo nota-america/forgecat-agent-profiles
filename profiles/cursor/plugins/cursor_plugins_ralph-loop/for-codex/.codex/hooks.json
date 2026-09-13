@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#generated-cursor-followup-stop-portable",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh codex generated-cursor-followup-stop-portable.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

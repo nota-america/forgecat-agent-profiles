@@ -3,16 +3,14 @@
   "hooks": {
     "afterAgentResponse": [
       {
-        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#ralph-loop-capture-response",
-        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor capture-response.sh",
-        "timeout": 30
+        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#generated-cursor-afteragentresponse-1",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor generated-cursor-afteragentresponse-ordered.sh"
       }
     ],
     "stop": [
       {
-        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#ralph-loop-stop",
-        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor stop-hook.sh",
-        "timeout": 30
+        "_forgecat": "@forgecat/cursor_plugins_ralph-loop#generated-cursor-stop-1",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_ralph-loop/hooks/_fc_wrap.sh cursor generated-cursor-stop-ordered.sh"
       }
     ]
   }
