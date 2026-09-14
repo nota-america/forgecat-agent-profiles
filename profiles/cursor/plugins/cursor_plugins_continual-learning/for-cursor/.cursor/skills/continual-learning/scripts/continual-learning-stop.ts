@@ -1,16 +1,13 @@
-#!/usr/bin/env bun
 /// <reference types="bun-types-no-globals/lib/index.d.ts" />
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { stdin } from "bun";
 
-const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
-const PROFILE_DIR = resolve(SCRIPT_DIR, "..");
-const STATE_DIR = resolve(PROFILE_DIR, "state");
-const STATE_PATH = resolve(STATE_DIR, "continual-learning.json");
-const INCREMENTAL_INDEX_PATH = resolve(STATE_DIR, "continual-learning-index.json");
+const STATE_PATH = resolve(".cursor/hooks/state/continual-learning.json");
+const INCREMENTAL_INDEX_PATH = resolve(
+  ".cursor/hooks/state/continual-learning-index.json"
+);
 const DEFAULT_MIN_TURNS = 10;
 const DEFAULT_MIN_MINUTES = 120;
 const TRIAL_DEFAULT_MIN_TURNS = 3;

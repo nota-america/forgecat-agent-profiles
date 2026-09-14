@@ -1,8 +1,7 @@
-name: "@forgecat/cursor_plugins_continual-learning"
-version: 0.0.6
-description: Incrementally learns durable user preferences and workspace facts from
-  transcript changes and keeps AGENTS.md up to date with plain bullet points.
-repository: https://github.com/cursor/plugins
+name: '@forgecat/cursor_plugins_continual-learning'
+description: Incrementally learns durable user preferences and workspace facts from transcript changes
+  and keeps AGENTS.md up to date with plain bullet points.
+repository: https://github.com/cursor/plugins/tree/main/continual-learning
 license: MIT
 visibility: public
 sourcePlatform: cursor
@@ -10,26 +9,36 @@ compatibility:
   platforms:
     tested:
     - cursor
+    partial:
     - claude-code
     - codex
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 agents:
 - name: agents-memory-updater
   path: agents/agents-memory-updater.md
-  description: Mine high-signal transcript deltas, update AGENTS.md, and keep the
-    incremental transcript index in sync.
+  description: Mine high-signal transcript deltas, update `AGENTS.md`, and keep the incremental transcript
+    index in sync.
   model: inherit
 skills:
 - name: continual-learning
   path: skills/continual-learning/SKILL.md
-  description: Orchestrate continual learning by delegating transcript mining and
-    AGENTS.md updates to agents-memory-updater.
+  description: Orchestrate continual learning by delegating transcript mining and AGENTS.md updates to
+    `agents-memory-updater`.
+  scripts:
+  - path: skills/continual-learning/scripts/continual-learning-stop.ts
+    runtime: node
+    description: Run the preserved Cursor hook handler with Bun.
+references:
+- id: cursor-plugin-avatar
+  path: assets/avatar.png
 hooks:
-- id: continual-learning-stop
+- id: generated-cursor-stop-1
+  platform: cursor
   trigger: stop
-  command: ./hooks/continual-learning-stop.ts
-  timeout: 30
-  description: Checks stop events for transcript changes and asks the agent to run
-    the continual-learning skill when cadence thresholds are met.
+  command: ./hooks/generated-cursor-stop-1-bun.sh
+  description: Checks Cursor stop events for transcript changes and asks the agent to run the continual-learning
+    skill when cadence thresholds are met.

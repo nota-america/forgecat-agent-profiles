@@ -3,9 +3,8 @@
   "hooks": {
     "stop": [
       {
-        "_forgecat": "@forgecat/cursor_plugins_continual-learning#continual-learning-stop",
-        "command": ".forgecat/profiles/@forgecat/cursor_plugins_continual-learning/hooks/_fc_wrap.sh cursor continual-learning-stop.ts",
-        "timeout": 30
+        "_forgecat": "@forgecat/cursor_plugins_continual-learning#generated-cursor-stop-1",
+        "command": ".forgecat/profiles/@forgecat/cursor_plugins_continual-learning/hooks/_fc_wrap.sh cursor generated-cursor-stop-1-bun.sh"
       }
     ]
   }
