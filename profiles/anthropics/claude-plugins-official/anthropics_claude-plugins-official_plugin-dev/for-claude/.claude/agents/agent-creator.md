@@ -59,57 +59,57 @@ description: >
   </commentary>
 
   </example>
-model: sonnet
+model: inherit
 tools: Write, Read
 skills:
   - .claude/skills/agent-development
-  - .claude/skills/plugin-settings
   - .claude/skills/command-development
   - .claude/skills/command-development
-  - .claude/skills/plugin-structure
-  - .claude/skills/plugin-structure
-  - .claude/skills/mcp-integration
   - .claude/skills/hook-development
+  - .claude/skills/mcp-integration
+  - .claude/skills/plugin-settings
+  - .claude/skills/plugin-structure
+  - .claude/skills/plugin-structure
   - .claude/skills/skill-development
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
   - .claude/skills/examples
   - .claude/skills/examples
   - .claude/skills/scripts
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
   - .claude/skills/examples
   - .claude/skills/examples
   - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/references
   - .claude/skills/references
   - .claude/skills/references
   - .claude/skills/scripts
   - .claude/skills/scripts
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/references
-  - .claude/skills/examples
-  - .claude/skills/examples
-  - .claude/skills/examples
   - .claude/skills/scripts
   - .claude/skills/scripts
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/references
+  - .claude/skills/references
+  - .claude/skills/examples
+  - .claude/skills/examples
+  - .claude/skills/examples
   - .claude/skills/scripts
   - .claude/skills/scripts
   - .claude/skills/references

@@ -717,7 +717,7 @@ else
   ❌ Changes failed validation
 
   Rolling back...
-  rm -rf $TEMP_DIR
+  find '$TEMP_DIR' -mindepth 1 -delete && rmdir '$TEMP_DIR'
 
   No changes applied. Safe to retry.
 fi

@@ -29,7 +29,7 @@ description: |
   Plugin development with agent addition, trigger agent-creator.
   </commentary>
   </example>
-model: sonnet
+model: inherit
 color: magenta
 tools: ["Write", "Read"]
 ---
