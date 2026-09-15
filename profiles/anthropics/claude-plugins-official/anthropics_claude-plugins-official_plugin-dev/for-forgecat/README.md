@@ -2,9 +2,9 @@
 
 ![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# plugin-dev
+# Plugin Dev
 
-Plugin development toolkit with skills for creating agents, commands, hooks, MCP integrations, and comprehensive plugin structure guidance
+Build and validate Claude Code plugins with seven development skills, three callable agents, and a guided creation workflow.
 
 ## Tags
 
@@ -30,9 +30,93 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_plugin-dev
 
 ## Agents
 
-- **agent-creator** — Use this agent when the user asks to "create an agent", "generate an agent", "build a new agent", "make me an agent that...", or describes agent functionality they need. Trigger when user wants to create autonomous agents for plugins. Examples: <example> Context: User wants to create a code review agent user: "Create an agent that reviews code for quality issues" assistant: "I'll use the agent-creator agent to generate the agent configuration." <commentary> User requesting new agent creation, trigger agent-creator to generate it. </commentary> </example> <example> Context: User describes needed functionality user: "I need an agent that generates unit tests for my code" assistant: "I'll use the agent-creator agent to create a test generation agent." <commentary> User describes agent need, trigger agent-creator to build it. </commentary> </example> <example> Context: User wants to add agent to plugin user: "Add an agent to my plugin that validates configurations" assistant: "I'll use the agent-creator agent to generate a configuration validator agent." <commentary> Plugin development with agent addition, trigger agent-creator. </commentary> </example>
-- **plugin-validator** — Use this agent when the user asks to "validate my plugin", "check plugin structure", "verify plugin is correct", "validate plugin.json", "check plugin files", or mentions plugin validation. Also trigger proactively after user creates or modifies plugin components. Examples: <example> Context: User finished creating a new plugin user: "I've created my first plugin with commands and hooks" assistant: "Great! Let me validate the plugin structure." <commentary> Plugin created, proactively validate to catch issues early. </commentary> assistant: "I'll use the plugin-validator agent to check the plugin." </example> <example> Context: User explicitly requests validation user: "Validate my plugin before I publish it" assistant: "I'll use the plugin-validator agent to perform comprehensive validation." <commentary> Explicit validation request triggers the agent. </commentary> </example> <example> Context: User modified plugin.json user: "I've updated the plugin manifest" assistant: "Let me validate the changes." <commentary> Manifest modified, validate to ensure correctness. </commentary> assistant: "I'll use the plugin-validator agent to check the manifest." </example>
-- **skill-reviewer** — Use this agent when the user has created or modified a skill and needs quality review, asks to "review my skill", "check skill quality", "improve skill description", or wants to ensure skill follows best practices. Trigger proactively after skill creation. Examples: <example> Context: User just created a new skill user: "I've created a PDF processing skill" assistant: "Great! Let me review the skill quality." <commentary> Skill created, proactively trigger skill-reviewer to ensure it follows best practices. </commentary> assistant: "I'll use the skill-reviewer agent to review the skill." </example> <example> Context: User requests skill review user: "Review my skill and tell me how to improve it" assistant: "I'll use the skill-reviewer agent to analyze the skill quality." <commentary> Explicit skill review request triggers the agent. </commentary> </example> <example> Context: User modified skill description user: "I updated the skill description, does it look good?" assistant: "I'll use the skill-reviewer agent to review the changes." <commentary> Skill description modified, review for triggering effectiveness. </commentary> </example>
+- **agent-creator** — Use this agent when the user asks to "create an agent", "generate an agent", "build a new agent", "make me an agent that...", or describes agent functionality they need. Trigger when user wants to create autonomous agents for plugins. Examples:
+
+<example>
+Context: User wants to create a code review agent
+user: "Create an agent that reviews code for quality issues"
+assistant: "I'll use the agent-creator agent to generate the agent configuration."
+<commentary>
+User requesting new agent creation, trigger agent-creator to generate it.
+</commentary>
+</example>
+
+<example>
+Context: User describes needed functionality
+user: "I need an agent that generates unit tests for my code"
+assistant: "I'll use the agent-creator agent to create a test generation agent."
+<commentary>
+User describes agent need, trigger agent-creator to build it.
+</commentary>
+</example>
+
+<example>
+Context: User wants to add agent to plugin
+user: "Add an agent to my plugin that validates configurations"
+assistant: "I'll use the agent-creator agent to generate a configuration validator agent."
+<commentary>
+Plugin development with agent addition, trigger agent-creator.
+</commentary>
+</example>
+- **plugin-validator** — Use this agent when the user asks to "validate my plugin", "check plugin structure", "verify plugin is correct", "validate plugin.json", "check plugin files", or mentions plugin validation. Also trigger proactively after user creates or modifies plugin components. Examples:
+
+<example>
+Context: User finished creating a new plugin
+user: "I've created my first plugin with commands and hooks"
+assistant: "Great! Let me validate the plugin structure."
+<commentary>
+Plugin created, proactively validate to catch issues early.
+</commentary>
+assistant: "I'll use the plugin-validator agent to check the plugin."
+</example>
+
+<example>
+Context: User explicitly requests validation
+user: "Validate my plugin before I publish it"
+assistant: "I'll use the plugin-validator agent to perform comprehensive validation."
+<commentary>
+Explicit validation request triggers the agent.
+</commentary>
+</example>
+
+<example>
+Context: User modified plugin.json
+user: "I've updated the plugin manifest"
+assistant: "Let me validate the changes."
+<commentary>
+Manifest modified, validate to ensure correctness.
+</commentary>
+assistant: "I'll use the plugin-validator agent to check the manifest."
+</example>
+- **skill-reviewer** — Use this agent when the user has created or modified a skill and needs quality review, asks to "review my skill", "check skill quality", "improve skill description", or wants to ensure skill follows best practices. Trigger proactively after skill creation. Examples:
+
+<example>
+Context: User just created a new skill
+user: "I've created a PDF processing skill"
+assistant: "Great! Let me review the skill quality."
+<commentary>
+Skill created, proactively trigger skill-reviewer to ensure it follows best practices.
+</commentary>
+assistant: "I'll use the skill-reviewer agent to review the skill."
+</example>
+
+<example>
+Context: User requests skill review
+user: "Review my skill and tell me how to improve it"
+assistant: "I'll use the skill-reviewer agent to analyze the skill quality."
+<commentary>
+Explicit skill review request triggers the agent.
+</commentary>
+</example>
+
+<example>
+Context: User modified skill description
+user: "I updated the skill description, does it look good?"
+assistant: "I'll use the skill-reviewer agent to review the changes."
+<commentary>
+Skill description modified, review for triggering effectiveness.
+</commentary>
+</example>
 
 ## Commands
 
@@ -44,10 +128,10 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_plugin-dev
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/plugin-dev |
-| Version | `0.0.4` |
-| Original commit | `cf62a6c` |
+| Version | `0.0.8` |
+| Original commit | da823e86c8feef13b73b6712af11eadd38c992f6 |
 | License | Apache-2.0 |
-| Source platform | Claude Code plugin |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -57,7 +141,13 @@ npx forgecat install @forgecat/anthropics_claude-plugins-official_plugin-dev
 |---|---|
 | Claude Code | Tested |
 | Cursor | Tested |
-| Codex | Partial |
+| Codex | Tested |
+| OpenClaw | Partial |
+| Hermes | Partial |
+
+## Dependencies
+
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
 
 ---
 *written by original source*
