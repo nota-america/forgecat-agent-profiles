@@ -3,8 +3,8 @@
   "hooks": {
     "sessionStart": [
       {
-        "_forgecat": "@forgecat/obra_superpowers#superpowers-session-start",
-        "command": ".forgecat/profiles/@forgecat/obra_superpowers/hooks/_fc_wrap.sh cursor session-start.sh"
+        "_forgecat": "@forgecat/obra_superpowers#generated-cursor-sessionstart-1",
+        "command": ".forgecat/profiles/@forgecat/obra_superpowers/hooks/_fc_wrap.sh cursor generated-cursor-sessionstart-1.sh"
       }
     ]
   }

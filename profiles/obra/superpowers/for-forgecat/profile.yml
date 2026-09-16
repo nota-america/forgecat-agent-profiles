@@ -1,77 +1,123 @@
-name: "@forgecat/obra_superpowers"
-version: 0.0.10
-description: Superpowers software development methodology for coding agents, including planning, TDD, debugging, subagent execution, review, and session-start skill bootstrap hooks.
+name: '@forgecat/obra_superpowers'
+description: Superpowers software development methodology for coding agents, including planning, TDD,
+  debugging, subagent execution, review, and platform-specific bootstrap behavior.
+visibility: public
 repository: https://github.com/obra/superpowers
 license: MIT
-visibility: public
-sourcePlatform: claude-code
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - cursor
+    - codex
+    partial:
+    - openclaw
+    - hermes
   models:
     recommended: []
     minimum: []
 skills:
 - name: brainstorming
   path: skills/brainstorming/SKILL.md
-  description: Use before creative or product work to explore intent, requirements, and design before implementation.
+  description: You MUST use this before any creative work - creating features, building components, adding
+    functionality, or modifying behavior. Explores user intent, requirements and design before implementation.
   scripts:
   - path: skills/brainstorming/scripts/helper.js
+    runtime: node
+    description: Maintain the visual brainstorming companion's authenticated browser and WebSocket session.
   - path: skills/brainstorming/scripts/start-server.sh
+    runtime: bash
+    description: Start an isolated visual brainstorming companion server and return its connection details.
   - path: skills/brainstorming/scripts/stop-server.sh
+    runtime: bash
+    description: Stop the owned visual brainstorming companion server and clean up only its ephemeral
+      session.
 - name: dispatching-parallel-agents
   path: skills/dispatching-parallel-agents/SKILL.md
-  description: Use when two or more independent tasks can be delegated without shared state or sequential dependencies.
+  description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential
+    dependencies
 - name: executing-plans
   path: skills/executing-plans/SKILL.md
-  description: Use when executing a written implementation plan in a separate session with review checkpoints.
+  description: Use when you have a written implementation plan to execute in a separate session with review
+    checkpoints
 - name: finishing-a-development-branch
   path: skills/finishing-a-development-branch/SKILL.md
-  description: Use after implementation and passing tests to decide how to integrate, PR, merge, or clean up development work.
+  description: Use when implementation is complete, all tests pass, and you need to decide how to integrate
+    the work
 - name: receiving-code-review
   path: skills/receiving-code-review/SKILL.md
-  description: Use when receiving review feedback to verify suggestions technically before implementing them.
+  description: Use when receiving code review feedback, before implementing suggestions, especially if
+    feedback seems unclear or technically questionable - requires technical rigor and verification, not
+    performative agreement or blind implementation
 - name: requesting-code-review
   path: skills/requesting-code-review/SKILL.md
-  description: Use when completing tasks, major features, or pre-merge work to request focused code review.
+  description: Use when completing tasks, implementing major features, or before merging to verify work
+    meets requirements
 - name: subagent-driven-development
   path: skills/subagent-driven-development/SKILL.md
-  description: Use when executing implementation plans with independent tasks in the current session through fresh subagents and staged review.
+  description: Use when executing implementation plans with independent tasks in the current session
+  scripts:
+  - path: skills/subagent-driven-development/scripts/review-package.sh
+    runtime: bash
+    description: Write a task-scoped commit summary and diff package for a read-only reviewer.
+  - path: skills/subagent-driven-development/scripts/sdd-workspace.sh
+    runtime: bash
+    description: Resolve and initialize the plan-scoped Superpowers development workspace.
+  - path: skills/subagent-driven-development/scripts/task-brief.sh
+    runtime: bash
+    description: Extract one complete implementation-plan task into a file for its implementer.
 - name: systematic-debugging
   path: skills/systematic-debugging/SKILL.md
-  description: Use when encountering bugs, failures, or unexpected behavior to find root cause before proposing fixes.
+  description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
   scripts:
   - path: skills/systematic-debugging/condition-based-waiting-example.ts
+    runtime: node
+    description: Complete implementation of condition-based waiting utilities
   - path: skills/systematic-debugging/find-polluter.sh
+    runtime: bash
+    description: Run matching tests one at a time to identify which test creates unwanted state.
 - name: test-driven-development
   path: skills/test-driven-development/SKILL.md
-  description: Use when implementing any feature or bugfix to write a failing test before implementation.
+  description: Use when implementing any feature or bugfix, before writing implementation code
 - name: using-git-worktrees
   path: skills/using-git-worktrees/SKILL.md
-  description: Use when starting feature work that needs isolation from the current workspace or before executing implementation plans.
+  description: Use when starting feature work that needs isolation from current workspace or before executing
+    implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback
 - name: using-superpowers
   path: skills/using-superpowers/SKILL.md
-  description: Establishes how to find and use Superpowers skills at the start of coding conversations.
+  description: Use when starting any conversation - establishes how to find and use skills, requiring
+    skill invocation before ANY response including clarifying questions
+  scripts:
+  - path: skills/using-superpowers/scripts/session-start.sh
+    runtime: bash
+    description: Run the using-superpowers session bootstrap handler.
 - name: verification-before-completion
   path: skills/verification-before-completion/SKILL.md
-  description: Use before claiming work is complete, fixed, or passing to require verification evidence first.
+  description: Use when about to claim work is complete, fixed, or passing, before committing or creating
+    PRs - requires running verification commands and confirming output before making any success claims;
+    evidence before assertions always
 - name: writing-plans
   path: skills/writing-plans/SKILL.md
-  description: Use when requirements are ready and a multi-step implementation plan should be written before code changes.
+  description: Use when you have a spec or requirements for a multi-step task, before touching code
 - name: writing-skills
   path: skills/writing-skills/SKILL.md
-  description: Use when creating, editing, or verifying agent skills before deployment.
+  description: Use when creating new skills, editing existing skills, or verifying skills work before
+    deployment
   scripts:
   - path: skills/writing-skills/render-graphs.js
+    runtime: node
+    description: Render Graphviz diagrams from a skill document as SVG files.
 hooks:
-- id: superpowers-session-start
+- id: generated-claude-code-sessionstart-1-1
   trigger: session_start
-  command: ./hooks/session-start.sh
-  description: Injects the Superpowers using-superpowers bootstrap context at session start.
+  command: ./hooks/generated-claude-code-sessionstart-1-1.sh
+  description: SessionStart hook for superpowers plugin
   platforms:
   - claude-code
-  - cursor
-  - codex
+  tool_match: startup|clear|compact
+- id: generated-cursor-sessionstart-1
+  platform: cursor
+  trigger: sessionStart
+  command: ./hooks/generated-cursor-sessionstart-1.sh
+  description: SessionStart hook for superpowers plugin
