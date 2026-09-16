@@ -2,13 +2,14 @@
   "hooks": {
     "SessionStart": [
       {
-        "_forgecat": "@forgecat/obra_superpowers#superpowers-session-start",
+        "_forgecat": "@forgecat/obra_superpowers#generated-claude-code-sessionstart-1-1",
         "hooks": [
           {
             "type": "command",
-            "command": "./.forgecat/profiles/@forgecat/obra_superpowers/hooks/_fc_wrap.sh claude-code session-start.sh"
+            "command": "./.forgecat/profiles/@forgecat/obra_superpowers/hooks/_fc_wrap.sh claude-code generated-claude-code-sessionstart-1-1.sh"
           }
-        ]
+        ],
+        "matcher": "startup|clear|compact"
       }
     ]
   }
