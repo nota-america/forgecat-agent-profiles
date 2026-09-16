@@ -1,9 +1,10 @@
 ---
 name: frontend-ui-engineering
-description: Builds production-quality UIs. Use when building or modifying
-  user-facing interfaces. Use when creating components, implementing layouts,
-  managing state, or when the output needs to look and feel production-quality
-  rather than AI-generated.
+description: Builds production-quality, accessible, responsive user-facing UIs.
+  Use when building or modifying interfaces and pages, creating components,
+  implementing layouts, meeting WCAG accessibility requirements, managing state,
+  or when the output needs to look and feel production-quality rather than
+  AI-generated.
 ---
 
 # Frontend UI Engineering
@@ -176,7 +177,13 @@ Every component must meet these standards:
 <button onClick={handleClick}>Click me</button>        // ✓ Focusable by default
 <div onClick={handleClick}>Click me</div>               // ✗ Not focusable
 <div role="button" tabIndex={0} onClick={handleClick}    // ✓ But prefer <button>
-     onKeyDown={e => e.key === 'Enter' && handleClick()}>
+     onKeyDown={e => {
+       if (e.key === 'Enter') handleClick();
+       if (e.key === ' ') e.preventDefault();
+     }}
+     onKeyUp={e => {
+       if (e.key === ' ') handleClick();
+     }}>
   Click me
 </div>
 ```
@@ -291,7 +298,7 @@ function useToggleTask() {
 
 ## See Also
 
-For detailed accessibility requirements and testing tools, see `references/accessibility-checklist.md`.
+For detailed accessibility requirements and testing tools, see `.forgecat/profiles/@forgecat/addyosmani_agent-skills/references/accessibility-checklist.md`.
 
 ## Common Rationalizations
 

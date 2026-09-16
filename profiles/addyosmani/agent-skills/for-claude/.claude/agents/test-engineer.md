@@ -4,29 +4,39 @@ description: QA engineer specialized in test strategy, test writing, and
   coverage analysis. Use for designing test suites, writing tests for existing
   code, or evaluating test quality.
 skills:
-  - .claude/skills/documentation-and-adrs
-  - .claude/skills/git-workflow-and-versioning
-  - .claude/skills/browser-testing-with-devtools
-  - .claude/skills/performance-optimization
-  - .claude/skills/code-simplification
-  - .claude/skills/deprecation-and-migration
-  - .claude/skills/security-and-hardening
-  - .claude/skills/code-review-and-quality
-  - .claude/skills/spec-driven-development
-  - .claude/skills/shipping-and-launch
-  - .claude/skills/frontend-ui-engineering
-  - .claude/skills/context-engineering
-  - .claude/skills/ci-cd-and-automation
   - .claude/skills/api-and-interface-design
+  - .claude/skills/browser-testing-with-devtools
+  - .claude/skills/ci-cd-and-automation
+  - .claude/skills/code-review-and-quality
+  - .claude/skills/code-simplification
+  - .claude/skills/constraint-driven-development
+  - .claude/skills/debugging-and-error-recovery
+  - .claude/skills/deprecation-and-migration
+  - .claude/skills/context-engineering
+  - .claude/skills/documentation-and-adrs
+  - .claude/skills/doubt-driven-development
+  - .claude/skills/git-workflow-and-versioning
+  - .claude/skills/frontend-ui-engineering
+  - .claude/skills/idea-refine
+  - .claude/skills/idea-refine
+  - .claude/skills/idea-refine
+  - .claude/skills/idea-refine
   - .claude/skills/incremental-implementation
+  - .claude/skills/interview-me
+  - .claude/skills/performance-optimization
   - .claude/skills/planning-and-task-breakdown
+  - .claude/skills/observability-and-instrumentation
+  - .claude/skills/security-and-hardening
+  - .claude/skills/shipping-and-launch
+  - .claude/skills/source-driven-development
+  - .claude/skills/spec-driven-development
   - .claude/skills/test-driven-development
   - .claude/skills/using-agent-skills
-  - .claude/skills/debugging-and-error-recovery
-  - .claude/skills/idea-refine
-  - .claude/skills/idea-refine
-  - .claude/skills/idea-refine
-  - .claude/skills/idea-refine
+  - .claude/skills/scripts
+  - .claude/skills/references
+  - .claude/skills/scripts
+  - .claude/skills/scripts
+  - .claude/skills/scripts
   - .claude/skills/scripts
 ---
 
@@ -114,3 +124,9 @@ When analyzing test coverage:
 5. Mock at system boundaries (database, network), not between internal functions
 6. Every test name should read like a specification
 7. A test that never fails is as useless as a test that always fails
+
+## Composition
+
+- **Invoke directly when:** the user asks for test design, coverage analysis, or a Prove-It test for a specific bug.
+- **Invoke via:** `/test` (TDD workflow) or `/ship` (parallel fan-out for coverage gap analysis alongside `code-reviewer` and `security-auditor`).
+- **Do not invoke from another persona.** Recommendations to add tests belong in your report; the user or a slash command decides when to act on them. See [docs/agents.md](../docs/agents.md).
