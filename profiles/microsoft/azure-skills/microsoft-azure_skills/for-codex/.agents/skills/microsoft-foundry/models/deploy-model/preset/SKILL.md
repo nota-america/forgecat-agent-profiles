@@ -1,10 +1,17 @@
 ---
 name: preset
-description: "Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR: quick deployment, optimal region, best region, automatic region selection, fast setup, multi-region capacity check, high availability deployment, deploy to best location. DO NOT USE FOR: custom SKU selection (use customize), specific version selection (use customize), custom capacity configuration (use customize), PTU deployments (use customize)."
+description: "Intelligently deploys Azure OpenAI models to optimal regions by
+  analyzing capacity across all available regions. Automatically checks current
+  region first and shows alternatives if needed. USE FOR: quick deployment,
+  optimal region, best region, automatic region selection, fast setup,
+  multi-region capacity check, high availability deployment, deploy to best
+  location. DO NOT USE FOR: custom SKU selection (use customize), specific
+  version selection (use customize), custom capacity configuration (use
+  customize), PTU deployments (use customize)."
 license: MIT
 metadata:
   author: Microsoft
-  version: "1.0.1"
+  version: 1.0.1
 ---
 
 # Deploy Model to Optimal Region
@@ -25,9 +32,9 @@ Automates intelligent Azure OpenAI model deployment by checking capacity across 
 
 - Azure CLI installed and configured
 - Active Azure subscription with Cognitive Services read/create permissions
-- Azure AI Foundry project resource ID (`PROJECT_RESOURCE_ID` env var or provided interactively)
+- Microsoft Foundry project resource ID (`PROJECT_RESOURCE_ID` env var or provided interactively)
   - Format: `/subscriptions/{sub-id}/resourceGroups/{rg}/providers/Microsoft.CognitiveServices/accounts/{account}/projects/{project}`
-  - Found in: Azure AI Foundry portal → Project → Overview → Resource ID
+  - Found in: Microsoft Foundry portal → Project → Overview → Resource ID
 
 ## Quick Workflow
 
@@ -96,7 +103,7 @@ az cognitiveservices account deployment delete --name <acct> --resource-group <r
 
 ## Related Skills
 
-- **microsoft-foundry** - Parent skill for Azure AI Foundry operations
+- **microsoft-foundry** - Parent skill for Microsoft Foundry operations
 - **[quota](../../../quota/quota.md)** — For quota viewing, increase requests, and troubleshooting quota errors, defer to this skill
 - **azure-quick-review** - Review Azure resources for compliance
 - **azure-cost-estimation** - Estimate costs for Azure deployments

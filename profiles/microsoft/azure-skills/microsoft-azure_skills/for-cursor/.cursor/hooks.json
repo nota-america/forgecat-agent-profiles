@@ -3,9 +3,14 @@
   "hooks": {
     "postToolUse": [
       {
-        "_forgecat": "@forgecat/microsoft-azure_skills#azure-telemetry-post-tool-use",
-        "command": ".forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/scripts/_fc_wrap.sh cursor track-telemetry.sh",
-        "timeout": 30
+        "_forgecat": "@forgecat/microsoft-azure_skills#generated-cursor-posttooluse-1",
+        "command": ".forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/_fc_wrap.sh cursor generated-cursor-posttooluse-1.js"
+      }
+    ],
+    "afterMCPExecution": [
+      {
+        "_forgecat": "@forgecat/microsoft-azure_skills#generated-cursor-aftermcpexecution-2",
+        "command": ".forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/_fc_wrap.sh cursor generated-cursor-aftermcpexecution-2.js"
       }
     ]
   }

@@ -1,12 +1,15 @@
 ---
 name: azure-quotas
-description: "Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection. WHEN: \"check quotas\", \"service limits\", \"current usage\", \"request quota increase\", \"quota exceeded\", \"validate capacity\", \"regional availability\", \"provisioning limits\", \"vCPU limit\", \"how many vCPUs available in my subscription\"."
+description: 'Check/manage Azure quotas and usage across providers. For
+  deployment planning, capacity validation, region selection. WHEN: "check
+  quotas", "service limits", "current usage", "request quota increase", "quota
+  exceeded", "validate capacity", "regional availability", "provisioning
+  limits", "vCPU limit", "how many vCPUs available in my subscription".'
 license: MIT
 metadata:
   author: Microsoft
-  version: "1.1.2"
+  version: 1.2.1
 ---
-
 
 # Azure Quotas - Service Limits & Capacity Management
 

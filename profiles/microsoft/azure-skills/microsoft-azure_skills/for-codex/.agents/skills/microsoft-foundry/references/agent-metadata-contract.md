@@ -28,7 +28,7 @@ Resolve deployment and evaluation context by layering sources in this order:
 | Agent root | `azure.yaml` service `project` for `host: azure.ai.agent` | `.foundry` discovery, user path | Do not write except to initialize cache |
 | Environment | user/session, then azd env/default | metadata `defaultEnvironment` | Store azd binding only when useful |
 | Project endpoint | `azd env get-values` | metadata, user input | Do not duplicate azd values |
-| Agent name/version | azd `AGENT_<SERVICE>_*` vars | `agent.yaml`, metadata, user input | Do not duplicate azd values |
+| Agent name/version | azd `AGENT_<SERVICE>_*` vars | `azure.yaml`, metadata, user input | Do not duplicate azd values |
 | ACR | azd registry vars | metadata, user input | Do not duplicate azd values |
 | Observability | azd App Insights vars | metadata, user input | Do not copy secrets if azd has them |
 | Local eval draft | `eval.yaml` | metadata, user input | Sync to `.foundry` only after remote lookup/registration |
@@ -103,19 +103,26 @@ When `eval.yaml` exists in the selected agent root, treat it as local evaluation
 | eval.yaml field | Use |
 |-----------------|-----|
 | `agent.name` | Candidate target agent; verify it matches selected context |
-| `dataset_file` | Local seed dataset candidate |
+| `dataset.local_uri` | Local seed dataset candidate |
+| `dataset.name`, `dataset.version` | Registered dataset candidate |
+| `validation_dataset` | Optional validation dataset candidate |
 | `evaluators[]` | Candidate evaluator names; verify with `evaluator_catalog_get` |
 | `name` | Candidate eval/suite name; verify remotely before storing as `suiteName` |
 | `options.eval_model` | Candidate judge/generation deployment |
+| `options.optimization_model` | Candidate optimizer reasoning deployment |
+| `options.max_candidates` | Candidate optimization iteration limit |
+| `options.optimization_config.model_search_space` | Candidate target model search space |
 | `options.pass_threshold` | Candidate evaluator threshold/default pass gate |
 | `max_samples`, `trace_days`, `generation_instruction` | Suite setup defaults |
+
+Legacy `dataset_file`, `dataset_reference`, and `validation_reference` keys may be normalized in memory when reading older files, but new files should use `dataset` and `validation_dataset`.
 
 Persist eval.yaml-derived suite metadata only after the relevant dataset/evaluator/suite has been registered or found in Foundry. Use `generationSource: eval-yaml` for synced suite entries created from local eval config.
 
 ## Workflow Rules
 
 1. Prefer azd service discovery before `.foundry` discovery when `azure.yaml` has `host: azure.ai.agent`.
-2. Once an agent root is selected, use only that root's `.foundry`, source tree, `agent.yaml`, and `eval.yaml` unless the user switches roots.
+2. Once an agent root is selected, use only that root's `.foundry`, source tree, `azure.yaml`, and `eval.yaml` unless the user switches roots.
 3. Select metadata files in this order: explicit file/path, environment sidecar, `.foundry/agent-metadata.yaml`, then prompt if ambiguous.
 4. Resolve environment from user/session, azd env/default, single-environment metadata, then `defaultEnvironment`.
 5. Keep the selected root, environment, metadata overlay file, and primary context source visible in deploy/eval/trace summaries.
@@ -137,4 +144,4 @@ Use `tags` as freeform key/value metadata. Suggested keys: `tier` (`smoke`, `reg
 
 Each synced suite should point to one dataset and one or more evaluators with thresholds. Store stable remote names separately from versions, keep local cache filenames versioned, and persist `suiteFile`, `datasetFile`, `datasetContentPath`, `datasetUri`, and evaluator `definitionFile` when available. Local dataset filenames should start with the effective Foundry agent name. Use evaluation-suite IDs in evaluation names, result folders, and regression summaries.
 
-For generated Foundry suites, persist `suiteName`, `suiteVersion`, `generationJobId`, and `generationSource`. A suite with `suiteName` still runs batch eval through `evaluation_agent_batch_eval_create`; use `evaluation_suite_get` only to resolve reviewed dataset/evaluator metadata.
+For generated Foundry suites, persist `suiteName`, `suiteVersion`, `generationJobId`, and `generationSource`. `suiteName` must start with a letter (`A-Z` or `a-z`); prefix derived numeric names with an alphabetic label such as `suite-`. A suite with `suiteName` still runs batch eval through `evaluation_agent_batch_eval_create`; use `evaluation_suite_get` only to resolve reviewed dataset/evaluator metadata.

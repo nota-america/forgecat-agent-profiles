@@ -8,7 +8,7 @@ After deployment, immediately prepare a Foundry evaluation suite and local refer
 
 ### 1. Resolve Context
 
-Use [Common Project Context Resolution](../../../SKILL.md#agent-common-project-context-resolution) to compute effective context. In azd projects, prefer `azd env get-values` for deployment context and use the selected `.foundry/agent-metadata*.yaml` file only as an overlay/cache. Use `agent_get`, local `agent.yaml`, and matching `eval.yaml` as needed to resolve:
+Use [Common Project Context Resolution](../../../SKILL.md#agent-common-project-context-resolution) to compute effective context. In azd projects, prefer `azd env get-values` for deployment context and use the selected `.foundry/agent-metadata*.yaml` file only as an overlay/cache. Use `agent_get`, the local `azure.yaml` service block, and matching `eval.yaml` as needed to resolve:
 
 | Value | Source |
 |-------|--------|
@@ -17,6 +17,8 @@ Use [Common Project Context Resolution](../../../SKILL.md#agent-common-project-c
 | `suiteName` | verified `eval.yaml` name or `<agent-name>-smoke` unless user provided one |
 | generation deployment | `model_deployment_get`; choose a chat-completions deployment |
 
+`suiteName` must start with a letter (`A-Z` or `a-z`). If a derived name starts with a number, prefix it with an alphabetic label such as `suite-`.
+
 Do not assume `gpt-4o` exists.
 
 ### 2. Reuse or Refresh Cache
@@ -24,7 +26,7 @@ Do not assume `gpt-4o` exists.
 Inspect `.foundry/suites/`, `.foundry/evaluators/`, `.foundry/datasets/`, matching `eval.yaml`, and the selected environment's `evaluationSuites[]` in the selected agent root only. Do **not** merge sibling agent folders.
 
 - **Suite metadata has `suiteName` and current cache** -> call `evaluation_suite_get` to verify the remote suite, then reuse it.
-- **`eval.yaml` exists and matches the selected agent** -> verify its `dataset_file`, `evaluators[]`, and optional `name` remotely or register them before persisting a synced suite entry.
+- **`eval.yaml` exists and matches the selected agent** -> verify its `dataset.local_uri` or registered `dataset.name`/`dataset.version`, `evaluators[]`, and optional `name` remotely or register them before persisting a synced suite entry. Normalize legacy `dataset_file` in memory only.
 - **Cache is missing/stale or user asks refresh** -> generate a new suite after confirming any overwrite.
 - **Legacy entry without `suiteName`** -> keep it as legacy fallback metadata unless the user approves generating a new suite.
 
