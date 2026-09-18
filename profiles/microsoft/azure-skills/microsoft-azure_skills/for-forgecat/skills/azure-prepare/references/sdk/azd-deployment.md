@@ -5,9 +5,7 @@
 > in the **azd-deployment** plugin skill if installed.
 
 ## Install
-curl -fsSL https://aka.ms/install-azd.sh -o /tmp/install-azd.sh
-less /tmp/install-azd.sh
-bash /tmp/install-azd.sh
+curl -fsSL https://aka.ms/install-azd.sh -o forgecat-upstream-installer.sh && less forgecat-upstream-installer.sh && bash forgecat-upstream-installer.sh
 
 ## Quick Start
 ```bash

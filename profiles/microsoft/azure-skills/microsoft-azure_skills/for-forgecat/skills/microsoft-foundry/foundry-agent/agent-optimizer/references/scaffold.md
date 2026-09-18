@@ -18,7 +18,7 @@ Use [Python Patterns](python-patterns.md#target-selection) to map evaluator/data
 
 ## Step 3: Scaffold Baseline Files
 
-Create the required `.agent_configs/baseline/` folder beside `agent.yaml`:
+Create the required `.agent_configs/baseline/` folder in the agent's service source directory (beside the entry point):
 
 ```text
 .agent_configs/
@@ -47,19 +47,11 @@ Do not use code-level defaults as the optimization baseline.
 
 ## Step 4: Install and Wire SDK
 
-Until the official PyPI package is available, download the preview wheel into the target agent repo:
-
-```bash
-curl -L -o azure_ai_agentserver_optimization-1.0.0b1.dev1-py3-none-any.whl https://github.com/Zyysurely/tool/raw/main/preview/azure_ai_agentserver_optimization-1.0.0b1.dev1-py3-none-any.whl
-```
-
-Then add the local wheel path to the target agent project's dependency file:
+Add `azure-ai-agentserver-optimization` to the target agent project's dependency file:
 
 ```text
-./azure_ai_agentserver_optimization-1.0.0b1.dev1-py3-none-any.whl
+azure-ai-agentserver-optimization
 ```
-
-If the project has a Dockerfile, ensure it copies the wheel before `pip install -r requirements.txt`. Do not commit the wheel to this skill repo. When the package is released, replace the local wheel entry with `azure-ai-agentserver-optimization`.
 
 Wire the agent with no default parameters:
 
@@ -76,7 +68,7 @@ Map resolved values:
 - Skills -> `config.skills_dir` with `load_skills_from_dir(...)` only when the runtime has a safe skill/tool mechanism
 - Function tool definitions -> `config.apply_tool_descriptions(tools)` when tool metadata can be patched safely
 
-Do not add optimization runtime env vars to `agent.yaml`. The default local config path is `.agent_configs/`; use `load_config(config_dir="...")` only when the scaffold intentionally uses a non-default local config directory.
+Do not add optimization runtime env vars to the agent's `environmentVariables` in `azure.yaml`. The default local config path is `.agent_configs/`; use `load_config(config_dir="...")` only when the scaffold intentionally uses a non-default local config directory.
 
 ## Step 5: Verify and Stop
 

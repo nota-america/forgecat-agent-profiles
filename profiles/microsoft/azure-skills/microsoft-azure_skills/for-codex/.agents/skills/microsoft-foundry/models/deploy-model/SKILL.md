@@ -1,13 +1,23 @@
 ---
 name: deploy-model
-description: "Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity discovery across regions and projects. USE FOR: deploy model, deploy gpt, create deployment, model deployment, deploy openai model, set up model, provision model, find capacity, check model availability, where can I deploy, best region for model, capacity analysis. DO NOT USE FOR: listing existing deployments (use foundry_models_deployments_list MCP tool), deleting deployments, agent creation (use agent/create), project creation (use project/create)."
+description: "Unified Azure OpenAI model deployment skill with intelligent
+  intent-based routing. Handles quick preset deployments, fully customized
+  deployments (version/SKU/capacity/RAI policy), and capacity discovery across
+  regions and projects. USE FOR: deploy model, deploy gpt, create deployment,
+  model deployment, deploy openai model, set up model, provision model, find
+  capacity, check model availability, where can I deploy, best region for model,
+  capacity analysis. DO NOT USE FOR: listing existing deployments (use
+  foundry_models_deployments_list MCP tool), deleting deployments, agent
+  creation (use agent/create), project creation (use project/create)."
 license: MIT
 metadata:
   author: Microsoft
-  version: "1.0.0"
+  version: 1.0.0
 ---
 
 # Deploy Model
+
+> **Scope — read this first.** This skill creates model deployments **out-of-band** via Azure CLI / MCP / portal. For azd-managed Foundry projects (those scaffolded from `azd ai agent init`), declare deployments in `azure.yaml services.ai-project.deployments[]` instead — `azd ai agent init` writes the entry from the sample manifest and `azd provision` creates the deployment through Bicep. See [foundry-agent/create/create-hosted.md](../../foundry-agent/create/create-hosted.md) for the Golden Path. Use this skill only for: (a) Foundry projects not managed by an azd project, (b) ad-hoc deployments outside the azd lifecycle.
 
 Unified entry point for all Azure OpenAI model deployment workflows. Analyzes user intent and routes to the appropriate deployment mode.
 
@@ -135,7 +145,7 @@ Before presenting any deployment options (SKU, capacity), always validate both o
 All deployment modes require:
 - Azure CLI installed and authenticated (`az login`)
 - Active Azure subscription with deployment permissions
-- Azure AI Foundry project resource ID (or agent will help discover it via `PROJECT_RESOURCE_ID` env var)
+- Microsoft Foundry project resource ID (or agent will help discover it via `PROJECT_RESOURCE_ID` env var)
 
 ## Sub-Skills
 

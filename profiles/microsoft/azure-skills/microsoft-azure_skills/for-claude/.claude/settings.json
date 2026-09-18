@@ -2,12 +2,11 @@
   "hooks": {
     "PostToolUse": [
       {
-        "_forgecat": "@forgecat/microsoft-azure_skills#azure-telemetry-post-tool-use",
+        "_forgecat": "@forgecat/microsoft-azure_skills#generated-claude-code-posttooluse-0",
         "hooks": [
           {
             "type": "command",
-            "command": "./.forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/scripts/_fc_wrap.sh claude-code track-telemetry.sh",
-            "timeout": 30
+            "command": "./.forgecat/profiles/@forgecat/microsoft-azure_skills/hooks/_fc_wrap.sh claude-code generated-claude-code-posttooluse-0.js"
           }
         ]
       }
