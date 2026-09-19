@@ -1,0 +1,21 @@
+{
+  "version": "1.87.4.0",
+  "assets": {
+    "diagram": {
+      "schema": 1,
+      "repository": "garrytan/gstack",
+      "commit": "a6b3a57512ca6d5c6aa5b68f74f736195021f96e",
+      "path": "lib/diagram-render/dist/diagram-render.html",
+      "sha256": "46ed274ca8b6bc763308c87fea05fa9ad940d7f6bcfbd1bc0abbf56c6c0c705d",
+      "bytes": 7901685
+    },
+    "changelog": {
+      "schema": 1,
+      "repository": "garrytan/gstack",
+      "commit": "a6b3a57512ca6d5c6aa5b68f74f736195021f96e",
+      "path": "CHANGELOG.md",
+      "sha256": "2103ec7bfd50d375356035a2fd166565c09cee755f896aee81005ea7385f8bcb",
+      "bytes": 1153543
+    }
+  }
+}
