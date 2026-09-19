@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# gstack-review-log — atomically log a review result
+# Usage: gstack-review-log '{"skill":"...","timestamp":"...","status":"..."}'
+#
+# Before reading a diff: gstack-review-log --start review
+# After that pass: gstack-review-log '{...,"completed":true,"converged":true}' --finish TOKEN
+# Diff reviews get wtree only from a consumed, matching start capture on an
+# unchanged tree. Completion/convergence are reviewer-reported, not proof that
+# a model read the code. Caller-supplied binding fields are always discarded.
+# Plan-tier rows retain their legacy binding behavior.
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+eval "$("$SCRIPT_DIR/gstack-slug" 2>/dev/null)"
+GSTACK_HOME="${GSTACK_HOME:-$HOME/.gstack}"
+mkdir -p "$GSTACK_HOME/projects/$SLUG"
+
+INPUT="${1:-}"
+export GSTACK_REVIEW_DIR="$GSTACK_HOME/projects/$SLUG"
+export GSTACK_REVIEW_REPO="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+export GSTACK_REVIEW_BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse HEAD 2>/dev/null || true)"
+export GSTACK_REVIEW_LIB="$SCRIPT_DIR/../lib/review-evidence.ts"
+case "$(uname -s)" in
+  MINGW*|MSYS*|CYGWIN*)
+    if command -v cygpath >/dev/null 2>&1; then
+      GSTACK_REVIEW_LIB="$(cygpath -m "$GSTACK_REVIEW_LIB")"
+      GSTACK_REVIEW_DIR="$(cygpath -m "$GSTACK_REVIEW_DIR")"
+    fi
+    ;;
+esac
+
+# Compute binding fields (best-effort; empty outside a git repo).
+COMMIT_FULL=$(git rev-parse HEAD 2>/dev/null || true)
+TREE=""
+WTREE=""
+DIRTY=""
+if [ -n "$COMMIT_FULL" ]; then
+  TREE=$(git rev-parse 'HEAD^{tree}' 2>/dev/null || true)
+  WTREE=$("$SCRIPT_DIR/gstack-wtree" 2>/dev/null || true)
+  if [ -n "$(git status --porcelain -uno 2>/dev/null | head -1)" ]; then
+    DIRTY="true"
+  else
+    DIRTY="false"
+  fi
+fi
+
+export GSTACK_STAMP_COMMIT_FULL="$COMMIT_FULL" GSTACK_STAMP_TREE="$TREE" GSTACK_STAMP_WTREE="$WTREE" GSTACK_STAMP_DIRTY="$DIRTY"
+if [ "$INPUT" = --start ]; then
+  GSTACK_REVIEW_SKILL="${2:-}" bun -e '
+    const { captureReviewStart } = await import(process.env.GSTACK_REVIEW_LIB);
+    console.log(captureReviewStart(process.env.GSTACK_REVIEW_SKILL));
+  '
+  exit $?
+fi
+if [ "$#" -ne 1 ] && { [ "$#" -ne 3 ] || [ "${2:-}" != --finish ]; }; then
+  echo 'Usage: gstack-review-log JSON [--finish TOKEN] | --start SKILL' >&2
+  exit 1
+fi
+
+# Validate (reject malformed or injection attempts) AND stamp in one pass.
+# Caller values for the binding keys are dropped before stamping.
+STAMPED=$(printf '%s' "$INPUT" | GSTACK_REVIEW_TOKEN="${3:-}" bun -e "
+const { bindReview } = await import(process.env.GSTACK_REVIEW_LIB);
+const rec = JSON.parse(await Bun.stdin.text());
+if (!rec || Array.isArray(rec) || typeof rec !== 'object') throw new Error('expected object');
+console.log(JSON.stringify(bindReview(rec, process.env.GSTACK_REVIEW_TOKEN)));
+" 2>/dev/null) || {
+  # Not valid JSON — refuse to append
+  echo "gstack-review-log: invalid JSON, skipping" >&2
+  exit 1
+}
+
+echo "$STAMPED" >> "$GSTACK_HOME/projects/$SLUG/$BRANCH-reviews.jsonl"
+
+# gbrain-sync: enqueue for cross-machine sync (no-op if sync is off).
+"$SCRIPT_DIR/gstack-brain-enqueue" "projects/$SLUG/$BRANCH-reviews.jsonl" 2>/dev/null &

@@ -1,422 +1,1596 @@
-name: "@forgecat/garrytan_gstack"
-version: 0.0.10
-description: "Garry's Stack: a self-contained AI engineering workflow profile with browser QA, planning, review, security, design, deployment, iOS, documentation, and OpenClaw companion skills."
+name: '@forgecat/garrytan_gstack'
+description: Garry’s Stack development workflows with platform-specific runtime integration.
+visibility: public
 repository: https://github.com/garrytan/gstack
 license: MIT
-visibility: public
-sourcePlatform: claude-code
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
+    - cursor
+    - hermes
+    - openclaw
     partial:
-      - codex
+    - claude-code
+    - codex
+    unsupported: []
   models:
     recommended: []
     minimum: []
+platforms:
+  claude-code:
+    mode: override
+  cursor:
+    mode: override
+  codex:
+    mode: override
 skills:
-  - name: gstack
-    path: skills/garrytan_gstack/SKILL.md
-    scripts:
-      - path: skills/garrytan_gstack/bin/gstack-brain-context-load.ts
-      - path: skills/garrytan_gstack/bin/gstack-gbrain-lib.sh
-      - path: skills/garrytan_gstack/bin/gstack-gbrain-sync.ts
-      - path: skills/garrytan_gstack/bin/gstack-global-discover.ts
-      - path: skills/garrytan_gstack/bin/gstack-memory-ingest.ts
-      - path: skills/garrytan_gstack/bin/gstack-pr-title-rewrite.sh
-      - path: skills/garrytan_gstack/browse/scripts/build-node-server.sh
-      - path: skills/garrytan_gstack/browse/src/activity.ts
-      - path: skills/garrytan_gstack/browse/src/audit.ts
-      - path: skills/garrytan_gstack/browse/src/browse-client.ts
-      - path: skills/garrytan_gstack/browse/src/browser-manager.ts
-      - path: skills/garrytan_gstack/browse/src/browser-skill-commands.ts
-      - path: skills/garrytan_gstack/browse/src/browser-skill-write.ts
-      - path: skills/garrytan_gstack/browse/src/browser-skills.ts
-      - path: skills/garrytan_gstack/browse/src/buffers.ts
-      - path: skills/garrytan_gstack/browse/src/cdp-allowlist.ts
-      - path: skills/garrytan_gstack/browse/src/cdp-bridge.ts
-      - path: skills/garrytan_gstack/browse/src/cdp-commands.ts
-      - path: skills/garrytan_gstack/browse/src/cdp-inspector.ts
-      - path: skills/garrytan_gstack/browse/src/claude-bin.ts
-      - path: skills/garrytan_gstack/browse/src/cli.ts
-      - path: skills/garrytan_gstack/browse/src/commands.ts
-      - path: skills/garrytan_gstack/browse/src/config.ts
-      - path: skills/garrytan_gstack/browse/src/content-security.ts
-      - path: skills/garrytan_gstack/browse/src/cookie-import-browser.ts
-      - path: skills/garrytan_gstack/browse/src/cookie-picker-routes.ts
-      - path: skills/garrytan_gstack/browse/src/cookie-picker-ui.ts
-      - path: skills/garrytan_gstack/browse/src/domain-skill-commands.ts
-      - path: skills/garrytan_gstack/browse/src/domain-skills.ts
-      - path: skills/garrytan_gstack/browse/src/error-handling.ts
-      - path: skills/garrytan_gstack/browse/src/file-permissions.ts
-      - path: skills/garrytan_gstack/browse/src/find-browse.ts
-      - path: skills/garrytan_gstack/browse/src/find-security-sidecar.ts
-      - path: skills/garrytan_gstack/browse/src/media-extract.ts
-      - path: skills/garrytan_gstack/browse/src/meta-commands.ts
-      - path: skills/garrytan_gstack/browse/src/network-capture.ts
-      - path: skills/garrytan_gstack/browse/src/path-security.ts
-      - path: skills/garrytan_gstack/browse/src/platform.ts
-      - path: skills/garrytan_gstack/browse/src/project-slug.ts
-      - path: skills/garrytan_gstack/browse/src/proxy-config.ts
-      - path: skills/garrytan_gstack/browse/src/proxy-redact.ts
-      - path: skills/garrytan_gstack/browse/src/pty-session-cookie.ts
-      - path: skills/garrytan_gstack/browse/src/pty-session-lease.ts
-      - path: skills/garrytan_gstack/browse/src/read-commands.ts
-      - path: skills/garrytan_gstack/browse/src/sanitize.ts
-      - path: skills/garrytan_gstack/browse/src/screenshot-size-guard.ts
-      - path: skills/garrytan_gstack/browse/src/security-bunnative.ts
-      - path: skills/garrytan_gstack/browse/src/security-classifier.ts
-      - path: skills/garrytan_gstack/browse/src/security-sidecar-client.ts
-      - path: skills/garrytan_gstack/browse/src/security-sidecar-entry.ts
-      - path: skills/garrytan_gstack/browse/src/security.ts
-      - path: skills/garrytan_gstack/browse/src/server.ts
-      - path: skills/garrytan_gstack/browse/src/sidebar-utils.ts
-      - path: skills/garrytan_gstack/browse/src/skill-token.ts
-      - path: skills/garrytan_gstack/browse/src/snapshot.ts
-      - path: skills/garrytan_gstack/browse/src/socks-bridge.ts
-      - path: skills/garrytan_gstack/browse/src/sse-session-cookie.ts
-      - path: skills/garrytan_gstack/browse/src/stealth.ts
-      - path: skills/garrytan_gstack/browse/src/tab-session.ts
-      - path: skills/garrytan_gstack/browse/src/telemetry.ts
-      - path: skills/garrytan_gstack/browse/src/terminal-agent-control.ts
-      - path: skills/garrytan_gstack/browse/src/terminal-agent.ts
-      - path: skills/garrytan_gstack/browse/src/token-registry.ts
-      - path: skills/garrytan_gstack/browse/src/tunnel-denial-log.ts
-      - path: skills/garrytan_gstack/browse/src/url-validation.ts
-      - path: skills/garrytan_gstack/browse/src/write-commands.ts
-      - path: skills/garrytan_gstack/browse/src/xvfb.ts
-      - path: skills/garrytan_gstack/browser-skills/hackernews-frontpage/_lib/browse-client.ts
-      - path: skills/garrytan_gstack/browser-skills/hackernews-frontpage/script.test.ts
-      - path: skills/garrytan_gstack/browser-skills/hackernews-frontpage/script.ts
-      - path: skills/garrytan_gstack/careful/bin/check-careful.sh
-      - path: skills/garrytan_gstack/design-html/vendor/pretext.js
-      - path: skills/garrytan_gstack/design/prototype.ts
-      - path: skills/garrytan_gstack/design/src/auth.ts
-      - path: skills/garrytan_gstack/design/src/brief.ts
-      - path: skills/garrytan_gstack/design/src/check.ts
-      - path: skills/garrytan_gstack/design/src/cli.ts
-      - path: skills/garrytan_gstack/design/src/commands.ts
-      - path: skills/garrytan_gstack/design/src/compare.ts
-      - path: skills/garrytan_gstack/design/src/daemon-client.ts
-      - path: skills/garrytan_gstack/design/src/daemon-state.ts
-      - path: skills/garrytan_gstack/design/src/daemon.ts
-      - path: skills/garrytan_gstack/design/src/design-to-code.ts
-      - path: skills/garrytan_gstack/design/src/diff.ts
-      - path: skills/garrytan_gstack/design/src/evolve.ts
-      - path: skills/garrytan_gstack/design/src/gallery.ts
-      - path: skills/garrytan_gstack/design/src/generate.ts
-      - path: skills/garrytan_gstack/design/src/iterate.ts
-      - path: skills/garrytan_gstack/design/src/memory.ts
-      - path: skills/garrytan_gstack/design/src/serve.ts
-      - path: skills/garrytan_gstack/design/src/session.ts
-      - path: skills/garrytan_gstack/design/src/variants.ts
-      - path: skills/garrytan_gstack/extension/background.js
-      - path: skills/garrytan_gstack/extension/content.js
-      - path: skills/garrytan_gstack/extension/inspector.js
-      - path: skills/garrytan_gstack/extension/popup.js
-      - path: skills/garrytan_gstack/extension/sidepanel-terminal.js
-      - path: skills/garrytan_gstack/extension/sidepanel.js
-      - path: skills/garrytan_gstack/freeze/bin/check-freeze.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v0.15.2.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v0.16.2.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.0.0.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.1.3.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.17.0.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.27.0.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.37.0.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.38.1.0.sh
-      - path: skills/garrytan_gstack/gstack-upgrade/migrations/v1.40.0.0.sh
-      - path: skills/garrytan_gstack/hosts/claude.ts
-      - path: skills/garrytan_gstack/hosts/codex.ts
-      - path: skills/garrytan_gstack/hosts/cursor.ts
-      - path: skills/garrytan_gstack/hosts/factory.ts
-      - path: skills/garrytan_gstack/hosts/gbrain.ts
-      - path: skills/garrytan_gstack/hosts/hermes.ts
-      - path: skills/garrytan_gstack/hosts/index.ts
-      - path: skills/garrytan_gstack/hosts/kiro.ts
-      - path: skills/garrytan_gstack/hosts/openclaw.ts
-      - path: skills/garrytan_gstack/hosts/opencode.ts
-      - path: skills/garrytan_gstack/hosts/slate.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/allowlist.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/audit.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/auth-mint.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/cli-mint.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/devicectl.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/index.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/proxy.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/session-tokens.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/single-instance.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/tailscale-localapi.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/tunnel-bootstrap.ts
-      - path: skills/garrytan_gstack/ios-qa/daemon/src/types.ts
-      - path: skills/garrytan_gstack/ios-qa/scripts/gen-accessors.test.ts
-      - path: skills/garrytan_gstack/ios-qa/scripts/gen-accessors.ts
-      - path: skills/garrytan_gstack/lib/conductor-env-shim.ts
-      - path: skills/garrytan_gstack/lib/gbrain-exec.ts
-      - path: skills/garrytan_gstack/lib/gbrain-local-status.ts
-      - path: skills/garrytan_gstack/lib/gbrain-sources.ts
-      - path: skills/garrytan_gstack/lib/gstack-memory-helpers.ts
-      - path: skills/garrytan_gstack/lib/worktree.ts
-      - path: skills/garrytan_gstack/make-pdf/src/browseClient.ts
-      - path: skills/garrytan_gstack/make-pdf/src/cli.ts
-      - path: skills/garrytan_gstack/make-pdf/src/commands.ts
-      - path: skills/garrytan_gstack/make-pdf/src/orchestrator.ts
-      - path: skills/garrytan_gstack/make-pdf/src/pdftotext.ts
-      - path: skills/garrytan_gstack/make-pdf/src/print-css.ts
-      - path: skills/garrytan_gstack/make-pdf/src/render.ts
-      - path: skills/garrytan_gstack/make-pdf/src/setup.ts
-      - path: skills/garrytan_gstack/make-pdf/src/smartypants.ts
-      - path: skills/garrytan_gstack/make-pdf/src/types.ts
-      - path: skills/garrytan_gstack/scripts/analytics.ts
-      - path: skills/garrytan_gstack/scripts/archetypes.ts
-      - path: skills/garrytan_gstack/scripts/build-app.sh
-      - path: skills/garrytan_gstack/scripts/build.sh
-      - path: skills/garrytan_gstack/scripts/capture-baseline.ts
-      - path: skills/garrytan_gstack/scripts/compare-pr-version.ts
-      - path: skills/garrytan_gstack/scripts/detect-bump.ts
-      - path: skills/garrytan_gstack/scripts/dev-skill.ts
-      - path: skills/garrytan_gstack/scripts/discover-skills.ts
-      - path: skills/garrytan_gstack/scripts/eval-compare.ts
-      - path: skills/garrytan_gstack/scripts/eval-list.ts
-      - path: skills/garrytan_gstack/scripts/eval-select.ts
-      - path: skills/garrytan_gstack/scripts/eval-summary.ts
-      - path: skills/garrytan_gstack/scripts/eval-watch.ts
-      - path: skills/garrytan_gstack/scripts/garry-output-comparison.ts
-      - path: skills/garrytan_gstack/scripts/gen-llms-txt.ts
-      - path: skills/garrytan_gstack/scripts/gen-skill-docs.ts
-      - path: skills/garrytan_gstack/scripts/host-adapters/openclaw-adapter.ts
-      - path: skills/garrytan_gstack/scripts/host-config-export.ts
-      - path: skills/garrytan_gstack/scripts/host-config.ts
-      - path: skills/garrytan_gstack/scripts/models.ts
-      - path: skills/garrytan_gstack/scripts/one-way-doors.ts
-      - path: skills/garrytan_gstack/scripts/preflight-agent-sdk.ts
-      - path: skills/garrytan_gstack/scripts/psychographic-signals.ts
-      - path: skills/garrytan_gstack/scripts/question-registry.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/browse.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/codex-helpers.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/composition.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/confidence.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/constants.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/design.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/dx.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/gbrain.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/index.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/learnings.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/make-pdf.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/model-overlay.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-ask-user-format.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-brain-health-instruction.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-brain-sync-block.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-completeness-section.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-completion-status.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-confusion-protocol.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-context-health.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-context-recovery.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-continuous-checkpoint.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-lake-intro.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-preamble-bash.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-proactive-prompt.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-repo-mode-section.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-routing-injection.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-search-before-building.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-spawned-session-check.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-telemetry-prompt.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-test-failure-triage.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-upgrade-check.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-vendoring-deprecation.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-voice-directive.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-writing-style-migration.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/preamble/generate-writing-style.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/question-tuning.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/review-army.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/review.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/tasks-section.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/testing.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/types.ts
-      - path: skills/garrytan_gstack/scripts/resolvers/utility.ts
-      - path: skills/garrytan_gstack/scripts/setup-scc.sh
-      - path: skills/garrytan_gstack/scripts/skill-check.ts
-      - path: skills/garrytan_gstack/scripts/slop-diff.ts
-      - path: skills/garrytan_gstack/scripts/task-emission-schema.ts
-      - path: skills/garrytan_gstack/scripts/test-free-shards.ts
-      - path: skills/garrytan_gstack/scripts/update-readme-throughput.ts
-      - path: skills/garrytan_gstack/scripts/write-version-files.sh
-      - path: skills/garrytan_gstack/supabase/config.sh
-      - path: skills/garrytan_gstack/supabase/functions/community-pulse/index.ts
-      - path: skills/garrytan_gstack/supabase/functions/telemetry-ingest/index.ts
-      - path: skills/garrytan_gstack/supabase/functions/update-check/index.ts
-      - path: skills/garrytan_gstack/supabase/verify-rls.sh
-    description: Fast headless browser for QA testing and site dogfooding. (gstack)
-  - name: autoplan
-    path: skills/garrytan_gstack/autoplan/SKILL.md
-    description: Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack)
-  - name: benchmark-models
-    path: skills/garrytan_gstack/benchmark-models/SKILL.md
-    description: Cross-model benchmark for gstack skills. (gstack)
-  - name: benchmark
-    path: skills/garrytan_gstack/benchmark/SKILL.md
-    description: Performance regression detection using the browse daemon. (gstack)
-  - name: browse
-    path: skills/garrytan_gstack/browse/SKILL.md
-    description: Fast headless browser for QA testing and site dogfooding. (gstack)
-  - name: hackernews-frontpage
-    path: skills/garrytan_gstack/browser-skills/hackernews-frontpage/SKILL.md
-    description: Scrape the Hacker News front page (titles, points, comment counts).
-  - name: canary
-    path: skills/garrytan_gstack/canary/SKILL.md
-    description: Post-deploy canary monitoring. (gstack)
-  - name: careful
-    path: skills/garrytan_gstack/careful/SKILL.md
-    description: Safety guardrails for destructive commands. (gstack)
-  - name: codex
-    path: skills/garrytan_gstack/codex/SKILL.md
-    description: OpenAI Codex CLI wrapper — three modes. (gstack)
-  - name: connect-chrome
-    path: skills/garrytan_gstack/connect-chrome/SKILL.md
-    description: Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.
-  - name: context-restore
-    path: skills/garrytan_gstack/context-restore/SKILL.md
-    description: Restore working context saved earlier by /context-save. (gstack)
-  - name: context-save
-    path: skills/garrytan_gstack/context-save/SKILL.md
-    description: Save working context. (gstack)
-  - name: cso
-    path: skills/garrytan_gstack/cso/SKILL.md
-    description: Chief Security Officer mode. (gstack)
-  - name: design-consultation
-    path: skills/garrytan_gstack/design-consultation/SKILL.md
-    description: "Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview... (gstack)"
-  - name: design-html
-    path: skills/garrytan_gstack/design-html/SKILL.md
-    description: "Design finalization: generates production-quality Pretext-native HTML/CSS. (gstack)"
-  - name: design-review
-    path: skills/garrytan_gstack/design-review/SKILL.md
-    description: "Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. (gstack)"
-  - name: design-shotgun
-    path: skills/garrytan_gstack/design-shotgun/SKILL.md
-    description: "Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. (gstack)"
-  - name: devex-review
-    path: skills/garrytan_gstack/devex-review/SKILL.md
-    description: Live developer experience audit. (gstack)
-  - name: document-generate
-    path: skills/garrytan_gstack/document-generate/SKILL.md
-    description: Generate missing documentation from scratch for a feature, module, or entire project. (gstack)
-  - name: document-release
-    path: skills/garrytan_gstack/document-release/SKILL.md
-    description: Post-ship documentation update. (gstack)
-  - name: freeze
-    path: skills/garrytan_gstack/freeze/SKILL.md
-    description: Restrict file edits to a specific directory for the session. (gstack)
-  - name: gstack-upgrade
-    path: skills/garrytan_gstack/gstack-upgrade/SKILL.md
-    description: Upgrade gstack to the latest version.
-  - name: guard
-    path: skills/garrytan_gstack/guard/SKILL.md
-    description: "Full safety mode: destructive command warnings + directory-scoped edits. (gstack)"
-  - name: health
-    path: skills/garrytan_gstack/health/SKILL.md
-    description: Code quality dashboard. (gstack)
-  - name: investigate
-    path: skills/garrytan_gstack/investigate/SKILL.md
-    description: Systematic debugging with root cause investigation. (gstack)
-  - name: ios-clean
-    path: skills/garrytan_gstack/ios-clean/SKILL.md
-    description: "Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack)"
-  - name: ios-design-review
-    path: skills/garrytan_gstack/ios-design-review/SKILL.md
-    description: Visual design audit for iOS apps on real hardware. (gstack)
-  - name: ios-fix
-    path: skills/garrytan_gstack/ios-fix/SKILL.md
-    description: Autonomous iOS bug fixer. (gstack)
-  - name: ios-qa
-    path: skills/garrytan_gstack/ios-qa/SKILL.md
-    description: Live-device iOS QA for SwiftUI apps. (gstack)
-  - name: ios-sync
-    path: skills/garrytan_gstack/ios-sync/SKILL.md
-    description: Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack)
-  - name: land-and-deploy
-    path: skills/garrytan_gstack/land-and-deploy/SKILL.md
-    description: Land and deploy workflow. (gstack)
-  - name: landing-report
-    path: skills/garrytan_gstack/landing-report/SKILL.md
-    description: Read-only queue dashboard for workspace-aware ship. (gstack)
-  - name: learn
-    path: skills/garrytan_gstack/learn/SKILL.md
-    description: Manage project learnings.
-  - name: make-pdf
-    path: skills/garrytan_gstack/make-pdf/SKILL.md
-    description: Turn any markdown file into a publication-quality PDF. (gstack)
-  - name: office-hours
-    path: skills/garrytan_gstack/office-hours/SKILL.md
-    description: YC Office Hours — two modes. (gstack)
-  - name: open-gstack-browser
-    path: skills/garrytan_gstack/open-gstack-browser/SKILL.md
-    description: Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.
-  - name: gstack-openclaw-ceo-review
-    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md
-    description: Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan.
-  - name: gstack-openclaw-investigate
-    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-investigate/SKILL.md
-    description: Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working.
-  - name: gstack-openclaw-office-hours
-    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md
-    description: Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written.
-  - name: gstack-openclaw-retro
-    path: skills/garrytan_gstack/openclaw/skills/gstack-openclaw-retro/SKILL.md
-    description: Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective.
-  - name: pair-agent
-    path: skills/garrytan_gstack/pair-agent/SKILL.md
-    description: Pair a remote AI agent with your browser. (gstack)
-  - name: plan-ceo-review
-    path: skills/garrytan_gstack/plan-ceo-review/SKILL.md
-    description: CEO/founder-mode plan review. (gstack)
-  - name: plan-design-review
-    path: skills/garrytan_gstack/plan-design-review/SKILL.md
-    description: Designer's eye plan review — interactive, like CEO and Eng review. (gstack)
-  - name: plan-devex-review
-    path: skills/garrytan_gstack/plan-devex-review/SKILL.md
-    description: Interactive developer experience plan review. (gstack)
-  - name: plan-eng-review
-    path: skills/garrytan_gstack/plan-eng-review/SKILL.md
-    description: Eng manager-mode plan review. (gstack)
-  - name: plan-tune
-    path: skills/garrytan_gstack/plan-tune/SKILL.md
-    description: "Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack)"
-  - name: qa-only
-    path: skills/garrytan_gstack/qa-only/SKILL.md
-    description: Report-only QA testing. (gstack)
-  - name: qa
-    path: skills/garrytan_gstack/qa/SKILL.md
-    description: Systematically QA test a web application and fix bugs found. (gstack)
-  - name: retro
-    path: skills/garrytan_gstack/retro/SKILL.md
-    description: Weekly engineering retrospective. (gstack)
-  - name: review
-    path: skills/garrytan_gstack/review/SKILL.md
-    description: Pre-landing PR review. (gstack)
-  - name: scrape
-    path: skills/garrytan_gstack/scrape/SKILL.md
-    description: Pull data from a web page. (gstack)
-  - name: setup-browser-cookies
-    path: skills/garrytan_gstack/setup-browser-cookies/SKILL.md
-    description: Import cookies from your real Chromium browser into the headless browse session. (gstack)
-  - name: setup-deploy
-    path: skills/garrytan_gstack/setup-deploy/SKILL.md
-    description: Configure deployment settings for /land-and-deploy.
-  - name: setup-gbrain
-    path: skills/garrytan_gstack/setup-gbrain/SKILL.md
-    description: "Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack)"
-  - name: ship
-    path: skills/garrytan_gstack/ship/SKILL.md
-    description: "Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack)"
-  - name: skillify
-    path: skills/garrytan_gstack/skillify/SKILL.md
-    description: Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack)
-  - name: sync-gbrain
-    path: skills/garrytan_gstack/sync-gbrain/SKILL.md
-    description: Keep gbrain current with this repo's code and refresh agent search guidance in CLAUDE.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack)
-  - name: unfreeze
-    path: skills/garrytan_gstack/unfreeze/SKILL.md
-    description: Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack)
+- name: gstack
+  path: skills/garrytan_gstack/SKILL.md
+  description: Router for the gstack skill suite. (gstack)
+  scripts:
+  - path: refs/gstack-native/hermes/__init__.py
+    runtime: python
+    description: 'Shared source runtime dependency: __init__.py'
+  - path: refs/gstack-native/hermes/gstack-home-child.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-home-child.py'
+  - path: refs/gstack-native/hermes/gstack-home-guard.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-home-guard.py'
+  - path: refs/gstack-native/hermes/gstack-home-hermes.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-home-hermes.py'
+  - path: refs/gstack-native/hermes/gstack-native-control.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-native-control.py'
+  - path: refs/gstack-native/openclaw/gstack-home-child.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-home-child.py'
+  - path: refs/gstack-native/openclaw/gstack-home-guard.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-home-guard.py'
+  - path: refs/gstack-native/openclaw/gstack-home-openclaw.js
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-home-openclaw.js'
+  - path: refs/gstack-native/openclaw/gstack-native-control.py
+    runtime: python
+    description: 'Shared source runtime dependency: gstack-native-control.py'
+  - path: refs/gstack-native/openclaw/index.js
+    runtime: node
+    description: 'Shared source runtime dependency: index.js'
+  - path: refs/gstack-runtime/bin/forgecat-asset.py
+    runtime: python
+    description: 'Shared source runtime dependency: forgecat-asset.py'
+  - path: refs/gstack-runtime/bin/gstack-autoplan-snapshot.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-autoplan-snapshot.ts'
+  - path: refs/gstack-runtime/bin/gstack-brain-context-load.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-brain-context-load.ts'
+  - path: refs/gstack-runtime/bin/gstack-design-detect.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-design-detect.ts'
+  - path: refs/gstack-runtime/bin/gstack-design-md.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-design-md.ts'
+  - path: refs/gstack-runtime/bin/gstack-egress-lib.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: gstack-egress-lib.sh'
+  - path: refs/gstack-runtime/bin/gstack-gbrain-lib.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: gstack-gbrain-lib.sh'
+  - path: refs/gstack-runtime/bin/gstack-gbrain-sync.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-gbrain-sync.ts'
+  - path: refs/gstack-runtime/bin/gstack-global-discover.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-global-discover.ts'
+  - path: refs/gstack-runtime/bin/gstack-memory-ingest.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-memory-ingest.ts'
+  - path: refs/gstack-runtime/bin/gstack-pr-title-rewrite.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: gstack-pr-title-rewrite.sh'
+  - path: refs/gstack-runtime/bin/gstack-render.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-render.ts'
+  - path: refs/gstack-runtime/bin/pinned-asset.py
+    runtime: python
+    description: 'Shared source runtime dependency: pinned-asset.py'
+  - path: refs/gstack-runtime/browse/scripts/build-node-server.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: build-node-server.sh'
+  - path: refs/gstack-runtime/browse/scripts/extension-id.ts
+    runtime: node
+    description: 'Shared source runtime dependency: extension-id.ts'
+  - path: refs/gstack-runtime/browse/src/activity.ts
+    runtime: node
+    description: 'Shared source runtime dependency: activity.ts'
+  - path: refs/gstack-runtime/browse/src/audit.ts
+    runtime: node
+    description: 'Shared source runtime dependency: audit.ts'
+  - path: refs/gstack-runtime/browse/src/browse-client.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browse-client.ts'
+  - path: refs/gstack-runtime/browse/src/browser-manager.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browser-manager.ts'
+  - path: refs/gstack-runtime/browse/src/browser-skill-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browser-skill-commands.ts'
+  - path: refs/gstack-runtime/browse/src/browser-skill-write.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browser-skill-write.ts'
+  - path: refs/gstack-runtime/browse/src/browser-skills.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browser-skills.ts'
+  - path: refs/gstack-runtime/browse/src/buffers.ts
+    runtime: node
+    description: 'Shared source runtime dependency: buffers.ts'
+  - path: refs/gstack-runtime/browse/src/cdp-allowlist.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cdp-allowlist.ts'
+  - path: refs/gstack-runtime/browse/src/cdp-bridge.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cdp-bridge.ts'
+  - path: refs/gstack-runtime/browse/src/cdp-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cdp-commands.ts'
+  - path: refs/gstack-runtime/browse/src/cdp-inspector.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cdp-inspector.ts'
+  - path: refs/gstack-runtime/browse/src/claude-bin.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude-bin.ts'
+  - path: refs/gstack-runtime/browse/src/cli.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cli.ts'
+  - path: refs/gstack-runtime/browse/src/commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: commands.ts'
+  - path: refs/gstack-runtime/browse/src/config.ts
+    runtime: node
+    description: 'Shared source runtime dependency: config.ts'
+  - path: refs/gstack-runtime/browse/src/content-security.ts
+    runtime: node
+    description: 'Shared source runtime dependency: content-security.ts'
+  - path: refs/gstack-runtime/browse/src/cookie-import-browser.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cookie-import-browser.ts'
+  - path: refs/gstack-runtime/browse/src/cookie-picker-routes.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cookie-picker-routes.ts'
+  - path: refs/gstack-runtime/browse/src/cookie-picker-ui.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cookie-picker-ui.ts'
+  - path: refs/gstack-runtime/browse/src/domain-skill-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: domain-skill-commands.ts'
+  - path: refs/gstack-runtime/browse/src/domain-skills.ts
+    runtime: node
+    description: 'Shared source runtime dependency: domain-skills.ts'
+  - path: refs/gstack-runtime/browse/src/error-handling.ts
+    runtime: node
+    description: 'Shared source runtime dependency: error-handling.ts'
+  - path: refs/gstack-runtime/browse/src/file-permissions.ts
+    runtime: node
+    description: 'Shared source runtime dependency: file-permissions.ts'
+  - path: refs/gstack-runtime/browse/src/find-browse.ts
+    runtime: node
+    description: 'Shared source runtime dependency: find-browse.ts'
+  - path: refs/gstack-runtime/browse/src/find-security-sidecar.ts
+    runtime: node
+    description: 'Shared source runtime dependency: find-security-sidecar.ts'
+  - path: refs/gstack-runtime/browse/src/media-extract.ts
+    runtime: node
+    description: 'Shared source runtime dependency: media-extract.ts'
+  - path: refs/gstack-runtime/browse/src/memory-command.ts
+    runtime: node
+    description: 'Shared source runtime dependency: memory-command.ts'
+  - path: refs/gstack-runtime/browse/src/memory-snapshot.ts
+    runtime: node
+    description: 'Shared source runtime dependency: memory-snapshot.ts'
+  - path: refs/gstack-runtime/browse/src/meta-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: meta-commands.ts'
+  - path: refs/gstack-runtime/browse/src/network-capture.ts
+    runtime: node
+    description: 'Shared source runtime dependency: network-capture.ts'
+  - path: refs/gstack-runtime/browse/src/path-security.ts
+    runtime: node
+    description: 'Shared source runtime dependency: path-security.ts'
+  - path: refs/gstack-runtime/browse/src/platform.ts
+    runtime: node
+    description: 'Shared source runtime dependency: platform.ts'
+  - path: refs/gstack-runtime/browse/src/port-allocator.ts
+    runtime: node
+    description: 'Shared source runtime dependency: port-allocator.ts'
+  - path: refs/gstack-runtime/browse/src/project-slug.ts
+    runtime: node
+    description: 'Shared source runtime dependency: project-slug.ts'
+  - path: refs/gstack-runtime/browse/src/proxy-config.ts
+    runtime: node
+    description: 'Shared source runtime dependency: proxy-config.ts'
+  - path: refs/gstack-runtime/browse/src/proxy-redact.ts
+    runtime: node
+    description: 'Shared source runtime dependency: proxy-redact.ts'
+  - path: refs/gstack-runtime/browse/src/pty-session-cookie.ts
+    runtime: node
+    description: 'Shared source runtime dependency: pty-session-cookie.ts'
+  - path: refs/gstack-runtime/browse/src/pty-session-lease.ts
+    runtime: node
+    description: 'Shared source runtime dependency: pty-session-lease.ts'
+  - path: refs/gstack-runtime/browse/src/read-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: read-commands.ts'
+  - path: refs/gstack-runtime/browse/src/sanitize.ts
+    runtime: node
+    description: 'Shared source runtime dependency: sanitize.ts'
+  - path: refs/gstack-runtime/browse/src/screenshot-size-guard.ts
+    runtime: node
+    description: 'Shared source runtime dependency: screenshot-size-guard.ts'
+  - path: refs/gstack-runtime/browse/src/security-classifier.ts
+    runtime: node
+    description: 'Shared source runtime dependency: security-classifier.ts'
+  - path: refs/gstack-runtime/browse/src/security-sidecar-client.ts
+    runtime: node
+    description: 'Shared source runtime dependency: security-sidecar-client.ts'
+  - path: refs/gstack-runtime/browse/src/security-sidecar-entry.ts
+    runtime: node
+    description: 'Shared source runtime dependency: security-sidecar-entry.ts'
+  - path: refs/gstack-runtime/browse/src/security.ts
+    runtime: node
+    description: 'Shared source runtime dependency: security.ts'
+  - path: refs/gstack-runtime/browse/src/server.ts
+    runtime: node
+    description: 'Shared source runtime dependency: server.ts'
+  - path: refs/gstack-runtime/browse/src/session-cookie-store.ts
+    runtime: node
+    description: 'Shared source runtime dependency: session-cookie-store.ts'
+  - path: refs/gstack-runtime/browse/src/session-persist.ts
+    runtime: node
+    description: 'Shared source runtime dependency: session-persist.ts'
+  - path: refs/gstack-runtime/browse/src/skill-token.ts
+    runtime: node
+    description: 'Shared source runtime dependency: skill-token.ts'
+  - path: refs/gstack-runtime/browse/src/snapshot.ts
+    runtime: node
+    description: 'Shared source runtime dependency: snapshot.ts'
+  - path: refs/gstack-runtime/browse/src/socks-bridge.ts
+    runtime: node
+    description: 'Shared source runtime dependency: socks-bridge.ts'
+  - path: refs/gstack-runtime/browse/src/sse-helpers.ts
+    runtime: node
+    description: 'Shared source runtime dependency: sse-helpers.ts'
+  - path: refs/gstack-runtime/browse/src/sse-session-cookie.ts
+    runtime: node
+    description: 'Shared source runtime dependency: sse-session-cookie.ts'
+  - path: refs/gstack-runtime/browse/src/stealth.ts
+    runtime: node
+    description: 'Shared source runtime dependency: stealth.ts'
+  - path: refs/gstack-runtime/browse/src/tab-session.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tab-session.ts'
+  - path: refs/gstack-runtime/browse/src/telemetry.ts
+    runtime: node
+    description: 'Shared source runtime dependency: telemetry.ts'
+  - path: refs/gstack-runtime/browse/src/terminal-agent-control.ts
+    runtime: node
+    description: 'Shared source runtime dependency: terminal-agent-control.ts'
+  - path: refs/gstack-runtime/browse/src/terminal-agent.ts
+    runtime: node
+    description: 'Shared source runtime dependency: terminal-agent.ts'
+  - path: refs/gstack-runtime/browse/src/token-registry.ts
+    runtime: node
+    description: 'Shared source runtime dependency: token-registry.ts'
+  - path: refs/gstack-runtime/browse/src/tunnel-denial-log.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tunnel-denial-log.ts'
+  - path: refs/gstack-runtime/browse/src/url-validation.ts
+    runtime: node
+    description: 'Shared source runtime dependency: url-validation.ts'
+  - path: refs/gstack-runtime/browse/src/write-commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: write-commands.ts'
+  - path: refs/gstack-runtime/browse/src/xprotect-heal.ts
+    runtime: node
+    description: 'Shared source runtime dependency: xprotect-heal.ts'
+  - path: refs/gstack-runtime/browse/src/xvfb.ts
+    runtime: node
+    description: 'Shared source runtime dependency: xvfb.ts'
+  - path: refs/gstack-runtime/browser-skills/hackernews-frontpage/_lib/browse-client.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browse-client.ts'
+  - path: refs/gstack-runtime/browser-skills/hackernews-frontpage/script.test.ts
+    runtime: node
+    description: 'Shared source runtime dependency: script.test.ts'
+  - path: refs/gstack-runtime/browser-skills/hackernews-frontpage/script.ts
+    runtime: node
+    description: 'Shared source runtime dependency: script.ts'
+  - path: refs/gstack-runtime/careful/bin/check-careful.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: check-careful.sh'
+  - path: refs/gstack-runtime/careful/bin/hook-extract.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: hook-extract.sh'
+  - path: refs/gstack-runtime/design-html/vendor/pretext.js
+    runtime: node
+    description: 'Shared source runtime dependency: pretext.js'
+  - path: refs/gstack-runtime/design/prototype.ts
+    runtime: node
+    description: 'Shared source runtime dependency: prototype.ts'
+  - path: refs/gstack-runtime/design/src/auth.ts
+    runtime: node
+    description: 'Shared source runtime dependency: auth.ts'
+  - path: refs/gstack-runtime/design/src/brief.ts
+    runtime: node
+    description: 'Shared source runtime dependency: brief.ts'
+  - path: refs/gstack-runtime/design/src/check.ts
+    runtime: node
+    description: 'Shared source runtime dependency: check.ts'
+  - path: refs/gstack-runtime/design/src/cli.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cli.ts'
+  - path: refs/gstack-runtime/design/src/commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: commands.ts'
+  - path: refs/gstack-runtime/design/src/compare.ts
+    runtime: node
+    description: 'Shared source runtime dependency: compare.ts'
+  - path: refs/gstack-runtime/design/src/daemon-client.ts
+    runtime: node
+    description: 'Shared source runtime dependency: daemon-client.ts'
+  - path: refs/gstack-runtime/design/src/daemon-state.ts
+    runtime: node
+    description: 'Shared source runtime dependency: daemon-state.ts'
+  - path: refs/gstack-runtime/design/src/daemon.ts
+    runtime: node
+    description: 'Shared source runtime dependency: daemon.ts'
+  - path: refs/gstack-runtime/design/src/design-to-code.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-to-code.ts'
+  - path: refs/gstack-runtime/design/src/diff.ts
+    runtime: node
+    description: 'Shared source runtime dependency: diff.ts'
+  - path: refs/gstack-runtime/design/src/evolve.ts
+    runtime: node
+    description: 'Shared source runtime dependency: evolve.ts'
+  - path: refs/gstack-runtime/design/src/flag-utils.ts
+    runtime: node
+    description: 'Shared source runtime dependency: flag-utils.ts'
+  - path: refs/gstack-runtime/design/src/gallery.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gallery.ts'
+  - path: refs/gstack-runtime/design/src/generate.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate.ts'
+  - path: refs/gstack-runtime/design/src/iterate.ts
+    runtime: node
+    description: 'Shared source runtime dependency: iterate.ts'
+  - path: refs/gstack-runtime/design/src/memory.ts
+    runtime: node
+    description: 'Shared source runtime dependency: memory.ts'
+  - path: refs/gstack-runtime/design/src/receipted-fetch.ts
+    runtime: node
+    description: 'Shared source runtime dependency: receipted-fetch.ts'
+  - path: refs/gstack-runtime/design/src/serve.ts
+    runtime: node
+    description: 'Shared source runtime dependency: serve.ts'
+  - path: refs/gstack-runtime/design/src/session.ts
+    runtime: node
+    description: 'Shared source runtime dependency: session.ts'
+  - path: refs/gstack-runtime/design/src/variants.ts
+    runtime: node
+    description: 'Shared source runtime dependency: variants.ts'
+  - path: refs/gstack-runtime/extension/background.js
+    runtime: node
+    description: 'Shared source runtime dependency: background.js'
+  - path: refs/gstack-runtime/extension/content.js
+    runtime: node
+    description: 'Shared source runtime dependency: content.js'
+  - path: refs/gstack-runtime/extension/inspector.js
+    runtime: node
+    description: 'Shared source runtime dependency: inspector.js'
+  - path: refs/gstack-runtime/extension/popup.js
+    runtime: node
+    description: 'Shared source runtime dependency: popup.js'
+  - path: refs/gstack-runtime/extension/sender-auth.js
+    runtime: node
+    description: 'Shared source runtime dependency: sender-auth.js'
+  - path: refs/gstack-runtime/extension/sidepanel-terminal.js
+    runtime: node
+    description: 'Shared source runtime dependency: sidepanel-terminal.js'
+  - path: refs/gstack-runtime/extension/sidepanel.js
+    runtime: node
+    description: 'Shared source runtime dependency: sidepanel.js'
+  - path: refs/gstack-runtime/freeze/bin/check-freeze.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: check-freeze.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v0.15.2.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v0.15.2.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v0.16.2.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v0.16.2.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.0.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.0.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.1.3.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.1.3.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.17.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.17.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.27.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.27.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.37.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.37.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.38.1.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.38.1.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.40.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.40.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.58.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.58.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.65.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.65.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.67.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.67.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.78.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.78.0.0.sh'
+  - path: refs/gstack-runtime/gstack-upgrade/migrations/v1.86.0.0.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: v1.86.0.0.sh'
+  - path: refs/gstack-runtime/hosts/claude.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/auq-error-fallback-hook.ts
+    runtime: node
+    description: 'Shared source runtime dependency: auq-error-fallback-hook.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/memorable-user-prompt-hook.ts
+    runtime: node
+    description: 'Shared source runtime dependency: memorable-user-prompt-hook.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/question-log-hook.ts
+    runtime: node
+    description: 'Shared source runtime dependency: question-log-hook.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/question-preference-hook.ts
+    runtime: node
+    description: 'Shared source runtime dependency: question-preference-hook.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/spawn-bin.ts
+    runtime: node
+    description: 'Shared source runtime dependency: spawn-bin.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/spawned-directive.ts
+    runtime: node
+    description: 'Shared source runtime dependency: spawned-directive.ts'
+  - path: refs/gstack-runtime/hosts/claude/hooks/timeline-stop-hook.ts
+    runtime: node
+    description: 'Shared source runtime dependency: timeline-stop-hook.ts'
+  - path: refs/gstack-runtime/hosts/codex.ts
+    runtime: node
+    description: 'Shared source runtime dependency: codex.ts'
+  - path: refs/gstack-runtime/hosts/cursor.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cursor.ts'
+  - path: refs/gstack-runtime/hosts/define-host.ts
+    runtime: node
+    description: 'Shared source runtime dependency: define-host.ts'
+  - path: refs/gstack-runtime/hosts/factory.ts
+    runtime: node
+    description: 'Shared source runtime dependency: factory.ts'
+  - path: refs/gstack-runtime/hosts/gbrain.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain.ts'
+  - path: refs/gstack-runtime/hosts/hermes.ts
+    runtime: node
+    description: 'Shared source runtime dependency: hermes.ts'
+  - path: refs/gstack-runtime/hosts/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/hosts/kiro.ts
+    runtime: node
+    description: 'Shared source runtime dependency: kiro.ts'
+  - path: refs/gstack-runtime/hosts/openclaw.ts
+    runtime: node
+    description: 'Shared source runtime dependency: openclaw.ts'
+  - path: refs/gstack-runtime/hosts/opencode.ts
+    runtime: node
+    description: 'Shared source runtime dependency: opencode.ts'
+  - path: refs/gstack-runtime/hosts/slate.ts
+    runtime: node
+    description: 'Shared source runtime dependency: slate.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/allowlist.ts
+    runtime: node
+    description: 'Shared source runtime dependency: allowlist.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/audit.ts
+    runtime: node
+    description: 'Shared source runtime dependency: audit.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/auth-mint.ts
+    runtime: node
+    description: 'Shared source runtime dependency: auth-mint.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/cli-mint.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cli-mint.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/devicectl.ts
+    runtime: node
+    description: 'Shared source runtime dependency: devicectl.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/proxy.ts
+    runtime: node
+    description: 'Shared source runtime dependency: proxy.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/session-tokens.ts
+    runtime: node
+    description: 'Shared source runtime dependency: session-tokens.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/single-instance.ts
+    runtime: node
+    description: 'Shared source runtime dependency: single-instance.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/tailscale-localapi.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tailscale-localapi.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/tunnel-bootstrap.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tunnel-bootstrap.ts'
+  - path: refs/gstack-runtime/ios-qa/daemon/src/types.ts
+    runtime: node
+    description: 'Shared source runtime dependency: types.ts'
+  - path: refs/gstack-runtime/ios-qa/scripts/gen-accessors.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gen-accessors.ts'
+  - path: refs/gstack-runtime/lib/aside-render.ts
+    runtime: node
+    description: 'Shared source runtime dependency: aside-render.ts'
+  - path: refs/gstack-runtime/lib/bin-context.ts
+    runtime: node
+    description: 'Shared source runtime dependency: bin-context.ts'
+  - path: refs/gstack-runtime/lib/claude-bin.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude-bin.ts'
+  - path: refs/gstack-runtime/lib/claude-code-migration.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude-code-migration.ts'
+  - path: refs/gstack-runtime/lib/claude-code-windows-job.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude-code-windows-job.ts'
+  - path: refs/gstack-runtime/lib/claude-code.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude-code.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/contract.ts
+    runtime: node
+    description: 'Shared source runtime dependency: contract.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/gbrain-adapter.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-adapter.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/graphify-adapter.ts
+    runtime: node
+    description: 'Shared source runtime dependency: graphify-adapter.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/picker.ts
+    runtime: node
+    description: 'Shared source runtime dependency: picker.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/selection.ts
+    runtime: node
+    description: 'Shared source runtime dependency: selection.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/sourcebot-adapter.ts
+    runtime: node
+    description: 'Shared source runtime dependency: sourcebot-adapter.ts'
+  - path: refs/gstack-runtime/lib/code-intelligence/suggest.ts
+    runtime: node
+    description: 'Shared source runtime dependency: suggest.ts'
+  - path: refs/gstack-runtime/lib/conductor-env-shim.ts
+    runtime: node
+    description: 'Shared source runtime dependency: conductor-env-shim.ts'
+  - path: refs/gstack-runtime/lib/context-bill.ts
+    runtime: node
+    description: 'Shared source runtime dependency: context-bill.ts'
+  - path: refs/gstack-runtime/lib/cso/admission.ts
+    runtime: node
+    description: 'Shared source runtime dependency: admission.ts'
+  - path: refs/gstack-runtime/lib/cso/bounded-file.ts
+    runtime: node
+    description: 'Shared source runtime dependency: bounded-file.ts'
+  - path: refs/gstack-runtime/lib/cso/cache.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cache.ts'
+  - path: refs/gstack-runtime/lib/cso/cli.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cli.ts'
+  - path: refs/gstack-runtime/lib/cso/contracts.ts
+    runtime: node
+    description: 'Shared source runtime dependency: contracts.ts'
+  - path: refs/gstack-runtime/lib/cso/docker.ts
+    runtime: node
+    description: 'Shared source runtime dependency: docker.ts'
+  - path: refs/gstack-runtime/lib/cso/history.ts
+    runtime: node
+    description: 'Shared source runtime dependency: history.ts'
+  - path: refs/gstack-runtime/lib/cso/image-provisioning.ts
+    runtime: node
+    description: 'Shared source runtime dependency: image-provisioning.ts'
+  - path: refs/gstack-runtime/lib/cso/preparation-container.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preparation-container.ts'
+  - path: refs/gstack-runtime/lib/cso/preparation-docker.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preparation-docker.ts'
+  - path: refs/gstack-runtime/lib/cso/preparation-executor.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preparation-executor.ts'
+  - path: refs/gstack-runtime/lib/cso/preparation.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preparation.ts'
+  - path: refs/gstack-runtime/lib/cso/process.ts
+    runtime: node
+    description: 'Shared source runtime dependency: process.ts'
+  - path: refs/gstack-runtime/lib/cso/runtime-catalog.ts
+    runtime: node
+    description: 'Shared source runtime dependency: runtime-catalog.ts'
+  - path: refs/gstack-runtime/lib/cso/scanner-catalog.ts
+    runtime: node
+    description: 'Shared source runtime dependency: scanner-catalog.ts'
+  - path: refs/gstack-runtime/lib/cso/scanner-executor.ts
+    runtime: node
+    description: 'Shared source runtime dependency: scanner-executor.ts'
+  - path: refs/gstack-runtime/lib/cso/scanners.ts
+    runtime: node
+    description: 'Shared source runtime dependency: scanners.ts'
+  - path: refs/gstack-runtime/lib/cso/snapshot.ts
+    runtime: node
+    description: 'Shared source runtime dependency: snapshot.ts'
+  - path: refs/gstack-runtime/lib/cso/state.ts
+    runtime: node
+    description: 'Shared source runtime dependency: state.ts'
+  - path: refs/gstack-runtime/lib/cso/verification.ts
+    runtime: node
+    description: 'Shared source runtime dependency: verification.ts'
+  - path: refs/gstack-runtime/lib/cso/verifier.ts
+    runtime: node
+    description: 'Shared source runtime dependency: verifier.ts'
+  - path: refs/gstack-runtime/lib/cso/witness.ts
+    runtime: node
+    description: 'Shared source runtime dependency: witness.ts'
+  - path: refs/gstack-runtime/lib/design-catalog.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-catalog.ts'
+  - path: refs/gstack-runtime/lib/design-detect-contract.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-detect-contract.ts'
+  - path: refs/gstack-runtime/lib/design-md.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-md.ts'
+  - path: refs/gstack-runtime/lib/diagram-render/scripts/build.ts
+    runtime: node
+    description: 'Shared source runtime dependency: build.ts'
+  - path: refs/gstack-runtime/lib/diagram-render/src/entry.ts
+    runtime: node
+    description: 'Shared source runtime dependency: entry.ts'
+  - path: refs/gstack-runtime/lib/dom-dump-script.ts
+    runtime: node
+    description: 'Shared source runtime dependency: dom-dump-script.ts'
+  - path: refs/gstack-runtime/lib/dom-dump.js
+    runtime: node
+    description: 'Shared source runtime dependency: dom-dump.js'
+  - path: refs/gstack-runtime/lib/egress-receipt.ts
+    runtime: node
+    description: 'Shared source runtime dependency: egress-receipt.ts'
+  - path: refs/gstack-runtime/lib/error-handling.ts
+    runtime: node
+    description: 'Shared source runtime dependency: error-handling.ts'
+  - path: refs/gstack-runtime/lib/eval-model.ts
+    runtime: node
+    description: 'Shared source runtime dependency: eval-model.ts'
+  - path: refs/gstack-runtime/lib/forgecat-render-policy.ts
+    runtime: node
+    description: 'Shared source runtime dependency: forgecat-render-policy.ts'
+  - path: refs/gstack-runtime/lib/frontend-scope.ts
+    runtime: node
+    description: 'Shared source runtime dependency: frontend-scope.ts'
+  - path: refs/gstack-runtime/lib/fs-atomic.ts
+    runtime: node
+    description: 'Shared source runtime dependency: fs-atomic.ts'
+  - path: refs/gstack-runtime/lib/fs-utils.ts
+    runtime: node
+    description: 'Shared source runtime dependency: fs-utils.ts'
+  - path: refs/gstack-runtime/lib/gbrain-exec.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-exec.ts'
+  - path: refs/gstack-runtime/lib/gbrain-guards.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-guards.ts'
+  - path: refs/gstack-runtime/lib/gbrain-local-status.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-local-status.ts'
+  - path: refs/gstack-runtime/lib/gbrain-repo-policy-client.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-repo-policy-client.ts'
+  - path: refs/gstack-runtime/lib/gbrain-sources.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-sources.ts'
+  - path: refs/gstack-runtime/lib/gbrain-supabase-provision.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain-supabase-provision.ts'
+  - path: refs/gstack-runtime/lib/gstack-decision-semantic.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-decision-semantic.ts'
+  - path: refs/gstack-runtime/lib/gstack-decision.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-decision.ts'
+  - path: refs/gstack-runtime/lib/gstack-memory-helpers.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-memory-helpers.ts'
+  - path: refs/gstack-runtime/lib/is-conductor.ts
+    runtime: node
+    description: 'Shared source runtime dependency: is-conductor.ts'
+  - path: refs/gstack-runtime/lib/jsonl-store.ts
+    runtime: node
+    description: 'Shared source runtime dependency: jsonl-store.ts'
+  - path: refs/gstack-runtime/lib/outside-review-result.ts
+    runtime: node
+    description: 'Shared source runtime dependency: outside-review-result.ts'
+  - path: refs/gstack-runtime/lib/redact-audit-log.ts
+    runtime: node
+    description: 'Shared source runtime dependency: redact-audit-log.ts'
+  - path: refs/gstack-runtime/lib/redact-engine.ts
+    runtime: node
+    description: 'Shared source runtime dependency: redact-engine.ts'
+  - path: refs/gstack-runtime/lib/redact-patterns.ts
+    runtime: node
+    description: 'Shared source runtime dependency: redact-patterns.ts'
+  - path: refs/gstack-runtime/lib/review-evidence.ts
+    runtime: node
+    description: 'Shared source runtime dependency: review-evidence.ts'
+  - path: refs/gstack-runtime/lib/staging-guard.ts
+    runtime: node
+    description: 'Shared source runtime dependency: staging-guard.ts'
+  - path: refs/gstack-runtime/lib/tracker-guard.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tracker-guard.ts'
+  - path: refs/gstack-runtime/lib/version-source.ts
+    runtime: node
+    description: 'Shared source runtime dependency: version-source.ts'
+  - path: refs/gstack-runtime/lib/worktree.ts
+    runtime: node
+    description: 'Shared source runtime dependency: worktree.ts'
+  - path: refs/gstack-runtime/make-pdf/src/asideClient.ts
+    runtime: node
+    description: 'Shared source runtime dependency: asideClient.ts'
+  - path: refs/gstack-runtime/make-pdf/src/cli.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cli.ts'
+  - path: refs/gstack-runtime/make-pdf/src/commands.ts
+    runtime: node
+    description: 'Shared source runtime dependency: commands.ts'
+  - path: refs/gstack-runtime/make-pdf/src/diagram-prepass.ts
+    runtime: node
+    description: 'Shared source runtime dependency: diagram-prepass.ts'
+  - path: refs/gstack-runtime/make-pdf/src/image-policy.ts
+    runtime: node
+    description: 'Shared source runtime dependency: image-policy.ts'
+  - path: refs/gstack-runtime/make-pdf/src/image-size.ts
+    runtime: node
+    description: 'Shared source runtime dependency: image-size.ts'
+  - path: refs/gstack-runtime/make-pdf/src/orchestrator.ts
+    runtime: node
+    description: 'Shared source runtime dependency: orchestrator.ts'
+  - path: refs/gstack-runtime/make-pdf/src/pdftotext.ts
+    runtime: node
+    description: 'Shared source runtime dependency: pdftotext.ts'
+  - path: refs/gstack-runtime/make-pdf/src/print-css.ts
+    runtime: node
+    description: 'Shared source runtime dependency: print-css.ts'
+  - path: refs/gstack-runtime/make-pdf/src/render.ts
+    runtime: node
+    description: 'Shared source runtime dependency: render.ts'
+  - path: refs/gstack-runtime/make-pdf/src/setup.ts
+    runtime: node
+    description: 'Shared source runtime dependency: setup.ts'
+  - path: refs/gstack-runtime/make-pdf/src/smartypants.ts
+    runtime: node
+    description: 'Shared source runtime dependency: smartypants.ts'
+  - path: refs/gstack-runtime/make-pdf/src/types.ts
+    runtime: node
+    description: 'Shared source runtime dependency: types.ts'
+  - path: refs/gstack-runtime/scripts/analytics.ts
+    runtime: node
+    description: 'Shared source runtime dependency: analytics.ts'
+  - path: refs/gstack-runtime/scripts/archetypes.ts
+    runtime: node
+    description: 'Shared source runtime dependency: archetypes.ts'
+  - path: refs/gstack-runtime/scripts/brain-cache-spec.ts
+    runtime: node
+    description: 'Shared source runtime dependency: brain-cache-spec.ts'
+  - path: refs/gstack-runtime/scripts/build-app.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: build-app.sh'
+  - path: refs/gstack-runtime/scripts/build-cso.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: build-cso.sh'
+  - path: refs/gstack-runtime/scripts/build.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: build.sh'
+  - path: refs/gstack-runtime/scripts/capture-baseline.ts
+    runtime: node
+    description: 'Shared source runtime dependency: capture-baseline.ts'
+  - path: refs/gstack-runtime/scripts/compare-pr-version.ts
+    runtime: node
+    description: 'Shared source runtime dependency: compare-pr-version.ts'
+  - path: refs/gstack-runtime/scripts/cso-attestation-evidence.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-attestation-evidence.ts'
+  - path: refs/gstack-runtime/scripts/cso-eval-producer.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-eval-producer.ts'
+  - path: refs/gstack-runtime/scripts/cso-eval-protocol.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-eval-protocol.ts'
+  - path: refs/gstack-runtime/scripts/cso-eval.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-eval.ts'
+  - path: refs/gstack-runtime/scripts/cso-image-matrix.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-image-matrix.ts'
+  - path: refs/gstack-runtime/scripts/cso-public-ghcr.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-public-ghcr.ts'
+  - path: refs/gstack-runtime/scripts/cso-runtime-promotion.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-runtime-promotion.ts'
+  - path: refs/gstack-runtime/scripts/cso-scanner-catalog.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-scanner-catalog.ts'
+  - path: refs/gstack-runtime/scripts/cso-scanner-matrix.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-scanner-matrix.ts'
+  - path: refs/gstack-runtime/scripts/cso-verify-runtime-base.ts
+    runtime: node
+    description: 'Shared source runtime dependency: cso-verify-runtime-base.ts'
+  - path: refs/gstack-runtime/scripts/declared-annotation.ts
+    runtime: node
+    description: 'Shared source runtime dependency: declared-annotation.ts'
+  - path: refs/gstack-runtime/scripts/detect-bump.ts
+    runtime: node
+    description: 'Shared source runtime dependency: detect-bump.ts'
+  - path: refs/gstack-runtime/scripts/dev-skill.ts
+    runtime: node
+    description: 'Shared source runtime dependency: dev-skill.ts'
+  - path: refs/gstack-runtime/scripts/discover-skills.ts
+    runtime: node
+    description: 'Shared source runtime dependency: discover-skills.ts'
+  - path: refs/gstack-runtime/scripts/garry-output-comparison.ts
+    runtime: node
+    description: 'Shared source runtime dependency: garry-output-comparison.ts'
+  - path: refs/gstack-runtime/scripts/gen-agents-digest.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gen-agents-digest.ts'
+  - path: refs/gstack-runtime/scripts/gen-llms-txt.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gen-llms-txt.ts'
+  - path: refs/gstack-runtime/scripts/gen-skill-docs.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gen-skill-docs.ts'
+  - path: refs/gstack-runtime/scripts/gstack-schema-pack.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gstack-schema-pack.ts'
+  - path: refs/gstack-runtime/scripts/host-config-export.ts
+    runtime: node
+    description: 'Shared source runtime dependency: host-config-export.ts'
+  - path: refs/gstack-runtime/scripts/host-config.ts
+    runtime: node
+    description: 'Shared source runtime dependency: host-config.ts'
+  - path: refs/gstack-runtime/scripts/models.ts
+    runtime: node
+    description: 'Shared source runtime dependency: models.ts'
+  - path: refs/gstack-runtime/scripts/one-way-doors.ts
+    runtime: node
+    description: 'Shared source runtime dependency: one-way-doors.ts'
+  - path: refs/gstack-runtime/scripts/preflight-agent-sdk.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preflight-agent-sdk.ts'
+  - path: refs/gstack-runtime/scripts/psychographic-signals.ts
+    runtime: node
+    description: 'Shared source runtime dependency: psychographic-signals.ts'
+  - path: refs/gstack-runtime/scripts/question-registry.ts
+    runtime: node
+    description: 'Shared source runtime dependency: question-registry.ts'
+  - path: refs/gstack-runtime/scripts/resolve-codex-generation-model.ts
+    runtime: node
+    description: 'Shared source runtime dependency: resolve-codex-generation-model.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/aside.ts
+    runtime: node
+    description: 'Shared source runtime dependency: aside.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/browse.ts
+    runtime: node
+    description: 'Shared source runtime dependency: browse.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/composition.ts
+    runtime: node
+    description: 'Shared source runtime dependency: composition.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/confidence.ts
+    runtime: node
+    description: 'Shared source runtime dependency: confidence.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/constants.ts
+    runtime: node
+    description: 'Shared source runtime dependency: constants.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/design-checklist.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-checklist.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/design-doc-discovery.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design-doc-discovery.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/design.ts
+    runtime: node
+    description: 'Shared source runtime dependency: design.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/dx.ts
+    runtime: node
+    description: 'Shared source runtime dependency: dx.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/gbrain.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gbrain.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/learnings.ts
+    runtime: node
+    description: 'Shared source runtime dependency: learnings.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/make-pdf.ts
+    runtime: node
+    description: 'Shared source runtime dependency: make-pdf.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/model-overlay.ts
+    runtime: node
+    description: 'Shared source runtime dependency: model-overlay.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/outside-voice.ts
+    runtime: node
+    description: 'Shared source runtime dependency: outside-voice.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble.ts
+    runtime: node
+    description: 'Shared source runtime dependency: preamble.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-ask-user-format.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-ask-user-format.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-brain-health-instruction.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-brain-health-instruction.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-brain-sync-block.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-brain-sync-block.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-completeness-section.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-completeness-section.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-completion-status.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-completion-status.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-confusion-protocol.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-confusion-protocol.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-context-health.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-context-health.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-context-recovery.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-context-recovery.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-continuous-checkpoint.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-continuous-checkpoint.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-evidence-directive.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-evidence-directive.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-preamble-bash.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-preamble-bash.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-repo-mode-section.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-repo-mode-section.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-search-before-building.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-search-before-building.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-test-failure-triage.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-test-failure-triage.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-upgrade-check.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-upgrade-check.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-voice-directive.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-voice-directive.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/preamble/generate-writing-style.ts
+    runtime: node
+    description: 'Shared source runtime dependency: generate-writing-style.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/question-tuning.ts
+    runtime: node
+    description: 'Shared source runtime dependency: question-tuning.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/redact-doc.ts
+    runtime: node
+    description: 'Shared source runtime dependency: redact-doc.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/review-army.ts
+    runtime: node
+    description: 'Shared source runtime dependency: review-army.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/review.ts
+    runtime: node
+    description: 'Shared source runtime dependency: review.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/sections.ts
+    runtime: node
+    description: 'Shared source runtime dependency: sections.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/tasks-section.ts
+    runtime: node
+    description: 'Shared source runtime dependency: tasks-section.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/testing.ts
+    runtime: node
+    description: 'Shared source runtime dependency: testing.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/third-party-actions.ts
+    runtime: node
+    description: 'Shared source runtime dependency: third-party-actions.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/types.ts
+    runtime: node
+    description: 'Shared source runtime dependency: types.ts'
+  - path: refs/gstack-runtime/scripts/resolvers/utility.ts
+    runtime: node
+    description: 'Shared source runtime dependency: utility.ts'
+  - path: refs/gstack-runtime/scripts/sandbox-doctor.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: sandbox-doctor.sh'
+  - path: refs/gstack-runtime/scripts/setup-scc.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: setup-scc.sh'
+  - path: refs/gstack-runtime/scripts/skill-check.ts
+    runtime: node
+    description: 'Shared source runtime dependency: skill-check.ts'
+  - path: refs/gstack-runtime/scripts/slop-diff.ts
+    runtime: node
+    description: 'Shared source runtime dependency: slop-diff.ts'
+  - path: refs/gstack-runtime/scripts/update-readme-throughput.ts
+    runtime: node
+    description: 'Shared source runtime dependency: update-readme-throughput.ts'
+  - path: refs/gstack-runtime/scripts/write-version-files.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: write-version-files.sh'
+  - path: refs/gstack-runtime/supabase/config.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: config.sh'
+  - path: refs/gstack-runtime/supabase/functions/community-pulse/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/supabase/functions/telemetry-ingest/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/supabase/functions/update-check/index.ts
+    runtime: node
+    description: 'Shared source runtime dependency: index.ts'
+  - path: refs/gstack-runtime/supabase/verify-rls.sh
+    runtime: bash
+    description: 'Shared source runtime dependency: verify-rls.sh'
+  - path: refs/gstack-runtime/test/fixtures/cso-eval/materialize.ts
+    runtime: node
+    description: 'Shared source runtime dependency: materialize.ts'
+  - path: refs/gstack-runtime/test/helpers/benchmark-judge.ts
+    runtime: node
+    description: 'Shared source runtime dependency: benchmark-judge.ts'
+  - path: refs/gstack-runtime/test/helpers/benchmark-runner.ts
+    runtime: node
+    description: 'Shared source runtime dependency: benchmark-runner.ts'
+  - path: refs/gstack-runtime/test/helpers/capture-parity-baseline.ts
+    runtime: node
+    description: 'Shared source runtime dependency: capture-parity-baseline.ts'
+  - path: refs/gstack-runtime/test/helpers/carve-guards.ts
+    runtime: node
+    description: 'Shared source runtime dependency: carve-guards.ts'
+  - path: refs/gstack-runtime/test/helpers/parity-harness.ts
+    runtime: node
+    description: 'Shared source runtime dependency: parity-harness.ts'
+  - path: refs/gstack-runtime/test/helpers/pricing.ts
+    runtime: node
+    description: 'Shared source runtime dependency: pricing.ts'
+  - path: refs/gstack-runtime/test/helpers/providers/claude.ts
+    runtime: node
+    description: 'Shared source runtime dependency: claude.ts'
+  - path: refs/gstack-runtime/test/helpers/providers/gemini.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gemini.ts'
+  - path: refs/gstack-runtime/test/helpers/providers/gpt.ts
+    runtime: node
+    description: 'Shared source runtime dependency: gpt.ts'
+  - path: refs/gstack-runtime/test/helpers/providers/types.ts
+    runtime: node
+    description: 'Shared source runtime dependency: types.ts'
+  - path: refs/gstack-runtime/test/helpers/skill-parser.ts
+    runtime: node
+    description: 'Shared source runtime dependency: skill-parser.ts'
+  - path: skills/garrytan_gstack/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+  - path: skills/garrytan_gstack/scripts/gstack-home-child.py
+    runtime: python
+    description: Interpret native child lifecycle events without treating dispatch
+      as success.
+  - path: skills/garrytan_gstack/scripts/gstack-home-guard.py
+    runtime: python
+    description: Development guard bridge. Native bindings must supply trusted session/cwd.
+  - path: skills/garrytan_gstack/scripts/native-install.py
+    runtime: python
+    description: Install only this profile's native binding through the host plugin
+      manager.
+  - path: skills/garrytan_gstack/scripts/profile.py
+    runtime: python
+    description: Prepare and inspect the source-pinned gstack runtime owned by this
+      profile.
+- name: autoplan
+  path: skills/garrytan_gstack_autoplan/SKILL.md
+  description: Auto-review pipeline — reads the full CEO, design, eng, and DX review
+    skills from disk and runs them sequentially with auto-decisions using 6 decision
+    principles. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_autoplan/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: benchmark
+  path: skills/garrytan_gstack_benchmark/SKILL.md
+  description: Performance regression detection. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_benchmark/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: benchmark-models
+  path: skills/garrytan_gstack_benchmark-models/SKILL.md
+  description: Cross-model benchmark for gstack skills. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_benchmark-models/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: browse
+  path: skills/garrytan_gstack_browse/SKILL.md
+  description: 'Drive a real browser through Aside: open a page, read it, click through
+    a flow, take screenshots, check console errors. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_browse/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: canary
+  path: skills/garrytan_gstack_canary/SKILL.md
+  description: Post-deploy canary monitoring. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_canary/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: careful
+  path: skills/garrytan_gstack_careful/SKILL.md
+  description: Safety guardrails for destructive commands. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_careful/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: claude-code
+  path: skills/garrytan_gstack_claude-code/SKILL.md
+  description: 'Claude Code CLI second opinion for non-Claude Code hosts. Review a
+    diff,
+
+    challenge a change for failure modes, or consult Claude with read-only repo
+
+    access and session continuity. Use for "claude review", "claude challenge",
+
+    "ask claude", or an explicit Claude Code second opinion. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_claude-code/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: codex
+  path: skills/garrytan_gstack_codex/SKILL.md
+  description: OpenAI Codex CLI wrapper — three modes. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_codex/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: context-restore
+  path: skills/garrytan_gstack_context-restore/SKILL.md
+  description: Restore working context saved earlier by /context-save. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_context-restore/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: context-save
+  path: skills/garrytan_gstack_context-save/SKILL.md
+  description: Save working context. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_context-save/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: cso
+  path: skills/garrytan_gstack_cso/SKILL.md
+  description: 'Security audit: supported static findings; qualified profiles add
+    reproduction and repair candidates. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_cso/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: design-consultation
+  path: skills/garrytan_gstack_design-consultation/SKILL.md
+  description: 'Design consultation: understands your product, researches the landscape,
+    proposes a complete design system (aesthetic, typography, color, layout, spacing,
+    motion), and generates font+color preview... (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_design-consultation/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: design-html
+  path: skills/garrytan_gstack_design-html/SKILL.md
+  description: 'Design finalization: generates production-quality Pretext-native HTML/CSS.
+    (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_design-html/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: design-review
+  path: skills/garrytan_gstack_design-review/SKILL.md
+  description: 'Designer''s eye QA: finds visual inconsistency, spacing issues, hierarchy
+    problems, AI slop patterns, and slow interactions — then fixes them. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_design-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: design-shotgun
+  path: skills/garrytan_gstack_design-shotgun/SKILL.md
+  description: 'Design shotgun: generate multiple AI design variants, open a comparison
+    board, collect structured feedback, and iterate. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_design-shotgun/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: devex-review
+  path: skills/garrytan_gstack_devex-review/SKILL.md
+  description: Live developer experience audit. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_devex-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: diagram
+  path: skills/garrytan_gstack_diagram/SKILL.md
+  description: 'Turn an English description (or mermaid source) into a diagram triplet:
+    the source, an editable .excalidraw file you can open on excalidraw.com, and rendered
+    SVG + PNG. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_diagram/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: document-generate
+  path: skills/garrytan_gstack_document-generate/SKILL.md
+  description: Generate missing documentation from scratch for a feature, module,
+    or entire project. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_document-generate/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: document-release
+  path: skills/garrytan_gstack_document-release/SKILL.md
+  description: Post-ship documentation update. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_document-release/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: freeze
+  path: skills/garrytan_gstack_freeze/SKILL.md
+  description: Restrict file edits to a specific directory for the session. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_freeze/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: gstack-upgrade
+  path: skills/garrytan_gstack_gstack-upgrade/SKILL.md
+  description: Upgrade gstack to the latest version.
+  scripts:
+  - path: skills/garrytan_gstack_gstack-upgrade/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: guard
+  path: skills/garrytan_gstack_guard/SKILL.md
+  description: 'Full safety mode: destructive command warnings + directory-scoped
+    edits. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_guard/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: health
+  path: skills/garrytan_gstack_health/SKILL.md
+  description: Code quality dashboard. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_health/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: investigate
+  path: skills/garrytan_gstack_investigate/SKILL.md
+  description: Systematic debugging with root cause investigation. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_investigate/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ios-clean
+  path: skills/garrytan_gstack_ios-clean/SKILL.md
+  description: 'Remove the DebugBridge SPM package and all #if DEBUG wiring from an
+    iOS app. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_ios-clean/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ios-design-review
+  path: skills/garrytan_gstack_ios-design-review/SKILL.md
+  description: Visual design audit for iOS apps on real hardware. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_ios-design-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ios-fix
+  path: skills/garrytan_gstack_ios-fix/SKILL.md
+  description: Autonomous iOS bug fixer. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_ios-fix/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ios-qa
+  path: skills/garrytan_gstack_ios-qa/SKILL.md
+  description: Live-device iOS QA for SwiftUI apps. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_ios-qa/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ios-sync
+  path: skills/garrytan_gstack_ios-sync/SKILL.md
+  description: Regenerate the iOS debug bridge against the latest upstream gstack
+    templates. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_ios-sync/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: land-and-deploy
+  path: skills/garrytan_gstack_land-and-deploy/SKILL.md
+  description: Land and deploy workflow. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_land-and-deploy/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: landing-report
+  path: skills/garrytan_gstack_landing-report/SKILL.md
+  description: Read-only queue dashboard for workspace-aware ship. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_landing-report/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: learn
+  path: skills/garrytan_gstack_learn/SKILL.md
+  description: Manage project learnings.
+  scripts:
+  - path: skills/garrytan_gstack_learn/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: make-pdf
+  path: skills/garrytan_gstack_make-pdf/SKILL.md
+  description: Turn any markdown file into a publication-quality PDF. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_make-pdf/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: office-hours
+  path: skills/garrytan_gstack_office-hours/SKILL.md
+  description: YC Office Hours — two modes. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_office-hours/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: open-gstack-browser
+  path: skills/garrytan_gstack_open-gstack-browser/SKILL.md
+  description: Launch GStack Browser — AI-controlled Chromium with the sidebar extension
+    baked in.
+  scripts:
+  - path: skills/garrytan_gstack_open-gstack-browser/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: pair-agent
+  path: skills/garrytan_gstack_pair-agent/SKILL.md
+  description: Pair a remote AI agent with your browser. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_pair-agent/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: plan-ceo-review
+  path: skills/garrytan_gstack_plan-ceo-review/SKILL.md
+  description: CEO/founder-mode plan review. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_plan-ceo-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: plan-design-review
+  path: skills/garrytan_gstack_plan-design-review/SKILL.md
+  description: Designer's eye plan review — interactive, like CEO and Eng review.
+    (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_plan-design-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: plan-devex-review
+  path: skills/garrytan_gstack_plan-devex-review/SKILL.md
+  description: Interactive developer experience plan review. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_plan-devex-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: plan-eng-review
+  path: skills/garrytan_gstack_plan-eng-review/SKILL.md
+  description: Eng manager-mode plan review. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_plan-eng-review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: plan-tune
+  path: skills/garrytan_gstack_plan-tune/SKILL.md
+  description: 'Self-tuning question sensitivity + developer psychographic for gstack
+    (v1: observational). (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_plan-tune/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: qa
+  path: skills/garrytan_gstack_qa/SKILL.md
+  description: Systematically QA test a web application and fix bugs found. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_qa/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: qa-only
+  path: skills/garrytan_gstack_qa-only/SKILL.md
+  description: Report-only QA testing. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_qa-only/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: retro
+  path: skills/garrytan_gstack_retro/SKILL.md
+  description: Weekly engineering retrospective. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_retro/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: review
+  path: skills/garrytan_gstack_review/SKILL.md
+  description: Pre-landing PR review. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_review/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: scrape
+  path: skills/garrytan_gstack_scrape/SKILL.md
+  description: Pull data from a web page through the Aside browser — your real, already
+    signed-in sessions. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_scrape/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: setup-browser-cookies
+  path: skills/garrytan_gstack_setup-browser-cookies/SKILL.md
+  description: Import cookies from your real Chromium browser into the headless browse
+    session. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_setup-browser-cookies/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: setup-deploy
+  path: skills/garrytan_gstack_setup-deploy/SKILL.md
+  description: Configure deployment settings for /land-and-deploy.
+  scripts:
+  - path: skills/garrytan_gstack_setup-deploy/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: setup-gbrain
+  path: skills/garrytan_gstack_setup-gbrain/SKILL.md
+  description: 'Set up gbrain for this coding agent: install the CLI, initialize a
+    local PGLite or Supabase brain, register MCP, capture per-remote trust policy.
+    (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_setup-gbrain/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: ship
+  path: skills/garrytan_gstack_ship/SKILL.md
+  description: 'Ship workflow: detect + merge base branch, run tests, review diff,
+    bump VERSION, update CHANGELOG, commit, push, create PR. (gstack)'
+  scripts:
+  - path: skills/garrytan_gstack_ship/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: skillify
+  path: skills/garrytan_gstack_skillify/SKILL.md
+  description: Codify the most recent successful /scrape flow into a permanent browser-skill
+    on disk. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_skillify/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: spec
+  path: skills/garrytan_gstack_spec/SKILL.md
+  description: Turn vague intent into a precise, executable spec in five phases. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_spec/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: sync-gbrain
+  path: skills/garrytan_gstack_sync-gbrain/SKILL.md
+  description: Keep gbrain current with this repo's code and refresh agent search
+    guidance in CLAUDE.md. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_sync-gbrain/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+- name: unfreeze
+  path: skills/garrytan_gstack_unfreeze/SKILL.md
+  description: Clear the freeze boundary set by /freeze, allowing edits to all directories
+    again. (gstack)
+  scripts:
+  - path: skills/garrytan_gstack_unfreeze/scripts/entry.py
+    runtime: python
+    description: Run the sibling gstack profile controller using an absolute installed
+      path.
+references:
+- id: gstack-runtime
+  path: refs/gstack-runtime
+- id: gstack-workflows
+  path: refs/gstack-workflows
+- id: gstack-native
+  path: refs/gstack-native

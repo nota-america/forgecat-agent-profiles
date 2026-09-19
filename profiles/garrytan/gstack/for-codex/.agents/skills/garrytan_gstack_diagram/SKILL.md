@@ -1,0 +1,30 @@
+---
+name: diagram
+description: 'Turn an English description (or mermaid source) into a diagram triplet:
+
+  the source, an editable .excalidraw file you can open on excalidraw.com,
+
+  and rendered SVG + PNG. The SVG/PNG use clean mermaid style; the
+
+  .excalidraw carries the hand-drawn aesthetic. Fully offline.
+
+  Use when asked to "make a diagram", "draw the architecture", "create a
+
+  flowchart", "diagram this", or "visualize this flow". (gstack)'
+---
+
+# diagram
+
+Resolve `scripts/entry.py` relative to this SKILL.md, then invoke it by absolute path:
+
+Set `SKILL_DIR` to the absolute directory containing this file, as supplied by skill discovery.
+
+```sh
+python3 "$SKILL_DIR/scripts/entry.py" instructions --host codex --skill diagram
+```
+
+Use `claude-code`, `cursor`, `codex`, `openclaw`, or `hermes` for the current platform.
+Follow the returned runtime contract and read the complete referenced workflow before acting.
+Repeat the returned environment prefix on each shell call; variables do not persist between tool calls.
+If setup is missing, explain the exact preparation command and obtain consent before downloads or builds.
+Never silently use another gstack installation. Preserve the source workflow's questions and permission boundaries.
