@@ -1,26 +1,19 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# Anthropic Skills — Skill Creator
+# Anthropic skills — Skill Creator
 
 Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.
 
 ## Tags
 
-- anthropic
 - skills
 - skill-creator
 
-## Installation
-
-```bash
-npx forgecat install @forgecat/anthropics_skills_skill-creator
-```
-
 ## Skills
 
-- **skill-creator** — Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. `skill`
+- **skill-creator** — Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.
 
 ## Details
 
@@ -28,10 +21,10 @@ npx forgecat install @forgecat/anthropics_skills_skill-creator
 |---|---|
 | Author | Anthropic |
 | Original repository | https://github.com/anthropics/skills |
-| Version | `0.0.0` |
-| Original commit | `5128e18` |
-| License | MIT |
-| Source platform | Claude Code |
+| Version | `0.0.6` |
+| Original commit | 34040c9c568585f6929bedeaad110ad08f079624 |
+| License | Apache-2.0 |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,9 +33,11 @@ npx forgecat install @forgecat/anthropics_skills_skill-creator
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
