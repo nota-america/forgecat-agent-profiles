@@ -1,19 +1,22 @@
-name: "@forgecat/anthropics_skills_skill-creator"
-version: 0.0.4
+name: '@forgecat/anthropics_skills_skill-creator'
 description: Create new skills, modify and improve existing skills, and measure skill
   performance. Use when users want to create a skill from scratch, edit, or optimize
   an existing skill, run evals to test a skill, benchmark skill performance with variance
   analysis, or optimize a skill's description for better triggering accuracy.
+visibility: public
 repository: https://github.com/anthropics/skills
 license: Apache-2.0
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - cursor
-      - codex
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []
@@ -27,12 +30,32 @@ skills:
     accuracy.
   scripts:
   - path: skills/skill-creator/eval-viewer/generate_review.py
+    runtime: python
+    description: Generate and serve a review page for eval results.
   - path: skills/skill-creator/scripts/__init__.py
+    runtime: python
+    description: Initialize the scripts package.
   - path: skills/skill-creator/scripts/aggregate_benchmark.py
+    runtime: python
+    description: Aggregate individual run results into benchmark summary statistics.
   - path: skills/skill-creator/scripts/generate_report.py
+    runtime: python
+    description: Generate an HTML report from run_loop.py output.
   - path: skills/skill-creator/scripts/improve_description.py
+    runtime: python
+    description: Improve a skill description based on eval results.
   - path: skills/skill-creator/scripts/package_skill.py
+    runtime: python
+    description: Skill Packager - Creates a distributable .skill file of a skill folder
   - path: skills/skill-creator/scripts/quick_validate.py
+    runtime: python
+    description: Quick validation script for skills - minimal version
   - path: skills/skill-creator/scripts/run_eval.py
+    runtime: python
+    description: Run trigger evaluation for a skill description.
   - path: skills/skill-creator/scripts/run_loop.py
+    runtime: python
+    description: Run the eval + improve loop until all pass or max iterations reached.
   - path: skills/skill-creator/scripts/utils.py
+    runtime: python
+    description: Shared utilities for skill-creator scripts.
