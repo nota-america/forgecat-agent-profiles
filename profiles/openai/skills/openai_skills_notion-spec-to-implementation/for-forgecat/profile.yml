@@ -1,19 +1,21 @@
-name: "@forgecat/openai_skills_notion-spec-to-implementation"
-version: 0.0.10
+name: '@forgecat/openai_skills_notion-spec-to-implementation'
 description: Turn Notion specs into implementation plans, tasks, and progress tracking;
   use when implementing PRDs/feature specs and creating Notion plans + tasks from
   them.
+visibility: public
 repository: https://github.com/openai/skills
 license: MIT
-visibility: public
 sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - codex
-      - cursor
-    partial: []
+    - claude-code
+    - codex
+    - cursor
+    partial:
+    - hermes
+    - openclaw
+    unsupported: []
   models:
     recommended:
     - gpt-5.4
@@ -27,4 +29,3 @@ skills:
     them.
 mcp:
   path: mcp.jsonc
-  requiredEnv: []
