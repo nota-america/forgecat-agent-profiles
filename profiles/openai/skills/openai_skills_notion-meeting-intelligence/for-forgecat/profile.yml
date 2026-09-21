@@ -1,18 +1,20 @@
-name: "@forgecat/openai_skills_notion-meeting-intelligence"
-version: 0.0.10
+name: '@forgecat/openai_skills_notion-meeting-intelligence'
 description: Prepare meeting materials with Notion context and Codex research; use
   when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.
+visibility: public
 repository: https://github.com/openai/skills
 license: MIT
-visibility: public
 sourcePlatform: codex
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - codex
-      - cursor
-    partial: []
+    - claude-code
+    - codex
+    - cursor
+    partial:
+    - hermes
+    - openclaw
+    unsupported: []
   models:
     recommended:
     - gpt-5.4
@@ -26,4 +28,3 @@ skills:
     attendees.
 mcp:
   path: mcp.jsonc
-  requiredEnv: []
