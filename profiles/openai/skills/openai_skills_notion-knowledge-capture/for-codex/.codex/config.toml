@@ -1,2 +1,3 @@
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
+type = "http"
