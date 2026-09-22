@@ -1,0 +1,5 @@
+[mcp_servers.antislop-contrast]
+command = "node"
+args = [".forgecat/profiles/@forgecat/anti-slop/references/contrast/launcher/contrast-mcp-launcher.mjs"]
+type = "stdio"
+[mcp_servers.antislop-contrast.env]
