@@ -17,6 +17,9 @@ compatibility:
     - hermes
     partial: []
   models:
+    recommended:
+    - gpt-5.6-sol
+    - claude-opus-5
     minimum: []
 skills:
 - name: forgecat-authoring

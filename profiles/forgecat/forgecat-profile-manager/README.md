@@ -33,7 +33,7 @@ npx forgecat install @forgecat/forgecat-profile-manager
 |---|---|
 | Author | ForgeCat |
 | Original repository | https://github.com/nota-america/forgecat-profile-manager/tree/aced4c54e2c5d033e95925555d8e956b11bbd0a3 |
-| Version | `0.1.3` |
+| Version | `0.1.4` |
 | Original commit | aced4c54e2c5d033e95925555d8e956b11bbd0a3 |
 | License | Apache-2.0 |
 | Source platform | claude-code |
@@ -49,6 +49,13 @@ npx forgecat install @forgecat/forgecat-profile-manager
 | Codex | Tested |
 | OpenClaw | Tested |
 | Hermes | Tested |
+
+### Models
+
+| Model | Role |
+|---|---|
+| `gpt-5.6-sol` | recommended |
+| `claude-opus-5` | recommended |
 
 ## Dependencies
 
