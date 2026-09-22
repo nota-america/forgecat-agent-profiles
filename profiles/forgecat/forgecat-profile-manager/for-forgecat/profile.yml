@@ -1,0 +1,47 @@
+name: '@forgecat/forgecat-profile-manager'
+description: Teaches an agent to use ForgeCat itself — browse and install profiles
+  from the registry, keep installed ones healthy, author a profile.yml that lands
+  where you meant it to, and publish without tripping the security gate. Written from
+  the CLI's own output, so it stays honest about what forgecat 0.3.x actually does.
+visibility: public
+license: MIT
+sourcePlatform: claude-code
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - cursor
+    - codex
+    - openclaw
+    - hermes
+    partial: []
+  models:
+    minimum: []
+skills:
+- name: forgecat-authoring
+  path: skills/forgecat-authoring/SKILL.md
+  description: Write or fix a profile.yml — pick the right resource kind for each
+    file, bind operating references, and verify the install layout before publishing.
+    Use when creating a ForgeCat profile, adding a skill/agent/rule/hook to one, or
+    when `forgecat validate` or `plan` reports something unexpected.
+- name: forgecat-install
+  path: skills/forgecat-install/SKILL.md
+  description: Find, evaluate and install a ForgeCat profile. Use when the user wants
+    to browse the registry, compare profiles, install one into a project or a home-target
+    agent, or when an install is refused.
+- name: forgecat-manage
+  path: skills/forgecat-manage/SKILL.md
+  description: Inspect, update, replace and remove installed ForgeCat profiles. Use
+    when the user asks what's installed, sees modified files, wants to upgrade or
+    roll back a profile, run two profiles side by side, or configure MCP env vars.
+- name: forgecat-publish
+  path: skills/forgecat-publish/SKILL.md
+  description: Publish a profile to the registry, manage its versions, visibility
+    and tags, and recover its source. Use when the user is ready to push, wants to
+    unpublish or re-scope a profile, or lost the local source of one they own.
+instructions:
+  operatingRef: agents-md
+references:
+- id: agents-md
+  path: AGENTS.md
+  type: operating-instructions

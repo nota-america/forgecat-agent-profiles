@@ -18,8 +18,8 @@
 
 <div align="center">
 
-[![Profiles](https://img.shields.io/badge/profiles-191-blue)](#browse-profiles)
-[![Collections](https://img.shields.io/badge/collections-41-blue)](#browse-profiles)
+[![Profiles](https://img.shields.io/badge/profiles-192-blue)](#browse-profiles)
+[![Collections](https://img.shields.io/badge/collections-42-blue)](#browse-profiles)
 [![Platforms](https://img.shields.io/badge/platforms-Claude%20Code%20%7C%20Cursor%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20Hermes-green)](#supported-platforms)
 [![GitHub issues](https://img.shields.io/github/issues/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/nota-america/forgecat-agent-profiles)](https://github.com/nota-america/forgecat-agent-profiles/pulls)
@@ -124,6 +124,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [everyinc/compound-engineering-plugin](./profiles/everyinc/compound-engineering-plugin) | 1 | AI-powered development workflows for review, research, design, and delivery |
 | [epoko77-ai/im-not-ai](./profiles/epoko77-ai/im-not-ai) | 1 | Korean AI-text humanizer with deterministic routing, structural gates, and native Codex support |
 | [fivetaku/fablize](./profiles/fivetaku/fablize) | 1 | Claude Code harness for grounded multi-step work and verification discipline |
+| [forgecat/forgecat-profile-manager](./profiles/forgecat/forgecat-profile-manager) | 1 | Skills for finding, installing, managing, authoring, and publishing ForgeCat profiles. |
 | [garrytan/gstack](./profiles/garrytan/gstack) | 1 | Garry's Stack engineering workflow skills for planning, QA, review, and deployment |
 | [garethmanning/education-agent-skills](./profiles/garethmanning/education-agent-skills) | 1 | Evidence-based education skills for curriculum, assessment, learning science, wellbeing, and student study support |
 | [genexis-ai/gpt-image-skill](./profiles/genexis-ai/gpt-image-skill) | 1 | Cross-host image generation and editing through native tools or a ChatGPT-authenticated Codex bridge |
@@ -152,7 +153,7 @@ profiles/<source-owner>/<source-repository-or-collection>/
 | [nomadamas/slides-grab](./profiles/nomadamas/slides-grab) | 1 | Agent-first presentation framework for planning, designing, editing, and exporting HTML or image-native slides with shared skills and platform-native design review adapters. |
 | [mengto/skills](./profiles/mengto/skills) | 5 | Codex-oriented agent skills for auditing, browser capture, inspiration workflows, media conversion, profiling, publishing, and skill authoring. |
 
-Total: 191 profiles across 41 collections.
+Total: 192 profiles across 42 collections.
 
 ## Profile Layout
 
