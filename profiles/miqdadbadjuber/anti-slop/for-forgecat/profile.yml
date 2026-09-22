@@ -1,0 +1,63 @@
+name: '@forgecat/anti-slop'
+description: Six coordinated skills for reviewing and reducing generic AI patterns
+  in UI, copy, accessibility, responsive layouts, and code comments.
+visibility: public
+repository: https://github.com/miqdadbadjuber/anti-slop/tree/3c6cdd7f0dc5423e02b9a0bf70a3d9f1c0da644a
+license: MIT
+sourcePlatform: multi-host
+compatibility:
+  platforms:
+    tested:
+    - claude-code
+    - codex
+    - cursor
+    partial:
+    - hermes
+    - openclaw
+  models:
+    minimum: []
+skills:
+- name: antislop
+  path: skills/antislop/SKILL.md
+  description: 'Anti Slop: Rules for AI Coding Agents. The core filter. Load always
+    to stop generic AI slop.'
+- name: antislop-code
+  path: skills/antislop-code/SKILL.md
+  description: 'Code comment hygiene for AI coding agents: remove generic AI-slop
+    comments, keep the valuable ones, never touch the code.'
+- name: antislop-copywriting
+  path: skills/antislop-copywriting/SKILL.md
+  description: 'Copy and text skill for antislop. Use when writing or editing prose:
+    headlines, tone, CTAs, and anti-AI-writing patterns. Load with the core.'
+- name: antislop-human
+  path: skills/antislop-human/SKILL.md
+  description: Human and accessibility skill for antislop. Contrast, keyboard, focus,
+    and states for real people. Includes the contrast checker.
+  scripts:
+  - path: skills/antislop-human/contrast-check.py
+    runtime: python
+    description: WCAG 2.x contrast checker, home of the antislop-human contrast checker.
+  - path: references/contrast/skills/antislop-human/contrast-mcp.py
+    runtime: python
+    description: Minimal MCP stdio server exposing the antislop contrast checker as
+      a tool.
+- name: antislop-layoutmobile
+  path: skills/antislop-layoutmobile/SKILL.md
+  description: 'Mobile layout skill for antislop. Use for layouts that reflow across
+    screen sizes, phone to desktop: grids, overflow, tap targets. Load with the core.'
+- name: antislop-ui
+  path: skills/antislop-ui/SKILL.md
+  description: 'UI and visual skill for antislop. Use when building or editing any
+    interface: color, layout, components, motion. Load with the core.'
+mcp:
+  path: mcp.jsonc
+instructions:
+  operatingRef: antislop-operating
+references:
+- id: antislop-operating
+  path: instructions/operating.md
+  type: operating-instructions
+- id: antislop-docs
+  path: references/docs
+- id: antislop-contrast
+  path: references/contrast

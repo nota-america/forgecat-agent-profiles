@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "antislop-contrast": {
+      "command": "node",
+      "args": [
+        ".forgecat/profiles/@forgecat/anti-slop/references/contrast/launcher/contrast-mcp-launcher.mjs"
+      ],
+      "env": {},
+      "type": "stdio"
+    }
+  }
+}
