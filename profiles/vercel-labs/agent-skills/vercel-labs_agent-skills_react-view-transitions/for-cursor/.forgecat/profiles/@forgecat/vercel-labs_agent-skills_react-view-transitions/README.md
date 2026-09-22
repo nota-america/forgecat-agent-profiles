@@ -8,9 +8,8 @@ Guide for implementing smooth, native-feeling animations using React's View Tran
 
 ## Tags
 
+- skills
 - vercel
-- frontend
-- agent-skill
 
 ## Installation
 
@@ -26,12 +25,12 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-view-transitions
 
 | Field | Value |
 |---|---|
-| Author | vercel |
+| Author | Vercel Labs |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.13` |
-| Original commit | `47863b2` |
+| Version | `0.0.14` |
+| Original commit | 063bee94c3f4df8453406c830b0a7df0f2860278 |
 | License | MIT |
-| Source platform | Claude Code skills (Agent Skills format) |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,56 +39,21 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-view-transitions
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
+| Cursor | Tested |
 | Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
 
+## License provenance
 
----
-*written by original source*
+Upstream declares MIT. The original declaration and pinned source are preserved in `for-forgecat/LICENSE-SOURCE.md` and in the installed skill’s `forgecat-notices/` directory. `MIT-STANDARD-REFERENCE.md` is a ForgeCat-added reference, not an upstream LICENSE. No copyright holder or year has been supplied by ForgeCat. The upstream missing copyright notice remains disclosed.
 
-# React View Transitions Skill
+## Verification scope
 
-An agent skill for implementing smooth, native-feeling animations using React's View Transition API.
+This is a locally prepared candidate. Fresh exact-version installation and runtime verification are pending on all five platforms; no Tested claim is inherited. External service access, application deployment and model output quality have not been tested.
 
-## What This Skill Covers
-
-- **`<ViewTransition>` component** — animation triggers (enter, exit, update, share), placement rules, View Transition Classes
-- **`addTransitionType`** — tagging transitions for directional or context-specific animations
-- **Shared element transitions** — morphing elements across different views
-- **View Transition Events** — imperative JavaScript animations via the Web Animations API
-- **CSS pseudo-elements** — `::view-transition-old`, `::view-transition-new`, `::view-transition-group`
-- **Next.js integration** — `experimental.viewTransition`, the `transitionTypes` prop on `next/link`, App Router patterns
-- **Accessibility** — `prefers-reduced-motion` handling
-- **Ready-to-use CSS recipes** — fade, slide, scale, directional navigation
-
-## Skill Structure
-
-```
-react-view-transitions/
-├── SKILL.md                      # Core skill (always loaded)
-├── AGENTS.md                     # Full compiled document (all references expanded)
-└── references/
-    ├── implementation.md         # Step-by-step implementation workflow
-    ├── patterns.md               # Real-world patterns, events API, troubleshooting
-    ├── nextjs.md                 # Next.js-specific patterns
-    └── css-recipes.md            # Copy-paste CSS animations
-```
-
-## Installation
-
-Install via [skills.sh](https://skills.sh):
-
-```bash
-npx skills install https://github.com/vercel-labs/react-view-transitions-skill
-```
-
-## Resources
-
-- [React `<ViewTransition>` docs](https://react.dev/reference/react/ViewTransition)
-- [React `addTransitionType` docs](https://react.dev/reference/react/addTransitionType)
-- [Next.js `viewTransition` config](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)
-- [Next.js App Router Playground (view transitions)](https://github.com/vercel/next-app-router-playground/tree/main/app/view-transitions) — Vercel's reference implementation
+Source instructions and supporting documents remain inside the owning skill. Older ForgeCat-generated duplicate global rules/instructions are not recreated. This preserves the upstream skill call boundary and avoids injecting its entire reference guide into every session.
