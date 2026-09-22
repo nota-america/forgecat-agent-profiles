@@ -1,16 +1,15 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# Vercel CLI with Tokens
+# Vercel Cli With Tokens
 
 Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login — e.g. "deploy to vercel", "set up vercel", "add environment variables to vercel".
 
 ## Tags
 
+- skills
 - vercel
-- deployment
-- agent-skill
 
 ## Installation
 
@@ -26,12 +25,12 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens
 
 | Field | Value |
 |---|---|
-| Author | vercel |
+| Author | Vercel Labs |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.0` |
-| Original commit | `47863b2` |
+| Version | `0.0.9` |
+| Original commit | 063bee94c3f4df8453406c830b0a7df0f2860278 |
 | License | MIT |
-| Source platform | Claude Code skills (Agent Skills format) |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,9 +39,21 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
+
+## License provenance
+
+Upstream declares MIT. The original declaration and pinned source are preserved in `for-forgecat/LICENSE-SOURCE.md` and in the installed skill’s `forgecat-notices/` directory. `MIT-STANDARD-REFERENCE.md` is a ForgeCat-added reference, not an upstream LICENSE. No copyright holder or year has been supplied by ForgeCat. The upstream missing copyright notice remains disclosed.
+
+## Verification scope
+
+This is a locally prepared candidate. Fresh exact-version installation and runtime verification are pending on all five platforms; no Tested claim is inherited. External service access, application deployment and model output quality have not been tested.
+
+Source instructions and supporting documents remain inside the owning skill. Older ForgeCat-generated duplicate global rules/instructions are not recreated. This preserves the upstream skill call boundary and avoids injecting its entire reference guide into every session.

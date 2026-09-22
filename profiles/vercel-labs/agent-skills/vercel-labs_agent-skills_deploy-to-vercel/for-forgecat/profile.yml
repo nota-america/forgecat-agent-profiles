@@ -1,19 +1,21 @@
-name: "@forgecat/vercel-labs_agent-skills_deploy-to-vercel"
-version: 0.0.8
+name: '@forgecat/vercel-labs_agent-skills_deploy-to-vercel'
 description: Deploy applications and websites to Vercel. Use when the user requests
   deployment actions like "deploy my app", "deploy and give me the link", "push this
   live", or "create a preview deployment".
+visibility: public
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []
@@ -24,5 +26,9 @@ skills:
     deployment actions like "deploy my app", "deploy and give me the link", "push
     this live", or "create a preview deployment".
   scripts:
-    - path: skills/deploy-to-vercel/resources/deploy-codex.sh
-    - path: skills/deploy-to-vercel/resources/deploy.sh
+  - path: skills/deploy-to-vercel/resources/deploy-codex.sh
+    runtime: bash
+    description: Deploy codex.
+  - path: skills/deploy-to-vercel/resources/deploy.sh
+    runtime: bash
+    description: Deploy.

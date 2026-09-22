@@ -1,4 +1,4 @@
-name: "@forgecat/vercel-labs_agent-skills_react-view-transitions"
+name: '@forgecat/vercel-labs_agent-skills_react-view-transitions'
 description: Guide for implementing smooth, native-feeling animations using React's
   View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS
   view transition pseudo-elements). Use this skill whenever the user wants to add
@@ -8,19 +8,20 @@ description: Guide for implementing smooth, native-feeling animations using Reac
   user mentions view transitions, `startViewTransition`, `ViewTransition`, transition
   types, or asks about animating between UI states in React without third-party animation
   libraries.
+visibility: public
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - claude-code
-      - codex
-      - openclaw
-      - hermes
-    partial:
-      - cursor
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []
@@ -36,7 +37,3 @@ skills:
     the user mentions view transitions, `startViewTransition`, `ViewTransition`, transition
     types, or asks about animating between UI states in React without third-party
     animation libraries.
-rules:
-- name: react-view-transitions-agents
-  path: rules/react-view-transitions-agents.md
-  description: Expanded instruction guide for react-view-transitions.

@@ -1,19 +1,21 @@
-name: "@forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens"
-version: 0.0.8
+name: '@forgecat/vercel-labs_agent-skills_vercel-cli-with-tokens'
 description: Deploy and manage projects on Vercel using token-based authentication.
   Use when working with Vercel CLI using access tokens rather than interactive login
   — e.g. "deploy to vercel", "set up vercel", "add environment variables to vercel".
+visibility: public
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []

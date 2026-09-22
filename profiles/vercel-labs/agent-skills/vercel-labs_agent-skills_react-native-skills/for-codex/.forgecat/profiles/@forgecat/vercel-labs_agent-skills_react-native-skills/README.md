@@ -1,6 +1,6 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
 # React Native Skills
 
@@ -8,9 +8,8 @@ React Native and Expo best practices for building performant mobile apps. Use wh
 
 ## Tags
 
+- skills
 - vercel
-- frontend
-- agent-skill
 
 ## Installation
 
@@ -26,12 +25,12 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-native-skills
 
 | Field | Value |
 |---|---|
-| Author | vercel |
+| Author | Vercel Labs |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.0` |
-| Original commit | `47863b2` |
+| Version | `0.0.9` |
+| Original commit | 063bee94c3f4df8453406c830b0a7df0f2860278 |
 | License | MIT |
-| Source platform | Claude Code skills (Agent Skills format) |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,179 +39,21 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_react-native-skills
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
 
+## License provenance
 
----
-*written by original source*
+Upstream declares MIT. The original declaration and pinned source are preserved in `for-forgecat/LICENSE-SOURCE.md` and in the installed skill’s `forgecat-notices/` directory. `MIT-STANDARD-REFERENCE.md` is a ForgeCat-added reference, not an upstream LICENSE. No copyright holder or year has been supplied by ForgeCat. The upstream missing copyright notice remains disclosed.
 
-# React Native Guidelines
+## Verification scope
 
-A structured repository for creating and maintaining React Native Best Practices
-optimized for agents and LLMs.
+This is a locally prepared candidate. Fresh exact-version installation and runtime verification are pending on all five platforms; no Tested claim is inherited. External service access, application deployment and model output quality have not been tested.
 
-## Structure
-
-- `rules/` - Individual rule files (one per rule)
-  - `_sections.md` - Section metadata (titles, impacts, descriptions)
-  - `_template.md` - Template for creating new rules
-  - `area-description.md` - Individual rule files
-- `metadata.json` - Document metadata (version, organization, abstract)
-- **`AGENTS.md`** - Compiled output (generated)
-
-## Rules
-
-### Core Rendering (CRITICAL)
-
-- `rendering-text-in-text-component.md` - Wrap strings in Text components
-- `rendering-no-falsy-and.md` - Avoid falsy && operator in JSX
-
-### List Performance (HIGH)
-
-- `list-performance-virtualize.md` - Use virtualized lists (LegendList,
-  FlashList)
-- `list-performance-function-references.md` - Keep stable object references
-- `list-performance-callbacks.md` - Hoist callbacks to list root
-- `list-performance-inline-objects.md` - Avoid inline objects in renderItem
-- `list-performance-item-memo.md` - Pass primitives for memoization
-- `list-performance-item-expensive.md` - Keep list items lightweight
-- `list-performance-images.md` - Use compressed images in lists
-- `list-performance-item-types.md` - Use item types for heterogeneous lists
-
-### Animation (HIGH)
-
-- `animation-gpu-properties.md` - Animate transform/opacity instead of layout
-- `animation-gesture-detector-press.md` - Use GestureDetector for press
-  animations
-- `animation-derived-value.md` - Prefer useDerivedValue over useAnimatedReaction
-
-### Scroll Performance (HIGH)
-
-- `scroll-position-no-state.md` - Never track scroll in useState
-
-### Navigation (HIGH)
-
-- `navigation-native-navigators.md` - Use native stack and native tabs
-
-### React State (MEDIUM)
-
-- `react-state-dispatcher.md` - Use functional setState updates
-- `react-state-fallback.md` - State should represent user intent only
-- `react-state-minimize.md` - Minimize state variables, derive values
-
-### State Architecture (MEDIUM)
-
-- `state-ground-truth.md` - State must represent ground truth
-
-### React Compiler (MEDIUM)
-
-- `react-compiler-destructure-functions.md` - Destructure functions early
-- `react-compiler-reanimated-shared-values.md` - Use .get()/.set() for shared
-  values
-
-### User Interface (MEDIUM)
-
-- `ui-expo-image.md` - Use expo-image for optimized images
-- `ui-image-gallery.md` - Use Galeria for lightbox/galleries
-- `ui-menus.md` - Native dropdown and context menus with Zeego
-- `ui-native-modals.md` - Use native Modal with formSheet
-- `ui-pressable.md` - Use Pressable instead of TouchableOpacity
-- `ui-measure-views.md` - Measuring view dimensions
-- `ui-safe-area-scroll.md` - Use contentInsetAdjustmentBehavior
-- `ui-scrollview-content-inset.md` - Use contentInset for dynamic spacing
-- `ui-styling.md` - Modern styling patterns (gap, boxShadow, gradients)
-
-### Design System (MEDIUM)
-
-- `design-system-compound-components.md` - Use compound components
-
-### Monorepo (LOW)
-
-- `monorepo-native-deps-in-app.md` - Install native deps in app directory
-- `monorepo-single-dependency-versions.md` - Single dependency versions
-
-### Third-Party Dependencies (LOW)
-
-- `imports-design-system-folder.md` - Import from design system folder
-
-### JavaScript (LOW)
-
-- `js-hoist-intl.md` - Hoist Intl formatter creation
-
-### Fonts (LOW)
-
-- `fonts-config-plugin.md` - Load fonts natively at build time
-
-## Creating a New Rule
-
-1. Copy `rules/_template.md` to `rules/area-description.md`
-2. Choose the appropriate area prefix:
-   - `rendering-` for Core Rendering
-   - `list-performance-` for List Performance
-   - `animation-` for Animation
-   - `scroll-` for Scroll Performance
-   - `navigation-` for Navigation
-   - `react-state-` for React State
-   - `state-` for State Architecture
-   - `react-compiler-` for React Compiler
-   - `ui-` for User Interface
-   - `design-system-` for Design System
-   - `monorepo-` for Monorepo
-   - `imports-` for Third-Party Dependencies
-   - `js-` for JavaScript
-   - `fonts-` for Fonts
-3. Fill in the frontmatter and content
-4. Ensure you have clear examples with explanations
-
-## Rule File Structure
-
-Each rule file should follow this structure:
-
-````markdown
----
-title: Rule Title Here
-impact: MEDIUM
-impactDescription: Optional description
-tags: tag1, tag2, tag3
----
-
-## Rule Title Here
-
-Brief explanation of the rule and why it matters.
-
-**Incorrect (description of what's wrong):**
-
-```tsx
-// Bad code example
-```
-````
-
-**Correct (description of what's right):**
-
-```tsx
-// Good code example
-```
-
-Reference: [Link](https://example.com)
-
-```
-
-## File Naming Convention
-
-- Files starting with `_` are special (excluded from build)
-- Rule files: `area-description.md` (e.g., `animation-gpu-properties.md`)
-- Section is automatically inferred from filename prefix
-- Rules are sorted alphabetically by title within each section
-
-## Impact Levels
-
-- `CRITICAL` - Highest priority, causes crashes or broken UI
-- `HIGH` - Significant performance improvements
-- `MEDIUM` - Moderate performance improvements
-- `LOW` - Incremental improvements
-```
+Source instructions and supporting documents remain inside the owning skill. Older ForgeCat-generated duplicate global rules/instructions are not recreated. This preserves the upstream skill call boundary and avoids injecting its entire reference guide into every session.

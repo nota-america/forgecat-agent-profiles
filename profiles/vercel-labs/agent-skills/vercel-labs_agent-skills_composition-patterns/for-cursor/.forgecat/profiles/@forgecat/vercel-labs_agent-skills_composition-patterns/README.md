@@ -1,16 +1,15 @@
 *written by ForgeCat*
 
-![Forgecat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
+![ForgeCat](https://raw.githubusercontent.com/nota-america/forgecat-agent-profiles/main/assets/forgecat_banner.png)
 
-# React Composition Patterns
+# Composition Patterns
 
 React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.
 
 ## Tags
 
+- skills
 - vercel
-- deployment
-- agent-skill
 
 ## Installation
 
@@ -26,12 +25,12 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_composition-patterns
 
 | Field | Value |
 |---|---|
-| Author | vercel |
+| Author | Vercel Labs |
 | Original repository | https://github.com/vercel-labs/agent-skills |
-| Version | `0.0.0` |
-| Original commit | `47863b2` |
+| Version | `0.0.9` |
+| Original commit | 063bee94c3f4df8453406c830b0a7df0f2860278 |
 | License | MIT |
-| Source platform | Claude Code skills (Agent Skills format) |
+| Source platform | claude-code |
 
 ## Compatibility
 
@@ -40,74 +39,21 @@ npx forgecat install @forgecat/vercel-labs_agent-skills_composition-patterns
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Partial |
-| Codex | Partial |
+| Cursor | Tested |
+| Codex | Tested |
+| OpenClaw | Tested |
+| Hermes | Tested |
 
 ## Dependencies
 
-- None
+- None required to install this profile. Individual skills may require tools or credentials documented in their own `SKILL.md` files.
 
+## License provenance
 
----
-*written by original source*
+Upstream declares MIT. The original declaration and pinned source are preserved in `for-forgecat/LICENSE-SOURCE.md` and in the installed skill’s `forgecat-notices/` directory. `MIT-STANDARD-REFERENCE.md` is a ForgeCat-added reference, not an upstream LICENSE. No copyright holder or year has been supplied by ForgeCat. The upstream missing copyright notice remains disclosed.
 
-# React Composition Patterns
+## Verification scope
 
-A structured repository for React composition patterns that scale. These
-patterns help avoid boolean prop proliferation by using compound components,
-lifting state, and composing internals.
+This is a locally prepared candidate. Fresh exact-version installation and runtime verification are pending on all five platforms; no Tested claim is inherited. External service access, application deployment and model output quality have not been tested.
 
-## Structure
-
-- `rules/` - Individual rule files (one per rule)
-  - `_sections.md` - Section metadata (titles, impacts, descriptions)
-  - `_template.md` - Template for creating new rules
-  - `area-description.md` - Individual rule files
-- `metadata.json` - Document metadata (version, organization, abstract)
-- **`AGENTS.md`** - Compiled output (generated)
-
-## Rules
-
-### Component Architecture (CRITICAL)
-
-- `architecture-avoid-boolean-props.md` - Don't add boolean props to customize
-  behavior
-- `architecture-compound-components.md` - Structure as compound components with
-  shared context
-
-### State Management (HIGH)
-
-- `state-lift-state.md` - Lift state into provider components
-- `state-context-interface.md` - Define clear context interfaces
-  (state/actions/meta)
-- `state-decouple-implementation.md` - Decouple state management from UI
-
-### Implementation Patterns (MEDIUM)
-
-- `patterns-children-over-render-props.md` - Prefer children over renderX props
-- `patterns-explicit-variants.md` - Create explicit component variants
-
-## Core Principles
-
-1. **Composition over configuration** — Instead of adding props, let consumers
-   compose
-2. **Lift your state** — State in providers, not trapped in components
-3. **Compose your internals** — Subcomponents access context, not props
-4. **Explicit variants** — Create ThreadComposer, EditComposer, not Composer
-   with isThread
-
-## Creating a New Rule
-
-1. Copy `rules/_template.md` to `rules/area-description.md`
-2. Choose the appropriate area prefix:
-   - `architecture-` for Component Architecture
-   - `state-` for State Management
-   - `patterns-` for Implementation Patterns
-3. Fill in the frontmatter and content
-4. Ensure you have clear examples with explanations
-
-## Impact Levels
-
-- `CRITICAL` - Foundational patterns, prevents unmaintainable code
-- `HIGH` - Significant maintainability improvements
-- `MEDIUM` - Good practices for cleaner code
+Source instructions and supporting documents remain inside the owning skill. Older ForgeCat-generated duplicate global rules/instructions are not recreated. This preserves the upstream skill call boundary and avoids injecting its entire reference guide into every session.

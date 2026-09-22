@@ -1,29 +1,37 @@
-name: "@forgecat/andrej-karpathy-skills"
-version: 0.0.8
-description: Behavioral guidelines to reduce common LLM coding mistakes by making agents surface assumptions, prefer simple implementations, keep edits focused, and define verifiable success criteria.
+name: '@forgecat/andrej-karpathy-skills'
+description: Behavioral guidelines to reduce common LLM coding mistakes. Use when
+  writing, reviewing, or refactoring code to avoid overcomplication, make surgical
+  changes, surface assumptions, and define verifiable success criteria.
+visibility: public
 repository: https://github.com/multica-ai/andrej-karpathy-skills
 license: MIT
-visibility: public
-sourcePlatform: claude-code
+sourcePlatform: multi-host
 compatibility:
   platforms:
     tested:
-      - codex
-      - cursor
+    - claude-code
+    - codex
+    - cursor
     partial:
-      - claude-code
+    - hermes
+    - openclaw
+    unsupported: []
   models:
     recommended: []
     minimum: []
 skills:
-  - name: karpathy-guidelines
-    path: skills/karpathy-guidelines/SKILL.md
-    description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
+- name: karpathy-guidelines
+  path: skills/karpathy-guidelines/SKILL.md
+  description: Behavioral guidelines to reduce common LLM coding mistakes. Use when
+    writing, reviewing, or refactoring code to avoid overcomplication, make surgical
+    changes, surface assumptions, and define verifiable success criteria.
 rules:
-  - name: karpathy-guidelines-instructions
-    path: rules/CLAUDE.md
-    description: Behavioral guidelines to reduce common LLM coding mistakes.
-  - name: karpathy-guidelines
-    path: rules/karpathy-guidelines.mdc
-    description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
-    alwaysApply: true
+- name: CLAUDE
+  path: rules/CLAUDE.md
+  description: Rule file rules/CLAUDE.md
+- name: karpathy-guidelines
+  path: rules/karpathy-guidelines.mdc
+  description: Behavioral guidelines to reduce common LLM coding mistakes. Use when
+    writing, reviewing, or refactoring code to avoid overcomplication, make surgical
+    changes, surface assumptions, and define verifiable success criteria.
+  alwaysApply: true

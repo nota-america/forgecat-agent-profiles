@@ -1,19 +1,21 @@
-name: "@forgecat/vercel-labs_agent-skills_web-design-guidelines"
-version: 0.0.8
+name: '@forgecat/vercel-labs_agent-skills_web-design-guidelines'
 description: Review UI code for Web Interface Guidelines compliance. Use when asked
   to "review my UI", "check accessibility", "audit design", "review UX", or "check
   my site against best practices".
+visibility: public
 repository: https://github.com/vercel-labs/agent-skills
 license: MIT
-visibility: public
 sourcePlatform: claude-code
 compatibility:
   platforms:
     tested:
-      - codex
-    partial:
-      - claude-code
-      - cursor
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+    partial: []
+    unsupported: []
   models:
     recommended: []
     minimum: []
