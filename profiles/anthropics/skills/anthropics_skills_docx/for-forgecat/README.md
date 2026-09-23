@@ -30,7 +30,7 @@ npx forgecat install @forgecat/anthropics_skills_docx
 | Original repository | https://github.com/anthropics/skills |
 | Version | `0.0.4` |
 | Original commit | `5128e18` |
-| License | Proprietary. LICENSE.txt has complete terms |
+| License | LicenseRef-Anthropic-Terms |
 | Source platform | Claude Code |
 
 ## Compatibility
