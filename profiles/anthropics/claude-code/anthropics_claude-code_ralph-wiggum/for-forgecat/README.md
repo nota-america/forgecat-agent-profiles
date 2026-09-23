@@ -42,7 +42,7 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 | Version | `0.0.3` |
 | Original plugin version | `1.0.0` |
 | Original commit | `d08288e` |
-| License | Complete terms in LICENSE.md |
+| License | LicenseRef-Anthropic-Commercial-Terms |
 | Source platform | Claude Code plugin |
 
 ## Compatibility
