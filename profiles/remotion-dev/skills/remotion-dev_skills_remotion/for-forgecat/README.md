@@ -32,7 +32,7 @@ npx forgecat install @forgecat/remotion-dev_skills_remotion
 | Original repository | https://github.com/remotion-dev/skills |
 | Version | `0.1.3` |
 | Original commit | `277510e78245ac0fa275d7cb6520d52e0ac2e212` |
-| License | None |
+| License | LicenseRef-Remotion-License |
 | Source platform | Claude Code |
 
 ## Compatibility
