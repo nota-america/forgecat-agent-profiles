@@ -37,7 +37,7 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 |---|---|
 | Author | Daisy Hollman, Anthropic |
 | Original repository | https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum |
-| Version | `0.0.3` |
+| Version | `0.0.4` |
 | Original plugin version | `1.0.0` |
 | Original commit | `d08288e` |
 | License | LicenseRef-Anthropic-Commercial-Terms |
