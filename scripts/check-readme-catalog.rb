@@ -14,8 +14,12 @@ def fail_with(errors)
   exit 1
 end
 
+# The catalog README carries non-ASCII profile descriptions. Without an
+# explicit encoding Ruby picks it up from the environment, and a shell with no
+# LANG set gives US-ASCII — the regex scans below then raise
+# `invalid byte sequence` instead of reporting on the catalog.
 def read(path)
-  File.read(path)
+  File.read(path, encoding: "UTF-8")
 rescue Errno::ENOENT
   abort "Missing required file: #{path}"
 end

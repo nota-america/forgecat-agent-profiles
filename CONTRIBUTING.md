@@ -94,6 +94,14 @@ Only a real YAML frontmatter block counts for the third form. A `license:` line
 in prose or in a profile's own metadata table restates the manifest field rather
 than evidencing it.
 
+Because that table restates the manifest, it has to agree with it.
+`scripts/check-profile-artifacts.rb` compares the `| License |` row in the
+profile's `README.md` and `for-forgecat/README.md` against `license:` in
+`for-forgecat/profile.yml`, ignoring backticks around the value. Renaming the
+manifest field means re-rendering those READMEs, not editing one side. The
+`for-<platform>/` copies are not compared: they are captured from a real install
+and describe the version that was installed.
+
 Profiles listed in `scripts/license-baseline.txt` predate these rules and are held
 to the license-string check only. That list may only shrink: remove a profile from
 it in the same PR that gives it a pinned source and its evidence. Adding an entry
