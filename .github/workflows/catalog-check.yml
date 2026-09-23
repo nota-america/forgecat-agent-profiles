@@ -15,6 +15,7 @@ on:
       - scripts/test-license-evidence.rb
       - scripts/test-license-gate.sh
       - scripts/test-license-audit.sh
+      - scripts/test-profile-artifacts.sh
       - .github/workflows/catalog-check.yml
   push:
     branches:
@@ -32,6 +33,7 @@ on:
       - scripts/test-license-evidence.rb
       - scripts/test-license-gate.sh
       - scripts/test-license-audit.sh
+      - scripts/test-profile-artifacts.sh
       - .github/workflows/catalog-check.yml
 
 # The checks read the tree and report; nothing they do needs write access, and
@@ -68,6 +70,9 @@ jobs:
           ruby scripts/test-license-evidence.rb
           bash scripts/test-license-gate.sh
           bash scripts/test-license-audit.sh
+
+      - name: Test profile artifact rules
+        run: bash scripts/test-profile-artifacts.sh
 
       - name: Check license evidence on changed profiles
         if: github.event_name == 'pull_request'
