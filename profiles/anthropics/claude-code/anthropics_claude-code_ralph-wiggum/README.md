@@ -50,5 +50,7 @@ npx forgecat install @forgecat/anthropics_claude-code_ralph-wiggum
 | Platform | Status |
 |---|---|
 | Claude Code | Tested |
-| Cursor | Tested |
+| Cursor | Partial |
 | Codex | Partial |
+
+The Stop hook is registered only on Claude Code. Cursor and Codex receive the commands and the setup skill, but no installed hook keeps the loop going, so the loop does not continue on its own there.
